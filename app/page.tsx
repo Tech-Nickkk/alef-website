@@ -1,65 +1,87 @@
 import Image from "next/image";
+import Navbar from "../components/Navbar";
+import RecentArticles from "../components/RecentArticles";
+import ResearchTopics from "../components/ResearchTopics";
+import TrendingRead from "../components/TrendingRead";
+import Newsletter from "../components/Newsletter";
+import SupportMission from "../components/SupportMission";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="w-full font-optima text-white">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex flex-col overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/home/hero-img.png"
+            alt="Lebanon Coastline"
+            fill
+            className="object-cover"
+            priority
+            quality={100}
+          />
+          {/* Gradient Overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-black/20" />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <Navbar />
+
+        {/* Hero Content - Placed like Reference Image 1 */}
+        <div className="relative z-10 flex-1 flex flex-col justify-center px-6 md:px-12 lg:px-24 pb-20 w-full max-w-[1920px] mx-auto">
+          <div className="max-w-4xl space-y-8 animate-fade-in-up">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl leading-[0.9] font-cormorant uppercase">
+              Exposing Hezbollah’s<br />
+              <span className="text-white">Grip Latest Analysis</span>
+            </h1>
+
+            <p className="text-lg md:text-2xl text-gray-200 max-w-2xl leading-relaxed border-l-2 border-[#E31B23] pl-6 ml-1 font-optima">
+              Educating to Eradicate Terrorism in Lebanon <br />
+              <span className="text-gray-200">Quality. Independence. Impact.</span>
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center gap-5 pt-4">
+              <button className="group bg-[#E31B23] hover:bg-[#c4151c] text-white px-8 py-3 text-sm font-semibold transition-all shadow-lg shadow-red-900/30 flex items-center gap-3 w-full sm:w-auto justify-center uppercase tracking-widest rounded-none font-optima">
+                Explore Research
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+
+              <button className="group border border-white hover:bg-white hover:text-black text-white px-8 py-3 text-sm font-medium transition-all backdrop-blur-sm w-full sm:w-auto justify-center uppercase tracking-widest rounded-none font-optima">
+                Subscribe to Updates
+              </button>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Recent Articles Section */}
+      <RecentArticles />
+
+      {/* Research Topics Section */}
+      <ResearchTopics />
+
+      {/* Trending & Most Read Section */}
+      <TrendingRead />
+
+      {/* Newsletter Section */}
+      <Newsletter />
+
+      {/* Support Mission Section */}
+      <SupportMission />
+
+      {/* Footer */}
+      <Footer />
+    </main>
+  );
+}
+
+function ArrowRight({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M5 12h14" />
+      <path d="m12 5 7 7-7 7" />
+    </svg>
   );
 }
