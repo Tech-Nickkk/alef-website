@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import SmoothScroll from "./components/CommonCom/SmoothScroll";
 
 const cormorant = Cormorant({
   subsets: ["latin"],
@@ -10,7 +11,7 @@ const cormorant = Cormorant({
 });
 
 const optima = localFont({
-  src: "./fonts/Optima Medium.ttf",
+  src: "./fonts/Optima.ttf",
   variable: "--font-optima",
 });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body
         className={`${optima.variable} ${cormorant.variable} antialiased`}
       >
+        <SmoothScroll />
         {children}
       </body>
     </html>
