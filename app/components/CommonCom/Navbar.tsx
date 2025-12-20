@@ -1,8 +1,36 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Navbar() {
+    const navRef = useRef(null);
+
+    useEffect(() => {
+        const showAnim = gsap.from(navRef.current, {
+            yPercent: -100,
+            paused: true,
+            duration: 0.5,
+            ease: "power2.out"
+        }).progress(1);
+
+        ScrollTrigger.create({
+            start: "top top",
+            end: 99999,
+            onUpdate: (self) => {
+                if (self.direction === -1) {
+                    showAnim.play();
+                } else {
+                    showAnim.reverse();
+                }
+            }
+        });
+    }, []);
     const navLinks = [
         { label: "Home", href: "/" },
         {
@@ -47,13 +75,12 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className="sticky top-0 z-50 w-full px-6 md:px-12 flex items-center justify-between max-w-[1920px] mx-auto border-b border-white/10 bg-black/30 backdrop-blur-md transition-all">
+        <nav ref={navRef} className="fixed top-0 z-50 w-full px-6 md:px-12 flex items-center justify-between max-w-[1920px] mx-auto border-b border-white/10 bg-black/30 backdrop-blur-md navbar-container opacity-0">
             {/* Logo */}
-            <div className="shrink-0 cursor-pointer py-4">
+            <div className="shrink-0 cursor-pointer">
                 <Link href="/">
-                    <div className="relative w-auto h-16 md:h-20">
-                        {/* Ensure you have a logo file at public/home/logo.png */}
-                        <Image src="/home/logo.png" alt="ALEF Logo" width={150} height={80} className="h-full w-auto object-contain brightness-0 invert" />
+                    <div className="relative">
+                        <Image src="/home/logo.png" alt="ALEF Logo" width={100} height={100} className="object-contain brightness-0 invert" />
                     </div>
                 </Link>
             </div>

@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Cormorant } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import SmoothScroll from "./components/CommonCom/SmoothScroll";
+import Preloader from "./components/CommonCom/Preloader";
 
 const cormorant = Cormorant({
   subsets: ["latin"],
@@ -31,7 +33,9 @@ export default function RootLayout({
         className={`${optima.variable} ${cormorant.variable} antialiased`}
       >
         <SmoothScroll />
+        <Preloader />
         {children}
+        <Analytics />
       </body>
     </html>
   );

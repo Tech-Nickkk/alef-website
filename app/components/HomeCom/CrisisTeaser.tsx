@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
@@ -10,8 +10,7 @@ import AnimatedParagraph from "../CommonCom/AnimatedParagraph";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
-export default function AboutTeaser() {
+export default function CrisisTeaser() {
     const sectionRef = useRef(null);
     const imageRef = useRef(null);
 
@@ -43,25 +42,29 @@ export default function AboutTeaser() {
         <section ref={sectionRef} className="py-24 px-6 md:px-12 lg:px-24 bg-white">
             <div className="max-w-[1400px] mx-auto">
                 <AnimatedTitle
-                    text="Who We Are"
+                    text="What Has Changed Since 2024?"
                     className="text-3xl md:text-5xl font-bold text-[#1a2b4b] font-cormorant leading-tight text-center mb-16"
                 />
                 <div className="flex flex-col lg:flex-row items-center gap-16">
 
                     <div className="flex-1 space-y-8">
+                        <AnimatedTitle
+                            text="The military defeat of Hezbollah does not mean the end of the crisis."
+                            as="h3"
+                            className="text-xl md:text-2xl font-bold text-[#E31B23] font-cormorant"
+                        />
+
+
 
                         <div className="space-y-6 text-lg text-gray-600 font-optima leading-relaxed">
                             <AnimatedParagraph
-                                text="The American Lebanon Education Foundation (ALEF) is a collective of Lebanese and American professionals, activists, and leaders united by a shared vision of a free, sovereign, and prosperous Lebanon."
-                            />
-                            <AnimatedParagraph
-                                text="As an independent, non-partisan movement, we are committed to dismantling corruption, restoring governance, and advocating for Lebanon’s rightful place within the international community. Our mission extends to promoting diaspora involvement in reconstruction and driving policy solutions for a self-reliant nation."
+                                text="Despite the collapse of 80% of Hezbollah’s arsenal, Lebanon remains held hostage by archaic laws and a political vacuum. The 1955 Boycott Law remains fully enforced, and normalizing relations with Israel is still a felony. Understanding this legal minefield is critical for the next phase of Lebanon's sovereignty."
                             />
                         </div>
 
-                        <Link href="/about-us" className="inline-block">
+                        <Link href="/research/crisis-2024" className="inline-block">
                             <button className="bg-[#E31B23] hover:bg-[#c4151c] text-white px-8 py-3.5 text-sm font-semibold transition-all shadow-lg flex items-center gap-2 font-optima uppercase tracking-wider">
-                                Know More
+                                Read Article
                                 <ArrowRight className="w-5 h-5" />
                             </button>
                         </Link>
@@ -70,8 +73,8 @@ export default function AboutTeaser() {
                     <div className="flex-1 w-full relative h-[300px] lg:h-[400px] overflow-hidden shadow-2xl">
                         <Image
                             ref={imageRef}
-                            src="/home/hero-img.png"
-                            alt="ALEF Mission"
+                            src="/home/Hezbollah_ALEF.jpeg"
+                            alt="Crisis in Lebanon"
                             fill
                             className="object-cover scale-120"
                         />

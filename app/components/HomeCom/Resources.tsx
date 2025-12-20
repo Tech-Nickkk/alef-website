@@ -2,15 +2,18 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import AnimatedTitle from "../CommonCom/AnimatedTitle";
+import AnimatedParagraph from "../CommonCom/AnimatedParagraph";
 
 export default function Resources() {
     return (
         <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
             <div className="max-w-[1400px] mx-auto">
                 {/* Main Section Title */}
-                <h2 className="text-3xl md:text-5xl lg:text-5xl text-center mb-16 leading-tight font-cormorant text-[#1a2b4b]">
-                    <span className="font-bold">Latest Resources</span>
-                </h2>
+                <AnimatedTitle
+                    text="Latest Resources"
+                    className="text-3xl md:text-5xl lg:text-5xl text-center mb-16 leading-tight font-cormorant text-[#1a2b4b] font-bold"
+                />
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
@@ -24,13 +27,15 @@ export default function Resources() {
                         </div>
 
                         <div className="relative z-10 max-w-sm">
-                            <h2 className="text-4xl md:text-5xl font-bold text-[#1a2b4b] font-cormorant mb-6 leading-tight">
-                                Events
-                            </h2>
+                            <AnimatedTitle
+                                text="Events"
+                                className="text-4xl md:text-5xl font-bold text-[#1a2b4b] font-cormorant mb-6 leading-tight"
+                            />
 
-                            <p className="text-gray-600 font-optima text-lg leading-relaxed mb-8">
-                                Join our upcoming discussions on post-crisis recovery and cultural resilience.
-                            </p>
+                            <AnimatedParagraph
+                                text="Join our upcoming discussions on post-crisis recovery and cultural resilience."
+                                className="text-gray-600 font-optima text-lg leading-relaxed mb-8"
+                            />
 
                             <div className="mb-8 bg-white p-6 shadow-sm border border-gray-100 max-w-[300px]">
                                 <div className="text-center">
@@ -69,13 +74,15 @@ export default function Resources() {
                         </div>
 
                         <div className="relative z-10 max-w-sm">
-                            <h2 className="text-4xl md:text-5xl font-bold text-[#1a2b4b] font-cormorant mb-6 leading-tight">
-                                ALEF Podcast<br />Network
-                            </h2>
+                            <AnimatedTitle
+                                text="ALEF Podcast Network"
+                                className="text-4xl md:text-5xl font-bold text-[#1a2b4b] font-cormorant mb-6 leading-tight"
+                            />
 
-                            <p className="text-gray-600 font-optima text-lg leading-relaxed mb-8">
-                                Listen to the best in public policy audio content, featuring expert analysis and voices from the ground.
-                            </p>
+                            <AnimatedParagraph
+                                text="Listen to the best in public policy audio content, featuring expert analysis and voices from the ground."
+                                className="text-gray-600 font-optima text-lg leading-relaxed mb-8"
+                            />
 
                             <Link href="/podcast" className="group flex items-center gap-2 text-[#1a2b4b] font-bold font-optima hover:gap-3 transition-all mb-12">
                                 See all podcasts <ArrowRight className="w-5 h-5" />

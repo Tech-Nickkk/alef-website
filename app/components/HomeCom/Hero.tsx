@@ -34,7 +34,7 @@ export default function Hero() {
     return (
         <section ref={heroRef} className="relative min-h-screen flex flex-col overflow-hidden">
             {/* Background Image */}
-            <div ref={imageRef} className="absolute inset-0 z-0 scale-110">
+            <div ref={imageRef} className="absolute inset-0 z-0 scale-110 hero-image">
                 <Image
                     src="/home/hero-img.png"
                     alt="Lebanon Coastline"
@@ -50,19 +50,19 @@ export default function Hero() {
             <Navbar />
 
             {/* Hero Content */}
-            <div className="relative z-10 flex-1 flex flex-col justify-center px-6 md:px-12 lg:px-24 pb-20 w-full max-w-[1920px] mx-auto">
-                <div className="max-w-4xl space-y-8 animate-fade-in-up">
-                    <h1 className="text-3xl md:text-5xl lg:text-6xl leading-[0.9] font-cormorant uppercase">
+            <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-6 md:px-12 lg:px-24 pb-20 w-full max-w-[1920px] mx-auto text-center">
+                <div className="max-w-4xl space-y-8 hero-content opacity-0">
+                    <h1 className="text-3xl md:text-5xl lg:text-7xl font-cormorant">
                         Exposing Hezbollah’s<br />
                         <span className="text-white">Grip Latest Analysis</span>
                     </h1>
 
-                    <p className="text-lg md:text-2xl text-gray-200 max-w-2xl leading-relaxed border-l-2 border-[#E31B23] pl-6 ml-1 font-optima">
+                    <p className="text-lg md:text-2xl text-gray-200 max-w-2xl leading-relaxed font-optima">
                         Educating to Eradicate Terrorism in Lebanon <br />
                         <span className="text-gray-200">Quality. Independence. Impact.</span>
                     </p>
 
-                    <div className="flex flex-col sm:flex-row items-center gap-5 pt-4">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-4">
                         <button className="group bg-[#E31B23] hover:bg-[#c4151c] text-white px-8 py-3 text-sm font-semibold transition-all shadow-lg shadow-red-900/30 flex items-center gap-3 w-full sm:w-auto justify-center uppercase tracking-widest rounded-none font-optima">
                             Explore Research
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

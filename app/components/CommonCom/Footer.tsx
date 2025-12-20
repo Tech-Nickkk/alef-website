@@ -3,12 +3,12 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#F2F2F2] pt-24 pb-16 px-6 md:px-12 lg:px-24">
+        <footer className="bg-[#F2F2F2] py-12 px-6 md:px-12 lg:px-24 border-t border-gray-200">
             <div className="max-w-[1600px] mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
                     {/* Column 1: Brand & Info */}
-                    <div className="lg:col-span-1 space-y-6">
-                        <Link href="/" className="block relative w-48 h-16">
+                    <div className="lg:col-span-1 space-y-4">
+                        <Link href="/" className="block relative w-32 h-12">
                             <Image
                                 src="/home/logo.png"
                                 alt="ALEF Logo"
@@ -16,78 +16,78 @@ export default function Footer() {
                                 className="object-contain object-left"
                             />
                         </Link>
-                        <p className="text-gray-500 text-sm leading-relaxed font-optima max-w-sm">
-                            The American Lebanese Education Foundation is dedicated to educating communities and combating terrorism through research, awareness, and policy advocacy.
+                        <p className="text-gray-500 text-xs leading-relaxed font-optima max-w-sm">
+                            Educating communities and combating terrorism through research, awareness, and policy advocacy.
                         </p>
-                        
+
                         {/* Added Contact Details per Plan */}
-                        <div className="text-sm font-optima text-gray-600 space-y-2 pt-2">
-                             <p>445 Park Avenue, 9th Floor<br/>New York, NY 10022</p>
-                             <p><a href="mailto:info@alef.org" className="hover:text-[#E31B23] transition-colors">info@alef.org</a></p>
+                        <div className="text-xs font-optima text-gray-600 space-y-1 pt-1">
+                            <p>445 Park Avenue, 9th Floor<br />New York, NY 10022</p>
+                            <p><a href="mailto:info@alef.org" className="hover:text-[#E31B23] transition-colors">info@alef.org</a></p>
                         </div>
 
-                        <div className="flex items-center gap-4 pt-2">
+                        <div className="flex items-center gap-3 pt-1">
                             <SocialIconWrapper>
-                                <InstagramIcon className="w-4 h-4 text-gray-700" />
+                                <InstagramIcon className="w-3 h-3 text-gray-700" />
                             </SocialIconWrapper>
                             <SocialIconWrapper>
-                                <FacebookIcon className="w-4 h-4 text-gray-700" />
+                                <FacebookIcon className="w-3 h-3 text-gray-700" />
                             </SocialIconWrapper>
                             <SocialIconWrapper>
-                                <TwitterIcon className="w-4 h-4 text-gray-700" />
+                                <TwitterIcon className="w-3 h-3 text-gray-700" />
                             </SocialIconWrapper>
                         </div>
                     </div>
 
                     {/* Column 2: Quick Links */}
-                    <div className="lg:col-start-2 pt-4">
-                        <h3 className="text-[#1a2b4b] font-bold mb-6 font-cormorant text-xl">Quick Links</h3>
-                        <ul className="space-y-4">
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-sm">Home</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-sm">About Us</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-sm">Research</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-sm">Experts</Link></li>
+                    <div className="lg:col-start-2 pt-2">
+                        <h3 className="text-[#1a2b4b] font-bold mb-4 font-cormorant text-lg">Quick Links</h3>
+                        <ul className="space-y-2">
+                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Home</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">About Us</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Research</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Experts</Link></li>
                         </ul>
                     </div>
 
                     {/* Column 3: Events */}
-                    <div className="lg:col-start-3 pt-4">
-                        <h3 className="text-[#1a2b4b] font-bold mb-6 font-cormorant text-xl">Events</h3>
-                        <ul className="space-y-4">
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-sm">Upcoming Events</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-sm">Webinars</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-sm">Conferences</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-sm">Past Events</Link></li>
+                    <div className="lg:col-start-3 pt-2">
+                        <h3 className="text-[#1a2b4b] font-bold mb-4 font-cormorant text-lg">Events</h3>
+                        <ul className="space-y-2">
+                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Upcoming Events</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Webinars</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Conferences</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Past Events</Link></li>
                         </ul>
                     </div>
 
                     {/* Column 4: Resources */}
-                    <div className="lg:col-start-4 pt-4">
-                        <h3 className="text-[#1a2b4b] font-bold mb-6 font-cormorant text-xl">Resources</h3>
-                        <ul className="space-y-4">
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-sm">Reports</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-sm">Podcasts</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-sm">Newsletters</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-sm">Media Kit</Link></li>
+                    <div className="lg:col-start-4 pt-2">
+                        <h3 className="text-[#1a2b4b] font-bold mb-4 font-cormorant text-lg">Resources</h3>
+                        <ul className="space-y-2">
+                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Reports</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Podcasts</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Newsletters</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Media Kit</Link></li>
                         </ul>
                     </div>
 
                     {/* Column 5: Legal */}
-                    <div className="lg:col-start-5 pt-4">
-                        <h3 className="text-[#1a2b4b] font-bold mb-6 font-cormorant text-xl">Legal</h3>
-                        <ul className="space-y-4">
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-sm">Privacy Policy</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-sm">Terms of Service</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-sm">Cookie Policy</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-sm">Contact Us</Link></li>
+                    <div className="lg:col-start-5 pt-2">
+                        <h3 className="text-[#1a2b4b] font-bold mb-4 font-cormorant text-lg">Legal</h3>
+                        <ul className="space-y-2">
+                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Privacy Policy</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Terms of Service</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Cookie Policy</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Contact Us</Link></li>
                         </ul>
                     </div>
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-gray-300 pt-8 text-center">
-                    <p className="text-gray-400 text-xs font-optima">
-                        © 2025 A.L.E.F. (American Lebanese Education Foundation). All rights reserved.
+                <div className="border-t border-gray-300 pt-6 text-center">
+                    <p className="text-gray-400 text-[10px] font-optima uppercase tracking-wider">
+                        © 2025 A.L.E.F. All rights reserved.
                     </p>
                 </div>
             </div>

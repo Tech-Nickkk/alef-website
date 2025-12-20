@@ -1,4 +1,12 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Link from "next/link";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AnimatedTitle from "../CommonCom/AnimatedTitle";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const topics = [
     {
@@ -54,44 +62,86 @@ const topics = [
 ];
 
 export default function ResearchTopics() {
+    const sectionRef = useRef<HTMLElement>(null);
+    const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            cardsRef.current.forEach((card, index) => {
+                const speed = 100 + (index * 50); // Increased movement range
+                const rotation = index % 2 === 0 ? 6 : -6; // Alternate small rotation
+
+                gsap.fromTo(card,
+                    {
+                        y: 200,
+                        rotation: 0
+                    },
+                    {
+                        y: -speed,
+                        rotation: rotation,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: sectionRef.current,
+                            start: "top bottom",
+                            end: "bottom top",
+                            scrub: 1,
+                        },
+                    }
+                );
+            });
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
+
+    const addToRefs = (el: HTMLDivElement | null) => {
+        if (el && !cardsRef.current.includes(el)) {
+            cardsRef.current.push(el);
+        }
+    };
+
     return (
-        <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#f2f2f2]">
+        <section ref={sectionRef} className="py-40 px-6 md:px-12 lg:px-24 bg-[#f2f2f2] overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 {/* Header */}
-                <h2 className="text-3xl md:text-5xl text-center mb-16 leading-tight font-cormorant text-[#1a2b4b]">
-                    <span className="font-bold">Research & Topics</span>
-                </h2>
+                {/* Header */}
+                <AnimatedTitle
+                    text="Research & Topics"
+                    className="text-3xl md:text-5xl text-center mb-16 leading-tight font-cormorant text-[#1a2b4b] font-bold"
+                />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {topics.map((topic, idx) => (
-                        <Link href={`/research/${topic.title.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`} key={idx}>
-                            <div className="group bg-white p-8 rounded-4xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#E31B23]/10 h-full flex flex-col min-h-[320px]">
-                                {/* Icon */}
-                                <div className="mb-6 transform group-hover:-translate-y-1 transition-transform duration-300">
-                                    {topic.icon}
-                                </div>
+                        <div key={idx} ref={addToRefs} className={`h-full ${idx % 2 === 0 ? 'mt-0' : 'mt-12'}`}>
+                            <Link href={`/research/${topic.title.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}>
+                                <div className="group bg-white p-8 rounded-4xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-[#E31B23]/10 h-full flex flex-col min-h-[320px]">
+                                    {/* Icon */}
+                                    <div className="mb-6 transform group-hover:-translate-y-1 transition-transform duration-300">
+                                        {topic.icon}
+                                    </div>
 
-                                {/* Content */}
-                                <div className="space-y-3 mb-8">
-                                    <h3 className="text-xl font-bold text-[#1a2b4b] font-cormorant leading-tight">
-                                        {topic.title}
-                                    </h3>
-                                    <p className="text-sm text-gray-500 font-optima leading-relaxed">
-                                        {topic.description}
-                                    </p>
-                                </div>
+                                    {/* Content */}
+                                    <div className="space-y-3 mb-8">
+                                        <h3 className="text-xl font-bold text-[#1a2b4b] font-cormorant leading-tight">
+                                            {topic.title}
+                                        </h3>
+                                        <p className="text-sm text-gray-500 font-optima leading-relaxed">
+                                            {topic.description}
+                                        </p>
+                                    </div>
 
-                                {/* Footer */}
-                                <div className="mt-auto flex items-center justify-between pt-4">
-                                    <span className="text-sm font-medium text-[#1a2b4b] font-optima">
-                                        {topic.count}
-                                    </span>
-                                    <span className="text-[#E31B23] transform group-hover:translate-x-2 transition-transform duration-300">
-                                        <ArrowRight className="w-6 h-6" />
-                                    </span>
+                                    {/* Footer */}
+                                    <div className="mt-auto flex items-center justify-between pt-4">
+                                        <span className="text-sm font-medium text-[#1a2b4b] font-optima">
+                                            {topic.count}
+                                        </span>
+                                        <span className="text-[#E31B23] transform group-hover:translate-x-2 transition-transform duration-300">
+                                            <ArrowRight className="w-6 h-6" />
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                        </Link>
+                            </Link>
+                        </div>
                     ))}
                 </div>
             </div>
