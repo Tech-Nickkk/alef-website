@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --font-optima: var(--font-optima);
-  --font-cormorant: var(--font-cormorant);
+  --font-oswald: var(--font-oswald);
+  --font-bebas: var(--font-bebas);
+
+  --color-theme-black: #141414;
+  --color-theme-white: #f2eeda;
+  --color-theme-accent: #E31B23;
+}
+
+body {
+  background-color: #141414;
+  color: #fff;  
 }
 
 html.lenis,
@@ -24,4 +33,54 @@ html.lenis body {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+#card-1 .card-wrapper {
+  animation-delay: 0s;
+}
+
+#card-2 .card-wrapper {
+  animation-delay: 0.2s;
+}
+
+#card-3 .card-wrapper {
+  animation-delay: 0.4s;
+}
+
+#card-4 .card-wrapper {
+  animation-delay: 0.6s;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+/* Utilities for 3D effects if needed in standard Tailwind */
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Explicit hover trigger for flip */
+.card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
 }

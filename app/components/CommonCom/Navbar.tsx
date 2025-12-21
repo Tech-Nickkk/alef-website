@@ -80,7 +80,7 @@ export default function Navbar() {
             <div className="shrink-0 cursor-pointer">
                 <Link href="/">
                     <div className="relative">
-                        <Image src="/home/logo.png" alt="ALEF Logo" width={100} height={100} className="object-contain brightness-0 invert" />
+                        <Image src="/home/logo.png" alt="ALEF Logo" width={100} height={100} className="object-contain" />
                     </div>
                 </Link>
             </div>
@@ -104,7 +104,7 @@ export default function Navbar() {
                                                 <li key={subItem.label}>
                                                     <Link
                                                         href={subItem.href}
-                                                        className="block px-4 py-3 text-sm text-white/80 hover:text-white hover:bg-white/10 transition-colors capitalize font-optima"
+                                                        className="block px-4 py-3 text-sm text-white/80 hover:text-white hover:bg-white/10 transition-colors capitalize font-oswald"
                                                     >
                                                         {subItem.label}
                                                     </Link>
@@ -132,7 +132,7 @@ export default function Navbar() {
                     <SearchIcon className="w-5 h-5" />
                 </button>
 
-                <button className="bg-[#E31B23] hover:bg-[#c4151c] text-white px-6 py-2.5 text-xs uppercase font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg shadow-red-900/20 tracking-wider rounded-none font-optima">
+                <button className="bg-[#E31B23] hover:bg-[#c4151c] text-white px-6 py-2.5 text-xs uppercase font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg shadow-red-900/20 tracking-wider rounded-none font-oswald">
                     Donate
                 </button>
             </div>

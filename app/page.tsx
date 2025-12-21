@@ -70,7 +70,7 @@ export default function Home() {
       {/* Main Content with Dynamic Margin */}
       <div
         ref={contentRef}
-        className="relative z-10 bg-white shadow-2xl"
+        className="relative z-10 bg-theme-black shadow-2xl"
         style={{ marginBottom: `${footerHeight}px` }}
       >
         <Hero />

@@ -20,21 +20,38 @@ export default function AnimatedTitle({ text, className = "", as: Component = "h
         const ctx = gsap.context(() => {
             const chars = charsRef.current.filter((char) => char !== null);
 
-            gsap.fromTo(chars,
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 85%", // Trigger slightly earlier
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            // 1. Slow Fade In
+            tl.fromTo(chars,
                 { opacity: 0 },
                 {
                     opacity: 1,
-                    stagger: 0.01, // Adjust stagger timing as needed
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: containerRef.current,
-                        start: "top 90%",
-                        end: "top 30%",
-                        // markers: true,
-                        scrub: true,
-                    }
+                    stagger: 0.02,
+                    duration: 1.5,
+                    ease: "power2.out"
                 }
             );
+
+            // 2. Flicker Effect (Random dips in opacity)
+            tl.to(chars, {
+                opacity: 0.2,
+                duration: 0.03,
+                stagger: {
+                    amount: 0.2, // Faster total distribution
+                    from: "random",
+                    repeat: 3, // More flickers
+                    yoyo: true
+                },
+                ease: "power3.inOut"
+            }, "-=1.2"); // Starts closer to the end of the fade
+
         }, containerRef);
 
         return () => ctx.revert();

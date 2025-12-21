@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#F2F2F2] py-12 px-6 md:px-12 lg:px-24 border-t border-gray-200">
+        <footer className="bg-theme-black py-12 px-6 md:px-12 lg:px-24 border-t border-theme-white/10">
             <div className="max-w-[1600px] mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
                     {/* Column 1: Brand & Info */}
@@ -16,77 +16,77 @@ export default function Footer() {
                                 className="object-contain object-left"
                             />
                         </Link>
-                        <p className="text-gray-500 text-xs leading-relaxed font-optima max-w-sm">
+                        <p className="text-theme-white/60 text-xs leading-relaxed font-oswald max-w-sm">
                             Educating communities and combating terrorism through research, awareness, and policy advocacy.
                         </p>
 
                         {/* Added Contact Details per Plan */}
-                        <div className="text-xs font-optima text-gray-600 space-y-1 pt-1">
+                        <div className="text-xs font-oswald text-theme-white/60 space-y-1 pt-1">
                             <p>445 Park Avenue, 9th Floor<br />New York, NY 10022</p>
-                            <p><a href="mailto:info@alef.org" className="hover:text-[#E31B23] transition-colors">info@alef.org</a></p>
+                            <p><a href="mailto:info@alef.org" className="hover:text-theme-accent transition-colors">info@alef.org</a></p>
                         </div>
 
                         <div className="flex items-center gap-3 pt-1">
                             <SocialIconWrapper>
-                                <InstagramIcon className="w-3 h-3 text-gray-700" />
+                                <InstagramIcon className="w-3 h-3 text-theme-white/60" />
                             </SocialIconWrapper>
                             <SocialIconWrapper>
-                                <FacebookIcon className="w-3 h-3 text-gray-700" />
+                                <FacebookIcon className="w-3 h-3 text-theme-white/60" />
                             </SocialIconWrapper>
                             <SocialIconWrapper>
-                                <TwitterIcon className="w-3 h-3 text-gray-700" />
+                                <TwitterIcon className="w-3 h-3 text-theme-white/60" />
                             </SocialIconWrapper>
                         </div>
                     </div>
 
                     {/* Column 2: Quick Links */}
                     <div className="lg:col-start-2 pt-2">
-                        <h3 className="text-[#1a2b4b] font-bold mb-4 font-cormorant text-lg">Quick Links</h3>
+                        <h3 className="text-theme-white font-bold mb-4 font-cormorant text-lg">Quick Links</h3>
                         <ul className="space-y-2">
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Home</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">About Us</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Research</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Experts</Link></li>
+                            <li><Link href="#" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-xs">Home</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">About Us</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Research</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Experts</Link></li>
                         </ul>
                     </div>
 
                     {/* Column 3: Events */}
                     <div className="lg:col-start-3 pt-2">
-                        <h3 className="text-[#1a2b4b] font-bold mb-4 font-cormorant text-lg">Events</h3>
+                        <h3 className="text-theme-white font-bold mb-4 font-cormorant text-lg">Events</h3>
                         <ul className="space-y-2">
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Upcoming Events</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Webinars</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Conferences</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Past Events</Link></li>
+                            <li><Link href="#" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-xs">Upcoming Events</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Webinars</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Conferences</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Past Events</Link></li>
                         </ul>
                     </div>
 
                     {/* Column 4: Resources */}
                     <div className="lg:col-start-4 pt-2">
-                        <h3 className="text-[#1a2b4b] font-bold mb-4 font-cormorant text-lg">Resources</h3>
+                        <h3 className="text-theme-white font-bold mb-4 font-cormorant text-lg">Resources</h3>
                         <ul className="space-y-2">
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Reports</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Podcasts</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Newsletters</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Media Kit</Link></li>
+                            <li><Link href="#" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-xs">Reports</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Podcasts</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Newsletters</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Media Kit</Link></li>
                         </ul>
                     </div>
 
                     {/* Column 5: Legal */}
                     <div className="lg:col-start-5 pt-2">
-                        <h3 className="text-[#1a2b4b] font-bold mb-4 font-cormorant text-lg">Legal</h3>
+                        <h3 className="text-theme-white font-bold mb-4 font-cormorant text-lg">Legal</h3>
                         <ul className="space-y-2">
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Privacy Policy</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Terms of Service</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Cookie Policy</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-[#E31B23] transition-colors font-optima text-xs">Contact Us</Link></li>
+                            <li><Link href="#" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-xs">Privacy Policy</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Terms of Service</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Cookie Policy</Link></li>
+                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Contact Us</Link></li>
                         </ul>
                     </div>
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-gray-300 pt-6 text-center">
-                    <p className="text-gray-400 text-[10px] font-optima uppercase tracking-wider">
+                <div className="border-t border-theme-white/10 pt-6 text-center">
+                    <p className="text-theme-white/60 text-[10px] font-oswald uppercase tracking-wider">
                         © 2025 A.L.E.F. All rights reserved.
                     </p>
                 </div>
@@ -97,7 +97,7 @@ export default function Footer() {
 
 function SocialIconWrapper({ children }: { children: React.ReactNode }) {
     return (
-        <a href="#" className="w-10 h-10 border border-gray-300 rounded-full flex items-center justify-center hover:bg-[#1a2b4b] hover:border-[#1a2b4b] hover:text-white transition-all">
+        <a href="#" className="w-10 h-10 border border-theme-white/10 rounded-full flex items-center justify-center hover:bg-theme-white hover:border-theme-white hover:text-theme-black transition-all">
             {children}
         </a>
     );

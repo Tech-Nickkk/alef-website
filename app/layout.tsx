@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant } from "next/font/google";
+import { Cormorant, Bebas_Neue, Oswald } from "next/font/google"; // turbo
 import localFont from "next/font/local";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
@@ -12,9 +12,16 @@ const cormorant = Cormorant({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const optima = localFont({
-  src: "./fonts/Optima.ttf",
-  variable: "--font-optima",
+const bebas = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-bebas",
+});
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  variable: "--font-oswald",
+  weight: ["200", "300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -30,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${optima.variable} ${cormorant.variable} antialiased`}
+        className={`${oswald.variable} ${cormorant.variable} ${bebas.variable} antialiased`}
       >
         <SmoothScroll />
         <Preloader />

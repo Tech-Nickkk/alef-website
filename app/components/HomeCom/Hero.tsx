@@ -52,9 +52,9 @@ export default function Hero() {
             {/* Hero Content */}
             <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-6 md:px-12 lg:px-24 pb-20 w-full max-w-[1920px] mx-auto text-center">
                 <div className="max-w-4xl space-y-8 hero-content opacity-0">
-                    <h1 className="text-3xl md:text-5xl lg:text-7xl font-cormorant">
+                    <h1 className="text-3xl md:text-7xl font-bold text-[#f2eeda] uppercase tracking-wide font-bebas">
                         Exposing Hezbollah’s<br />
-                        <span className="text-white">Grip Latest Analysis</span>
+                        <span className="text-[#f2eeda]">Grip Latest Analysis</span>
                     </h1>
 
                     <p className="text-lg md:text-2xl text-gray-200 max-w-2xl leading-relaxed font-optima">
@@ -63,12 +63,12 @@ export default function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-4">
-                        <button className="group bg-[#E31B23] hover:bg-[#c4151c] text-white px-8 py-3 text-sm font-semibold transition-all shadow-lg shadow-red-900/30 flex items-center gap-3 w-full sm:w-auto justify-center uppercase tracking-widest rounded-none font-optima">
+                        <button className="group bg-[#E31B23] hover:bg-[#c4151c] text-white px-8 py-3 text-sm font-semibold transition-all shadow-lg shadow-red-900/30 flex items-center gap-3 w-full sm:w-auto justify-center uppercase tracking-widest rounded-none font-oswald">
                             Explore Research
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </button>
 
-                        <button className="group border border-white hover:bg-white hover:text-black text-white px-8 py-3 text-sm font-medium transition-all backdrop-blur-sm w-full sm:w-auto justify-center uppercase tracking-widest rounded-none font-optima">
+                        <button className="group border border-white hover:bg-white hover:text-black text-white px-8 py-3 text-sm font-medium transition-all backdrop-blur-sm w-full sm:w-auto justify-center uppercase tracking-widest rounded-none font-oswald">
                             Subscribe to Updates
                         </button>
                     </div>
