@@ -11,7 +11,7 @@ export default function Preloader() {
     useEffect(() => {
         const tl = gsap.timeline();
 
-        const heroImage = document.querySelector(".hero-image");
+        const heroImage = document.querySelector(".hero-video");
 
         // Initial state for Hero Image (targeting class .hero-image)
         if (heroImage) {

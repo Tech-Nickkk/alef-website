@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
+import GlowingGrid from "../CommonCom/GlowingGrid";
 
 
 export default function Resources() {
@@ -24,15 +25,14 @@ export default function Resources() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
                     {/* UPCOMING EVENTS */}
-                    <div className="bg-[#1a1a1a] border border-theme-white/10 p-12 flex flex-col justify-center relative overflow-hidden group rounded-2xl hover:border-theme-white/30 transition-colors duration-500 min-h-[500px]">
+                    <div className="bg-card-bg border border-theme-white/10 p-12 flex flex-col justify-center relative overflow-hidden group rounded-2xl hover:border-theme-white/30 transition-colors duration-500 min-h-[500px]">
+                        {/* Interactive Glowing Grid Background */}
+                        <GlowingGrid />
 
-                        <div className="relative z-10 max-w-sm h-full flex flex-col justify-between">
+                        <div className="relative z-30 max-w-sm h-full flex flex-col justify-between">
                             <div>
                                 <span className="font-oswald text-xs tracking-[0.2em] text-theme-accent mb-4 block">CALENDAR_SYNC</span>
-                                <AnimatedTitle
-                                    text="UPCOMING EVENTS"
-                                    className="text-4xl md:text-5xl font-bold text-theme-white font-bebas mb-6 leading-none"
-                                />
+                                <h2 className="text-4xl md:text-5xl font-bold text-theme-white font-bebas mb-6 leading-none">UPCOMING EVENTS</h2>
 
                                 <p className="text-theme-white/60 font-oswald text-lg leading-relaxed mb-8">
                                     Join our upcoming discussions on post-crisis recovery and cultural resilience.
@@ -52,8 +52,11 @@ export default function Resources() {
                                 </div>
                             </div>
 
-                            <Link href="/events" className="group/btn flex items-center gap-4">
-                                <span className="text-theme-white font-bebas text-xl tracking-wider group-hover/btn:text-theme-accent transition-colors">FULL CALENDAR</span>
+                            <Link href="/events" className="group/btn flex items-center gap-4 relative">
+                                <span className="text-theme-white font-bebas text-xl tracking-wider group-hover/btn:text-theme-accent transition-colors relative">
+                                    FULL CALENDAR
+                                    <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-theme-accent transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-500 origin-right group-hover/btn:origin-left ease-out"></span>
+                                </span>
                                 <ArrowRight className="w-5 h-5 text-theme-white group-hover/btn:text-theme-accent transition-colors" />
                             </Link>
                         </div>
@@ -61,20 +64,15 @@ export default function Resources() {
 
 
                     {/* PODCAST NETWORK */}
-                    <div className="bg-[#1a1a1a] border border-theme-white/10 p-12 flex flex-col justify-center relative overflow-hidden group rounded-2xl hover:border-theme-white/30 transition-colors duration-500 min-h-[500px]">
+                    <div className="bg-card-bg border border-theme-white/10 p-12 flex flex-col justify-center relative overflow-hidden group rounded-2xl hover:border-theme-white/30 transition-colors duration-500 min-h-[500px]">
 
-                        {/* Decorative Grid Background */}
-                        <div className="absolute inset-0 z-0 opacity-10"
-                            style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }}
-                        ></div>
+                        {/* Interactive Glowing Grid Background */}
+                        <GlowingGrid />
 
-                        <div className="relative z-10 max-w-sm h-full flex flex-col justify-between">
+                        <div className="relative z-30 max-w-sm h-full flex flex-col justify-between">
                             <div>
                                 <span className="font-oswald text-xs tracking-[0.2em] text-theme-accent mb-4 block">AUDIO_LOGS</span>
-                                <AnimatedTitle
-                                    text="PODCAST NETWORK"
-                                    className="text-4xl md:text-5xl font-bold text-theme-white font-bebas mb-6 leading-none"
-                                />
+                                <h2 className="text-4xl md:text-5xl font-bold text-theme-white font-bebas mb-6 leading-none">PODCAST NETWORK</h2>
 
                                 <p className="text-theme-white/60 font-oswald text-lg leading-relaxed mb-8">
                                     Listen to the best in public policy audio content, featuring expert analysis and voices from the ground.
@@ -91,15 +89,14 @@ export default function Resources() {
                                 </div>
                             </div>
 
-                            <Link href="/podcast" className="group/btn flex items-center gap-4">
-                                <span className="text-theme-white font-bebas text-xl tracking-wider group-hover/btn:text-theme-accent transition-colors">LISTEN TO ALL</span>
+                            <Link href="/podcast" className="group/btn flex items-center gap-4 relative">
+                                <span className="text-theme-white font-bebas text-xl tracking-wider group-hover/btn:text-theme-accent transition-colors relative">
+                                    LISTEN TO ALL
+                                    <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-theme-accent transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-500 origin-right group-hover/btn:origin-left ease-out"></span>
+                                </span>
                                 <ArrowRight className="w-5 h-5 text-theme-white group-hover/btn:text-theme-accent transition-colors" />
                             </Link>
                         </div>
-
-                        {/* Right Side Visual -> Abstract Waves */}
-                        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 w-[300px] h-[300px] rounded-full border-[20px] border-theme-white/5 animate-pulse"></div>
-                        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 w-[200px] h-[200px] rounded-full border-[20px] border-theme-white/5 animate-pulse delay-75"></div>
                     </div>
 
                 </div>

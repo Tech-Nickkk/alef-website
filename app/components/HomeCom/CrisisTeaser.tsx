@@ -54,7 +54,7 @@ export default function CrisisTeaser() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
                     {/* Text Card */}
-                    <div className="bg-[#1a1a1a] border border-theme-white/10 rounded-2xl p-8 md:p-12 flex flex-col justify-between h-full min-h-[500px] relative group hover:border-theme-white/30 transition-colors duration-500">
+                    <div className="bg-card-bg border border-theme-white/10 rounded-2xl p-8 md:p-12 flex flex-col justify-between h-full min-h-[500px] relative group hover:border-theme-white/30 transition-colors duration-500">
 
                         {/* Technical Label */}
                         <div className="flex justify-between items-start mb-8 font-oswald text-xs tracking-widest text-theme-white/60">
@@ -82,8 +82,11 @@ export default function CrisisTeaser() {
                         </div>
 
                         <div className="mt-12 pt-8 border-t border-theme-white/10 flex justify-between items-center">
-                            <Link href="/research/crisis-2024" className="group/btn flex items-center gap-4 w-full justify-between">
-                                <span className="text-theme-white font-bebas text-xl tracking-wider group-hover/btn:text-theme-accent transition-colors">FULL INTELLIGENCE REPORT</span>
+                            <Link href="/research/crisis-2024" className="group/btn flex items-center gap-4 w-full justify-between relative">
+                                <span className="text-theme-white font-bebas text-xl tracking-wider group-hover/btn:text-theme-accent transition-colors relative">
+                                    FULL INTELLIGENCE REPORT
+                                    <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-theme-accent transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-500 origin-right group-hover/btn:origin-left ease-out"></span>
+                                </span>
                                 <div className="w-12 h-12 border border-theme-white/20 rounded-full flex items-center justify-center group-hover/btn:bg-theme-accent group-hover/btn:border-theme-accent transition-all duration-300 bg-theme-black">
                                     <ArrowRight className="w-5 h-5 text-theme-white" />
                                 </div>
@@ -92,7 +95,7 @@ export default function CrisisTeaser() {
                     </div>
 
                     {/* Image Card */}
-                    <div className="bg-[#1a1a1a] border border-theme-white/10 rounded-2xl p-2 h-full min-h-[500px] relative overflow-hidden group">
+                    <div className="bg-card-bg border border-theme-white/10 rounded-2xl p-2 h-full min-h-[500px] relative overflow-hidden group">
                         <div className="relative w-full h-full rounded-xl overflow-hidden">
                             <Image
                                 ref={imageRef}
@@ -102,7 +105,7 @@ export default function CrisisTeaser() {
                                 className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0"
                             />
                             {/* Overlay Gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-theme-black/80 via-transparent to-transparent opacity-60"></div>
+                            <div className="absolute inset-0 bg-linear-to-t from-theme-black/80 via-transparent to-transparent opacity-60"></div>
                         </div>
 
                         {/* Overlay Elements */}

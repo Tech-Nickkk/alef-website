@@ -136,7 +136,7 @@ export default function ResearchTopics() {
                 {topics.map((topic, idx) => (
                     <div key={idx} className="relative group shrink-0 w-[85vw] md:w-[600px] h-[50vh] md:h-[500px]">
                         <Link href={`/research/${topic.title.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`} className="block h-full">
-                            <div className="bg-[#1a1a1a] border border-theme-white/10 hover:border-theme-white/30 transition-colors h-full rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden group-hover:bg-[#222]">
+                            <div className="bg-card-bg border border-theme-white/10 hover:border-theme-white/30 transition-all duration-300 h-full rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden hover:bg-[var(--color-card-hover)]">
 
                                 {/* Top Row */}
                                 <div className="flex justify-between items-start font-oswald text-xs tracking-widest text-theme-white/60">

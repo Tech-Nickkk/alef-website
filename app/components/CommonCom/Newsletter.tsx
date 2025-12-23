@@ -1,6 +1,6 @@
 "use client";
 
-import AnimatedTitle from "../CommonCom/AnimatedTitle";
+import AnimatedTitle from "./AnimatedTitle";
 
 
 export default function Newsletter() {
@@ -8,12 +8,12 @@ export default function Newsletter() {
         <section className="relative py-24 px-6 md:px-12 lg:px-24 bg-theme-black overflow-hidden border-t border-theme-white/10">
             {/* Background Tech Elements */}
             <div className="absolute inset-0 pointer-events-none opacity-20">
-                <div className="absolute top-0 left-1/4 w-[1px] h-full bg-gradient-to-b from-transparent via-theme-white/20 to-transparent" />
-                <div className="absolute top-0 right-1/4 w-[1px] h-full bg-gradient-to-b from-transparent via-theme-white/20 to-transparent" />
-                <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-theme-white/20 to-transparent" />
+                <div className="absolute top-0 left-1/4 w-px h-full bg-linear-to-b from-transparent via-theme-white/20 to-transparent" />
+                <div className="absolute top-0 right-1/4 w-px h-full bg-linear-to-b from-transparent via-theme-white/20 to-transparent" />
+                <div className="absolute top-1/2 left-0 w-full h-px bg-linear-to-r from-transparent via-theme-white/20 to-transparent" />
             </div>
 
-            <div className="relative z-10 max-w-4xl mx-auto w-full text-center space-y-12 bg-[#1a1a1a] border border-theme-white/10 p-12 md:p-20 rounded-3xl overflow-hidden">
+            <div className="relative z-10 max-w-4xl mx-auto w-full text-center space-y-12 bg-[var(--color-card-bg)] border border-theme-white/10 p-12 md:p-20 rounded-3xl overflow-hidden">
 
                 {/* Decorative pulsing dot */}
                 <div className="absolute top-8 right-8 flex items-center gap-2">
@@ -45,7 +45,7 @@ export default function Newsletter() {
                                 placeholder="ENTER SECURE EMAIL"
                                 className="w-full bg-theme-black border border-theme-white/20 text-theme-white px-6 py-4 outline-none font-oswald text-lg focus:border-theme-accent/50 transition-colors uppercase placeholder:text-theme-white/20"
                             />
-                            <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-theme-accent group-hover:w-full transition-all duration-500"></div>
+                            <div className="absolute bottom-0 left-0 w-0 h-px bg-theme-accent group-hover:w-full transition-all duration-500"></div>
                         </div>
                         <button className="bg-theme-accent hover:bg-[#b0151b] text-theme-white px-10 py-4 font-bold tracking-wider transition-all font-oswald uppercase hover:shadow-[0_0_20px_rgba(227,27,35,0.4)]">
                             Subscribe

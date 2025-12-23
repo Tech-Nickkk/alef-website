@@ -4,14 +4,54 @@
   --font-oswald: var(--font-oswald);
   --font-bebas: var(--font-bebas);
 
+  /* Default (Dark) Theme Variables - Mapping to Tailwind config if needed, otherwise rely on CSS vars */
   --color-theme-black: #141414;
   --color-theme-white: #f2eeda;
   --color-theme-accent: #E31B23;
+  --color-card-bg: #1a1a1a;
+}
+
+:root {
+  /* DARK THEME (Default) */
+  --background: #141414;
+  --foreground: #f2eeda;
+  
+  /* Override variables used by Tailwind Utilities */
+  --color-card-bg: #1a1a1a;
+  --color-card-hover: #262626; /* Slightly lighter dark */
+  --color-theme-accent: #E31B23;
+  --color-theme-black: #141414;
+  --color-theme-white: #f2eeda;
+}
+
+.light {
+  /* LIGHT THEME */
+  --background: #f5f5f7;
+  --foreground: #141414;
+  
+  --color-card-bg: #e5e5e5;
+  --color-card-hover: #f2f2f2; /* Subtle lighter white for hover */
+  --color-theme-accent: #E31B23;
+  --color-theme-black: #f5f5f7; /* Background becomes light */
+  --color-theme-white: #141414; /* Text becomes dark */
+}
+
+.navy {
+  /* NAVY THEME */
+  --background: #021024;
+  --foreground: #ffffff;
+  
+  /* Lighter blue for cards to stand out against the dark navy background */
+  --color-card-bg: #0f2942; 
+  --color-card-hover: #1e4b7a; /* Brighter blue for distinct hover */
+  --color-theme-accent: #BF0A30;
+  --color-theme-black: #021024;
+  --color-theme-white: #ffffff;
 }
 
 body {
-  background-color: #141414;
-  color: #fff;  
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 html.lenis,

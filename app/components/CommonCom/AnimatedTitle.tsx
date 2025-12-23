@@ -23,8 +23,9 @@ export default function AnimatedTitle({ text, className = "", as: Component = "h
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: "top 85%", // Trigger slightly earlier
-                    toggleActions: "play none none reverse"
+                    start: "top 85%",
+                    toggleActions: "play none none reverse",
+                    refreshPriority: -2
                 }
             });
 

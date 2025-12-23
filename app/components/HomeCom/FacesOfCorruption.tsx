@@ -113,9 +113,9 @@ export default function FacesOfCorruption() {
 
                 {/* Inspect Deck Button */}
                 <div className="flex justify-center mt-12 relative z-10">
-                    <button className="group relative bg-transparent border border-theme-white/20 text-theme-white px-12 py-4 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-theme-white/50">
+                    <button className="group relative bg-transparent border border-theme-white/20 text-theme-white px-12 py-4 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-theme-white/50 isolate cursor-pointer">
                         <span className="relative z-10 group-hover:text-theme-black transition-colors duration-300">Inspect Full Archive</span>
-                        <div className="absolute inset-0 bg-theme-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div className="absolute inset-0 bg-theme-white transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10"></div>
                     </button>
                 </div>
             </div>

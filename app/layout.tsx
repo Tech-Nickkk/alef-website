@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Cormorant, Bebas_Neue, Oswald } from "next/font/google"; // turbo
-import localFont from "next/font/local";
+import { Cormorant, Bebas_Neue, Oswald } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import SmoothScroll from "./components/CommonCom/SmoothScroll";
 import Preloader from "./components/CommonCom/Preloader";
+
+import { ThemeProvider } from "./components/CommonCom/ThemeProvider";
 
 const cormorant = Cormorant({
   subsets: ["latin"],
@@ -39,10 +40,12 @@ export default function RootLayout({
       <body
         className={`${oswald.variable} ${cormorant.variable} ${bebas.variable} antialiased`}
       >
-        <SmoothScroll />
-        <Preloader />
-        {children}
-        <Analytics />
+        <ThemeProvider>
+          <SmoothScroll />
+          <Preloader />
+          {children}
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -9,7 +9,7 @@ import ResearchTopics from "./components/HomeCom/ResearchTopics";
 import CrisisTeaser from "./components/HomeCom/CrisisTeaser";
 import FacesOfCorruption from "./components/HomeCom/FacesOfCorruption";
 import Resources from "./components/HomeCom/Resources";
-import Newsletter from "./components/HomeCom/Newsletter";
+import Newsletter from "./components/CommonCom/Newsletter";
 import Footer from "./components/CommonCom/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
