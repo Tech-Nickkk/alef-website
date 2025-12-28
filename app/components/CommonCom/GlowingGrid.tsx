@@ -1,31 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export default function GlowingGrid() {
     const containerRef = useRef<HTMLDivElement>(null);
-    const [columns, setColumns] = useState(0);
-    const [rows, setRows] = useState(0);
-
-    // Initialize grid size logic
-    useEffect(() => {
-        const updateGridSize = () => {
-            if (!containerRef.current) return;
-            const width = containerRef.current.offsetWidth;
-            const height = containerRef.current.offsetHeight;
-            const size = 40; // Size of each grid square in px
-            setColumns(Math.ceil(width / size));
-            setRows(Math.ceil(height / size));
-        };
-
-        updateGridSize();
-        window.addEventListener("resize", updateGridSize);
-        return () => window.removeEventListener("resize", updateGridSize);
-    }, []);
-
-    // Use a ref for mouse position to avoid re-renders on every mouse move
     const mousePosition = useRef({ x: -1000, y: -1000 });
-
     const fadeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     useEffect(() => {
@@ -40,7 +19,6 @@ export default function GlowingGrid() {
             const y = e.clientY - rect.top;
             mousePosition.current = { x, y };
 
-            // Update CSS variables for the mask and opacity
             if ((e.target as HTMLElement).closest("a, button")) {
                 container.style.setProperty("--glow-opacity", "0");
             } else {
@@ -53,7 +31,7 @@ export default function GlowingGrid() {
 
             fadeTimeoutRef.current = setTimeout(() => {
                 container.style.setProperty("--glow-opacity", "0");
-            }, 300); // Fade out delay
+            }, 300); 
         };
 
         const handleMouseLeave = () => {

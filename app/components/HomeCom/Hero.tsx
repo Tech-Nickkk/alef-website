@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import Navbar from "../CommonCom/Navbar";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -12,24 +13,20 @@ export default function Hero() {
     const videoRef = useRef<HTMLDivElement>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            if (videoRef.current) {
-                gsap.to(videoRef.current, {
-                    yPercent: 20,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: heroRef.current,
-                        start: "top top",
-                        end: "bottom top",
-                        scrub: true,
-                    },
-                });
-            }
-        }, heroRef);
-
-        return () => ctx.revert();
-    }, []);
+    useGSAP(() => {
+        if (videoRef.current) {
+            gsap.to(videoRef.current, {
+                yPercent: 20,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: heroRef.current,
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true,
+                },
+            });
+        }
+    }, { scope: heroRef });
 
     // Lock body scroll when modal is open
     useEffect(() => {
@@ -47,47 +44,45 @@ export default function Hero() {
         <section ref={heroRef} className="relative min-h-screen flex flex-col overflow-hidden">
             {/* Background Video */}
             <div ref={videoRef} className="absolute inset-0 z-0 hero-video pointer-events-none">
-                <iframe
-                    className="absolute top-1/2 left-1/2 w-full h-[200%] -translate-x-1/2 -translate-y-1/2 pointer-events-none object-cover"
-                    src="https://www.youtube.com/embed/yQoNxMwvGfw?autoplay=1&mute=1&controls=0&loop=1&playlist=yQoNxMwvGfw&playsinline=1&showinfo=0&rel=0&iv_load_policy=3&disablekb=1"
-                    title="Hero Video"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                />
+                <video
+                    className="absolute top-1/2 left-1/2 w-full h-full min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                >
+                    <source src="/home/hero-video-compressed.mp4" type="video/mp4" />
+                </video>
                 <div className="absolute inset-0 bg-linear-to-r from-black/60 via-black/30 to-transparent" />
                 <div className="absolute inset-0 bg-black/20" />
             </div>
 
-            <Navbar />
-
             {/* Hero Content */}
             <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-6 md:px-12 lg:px-24 w-full max-w-[1920px] mx-auto text-center">
-                <div className="max-w-4xl space-y-8 hero-content opacity-0 text-white">
-                    <h1 className="text-3xl md:text-8xl font-bold uppercase tracking-wide font-bebas">
+                <div className="max-w-4xl space-y-5 hero-content text-white">
+                    <h1 className="text-4xl md:text-8xl font-bold uppercase tracking-wide font-bebas">
                         Exposing Hezbollah’s<br />
                         Grip Latest Analysis
                     </h1>
 
-                    <p className="text-lg md:text-2xl max-w-2xl leading-relaxed font-oswald">
+                    <p className="text-base md:text-2xl max-w-2xl leading-relaxed font-oswald">
                         Educating to Eradicate Terrorism in Lebanon <br />
                         <span>Quality. Independence. Impact.</span>
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-4">
-                        <button className="group bg-theme-accent hover:bg-[#c4151c] px-8 py-3 text-sm font-semibold transition-all shadow-lg shadow-red-900/30 flex items-center justify-center gap-3 w-full sm:w-auto uppercase tracking-widest rounded-none font-oswald cursor-pointer">
-                            Explore Research
+                        <Link href="#join-us" className="group bg-theme-accent hover:bg-[#c4151c] px-8 py-3 text-sm font-semibold transition-all shadow-lg shadow-red-900/30 flex items-center justify-center gap-3 w-full sm:w-auto uppercase tracking-widest rounded-none font-oswald cursor-pointer text-white">
+                            JOIN US
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </button>
+                        </Link>
 
                         <button
                             onClick={() => setIsModalOpen(true)}
-                            className="relative overflow-hidden group border border-white px-8 py-3 text-sm font-medium transition-all backdrop-blur-sm w-full sm:w-auto justify-center uppercase tracking-widest rounded-none font-oswald flex items-center gap-3 hover:text-theme-black text-white isolate cursor-pointer"
+                            className="relative overflow-hidden group border border-white px-8 py-3 text-sm font-medium transition-all backdrop-blur-sm w-full sm:w-auto justify-center uppercase tracking-widest rounded-none font-oswald flex items-center gap-3 hover:text-black text-white isolate cursor-pointer"
                         >
                             <span className="absolute inset-0 bg-white transition-transform duration-500 ease-out origin-top scale-y-0 group-hover:origin-bottom group-hover:scale-y-100 -z-10" />
                             <span className="relative z-10 flex items-center gap-3 cursor-pointer">
-                                Watch Documentary
+                                Watch Video
                                 <PlayCircleIcon className="w-5 h-5" />
                             </span>
                         </button>
@@ -109,15 +104,15 @@ export default function Hero() {
                         className="relative w-full max-w-6xl aspect-video rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-black"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <iframe
-                            className="w-full h-full"
-                            src="https://www.youtube.com/embed/JMzT-I_zvg0?autoplay=1&rel=0"
-                            title="Documentary"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerPolicy="strict-origin-when-cross-origin"
-                            allowFullScreen
-                        />
+                        <video
+                            className="w-full h-full object-contain"
+                            controls
+                            autoPlay
+                            playsInline
+                        >
+                            <source src="/home/hero-video-compressed.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
 
                     {/* Backdrop click to close */}

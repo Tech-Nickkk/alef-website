@@ -5,9 +5,9 @@ export default function Footer() {
     return (
         <footer className="bg-theme-black py-12 px-6 md:px-12 lg:px-24 border-t border-theme-white/10">
             <div className="max-w-[1600px] mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
                     {/* Column 1: Brand & Info */}
-                    <div className="lg:col-span-1 space-y-4">
+                    <div className="col-span-1 sm:col-span-2 lg:col-span-1 space-y-6">
                         <Link href="/" className="block relative w-32 h-12">
                             <Image
                                 src="/home/logo.png"
@@ -16,71 +16,58 @@ export default function Footer() {
                                 className="object-contain object-left"
                             />
                         </Link>
-                        <p className="text-theme-white/60 text-xs leading-relaxed font-oswald max-w-sm">
+                        <p className="text-theme-white/60 text-sm leading-relaxed font-oswald max-w-sm">
                             Educating communities and combating terrorism through research, awareness, and policy advocacy.
                         </p>
 
-                        {/* Added Contact Details per Plan */}
-                        <div className="text-xs font-oswald text-theme-white/60 space-y-1 pt-1">
-                            <p>445 Park Avenue, 9th Floor<br />New York, NY 10022</p>
-                            <p><a href="mailto:info@alef.org" className="hover:text-theme-accent transition-colors">info@alef.org</a></p>
-                        </div>
-
-                        <div className="flex items-center gap-3 pt-1">
+                        <div className="flex items-center gap-3 pt-2">
                             <SocialIconWrapper>
-                                <InstagramIcon className="w-3 h-3 text-theme-white/60" />
+                                <InstagramIcon className="w-3 h-3 text-theme-white/60 group-hover:text-theme-black transition-colors" />
                             </SocialIconWrapper>
                             <SocialIconWrapper>
-                                <FacebookIcon className="w-3 h-3 text-theme-white/60" />
+                                <FacebookIcon className="w-3 h-3 text-theme-white/60 group-hover:text-theme-black transition-colors" />
                             </SocialIconWrapper>
                             <SocialIconWrapper>
-                                <TwitterIcon className="w-3 h-3 text-theme-white/60" />
+                                <TwitterIcon className="w-3 h-3 text-theme-white/60 group-hover:text-theme-black transition-colors" />
                             </SocialIconWrapper>
                         </div>
                     </div>
 
-                    {/* Column 2: Quick Links */}
-                    <div className="lg:col-start-2 pt-2">
-                        <h3 className="text-theme-white font-bold mb-4 font-cormorant text-lg">Quick Links</h3>
-                        <ul className="space-y-2">
-                            <li><Link href="#" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-xs">Home</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">About Us</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Research</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Experts</Link></li>
+                    {/* Column 2: Navigation */}
+                    <div className="pt-2">
+                        <h3 className="text-theme-white font-bold mb-6 font-bebas text-xl tracking-wider">Navigation</h3>
+                        <ul className="space-y-3">
+                            <li><Link href="/" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-sm tracking-wide">Home</Link></li>
+                            <li><Link href="#who-we-are" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-sm tracking-wide">Who We Are</Link></li>
+                            <li><Link href="#house-of-corruption" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-sm tracking-wide">Corruption Analysis</Link></li>
+                            <li><Link href="#resources" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-sm tracking-wide">Resources</Link></li>
                         </ul>
                     </div>
 
-                    {/* Column 3: Events */}
-                    <div className="lg:col-start-3 pt-2">
-                        <h3 className="text-theme-white font-bold mb-4 font-cormorant text-lg">Events</h3>
-                        <ul className="space-y-2">
-                            <li><Link href="#" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-xs">Upcoming Events</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Webinars</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Conferences</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Past Events</Link></li>
+                    {/* Column 3: Initiatives */}
+                    <div className="pt-2">
+                        <h3 className="text-theme-white font-bold mb-6 font-bebas text-xl tracking-wider">Key Initiatives</h3>
+                        <ul className="space-y-3">
+                            <li><Link href="#chairman-message" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-sm tracking-wide">Chairman's Message</Link></li>
+                            <li><Link href="#house-of-cards" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-sm tracking-wide">House of Cards</Link></li>
+                            <li><Link href="#blogs" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-sm tracking-wide">Blogs & Articles</Link></li>
+                            <li><Link href="#media" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-sm tracking-wide">Media Center</Link></li>
                         </ul>
                     </div>
 
-                    {/* Column 4: Resources */}
-                    <div className="lg:col-start-4 pt-2">
-                        <h3 className="text-theme-white font-bold mb-4 font-cormorant text-lg">Resources</h3>
-                        <ul className="space-y-2">
-                            <li><Link href="#" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-xs">Reports</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Podcasts</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Newsletters</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Media Kit</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Column 5: Legal */}
-                    <div className="lg:col-start-5 pt-2">
-                        <h3 className="text-theme-white font-bold mb-4 font-cormorant text-lg">Legal</h3>
-                        <ul className="space-y-2">
-                            <li><Link href="#" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-xs">Privacy Policy</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Terms of Service</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Cookie Policy</Link></li>
-                            <li><Link href="#" className="text-gray-500 hover:text-theme-accent transition-colors font-oswald text-xs">Contact Us</Link></li>
-                        </ul>
+                    {/* Column 4: Contact */}
+                    <div className="pt-2">
+                        <h3 className="text-theme-white font-bold mb-6 font-bebas text-xl tracking-wider">Contact</h3>
+                        <div className="space-y-4">
+                            <div className="space-y-1">
+                                <p className="text-theme-white/40 text-xs font-oswald tracking-widest uppercase">Headquarters</p>
+                                <p className="text-theme-white/80 text-sm font-oswald">445 Park Avenue, 9th Floor<br />New York, NY 10022</p>
+                            </div>
+                            <div className="space-y-1">
+                                <p className="text-theme-white/40 text-xs font-oswald tracking-widest uppercase">Inquiries</p>
+                                <p><a href="mailto:info@alef.org" className="text-theme-white/80 hover:text-theme-accent transition-colors font-oswald text-sm">info@alef.org</a></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

@@ -12,28 +12,17 @@
 }
 
 :root {
-  /* DARK THEME (Default) */
-  --background: #141414;
-  --foreground: #f2eeda;
-  
-  /* Override variables used by Tailwind Utilities */
-  --color-card-bg: #1a1a1a;
-  --color-card-hover: #262626; /* Slightly lighter dark */
-  --color-theme-accent: #E31B23;
-  --color-theme-black: #141414;
-  --color-theme-white: #f2eeda;
-}
-
-.light {
-  /* LIGHT THEME */
+  /* LIGHT THEME (Default) */
   --background: #f5f5f7;
   --foreground: #141414;
   
-  --color-card-bg: #e5e5e5;
-  --color-card-hover: #f2f2f2; /* Subtle lighter white for hover */
-  --color-theme-accent: #E31B23;
-  --color-theme-black: #f5f5f7; /* Background becomes light */
-  --color-theme-white: #141414; /* Text becomes dark */
+  /* Using Navy Card Colors as Default */
+  --color-card-bg: #0f2942;
+  --color-card-hover: #1e4b7a;
+  
+  --color-theme-accent: #BF0A30;
+  --color-theme-black: #f5f5f7;
+  --color-theme-white: #141414; 
 }
 
 .navy {
@@ -41,9 +30,8 @@
   --background: #021024;
   --foreground: #ffffff;
   
-  /* Lighter blue for cards to stand out against the dark navy background */
   --color-card-bg: #0f2942; 
-  --color-card-hover: #1e4b7a; /* Brighter blue for distinct hover */
+  --color-card-hover: #1e4b7a;
   --color-theme-accent: #BF0A30;
   --color-theme-black: #021024;
   --color-theme-white: #ffffff;
@@ -58,69 +46,30 @@ html.lenis,
 html.lenis body {
   height: auto;
 }
-
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
-
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
 }
-
 .lenis.lenis-stopped {
   overflow: hidden;
 }
-
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
 
-#card-1 .card-wrapper {
-  animation-delay: 0s;
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
 }
-
-#card-2 .card-wrapper {
-  animation-delay: 0.2s;
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
 }
-
-#card-3 .card-wrapper {
-  animation-delay: 0.4s;
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(178, 34, 52, 0.5); /* Brand Red */
+    border-radius: 4px;
 }
-
-#card-4 .card-wrapper {
-  animation-delay: 0.6s;
-}
-
-@keyframes floating {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.animate-floating {
-  animation: floating 3s ease-in-out infinite;
-}
-
-/* Utilities for 3D effects if needed in standard Tailwind */
-.transform-style-preserve-3d {
-  transform-style: preserve-3d;
-}
-
-.backface-hidden {
-  backface-visibility: hidden;
-}
-
-/* Explicit hover trigger for flip */
-.card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.rotate-y-180 {
-  transform: rotateY(180deg);
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(178, 34, 52, 1);
 }

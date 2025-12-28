@@ -1,77 +1,68 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 interface AnimatedTitleProps {
     text: string;
     className?: string;
-    as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "div" | "span";
 }
 
-export default function AnimatedTitle({ text, className = "", as: Component = "h2" }: AnimatedTitleProps) {
-    const containerRef = useRef<HTMLElement>(null);
-    const charsRef = useRef<(HTMLSpanElement | null)[]>([]);
+export default function AnimatedTitle({ text, className = "" }: AnimatedTitleProps) {
+    const containerRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            const chars = charsRef.current.filter((char) => char !== null);
+    useGSAP(() => {
+        const chars = containerRef.current?.querySelectorAll(".animated-char");
+        if (!chars || chars.length === 0) return;
 
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: "top 85%",
-                    toggleActions: "play none none reverse",
-                    refreshPriority: -2
-                }
-            });
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 85%",
+                toggleActions: "play none none none", // Only plays once
+            }
+        });
 
-            // 1. Slow Fade In
-            tl.fromTo(chars,
-                { opacity: 0 },
-                {
-                    opacity: 1,
-                    stagger: 0.02,
-                    duration: 1.5,
-                    ease: "power2.out"
-                }
-            );
+        // 1. Slow Fade In
+        tl.fromTo(chars,
+            { opacity: 0 },
+            {
+                opacity: 1,
+                stagger: 0.02,
+                duration: 1.5,
+                ease: "power2.out"
+            }
+        );
 
-            // 2. Flicker Effect (Random dips in opacity)
-            tl.to(chars, {
-                opacity: 0.2,
-                duration: 0.03,
-                stagger: {
-                    amount: 0.2, // Faster total distribution
-                    from: "random",
-                    repeat: 3, // More flickers
-                    yoyo: true
-                },
-                ease: "power3.inOut"
-            }, "-=1.2"); // Starts closer to the end of the fade
+        // 2. Flicker Effect (Random dips in opacity)
+        tl.to(chars, {
+            opacity: 0.2,
+            duration: 0.03,
+            stagger: {
+                amount: 0.2,
+                from: "random",
+                repeat: 3,
+                yoyo: true
+            },
+            ease: "power3.inOut"
+        }, "-=1.2");
 
-        }, containerRef);
-
-        return () => ctx.revert();
-    }, [text]);
+    }, { scope: containerRef, dependencies: [text] });
 
     const words = text.split(" ");
-    let charIndex = 0;
 
     return (
-        <Component ref={containerRef as any} className={className}>
+        <div ref={containerRef} className={className} aria-label={text}>
             {words.map((word, wIdx) => (
                 <span key={wIdx} className="inline-block whitespace-nowrap">
                     {word.split("").map((char, cIdx) => (
                         <span
                             key={cIdx}
-                            ref={(el) => {
-                                charsRef.current[charIndex++] = el;
-                            }}
-                            className="inline-block"
+                            className="animated-char inline-block"
                         >
                             {char}
                         </span>
@@ -79,6 +70,6 @@ export default function AnimatedTitle({ text, className = "", as: Component = "h
                     {wIdx < words.length - 1 && <span>&nbsp;</span>}
                 </span>
             ))}
-        </Component>
+        </div>
     );
 }

@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 
-type Theme = "dark" | "light" | "navy";
+type Theme = "light" | "dark";
 
 interface ThemeContextType {
     theme: Theme;
@@ -13,7 +13,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-    const [theme, setThemeState] = useState<Theme>("dark");
+    const [theme, setThemeState] = useState<Theme>("light"); // Default to light
 
     useEffect(() => {
         // Check localStorage or system preference on mount
@@ -22,22 +22,19 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
             setThemeState(savedTheme);
             updateDocumentElement(savedTheme);
         } else {
-            // Default to dark
-            updateDocumentElement("dark");
+            // Default to light
+            updateDocumentElement("light");
         }
     }, []);
 
     const updateDocumentElement = (newTheme: Theme) => {
         // Remove all theme classes first
-        document.documentElement.classList.remove("light", "navy");
+        document.documentElement.classList.remove("navy");
 
-        // Add specific theme class if needed
-        if (newTheme === "light") {
-            document.documentElement.classList.add("light");
-        } else if (newTheme === "navy") {
+        // "light" is default (:root no class), "dark" uses .navy class
+        if (newTheme === "dark") {
             document.documentElement.classList.add("navy");
         }
-        // "dark" is default (no class or default vars)
     };
 
     const setTheme = (newTheme: Theme) => {
@@ -47,10 +44,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     };
 
     const toggleTheme = () => {
-        const themes: Theme[] = ["dark", "light", "navy"];
-        const currentIndex = themes.indexOf(theme);
-        const nextIndex = (currentIndex + 1) % themes.length;
-        setTheme(themes[nextIndex]);
+        const nextTheme = theme === "light" ? "dark" : "light";
+        setTheme(nextTheme);
     };
 
     return (
