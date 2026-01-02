@@ -4,17 +4,17 @@ import AnimatedTitle from "../CommonCom/AnimatedTitle";
 export default function ChairmanMessage() {
 
     return (
-        <section className="py-12 md:py-24 px-6 md:px-12 lg:px-24 bg-theme-black border-t border-theme-white/10">
+        <section className="py-12 md:py-24 px-6 md:px-12 lg:px-24">
             <div className="max-w-[1400px] mx-auto">
 
                 {/* Header */}
-                <div className="flex flex-col items-center justify-center mb-6 md:mb-12 border-b border-theme-white/10 pb-6 gap-4 text-center">
+                <div className="flex flex-col items-center justify-center mb-6 md:mb-12 pb-6 gap-4 text-center">
                     <AnimatedTitle
                         text="CHAIRMAN'S MESSAGE"
-                        className="text-4xl md:text-6xl font-bold font-bebas text-theme-white uppercase leading-none"
+                        className="text-4xl md:text-6xl font-bold font-bebas text-foreground uppercase leading-none"
                     />
-                    <div className="flex items-center gap-2 text-theme-white/60 font-oswald text-xs tracking-widest">
-                        <span className="w-2 h-2 bg-theme-accent rounded-full inline-block"></span>
+                    <div className="flex items-center gap-2 text-foreground/60 font-oswald text-xs tracking-widest">
+                        <span className="w-2 h-2 bg-red rounded-full inline-block"></span>
                         LEADERSHIP // FOUNDER
                     </div>
                 </div>
@@ -22,7 +22,7 @@ export default function ChairmanMessage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
                     {/* Text Card with Scrollbar */}
-                    <div className="bg-card-bg border border-theme-white/10 rounded-2xl p-8 md:p-12 flex flex-col h-[450px] md:h-[600px] relative group hover:border-theme-white/30 transition-colors duration-500">
+                    <div className="bg-blue rounded-2xl p-8 md:p-12 flex flex-col h-[450px] md:h-[600px] relative group">
 
                         {/* Technical Label */}
                         <div className="flex justify-between items-start mb-6 font-oswald text-xs tracking-widest text-white/60 shrink-0">
@@ -57,23 +57,23 @@ export default function ChairmanMessage() {
                             {/* SCROLLABLE AREA END */}
 
                             {/* Gradient Fade at bottom to indicate scrolling */}
-                            <div className="absolute bottom-0 left-0 w-full h-12 bg-linear-to-t from-card-bg to-transparent pointer-events-none"></div>
+                            <div className="absolute bottom-0 left-0 w-full h-12 bg-linear-to-t from-blue to-transparent pointer-events-none"></div>
                         </div>
                     </div>
 
                     {/* Image Card - Parallax Effect */}
-                    <div className="bg-card-bg border border-theme-white/10 rounded-2xl p-2 h-[450px] md:h-[600px] relative overflow-hidden group">
+                    <div className="bg-blue border border-white/10 rounded-2xl p-2 h-[450px] md:h-[600px] relative overflow-hidden group">
                         <div className="relative w-full h-full rounded-xl overflow-hidden">
                             <Image
-                                src="/home/chairman.jpg"
+                                src="/home/Ziad Abdelnour.jpg"
                                 alt="Ziad K. Abdelnour"
                                 fill
                                 className="object-cover"
                             />
                         </div>
 
-                        <div className="absolute bottom-6 left-6 z-10 font-oswald text-xs tracking-widest text-white bg-black/50 px-4 py-2 backdrop-blur-md border border-theme-white/10 rounded-full">
-                            FOUNDING_CHAIRMAN // 2025
+                        <div className="absolute bottom-6 left-6 z-10 font-oswald text-xs tracking-widest text-white bg-black/50 px-4 py-2 backdrop-blur-md border border-white/10 rounded-full">
+                            FOUNDING_CHAIRMAN
                         </div>
                     </div>
                 </div>

@@ -42,17 +42,17 @@ export default function AlliedOrganizations() {
     }, { scope: trackRef });
 
     return (
-        <section className="py-16 md:py-24 bg-theme-black border-t border-theme-white/10 overflow-hidden">
+        <section className="py-16 md:py-24 overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 mb-16">
                 {/* Header */}
                 {/* Header */}
                 <div className="flex flex-col items-center text-center gap-4">
                     <AnimatedTitle
                         text="ALLIED ORGANIZATIONS"
-                        className="text-4xl md:text-6xl font-bold font-bebas text-theme-white uppercase leading-none"
+                        className="text-4xl md:text-6xl font-bold font-bebas text-foreground uppercase leading-none"
                     />
-                    <div className="flex items-center gap-2 text-theme-white/60 font-oswald text-xs tracking-widest">
-                        <span className="w-2 h-2 bg-theme-accent rounded-full inline-block"></span>
+                    <div className="flex items-center gap-2 text-foreground/60 font-oswald text-xs tracking-widest">
+                        <span className="w-2 h-2 bg-red rounded-full inline-block"></span>
                         STRATEGIC PARTNERS
                     </div>
                 </div>
@@ -61,8 +61,8 @@ export default function AlliedOrganizations() {
             {/* Marquee Container */}
             <div className="relative w-full overflow-hidden">
                 {/* Gradient Masks for smooth fade edges */}
-                <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 z-10 bg-linear-to-r from-theme-black to-transparent"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 z-10 bg-linear-to-l from-theme-black to-transparent"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 z-10 bg-linear-to-r from-background to-transparent"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 z-10 bg-linear-to-l from-background to-transparent"></div>
 
                 <div
                     ref={trackRef}
@@ -78,7 +78,7 @@ export default function AlliedOrganizations() {
                             className="shrink-0 flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300 group cursor-pointer"
                         >
                             {/* Placeholder for Logo - using styled text for now */}
-                            <h3 className="text-2xl md:text-4xl font-bebas text-theme-white whitespace-nowrap group-hover:text-theme-accent transition-colors">
+                            <h3 className="text-2xl md:text-4xl font-bebas text-foreground whitespace-nowrap group-hover:text-red transition-colors">
                                 {ally.name}
                             </h3>
                         </Link>

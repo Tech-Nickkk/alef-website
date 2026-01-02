@@ -2,12 +2,7 @@ import type { Metadata } from "next";
 import { Bebas_Neue, Oswald } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import SmoothScroll from "./components/CommonCom/SmoothScroll";
-import Preloader from "./components/CommonCom/Preloader";
-import Navbar from "./components/CommonCom/Navbar";
-import Footer from "./components/CommonCom/Footer";
-import JoinUs from "./components/CommonCom/JoinUs";
-import { ThemeProvider } from "./components/CommonCom/ThemeProvider";
+import LayoutWrapper from "./components/CommonCom/LayoutWrapper";
 
 const bebas = Bebas_Neue({
   subsets: ["latin"],
@@ -36,15 +31,10 @@ export default function RootLayout({
       <body
         className={`${oswald.variable} ${bebas.variable} antialiased`}
       >
-        <ThemeProvider>
-          <SmoothScroll />
-          {/* <Preloader /> */}
-          <Navbar />
+        <LayoutWrapper>
           {children}
-          <JoinUs />
-          <Footer />
-          <Analytics />
-        </ThemeProvider>
+        </LayoutWrapper>
+        <Analytics />
       </body>
     </html>
   );

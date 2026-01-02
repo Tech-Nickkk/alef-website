@@ -35,21 +35,20 @@ const BILLS = [
 
 export default function CongressionalActions() {
     return (
-        <section className="py-12 md:py-24 px-6 md:px-12 lg:px-24 bg-theme-black border-t border-theme-white/10">
+        <section className="py-12 md:py-24 px-6 md:px-12 lg:px-24">
             <div className="max-w-[1400px] mx-auto">
 
                 {/* Header */}
-                {/* Header */}
-                <div className="flex flex-col items-center justify-center mb-16 border-b border-theme-white/10 pb-6 gap-4 text-center">
+                <div className="flex flex-col items-center justify-center mb-16 pb-6 gap-4 text-center">
                     <AnimatedTitle
                         text="CONGRESSIONAL ACTIONS"
-                        className="text-4xl md:text-6xl font-bold font-bebas text-theme-white uppercase leading-none"
+                        className="text-4xl md:text-6xl font-bold font-bebas text-foreground uppercase leading-none"
                     />
-                    <div className="flex items-center gap-2 text-theme-white/60 font-oswald text-xs tracking-widest">
-                        <span className="w-2 h-2 bg-theme-accent rounded-full inline-block"></span>
+                    <div className="flex items-center gap-2 text-foreground/60 font-oswald text-xs tracking-widest">
+                        <span className="w-2 h-2 bg-red rounded-full inline-block"></span>
                         LEGISLATION // UPDATES
                     </div>
-                    <p className="text-theme-white/60 font-oswald text-lg tracking-wide max-w-2xl mx-auto">
+                    <p className="text-foreground/60 font-oswald text-lg tracking-wide max-w-2xl mx-auto">
                         LATEST LEGISLATIVE UPDATES AGAINST HEZBOLLAH (118TH CONGRESS)
                     </p>
                 </div>
@@ -59,12 +58,12 @@ export default function CongressionalActions() {
                     {BILLS.map((bill, index) => (
                         <div
                             key={index}
-                            className="group bg-card-bg border border-theme-white/10 p-8 rounded-2xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[300px]"
+                            className="group bg-blue p-8 rounded-2xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[300px]"
                         >
                             <div className="relative z-10">
                                 <div className="flex justify-between items-start mb-6">
-                                    <span className="font-bebas text-3xl text-theme-accent tracking-wide">{bill.id}</span>
-                                    <span className="font-oswald text-xs text-theme-white/40 tracking-widest border border-theme-white/10 px-2 py-1 rounded-sm uppercase">
+                                    <span className="font-bebas text-3xl text-red tracking-wide">{bill.id}</span>
+                                    <span className="font-oswald text-xs text-white/40 tracking-widest border border-white/20 px-3 py-2 rounded-sm uppercase">
                                         {bill.date}
                                     </span>
                                 </div>
@@ -78,18 +77,18 @@ export default function CongressionalActions() {
                                 </p>
                             </div>
 
-                            <div className="relative z-10 pt-6 border-t border-theme-white/5">
+                            <div className="relative z-10 pt-6 border-t border-white/20">
                                 <Link
                                     href={bill.link}
                                     target="_blank"
                                     className="group/btn flex items-center gap-4 w-full justify-between relative"
                                 >
-                                    <span className="text-white font-bebas text-lg tracking-wider group-hover/btn:text-theme-accent transition-colors relative">
+                                    <span className="text-white font-bebas text-lg tracking-wider group-hover/btn:text-red transition-colors relative">
                                         READ OFFICIAL BILL
-                                        <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-theme-accent transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-500 origin-right group-hover/btn:origin-left ease-out"></span>
+                                        <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-red transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-500 origin-right group-hover/btn:origin-left ease-out"></span>
                                     </span>
-                                    <div className="w-10 h-10 border border-theme-white/20 rounded-full flex items-center justify-center group-hover/btn:bg-theme-accent group-hover/btn:border-theme-accent transition-all duration-300 bg-theme-black">
-                                        <ArrowRight className="w-5 h-5 text-theme-white" />
+                                    <div className="w-10 h-10 border border-white/30 rounded-full flex items-center justify-center group-hover/btn:bg-red group-hover/btn:border-red transition-all duration-300">
+                                        <ArrowRight className="w-5 h-5 text-white" />
                                     </div>
                                 </Link>
                             </div>

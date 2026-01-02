@@ -1,103 +1,135 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Mail, Phone, MapPin, Instagram, Facebook, Twitter } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="bg-theme-black py-12 px-6 md:px-12 lg:px-24 border-t border-theme-white/10">
-            <div className="max-w-[1600px] mx-auto">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-                    {/* Column 1: Brand & Info */}
-                    <div className="col-span-1 sm:col-span-2 lg:col-span-1 space-y-6">
-                        <Link href="/" className="block relative w-32 h-12">
-                            <Image
-                                src="/home/logo.png"
-                                alt="ALEF Logo"
-                                fill
-                                className="object-contain object-left"
-                            />
-                        </Link>
-                        <p className="text-theme-white/60 text-sm leading-relaxed font-oswald max-w-sm">
-                            Educating communities and combating terrorism through research, awareness, and policy advocacy.
-                        </p>
+        <footer className="bg-blue py-10 md:py-12 px-6 md:px-12 lg:px-24 border-t border-white/10 relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-5 pointer-events-none">
+                <div className="absolute inset-0" style={{
+                    backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), 
+                                      linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+                    backgroundSize: '50px 50px'
+                }} />
+            </div>
 
-                        <div className="flex items-center gap-3 pt-2">
-                            <SocialIconWrapper>
-                                <InstagramIcon className="w-3 h-3 text-theme-white/60 group-hover:text-theme-black transition-colors" />
-                            </SocialIconWrapper>
-                            <SocialIconWrapper>
-                                <FacebookIcon className="w-3 h-3 text-theme-white/60 group-hover:text-theme-black transition-colors" />
-                            </SocialIconWrapper>
-                            <SocialIconWrapper>
-                                <TwitterIcon className="w-3 h-3 text-theme-white/60 group-hover:text-theme-black transition-colors" />
-                            </SocialIconWrapper>
+            <div className="max-w-[1400px] mx-auto relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mb-12">
+
+                    {/* Left Column: Contact Info (Reach Out Directly Style) */}
+                    <div className="space-y-8">
+                        <div>
+                            <Link href="/" className="block relative w-28 h-10 mb-6">
+                                <Image
+                                    src="/home/logo.png"
+                                    alt="ALEF Logo"
+                                    fill
+                                    className="object-contain object-left"
+                                />
+                            </Link>
+                            <h3 className="font-bebas text-3xl text-white mb-6 tracking-wide">
+                                REACH OUT DIRECTLY
+                            </h3>
+                        </div>
+
+                        <div className="space-y-6">
+                            {/* Email */}
+                            <div className="flex items-start gap-4 group">
+                                <div className="w-10 h-10 bg-red/10 border border-red/30 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-red/20 transition-colors">
+                                    <Mail className="w-4 h-4 text-red" />
+                                </div>
+                                <div>
+                                    <p className="font-oswald text-[10px] tracking-widest text-white/40 mb-1">EMAIL</p>
+                                    <a href="mailto:info@alef.org" className="font-oswald text-lg text-white hover:text-red transition-colors">
+                                        info@alef.org
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* Phone */}
+                            <div className="flex items-start gap-4 group">
+                                <div className="w-10 h-10 bg-red/10 border border-red/30 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-red/20 transition-colors">
+                                    <Phone className="w-4 h-4 text-red" />
+                                </div>
+                                <div>
+                                    <p className="font-oswald text-[10px] tracking-widest text-white/40 mb-1">PHONE</p>
+                                    <a href="tel:+12025551234" className="font-oswald text-lg text-white hover:text-red transition-colors">
+                                        +1 (202) 555-1234
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* Location */}
+                            <div className="flex items-start gap-4 group">
+                                <div className="w-10 h-10 bg-red/10 border border-red/30 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-red/20 transition-colors">
+                                    <MapPin className="w-4 h-4 text-red" />
+                                </div>
+                                <div>
+                                    <p className="font-oswald text-[10px] tracking-widest text-white/40 mb-1">LOCATION</p>
+                                    <p className="font-oswald text-lg text-white leading-tight">
+                                        Washington, D.C.<br />
+                                        <span className="text-white/60 text-sm">United States</span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    {/* Column 2: Navigation */}
-                    <div className="pt-2">
-                        <h3 className="text-theme-white font-bold mb-6 font-bebas text-xl tracking-wider">Navigation</h3>
-                        <ul className="space-y-3">
-                            <li><Link href="/" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-sm tracking-wide">Home</Link></li>
-                            <li><Link href="#who-we-are" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-sm tracking-wide">Who We Are</Link></li>
-                            <li><Link href="#house-of-corruption" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-sm tracking-wide">Corruption Analysis</Link></li>
-                            <li><Link href="#resources" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-sm tracking-wide">Resources</Link></li>
-                        </ul>
-                    </div>
+                    {/* Right Column: Links & Socials */}
+                    <div className="lg:pl-10 lg:border-l border-white/10 flex flex-col justify-between">
+                        <div>
+                            <h3 className="font-bebas text-xl text-white mb-6 tracking-wide">
+                                QUICK LINKS
+                            </h3>
+                            <ul className="grid grid-cols-2 gap-x-8 gap-y-3">
+                                <li><Link href="/" className="text-white/60 hover:text-red transition-colors font-oswald text-xs tracking-widest uppercase">Home</Link></li>
+                                <li><Link href="/about" className="text-white/60 hover:text-red transition-colors font-oswald text-xs tracking-widest uppercase">Who We Are</Link></li>
+                                <li><Link href="/house-of-cards" className="text-white/60 hover:text-red transition-colors font-oswald text-xs tracking-widest uppercase">House of Cards</Link></li>
+                                <li><Link href="/blogs-and-articles" className="text-white/60 hover:text-red transition-colors font-oswald text-xs tracking-widest uppercase">Blogs & Articles</Link></li>
+                                <li><Link href="/podcasts" className="text-white/60 hover:text-red transition-colors font-oswald text-xs tracking-widest uppercase">Podcasts</Link></li>
+                                <li><Link href="/contact" className="text-white/60 hover:text-red transition-colors font-oswald text-xs tracking-widest uppercase">Contact</Link></li>
+                            </ul>
+                        </div>
 
-                    {/* Column 3: Initiatives */}
-                    <div className="pt-2">
-                        <h3 className="text-theme-white font-bold mb-6 font-bebas text-xl tracking-wider">Key Initiatives</h3>
-                        <ul className="space-y-3">
-                            <li><Link href="#chairman-message" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-sm tracking-wide">Chairman's Message</Link></li>
-                            <li><Link href="#house-of-cards" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-sm tracking-wide">House of Cards</Link></li>
-                            <li><Link href="#blogs" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-sm tracking-wide">Blogs & Articles</Link></li>
-                            <li><Link href="#media" className="text-theme-white/60 hover:text-theme-accent transition-colors font-oswald text-sm tracking-wide">Media Center</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Column 4: Contact */}
-                    <div className="pt-2">
-                        <h3 className="text-theme-white font-bold mb-6 font-bebas text-xl tracking-wider">Contact</h3>
-                        <div className="space-y-4">
-                            <div className="space-y-1">
-                                <p className="text-theme-white/40 text-xs font-oswald tracking-widest uppercase">Headquarters</p>
-                                <p className="text-theme-white/80 text-sm font-oswald">445 Park Avenue, 9th Floor<br />New York, NY 10022</p>
+                        <div className="mt-10 md:mt-0">
+                            <h3 className="font-bebas text-xl text-white mb-4 tracking-wide">
+                                CONNECT WITH US
+                            </h3>
+                            <div className="flex gap-3">
+                                <SocialButton icon={<Instagram className="w-4 h-4" />} href="#" />
+                                <SocialButton icon={<Facebook className="w-4 h-4" />} href="#" />
+                                <SocialButton icon={<Twitter className="w-4 h-4" />} href="#" />
                             </div>
-                            <div className="space-y-1">
-                                <p className="text-theme-white/40 text-xs font-oswald tracking-widest uppercase">Inquiries</p>
-                                <p><a href="mailto:info@alef.org" className="text-theme-white/80 hover:text-theme-accent transition-colors font-oswald text-sm">info@alef.org</a></p>
-                            </div>
+                            <p className="mt-6 text-white/40 text-xs font-oswald leading-relaxed max-w-sm">
+                                Educating communities and combating terrorism through research, awareness, and policy advocacy.
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-theme-white/10 pt-6 text-center">
-                    <p className="text-theme-white/60 text-[10px] font-oswald uppercase tracking-wider">
+                <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p className="text-white/40 text-[10px] font-oswald uppercase tracking-wider">
                         © 2025 A.L.E.F. All rights reserved.
                     </p>
+                    <div className="flex gap-6">
+                        <Link href="/privacy" className="text-white/40 hover:text-white text-[10px] font-oswald uppercase tracking-wider transition-colors">Privacy Policy</Link>
+                        <Link href="/terms" className="text-white/40 hover:text-white text-[10px] font-oswald uppercase tracking-wider transition-colors">Terms of Service</Link>
+                    </div>
                 </div>
             </div>
         </footer>
     );
 }
 
-function SocialIconWrapper({ children }: { children: React.ReactNode }) {
+function SocialButton({ icon, href }: { icon: React.ReactNode, href: string }) {
     return (
-        <a href="#" className="w-10 h-10 border border-theme-white/10 rounded-full flex items-center justify-center hover:bg-theme-white hover:border-theme-white hover:text-theme-black transition-all">
-            {children}
+        <a
+            href={href}
+            className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center text-white/60 hover:bg-red hover:border-red hover:text-white transition-all duration-300 transform hover:scale-105"
+        >
+            {icon}
         </a>
     );
-}
-
-function InstagramIcon({ className }: { className?: string }) {
-    return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>;
-}
-
-function FacebookIcon({ className }: { className?: string }) {
-    return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>;
-}
-
-function TwitterIcon({ className }: { className?: string }) {
-    return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-12.7 12.5S.2 5.3 7.8 4.5c2.1-.2 3.2-.4 3.2-.4.4-1.5 2.1-3 3.6-2.5 1.5.5 1.8 2.2 1.8 2.2s1.4-.2 2.7-.6c-1.7 1.2-2.3 2.5-2.2 2.9 2-.2 3.5-.8 3.5-.8z" /></svg>;
 }

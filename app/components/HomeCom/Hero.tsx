@@ -51,7 +51,7 @@ export default function Hero() {
                     loop
                     playsInline
                 >
-                    <source src="/home/hero-video-compressed.mp4" type="video/mp4" />
+                    <source src="/home/hero-intro-video.mp4" type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 bg-linear-to-r from-black/60 via-black/30 to-transparent" />
                 <div className="absolute inset-0 bg-black/20" />
@@ -71,7 +71,7 @@ export default function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-4">
-                        <Link href="#join-us" className="group bg-theme-accent hover:bg-[#c4151c] px-8 py-3 text-sm font-semibold transition-all shadow-lg shadow-red-900/30 flex items-center justify-center gap-3 w-full sm:w-auto uppercase tracking-widest rounded-none font-oswald cursor-pointer text-white">
+                        <Link href="#join-us" className="group bg-red hover:bg-[#c4151c] px-8 py-3 text-sm font-semibold transition-all shadow-lg shadow-red-900/30 flex items-center justify-center gap-3 w-full sm:w-auto uppercase tracking-widest rounded-none font-oswald cursor-pointer text-white">
                             JOIN US
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Link>
@@ -110,7 +110,7 @@ export default function Hero() {
                             autoPlay
                             playsInline
                         >
-                            <source src="/home/hero-video-compressed.mp4" type="video/mp4" />
+                            <source src="/home/hero-detailed-video.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </div>

@@ -1,42 +1,40 @@
 import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
 import { Star } from 'lucide-react';
+import { urlFor } from '@/sanity/lib/image';
+import Image from 'next/image';
+import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 
-export default function ResidentActivistsPage() {
-    const officers = [
-        { name: "Ziad Abdelnour", title: "Founding Chairman" },
-        { name: "Wael Chehab", title: "Vice Chairman" },
-        { name: "Nagy Najjar", title: "Vice Chairman" },
-        { name: "Charles Chartouni", title: "Political/Social Affairs Director" },
-        { name: "Duaa Saigh", title: "Acting Secretary" },
-        { name: "Robert Straniere", title: "Special Counsel" },
-        { name: "Karra Mannarino", title: "Treasurer" },
-        { name: "Nadine Moussa", title: "Legal" },
-    ];
+interface Author {
+    _id: string;
+    name?: string;
+    discloseName?: boolean;
+    category?: 'officer' | 'director' | 'advisor' | 'blogAuthor';
+    position?: string;
+    description?: string;
+    image?: any;
+}
 
-    const directors = [
-        { title: "Chairman & CEO of one of the largest IT groups in the Middle East" },
-        { title: "Former COO of the 5th communications group in the world" },
-        { title: "Specialist in the digital world with 25+ year experience in strategic communication" },
-        { title: "Strategist with extensive experience in Middle Eastern and American media." },
-        { title: "Media Specialist activist/entrepreneur" },
-        { title: "Lebanese American Activist/Entrepreneur" },
-        { title: "Canadian entrepreneur and software developer" },
-        { title: "Lebanese Activist/Entrepreneur" },
-        { title: "Lebanese Activist/Entrepreneur" }, 
-    ];
+export default async function ResidentActivistsPage() {
+    const query = `
+    *[_type == "author" && category in ["officer", "director", "advisor"]] | order(_createdAt asc) {
+      _id,
+      name,
+      discloseName,
+      category,
+      position,
+      description,
+      image
+    }
+  `;
 
-    const advisors = [
-        { title: "Expert Specialist in Arab and International Affairs based on his diversified work experience in different TV stations and online news portals." },
-        { title: "Harvard educated businessman expert in Artificial intelligence" },
-        { title: "American Financial Expert" },
-        { title: "Technology Specialist Entrepreneur" },
-        { title: "Global Podcaster with 1.5 million listeners weekly" },
-        { title: "Media Specialist activist/entrepreneur" },
-        { title: "Expert Specialist in delivering advanced network infrastructure and telecom solutions to meet U.S. government & commercial enterprises’ needs." },
-    ];
+    const { data: activists } = await sanityFetch({ query: query });
+
+    const officers = (activists || []).filter((a: Author) => a.category === 'officer');
+    const directors = (activists || []).filter((a: Author) => a.category === 'director');
+    const advisors = (activists || []).filter((a: Author) => a.category === 'advisor');
 
     return (
-        <div className="bg-theme-black min-h-screen flex flex-col relative overflow-hidden">
+        <div className="bg-background min-h-screen flex flex-col relative overflow-hidden">
 
             <main className="grow pt-32 px-4 md:px-8 lg:px-12 max-w-[1400px] mx-auto w-full z-10 relative">
 
@@ -44,82 +42,142 @@ export default function ResidentActivistsPage() {
                 <div className="mb-20 text-center max-w-4xl mx-auto">
                     <AnimatedTitle
                         text="ALEF Officers, Directors & Advisors"
-                        className="text-5xl md:text-7xl font-bebas text-theme-white mb-6 justify-center flex text-center"
+                        className="text-5xl md:text-7xl font-bebas text-foreground mb-6 justify-center flex text-center"
                     />
-                    <div className="h-1 w-24 bg-red-600 mx-auto mb-8"></div>
-                    <p className="font-oswald text-xl text-theme-white/80 leading-relaxed">
+                    <div className="h-1 w-24 bg-red mx-auto mb-8"></div>
+                    <p className="font-oswald text-xl text-foreground/80 leading-relaxed">
                         Meet the dedicated leadership team and our network of expert advisors driving the mission of the American Lebanon Education Foundation.
                     </p>
                 </div>
 
                 {/* Section 1: ALEF Officers */}
-                <section className="mb-24">
-                    <div className="flex items-center gap-4 mb-10">
-                        <span className="h-px bg-red-600 w-12"></span>
-                        <h2 className="text-3xl font-bebas text-theme-white tracking-wide">ALEF Officers</h2>
-                        <span className="h-px bg-theme-white/10 grow"></span>
-                    </div>
+                {officers.length > 0 && (
+                    <section className="mb-24">
+                        <div className="flex items-center gap-4 mb-10">
+                            <span className="h-px bg-red w-12"></span>
+                            <h2 className="text-3xl font-bebas text-foreground tracking-wide">ALEF Officers</h2>
+                            <span className="h-px bg-foreground/10 grow"></span>
+                        </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {officers.map((officer, index) => (
-                            <div key={index} className="bg-[#0f2942] border border-[#1e4b7a] p-6 rounded-sm hover:-translate-y-1 transition-transform duration-300 group">
-                                <div className="w-full aspect-4/5 bg-theme-black/30 mb-6 rounded-sm relative overflow-hidden">
-                                    {/* Placeholder for Photo */}
-                                    {/* <Image src="..." ... /> */}
-                                    <div className="absolute inset-0 flex items-center justify-center text-theme-white/10 font-bebas text-4xl">
-                                        PHOTO
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {officers.map((officer: Author) => (
+                                <div key={officer._id} className="bg-blue border border-light-blue p-6 rounded-sm hover:-translate-y-1 transition-transform duration-300 group">
+                                    <div className="w-full aspect-4/5 bg-black/30 mb-6 rounded-sm relative overflow-hidden flex items-center justify-center bg-gradient-to-b from-white/5 to-transparent">
+                                        {officer.image ? (
+                                            <Image
+                                                src={urlFor(officer.image).width(400).height(500).url()}
+                                                alt={officer.discloseName === true ? (officer.name || 'Officer') : 'Officer'}
+                                                fill
+                                                className="object-cover"
+                                                unoptimized
+                                            />
+                                        ) : (
+                                            <Image
+                                                src="/home/default-avatar.svg"
+                                                alt="Default Avatar"
+                                                fill
+                                                className="object-contain p-12 opacity-20"
+                                            />
+                                        )}
                                     </div>
+                                    <h3 className="text-2xl font-bebas text-white mb-2 group-hover:text-red transition-colors">
+                                        {officer.discloseName === true ? (officer.name || <Star className="w-6 h-6 fill-white inline-block" />) : <Star className="w-6 h-6 fill-white inline-block" />}
+                                    </h3>
+                                    {officer.position && (
+                                        <p className="font-oswald text-red text-sm tracking-wide uppercase">{officer.position}</p>
+                                    )}
                                 </div>
-                                <h3 className="text-2xl font-bebas text-white mb-2 group-hover:text-red-500 transition-colors">{officer.name}</h3>
-                                <p className="font-oswald text-red-500 text-sm tracking-wide uppercase">{officer.title}</p>
-                            </div>
-                        ))}
-                    </div>
-                </section>
+                            ))}
+                        </div>
+                    </section>
+                )}
 
                 {/* Section 2: ALEF Directors */}
-                <section className="mb-24">
-                    <div className="flex items-center gap-4 mb-10">
-                        <span className="h-px bg-red-600 w-12"></span>
-                        <h2 className="text-3xl font-bebas text-theme-white tracking-wide">ALEF Directors</h2>
-                        <span className="h-px bg-theme-white/10 grow"></span>
-                    </div>
+                {directors.length > 0 && (
+                    <section className="mb-24">
+                        <div className="flex items-center gap-4 mb-10">
+                            <span className="h-px bg-red w-12"></span>
+                            <h2 className="text-3xl font-bebas text-foreground tracking-wide">ALEF Directors</h2>
+                            <span className="h-px bg-foreground/10 grow"></span>
+                        </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {directors.map((director, index) => (
-                            <div key={index} className="bg-[#0f2942] border border-[#1e4b7a] p-8 rounded-sm flex flex-col items-center text-center hover:bg-[#153a5c] transition-colors duration-300">
-                                <div className="mb-4 text-white">
-                                    <Star className="w-8 h-8 fill-white" />
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {directors.map((director: Author) => (
+                                <div key={director._id} className="bg-blue border border-light-blue p-6 rounded-sm hover:bg-light-blue transition-colors duration-300 flex flex-col items-center text-center h-full">
+                                    <div className="w-full aspect-4/5 bg-black/30 mb-6 rounded-sm relative overflow-hidden flex items-center justify-center bg-gradient-to-b from-white/5 to-transparent shrink-0">
+                                        {director.image ? (
+                                            <Image
+                                                src={urlFor(director.image).width(400).height(500).url()}
+                                                alt={director.discloseName === true ? (director.name || 'Director') : 'Director'}
+                                                fill
+                                                className="object-cover"
+                                                unoptimized
+                                            />
+                                        ) : (
+                                            <Image
+                                                src="/home/default-avatar.svg"
+                                                alt="Default Avatar"
+                                                fill
+                                                className="object-contain p-12 opacity-20"
+                                            />
+                                        )}
+                                    </div>
+                                    <h3 className="text-lg font-bebas text-white mb-3 tracking-wide">
+                                        {director.discloseName === true ? (director.name || <Star className="w-6 h-6 fill-white inline-block" />) : <Star className="w-6 h-6 fill-white inline-block" />}
+                                    </h3>
+                                    <p className="font-oswald text-white/70 text-sm leading-relaxed">
+                                        {director.description || director.position}
+                                    </p>
                                 </div>
-                                <h3 className="text-lg font-bebas text-white mb-3 tracking-wide">Director</h3>
-                                <p className="font-oswald text-white/70 text-sm leading-relaxed">{director.title}</p>
-                            </div>
-                        ))}
-                    </div>
-                </section>
+                            ))}
+                        </div>
+                    </section>
+                )}
 
                 {/* Section 3: ALEF Expert Advisors */}
-                <section className="mb-24">
-                    <div className="flex items-center gap-4 mb-10">
-                        <span className="h-px bg-red-600 w-12"></span>
-                        <h2 className="text-3xl font-bebas text-theme-white tracking-wide">ALEF Expert Advisors</h2>
-                        <span className="h-px bg-theme-white/10 grow"></span>
-                    </div>
+                {advisors.length > 0 && (
+                    <section className="mb-24">
+                        <div className="flex items-center gap-4 mb-10">
+                            <span className="h-px bg-red w-12"></span>
+                            <h2 className="text-3xl font-bebas text-foreground tracking-wide">ALEF Expert Advisors</h2>
+                            <span className="h-px bg-foreground/10 grow"></span>
+                        </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {advisors.map((advisor, index) => (
-                            <div key={index} className="bg-[#0f2942] border border-[#1e4b7a] p-8 rounded-sm flex flex-col items-center text-center hover:bg-[#153a5c] transition-colors duration-300">
-                                <div className="mb-4 text-white">
-                                    <Star className="w-8 h-8 fill-white" />
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {advisors.map((advisor: Author) => (
+                                <div key={advisor._id} className="bg-blue border border-light-blue p-6 rounded-sm hover:bg-light-blue transition-colors duration-300 flex flex-col items-center text-center h-full">
+                                    <div className="w-full aspect-4/5 bg-black/30 mb-6 rounded-sm relative overflow-hidden flex items-center justify-center bg-gradient-to-b from-white/5 to-transparent shrink-0">
+                                        {advisor.image ? (
+                                            <Image
+                                                src={urlFor(advisor.image).width(400).height(500).url()}
+                                                alt={advisor.discloseName === true ? (advisor.name || 'Advisor') : 'Advisor'}
+                                                fill
+                                                className="object-cover"
+                                                unoptimized
+                                            />
+                                        ) : (
+                                            <Image
+                                                src="/home/default-avatar.svg"
+                                                alt="Default Avatar"
+                                                fill
+                                                className="object-contain p-12 opacity-20"
+                                            />
+                                        )}
+                                    </div>
+                                    <h3 className="text-lg font-bebas text-white mb-3 tracking-wide">
+                                        {advisor.discloseName === true ? (advisor.name || <Star className="w-6 h-6 fill-white inline-block" />) : <Star className="w-6 h-6 fill-white inline-block" />}
+                                    </h3>
+                                    <p className="font-oswald text-white/70 text-sm leading-relaxed">
+                                        {advisor.description || advisor.position}
+                                    </p>
                                 </div>
-                                <h3 className="text-lg font-bebas text-white mb-3 tracking-wide">Expert Advisor</h3>
-                                <p className="font-oswald text-white/70 text-sm leading-relaxed">{advisor.title}</p>
-                            </div>
-                        ))}
-                    </div>
-                </section>
+                            ))}
+                        </div>
+                    </section>
+                )}
 
             </main>
+            <SanityLive />
         </div>
     );
 }

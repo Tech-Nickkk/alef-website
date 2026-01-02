@@ -110,27 +110,27 @@ export default function WhoWeAre() {
     }, { scope: sectionRef, dependencies: [] });
 
     return (
-        <section ref={sectionRef} className="h-screen bg-theme-black overflow-hidden flex flex-col justify-center relative">
+        <section ref={sectionRef} className="h-screen overflow-hidden flex flex-col justify-center relative">
 
             {/* Top Bar with Progress */}
             <div className="absolute top-12 left-0 w-full px-6 md:px-12 lg:px-24">
                 <div className="flex flex-col items-center justify-center mb-10 md:mb-4 gap-4 text-center">
                     <AnimatedTitle
                         text="WHO WE ARE"
-                        className="text-4xl md:text-6xl font-bold font-bebas text-theme-white uppercase leading-none"
+                        className="text-4xl md:text-6xl font-bold font-bebas text-foreground uppercase leading-none"
                     />
-                    <div className="flex items-center gap-2 text-theme-white/60 font-oswald text-xs tracking-widest">
-                        <span className="w-2 h-2 bg-theme-accent rounded-full inline-block"></span>
+                    <div className="flex items-center gap-2 text-foreground/60 font-oswald text-xs tracking-widest">
+                        <span className="w-2 h-2 bg-red rounded-full inline-block"></span>
                         MISSION // VISION
                     </div>
                 </div>
 
                 {/* Progress Bar Track */}
-                <div className="w-full h-[2px] bg-theme-white/10 relative">
+                <div className="w-full h-[2px] bg-foreground/10 relative">
                     {/* Progress Bar Fill */}
                     <div
                         ref={progressBarRef}
-                        className="absolute inset-y-0 left-0 bg-theme-accent w-full origin-left scale-x-0"
+                        className="absolute inset-y-0 left-0 bg-red w-full origin-left scale-x-0"
                     />
                 </div>
             </div>
@@ -140,7 +140,7 @@ export default function WhoWeAre() {
                 {sections.map((item, idx) => (
                     <div key={idx} className="relative group shrink-0 w-[85vw] md:w-[600px] h-[65vh] md:h-[500px]">
                         <Link href={item.href} className="block h-full">
-                            <div className="bg-card-bg border border-theme-white/10 hover:border-theme-white/30 transition-all duration-300 h-full rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden hover:bg-(--color-card-hover)">
+                            <div className="bg-blue transition-all duration-300 h-full rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden hover:bg-light-blue">
 
                                 {/* Top Row */}
                                 <div className="flex justify-between items-start font-oswald text-xs tracking-widest text-white/60">

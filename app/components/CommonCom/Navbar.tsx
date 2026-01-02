@@ -51,6 +51,18 @@ export default function Navbar() {
         }
     }, [isMenuOpen]);
 
+    // Close menu on resize if screen becomes large
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 1280 && isMenuOpen) {
+                setIsMenuOpen(false);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [isMenuOpen]);
+
     const toggleSubmenu = (label: string) => {
         setOpenSubmenu(prev => prev === label ? null : label);
     };
@@ -101,7 +113,7 @@ export default function Navbar() {
 
     return (
         <>
-            <nav ref={navRef} className="fixed top-0 z-50 w-full px-4 md:px-8 lg:px-12 flex items-center justify-between bg-theme-black navbar-container h-16 md:h-20 overflow-visible">
+            <nav ref={navRef} className="fixed top-0 z-50 w-full px-4 md:px-8 lg:px-12 flex items-center justify-between bg-background navbar-container h-16 md:h-20 overflow-visible">
 
                 {/* Left: Logo */}
                 <div className="shrink-0 cursor-pointer relative z-50">
@@ -113,25 +125,25 @@ export default function Navbar() {
                 </div>
 
                 {/* Center: Desktop Navigation */}
-                <div className="hidden xl:flex items-center gap-6 text-[14px] lg:text-[15px] tracking-wide text-theme-white/90 font-oswald">
+                <div className="hidden xl:flex items-center gap-6 text-[14px] lg:text-[15px] tracking-wide text-foreground/90 font-oswald">
                     {navLinks.map((link, index) => (
                         <React.Fragment key={link.label}>
                             {index > 0 && <span className="w-px h-4 bg-white/40"></span>}
 
                             {link.dropdown ? (
-                                <div className="group relative flex items-center gap-1 cursor-pointer hover:text-theme-white transition-colors tracking-widest text-sm h-full py-8 uppercase">
+                                <div className="group relative flex items-center gap-1 cursor-pointer hover:text-foreground transition-colors tracking-widest text-sm h-full py-8 uppercase">
                                     <Link href={link.href}>{link.label}</Link>
-                                    <ChevronDown className="w-3 h-3 text-theme-white/70 group-hover:text-theme-white transition-transform group-hover:rotate-180" />
+                                    <ChevronDown className="w-3 h-3 text-foreground/70 group-hover:text-white transition-transform group-hover:rotate-180" />
 
                                     {/* Dropdown Menu */}
                                     <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-2">
-                                        <div className="bg-theme-black/90 backdrop-blur-md border border-theme-white/10 p-2 shadow-xl rounded-sm">
+                                        <div className="bg-background/95 backdrop-blur-md border border-foreground/10 p-2 shadow-xl rounded-sm">
                                             <ul className="flex flex-col gap-1">
                                                 {link.dropdown.map((subItem) => (
                                                     <li key={subItem.label}>
                                                         <Link
                                                             href={subItem.href}
-                                                            className="block px-4 py-3 text-sm text-theme-white/80 hover:text-theme-white hover:bg-theme-white/10 transition-colors uppercase"
+                                                            className="block px-4 py-3 text-sm text-foreground/80 hover:text-theme-accent hover:bg-foreground/5 transition-colors uppercase"
                                                         >
                                                             {subItem.label}
                                                         </Link>
@@ -144,7 +156,7 @@ export default function Navbar() {
                             ) : (
                                 <Link
                                     href={link.href}
-                                    className="hover:text-theme-white transition-colors tracking-widest text-sm py-8 uppercase"
+                                    className="hover:text-foreground transition-colors tracking-widest text-sm py-8 uppercase"
                                 >
                                     {link.label}
                                 </Link>
@@ -155,29 +167,29 @@ export default function Navbar() {
 
                 {/* Right: Actions (Desktop) & Hamburger (Mobile) */}
                 <div className="flex items-center gap-3 md:gap-6 relative z-50">
-                    {/* Theme Toggle - Visible always */}
+                    {/* foregrounde - Visible always */}
                     <ThemeToggle />
 
                     {/* Search - Hidden on very small screens if crowded, or keep */}
-                    <button className="hidden sm:block text-theme-white/90 hover:text-theme-white transition-colors p-2 hover:bg-theme-white/10 rounded-none cursor-pointer">
+                    <button className="hidden sm:block text-foreground/90 hover:text-foreground transition-colors p-2 hover:bg-foreground/10 rounded-none cursor-pointer">
                         <SearchIcon className="w-5 h-5 cursor-pointer" />
                     </button>
 
                     {/* Donate - Hidden on small mobile to save space? Or kept compact. */}
                     <div className="hidden sm:block relative group">
-                        <span className="absolute inset-0 bg-theme-accent opacity-75 animate-ping duration-2000 rounded-none"></span>
-                        <button className="relative overflow-hidden bg-theme-accent hover:bg-[#c4151c] text-white px-4 py-2 md:px-6 md:py-2.5 text-[10px] md:text-xs uppercase font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg shadow-red-900/20 tracking-wider rounded-none font-oswald cursor-pointer isolate">
-                            <span className="relative z-10">Donate</span>
+                        <span className="absolute inset-0 bg-red opacity-75 animate-ping duration-2000 rounded-none"></span>
+                        <button className="relative overflow-hidden bg-red hover:bg-[#c4151c] text-white px-4 py-2 md:px-8 md:py-3.5 text-[10px] md:text-sm uppercase font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg shadow-red-900/20 tracking-wider rounded-none font-oswald cursor-pointer isolate">
+                            <span className="relative z-10 tracking-wider">Donate</span>
                             <div className="absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/40 to-transparent skew-x-[-20deg] group-hover:left-[150%] transition-all duration-700 ease-in-out z-0" />
                         </button>
                     </div>
 
                     {/* Mobile Menu Button - Visible < XL */}
                     <button
-                        className="xl:hidden p-2 text-theme-white hover:bg-theme-white/10 transition-colors"
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        className="xl:hidden p-2 text-foreground hover:bg-foreground/10 transition-colors"
+                        onClick={() => setIsMenuOpen(true)}
                     >
-                        {isMenuOpen ? null : <MenuIcon className="w-8 h-8" />}
+                        <MenuIcon className="w-8 h-8" />
                     </button>
                 </div>
             </nav>
@@ -185,31 +197,32 @@ export default function Navbar() {
             {/* PORTAL: Mobile Menu Overlay */}
             {mounted && createPortal(
                 <div
-                    className={`fixed inset-0 bg-[#021024] z-999 transition-transform duration-500 cubic-bezier(0.7,0,0.3,1) flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                    className={`fixed inset-0 bg-background z-999 transition-transform duration-500 cubic-bezier(0.7,0,0.3,1) flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
                 >
-                    {/* Scrollable Content Container - Fades in/out */}
-                    <div className={`flex-1 flex flex-col h-full overflow-y-auto transition-opacity duration-500 ease-in-out ${isMenuOpen ? 'opacity-100 delay-300' : 'opacity-0 delay-0'}`}>
-
-                        {/* Mobile Header (Logo + Close) */}
-                        <div className="shrink-0 flex items-center justify-between px-6 h-20 md:h-24 border-b border-white/10">
-                            <div className="relative">
-                                <Link href="/" onClick={() => setIsMenuOpen(false)}>
-                                    <Image src="/home/logo.png" alt="ALEF Logo" width={80} height={80} className="object-contain w-[70px] md:w-[90px]" />
-                                </Link>
-                            </div>
-                            <button
-                                onClick={() => setIsMenuOpen(false)}
-                                className="p-2 text-white hover:text-theme-accent transition-colors"
-                            >
-                                <XIcon className="w-8 h-8" />
-                            </button>
+                    {/* Mobile Header (Logo + Close) - Fixed at top, matches Navbar layout */}
+                    <div className="shrink-0 flex items-center justify-between px-4 md:px-8 lg:px-12 h-16 md:h-20 border-b border-foreground/5 bg-background relative z-10">
+                        <div className="shrink-0 cursor-pointer">
+                            <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                                <div className="relative">
+                                    <Image src="/home/logo.png" alt="ALEF Logo" width={90} height={90} className="object-contain w-[80px] md:w-[110px]" />
+                                </div>
+                            </Link>
                         </div>
+                        <button
+                            onClick={() => setIsMenuOpen(false)}
+                            className="p-2 text-foreground hover:bg-foreground/10 transition-colors"
+                        >
+                            <XIcon className="w-8 h-8" />
+                        </button>
+                    </div>
 
+                    {/* Scrollable Content Container */}
+                    <div className={`flex-1 flex flex-col h-full overflow-y-auto transition-opacity duration-500 ease-in-out ${isMenuOpen ? 'opacity-100 delay-300' : 'opacity-0 delay-0'}`}>
                         {/* Mobile Links */}
                         <div className="flex-1 px-6 py-8">
                             <div className="flex flex-col gap-6">
                                 {navLinks.map((link) => (
-                                    <div key={link.label} className="border-b border-white/5 pb-4 last:border-0">
+                                    <div key={link.label} className="border-b border-foreground/5 pb-4 last:border-0">
                                         <div
                                             className="flex items-center justify-between cursor-pointer group"
                                             onClick={() => {
@@ -225,42 +238,44 @@ export default function Navbar() {
                                                 onClick={(e) => {
                                                     if (link.dropdown) e.preventDefault();
                                                 }}
-                                                className="text-3xl font-bebas text-white tracking-wide group-hover:text-theme-accent transition-colors block w-full"
+                                                className="text-3xl font-bebas text-foreground tracking-wide group-hover:text-theme-accent transition-colors block w-full"
                                             >
                                                 {link.label}
                                             </Link>
 
                                             {link.dropdown && (
-                                                <div className={`p-2 text-white/50 group-hover:text-theme-accent transition-all duration-300 ${openSubmenu === link.label ? 'rotate-180' : ''}`}>
+                                                <div className={`p-2 text-foreground/50 group-hover:text-theme-accent transition-all duration-300 ${openSubmenu === link.label ? 'rotate-180' : ''}`}>
                                                     <ChevronDown className="w-5 h-5" />
                                                 </div>
                                             )}
                                         </div>
 
                                         {/* Accordion Submenu */}
-                                        {link.dropdown && (
-                                            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openSubmenu === link.label ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-                                                <ul className="flex flex-col gap-3 pl-4 border-l-2 border-theme-accent/20 ml-1">
-                                                    {link.dropdown.map(subItem => (
-                                                        <li key={subItem.label}>
-                                                            <Link
-                                                                href={subItem.href}
-                                                                className="text-sm font-oswald text-white/70 uppercase tracking-widest hover:text-theme-accent transition-colors block py-1"
-                                                                onClick={() => setIsMenuOpen(false)}
-                                                            >
-                                                                {subItem.label}
-                                                            </Link>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        )}
+                                        {
+                                            link.dropdown && (
+                                                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openSubmenu === link.label ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                                                    <ul className="flex flex-col gap-3 pl-4 border-l-2 border-theme-accent/20 ml-1">
+                                                        {link.dropdown.map(subItem => (
+                                                            <li key={subItem.label}>
+                                                                <Link
+                                                                    href={subItem.href}
+                                                                    className="text-sm font-oswald text-foreground/70 uppercase tracking-widest hover:text-theme-accent transition-colors block py-1"
+                                                                    onClick={() => setIsMenuOpen(false)}
+                                                                >
+                                                                    {subItem.label}
+                                                                </Link>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            )
+                                        }
                                     </div>
                                 ))}
                             </div>
 
                             <div className="mt-12 flex flex-col gap-6">
-                                <button className="w-full bg-theme-accent text-white font-bebas text-xl tracking-wider py-4 uppercase hover:bg-[#c4151c] transition-colors shadow-lg shadow-red-500/20">
+                                <button className="w-full bg-red text-white font-bebas text-xl tracking-wider py-4 uppercase hover:bg-[#c4151c] transition-colors shadow-lg shadow-red-500/20">
                                     Donate to ALEF
                                 </button>
                             </div>
@@ -279,7 +294,7 @@ function ThemeToggle() {
     return (
         <button
             onClick={toggleTheme}
-            className="text-theme-white/90 hover:text-theme-white transition-colors p-2 hover:bg-theme-white/10 rounded-none flex items-center gap-2 cursor-pointer"
+            className="text-foreground/90 hover:text-foreground transition-colors p-2 hover:bg-foreground/10 rounded-none flex items-center gap-2 cursor-pointer"
             aria-label="Toggle Theme"
         >
             {theme === 'light' && <MoonIcon className="w-5 h-5" />}

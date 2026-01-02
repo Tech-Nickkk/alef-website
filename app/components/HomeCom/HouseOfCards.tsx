@@ -1,6 +1,6 @@
 "use client";
 
-import Card from "./Card";
+import Image from "next/image";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
 import { useRef } from "react";
 import gsap from "gsap";
@@ -108,55 +108,93 @@ export default function HouseOfCards() {
     }, { scope: sectionRef });
 
     return (
-        <section ref={sectionRef} className="py-12 md:py-18 px-6 md:px-12 lg:px-24 bg-theme-black border-t border-theme-white/10 overflow-hidden relative">
+        <section ref={sectionRef} className="py-12 md:py-18 px-6 md:px-12 lg:px-24 overflow-hidden relative">
             <div className="mx-auto h-full flex flex-col items-center">
 
                 {/* Header */}
-                {/* Header */}
-                <div className="flex flex-col items-center mb-16 border-b border-theme-white/10 pb-6 relative z-10 w-full gap-4">
+                <div className="flex flex-col items-center mb-6 pb-6 relative z-10 w-full gap-4">
                     <AnimatedTitle
                         text="HOUSE OF CARDS"
-                        className="text-4xl md:text-6xl font-bold font-bebas text-theme-white uppercase leading-none text-center"
+                        className="text-4xl md:text-6xl font-bold font-bebas text-foreground uppercase leading-none text-center"
                     />
-                    <div className="flex items-center gap-2 text-theme-white/60 font-oswald text-xs tracking-widest">
-                        <span className="w-2 h-2 bg-theme-accent rounded-full inline-block"></span>
+                    <div className="flex items-center gap-2 text-foreground/60 font-oswald text-xs tracking-widest">
+                        <span className="w-2 h-2 bg-red rounded-full inline-block"></span>
                         ARCHIVE // PROFILES
                     </div>
                 </div>
 
                 {/* Cards Container */}
-                {/* 
-                   Mobile (< md): Flex Col (One line)
-                   Tablet (md - lg): Grid 2x2
-                   Desktop (lg+): Flex/Absolute (h-500px to allow pinning space)
-                */}
                 <div className="cards-container relative w-full flex flex-col gap-8 md:grid md:grid-cols-2 md:gap-x-4 md:gap-y-8 md:justify-items-center lg:flex lg:flex-row lg:h-[500px] lg:items-center lg:justify-center lg:gap-0">
-                    {[...Array(4)].map((_, index) => (
+                    {[
+                        {
+                            slug: "michel-aoun",
+                            name: "Michel Aoun",
+                            status: "SECTARIAN ALLIANCES & COLLAPSE",
+                            front: "/houseofcards/aceOfClub.png",
+                            back: "/home/card-back.png"
+                        },
+                        {
+                            slug: "naim-qassem",
+                            name: "Naim Qassem",
+                            status: "TERROR STRATEGIST & IRAN'S PROXY BOSS",
+                            front: "/houseofcards/aceOfDiamonds.png",
+                            back: "/home/card-back.png"
+                        },
+                        {
+                            slug: "riad-salameh",
+                            name: "Riad Salameh",
+                            status: "EMBEZZLEMENT & GLOBAL IMPUNITY",
+                            front: "/houseofcards/kingOfDiamonds.png",
+                            back: "/home/card-back.png"
+                        },
+                        {
+                            slug: "walid-jumblatt",
+                            name: "Walid Jumblatt",
+                            status: "BRIBERY & BETRAYAL",
+                            front: "/houseofcards/kingOfSpades.png",
+                            back: "/home/card-back.png"
+                        }
+                    ].map((card, index) => (
                         <div
                             key={index}
                             ref={(el) => {
                                 if (el) cardRefs.current[index] = el;
                             }}
-                            // Wrapper Styling:
-                            // Mobile/Tablet: Relative, Auto size (controlled by Card or self)
-                            // Desktop: Absolute centered (controlled by GSAP)
-                            className="
-                                relative 
-                                w-[200px] h-[300px] 
-                                md:w-[200px] md:h-[300px] 
-                                xl:w-[240px] xl:h-[360px]
-                                mx-auto
-                                
-                                lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-1/2 lg:m-0
-                            "
+                            className="relative w-[200px] h-[300px] md:w-[200px] md:h-[300px] xl:w-[240px] xl:h-[360px] mx-auto lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-1/2 lg:m-0 perspective-[1000px]"
                         >
-                            <Card
-                                id={`card-${index + 1}`}
-                                frontSrc="/home/card-front.jpg"
-                                frontAlt="Card Front"
-                                backSrc="/home/card-back.png"
-                                backAlt="Card Back"
-                            />
+                            <div className="flip-card-inner relative w-full h-full preserve-3d">
+                                {/* Front (Pattern/Back) - This is the "back" of the card in card-game terms, but the front face in CSS before rotation */}
+                                <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden border border-white/10 bg-blue">
+                                    <Image
+                                        src={card.back}
+                                        alt="Card Back"
+                                        fill
+                                        className="object-cover opacity-90"
+                                    />
+                                </div>
+
+                                {/* Back (Revealed Image) - This is the "front" of the card (character), rotated 180 initially */}
+                                <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden border border-red/40 bg-background rotate-y-180 shadow-2xl shadow-red/20 cursor-pointer pointer-events-auto">
+                                    <Link href={`/house-of-cards/${card.slug}`} className="absolute inset-0 z-20 block w-full h-full">
+                                        <div className="absolute inset-0">
+                                            <Image
+                                                src={card.front}
+                                                alt={card.name}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </div>
+
+                                        <div className="absolute top-4 right-4 max-w-[85%] px-2 py-1 bg-red text-[7px] text-white font-bold tracking-widest rounded-sm uppercase text-right leading-tight z-30">
+                                            {card.status}
+                                        </div>
+
+                                        <div className="absolute bottom-6 left-6 right-6 z-30">
+                                            <p className="font-bebas text-2xl tracking-wide uppercase text-black drop-shadow-md leading-none">{card.name}</p>
+                                        </div>
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -164,9 +202,9 @@ export default function HouseOfCards() {
                 {/* Inspect Deck Button */}
                 <div className="flex justify-center mt-12 relative z-10">
                     <Link href="/house-of-cards">
-                        <button className="group relative bg-transparent border border-theme-white/70 text-theme-white px-12 py-4 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-theme-white/50 isolate cursor-pointer">
-                            <span className="relative z-10 group-hover:text-theme-black transition-colors duration-300">VIEW FULL ARCHIVE</span>
-                            <div className="absolute inset-0 bg-theme-white transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10"></div>
+                        <button className="group relative bg-transparent border border-foreground/70 text-foreground px-12 py-4 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-foreground/50 isolate cursor-pointer">
+                            <span className="relative z-10 group-hover:text-background transition-colors duration-300">VIEW FULL ARCHIVE</span>
+                            <div className="absolute inset-0 bg-foreground transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10"></div>
                         </button>
                     </Link>
                 </div>
