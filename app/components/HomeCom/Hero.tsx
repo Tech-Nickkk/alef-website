@@ -11,7 +11,12 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Hero() {
     const heroRef = useRef<HTMLElement>(null);
     const videoRef = useRef<HTMLDivElement>(null);
+    const [isMounted, setIsMounted] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     useGSAP(() => {
         if (videoRef.current) {
@@ -39,6 +44,14 @@ export default function Hero() {
             document.body.style.overflow = 'unset';
         };
     }, [isModalOpen]);
+
+    if (!isMounted) {
+        return (
+            <section ref={heroRef} className="relative min-h-screen flex flex-col overflow-hidden bg-black">
+                {/* Fallback/Loader could go here, or just a black background to match video start */}
+            </section>
+        );
+    }
 
     return (
         <section ref={heroRef} className="relative min-h-screen flex flex-col overflow-hidden">

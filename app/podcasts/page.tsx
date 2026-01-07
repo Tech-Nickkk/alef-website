@@ -1,77 +1,81 @@
 "use client";
 
 import AnimatedTitle from "../components/CommonCom/AnimatedTitle";
-import { Play, Search, Filter } from "lucide-react";
-import { useState, useMemo } from "react";
+import { Search } from "lucide-react";
+import { useState, useMemo, useEffect } from "react";
+import { client } from "@/sanity/lib/client";
 
-// Podcast data - ordered from most recent to oldest
-const podcasts = [
-    {
-        id: 1,
-        title: "November 2025",
-        subtitle: "Global Economic Shifts & Policy",
-        videoId: "mviiuh24DYQ",
-        date: "NOV 2025",
-        featured: true,
-        description: "An in-depth look at the emerging economic corridors and the shifting dynamics of global trade power."
-    },
-    {
-        id: 2,
-        title: "October 2025",
-        subtitle: "Crisis Management Strategies",
-        videoId: "3MsiXOxsyMQ",
-        date: "OCT 2025",
-        featured: false,
-    },
-    {
-        id: 3,
-        title: "July 2025",
-        subtitle: "The Future of Governance",
-        videoId: "6M2BkWoBg68",
-        date: "JUL 2025",
-        featured: false,
-    },
-];
+interface Podcast {
+    _id: string;
+    title: string;
+    slug: { current: string };
+    videoUrl: string;
+    publishedAt: string;
+}
 
 export default function PodcastsPage() {
-    const [filter, setFilter] = useState("All"); // Year filter
+    const [podcasts, setPodcasts] = useState<Podcast[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [filter, setFilter] = useState("All");
     const [searchQuery, setSearchQuery] = useState("");
-    const [topicFilter, setTopicFilter] = useState("All Topics");
-    const [isTopicFilterOpen, setIsTopicFilterOpen] = useState(false);
 
-    // Extract unique years for horizontal tabs
+    useEffect(() => {
+        const fetchPodcasts = async () => {
+            try {
+                const query = `*[_type == "podcast"] | order(publishedAt desc) {
+                    _id,
+                    title,
+                    slug,
+                    videoUrl,
+                    publishedAt
+                }`;
+                const data = await client.fetch(query);
+                setPodcasts(data);
+            } catch (error) {
+                console.error("Error fetching podcasts:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchPodcasts();
+    }, []);
+
+    // Helper to extract YouTube ID
+    const getYoutubeId = (url: string) => {
+        if (!url) return null;
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+        const match = url.match(regExp);
+        return (match && match[2].length === 11) ? match[2] : null;
+    };
+
+    const getEmbedUrl = (url: string) => {
+        const ytId = getYoutubeId(url);
+        if (ytId) return `https://www.youtube.com/embed/${ytId}`;
+        return url; // Fallback or direct link handling could be added
+    };
+
+
+    // Extract unique years for filter
     const years = useMemo(() => {
         const uniqueYears = Array.from(new Set(podcasts.map(p => {
-            const parts = p.date.split(" ");
-            return parts.length > 1 ? parts[1] : "N/A";
-        }))).filter(y => y !== "N/A").sort((a, b) => b.localeCompare(a));
+            return new Date(p.publishedAt).getFullYear().toString();
+        }))).sort((a, b) => b.localeCompare(a));
         return ["All", ...uniqueYears];
-    }, []);
+    }, [podcasts]);
 
-    // Extract unique subtitles (topics) for dropdown
-    const topics = useMemo(() => {
-        const uniqueTopics = Array.from(new Set(podcasts.map(p => p.subtitle)));
-        return ["All Topics", ...uniqueTopics];
-    }, []);
 
     const filteredPodcasts = useMemo(() => {
         return podcasts.filter(p => {
-            const parts = p.date.split(" ");
-            const pYear = parts.length > 1 ? parts[1] : "N/A";
-
+            const pYear = new Date(p.publishedAt).getFullYear().toString();
             const matchesYear = filter === "All" || pYear === filter;
-            const matchesTopic = topicFilter === "All Topics" || p.subtitle === topicFilter;
-            const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                p.subtitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                (p.description && p.description.toLowerCase().includes(searchQuery.toLowerCase()));
+            const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase());
 
-            return matchesYear && matchesTopic && matchesSearch;
+            return matchesYear && matchesSearch;
         });
-    }, [filter, topicFilter, searchQuery]);
+    }, [filter, searchQuery, podcasts]);
 
     const highlightText = (text: string, query: string) => {
         if (!query) return text;
-
         const parts = text.split(new RegExp(`(${query})`, "gi"));
         return parts.map((part, index) =>
             part.toLowerCase() === query.toLowerCase() ? (
@@ -84,10 +88,14 @@ export default function PodcastsPage() {
         );
     };
 
+    if (loading) {
+        return <div className="min-h-screen bg-background flex items-center justify-center text-white font-oswald text-xl uppercase tracking-widest">Loading Podcasts...</div>;
+    }
+
     return (
         <div className="bg-background min-h-screen flex flex-col relative overflow-hidden">
             {/* Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-[50vh] bg-linear-to-b from-blue/10 to-transparent pointer-events-none" />
+            <div className="absolute top-0 left-0 w-full h-[50vh] bg-gradient-to-b from-blue/10 to-transparent pointer-events-none" />
 
             <main className="grow pt-32 px-4 md:px-8 lg:px-12 max-w-[1400px] mx-auto w-full z-10 relative">
 
@@ -129,7 +137,7 @@ export default function PodcastsPage() {
                     </div>
 
                     <div className="flex items-center gap-4">
-                        <div className="relative hidden md:block">
+                        <div className="relative">
                             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/30" />
                             <input
                                 type="text"
@@ -139,36 +147,6 @@ export default function PodcastsPage() {
                                 className="bg-foreground/5 border border-white/10 rounded-full py-2.5 pl-12 pr-6 font-oswald text-xs tracking-widest focus:outline-none focus:border-red/50 transition-colors w-64 uppercase"
                             />
                         </div>
-                        <div className="relative">
-                            <button
-                                onClick={() => setIsTopicFilterOpen(!isTopicFilterOpen)}
-                                className={`flex items-center gap-2 border rounded-full px-5 py-2.5 font-oswald text-xs tracking-widest transition-all uppercase ${isTopicFilterOpen || topicFilter !== "All Topics"
-                                    ? "bg-red border-red text-white"
-                                    : "bg-foreground/5 border-white/10 hover:bg-foreground/10"
-                                    }`}
-                            >
-                                <Filter className="w-4 h-4" />
-                                {topicFilter === "All Topics" ? "TOPIC FILTER" : "TOPIC SELECTED"}
-                            </button>
-
-                            {isTopicFilterOpen && (
-                                <div className="absolute top-full right-0 mt-2 w-64 bg-background border border-white/10 rounded-xl overflow-hidden shadow-2xl z-50 py-2">
-                                    {topics.map((topic) => (
-                                        <button
-                                            key={topic}
-                                            onClick={() => {
-                                                setTopicFilter(topic);
-                                                setIsTopicFilterOpen(false);
-                                            }}
-                                            className={`w-full text-left px-5 py-2.5 font-oswald text-[9px] tracking-widest uppercase transition-colors hover:bg-foreground/5 truncate ${topicFilter === topic ? "text-red" : "text-foreground/60"
-                                                }`}
-                                        >
-                                            {topic}
-                                        </button>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
                     </div>
                 </div>
 
@@ -177,59 +155,33 @@ export default function PodcastsPage() {
                     {filteredPodcasts.length > 0 ? (
                         filteredPodcasts.map((podcast) => (
                             <div
-                                key={podcast.id}
-                                className="bg-blue border border-white/10 rounded-lg overflow-hidden"
+                                key={podcast._id}
+                                className="bg-blue border border-white/10 rounded-lg overflow-hidden group flex flex-col h-full transition-all duration-300 hover:border-white/30 hover:shadow-xl"
                             >
-                                {/* Video Container */}
-                                <div className="relative w-full aspect-video bg-black/50 overflow-hidden">
+                                {/* Video/Embed Area (Since no cover image) */}
+                                <div className="relative w-full aspect-video bg-black/50 overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                                     <iframe
-                                        src={`https://www.youtube.com/embed/${podcast.videoId}`}
+                                        src={getEmbedUrl(podcast.videoUrl)}
                                         title={podcast.title}
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                         allowFullScreen
-                                        className="absolute inset-0 w-full h-full opacity-80 hover:opacity-100 transition-opacity duration-300"
+                                        className="absolute inset-0 w-full h-full"
                                     />
-                                    {/* Bottom border gradient */}
-                                    <div className="absolute inset-x-0 bottom-0 h-[2px] bg-linear-to-r from-transparent via-red to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                 </div>
 
                                 {/* Content */}
-                                <div className="p-8 relative">
-                                    {/* Background Watermark Icon */}
-                                    <div className="absolute top-4 right-4 text-red/5 transform rotate-12 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-0">
-                                        <Play className="w-24 h-24" />
+                                <div className="p-8 relative grow flex flex-col">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <span className="text-[10px] text-red font-oswald tracking-widest uppercase">
+                                            {new Date(podcast.publishedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
+                                        </span>
                                     </div>
 
-                                    <div className="relative z-10">
-                                        <div className="flex items-center justify-between mb-4">
-                                            <span className="inline-block px-2 py-1 bg-white/5 border border-white/10 rounded text-[10px] text-red font-oswald tracking-widest uppercase mb-2">
-                                                {podcast.date}
-                                            </span>
-                                            {podcast.featured && (
-                                                <span className="flex items-center gap-1 text-[10px] text-red/80 font-oswald tracking-widest uppercase animate-pulse">
-                                                    <span className="w-1.5 h-1.5 rounded-full bg-red"></span>
-                                                    Latest
-                                                </span>
-                                            )}
-                                        </div>
+                                    <h3 className="text-2xl font-bebas text-white mb-4 leading-none transition-colors duration-300">
+                                        {highlightText(podcast.title, searchQuery)}
+                                    </h3>
 
-                                        <h3 className="text-3xl font-bebas text-white mb-2 leading-none group-hover:text-red transition-colors duration-300">
-                                            {highlightText(podcast.title, searchQuery)}
-                                        </h3>
-
-                                        <h4 className="text-sm font-oswald text-white/50 uppercase tracking-widest mb-6 border-l-2 border-red/30 pl-3">
-                                            {highlightText(podcast.subtitle, searchQuery)}
-                                        </h4>
-
-                                        <div className="flex items-center gap-2 group/link cursor-pointer">
-                                            <div className="w-8 h-8 rounded-full bg-red/10 flex items-center justify-center group-hover/link:bg-red transition-colors duration-300">
-                                                <Play className="w-3 h-3 text-red fill-current group-hover/link:text-white transition-colors" />
-                                            </div>
-                                            <span className="text-xs font-oswald text-white/60 tracking-wider group-hover/link:text-white transition-colors">
-                                                WATCH EPISODE
-                                            </span>
-                                        </div>
-                                    </div>
+                                    {/* Link to source if needed, or just let the embed play */}
                                 </div>
                             </div>
                         ))
@@ -238,13 +190,12 @@ export default function PodcastsPage() {
                             <div className="flex flex-col items-center gap-4">
                                 <span className="text-4xl">🔍</span>
                                 <p className="text-foreground/60 text-xl font-oswald tracking-widest uppercase">
-                                    No podcasts found matching your criteria.
+                                    No podcasts found {searchQuery && `matching "${searchQuery}"`}.
                                 </p>
                                 <button
                                     onClick={() => {
                                         setFilter("All");
                                         setSearchQuery("");
-                                        setTopicFilter("All Topics");
                                     }}
                                     className="text-red font-oswald text-sm underline underline-offset-4 hover:text-white transition-colors"
                                 >

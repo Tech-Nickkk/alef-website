@@ -7,6 +7,7 @@ import HouseOfCorruption from "./components/HomeCom/HouseOfCorruption";
 import HouseOfCards from "./components/HomeCom/HouseOfCards";
 import Media from "./components/HomeCom/Media";
 import CongressionalActions from "./components/HomeCom/CongressionalActions";
+import CTASection from "./components/CommonCom/CTASection";
 
 export default function Home() {
   return (
@@ -14,10 +15,13 @@ export default function Home() {
       <Hero />
       <ChairmanMessage />
       <WhoWeAre />
+      <CTASection type="subscribe" />
       <HouseOfCorruption />
       <HouseOfCards />
+      <CTASection type="donate" />
       <CongressionalActions />
       <BlogsAndArticles />
+      <CTASection type="join" />
       <AlliedOrganizations />
       <Media />
     </main>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
 
 export default function ChairmanMessage() {
@@ -76,6 +77,19 @@ export default function ChairmanMessage() {
                             FOUNDING_CHAIRMAN
                         </div>
                     </div>
+                </div>
+
+                {/* About Chairman Button */}
+                <div className="flex justify-center mt-12 relative z-10">
+                    <Link
+                        href="https://3afekra.com/wp-content/uploads/2022/11/%D8%B2%D9%8A%D8%A7%D8%AF-%D8%B9%D8%A8%D8%AF-%D8%A7%D9%84%D9%86%D9%88%D8%B1-.pdf"
+                        target="_blank"
+                    >
+                        <button className="group relative bg-transparent border border-foreground/70 text-foreground px-12 py-4 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-foreground/50 isolate cursor-pointer">
+                            <span className="relative z-10 group-hover:text-background transition-colors duration-300">ABOUT THE CHAIRMAN</span>
+                            <div className="absolute inset-0 bg-foreground transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10"></div>
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>

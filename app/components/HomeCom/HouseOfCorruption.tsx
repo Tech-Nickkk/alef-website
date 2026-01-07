@@ -1,41 +1,12 @@
-// app/components/HomeCom/HouseOfCorruption.tsx
 "use client";
 
-import { useState, useRef, MouseEvent } from "react";
 import Image from "next/image";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function HouseOfCorruption() {
-    const [showMagnifier, setShowMagnifier] = useState(false);
-    const [magnifierPosition, setMagnifierPosition] = useState({ x: 0, y: 0 });
-    const [imgSize, setImgSize] = useState({ width: 0, height: 0 });
-    const imageContainerRef = useRef<HTMLDivElement>(null);
-
     const imageSrc = "/home/$1-Trillion-Robbery.jpg";
-    const zoomLevel = 2.5;
-
-    const handleMouseEnter = () => {
-        setShowMagnifier(true);
-    };
-
-    const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-        if (!imageContainerRef.current) return;
-
-        const { top, left, width, height } = imageContainerRef.current.getBoundingClientRect();
-
-        // Calculate position relative to the image container
-        const x = e.clientX - left;
-        const y = e.clientY - top;
-
-        setMagnifierPosition({ x, y });
-        setImgSize({ width, height });
-    };
-
-    const handleMouseLeave = () => {
-        setShowMagnifier(false);
-    };
 
     return (
         <section className="py-12 md:py-24 px-6 md:px-12 lg:px-24">
@@ -99,84 +70,15 @@ export default function HouseOfCorruption() {
                         </div>
                     </div>
 
-                    {/* Right Column: Image Card with Magnifying Glass */}
+                    {/* Right Column: Image Card without Magnifying Glass */}
                     <div className="bg-blue rounded-2xl p-2 h-[500px] md:h-[600px] relative overflow-hidden group">
-                        <div
-                            ref={imageContainerRef}
-                            className="relative w-full h-full rounded-xl overflow-hidden cursor-none"
-                            onMouseEnter={handleMouseEnter}
-                            onMouseMove={handleMouseMove}
-                            onMouseLeave={handleMouseLeave}
-                        >
+                        <div className="relative w-full h-full rounded-xl overflow-hidden">
                             <Image
                                 src={imageSrc}
                                 alt="$1 Trillion Robbery"
                                 fill
                                 className="object-cover"
                             />
-
-                            {/* Magnifying Glass */}
-                            <div
-                                className={`absolute pointer-events-none z-50 ${showMagnifier
-                                    ? 'opacity-100 scale-100'
-                                    : 'opacity-0 scale-75'
-                                    }`}
-                                style={{
-                                    top: `${magnifierPosition.y - 75}px`,
-                                    left: `${magnifierPosition.x - 75}px`,
-                                    transition: 'opacity 300ms ease-out, transform 1000ms ease-out',
-                                }}
-                            >
-                                {/* Glass Lens */}
-                                <div
-                                    className="relative rounded-full bg-no-repeat overflow-hidden"
-                                    style={{
-                                        height: "150px",
-                                        width: "150px",
-                                        backgroundImage: `url('${imageSrc}')`,
-                                        backgroundSize: `${imgSize.width * zoomLevel}px ${imgSize.height * zoomLevel}px`,
-                                        backgroundPositionX: `${-magnifierPosition.x * zoomLevel + 75}px`,
-                                        backgroundPositionY: `${-magnifierPosition.y * zoomLevel + 75}px`,
-                                        border: "6px solid #4a4a4a",
-                                        boxShadow: "0 8px 32px rgba(0,0,0,0.4), inset 0 0 20px rgba(255,255,255,0.1)"
-                                    }}
-                                >
-                                    <div
-                                        className="absolute inset-0 rounded-full pointer-events-none"
-                                        style={{
-                                            background: "linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 100%)"
-                                        }}
-                                    />
-                                    <div
-                                        className="absolute inset-1 rounded-full pointer-events-none"
-                                        style={{
-                                            border: "2px solid rgba(80,80,80,0.5)"
-                                        }}
-                                    />
-                                </div>
-
-                                {/* Handle */}
-                                <div
-                                    className="absolute"
-                                    style={{
-                                        width: "20px",
-                                        height: "60px",
-                                        background: "linear-gradient(90deg, #3a3a3a 0%, #5a5a5a 50%, #3a3a3a 100%)",
-                                        borderRadius: "4px",
-                                        bottom: "-35px",
-                                        right: "10px",
-                                        transform: "rotate(-45deg)",
-                                        transformOrigin: "top center",
-                                        boxShadow: "2px 4px 8px rgba(0,0,0,0.4)"
-                                    }}
-                                >
-                                    <div className="absolute top-4 left-1 right-1 space-y-1">
-                                        <div className="h-0.5 bg-gray-600 rounded"></div>
-                                        <div className="h-0.5 bg-gray-600 rounded"></div>
-                                        <div className="h-0.5 bg-gray-600 rounded"></div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
 

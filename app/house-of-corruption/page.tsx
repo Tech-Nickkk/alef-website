@@ -1,360 +1,524 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
-import AnimatedTitle from "../components/CommonCom/AnimatedTitle";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { AlertTriangle, Banknote, Building2, TrendingDown, Users, Zap, MoveRight } from "lucide-react";
+import {
+    AlertTriangle,
+    Banknote,
+    Building2,
+    Users,
+    Zap,
+    MoveRight,
+    FileText,
+    Siren,
+    Globe,
+    Scale,
+    ShieldAlert,
+    X,
+    Maximize2,
+    Car,
+    Bomb,
+    TrendingDown,
+    HeartPulse
+} from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// --- 1. DATA ---
+const DIRECT_LOSSES = [
+    {
+        id: "DL-01",
+        title: "PUBLIC FUNDS EMBEZZLED",
+        amount: "$150B - $180B",
+        source: "IMF, World Bank, EU Reports",
+        description: "Systematic theft by political class via state contracts and treasury looting.",
+        icon: <Banknote className="w-8 h-8" />
+    },
+    {
+        id: "DL-02",
+        title: "OFFSHORE MONEY LAUNDERING",
+        amount: "$80B - $100B",
+        source: "Swiss Leaks, Pandora Papers",
+        description: "Illicit capital flight transferred to accounts in Switzerland, France, and tax havens.",
+        icon: <Globe className="w-8 h-8" />
+    },
+    {
+        id: "DL-03",
+        title: "BANKING SECTOR PONZI",
+        amount: "$70B - $85B",
+        source: "World Bank, Audit Reports",
+        description: "Central Bank (BDL) financial engineering designed to cover state deficit using depositor funds.",
+        icon: <AlertTriangle className="w-8 h-8" />
+    },
+    {
+        id: "DL-04",
+        title: "INFRASTRUCTURE WASTE",
+        amount: "$40B - $60B",
+        source: "Lebanese Court of Audit",
+        description: "Phantom projects in dams, roads, and councils that were paid for but never completed.",
+        icon: <Building2 className="w-8 h-8" />
+    },
+    {
+        id: "DL-05",
+        title: "FUEL & ELECTRICITY",
+        amount: "$25B - $35B",
+        source: "Ministry of Energy Reports",
+        description: "Defective fuel imports (Sonatrach), rigged tenders, and generator cartels.",
+        icon: <Zap className="w-8 h-8" />
+    },
+    {
+        id: "DL-06",
+        title: "CUSTOMS & SMUGGLING",
+        amount: "$15B - $25B",
+        source: "IMF, Customs Reports",
+        description: "Lost revenues from smuggling of goods, fuel, and drugs across porous borders.",
+        icon: <ShieldAlert className="w-8 h-8" />
+    },
+    {
+        id: "DL-07",
+        title: "TELECOM SECTOR FRAUD",
+        amount: "$12B - $18B",
+        source: "Ministry of Telecom, World Bank",
+        description: "Gross overpricing of services and embezzlement of sector revenues.",
+        icon: <Siren className="w-8 h-8" />
+    },
+    {
+        id: "DL-08",
+        title: "REAL ESTATE SEIZURES",
+        amount: "$10B - $15B",
+        source: "Land Registry Investigations",
+        description: "Illegal acquisition of public lands (Mashaa) and coastal zones by political elites.",
+        icon: <Scale className="w-8 h-8" />
+    }
+];
+
+const GALLERY_IMAGES = [
+    // Left Lane: 1, 2, 3, 4, 5, 7 (skip 6)
+    { src: "/houseOfCorruption/house-of-corruption-img-1.jpg", alt: "Narco Funding Graph", caption: "Illicit Revenue Streams", side: "left" },
+    { src: "/houseOfCorruption/house-of-corruption-img-2.jpg", alt: "Shadow Banking", caption: "Currency Manipulation", side: "left" },
+    { src: "/houseOfCorruption/house-of-corruption-img-3.jpg", alt: "The Venezuela Connection", caption: "Gold & Crypto Laundering", side: "left" },
+    { src: "/houseOfCorruption/house-of-corruption-img-4.jpg", alt: "Fuel Cartel", caption: "Energy Sector Corruption", side: "left" },
+    { src: "/houseOfCorruption/house-of-corruption-img-5.jpg", alt: "Laundering Map", caption: "Global Money Flow", side: "left" },
+    { src: "/houseOfCorruption/house-of-corruption-img-7.jpg", alt: "Crisis Summary", caption: "The Aftermath", side: "left" },
+
+    // Right Lane: 7, 5, 4, 3, 2, 1 (skip 6, reversed)
+    { src: "/houseOfCorruption/house-of-corruption-img-7.jpg", alt: "Crisis Summary", caption: "The Aftermath", side: "right" },
+    { src: "/houseOfCorruption/house-of-corruption-img-5.jpg", alt: "Laundering Map", caption: "Global Money Flow", side: "right" },
+    { src: "/houseOfCorruption/house-of-corruption-img-4.jpg", alt: "Fuel Cartel", caption: "Energy Sector Corruption", side: "right" },
+    { src: "/houseOfCorruption/house-of-corruption-img-3.jpg", alt: "The Venezuela Connection", caption: "Gold & Crypto Laundering", side: "right" },
+    { src: "/houseOfCorruption/house-of-corruption-img-2.jpg", alt: "Shadow Banking", caption: "Currency Manipulation", side: "right" },
+    { src: "/houseOfCorruption/house-of-corruption-img-1.jpg", alt: "Narco Funding Graph", caption: "Illicit Revenue Streams", side: "right" },
+];
+
+const indirectStats = [
+    {
+        title: "MASS EMIGRATION",
+        loss: "$200B - $250B",
+        label: "LOST GDP (1975-2023)",
+        detail: "Over 3.5 million Lebanese emigrated since 1975. Highly skilled professionals left, weakening the economy. Billions lost in missed investments, wages, and entrepreneurship.",
+        icon: <Users className="w-6 h-6" />
+    },
+    {
+        title: "PRIVATE GENERATOR COSTS",
+        loss: "$40B - $50B",
+        label: "ELECTRICITY CRISIS",
+        detail: "Lebanese people forced to rely on private generators due to a failed national grid. Families pay $200-$500/month for unreliable power.",
+        icon: <Zap className="w-6 h-6" />
+    },
+    {
+        title: "BANK DEPOSITS STOLEN",
+        loss: "$80B - $100B",
+        label: "FINANCIAL CRISIS (2019-2023)",
+        detail: "Lebanese banks froze accounts and prevented depositors from withdrawing their money. Bankers transferred billions abroad while ordinary people lost savings.",
+        icon: <Banknote className="w-6 h-6" />
+    },
+    {
+        title: "TRAFFIC CONGESTION",
+        loss: "$30B - $40B",
+        label: "WASTED COMMUTING TIME",
+        detail: "Lebanese spend an average of 1.5-3 hours per day stuck in traffic. Productivity losses equivalent to 5% of Lebanon's GDP/year.",
+        icon: <Car className="w-6 h-6" />
+    },
+    {
+        title: "PORT OF BEIRUT EXPLOSION",
+        loss: "$15B - $20B",
+        label: "ECONOMIC LOSSES",
+        detail: "The 2020 explosion destroyed businesses, homes, and key economic infrastructure. Billions in trade revenue lost due to port mismanagement.",
+        icon: <Bomb className="w-6 h-6" />
+    },
+    {
+        title: "LOSS OF FOREIGN INVESTMENT",
+        loss: "$50B - $70B",
+        label: "DUE TO CORRUPTION",
+        detail: "International investors withdrew from Lebanon due to political instability & financial fraud.",
+        icon: <TrendingDown className="w-6 h-6" />
+    },
+    {
+        title: "HEALTH CRISIS",
+        loss: "$10B - $15B",
+        label: "POLLUTION & WATER CONTAMINATION",
+        detail: "Lebanon's garbage crisis led to massive pollution. Poor sanitation increased disease rates, affecting workforce productivity.",
+        icon: <HeartPulse className="w-6 h-6" />
+    }
+];
+
+// Reusable Components
+const SectionHeader = ({ subtitle, title, figure, text }: { subtitle: string, title: string, figure: string, text: string }) => (
+    <div className="py-16 text-center">
+        <span className="font-oswald text-[10px] tracking-[0.4em] text-red uppercase mb-4 block">{subtitle}</span>
+        <h2 className="text-5xl md:text-8xl font-bebas text-foreground mb-6 leading-none">{title}</h2>
+        <div className="flex flex-col items-center justify-center gap-2">
+            <div className="font-bebas text-3xl md:text-5xl text-red">{figure}</div>
+            <p className="font-oswald text-foreground/60 max-w-lg mx-auto text-base font-light tracking-wide">
+                {text}
+            </p>
+        </div>
+    </div>
+);
+
 export default function HouseOfCorruptionPage() {
     const containerRef = useRef<HTMLDivElement>(null);
-    const scrollContainerRef = useRef<HTMLDivElement>(null);
     const [counterValue, setCounterValue] = useState(0);
+    const [selectedImage, setSelectedImage] = useState<{ src: string, alt: string, caption: string } | null>(null);
 
     useGSAP(() => {
         const mm = gsap.matchMedia();
 
-        // 1. HERO ANIMATION
-        const heroTl = gsap.timeline();
-        heroTl.from(".hero-text-char", {
-            y: 100,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.05,
-            ease: "power4.out"
-        })
-            .from(".hero-badge", {
-                scale: 0,
-                opacity: 0,
-                duration: 0.5,
-                ease: "back.out(1.7)"
-            }, "-=0.5")
-            .from(".hero-sub", {
-                y: 20,
-                opacity: 0,
-                duration: 0.8
-            }, "-=0.3");
-
-        // 2. PINNED COUNTER SECTION (The Scale of Loss)
-        ScrollTrigger.create({
-            trigger: ".counter-section",
-            start: "top top",
-            end: "+=150%",
-            pin: true,
-            scrub: 1,
-            onUpdate: (self) => {
-                // Animate the number from 0 to 1000 (representing Billions -> 1 Trillion)
-                setCounterValue(Math.floor(self.progress * 1000));
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".counter-section",
+                start: "top top",
+                end: "+=300%",
+                pin: true,
+                scrub: 1,
+                onUpdate: (self) => setCounterValue(Math.floor(self.progress * 1000))
             }
         });
 
-        // Animate the red fills and bars in the counter section
-        gsap.fromTo(".loss-bar",
-            { scaleX: 0 },
+        // Set initial positions BEFORE timeline starts
+        gsap.set(".left-lane", { y: "120vh" });
+        gsap.set(".right-lane", { y: "-500vh" });
+
+        tl.fromTo(".left-lane",
+            { y: "120vh" },
+            { y: "-500vh", ease: "none", duration: 1 },
+            0);
+
+        tl.fromTo(".right-lane",
+            { y: "-500vh" },
+            { y: "120vh", ease: "none", duration: 1 },
+            0);
+
+        mm.add("(min-width: 1024px)", () => {
+            const sections = gsap.utils.toArray(".dossier-card");
+            if (sections.length > 0) {
+                gsap.to(sections, {
+                    xPercent: -100 * (sections.length - 1) * 0.6,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: ".direct-losses-wrapper",
+                        start: "top top",
+                        end: "+=300%",
+                        pin: true,
+                        scrub: 1,
+                    }
+                });
+            }
+        });
+
+        // Center Line Animation
+        gsap.fromTo(".center-line",
+            { scaleY: 0, transformOrigin: "top" },
             {
-                scaleX: 1,
+                scaleY: 1,
                 ease: "none",
                 scrollTrigger: {
-                    trigger: ".counter-section",
-                    start: "top top",
-                    end: "+=150%",
+                    trigger: ".indirect-list-container",
+                    start: "top center",
+                    end: "bottom center",
                     scrub: 1
                 }
             }
         );
 
-
-        // 3. HORIZONTAL SCROLL (Direct Losses)
-        // Only on Desktop
-        mm.add("(min-width: 1024px)", () => {
-            const sections = gsap.utils.toArray(".direct-loss-card");
-
-            gsap.to(scrollContainerRef.current, {
-                xPercent: -100 * (sections.length - 1) / sections.length * 1.1, // Adjust for padding
-                ease: "none",
-                scrollTrigger: {
-                    trigger: ".horizontal-scroll-wrapper",
-                    start: "top top",
-                    end: "+=300%", // Scroll distance
-                    pin: true,
-                    scrub: 1,
-                    anticipatePin: 1
-                }
-            });
-        });
-
-        // 4. INDIRECT LOSSES (Reveal)
-        gsap.from(".indirect-stat", {
-            y: 50,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.2,
-            scrollTrigger: {
-                trigger: ".indirect-section",
-                start: "top 70%"
-            }
-        });
-
     }, { scope: containerRef });
 
     return (
-        <div ref={containerRef} className="bg-background min-h-screen text-foreground pb-24 overflow-x-hidden">
+        <div ref={containerRef} className="bg-background min-h-screen text-foreground font-sans selection:bg-red selection:text-white">
 
-            {/* FLOATING PARTICLES (Money/Shreds) */}
-            <div className="fixed inset-0 pointer-events-none z-0 opacity-10">
-                {[...Array(20)].map((_, i) => (
-                    <div
-                        key={i}
-                        className="absolute bg-white/20 w-8 h-4 rounded-sm animate-float"
-                        style={{
-                            top: `${Math.random() * 100}%`,
-                            left: `${Math.random() * 100}%`,
-                            animationDuration: `${10 + Math.random() * 20}s`,
-                            animationDelay: `-${Math.random() * 20}s`,
-                            transform: `rotate(${Math.random() * 360}deg)`
-                        }}
-                    />
-                ))}
-            </div>
-
-
-            {/* 1. HERO SECTION */}
-            <header className="relative h-screen flex flex-col items-center justify-center overflow-hidden border-b border-white/10 z-10">
-                <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-[url('/home/noise.png')] opacity-20 animate-pulse-slow"></div>
-                    <div className="absolute top-0 left-0 w-full h-full bg-linear-to-b from-blue/50 via-transparent to-background"></div>
-                </div>
-
-                <div className="relative z-10 text-center px-4 max-w-6xl mx-auto space-y-8">
-                    <div className="hero-badge inline-flex items-center gap-3 px-6 py-2 bg-red/10 border border-red/30 rounded-none transform -skew-x-12 text-red font-oswald text-sm tracking-[0.3em] uppercase">
-                        <AlertTriangle className="w-4 h-4" />
-                        Confidential Financial Report
+            {/* 1. HERO WRAPPER */}
+            <div className="relative h-screen flex flex-col items-center justify-center overflow-hidden z-10">
+                <div className="relative z-10 text-center px-4 max-w-7xl mx-auto space-y-6">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red text-white font-oswald text-xs tracking-[0.2em] uppercase">
+                        <Siren className="w-3 h-3" />
+                        Confidential Financial Audit
                     </div>
-
                     <div className="overflow-hidden">
-                        <h1 className="text-7xl md:text-[10rem] font-bebas leading-[0.8] text-foreground tracking-tighter flex flex-wrap justify-center gap-x-6">
-                            {"THE $1 TRILLION HEIST".split(" ").map((word, i) => (
-                                <span key={i} className="hero-text-char inline-block">{word}</span>
-                            ))}
+                        <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bebas font-bold text-foreground flex flex-wrap justify-center gap-x-4 opacity-90">
+                            THE $1 TRILLION HEIST
                         </h1>
                     </div>
-
-                    <p className="hero-sub font-oswald text-xl md:text-2xl text-foreground/60 max-w-3xl mx-auto leading-relaxed border-l-2 border-red/50 pl-6 text-left">
-                        Lebanon’s collapse was a calculated transfer of wealth.<br />
-                        <span className="text-red">50 years of systematic looting, visualized.</span>
+                    <p className="font-oswald text-lg md:text-2xl text-foreground/70 max-w-3xl mx-auto leading-relaxed text-center font-light tracking-wide">
+                        A systematic transfer of wealth. Direct theft, laundered money, and wasted potential.
                     </p>
                 </div>
-
-                <div className="absolute bottom-12 animate-bounce">
-                    <div className="text-foreground/30 font-oswald text-xs tracking-widest uppercase flex flex-col items-center gap-2">
-                        <span>Initiate Audit</span>
-                        <MoveRight className="w-5 h-5 rotate-90" />
+                <div className="absolute bottom-12">
+                    <div className="text-foreground/30 font-oswald text-[10px] tracking-[0.3em] uppercase flex flex-col items-center gap-3 animate-bounce">
+                        <span>Initiate Inspection</span>
+                        <MoveRight className="w-4 h-4 rotate-90" />
                     </div>
                 </div>
-            </header>
+            </div>
 
+            {/* 2. COUNTER & FLOATING GALLERY WRAPPER */}
+            <div className="counter-section h-screen flex flex-col items-center justify-center relative overflow-hidden z-20 bg-background">
 
-            {/* 2. THE SCALE OF LOSS (Pinned Counter) */}
-            <section className="counter-section h-screen flex flex-col items-center justify-center bg-blue relative overflow-hidden z-20">
-                <div className="absolute inset-0 w-full h-full">
-                    {/* Progress Bar Background */}
-                    <div className="loss-bar absolute bottom-0 left-0 h-full w-full bg-red/10 origin-bottom transform scale-y-0 lg:scale-y-1 lg:scale-x-0 lg:origin-left"></div>
-                </div>
-
-                <div className="relative z-10 text-center px-4">
-                    <h3 className="font-oswald text-xl md:text-2xl text-white/50 tracking-[0.5em] uppercase mb-4">Total Estimated Losses</h3>
-
-                    <div className="flex items-baseline justify-center font-bebas text-white leading-none">
-                        <span className="text-6xl md:text-9xl opacity-50 mr-4">$</span>
-                        <span className="text-[120px] md:text-[250px] tabular-nums tracking-tighter text-red drop-shadow-[0_0_50px_rgba(227,27,35,0.4)]">
-                            {counterValue}
-                        </span>
-                        <span className="text-6xl md:text-9xl ml-4">B</span>
-                    </div>
-
-                    <p className="font-oswald text-white/70 max-w-2xl mx-auto mt-8 text-lg">
-                        More than the GDP of 100 nations combined. <br />
-                        Stolen from public funds, swallowed by banks, and vanished offshore.
-                    </p>
-                </div>
-            </section>
-
-
-            {/* 3. DIRECT FINANCIAL LOSSES (Horizontal Scroll) */}
-            <section className="horizontal-scroll-wrapper h-screen bg-background relative overflow-hidden z-30 hidden lg:flex flex-col justify-center">
-                <div className="absolute top-12 left-12 z-20">
-                    <span className="font-oswald text-xs tracking-[0.3em] text-red uppercase mb-2 block">EXHIBIT A</span>
-                    <h2 className="text-6xl font-bebas text-white">DIRECT THEFT</h2>
-                    <p className="font-oswald text-white/40 text-sm mt-2">Scroll to investigate case files</p>
-                </div>
-
-                <div className="flex px-12 gap-12 w-[max-content]" ref={scrollContainerRef}>
-                    {directLosses.map((item, index) => (
-                        <div key={index} className="direct-loss-card w-[600px] h-[70vh] bg-blue border border-white/10 rounded-3xl p-10 flex flex-col justify-between relative group hover:border-red/50 transition-all duration-500 overflow-hidden">
-                            <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/80 opacity-60"></div>
-                            <div className="absolute top-0 right-0 p-10 opacity-10 group-hover:opacity-20 transition-opacity transform scale-150">
-                                {item.icon}
+                {/* Floating Images Container */}
+                <div className="absolute inset-0 w-full h-full pointer-events-none z-10 overflow-hidden">
+                    {/* Left Lane - Moves UP */}
+                    <div className="left-lane absolute left-[2%] md:left-[8%] top-0 flex flex-col gap-[20vh]">
+                        {GALLERY_IMAGES.filter(i => i.side === 'left').map((img, idx) => (
+                            <div
+                                key={idx}
+                                className="relative pointer-events-auto cursor-pointer transition-all duration-500 group w-40 h-56 md:w-56 md:h-72 lg:w-72 lg:h-96"
+                                onClick={() => setSelectedImage(img)}
+                            >
+                                <div className="absolute top-1/2 -left-8 w-8 h-px bg-foreground/20"></div>
+                                <div className="relative w-full h-full border border-light-blue rounded-sm overflow-hidden bg-blue shadow-2xl hover:border-red hover:shadow-[0_0_30px_rgba(220,38,38,0.2)]">
+                                    <Image
+                                        src={img.src}
+                                        alt={img.alt}
+                                        fill
+                                        className="object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                                    />
+                                    <div className="absolute inset-0 bg-red/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-blue/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300 border-t border-red/30">
+                                        <p className="font-bebas text-white text-lg leading-none mb-1">{img.alt}</p>
+                                        <div className="flex items-center justify-between">
+                                            <span className="text-white/60 text-[9px] font-oswald uppercase tracking-wider">{img.caption}</span>
+                                            <Maximize2 className="w-3 h-3 text-red" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        ))}
+                    </div>
 
-                            <div className="relative z-10">
-                                <span className="inline-block px-3 py-1 bg-white/5 rounded text-xs font-oswald tracking-[0.2em] text-red-400 mb-6">CASE FILE 00{index + 1}</span>
-                                <div className="flex items-center gap-4 mb-4">
-                                    <div className="p-3 bg-red/10 rounded-lg text-red">
+                    {/* Right Lane - Moves DOWN */}
+                    <div className="right-lane absolute right-[2%] md:right-[8%] top-0 flex flex-col gap-[20vh]">
+                        {GALLERY_IMAGES.filter(i => i.side === 'right').map((img, idx) => (
+                            <div
+                                key={idx}
+                                className="relative pointer-events-auto cursor-pointer transition-all duration-500 group w-40 h-56 md:w-56 md:h-72 lg:w-72 lg:h-96"
+                                onClick={() => setSelectedImage(img)}
+                            >
+                                <div className="absolute top-1/2 -right-8 w-8 h-px bg-foreground/20"></div>
+                                <div className="relative w-full h-full border border-light-blue rounded-sm overflow-hidden bg-blue shadow-2xl hover:border-red hover:shadow-[0_0_30px_rgba(220,38,38,0.2)]">
+                                    <Image
+                                        src={img.src}
+                                        alt={img.alt}
+                                        fill
+                                        className="object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                                    />
+                                    <div className="absolute inset-0 bg-red/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-blue/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300 border-t border-red/30">
+                                        <p className="font-bebas text-white text-lg leading-none mb-1">{img.alt}</p>
+                                        <div className="flex items-center justify-between">
+                                            <span className="text-white/60 text-[9px] font-oswald uppercase tracking-wider">{img.caption}</span>
+                                            <Maximize2 className="w-3 h-3 text-red" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Centered Counter */}
+                <div className="relative z-30 text-center px-4 pointer-events-none flex flex-col items-center justify-center h-full">
+                    <div className="inline-block border border-red/30 bg-red/5 px-6 py-2 rounded-full mb-8 backdrop-blur-md">
+                        <h3 className="font-oswald text-xs md:text-sm text-red tracking-[0.2em] uppercase">Total Economic Impact</h3>
+                    </div>
+                    <div className="flex items-baseline justify-center font-bebas text-foreground leading-none">
+                        <span className="text-4xl md:text-7xl opacity-50 mr-2 md:mr-6 font-light">$</span>
+                        <span className="text-[100px] md:text-[220px] tabular-nums tracking-tighter text-foreground">{counterValue}</span>
+                        <span className="text-4xl md:text-7xl ml-2 md:ml-6 font-light">B</span>
+                    </div>
+                    <p className="font-oswald text-foreground/70 max-w-xl mx-auto mt-8 text-base md:text-lg leading-relaxed font-light tracking-wide bg-background/50 p-6 rounded-xl backdrop-blur-sm border border-foreground/5">
+                        Equivalent to losing the entire GDP of the nation... <span className="text-red">every single year.</span>
+                    </p>
+                </div>
+            </div>
+
+            {/* 3. DIRECT LOSSES WRAPPER */}
+            <div className="relative z-30">
+                <SectionHeader
+                    subtitle="Exhibit A"
+                    title="DIRECT LOSSES"
+                    figure="$500B - $600B"
+                    text="Verified financial data extracted from international audits and forensic reports."
+                />
+
+                {/* Horizontal Scroll Wrapper (Desktop) */}
+                <div className="direct-losses-wrapper hidden lg:flex h-screen items-center overflow-hidden sticky top-0 bg-background">
+                    <div className="flex px-24 gap-12 w-max">
+                        {DIRECT_LOSSES.map((item, index) => (
+                            <div
+                                key={index}
+                                className="dossier-card w-[450px] h-[600px] bg-blue border border-light-blue hover:bg-light-blue transition-colors duration-500 relative flex flex-col p-10 group shadow-2xl rounded-sm"
+                            >
+                                {/* Card Header */}
+                                <div className="flex justify-between items-start mb-12">
+                                    <div className="p-4 bg-white/10 rounded-full text-red group-hover:scale-110 transition-transform duration-500 border border-white/5">
                                         {item.icon}
                                     </div>
-                                    <h3 className="font-bebas text-4xl text-white">{item.title}</h3>
+                                    <span className="font-oswald text-xs text-white/30 tracking-[0.2em] uppercase">{item.id}</span>
                                 </div>
-                            </div>
 
-                            <div className="relative z-10 border-t border-white/10 pt-8">
-                                <div className="flex justify-between items-end mb-4">
-                                    <span className="font-oswald text-white/40 text-sm uppercase tracking-wider">Estimated Amount</span>
-                                    <span className="font-bebas text-6xl text-red">{item.amount}</span>
+                                {/* Content */}
+                                <div className="grow flex flex-col justify-center">
+                                    <h3 className="font-bebas text-5xl text-white mb-4 leading-[0.85]">{item.title}</h3>
+                                    <div className="h-px w-12 bg-red mb-6 group-hover:w-full transition-all duration-700"></div>
+
+                                    <div className="font-bebas text-4xl text-red/90 mb-6">{item.amount}</div>
+
+                                    <p className="font-oswald text-white/70 text-lg font-light leading-relaxed mb-8">
+                                        {item.description}
+                                    </p>
                                 </div>
-                                <p className="font-oswald text-lg text-white/70 leading-relaxed">
-                                    {item.description}
-                                </p>
+
+                                {/* Footer */}
+                                <div className="pt-6 border-t border-white/10">
+                                    <div className="flex flex-col gap-1">
+                                        <span className="font-oswald text-[9px] text-white/30 uppercase tracking-widest">Source</span>
+                                        <span className="font-oswald text-xs text-white/60 uppercase tracking-wide">{item.source}</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                    {/* Final CTA Card in Scroll */}
-                    <div className="direct-loss-card w-[600px] h-[70vh] bg-red rounded-3xl p-10 flex flex-col justify-center items-center text-center relative overflow-hidden">
-                        <div className="absolute inset-0 bg-[url('/home/noise.png')] opacity-30 mix-blend-overlay"></div>
-                        <h3 className="font-bebas text-6xl text-white mb-6 relative z-10">THE LIST GOES ON</h3>
-                        <p className="font-oswald text-white/80 text-xl max-w-md mb-8 relative z-10">This visualizes only the top 6 sectors of theft. The reality is far deeper.</p>
+                        ))}
                     </div>
                 </div>
-            </section>
 
-            {/* MOBILE FALLBACK FOR DIRECT LOSSES (Standard Grid) */}
-            <section className="lg:hidden py-24 px-4">
-                <div className="mb-12 text-center">
-                    <span className="font-oswald text-xs tracking-[0.3em] text-red uppercase mb-2 block">EXHIBIT A</span>
-                    <h2 className="text-5xl font-bebas text-white">DIRECT THEFT</h2>
-                </div>
-                <div className="space-y-6">
-                    {directLosses.map((item, index) => (
-                        <div key={index} className="bg-blue border border-white/10 p-8 rounded-xl">
-                            <div className="flex justify-between items-start mb-6">
+                {/* Mobile List View (Direct Losses) */}
+                <div className="lg:hidden px-6 pb-24 space-y-8 bg-background">
+                    {DIRECT_LOSSES.map((item, index) => (
+                        <div key={index} className="bg-blue border border-light-blue p-8 rounded-sm relative overflow-hidden">
+                            <div className="absolute top-0 right-0 p-6 opacity-10 text-white">
                                 {item.icon}
-                                <span className="font-bebas text-3xl text-red">{item.amount}</span>
                             </div>
-                            <h3 className="font-bebas text-2xl text-white mb-2">{item.title}</h3>
-                            <p className="font-oswald text-sm text-white/60">{item.description}</p>
+                            <span className="font-oswald text-[10px] text-red uppercase tracking-widest mb-2 block">{item.id}</span>
+                            <h3 className="font-bebas text-4xl text-white mb-2 leading-none">{item.title}</h3>
+                            <div className="font-bebas text-3xl text-red mb-4">{item.amount}</div>
+                            <p className="font-oswald text-white/70 text-sm font-light mb-6">{item.description}</p>
+                            <div className="pt-4 border-t border-white/10">
+                                <span className="font-oswald text-[10px] text-white/40 uppercase tracking-wider">Source: {item.source}</span>
+                            </div>
                         </div>
                     ))}
                 </div>
-            </section>
+            </div>
 
+            {/* 4. INDIRECT LOSSES WRAPPER */}
+            <div className="indirect-wrapper py-32 bg-background relative z-40 overflow-hidden">
+                <div className="max-w-[1200px] mx-auto px-6 relative">
+                    <SectionHeader
+                        subtitle="Exhibit B: Cost of Life"
+                        title="THE HUMAN COST"
+                        figure="$400B - $500B"
+                        text="This is not just money lost; it is time and future stolen."
+                    />
 
-            {/* 4. INDIRECT LOSSES (Reveal) */}
-            <section className="indirect-section py-32 px-4 md:px-12 max-w-[1400px] mx-auto z-40 relative">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <span className="font-oswald text-xs tracking-[0.3em] text-red uppercase mb-4 block">EXHIBIT B</span>
-                        <h2 className="text-5xl md:text-8xl font-bebas text-white mb-8 leading-[0.8]">THE<br /><span className="text-foreground/20">HUMAN COST</span></h2>
-                        <div className="h-2 w-32 bg-red mb-12"></div>
+                    <div className="indirect-list-container relative space-y-24 mb-32">
+                        <div className="center-line absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-linear-to-b from-transparent via-red to-transparent hidden md:block"></div>
 
-                        <div className="space-y-8">
-                            <div className="indirect-stat pl-8 border-l border-white/10 hover:border-red transition-colors duration-500">
-                                <h4 className="font-bebas text-3xl text-white mb-1">BRAIN DRAIN</h4>
-                                <p className="font-oswald text-red text-xl mb-2">$200B+ Lost GDP</p>
-                                <p className="font-oswald text-sm text-white/50">3.5 million Lebanese emigrated. Doctors, engineers, and youth forced to build other nations.</p>
+                        {indirectStats.map((stat, i) => (
+                            <div key={i} className={`flex flex-col md:flex-row items-center gap-12 relative z-10 ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+                                <div className="w-full md:w-1/2 flex justify-center">
+                                    <div className="relative w-48 h-48 md:w-64 md:h-64 flex items-center justify-center">
+                                        {/* Pulse Animations */}
+                                        <div className="absolute inset-0 border border-red/40 rounded-full animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
+                                        <div className="absolute inset-8 border border-red/20 rounded-full animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite] delay-150"></div>
+                                        <div className="absolute inset-16 border border-red/10 rounded-full animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite] delay-300"></div>
+
+                                        <div className="w-32 h-32 md:w-40 md:h-40 bg-blue border border-light-blue rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(220,38,38,0.2)] relative z-20 group">
+                                            <div className="text-red scale-150 group-hover:scale-125 transition-transform duration-500">
+                                                {stat.icon}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={`w-full md:w-1/2 ${i % 2 === 1 ? 'md:text-right' : 'md:text-left'} text-center`}>
+                                    <span className="font-oswald text-xs text-red uppercase tracking-[0.3em] mb-2 block">{stat.label}</span>
+                                    <h3 className="font-bebas text-5xl md:text-7xl text-foreground mb-4 leading-[0.9]">{stat.title}</h3>
+                                    <div className={`h-1 w-24 bg-foreground/10 mb-6 mx-auto ${i % 2 === 1 ? 'md:ml-auto md:mr-0' : 'md:mr-auto md:ml-0'}`}></div>
+                                    <div className="font-bebas text-4xl md:text-5xl text-foreground/80 mb-6">{stat.loss}</div>
+                                    <p className={`font-oswald text-foreground/60 text-lg md:text-xl font-light leading-relaxed max-w-sm mx-auto ${i % 2 === 1 ? 'md:ml-auto md:mr-0' : 'md:mr-auto md:ml-0'}`}>
+                                        {stat.detail}
+                                    </p>
+                                </div>
                             </div>
-                            <div className="indirect-stat pl-8 border-l border-white/10 hover:border-red transition-colors duration-500">
-                                <h4 className="font-bebas text-3xl text-white mb-1">ENERGY FAILURE</h4>
-                                <p className="font-oswald text-red text-xl mb-2">$45B+ Generator Bills</p>
-                                <p className="font-oswald text-sm text-white/50">Citizens pay double for electricity that the state fails to provide.</p>
-                            </div>
-                            <div className="indirect-stat pl-8 border-l border-white/10 hover:border-red transition-colors duration-500">
-                                <h4 className="font-bebas text-3xl text-white mb-1">STAGNATION</h4>
-                                <p className="font-oswald text-red text-xl mb-2">$40B+ Time Wasted</p>
-                                <p className="font-oswald text-sm text-white/50">Billions of hours lost in traffic and bureaucracy every year.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="bg-blue rounded-3xl p-8 md:p-12 border border-white/5 relative overflow-hidden h-[600px] flex items-end group">
-                        <div className="absolute inset-0">
-                            <Image
-                                src="/home/BLogs&Articles.jpg"
-                                alt="Beirut Port"
-                                fill
-                                className="object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
-                            />
-                            <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent"></div>
-                        </div>
-                        <div className="relative z-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                            <div className="bg-red px-4 py-1 text-white font-oswald text-xs tracking-widest uppercase inline-block mb-4">Case Study</div>
-                            <h3 className="font-bebas text-5xl text-white leading-none mb-4">THE PORT EXPLOSION</h3>
-                            <p className="font-oswald text-white/80 max-w-md">
-                                The ultimate manifestation of corruption. Negligence that cost 200+ lives and $15 Billion in physical damage.
-                            </p>
-                        </div>
+                        ))}
                     </div>
                 </div>
-            </section>
+            </div>
 
-            {/* 5. CTA SECTION */}
-            <section className="text-center py-32 border-t border-white/10 relative z-40 bg-background">
-                <div className="max-w-4xl mx-auto px-6">
-                    <h2 className="text-5xl md:text-8xl font-bebas text-white mb-8">DEMAND <span className="text-outline-red text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50">JUSTICE</span></h2>
-                    <p className="font-oswald text-xl text-white/60 mb-12">
-                        The evidence is clear. The perpetrators are known. Explore the files.
+            {/* 5. CTA WRAPPER */}
+            <div className="relative py-40 border-t border-foreground/10 overflow-hidden bg-background">
+                <div className="absolute inset-0 opacity-10">
+                    <div className="absolute inset-0 bg-linear-to-b from-transparent to-background"></div>
+                </div>
+                <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+                    <FileText className="w-12 h-12 text-red/80 mx-auto mb-8 opacity-80" />
+                    <h2 className="text-5xl md:text-7xl font-bebas text-foreground mb-8 leading-[0.9]">
+                        LEBANON'S COLLAPSE IS NOT A DISASTER.<br />
+                        <span className="text-red">IT IS A CRIME SCENE.</span>
+                    </h2>
+                    <p className="font-oswald text-lg text-foreground/50 mb-12 max-w-xl mx-auto font-light tracking-wide">
+                        The data is public. The perpetrators are known. The stolen assets are traced. What is missing is accountability.
                     </p>
-                    <div className="flex flex-col md:flex-row justify-center gap-6">
-                        <button className="group relative bg-red text-white px-16 py-5 font-bebas text-2xl tracking-widest uppercase overflow-hidden">
-                            <span className="relative z-10">OPEN THE ARCHIVE</span>
-                            <div className="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                            <span className="absolute inset-0 z-20 flex items-center justify-center text-red opacity-0 group-hover:opacity-100 transition-opacity duration-300">OPEN THE ARCHIVE</span>
-                        </button>
-                    </div>
+                    <button className="group relative bg-foreground text-background px-10 py-3 font-bebas text-lg tracking-[0.2em] uppercase overflow-hidden hover:bg-red hover:text-white transition-all duration-300">
+                        <span className="relative z-10 flex items-center gap-4">
+                            Download Full Report <MoveRight className="w-4 h-4" />
+                        </span>
+                    </button>
                 </div>
-            </section>
+            </div>
+
+            {/* IMAGE INSPECTION MODAL */}
+            {selectedImage && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 sm:p-8 animate-in fade-in duration-300">
+                    <button
+                        onClick={() => setSelectedImage(null)}
+                        className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors p-2 z-10"
+                    >
+                        <X className="w-10 h-10" />
+                    </button>
+
+                    <div
+                        className="relative w-full max-w-5xl h-[85vh] flex flex-col items-center justify-center"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className="relative w-full h-full rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-black">
+                            <Image
+                                src={selectedImage.src}
+                                alt={selectedImage.alt}
+                                fill
+                                className="object-contain"
+                            />
+                        </div>
+                        <div className="mt-6 text-center">
+                            <h3 className="font-bebas text-3xl text-white tracking-wide">{selectedImage.alt}</h3>
+                            <p className="font-oswald text-red text-sm tracking-[0.2em] uppercase">{selectedImage.caption}</p>
+                        </div>
+                    </div>
+
+                    <div className="absolute inset-0 -z-10" onClick={() => setSelectedImage(null)} />
+                </div>
+            )}
 
         </div>
     );
 }
-
-const directLosses = [
-    {
-        icon: <Banknote className="w-12 h-12 text-current" />,
-        amount: "$150B+",
-        title: "Embezzlement",
-        description: "Direct theft from public coffers by state officials over 40 years."
-    },
-    {
-        icon: <Building2 className="w-12 h-12 text-current" />,
-        amount: "$100B+",
-        title: "Money Laundering",
-        description: "Illicit capital flight to offshore tax havens like Switzerland and Panama."
-    },
-    {
-        icon: <TrendingDown className="w-12 h-12 text-current" />,
-        amount: "$85B",
-        title: "Ponzi Scheme",
-        description: "Central Bank financial engineering that swallowed depositors' life savings."
-    },
-    {
-        icon: <Zap className="w-12 h-12 text-current" />,
-        amount: "$95B",
-        title: "Energy Sector",
-        description: "Phantom power plants and fuel deals leaving the country in darkness."
-    },
-    {
-        icon: <AlertTriangle className="w-12 h-12 text-current" />,
-        amount: "$25B",
-        title: "Smuggling",
-        description: "Lost customs revenue at ports and borders controlled by militias."
-    },
-    {
-        icon: <Users className="w-12 h-12 text-current" />,
-        amount: "$18B",
-        title: "Telecom Fraud",
-        description: "Sector overpricing and fraudulent contracts in the Ministry of Telecommunications."
-    }
-];

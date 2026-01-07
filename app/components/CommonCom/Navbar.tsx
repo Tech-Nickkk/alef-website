@@ -14,6 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Navbar() {
     const navRef = useRef(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isLangOpen, setIsLangOpen] = useState(false);
     const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
     const [mounted, setMounted] = useState(false);
 
@@ -76,37 +77,39 @@ export default function Navbar() {
                 { label: "Our Profile", href: "/alef-profile" },
                 { label: "Core Values", href: "/core-values" },
                 { label: "Strategic Plan", href: "/strategic-plan" },
-                { label: "Resident Activists", href: "/resident-activists" },
-                { label: "Our Sponsors", href: "/sponsors" },      // Moved from Multimedia
-                { label: "Testimonials", href: "/testimonials" }   // Moved from Get In Touch
+                { label: "Experts Corner", href: "/experts-corner" },
+                { label: "Our Sponsors", href: "/sponsors" },
+                { label: "Testimonials", href: "/testimonials" }
             ],
         },
         {
             label: "Research & News",
             href: "#",
             dropdown: [
-                { label: "In the News", href: "/alef-in-the-news" }, // Cleaned label
+                { label: "In the News", href: "/alef-in-the-news" },
                 { label: "Blogs & Articles", href: "/blogs-and-articles" },
                 { label: "House of Corruption", href: "/house-of-corruption" },
-                { label: "House of Cards", href: "/house-of-cards" }
+                { label: "House of Cards", href: "/house-of-cards" },
+                { label: "Archives", href: "/archives" } // Added Archives page link
             ],
         },
         {
-            label: "Media", // Shortened from Multimedia
+            label: "Media",
             href: "#",
             dropdown: [
                 { label: "Videos", href: "/videos" },
+                { label: "Shorts", href: "/shorts" },
                 { label: "Podcasts", href: "/podcasts" },
                 { label: "Events Gallery", href: "/events-gallery" }
             ],
         },
-        { label: "Store", href: "/alef-store" }, // Elevated to top-level for better visibility
+        { label: "Store", href: "/alef-store" },
         {
             label: "Contact",
             href: "#",
             dropdown: [
                 { label: "Get in Touch", href: "/contact" },
-                { label: "FAQ", href: "/faq" } // Moved from Get In Touch
+                { label: "FAQ", href: "/faq" }
             ]
         }
     ];
@@ -167,21 +170,48 @@ export default function Navbar() {
 
                 {/* Right: Actions (Desktop) & Hamburger (Mobile) */}
                 <div className="flex items-center gap-3 md:gap-6 relative z-50">
-                    {/* foregrounde - Visible always */}
-                    <ThemeToggle />
+                    {/* Theme Toggle - Hidden on Mobile/Tablet */}
+                    <div className="hidden xl:block">
+                        <ThemeToggle />
+                    </div>
 
-                    {/* Search - Hidden on very small screens if crowded, or keep */}
-                    <button className="hidden sm:block text-foreground/90 hover:text-foreground transition-colors p-2 hover:bg-foreground/10 rounded-none cursor-pointer">
-                        <SearchIcon className="w-5 h-5 cursor-pointer" />
-                    </button>
-
-                    {/* Donate - Hidden on small mobile to save space? Or kept compact. */}
-                    <div className="hidden sm:block relative group">
-                        <span className="absolute inset-0 bg-red opacity-75 animate-ping duration-2000 rounded-none"></span>
-                        <button className="relative overflow-hidden bg-red hover:bg-[#c4151c] text-white px-4 py-2 md:px-8 md:py-3.5 text-[10px] md:text-sm uppercase font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg shadow-red-900/20 tracking-wider rounded-none font-oswald cursor-pointer isolate">
-                            <span className="relative z-10 tracking-wider">Donate</span>
-                            <div className="absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/40 to-transparent skew-x-[-20deg] group-hover:left-[150%] transition-all duration-700 ease-in-out z-0" />
+                    {/* Language - Hidden on Mobile/Tablet */}
+                    <div className="hidden xl:block relative">
+                        <button
+                            className="text-foreground/90 hover:text-foreground transition-colors p-2 hover:bg-foreground/10 rounded-none cursor-pointer"
+                            onClick={() => setIsLangOpen(!isLangOpen)}
+                        >
+                            <GlobeIcon className="w-5 h-5 cursor-pointer" />
                         </button>
+
+                        {/* Language Dropdown */}
+                        <div className={`absolute top-full right-0 pt-2 w-40 transition-all duration-200 transform origin-top ${isLangOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
+                            <div className="bg-background/95 backdrop-blur-md border border-foreground/10 p-2 shadow-xl rounded-sm">
+                                <ul className="flex flex-col gap-1">
+                                    {["English", "French", "Arabic", "Spanish"].map((lang) => (
+                                        <li key={lang}>
+                                            <button
+                                                onClick={() => setIsLangOpen(false)}
+                                                className="w-full text-left px-4 py-2 text-sm text-foreground/80 hover:text-theme-accent hover:bg-foreground/5 transition-colors uppercase font-oswald tracking-wider"
+                                            >
+                                                {lang}
+                                            </button>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Donate - Always Visible */}
+                    <div className="relative group">
+                        <span className="absolute inset-0 bg-red opacity-75 animate-ping duration-2000 rounded-none pointer-events-none"></span>
+                        <Link href="/donate">
+                            <button className="relative overflow-hidden bg-red hover:bg-[#c4151c] text-white px-6 py-3 md:px-8 md:py-3.5 text-xs md:text-sm uppercase font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg shadow-red-900/20 tracking-wider rounded-none font-oswald cursor-pointer isolate">
+                                <span className="relative z-10 tracking-wider">Donate</span>
+                                <div className="absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/40 to-transparent skew-x-[-20deg] group-hover:left-[150%] transition-all duration-700 ease-in-out z-0" />
+                            </button>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button - Visible < XL */}
@@ -274,10 +304,30 @@ export default function Navbar() {
                                 ))}
                             </div>
 
-                            <div className="mt-12 flex flex-col gap-6">
-                                <button className="w-full bg-red text-white font-bebas text-xl tracking-wider py-4 uppercase hover:bg-[#c4151c] transition-colors shadow-lg shadow-red-500/20">
-                                    Donate to ALEF
-                                </button>
+                            {/* Mobile Preferences (Language + Theme) */}
+                            <div className="mt-8 pt-8 border-t border-foreground/10 flex flex-col gap-6">
+                                <div className="flex items-center justify-between">
+                                    <span className="text-foreground/70 font-oswald uppercase tracking-widest text-sm">Theme</span>
+                                    <ThemeToggle />
+                                </div>
+                                <div className="flex items-center justify-between">
+                                    <span className="text-foreground/70 font-oswald uppercase tracking-widest text-sm">Language</span>
+                                    <div className="flex gap-4">
+                                        {["EN", "FR", "AR"].map((lang) => (
+                                            <button key={lang} className="text-sm font-oswald text-foreground/50 hover:text-theme-accent transition-colors uppercase">
+                                                {lang}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="mt-8 flex flex-col gap-6">
+                                <Link href="/donate" onClick={() => setIsMenuOpen(false)}>
+                                    <button className="w-full bg-red text-white font-bebas text-xl tracking-wider py-4 uppercase hover:bg-[#c4151c] transition-colors shadow-lg shadow-red-500/20">
+                                        Donate to ALEF
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -307,8 +357,8 @@ function ChevronDown({ className }: { className?: string }) {
     return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m6 9 6 6 6-6" /></svg>;
 }
 
-function SearchIcon({ className }: { className?: string }) {
-    return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>;
+function GlobeIcon({ className }: { className?: string }) {
+    return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10" /><line x1="2" x2="22" y1="12" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>;
 }
 
 function SunIcon({ className }: { className?: string }) {

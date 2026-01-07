@@ -1,13 +1,7 @@
 "use client";
 
-import { useRef } from "react";
 import Link from "next/link";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const sections = [
     {
@@ -54,7 +48,7 @@ const sections = [
     {
         id: "04",
         subtitle: "LEADERSHIP",
-        title: "Resident Activists",
+        title: "Experts Corner",
         description: "Meet the dedicated officers, directors, and advisors driving our mission forward, led by Ziad K. Abdelnour.",
         href: "/resident-activists",
         icon: (
@@ -69,52 +63,11 @@ const sections = [
 ];
 
 export default function WhoWeAre() {
-    const sectionRef = useRef<HTMLElement>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
-    const progressBarRef = useRef<HTMLDivElement>(null);
-
-    useGSAP(() => {
-        const container = containerRef.current;
-        const section = sectionRef.current;
-        const progressBar = progressBarRef.current;
-
-        if (!container || !section || !progressBar) return;
-
-        const getScrollAmount = () => {
-            return -(container.scrollWidth - window.innerWidth);
-        };
-
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: section,
-                start: "top top",
-                end: () => `+=${container.scrollWidth - window.innerWidth}`,
-                pin: true,
-                scrub: 1,
-                anticipatePin: 1,
-                invalidateOnRefresh: true,
-            }
-        });
-
-        tl.to(container, {
-            x: getScrollAmount,
-            ease: "none",
-        });
-
-        // Progress bar animation
-        tl.to(progressBar, {
-            scaleX: 1,
-            ease: "none"
-        }, 0);
-
-    }, { scope: sectionRef, dependencies: [] });
-
     return (
-        <section ref={sectionRef} className="h-screen overflow-hidden flex flex-col justify-center relative">
-
-            {/* Top Bar with Progress */}
-            <div className="absolute top-12 left-0 w-full px-6 md:px-12 lg:px-24">
-                <div className="flex flex-col items-center justify-center mb-10 md:mb-4 gap-4 text-center">
+        <section className="min-h-screen flex flex-col justify-center relative py-12">
+            {/* Header Section */}
+            <div className="w-full px-6 md:px-12 lg:px-24 mb-12">
+                <div className="flex flex-col items-center justify-center gap-4 text-center">
                     <AnimatedTitle
                         text="WHO WE ARE"
                         className="text-4xl md:text-6xl font-bold font-bebas text-foreground uppercase leading-none"
@@ -124,21 +77,12 @@ export default function WhoWeAre() {
                         MISSION // VISION
                     </div>
                 </div>
-
-                {/* Progress Bar Track */}
-                <div className="w-full h-[2px] bg-foreground/10 relative">
-                    {/* Progress Bar Fill */}
-                    <div
-                        ref={progressBarRef}
-                        className="absolute inset-y-0 left-0 bg-red w-full origin-left scale-x-0"
-                    />
-                </div>
             </div>
 
-            {/* Horizontal Scroll Container */}
-            <div ref={containerRef} className="flex gap-8 pl-6 md:pl-12 lg:pl-24 pr-6 md:pr-12 lg:pr-24 w-fit pt-24 md:pt-44">
+            {/* Grid Container */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-12 lg:px-24 w-full">
                 {sections.map((item, idx) => (
-                    <div key={idx} className="relative group shrink-0 w-[85vw] md:w-[600px] h-[65vh] md:h-[500px]">
+                    <div key={idx} className="relative group w-full h-[400px] md:h-[500px]">
                         <Link href={item.href} className="block h-full">
                             <div className="bg-blue transition-all duration-300 h-full rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden hover:bg-light-blue">
 

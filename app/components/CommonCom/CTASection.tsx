@@ -1,0 +1,107 @@
+"use client";
+
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
+import { useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
+
+interface CTASectionProps {
+    type: "donate" | "subscribe" | "join";
+}
+
+export default function CTASection({ type }: CTASectionProps) {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const textRef = useRef<HTMLDivElement>(null);
+    const content = {
+        donate: {
+            title: "FUEL THE FIGHT FOR FREEDOM",
+            subtitle: "YOUR CONTRIBUTION DIRECTLY SUPPORTS OUR ADVOCACY FOR A SOVEREIGN LEBANON.",
+            buttonText: "MAKE A DONATION",
+            link: "/donate",
+            bgGradient: "from-blue/10 to-transparent",
+            borderColor: "border-red/20"
+        },
+        subscribe: {
+            title: "STAY AHEAD OF THE WAVE",
+            subtitle: "GET CRITICAL INTELLIGENCE AND UPDATES DELIVERED DIRECTLY TO YOUR INBOX.",
+            buttonText: "SUBSCRIBE NOW",
+            link: "#join-us",
+            bgGradient: "from-foreground/5 to-transparent",
+            borderColor: "border-foreground/10"
+        },
+        join: {
+            title: "STAND WITH US",
+            subtitle: "JOIN A NETWORK OF LEADERS COMMITTED TO REBUILDING OUR NATION.",
+            buttonText: "BECOME A MEMBER",
+            link: "#join-us",
+            bgGradient: "from-red/5 to-transparent",
+            borderColor: "border-blue/20"
+        }
+    }[type];
+
+    useGSAP(() => {
+        if (!containerRef.current) return;
+
+        gsap.fromTo(containerRef.current,
+            {
+                opacity: 0,
+                y: 50,
+            },
+            {
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out"
+            }
+        );
+
+    }, { scope: containerRef });
+
+    return (
+        <section ref={containerRef} className="py-12 md:py-16 px-6">
+            <div className={`max-w-5xl mx-auto rounded-xl border ${content.borderColor} bg-gradient-to-b ${content.bgGradient} backdrop-blur-sm p-8 md:p-12 relative overflow-hidden group`}>
+
+                {/* Decorative background noise/texture */}
+                <div className="absolute inset-0 opacity-10 bg-[url('/noise.png')] pointer-events-none mix-blend-overlay"></div>
+
+                {/* Hover Glow Effect */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1/2 bg-white/5 blur-[100px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+
+                    <div className="flex-1 space-y-4">
+                        <div className="flex items-center justify-center md:justify-start gap-3">
+                            <span className={`w-1.5 h-1.5 rounded-full bg-red ${type === 'donate' ? 'animate-pulse' : ''}`}></span>
+                            <span className="font-oswald text-xs tracking-[0.2em] uppercase text-red">
+                                {type === 'donate' ? 'Urgent Action' : type === 'subscribe' ? 'Briefing' : 'Mobilization'}
+                            </span>
+                        </div>
+
+                        <h2 className="text-3xl md:text-5xl font-bebas text-foreground leading-none">
+                            {content.title}
+                        </h2>
+
+                        <p className="font-oswald text-foreground/60 text-sm md:text-base tracking-wide max-w-xl">
+                            {content.subtitle}
+                        </p>
+                    </div>
+
+                    <Link href={content.link}>
+                        <button className="group/btn relative overflow-hidden bg-red text-white px-8 py-4 font-oswald font-bold tracking-[0.15em] uppercase text-sm transition-all hover:bg-[#c4151c] hover:text-white shrink-0 min-w-[200px]">
+                            <span className="relative z-10">{content.buttonText}</span>
+                        </button>
+                    </Link>
+
+                </div>
+            </div>
+        </section>
+    );
+}

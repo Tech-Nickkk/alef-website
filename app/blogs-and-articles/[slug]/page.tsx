@@ -7,21 +7,6 @@ import { notFound } from 'next/navigation';
 import { PortableText } from '@portabletext/react';
 import ArticleProgress from '../../components/Blogs/ArticleProgress';
 
-interface Sanityblog {
-    _id: string;
-    title: string;
-    slug: { current: string };
-    publishedAt: string;
-    mainImage?: any;
-    author?: {
-        name: string;
-        discloseName?: boolean;
-        image?: any;
-        position?: string;
-    };
-    body: any;
-}
-
 // Custom components for PortableText rendering
 const portableTextComponents = {
     types: {
