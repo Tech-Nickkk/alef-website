@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, FormEvent } from 'react';
-import AnimatedTitle from "../components/CommonCom/AnimatedTitle";
+import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
 import { Mail, Send, User, MessageSquare, Building2 } from 'lucide-react';
 
 export default function ContactPage() {

@@ -1,4 +1,4 @@
-import AnimatedTitle from "../components/CommonCom/AnimatedTitle";
+import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 

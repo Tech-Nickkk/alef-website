@@ -1,5 +1,5 @@
-import AnimatedTitle from "../components/CommonCom/AnimatedTitle";
-import MediaFeed from "../components/Media/MediaFeed";
+import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
+import MediaFeed from "../../components/Media/MediaFeed";
 import { sanityFetch } from "@/sanity/lib/live"; // Ensure you have this configured or use client.fetch
 
 export default async function PodcastsPage() {

@@ -1,4 +1,4 @@
-import AnimatedTitle from "../components/CommonCom/AnimatedTitle";
+import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
 
 export default function PlaceholderPage() {
     return (

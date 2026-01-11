@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from 'react';
-import AnimatedTitle from "../components/CommonCom/AnimatedTitle";
-import { FAQS } from '../lib/faqData';
+import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
+import { FAQS } from './faqData';
 import { Plus, Minus } from 'lucide-react';
 
 export default function FAQPage() {

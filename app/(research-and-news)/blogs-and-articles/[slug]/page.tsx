@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { PortableText } from '@portabletext/react';
-import ArticleProgress from '../../components/Blogs/ArticleProgress';
+import ArticleProgress from '../../../components/Blogs/ArticleProgress';
 
 // Custom components for PortableText rendering
 const portableTextComponents = {

@@ -6,7 +6,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import AnimatedTitle from "../components/CommonCom/AnimatedTitle";
+import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
 import {
     AlertTriangle,
     Banknote,

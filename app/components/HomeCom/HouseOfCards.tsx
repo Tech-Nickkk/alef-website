@@ -87,9 +87,6 @@ export default function HouseOfCards() {
             // Simple Flip on Scroll (In Place)
             const innerCards = cards.map(c => c.querySelector('.flip-card-inner'));
 
-            // Check if we want staggered flip or per-card flip
-            // User said: "flip on their places"
-
             innerCards.forEach((innerCard, i) => {
                 if (!innerCard) return;
                 gsap.to(innerCard, {
@@ -106,6 +103,17 @@ export default function HouseOfCards() {
         });
 
     }, { scope: sectionRef });
+
+    // Helper to get punchy "Stamp" titles from the slug or id
+    const getStampTitle = (slug: string) => {
+        switch(slug) {
+            case "michel-aoun": return "ENABLER";
+            case "naim-qassem": return "PROXY";
+            case "riad-salameh": return "SCHEMER";
+            case "walid-jumblatt": return "CHAMELEON";
+            default: return "CORRUPT";
+        }
+    };
 
     return (
         <section ref={sectionRef} className="py-12 md:py-18 px-6 md:px-12 lg:px-24 overflow-hidden relative">
@@ -129,28 +137,24 @@ export default function HouseOfCards() {
                         {
                             slug: "michel-aoun",
                             name: "Michel Aoun",
-                            status: "SECTARIAN ALLIANCES & COLLAPSE",
                             front: "/houseofcards/aceOfClub.png",
                             back: "/home/card-back.png"
                         },
                         {
                             slug: "naim-qassem",
                             name: "Naim Qassem",
-                            status: "TERROR STRATEGIST & IRAN'S PROXY BOSS",
                             front: "/houseofcards/aceOfDiamonds.png",
                             back: "/home/card-back.png"
                         },
                         {
                             slug: "riad-salameh",
                             name: "Riad Salameh",
-                            status: "EMBEZZLEMENT & GLOBAL IMPUNITY",
                             front: "/houseofcards/kingOfDiamonds.png",
                             back: "/home/card-back.png"
                         },
                         {
                             slug: "walid-jumblatt",
                             name: "Walid Jumblatt",
-                            status: "BRIBERY & BETRAYAL",
                             front: "/houseofcards/kingOfSpades.png",
                             back: "/home/card-back.png"
                         }
@@ -163,7 +167,7 @@ export default function HouseOfCards() {
                             className="relative w-[200px] h-[300px] md:w-[200px] md:h-[300px] xl:w-[240px] xl:h-[360px] mx-auto lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-1/2 lg:m-0 perspective-[1000px]"
                         >
                             <div className="flip-card-inner relative w-full h-full preserve-3d">
-                                {/* Front (Pattern/Back) - This is the "back" of the card in card-game terms, but the front face in CSS before rotation */}
+
                                 <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden border border-white/10 bg-blue">
                                     <Image
                                         src={card.back}
@@ -173,25 +177,25 @@ export default function HouseOfCards() {
                                     />
                                 </div>
 
-                                {/* Back (Revealed Image) - This is the "front" of the card (character), rotated 180 initially */}
-                                <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden border border-black/10 bg-white rotate-y-180 shadow-xl transition-all duration-500 cursor-pointer pointer-events-auto group/card hover:shadow-2xl hover:shadow-red/10 hover:border-red/20">
+                                <div className="absolute inset-0 backface-hidden rounded-2xl overflow-visible border border-black/10 bg-[#f0f0f0] rotate-y-180 shadow-xl transition-all duration-500 cursor-pointer pointer-events-auto group/card hover:shadow-2xl hover:shadow-red/10 hover:border-red/20">
                                     <Link href={`/house-of-cards/${card.slug}`} className="absolute inset-0 z-20 block w-full h-full">
                                         <div className="absolute inset-0">
                                             <Image
                                                 src={card.front}
                                                 alt={card.name}
                                                 fill
-                                                className="object-cover transition-transform duration-700 group-hover/card:scale-105"
+                                                className="object-cover scale-90 transition-transform duration-700 group-hover/card:scale-95"
                                             />
                                         </div>
 
-                                        {/* Status Badge - Revealed on Hover */}
-                                        <div className="absolute top-4 right-4 max-w-[90%] px-3 py-1.5 bg-black/80 backdrop-blur-md text-[9px] text-white font-bold tracking-widest rounded-sm uppercase text-right leading-tight z-30 opacity-0 group-hover/card:opacity-100 transform -translate-y-2 group-hover/card:translate-y-0 transition-all duration-300">
-                                            {card.status}
+                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 transform -rotate-12 border-4 border-red/80 px-4 py-1 rounded-sm backdrop-blur-sm pointer-events-none">
+                                            <span className="font-oswald text-xl md:text-2xl font-bold text-red/90 uppercase tracking-widest whitespace-nowrap">
+                                                {getStampTitle(card.slug)}
+                                            </span>
                                         </div>
 
-                                        <div className="absolute bottom-6 left-0 right-0 z-30 text-center">
-                                            <p className="font-bebas text-4xl tracking-wide uppercase text-black/90 leading-none group-hover/card:scale-110 transition-transform duration-300">{card.name}</p>
+                                        <div className="absolute bottom-6 left-8 z-30 text-center">
+                                            <p className="font-bebas text-3xl tracking-wide uppercase text-black/90 leading-none group-hover/card:scale-110 transition-transform duration-300">{card.name}</p>
                                         </div>
                                     </Link>
                                 </div>

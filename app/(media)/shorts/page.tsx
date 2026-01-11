@@ -1,5 +1,5 @@
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
-import MediaFeed from "../components/Media/MediaFeed";
+import MediaFeed from "../../components/Media/MediaFeed";
 import { sanityFetch } from "@/sanity/lib/live";
 
 export default async function ShortsPage() {

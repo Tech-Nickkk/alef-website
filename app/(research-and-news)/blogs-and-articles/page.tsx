@@ -1,4 +1,4 @@
-import AnimatedTitle from "../components/CommonCom/AnimatedTitle";
+import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 import BlogsFeed from "./BlogsFeed";
 

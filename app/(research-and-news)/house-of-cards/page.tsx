@@ -6,34 +6,30 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import AnimatedTitle from "../components/CommonCom/AnimatedTitle";
-import { ArrowLeft, Filter, Search, ChevronDown } from "lucide-react";
+import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
+import { Filter, Search } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const CARD_IMAGES = [
-    "/houseofcards/aceOfClub.png",
-    "/houseofcards/aceOfDiamonds.png",
-    "/houseofcards/kingOfDiamonds.png",
-    "/houseofcards/kingOfSpades.png"
-];
 
 import { CARD_DATA } from "./card-data";
 
 const BACK_IMAGE = "/home/card-back.png";
 
-// Generate a full deck using provided images (repeating them for now)
 const FULL_DECK = Array.from({ length: 52 }).map((_, i) => {
     const dataRef = CARD_DATA[i % CARD_DATA.length];
+
+    // Create the "Stamp Title" from the tag (e.g., "TERROR" from "TERROR STRATEGIST")
+    // If specific overrides are needed, they can be done here.
+    const stampTitle = dataRef.tag.split(" ")[0];
+
     return {
         id: `card-${i}`,
-        slug: dataRef.id, // for navigation
+        slug: dataRef.id,
         front: dataRef.image,
         back: BACK_IMAGE,
         name: dataRef.name,
-        // Shorten the status for the card view if it's too long, or let it wrap. 
-        // using the tag from data which is the "red label"
         status: dataRef.tag,
+        stamp: stampTitle, // NEW PROPERTY
         suit: ["Spades", "Hearts", "Diamonds", "Clubs"][Math.floor(i / 13)],
         revealed: false
     };
@@ -43,20 +39,17 @@ export default function HouseOfCardsPage() {
     const containerRef = useRef<HTMLDivElement>(null);
     const gridRef = useRef<HTMLDivElement>(null);
     const [filter, setFilter] = useState("All");
-    const [statusFilter, setStatusFilter] = useState("All Statuses");
     const [searchQuery, setSearchQuery] = useState("");
-    const [isStatusFilterOpen, setIsStatusFilterOpen] = useState(false);
-    const [visibleCount, setVisibleCount] = useState(10); // Start with 2 rows of 5
+    const [visibleCount, setVisibleCount] = useState(10);
     const CARDS_PER_PAGE = 10;
 
     const filteredCards = useMemo(() => {
         return FULL_DECK.filter(c => {
             const matchesSuit = filter === "All" || c.suit === filter;
-            const matchesStatus = statusFilter === "All Statuses" || c.status === statusFilter;
             const matchesSearch = c.name.toLowerCase().includes(searchQuery.toLowerCase());
-            return matchesSuit && matchesStatus && matchesSearch;
+            return matchesSuit && matchesSearch;
         });
-    }, [filter, statusFilter, searchQuery]);
+    }, [filter, searchQuery]);
 
     const visibleCards = useMemo(() => {
         return filteredCards.slice(0, visibleCount);
@@ -73,17 +66,15 @@ export default function HouseOfCardsPage() {
         }
     };
 
-    // Reset pagination when filters change
     useEffect(() => {
         setVisibleCount(CARDS_PER_PAGE);
-    }, [filter, statusFilter, searchQuery]);
+    }, [filter, searchQuery]);
 
     useGSAP(() => {
         if (!gridRef.current) return;
 
         const cardContainers = gridRef.current.querySelectorAll(".card-container");
 
-        // Entrance animation
         gsap.fromTo(cardContainers,
             { y: 40, opacity: 0, scale: 0.95 },
             {
@@ -97,7 +88,6 @@ export default function HouseOfCardsPage() {
             }
         );
 
-        // Hover Logic
         cardContainers.forEach((container) => {
             const inner = container.querySelector(".card-inner");
             if (!inner) return;
@@ -127,7 +117,6 @@ export default function HouseOfCardsPage() {
 
     return (
         <div ref={containerRef} className="bg-background min-h-screen text-foreground selection:bg-red selection:text-white pb-32">
-            {/* Background elements */}
             <div className="fixed inset-0 pointer-events-none opacity-20">
                 <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-red/20 blur-[120px] rounded-full"></div>
                 <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue/40 blur-[120px] rounded-full"></div>
@@ -146,7 +135,6 @@ export default function HouseOfCardsPage() {
                         </p>
                     </div>
 
-                    {/* Stats/Badge */}
                     <div className="flex flex-col items-end gap-2 border-l border-foreground/20 pl-8 h-fit">
                         <span className="font-bebas text-5xl text-red leading-none">{filteredCards.length}</span>
                         <span className="font-oswald text-xs tracking-[0.3em] uppercase text-foreground/40">Visible Dossiers</span>
@@ -171,46 +159,16 @@ export default function HouseOfCardsPage() {
                         ))}
                     </div>
 
-                    <div className="flex items-center gap-4">
-                        <div className="relative hidden md:block">
-                            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/30" />
+                    <div className="flex items-center gap-4 w-full md:w-auto justify-center md:justify-end">
+                        <div className="relative w-full md:w-96">
+                            <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-foreground/60" />
                             <input
                                 type="text"
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 placeholder="SEARCH ARCHIVE..."
-                                className="bg-foreground/5 border border-white/10 rounded-full py-2.5 pl-12 pr-6 font-oswald text-xs tracking-widest focus:outline-none focus:border-red/50 transition-colors w-64 uppercase"
+                                className="bg-foreground/15 border border-foreground/30 rounded-full py-3 pl-14 pr-6 font-oswald text-sm tracking-widest focus:outline-none focus:border-red/50 transition-colors w-full uppercase placeholder:text-foreground/50"
                             />
-                        </div>
-                        <div className="relative">
-                            <button
-                                onClick={() => setIsStatusFilterOpen(!isStatusFilterOpen)}
-                                className={`flex items-center gap-2 border rounded-full px-5 py-2.5 font-oswald text-xs tracking-widest transition-all uppercase ${isStatusFilterOpen || statusFilter !== "All Statuses"
-                                    ? "bg-red border-red text-white"
-                                    : "bg-foreground/5 border-white/10 hover:bg-foreground/10"
-                                    }`}
-                            >
-                                <Filter className="w-4 h-4" />
-                                {statusFilter === "All Statuses" ? "STATUS FILTER" : statusFilter}
-                            </button>
-
-                            {isStatusFilterOpen && (
-                                <div className="absolute top-full right-0 mt-2 w-64 bg-background border border-white/10 rounded-xl overflow-hidden shadow-2xl z-50 py-2">
-                                    {["All Statuses", ...Array.from(new Set(CARD_DATA.map(c => c.tag)))].map((status) => (
-                                        <button
-                                            key={status}
-                                            onClick={() => {
-                                                setStatusFilter(status);
-                                                setIsStatusFilterOpen(false);
-                                            }}
-                                            className={`w-full text-left px-5 py-2.5 font-oswald text-[9px] tracking-widest uppercase transition-colors hover:bg-foreground/5 truncate ${statusFilter === status ? "text-red" : "text-foreground/60"
-                                                }`}
-                                        >
-                                            {status}
-                                        </button>
-                                    ))}
-                                </div>
-                            )}
                         </div>
                     </div>
                 </div>
@@ -235,7 +193,6 @@ export default function HouseOfCardsPage() {
                                         fill
                                         className="object-cover opacity-90"
                                     />
-                                    {/* Content removed from card back */}
                                 </div>
 
                                 {/* Back (Revealed Image) */}
@@ -250,12 +207,15 @@ export default function HouseOfCardsPage() {
                                             />
                                         </div>
 
-                                        <div className="absolute top-4 right-4 max-w-[85%] px-2 py-1 bg-red text-[7px] text-white font-bold tracking-widest rounded-sm uppercase text-right leading-tight z-30">
-                                            {card.status}
+                                        {/* === NEW STAMP UI === */}
+                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -rotate-12 border-4 border-red/80 px-4 py-1 rounded-sm backdrop-blur-sm pointer-events-none">
+                                            <span className="font-oswald text-2xl font-bold text-red/90 uppercase tracking-widest whitespace-nowrap">
+                                                {card.stamp}
+                                            </span>
                                         </div>
 
                                         <div className="absolute bottom-6 left-6 right-6 z-30">
-                                            <p className="font-bebas text-2xl tracking-wide uppercase text-black drop-shadow-md">{card.name}</p>
+                                            <p className="font-bebas text-3xl tracking-wide uppercase text-black/90 leading-none drop-shadow-sm">{card.name}</p>
                                         </div>
                                     </Link>
                                 </div>
@@ -264,7 +224,6 @@ export default function HouseOfCardsPage() {
                     ))}
                 </div>
 
-                {/* Always Show the Logic Button if we have more than the initial count */}
                 {(filteredCards.length > CARDS_PER_PAGE || !hasMore) && (
                     <div className="mt-24 flex flex-col items-center">
                         <div className="w-px h-24 bg-linear-to-b from-red to-transparent mb-10"></div>

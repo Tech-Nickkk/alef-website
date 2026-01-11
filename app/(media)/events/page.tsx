@@ -1,6 +1,6 @@
 "use client";
 
-import AnimatedTitle from "../components/CommonCom/AnimatedTitle";
+import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
 import Image from "next/image";
 import { Calendar, MapPin, ArrowRight, Clock } from "lucide-react";
 import Link from "next/link";

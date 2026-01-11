@@ -31,7 +31,7 @@ export default function Hero() {
                 },
             });
         }
-    }, { scope: heroRef });
+    }, { scope: heroRef, dependencies: [isMounted] });
 
     // Lock body scroll when modal is open
     useEffect(() => {
