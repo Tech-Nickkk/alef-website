@@ -106,7 +106,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </div>
 
                 {/* Metadata Row */}
-                <div className="flex flex-wrap items-center gap-y-6 gap-x-12 py-8 border-y border-foreground/30 mb-16">
+                <div className="flex flex-wrap items-center gap-y-6 gap-x-12 py-8 border-y border-foreground/60 mb-16">
                     {/* Author */}
                     <div className="flex items-center gap-4">
                         {post.author?.image ? (
@@ -174,7 +174,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </article>
 
                 {/* Bottom Navigation */}
-                <div className="border-t border-foreground/30 pt-16 pb-32 flex flex-col items-center">
+                <div className="border-t border-foreground/60 pt-16 pb-32 flex flex-col items-center">
                     <p className="font-oswald text-foreground/50 text-sm uppercase tracking-[0.5em] mb-8">End of Dispatch</p>
                     <Link href="/blogs-and-articles"
                         className="group relative bg-transparent border border-foreground/70 text-foreground px-12 py-5 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-foreground/50 isolate cursor-pointer"

@@ -50,7 +50,7 @@ const sections = [
         subtitle: "LEADERSHIP",
         title: "Experts Corner",
         description: "Meet the dedicated officers, directors, and advisors driving our mission forward, led by Ziad K. Abdelnour.",
-        href: "/resident-activists",
+        href: "/experts-corner",
         icon: (
             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-white">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />

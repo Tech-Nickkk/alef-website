@@ -174,23 +174,24 @@ export default function HouseOfCards() {
                                 </div>
 
                                 {/* Back (Revealed Image) - This is the "front" of the card (character), rotated 180 initially */}
-                                <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden border border-red/40 bg-background rotate-y-180 shadow-2xl shadow-red/20 cursor-pointer pointer-events-auto">
+                                <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden border border-black/10 bg-white rotate-y-180 shadow-xl transition-all duration-500 cursor-pointer pointer-events-auto group/card hover:shadow-2xl hover:shadow-red/10 hover:border-red/20">
                                     <Link href={`/house-of-cards/${card.slug}`} className="absolute inset-0 z-20 block w-full h-full">
                                         <div className="absolute inset-0">
                                             <Image
                                                 src={card.front}
                                                 alt={card.name}
                                                 fill
-                                                className="object-cover"
+                                                className="object-cover transition-transform duration-700 group-hover/card:scale-105"
                                             />
                                         </div>
 
-                                        <div className="absolute top-4 right-4 max-w-[85%] px-2 py-1 bg-red text-[7px] text-white font-bold tracking-widest rounded-sm uppercase text-right leading-tight z-30">
+                                        {/* Status Badge - Revealed on Hover */}
+                                        <div className="absolute top-4 right-4 max-w-[90%] px-3 py-1.5 bg-black/80 backdrop-blur-md text-[9px] text-white font-bold tracking-widest rounded-sm uppercase text-right leading-tight z-30 opacity-0 group-hover/card:opacity-100 transform -translate-y-2 group-hover/card:translate-y-0 transition-all duration-300">
                                             {card.status}
                                         </div>
 
-                                        <div className="absolute bottom-6 left-6 right-6 z-30">
-                                            <p className="font-bebas text-2xl tracking-wide uppercase text-black drop-shadow-md leading-none">{card.name}</p>
+                                        <div className="absolute bottom-6 left-0 right-0 z-30 text-center">
+                                            <p className="font-bebas text-4xl tracking-wide uppercase text-black/90 leading-none group-hover/card:scale-110 transition-transform duration-300">{card.name}</p>
                                         </div>
                                     </Link>
                                 </div>

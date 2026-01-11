@@ -7,7 +7,6 @@ export const structure: StructureResolver = (S) =>
     .items([
       S.documentTypeListItem('blog').title('Blogs'),
       S.documentTypeListItem('author').title('Authors'),
-      S.divider(),
       ...S.documentTypeListItems().filter(
         (item) => item.getId() && !['blog', 'author'].includes(item.getId()!),
       ),

@@ -3,7 +3,7 @@ import ExpertsCornerClient from "./ExpertsCornerClient";
 
 export default async function ExpertsCornerPage() {
     const query = `
-    *[_type == "author" && category in ["officer", "director", "advisor"]] | order(_createdAt asc) {
+    *[_type == "author" && category in ["officer", "director", "advisor"]] | order(order asc, _createdAt asc) {
       _id,
       name,
       discloseName,

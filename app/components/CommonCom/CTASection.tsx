@@ -65,6 +65,14 @@ export default function CTASection({ type }: CTASectionProps) {
 
     }, { scope: containerRef });
 
+    const scrollToJoin = (e: React.MouseEvent) => {
+        e.preventDefault();
+        const joinSection = document.getElementById('join-us');
+        if (joinSection) {
+            joinSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <section ref={containerRef} className="py-12 md:py-16 px-6">
             <div className={`max-w-5xl mx-auto rounded-xl border ${content.borderColor} bg-gradient-to-b ${content.bgGradient} backdrop-blur-sm p-8 md:p-12 relative overflow-hidden group`}>
@@ -94,11 +102,20 @@ export default function CTASection({ type }: CTASectionProps) {
                         </p>
                     </div>
 
-                    <Link href={content.link}>
-                        <button className="group/btn relative overflow-hidden bg-red text-white px-8 py-4 font-oswald font-bold tracking-[0.15em] uppercase text-sm transition-all hover:bg-[#c4151c] hover:text-white shrink-0 min-w-[200px]">
+                    {type === 'donate' ? (
+                        <Link href={content.link}>
+                            <button className="group/btn relative overflow-hidden bg-red text-white px-8 py-4 font-oswald font-bold tracking-[0.15em] uppercase text-sm transition-all hover:bg-[#c4151c] hover:text-white shrink-0 min-w-[200px] cursor-pointer">
+                                <span className="relative z-10">{content.buttonText}</span>
+                            </button>
+                        </Link>
+                    ) : (
+                        <button
+                            onClick={scrollToJoin}
+                            className="group/btn relative overflow-hidden bg-red text-white px-8 py-4 font-oswald font-bold tracking-[0.15em] uppercase text-sm transition-all hover:bg-[#c4151c] hover:text-white shrink-0 min-w-[200px] cursor-pointer"
+                        >
                             <span className="relative z-10">{content.buttonText}</span>
                         </button>
-                    </Link>
+                    )}
 
                 </div>
             </div>

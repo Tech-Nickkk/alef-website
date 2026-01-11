@@ -1,9 +1,44 @@
 import Link from "next/link";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
 import GlowingGrid from "../CommonCom/GlowingGrid";
-
+import { Video, Smartphone, Mic, Calendar, ArrowRight, Film, Images, Play } from "lucide-react";
 
 export default function Media() {
+    const mediaItems = [
+        {
+            id: "events",
+            label: "ON_THE_GROUND",
+            title: "EVENTS",
+            desc: "Photo documentation and reports from our global advocacy events.",
+            link: "/events",
+            icon: <Images className="w-10 h-10 text-white group-hover:text-red transition-all duration-300" />
+        },
+        {
+            id: "podcasts",
+            label: "AUDIO_LOGS",
+            title: "PODCASTS",
+            desc: "Deep dive discussions with experts on policy and sovereignty.",
+            link: "/podcasts",
+            icon: <Mic className="w-10 h-10 text-white group-hover:text-red transition-all duration-300" />
+        },
+        {
+            id: "shorts",
+            label: "QUICK_INTEL",
+            title: "SHORTS",
+            desc: "Rapid-fire insights and updates. Truth in under 60 seconds.",
+            link: "/shorts",
+            icon: <Smartphone className="w-10 h-10 text-white group-hover:text-red transition-all duration-300" />
+        },
+        {
+            id: "videos",
+            label: "VISUAL_ARCHIVE",
+            title: "VIDEOS",
+            desc: "Watch our latest documentaries, interviews, and visual investigations.",
+            link: "/videos",
+            icon: <Video className="w-10 h-10 text-white group-hover:text-red transition-all duration-300" />
+        }
+    ];
+
     return (
         <section className="py-12 md:py-24 px-6 md:px-12 lg:px-24">
             <div className="max-w-[1400px] mx-auto">
@@ -20,97 +55,40 @@ export default function Media() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {mediaItems.map((item, index) => (
+                        <div key={index} className="bg-blue border border-white/10 p-12 flex flex-col justify-center relative overflow-hidden group rounded-2xl hover:border-white/30 transition-colors duration-500 min-h-[400px]">
+                            {/* Interactive Glowing Grid Background */}
+                            <GlowingGrid />
 
-                    {/* UPCOMING EVENTS */}
-                    <div className="bg-blue border border-white/10 p-12 flex flex-col justify-center relative overflow-hidden group rounded-2xl hover:border-white/30 transition-colors duration-500 min-h-[500px]">
-                        {/* Interactive Glowing Grid Background */}
-                        <GlowingGrid />
-
-                        <div className="relative z-30 max-w-sm h-full flex flex-col justify-between">
-                            <div>
-                                <span className="font-oswald text-xs tracking-[0.2em] text-red mb-4 block">CALENDAR_SYNC</span>
-                                <h2 className="text-4xl md:text-5xl font-bold text-white font-bebas mb-6 leading-none">UPCOMING EVENTS</h2>
-
-                                <p className="text-white/60 font-oswald text-lg leading-relaxed mb-8">
-                                    Join our upcoming discussions on post-crisis recovery and cultural resilience.
-                                </p>
-                            </div>
-
-                            <div className="mb-8">
-                                <div className="bg-black/50 border border-white/10 p-6 flex gap-6 items-center group-hover:border-red/50 transition-colors">
-                                    <div className="text-center px-4 border-r border-white/10">
-                                        <span className="block text-3xl font-bold text-white font-bebas">24</span>
-                                        <span className="block text-[10px] font-bold text-red font-oswald tracking-wider uppercase">FEB</span>
+                            <div className="relative z-30 h-full flex flex-col justify-between">
+                                <div>
+                                    <div className="flex justify-between items-start mb-6">
+                                        <span className="font-oswald text-xs tracking-[0.2em] text-red block">{item.label}</span>
+                                        <div className="p-3 bg-white/5 rounded-full border border-white/10 group-hover:border-red/50 transition-colors">
+                                            {item.icon}
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p className="font-bold text-white font-bebas text-xl tracking-wide">Beirut Economic Forum</p>
-                                        <p className="text-xs text-white/40 font-oswald tracking-widest">10:00 AM - DOWNTOWN</p>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <Link href="/events" className="group/btn flex items-center gap-4 relative">
-                                <span className="text-white font-bebas text-xl tracking-wider group-hover/btn:text-red transition-colors relative">
-                                    FULL CALENDAR
-                                    <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-red transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-500 origin-right group-hover/btn:origin-left ease-out"></span>
-                                </span>
-                                <ArrowRight className="w-5 h-5 text-white group-hover/btn:text-red transition-colors" />
-                            </Link>
+                                    <h2 className="text-4xl md:text-5xl font-bold text-white font-bebas mb-6 leading-none group-hover:translate-x-2 transition-transform duration-500">{item.title}</h2>
+
+                                    <p className="text-white/60 font-oswald text-lg leading-relaxed mb-8 max-w-sm">
+                                        {item.desc}
+                                    </p>
+                                </div>
+
+                                <Link href={item.link} className="group/btn flex items-center gap-4 relative w-fit">
+                                    <span className="text-white font-bebas text-xl tracking-wider group-hover/btn:text-red transition-colors relative">
+                                        EXPLORE
+                                        <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-red transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-500 origin-right group-hover/btn:origin-left ease-out"></span>
+                                    </span>
+                                    <ArrowRight className="w-5 h-5 text-white group-hover/btn:text-red transition-colors" />
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-
-
-                    {/* PODCAST NETWORK */}
-                    <div className="bg-blue p-12 flex flex-col justify-center relative overflow-hidden group rounded-2xl min-h-[500px]">
-
-                        {/* Interactive Glowing Grid Background */}
-                        <GlowingGrid />
-
-                        <div className="relative z-30 max-w-sm h-full flex flex-col justify-between">
-                            <div>
-                                <span className="font-oswald text-xs tracking-[0.2em] text-red mb-4 block">AUDIO_LOGS</span>
-                                <h2 className="text-4xl md:text-5xl font-bold text-white font-bebas mb-6 leading-none">PODCAST NETWORK</h2>
-
-                                <p className="text-white/60 font-oswald text-lg leading-relaxed mb-8">
-                                    Listen to the best in public policy audio content, featuring expert analysis and voices from the ground.
-                                </p>
-                            </div>
-
-                            {/* Podcast Players / Links */}
-                            <div className="flex gap-4 mb-12">
-                                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black cursor-pointer hover:bg-red hover:text-white transition-all transform hover:scale-110">
-                                    <PlayIcon className="w-5 h-5" />
-                                </div>
-                                <div className="w-12 h-12 bg-transparent border border-white/20 rounded-full flex items-center justify-center text-white cursor-pointer hover:border-white transition-all">
-                                    <MicIcon className="w-5 h-5" />
-                                </div>
-                            </div>
-
-                            <Link href="/podcasts" className="group/btn flex items-center gap-4 relative">
-                                <span className="text-white font-bebas text-xl tracking-wider group-hover/btn:text-red transition-colors relative">
-                                    LISTEN TO ALL
-                                    <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-red transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-500 origin-right group-hover/btn:origin-left ease-out"></span>
-                                </span>
-                                <ArrowRight className="w-5 h-5 text-white group-hover/btn:text-red transition-colors" />
-                            </Link>
-                        </div>
-                    </div>
-
+                    ))}
                 </div>
             </div>
         </section>
     );
-}
-
-function ArrowRight({ className }: { className?: string }) {
-    return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>;
-}
-
-function PlayIcon({ className }: { className?: string }) {
-    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}><path d="M8 5v14l11-7z" /></svg>;
-}
-
-function MicIcon({ className }: { className?: string }) {
-    return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" /><path d="M19 10v2a7 7 0 0 1-14 0v-2" /><line x1="12" x2="12" y1="19" y2="22" /></svg>;
 }

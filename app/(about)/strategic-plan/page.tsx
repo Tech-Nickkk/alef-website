@@ -1,172 +1,287 @@
-import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
-import { ShieldCheck, HardHat, ChartBar, Globe, Building2, Scale, Landmark, Users, Briefcase, Zap, Lock } from 'lucide-react';
+"use client";
+
+import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
+import {
+    ChartBar, Scale, Lock, Briefcase, Landmark, Zap, Users, Globe, ShieldCheck, CheckCircle2
+} from 'lucide-react';
+import Link from "next/link";
 
 export default function StrategicPlanPage() {
     return (
-        <div className="bg-background min-h-screen flex flex-col relative overflow-hidden">
+        <main className="min-h-screen bg-background pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-12 lg:px-24">
+            <div className="max-w-6xl mx-auto space-y-16 md:space-y-32">
 
-            <main className="grow pt-32 px-4 md:px-8 lg:px-12 max-w-[1400px] mx-auto w-full z-10 relative">
+                {/* --- Header & Executive Summary --- */}
+                <div className="space-y-8 md:space-y-12 text-center md:text-left">
+                    <div className="text-center space-y-4 md:space-y-6">
+                        <div className="flex items-center justify-center gap-3">
+                            <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-red rounded-full animate-pulse"></span>
+                            <span className="font-oswald text-red tracking-[0.2em] uppercase text-xs md:text-sm font-bold">Roadmap to Recovery</span>
+                            <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-red rounded-full animate-pulse"></span>
+                        </div>
 
-                {/* --- HEADER --- */}
-                <div className="mb-16 text-center max-w-5xl mx-auto">
-                    <AnimatedTitle
-                        text="Rebuilding Investor Confidence"
-                        className="text-5xl md:text-7xl font-bebas text-foreground mb-6 justify-center flex"
-                    />
-                    <div className="h-1 w-24 bg-red mx-auto mb-8"></div>
-                    <p className="font-oswald text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto leading-relaxed uppercase tracking-wider">
-                        Our Strategic Plan for Lebanon
-                    </p>
+                        <AnimatedTitle
+                            text="STRATEGIC PLAN"
+                            className="text-4xl md:text-7xl lg:text-8xl font-bold font-bebas text-foreground uppercase leading-none"
+                        />
+                        <p className="font-oswald text-foreground/60 text-base md:text-xl tracking-wider uppercase">Rebuilding Investor Confidence in Lebanon</p>
+                    </div>
+
+                    <div className="relative bg-blue border border-white/10 p-6 md:p-14 rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
+                        <div className="absolute top-0 right-0 w-24 h-24 md:w-40 md:h-40 bg-white/5 rounded-bl-[60px] md:rounded-bl-[100px]"></div>
+                        <div className="relative z-10">
+                            <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start mb-6 md:mb-10">
+                                <div className="p-3 bg-linear-to-br from-red to-red/60 rounded-lg text-white shrink-0 shadow-lg">
+                                    <ChartBar className="w-6 h-6 md:w-8 md:h-8" />
+                                </div>
+                                <h3 className="font-bebas text-2xl md:text-4xl text-white pt-1 md:pt-2">
+                                    Executive Summary
+                                </h3>
+                            </div>
+
+                            <div className="font-oswald text-white/80 text-base md:text-xl leading-relaxed md:leading-loose space-y-4 md:space-y-6 text-left md:text-justify">
+                                <p>
+                                    With a new government in place, the question of whether Lebanon can attract investment remains highly dependent on <span className="text-white font-bold decoration-red underline decoration-2 underline-offset-4">political stability, economic reforms, and security guarantees</span>.
+                                </p>
+                                <p>
+                                    While large-scale Foreign Direct Investment (FDI) may be premature, specific incentives targeting <span className="text-white font-bold decoration-red underline decoration-2 underline-offset-4">Lebanese diaspora, strategic sectors, and international partners</span> could create opportunities for limited, high-impact investments.
+                                </p>
+                                <p>
+                                    This brief outlines key policy measures needed to restore confidence, attract capital, and rebuild Lebanon’s economy.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                {/* --- EXECUTIVE SUMMARY --- */}
-                <div className="bg-blue border border-white/10 p-10 md:p-14 mb-24 rounded-2xl relative overflow-hidden group hover:border-red/50 transition-all duration-300">
-                    <div className="absolute top-0 right-0 p-12 text-white/5 group-hover:text-red/10 transition-colors duration-500">
-                        <ChartBar className="w-64 h-64" />
+                {/* --- 1. Political & Security Preconditions --- */}
+                <div className="space-y-8 md:space-y-12">
+                    <div className="text-center max-w-3xl mx-auto">
+                        <AnimatedTitle
+                            text="POLITICAL & SECURITY PRECONDITIONS"
+                            className="text-3xl md:text-5xl font-bold font-bebas text-foreground uppercase leading-none"
+                        />
                     </div>
-                    <h2 className="text-4xl font-bebas text-white mb-6 relative z-10">Executive Summary</h2>
-                    <div className="font-oswald text-white/80 text-lg leading-loose relative z-10 max-w-4xl space-y-6">
-                        <p>
-                            With a new government in place, the question of whether Lebanon can attract investment remains highly dependent on <span className="text-white font-bold">political stability, economic reforms, and security guarantees</span>.
-                        </p>
-                        <p>
-                            While large-scale Foreign Direct Investment (FDI) may be premature, specific incentives targeting <span className="text-white font-bold">Lebanese diaspora, strategic sectors, and international partners</span> could create opportunities for limited, high-impact investments.
-                        </p>
-                        <p>
-                            This brief outlines key policy measures needed to restore confidence, attract capital, and rebuild Lebanon’s economy.
-                        </p>
+
+                    <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+                        <div className="relative p-6 md:p-10 border border-white/10 bg-blue rounded-2xl md:rounded-3xl overflow-hidden shadow-xl shadow-blue/20 flex flex-col h-full">
+                            <div className="absolute top-0 right-0 w-20 h-20 md:w-24 md:h-24 bg-white/5 rounded-bl-[60px] md:rounded-bl-[80px]"></div>
+                            <div className="relative z-10 flex flex-col h-full gap-4 md:gap-6 text-white">
+                                <div className="flex items-center gap-4">
+                                    <div className="p-3 bg-linear-to-br from-red to-red/60 rounded-lg text-white shadow-lg">
+                                        <Scale className="w-6 h-6 md:w-8 md:h-8" />
+                                    </div>
+                                    <span className="font-bebas text-xl md:text-2xl tracking-wide">A. Political Stability & Governance</span>
+                                </div>
+                                <ul className="space-y-3 md:space-y-4 font-oswald text-white/70 leading-relaxed text-base md:text-lg grow">
+                                    <li className="flex gap-3"><span className="text-red">‣</span> The government must implement credible anti-corruption reforms, judicial independence, and depoliticization of state institutions.</li>
+                                    <li className="flex gap-3"><span className="text-red">‣</span> Transparent governance frameworks should be introduced, including international monitoring mechanisms.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="relative p-6 md:p-10 border border-white/10 bg-blue rounded-2xl md:rounded-3xl overflow-hidden shadow-xl shadow-blue/20 flex flex-col h-full">
+                            <div className="absolute top-0 right-0 w-20 h-20 md:w-24 md:h-24 bg-white/5 rounded-bl-[60px] md:rounded-bl-[80px]"></div>
+                            <div className="relative z-10 flex flex-col h-full gap-4 md:gap-6 text-white">
+                                <div className="flex items-center gap-4">
+                                    <div className="p-3 bg-linear-to-br from-red to-red/60 rounded-lg text-white shadow-lg">
+                                        <Lock className="w-6 h-6 md:w-8 md:h-8" />
+                                    </div>
+                                    <span className="font-bebas text-xl md:text-2xl tracking-wide">B. Security Guarantees & Disarmament</span>
+                                </div>
+                                <ul className="space-y-3 md:space-y-4 font-oswald text-white/70 leading-relaxed text-base md:text-lg grow">
+                                    <li className="flex gap-3"><span className="text-red">‣</span> Security risks, primarily Hezbollah’s armed presence, must be addressed via UN Resolutions 1559, 1680 & 1701.</li>
+                                    <li className="flex gap-3"><span className="text-red">‣</span> International support for UNIFIL’s expanded role in monitoring border security.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                {/* --- 1. POLITICAL & SECURITY PRECONDITIONS --- */}
-                <section className="mb-24">
-                    <div className="flex items-end gap-4 mb-10 border-b border-foreground/10 pb-4">
-                        <span className="text-7xl font-bebas text-red leading-[0.8]">01</span>
-                        <h2 className="text-4xl font-bebas text-foreground mb-1">Political & Security Preconditions</h2>
+                {/* --- 2. Key Investment Incentives --- */}
+                <div className="space-y-8 md:space-y-12">
+                    <div className="text-center max-w-4xl mx-auto">
+                        <AnimatedTitle
+                            text="KEY INVESTMENT INCENTIVES & SECTORS"
+                            className="text-3xl md:text-5xl font-bold font-bebas text-foreground uppercase leading-none"
+                        />
+                        <p className="font-oswald text-foreground/60 text-sm md:text-lg uppercase tracking-wider mt-2 md:mt-4">
+                            Strategic opportunities for confident growth
+                        </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {/* A. Political Stability */}
-                        <div className="bg-background border border-foreground/10 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="p-3 bg-red/10 rounded-lg text-red"><Scale className="w-6 h-6" /></div>
-                                <h3 className="text-2xl font-bebas text-foreground">A. Political Stability & Governance</h3>
-                            </div>
-                            <ul className="space-y-4 font-oswald text-foreground/70 leading-relaxed list-disc list-inside">
-                                <li>The government must implement <strong>credible anti-corruption reforms</strong>, judicial independence, and depoliticization of state institutions to regain investor trust.</li>
-                                <li><strong>Transparent governance frameworks</strong> should be introduced, including international monitoring mechanisms to enforce accountability.</li>
-                            </ul>
-                        </div>
+                    <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+                        {[
+                            {
+                                title: "Tax Incentives & Regulatory",
+                                icon: <Briefcase className="w-6 h-6 md:w-8 md:h-8" />,
+                                desc: [
+                                    "Corporate tax reductions for new businesses & foreign investors.",
+                                    "Zero tax for repatriated capital for Lebanese expatriates.",
+                                    "Protection against arbitrary capital controls."
+                                ]
+                            },
+                            {
+                                title: "Banking & Financial Sector",
+                                icon: <Landmark className="w-6 h-6 md:w-8 md:h-8" />,
+                                desc: [
+                                    "IMF-backed financial stabilization measures to restore trust.",
+                                    "Transparent capital control laws to protect foreign investors."
+                                ]
+                            },
+                            {
+                                title: "Public-Private Partnerships",
+                                icon: <Zap className="w-6 h-6 md:w-8 md:h-8" />,
+                                desc: [
+                                    "Investment in renewable energy (solar, wind) projects.",
+                                    "Internationally supervised reconstruction of Beirut Port.",
+                                    "Expanding digital infrastructure & technology hubs."
+                                ]
+                            },
+                            {
+                                title: "Diaspora Investment Fund",
+                                icon: <Users className="w-6 h-6 md:w-8 md:h-8" />,
+                                desc: [
+                                    "Establish a diaspora-focused investment vehicle backed by IMF/U.S./EU.",
+                                    "Create de-risking mechanisms to incentivize expatriates."
+                                ]
+                            }
+                        ].map((item, idx) => (
+                            <div key={idx} className="relative bg-blue border border-white/10 p-6 md:p-10 rounded-2xl md:rounded-3xl overflow-hidden shadow-xl hover:border-white/30 transition-colors">
 
-                        {/* B. Security Guarantees */}
-                        <div className="bg-background border border-foreground/10 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="p-3 bg-red/10 rounded-lg text-red"><Lock className="w-6 h-6" /></div>
-                                <h3 className="text-2xl font-bebas text-foreground">B. Security Guarantees & Disarmament</h3>
+                                <div className="relative z-10 flex flex-col items-start h-full">
+                                    <div className="mb-4 md:mb-6 p-3 md:p-4 rounded-xl md:rounded-2xl bg-linear-to-br from-red to-red/60 text-white border border-white/10 shadow-lg">
+                                        {item.icon}
+                                    </div>
+
+                                    <h3 className="font-bebas text-2xl md:text-4xl text-white mb-4 md:mb-6">
+                                        {item.title}
+                                    </h3>
+
+                                    <ul className="space-y-3 md:space-y-4 font-oswald text-white/70 text-base md:text-lg leading-relaxed grow">
+                                        {item.desc.map((d, i) => (
+                                            <li key={i} className="flex gap-3 items-start">
+                                                <span className="w-1.5 h-1.5 bg-red rounded-full mt-2 shrink-0 opacity-70 transition-opacity"></span>
+                                                <span>{d}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                    <div className="mt-6 md:mt-8 w-12 h-0.5 bg-white/10 transition-all duration-700"></div>
+                                </div>
                             </div>
-                            <ul className="space-y-4 font-oswald text-foreground/70 leading-relaxed list-disc list-inside">
-                                <li>Lebanon’s security risks, primarily Hezbollah’s armed presence, must be addressed through compliance with <strong>UN Resolutions 1559, 1680 & 1701</strong>.</li>
-                                <li>International support for <strong>UNIFIL’s expanded role</strong> in monitoring border security can help create a more predictable investment environment.</li>
-                            </ul>
-                        </div>
+                        ))}
                     </div>
-                </section>
+                </div>
 
-                {/* --- 2. KEY INVESTMENT INCENTIVES --- */}
-                <section className="mb-24">
-                    <div className="flex items-end gap-4 mb-10 border-b border-foreground/10 pb-4">
-                        <span className="text-7xl font-bebas text-red leading-[0.8]">02</span>
-                        <h2 className="text-4xl font-bebas text-foreground mb-1">Key Investment Incentives & Sectors</h2>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {/* A. Tax Incentives */}
-                        <div className="bg-blue border border-white/10 p-8 rounded-xl text-white">
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="p-3 bg-white/10 rounded-lg text-white"><Briefcase className="w-6 h-6" /></div>
-                                <h3 className="text-2xl font-bebas">A. Tax Incentives & Regulatory</h3>
-                            </div>
-                            <ul className="space-y-3 font-oswald text-white/70 list-disc list-inside">
-                                <li>Corporate tax reductions for new businesses and foreign investors.</li>
-                                <li><strong>Zero tax for repatriated capital</strong> for Lebanese expatriates investing in Lebanon.</li>
-                                <li>Protection against arbitrary capital controls or future banking collapses through a clear financial reform framework.</li>
-                            </ul>
-                        </div>
-
-                        {/* B. Banking Reforms */}
-                        <div className="bg-blue border border-white/10 p-8 rounded-xl text-white">
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="p-3 bg-white/10 rounded-lg text-white"><Landmark className="w-6 h-6" /></div>
-                                <h3 className="text-2xl font-bebas">B. Banking & Financial Sector</h3>
-                            </div>
-                            <ul className="space-y-3 font-oswald text-white/70 list-disc list-inside">
-                                <li><strong>IMF-backed financial stabilization measures</strong> must be implemented to restore trust in Lebanon’s banking sector.</li>
-                                <li>Capital control laws should be transparent, structured, and protect foreign investors from arbitrary asset seizures.</li>
-                            </ul>
-                        </div>
-
-                        {/* C. PPPs */}
-                        <div className="bg-blue border border-white/10 p-8 rounded-xl text-white">
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="p-3 bg-white/10 rounded-lg text-white"><Zap className="w-6 h-6" /></div>
-                                <h3 className="text-2xl font-bebas">C. Public-Private Partnerships</h3>
-                            </div>
-                            <ul className="space-y-3 font-oswald text-white/70 list-disc list-inside">
-                                <li>Investment in <strong>renewable energy (solar, wind)</strong> projects to address Lebanon’s energy crisis.</li>
-                                <li>Internationally supervised reconstruction of <strong>Beirut Port</strong>, similar to the Singapore Port model, to ensure efficiency.</li>
-                                <li>Expanding digital infrastructure & technology hubs.</li>
-                            </ul>
-                        </div>
-
-                        {/* D. Diaspora Fund */}
-                        <div className="bg-blue border border-white/10 p-8 rounded-xl text-white">
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="p-3 bg-white/10 rounded-lg text-white"><Users className="w-6 h-6" /></div>
-                                <h3 className="text-2xl font-bebas">D. Lebanese Diaspora Investment Fund</h3>
-                            </div>
-                            <ul className="space-y-3 font-oswald text-white/70 list-disc list-inside">
-                                <li>Establish a <strong>diaspora-focused investment vehicle</strong>, backed by IMF, U.S., EU, and GCC partners.</li>
-                                <li>Create <strong>de-risking mechanisms</strong> to incentivize expatriates to reinvest in Lebanon’s economy.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                {/* --- 3. STRATEGIC PARTNERSHIPS --- */}
-                <section className="mb-24">
-                    <div className="flex items-end gap-4 mb-10 border-b border-foreground/10 pb-4">
-                        <span className="text-7xl font-bebas text-red leading-[0.8]">03</span>
-                        <h2 className="text-4xl font-bebas text-foreground mb-1">Strategic International Partnerships</h2>
+                {/* --- 3. Strategic Partnerships --- */}
+                <div className="space-y-8 md:space-y-12">
+                    <div className="text-center max-w-3xl mx-auto">
+                        <AnimatedTitle
+                            text="STRATEGIC INTERNATIONAL PARTNERSHIPS"
+                            className="text-3xl md:text-5xl font-bold font-bebas text-foreground uppercase leading-none"
+                        />
+                        <p className="font-oswald text-foreground/60 text-sm md:text-lg uppercase tracking-wider mt-2 md:mt-4">
+                            Building bridges for economic stability
+                        </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8">
-                        <div className="bg-background border border-foreground/10 p-8 rounded-xl">
-                            <h3 className="text-2xl font-bebas text-foreground mb-4">A. Engaging with Gulf & Western Allies</h3>
-                            <p className="font-oswald text-foreground/70 leading-relaxed mb-4">
-                                Strengthen economic ties with the <strong>United States, Saudi Arabia, UAE, and France</strong>, leveraging financial support and trade partnerships. Encourage U.S./EU-led economic recovery programs to rebuild investor confidence.
+                    <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+                        {/* Card 1 */}
+                        <div className="relative bg-blue border border-white/10 p-6 md:p-10 rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 hover:border-white/30">
+                            <div className="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 transition-colors duration-500"></div>
+
+                            <div className="relative z-10 flex flex-col gap-6 md:gap-8 h-full">
+                                <div className="flex items-center gap-4 md:gap-6">
+                                    <div className="w-12 h-12 md:w-16 md:h-16 bg-linear-to-br from-red to-red/60 rounded-2xl flex items-center justify-center text-white shadow-lg transition-transform duration-300">
+                                        <Globe className="w-6 h-6 md:w-8 md:h-8" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bebas text-2xl md:text-4xl text-white transition-colors">Gulf & Western Allies</h3>
+                                        <span className="font-oswald text-white/40 text-xs md:text-sm uppercase tracking-widest">Global Cooperation</span>
+                                    </div>
+                                </div>
+
+                                <p className="font-oswald text-white/70 text-base md:text-xl leading-relaxed">
+                                    Strengthen economic ties with the United States, Saudi Arabia, UAE, and France, leveraging financial support and trade partnerships. Encourage U.S./EU-led economic recovery programs to rebuild investor confidence.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Card 2 */}
+                        <div className="relative bg-blue border border-white/10 p-6 md:p-10 rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 hover:border-white/30">
+                            <div className="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 transition-colors duration-500"></div>
+
+                            <div className="relative z-10 flex flex-col gap-6 md:gap-8 h-full">
+                                <div className="flex items-center gap-4 md:gap-6">
+                                    <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-red to-red/60 rounded-2xl flex items-center justify-center text-white shadow-lg transition-transform duration-300">
+                                        <ShieldCheck className="w-6 h-6 md:w-8 md:h-8" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bebas text-2xl md:text-4xl text-white transition-colors">Oversight & Guarantees</h3>
+                                        <span className="font-oswald text-white/40 text-xs md:text-sm uppercase tracking-widest">Security & Compliance</span>
+                                    </div>
+                                </div>
+
+                                <p className="font-oswald text-white/70 text-base md:text-xl leading-relaxed">
+                                    Foreign investment protection through international dispute resolution mechanisms to safeguard against corruption. Strengthening Lebanon’s trade agreements with key partners, including the U.S. and EU.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* --- 4. Conclusion (Full Content) --- */}
+                <div className="relative w-full overflow-hidden rounded-2xl md:rounded-3xl">
+                    <div className="absolute inset-0 bg-blue"></div>
+                    <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20"></div>
+                    <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/50 to-transparent"></div>
+
+                    <div className="relative z-10 p-8 md:p-24 flex flex-col items-center text-center">
+                        <div className="mb-6 md:mb-8 p-3 md:p-4 bg-white/5 border border-white/10 rounded-full text-red animate-pulse">
+                            <CheckCircle2 className="w-8 h-8 md:w-12 md:h-12" />
+                        </div>
+
+                        <h2 className="text-4xl md:text-7xl font-bebas text-white mb-6 md:mb-8 leading-[0.9]">
+                            Conclusion: <br />
+                            <span className="text-red">A Phased Approach to Recovery</span>
+                        </h2>
+
+                        <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
+                            <p className="font-oswald text-base md:text-2xl text-white/80 leading-relaxed">
+                                Lebanon’s road to economic recovery requires a balanced approach by <span className="text-white font-bold">prioritizing stability, strategic incentives, and international partnerships</span>. While full-scale investment remains a challenge, targeted reforms can lay the foundation for future investor confidence.
+                            </p>
+
+                            <div className="h-px w-24 md:w-32 bg-gradient-to-r from-transparent via-red to-transparent mx-auto"></div>
+
+                            <p className="font-oswald text-sm md:text-xl text-white/60 leading-relaxed uppercase tracking-wide">
+                                The American Lebanon Education Foundation advocates for a structured Investment Protection & Economic Recovery Plan, ensuring that Lebanon can transition from crisis management to sustainable economic growth.
                             </p>
                         </div>
-                        <div className="bg-background border border-foreground/10 p-8 rounded-xl">
-                            <h3 className="text-2xl font-bebas text-foreground mb-4">B. Oversight & Investment Guarantees</h3>
-                            <p className="font-oswald text-foreground/70 leading-relaxed mb-4">
-                                Foreign investment protection through <strong>international dispute resolution mechanisms</strong> to safeguard against corruption. Strengthening Lebanon’s trade agreements with key partners, including the U.S. and EU, for preferential trade status.
-                            </p>
-                        </div>
                     </div>
-                </section>
 
-                {/* --- 4. CONCLUSION --- */}
-                <section className="mb-24 bg-foreground text-background p-12 rounded-2xl text-center">
-                    <h2 className="text-4xl font-bebas mb-6">Conclusion: A Phased Approach to Recovery</h2>
-                    <p className="font-oswald text-lg md:text-xl leading-relaxed max-w-4xl mx-auto opacity-90">
-                        Lebanon’s road to economic recovery requires a balanced approach by prioritizing stability, strategic incentives, and international partnerships. While full-scale investment remains a challenge, targeted reforms in banking, infrastructure, and regulatory transparency can lay the foundation for future investor confidence.
-                    </p>
-                    <p className="font-oswald text-lg md:text-xl leading-relaxed max-w-4xl mx-auto mt-6 font-bold text-red">
-                        The American Lebanon Education Foundation advocates for a structured Investment Protection & Economic Recovery Plan, ensuring that Lebanon can transition from crisis management to sustainable economic growth.
-                    </p>
-                </section>
+                    {/* Decorative side accents */}
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-20 md:h-32 bg-gradient-to-b from-transparent via-red to-transparent opacity-50"></div>
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-20 md:h-32 bg-gradient-to-b from-transparent via-red to-transparent opacity-50"></div>
+                </div>
 
-            </main>
-        </div>
+                {/* --- DOWNLOAD DOCUMENT BUTTON --- */}
+                <div className="flex justify-center pt-4 md:pt-8 relative z-10">
+                    <Link
+                        href="https://docs.google.com/document/d/e/2PACX-1vRoR3H6yCV9jFGuPrjd7cjgg665X1TxEcd2zRG9I62huy8Wrly7GxLxs_mDvq9i_g/pub"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <button className="group relative bg-transparent border border-foreground/70 text-foreground px-12 py-4 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-foreground/50 isolate cursor-pointer">
+                            <span className="relative z-10 group-hover:text-background transition-colors duration-300">
+                                READ FULL PLAN
+                            </span>
+                            <div className="absolute inset-0 bg-foreground transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10"></div>
+                        </button>
+                    </Link>
+                </div>
+
+            </div>
+        </main>
     );
 }

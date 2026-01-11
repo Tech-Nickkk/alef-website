@@ -21,9 +21,8 @@ export default function FAQPage() {
                 <div className="mb-20 text-center">
                     <AnimatedTitle
                         text="FREQUENTLY ASKED QUESTIONS"
-                        className="text-5xl md:text-7xl font-bebas text-foreground mb-6 justify-center flex"
+                        className="text-5xl mb-4 md:text-7xl lg:text-8xl font-bold font-bebas text-foreground uppercase leading-none"
                     />
-                    <div className="h-1 w-24 bg-red mx-auto mb-8"></div>
                     <p className="font-oswald text-xl md:text-2xl text-foreground/90 leading-relaxed max-w-3xl mx-auto">
                         Understanding the complexities of Hezbollah's influence, U.S. policy, and the path to a sovereign Lebanon.
                     </p>

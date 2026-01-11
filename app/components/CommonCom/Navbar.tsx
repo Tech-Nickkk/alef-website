@@ -100,7 +100,7 @@ export default function Navbar() {
                 { label: "Videos", href: "/videos" },
                 { label: "Shorts", href: "/shorts" },
                 { label: "Podcasts", href: "/podcasts" },
-                { label: "Events Gallery", href: "/events-gallery" }
+                { label: "Events", href: "/events" }
             ],
         },
         { label: "Store", href: "/alef-store" },
@@ -205,9 +205,8 @@ export default function Navbar() {
 
                     {/* Donate - Always Visible */}
                     <div className="relative group">
-                        <span className="absolute inset-0 bg-red opacity-75 animate-ping duration-2000 rounded-none pointer-events-none"></span>
                         <Link href="/donate">
-                            <button className="relative overflow-hidden bg-red hover:bg-[#c4151c] text-white px-6 py-3 md:px-8 md:py-3.5 text-xs md:text-sm uppercase font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg shadow-red-900/20 tracking-wider rounded-none font-oswald cursor-pointer isolate">
+                            <button className="relative overflow-hidden bg-red hover:bg-[#c4151c] text-white px-6 py-3 md:px-8 md:py-3.5 text-xs md:text-sm uppercase font-semibold transition-all shadow-lg shadow-red-900/20 tracking-wider rounded-none font-oswald cursor-pointer isolate animate-heartbeat">
                                 <span className="relative z-10 tracking-wider">Donate</span>
                                 <div className="absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/40 to-transparent skew-x-[-20deg] group-hover:left-[150%] transition-all duration-700 ease-in-out z-0" />
                             </button>

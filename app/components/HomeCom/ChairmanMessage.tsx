@@ -27,8 +27,8 @@ export default function ChairmanMessage() {
 
                         {/* Technical Label */}
                         <div className="flex justify-between items-start mb-6 font-oswald text-xs tracking-widest text-white/60 shrink-0">
-                            <span>01</span>
-                            <span>ZIAD K. ABDELNOUR // STATEMENT</span>
+                            <span>// STATEMENT</span>
+                            <span>~ ZIAD K. ABDELNOUR</span>
                         </div>
 
                         <div className="relative z-10 flex-1 overflow-hidden flex flex-col">
@@ -71,10 +71,6 @@ export default function ChairmanMessage() {
                                 fill
                                 className="object-cover"
                             />
-                        </div>
-
-                        <div className="absolute bottom-6 left-6 z-10 font-oswald text-xs tracking-widest text-white bg-black/50 px-4 py-2 backdrop-blur-md border border-white/10 rounded-full">
-                            FOUNDING_CHAIRMAN
                         </div>
                     </div>
                 </div>

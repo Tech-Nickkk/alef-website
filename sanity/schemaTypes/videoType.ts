@@ -31,27 +31,6 @@ export const videoType = defineType({
             validation: (rule) => rule.required(),
         }),
         defineField({
-            name: 'description',
-            title: 'Description',
-            type: 'text',
-            description: 'A brief description of the video',
-        }),
-        defineField({
-            name: 'thumbnail',
-            title: 'Thumbnail',
-            type: 'image',
-            options: {
-                hotspot: true,
-            },
-            fields: [
-                defineField({
-                    name: 'alt',
-                    type: 'string',
-                    title: 'Alternative text',
-                }),
-            ],
-        }),
-        defineField({
             name: 'publishedAt',
             title: 'Published at',
             type: 'datetime',

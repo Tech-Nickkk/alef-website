@@ -19,6 +19,13 @@ export const authorType = defineType({
       },
     }),
     defineField({
+      name: 'order',
+      title: 'Display Order',
+      type: 'number',
+      description: 'Use numbers to order the team (e.g. 1 for Chairman, 2 for Vice Chairman). Lower numbers appear first.',
+      initialValue: 99
+    }),
+    defineField({
       name: 'category',
       title: 'Category',
       type: 'string',
@@ -40,29 +47,11 @@ export const authorType = defineType({
       description: 'Role title like "Founding Chairman" or "Vice Chairman". Primary label for Officers.',
     }),
     defineField({
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-      rows: 3,
-      description: 'Short bio or description. Used for Directors and Advisors.',
-    }),
-    defineField({
       name: 'image',
       type: 'image',
       options: {
         hotspot: true,
       },
-    }),
-    defineField({
-      name: 'bio',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'block',
-          styles: [{ title: 'Normal', value: 'normal' }],
-          lists: [],
-        }),
-      ],
     }),
     defineField({
       name: 'discloseName',

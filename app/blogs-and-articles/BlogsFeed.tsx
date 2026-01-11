@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, User, Search, Filter } from "lucide-react";
+import { ArrowRight, User, Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { urlFor } from "@/sanity/lib/image";
 
 interface Sanityblog {
@@ -33,10 +33,10 @@ interface BlogsFeedProps {
 }
 
 export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
+    const ITEMS_PER_PAGE = 9;
     const [filter, setFilter] = useState("All"); // Year filter
     const [searchQuery, setSearchQuery] = useState("");
-    const [authorFilter, setAuthorFilter] = useState("All Authors");
-    const [isAuthorFilterOpen, setIsAuthorFilterOpen] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
 
     // Extract unique years for horizontal tabs
     const years = useMemo(() => {
@@ -46,13 +46,7 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
         return ["All", ...uniqueYears];
     }, [initialBlogs]);
 
-    // Extract unique authors for dropdown
-    const authors = useMemo(() => {
-        const uniqueAuthors = Array.from(new Set(initialBlogs.map(blog =>
-            blog.author?.discloseName ? blog.author.name : "Anonymous"
-        ).filter(Boolean)));
-        return ["All Authors", ...uniqueAuthors];
-    }, [initialBlogs]);
+    // Extract unique authors for dropdown - REMOVED
 
     const filteredBlogs = useMemo(() => {
         return initialBlogs.filter(blog => {
@@ -60,14 +54,25 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
             const blogAuthor = blog.author?.discloseName ? blog.author.name : "Anonymous";
 
             const matchesYear = filter === "All" || blogYear === filter;
-            const matchesAuthor = authorFilter === "All Authors" || blogAuthor === authorFilter;
             const matchesSearch = blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 blog.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 blogAuthor.toLowerCase().includes(searchQuery.toLowerCase());
 
-            return matchesYear && matchesAuthor && matchesSearch;
+            return matchesYear && matchesSearch;
         });
-    }, [initialBlogs, filter, authorFilter, searchQuery]);
+    }, [initialBlogs, filter, searchQuery]);
+
+    // Reset to page 1 when filters change
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [filter, searchQuery]);
+
+    // Pagination Logic
+    const totalPages = Math.ceil(filteredBlogs.length / ITEMS_PER_PAGE);
+    const paginatedBlogs = filteredBlogs.slice(
+        (currentPage - 1) * ITEMS_PER_PAGE,
+        currentPage * ITEMS_PER_PAGE
+    );
 
     const highlightText = (text: string, query: string) => {
         if (!query) return text;
@@ -87,13 +92,13 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
     return (
         <>
             {/* Filters Row */}
-            <div className="flex flex-wrap items-center justify-between gap-6 py-6 border-y border-foreground/20 mb-12">
+            <div className="flex flex-wrap items-center justify-center md:justify-between gap-6 py-6 border-y border-foreground/60 mb-12">
                 <div className="flex items-center gap-8 overflow-x-auto no-scrollbar pb-2 md:pb-0">
                     {years.map((item) => (
                         <button
                             key={item}
                             onClick={() => setFilter(item)}
-                            className={`font-oswald text-sm uppercase tracking-widest transition-all relative ${filter === item ? "text-red" : "text-foreground/40 hover:text-foreground"
+                            className={`font-oswald text-sm uppercase tracking-widest transition-all relative ${filter === item ? "text-red" : "text-foreground/70 hover:text-foreground"
                                 }`}
                         >
                             {item}
@@ -104,54 +109,24 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
                     ))}
                 </div>
 
-                <div className="flex items-center gap-4">
-                    <div className="relative hidden md:block">
-                        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/30" />
+                <div className="flex items-center gap-4 w-full md:w-auto">
+                    <div className="relative w-full md:w-auto">
+                        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/60" />
                         <input
                             type="text"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             placeholder="SEARCH ARTICLES..."
-                            className="bg-foreground/5 border border-white/10 rounded-full py-2.5 pl-12 pr-6 font-oswald text-xs tracking-widest focus:outline-none focus:border-red/50 transition-colors w-64 uppercase"
+                            className="bg-foreground/15 border border-foreground/30 rounded-full py-2.5 pl-12 pr-6 font-oswald text-xs tracking-widest focus:outline-none focus:border-red/50 transition-colors w-full md:w-96 uppercase"
                         />
-                    </div>
-                    <div className="relative">
-                        <button
-                            onClick={() => setIsAuthorFilterOpen(!isAuthorFilterOpen)}
-                            className={`flex items-center gap-2 border rounded-full px-5 py-2.5 font-oswald text-xs tracking-widest transition-all uppercase ${isAuthorFilterOpen || authorFilter !== "All Authors"
-                                ? "bg-red border-red text-white"
-                                : "bg-foreground/5 border-white/10 hover:bg-foreground/10"
-                                }`}
-                        >
-                            <Filter className="w-4 h-4" />
-                            {authorFilter === "All Authors" ? "AUTHOR FILTER" : authorFilter}
-                        </button>
-
-                        {isAuthorFilterOpen && (
-                            <div className="absolute top-full right-0 mt-2 w-64 bg-background border border-white/10 rounded-xl overflow-hidden shadow-2xl z-50 py-2">
-                                {authors.map((author) => (
-                                    <button
-                                        key={author}
-                                        onClick={() => {
-                                            setAuthorFilter(author);
-                                            setIsAuthorFilterOpen(false);
-                                        }}
-                                        className={`w-full text-left px-5 py-2.5 font-oswald text-[9px] tracking-widest uppercase transition-colors hover:bg-foreground/5 truncate ${authorFilter === author ? "text-red" : "text-foreground/60"
-                                            }`}
-                                    >
-                                        {author}
-                                    </button>
-                                ))}
-                            </div>
-                        )}
                     </div>
                 </div>
             </div>
 
             {/* Blogs Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24 min-h-[50vh]">
-                {filteredBlogs && filteredBlogs.length > 0 ? (
-                    filteredBlogs.map((blog: Sanityblog) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 min-h-[50vh]">
+                {paginatedBlogs && paginatedBlogs.length > 0 ? (
+                    paginatedBlogs.map((blog: Sanityblog) => (
                         <Link
                             key={blog._id}
                             href={`/blogs-and-articles/${blog.slug.current}`}
@@ -237,7 +212,6 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
                                 onClick={() => {
                                     setFilter("All");
                                     setSearchQuery("");
-                                    setAuthorFilter("All Authors");
                                 }}
                                 className="text-red font-oswald text-sm underline underline-offset-4 hover:text-white transition-colors"
                             >
@@ -247,6 +221,53 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
                     </div>
                 )}
             </div>
+
+            {/* Pagination Controls */}
+            {totalPages > 1 && (
+                <div className="flex justify-center items-center gap-6 mb-24 animate-in fade-in duration-500">
+                    <button
+                        onClick={() => {
+                            setCurrentPage(p => Math.max(1, p - 1));
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }}
+                        disabled={currentPage === 1}
+                        className="group flex items-center gap-2 px-4 py-2 border border-foreground/30 rounded-full hover:bg-red hover:border-red hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:border-foreground/30 disabled:hover:text-foreground transition-all duration-300"
+                    >
+                        <ChevronLeft className="w-4 h-4" />
+                        <span className="font-bebas text-lg tracking-wider hidden sm:inline">Previous</span>
+                    </button>
+
+                    <div className="flex items-center gap-2">
+                        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                            <button
+                                key={page}
+                                onClick={() => {
+                                    setCurrentPage(page);
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }}
+                                className={`w-10 h-10 rounded-full font-bebas text-lg flex items-center justify-center transition-all duration-300 ${currentPage === page
+                                    ? "bg-red text-white scale-110 shadow-lg"
+                                    : "bg-foreground/5 hover:bg-foreground/10 text-foreground/70"
+                                    }`}
+                            >
+                                {page}
+                            </button>
+                        ))}
+                    </div>
+
+                    <button
+                        onClick={() => {
+                            setCurrentPage(p => Math.min(totalPages, p + 1));
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }}
+                        disabled={currentPage === totalPages}
+                        className="group flex items-center gap-2 px-4 py-2 border border-foreground/30 rounded-full hover:bg-red hover:border-red hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:border-foreground/30 disabled:hover:text-foreground transition-all duration-300"
+                    >
+                        <span className="font-bebas text-lg tracking-wider hidden sm:inline">Next</span>
+                        <ChevronRight className="w-4 h-4" />
+                    </button>
+                </div>
+            )}
         </>
     );
 }

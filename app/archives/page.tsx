@@ -4,6 +4,12 @@ import { ArrowUpRight } from "lucide-react";
 
 const archiveData = [
     {
+        title: "The Hezbollah Accountability Act (HAA)",
+        description: "A comprehensive legislative framework designed to dismantle corruption, disrupt illicit financing, and restore Lebanon's sovereignty.",
+        url: "https://docs.google.com/document/d/e/2PACX-1vS5f00Bza5q1dniXTU6VsUr61FZ0oMGjcOnTUQoKGWZXEYrkLjKbnkJER0qleXYIA/pub",
+        highlight: true
+    },
+    {
         title: "UN Security Resolution 1559",
         url: "https://share.google/ByXPi7Vm2E4PcBYWF"
     },
@@ -54,9 +60,8 @@ export default function ArchivesPage() {
                 <div className="mb-20 text-center max-w-5xl mx-auto">
                     <AnimatedTitle
                         text="ARCHIVES"
-                        className="text-5xl md:text-7xl font-bebas text-foreground mb-6 justify-center flex"
+                        className="text-5xl mb-4 md:text-7xl lg:text-8xl font-bold font-bebas text-foreground uppercase leading-none"
                     />
-                    <div className="h-1 w-24 bg-red mx-auto mb-8"></div>
                     <p className="font-oswald text-xl md:text-2xl text-foreground/90 leading-relaxed max-w-4xl mx-auto">
                         Official resolutions, legislative actions, and historical documents.
                     </p>
@@ -69,7 +74,7 @@ export default function ArchivesPage() {
                             href={item.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative bg-blue border border-white/10 p-8 hover:bg-light-blue transition-all duration-300 overflow-hidden rounded-lg"
+                            className={`group relative bg-blue border border-white/10 p-8 hover:bg-light-blue transition-all duration-300 overflow-hidden rounded-lg ${(item as any).highlight ? 'md:col-span-2' : ''}`}
                         >
                             <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
                                 <ArrowUpRight className="w-6 h-6 text-white" />

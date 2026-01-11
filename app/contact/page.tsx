@@ -62,7 +62,7 @@ export default function ContactPage() {
                         </div>
                         <AnimatedTitle
                             text="CONTACT US"
-                            className="text-5xl md:text-8xl font-bebas text-foreground mb-6 justify-center flex"
+                            className="text-5xl mb-4 md:text-7xl lg:text-8xl font-bold font-bebas text-foreground uppercase leading-none"
                         />
                         <p className="font-oswald text-lg md:text-xl text-foreground/60 max-w-2xl mx-auto leading-relaxed">
                             Ready to join our mission? Have questions about our advocacy work?

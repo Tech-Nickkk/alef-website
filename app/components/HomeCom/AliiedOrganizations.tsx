@@ -17,7 +17,9 @@ const ALLIES = [
     { name: "Young America’s Foundation", url: "https://yaf.org/" },
     { name: "The Livingston Group", url: "https://www.livingstongroupdc.com/" },
     { name: "Turning Point USA", url: "https://tpusa.com/" },
-    { name: "Foreign policy Research Institute", url: "https://www.fpri.org/"}
+    { name: "Foreign policy Research Institute", url: "https://www.fpri.org/"},
+    { name: "Transparency News", url: "https://transparency.news/"},
+    { name: "Washington Institute for Near East Policy", url: "https://www.washingtoninstitute.org/"}
 ];
 
 export default function AlliedOrganizations() {

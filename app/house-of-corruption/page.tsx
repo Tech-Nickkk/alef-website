@@ -1,10 +1,12 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AnimatedTitle from "../components/CommonCom/AnimatedTitle";
 import {
     AlertTriangle,
     Banknote,
@@ -102,10 +104,10 @@ const GALLERY_IMAGES = [
     { src: "/houseOfCorruption/house-of-corruption-img-3.jpg", alt: "The Venezuela Connection", caption: "Gold & Crypto Laundering", side: "left" },
     { src: "/houseOfCorruption/house-of-corruption-img-4.jpg", alt: "Fuel Cartel", caption: "Energy Sector Corruption", side: "left" },
     { src: "/houseOfCorruption/house-of-corruption-img-5.jpg", alt: "Laundering Map", caption: "Global Money Flow", side: "left" },
-    { src: "/houseOfCorruption/house-of-corruption-img-7.jpg", alt: "Crisis Summary", caption: "The Aftermath", side: "left" },
+    { src: "/houseOfCorruption/house-of-corruption-img-6.png", alt: "Crisis Summary", caption: "The Aftermath", side: "left" },
 
     // Right Lane: 7, 5, 4, 3, 2, 1 (skip 6, reversed)
-    { src: "/houseOfCorruption/house-of-corruption-img-7.jpg", alt: "Crisis Summary", caption: "The Aftermath", side: "right" },
+    { src: "/houseOfCorruption/house-of-corruption-img-6.png", alt: "Crisis Summary", caption: "The Aftermath", side: "right" },
     { src: "/houseOfCorruption/house-of-corruption-img-5.jpg", alt: "Laundering Map", caption: "Global Money Flow", side: "right" },
     { src: "/houseOfCorruption/house-of-corruption-img-4.jpg", alt: "Fuel Cartel", caption: "Energy Sector Corruption", side: "right" },
     { src: "/houseOfCorruption/house-of-corruption-img-3.jpg", alt: "The Venezuela Connection", caption: "Gold & Crypto Laundering", side: "right" },
@@ -184,7 +186,22 @@ export default function HouseOfCorruptionPage() {
     const [counterValue, setCounterValue] = useState(0);
     const [selectedImage, setSelectedImage] = useState<{ src: string, alt: string, caption: string } | null>(null);
 
+    // Lock body scroll when modal is open
+    useEffect(() => {
+        if (selectedImage) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+        return () => {
+            document.body.style.overflow = "unset";
+        };
+    }, [selectedImage]);
+
     useGSAP(() => {
+        // Set initial state
+        setCounterValue(0);
+
         const mm = gsap.matchMedia();
 
         const tl = gsap.timeline({
@@ -194,55 +211,74 @@ export default function HouseOfCorruptionPage() {
                 end: "+=300%",
                 pin: true,
                 scrub: 1,
-                onUpdate: (self) => setCounterValue(Math.floor(self.progress * 1000))
+                onUpdate: (self) => setCounterValue(Math.floor(Math.max(0, self.progress) * 1000))
             }
         });
 
-        // Set initial positions BEFORE timeline starts
-        gsap.set(".left-lane", { y: "120vh" });
-        gsap.set(".right-lane", { y: "-500vh" });
+        mm.add({
+            isDesktop: "(min-width: 768px)",
+            isMobile: "(max-width: 767px)",
+        }, (context) => {
+            const { isDesktop, isMobile } = context.conditions as { isDesktop: boolean, isMobile: boolean };
 
-        tl.fromTo(".left-lane",
-            { y: "120vh" },
-            { y: "-500vh", ease: "none", duration: 1 },
-            0);
+            if (isDesktop) {
+                // Vertical Animation (Desktop)
+                gsap.set(".left-lane", { y: "120vh" });
+                gsap.set(".right-lane", { y: "-500vh" });
 
-        tl.fromTo(".right-lane",
-            { y: "-500vh" },
-            { y: "120vh", ease: "none", duration: 1 },
-            0);
+                tl.to(".left-lane", { y: "-500vh", ease: "none", duration: 1 }, 0)
+                    .to(".right-lane", { y: "120vh", ease: "none", duration: 1 }, 0);
+            }
+
+            if (isMobile) {
+                // Horizontal Animation (Mobile)
+                // Top lane moves LEFT
+                tl.to(".mobile-top-lane", { x: "-50%", ease: "none", duration: 1 }, 0);
+
+                // Bottom lane moves RIGHT
+                gsap.set(".mobile-bottom-lane", { x: "-50%" });
+                tl.to(".mobile-bottom-lane", { x: "0%", ease: "none", duration: 1 }, 0);
+            }
+        });
 
         mm.add("(min-width: 1024px)", () => {
-            const sections = gsap.utils.toArray(".dossier-card");
-            if (sections.length > 0) {
-                gsap.to(sections, {
-                    xPercent: -100 * (sections.length - 1) * 0.6,
+            const container = document.querySelector(".horizontal-container") as HTMLElement;
+            if (container) {
+                // Dynamic calculation helper for resize support
+                const getScrollAmount = () => container.scrollWidth - window.innerWidth;
+
+                gsap.to(container, {
+                    x: () => -getScrollAmount(),
                     ease: "none",
                     scrollTrigger: {
                         trigger: ".direct-losses-wrapper",
                         start: "top top",
-                        end: "+=300%",
+                        end: () => "+=" + getScrollAmount(),
                         pin: true,
                         scrub: 1,
+                        invalidateOnRefresh: true,
                     }
                 });
             }
         });
 
-        // Center Line Animation
-        gsap.fromTo(".center-line",
-            { scaleY: 0, transformOrigin: "top" },
-            {
-                scaleY: 1,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: ".indirect-list-container",
-                    start: "top center",
-                    end: "bottom center",
-                    scrub: 1
+        // Center Line Animation (Desktop Only)
+        mm.add("(min-width: 768px)", () => {
+            gsap.fromTo(".center-line",
+                { scaleY: 0, transformOrigin: "top" },
+                {
+                    scaleY: 1,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: ".indirect-list-container",
+                        start: "top 75%",
+                        end: "bottom center",
+                        scrub: 0.1,
+                        invalidateOnRefresh: true
+                    }
                 }
-            }
-        );
+            );
+        });
 
     }, { scope: containerRef });
 
@@ -257,16 +293,17 @@ export default function HouseOfCorruptionPage() {
                         Confidential Financial Audit
                     </div>
                     <div className="overflow-hidden">
-                        <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bebas font-bold text-foreground flex flex-wrap justify-center gap-x-4 opacity-90">
-                            THE $1 TRILLION HEIST
-                        </h1>
+                        <AnimatedTitle
+                            text="THE $1 TRILLION HEIST"
+                            className="text-6xl md:text-8xl lg:text-[9rem] font-bebas font-bold text-foreground flex flex-wrap justify-center gap-x-2 opacity-90"
+                        />
                     </div>
                     <p className="font-oswald text-lg md:text-2xl text-foreground/70 max-w-3xl mx-auto leading-relaxed text-center font-light tracking-wide">
                         A systematic transfer of wealth. Direct theft, laundered money, and wasted potential.
                     </p>
                 </div>
                 <div className="absolute bottom-12">
-                    <div className="text-foreground/30 font-oswald text-[10px] tracking-[0.3em] uppercase flex flex-col items-center gap-3 animate-bounce">
+                    <div className="text-foreground/80 font-oswald text-[10px] tracking-[0.3em] uppercase flex flex-col items-center gap-3 animate-bounce">
                         <span>Initiate Inspection</span>
                         <MoveRight className="w-4 h-4 rotate-90" />
                     </div>
@@ -278,63 +315,111 @@ export default function HouseOfCorruptionPage() {
 
                 {/* Floating Images Container */}
                 <div className="absolute inset-0 w-full h-full pointer-events-none z-10 overflow-hidden">
-                    {/* Left Lane - Moves UP */}
-                    <div className="left-lane absolute left-[2%] md:left-[8%] top-0 flex flex-col gap-[20vh]">
-                        {GALLERY_IMAGES.filter(i => i.side === 'left').map((img, idx) => (
-                            <div
-                                key={idx}
-                                className="relative pointer-events-auto cursor-pointer transition-all duration-500 group w-40 h-56 md:w-56 md:h-72 lg:w-72 lg:h-96"
-                                onClick={() => setSelectedImage(img)}
-                            >
-                                <div className="absolute top-1/2 -left-8 w-8 h-px bg-foreground/20"></div>
-                                <div className="relative w-full h-full border border-light-blue rounded-sm overflow-hidden bg-blue shadow-2xl hover:border-red hover:shadow-[0_0_30px_rgba(220,38,38,0.2)]">
-                                    <Image
-                                        src={img.src}
-                                        alt={img.alt}
-                                        fill
-                                        className="object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
-                                    />
-                                    <div className="absolute inset-0 bg-red/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-blue/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300 border-t border-red/30">
-                                        <p className="font-bebas text-white text-lg leading-none mb-1">{img.alt}</p>
-                                        <div className="flex items-center justify-between">
-                                            <span className="text-white/60 text-[9px] font-oswald uppercase tracking-wider">{img.caption}</span>
-                                            <Maximize2 className="w-3 h-3 text-red" />
+
+                    {/* DESKTOP: Vertical Lanes (md and up) */}
+                    <div className="hidden md:block w-full h-full relative">
+                        {/* Left Lane - Moves UP */}
+                        <div className="left-lane absolute left-[8%] top-0 flex flex-col gap-[20vh]">
+                            {GALLERY_IMAGES.filter(i => i.side === 'left').map((img, idx) => (
+                                <div
+                                    key={idx}
+                                    className="relative pointer-events-auto cursor-pointer transition-all duration-500 group w-56 h-72 lg:w-72 lg:h-96"
+                                    onClick={() => setSelectedImage(img)}
+                                >
+                                    <div className="absolute top-1/2 -left-8 w-8 h-px bg-foreground/20"></div>
+                                    <div className="relative w-full h-full border border-light-blue rounded-sm overflow-hidden bg-blue shadow-2xl hover:border-red hover:shadow-[0_0_30px_rgba(220,38,38,0.2)]">
+                                        <Image
+                                            src={img.src}
+                                            alt={img.alt}
+                                            fill
+                                            className="object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                                        />
+                                        <div className="absolute bottom-0 left-0 right-0 p-4 bg-blue/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300 border-t border-red/30">
+                                            <p className="font-bebas text-white text-lg leading-none mb-1">{img.alt}</p>
+                                            <div className="flex items-center justify-between">
+                                                <span className="text-white/60 text-[9px] font-oswald uppercase tracking-wider">{img.caption}</span>
+                                                <Maximize2 className="w-3 h-3 text-red" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
+
+                        {/* Right Lane - Moves DOWN */}
+                        <div className="right-lane absolute right-[8%] top-0 flex flex-col gap-[20vh]">
+                            {GALLERY_IMAGES.filter(i => i.side === 'right').map((img, idx) => (
+                                <div
+                                    key={idx}
+                                    className="relative pointer-events-auto cursor-pointer transition-all duration-500 group w-56 h-72 lg:w-72 lg:h-96"
+                                    onClick={() => setSelectedImage(img)}
+                                >
+                                    <div className="absolute top-1/2 -right-8 w-8 h-px bg-foreground/20"></div>
+                                    <div className="relative w-full h-full border border-light-blue rounded-sm overflow-hidden bg-blue shadow-2xl hover:border-red hover:shadow-[0_0_30px_rgba(220,38,38,0.2)]">
+                                        <Image
+                                            src={img.src}
+                                            alt={img.alt}
+                                            fill
+                                            className="object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                                        />
+                                        <div className="absolute bottom-0 left-0 right-0 p-4 bg-blue/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300 border-t border-red/30">
+                                            <p className="font-bebas text-white text-lg leading-none mb-1">{img.alt}</p>
+                                            <div className="flex items-center justify-between">
+                                                <span className="text-white/60 text-[9px] font-oswald uppercase tracking-wider">{img.caption}</span>
+                                                <Maximize2 className="w-3 h-3 text-red" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
-                    {/* Right Lane - Moves DOWN */}
-                    <div className="right-lane absolute right-[2%] md:right-[8%] top-0 flex flex-col gap-[20vh]">
-                        {GALLERY_IMAGES.filter(i => i.side === 'right').map((img, idx) => (
-                            <div
-                                key={idx}
-                                className="relative pointer-events-auto cursor-pointer transition-all duration-500 group w-40 h-56 md:w-56 md:h-72 lg:w-72 lg:h-96"
-                                onClick={() => setSelectedImage(img)}
-                            >
-                                <div className="absolute top-1/2 -right-8 w-8 h-px bg-foreground/20"></div>
-                                <div className="relative w-full h-full border border-light-blue rounded-sm overflow-hidden bg-blue shadow-2xl hover:border-red hover:shadow-[0_0_30px_rgba(220,38,38,0.2)]">
+                    {/* MOBILE: Horizontal Lanes (sm only) */}
+                    <div className="md:hidden w-full h-full relative flex flex-col justify-between py-12">
+                        {/* Top Lane - Moves LEFT */}
+                        <div className="mobile-top-lane flex gap-6 absolute top-20 left-0 whitespace-nowrap z-10 transform-gpu will-change-transform">
+                            {[...GALLERY_IMAGES, ...GALLERY_IMAGES].map((img, idx) => (
+                                <div
+                                    key={`top-${idx}`}
+                                    className="relative shrink-0 w-36 h-52 rounded-md overflow-hidden border border-white/20 bg-blue shadow-lg pointer-events-auto active:scale-95 transition-transform"
+                                    onClick={() => setSelectedImage(img)}
+                                >
                                     <Image
                                         src={img.src}
                                         alt={img.alt}
                                         fill
-                                        className="object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                                        className="object-cover opacity-90"
                                     />
-                                    <div className="absolute inset-0 bg-red/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-blue/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300 border-t border-red/30">
-                                        <p className="font-bebas text-white text-lg leading-none mb-1">{img.alt}</p>
-                                        <div className="flex items-center justify-between">
-                                            <span className="text-white/60 text-[9px] font-oswald uppercase tracking-wider">{img.caption}</span>
-                                            <Maximize2 className="w-3 h-3 text-red" />
-                                        </div>
+                                    <div className="absolute bottom-2 right-2 p-1.5 bg-red/90 rounded-full text-white shadow-lg backdrop-blur-sm">
+                                        <Maximize2 className="w-3 h-3" />
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
+
+                        {/* Bottom Lane - Moves RIGHT */}
+                        <div className="mobile-bottom-lane flex gap-6 absolute bottom-24 left-[-100%] whitespace-nowrap z-10 transform-gpu will-change-transform">
+                            {[...GALLERY_IMAGES, ...GALLERY_IMAGES].map((img, idx) => (
+                                <div
+                                    key={`bottom-${idx}`}
+                                    className="relative shrink-0 w-36 h-52 rounded-md overflow-hidden border border-white/20 bg-blue shadow-lg pointer-events-auto active:scale-95 transition-transform"
+                                    onClick={() => setSelectedImage(img)}
+                                >
+                                    <Image
+                                        src={img.src}
+                                        alt={img.alt}
+                                        fill
+                                        className="object-cover opacity-90"
+                                    />
+                                    <div className="absolute bottom-2 right-2 p-1.5 bg-red/90 rounded-full text-white shadow-lg backdrop-blur-sm">
+                                        <Maximize2 className="w-3 h-3" />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
+
                 </div>
 
                 {/* Centered Counter */}
@@ -347,7 +432,7 @@ export default function HouseOfCorruptionPage() {
                         <span className="text-[100px] md:text-[220px] tabular-nums tracking-tighter text-foreground">{counterValue}</span>
                         <span className="text-4xl md:text-7xl ml-2 md:ml-6 font-light">B</span>
                     </div>
-                    <p className="font-oswald text-foreground/70 max-w-xl mx-auto mt-8 text-base md:text-lg leading-relaxed font-light tracking-wide bg-background/50 p-6 rounded-xl backdrop-blur-sm border border-foreground/5">
+                    <p className="font-oswald text-foreground/70 max-w-xl mx-auto mt-8 text-base md:text-lg leading-relaxed font-light tracking-wide bg-background/50 p-6 rounded-xl backdrop-blur-sm border border-foreground/5 hidden md:block">
                         Equivalent to losing the entire GDP of the nation... <span className="text-red">every single year.</span>
                     </p>
                 </div>
@@ -364,15 +449,15 @@ export default function HouseOfCorruptionPage() {
 
                 {/* Horizontal Scroll Wrapper (Desktop) */}
                 <div className="direct-losses-wrapper hidden lg:flex h-screen items-center overflow-hidden sticky top-0 bg-background">
-                    <div className="flex px-24 gap-12 w-max">
+                    <div className="horizontal-container flex px-12 gap-12 w-max">
                         {DIRECT_LOSSES.map((item, index) => (
                             <div
                                 key={index}
-                                className="dossier-card w-[450px] h-[600px] bg-blue border border-light-blue hover:bg-light-blue transition-colors duration-500 relative flex flex-col p-10 group shadow-2xl rounded-sm"
+                                className="dossier-card w-[450px] h-[600px] bg-blue relative flex flex-col p-10 group shadow-2xl rounded-sm"
                             >
                                 {/* Card Header */}
                                 <div className="flex justify-between items-start mb-12">
-                                    <div className="p-4 bg-white/10 rounded-full text-red group-hover:scale-110 transition-transform duration-500 border border-white/5">
+                                    <div className="p-4 bg-linear-to-br from-red to-red/60 rounded-full text-white group-hover:scale-110 transition-transform duration-500 border border-white/5">
                                         {item.icon}
                                     </div>
                                     <span className="font-oswald text-xs text-white/30 tracking-[0.2em] uppercase">{item.id}</span>
@@ -432,7 +517,10 @@ export default function HouseOfCorruptionPage() {
                     />
 
                     <div className="indirect-list-container relative space-y-24 mb-32">
-                        <div className="center-line absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-linear-to-b from-transparent via-red to-transparent hidden md:block"></div>
+                        {/* Faded Background Line */}
+                        <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-red/10 hidden md:block"></div>
+                        {/* Animating Main Line */}
+                        <div className="center-line absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-red hidden md:block origin-top"></div>
 
                         {indirectStats.map((stat, i) => (
                             <div key={i} className={`flex flex-col md:flex-row items-center gap-12 relative z-10 ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
@@ -479,26 +567,32 @@ export default function HouseOfCorruptionPage() {
                     <p className="font-oswald text-lg text-foreground/50 mb-12 max-w-xl mx-auto font-light tracking-wide">
                         The data is public. The perpetrators are known. The stolen assets are traced. What is missing is accountability.
                     </p>
-                    <button className="group relative bg-foreground text-background px-10 py-3 font-bebas text-lg tracking-[0.2em] uppercase overflow-hidden hover:bg-red hover:text-white transition-all duration-300">
-                        <span className="relative z-10 flex items-center gap-4">
-                            Download Full Report <MoveRight className="w-4 h-4" />
-                        </span>
-                    </button>
+                    <Link
+                        href="/houseOfCorruption/Total Estimated Money Stolen Summary.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <button className="group relative bg-foreground text-background px-10 py-3 font-bebas text-lg tracking-[0.2em] uppercase overflow-hidden hover:bg-red hover:text-white transition-all duration-300">
+                            <span className="relative z-10 flex items-center gap-4">
+                                CHECK OUT FULL REPORT <MoveRight className="w-4 h-4" />
+                            </span>
+                        </button>
+                    </Link>
                 </div>
             </div>
 
             {/* IMAGE INSPECTION MODAL */}
             {selectedImage && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 sm:p-8 animate-in fade-in duration-300">
+                <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 sm:p-8 animate-in fade-in duration-300">
                     <button
                         onClick={() => setSelectedImage(null)}
-                        className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors p-2 z-10"
+                        className="absolute top-6 right-6 text-white/70 hover:text-red transition-colors p-2 z-50 bg-black/20 rounded-full"
                     >
-                        <X className="w-10 h-10" />
+                        <X className="w-8 h-8 md:w-10 md:h-10" />
                     </button>
 
                     <div
-                        className="relative w-full max-w-5xl h-[85vh] flex flex-col items-center justify-center"
+                        className="relative w-full max-w-5xl h-[80vh] md:h-[85vh] flex flex-col items-center justify-center"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="relative w-full h-full rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-black">
@@ -509,9 +603,9 @@ export default function HouseOfCorruptionPage() {
                                 className="object-contain"
                             />
                         </div>
-                        <div className="mt-6 text-center">
-                            <h3 className="font-bebas text-3xl text-white tracking-wide">{selectedImage.alt}</h3>
-                            <p className="font-oswald text-red text-sm tracking-[0.2em] uppercase">{selectedImage.caption}</p>
+                        <div className="mt-4 md:mt-6 text-center px-4">
+                            <h3 className="font-bebas text-2xl md:text-3xl text-white tracking-wide">{selectedImage.alt}</h3>
+                            <p className="font-oswald text-red text-xs md:text-sm tracking-[0.2em] uppercase">{selectedImage.caption}</p>
                         </div>
                     </div>
 

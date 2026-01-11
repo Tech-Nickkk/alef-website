@@ -26,7 +26,7 @@ export default function HouseOfCorruption() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
                     {/* Left Column: Content Card */}
-                    <div className="bg-blue rounded-2xl p-8 md:p-12 flex flex-col justify-between h-[550px] md:h-[600px] relative group">
+                    <div className="bg-blue rounded-2xl p-8 md:p-12 flex flex-col justify-between min-h-[550px] h-auto md:h-[600px] relative group">
 
                         {/* Technical Label */}
                         <div className="flex justify-between items-start mb-8 font-oswald text-xs tracking-widest text-white/60">
@@ -43,18 +43,18 @@ export default function HouseOfCorruption() {
 
                             <div className="space-y-4 text-base md:text-lg text-white/60 font-oswald leading-relaxed">
                                 <p>
-                                    Lebanon’s collapse was not a natural disaster—it was a crime scene.
+                                    Lebanon has lost nearly <strong>$1 Trillion</strong> due to systemic corruption, theft, and financial mismanagement since 1975.
                                 </p>
                                 <p>
-                                    Our exclusive investigation breaks down 50 years of systematic looting, from the $150B embezzled by politicians to the $85B Ponzi scheme that swallowed life savings.
+                                    Direct losses from embezzlement, waste, and money laundering amount to <strong>$500B - $600B</strong>, while indirect losses from economic collapse and emigration total <strong>$400B - $500B</strong>.
                                 </p>
-                                <p className="text-red">
-                                    See the data. Track the stolen assets. Demand accountability.
+                                <p>
+                                    Stolen money is hidden in offshore accounts in Switzerland, France, UAE, UK, and tax havens.
                                 </p>
                             </div>
                         </div>
 
-                        <div className="mt-0 md:mt-12 pt-0 md:pt-8 border-t border-white/20 flex justify-between items-center">
+                        <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-white/20 flex justify-between items-center">
                             <Link
                                 href="/house-of-corruption"
                                 className="group/btn flex items-center gap-4 w-full justify-between relative"

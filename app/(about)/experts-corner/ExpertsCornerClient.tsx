@@ -62,17 +62,16 @@ export default function ExpertsCornerClient({ activists }: ExpertsCornerClientPr
             {/* Header matches BlogsPage style */}
             <div className="mb-20 text-center max-w-5xl mx-auto">
                 <AnimatedTitle
-                    text="ALEF OFFICERS, DIRECTORS & ADVISORS"
-                    className="text-5xl md:text-7xl font-bebas text-foreground mb-6 justify-center flex text-center"
+                    text="EXPERTS CORNER"
+                    className="text-5xl mb-4 md:text-7xl lg:text-8xl font-bold font-bebas text-foreground uppercase leading-none"
                 />
-                <div className="h-1 w-24 bg-red mx-auto mb-8"></div>
                 <p className="font-oswald text-xl md:text-2xl text-foreground/90 leading-relaxed max-w-4xl mx-auto">
                     Meet the dedicated leadership team and our network of expert advisors driving the mission of the American Lebanon Education Foundation.
                 </p>
             </div>
 
             {/* Filters Row - Matches BlogsFeed layout */}
-            <div className="flex flex-wrap items-center justify-between gap-6 py-6 border-y border-foreground/20 mb-12">
+            <div className="flex flex-wrap items-center justify-center md:justify-between gap-6 py-6 border-y border-foreground/60 mb-12">
 
                 {/* Category Tabs */}
                 <div className="flex items-center gap-8 overflow-x-auto no-scrollbar pb-2 md:pb-0">
@@ -80,7 +79,7 @@ export default function ExpertsCornerClient({ activists }: ExpertsCornerClientPr
                         <button
                             key={tab}
                             onClick={() => setCategoryFilter(tab as any)}
-                            className={`font-oswald text-sm uppercase tracking-widest transition-all relative shrink-0 ${categoryFilter === tab ? "text-red" : "text-foreground/40 hover:text-foreground"
+                            className={`font-oswald text-sm uppercase tracking-widest transition-all relative shrink-0 ${categoryFilter === tab ? "text-red" : "text-foreground/70 hover:text-foreground"
                                 }`}
                         >
                             {tab}
@@ -93,13 +92,13 @@ export default function ExpertsCornerClient({ activists }: ExpertsCornerClientPr
 
                 {/* Search Bar - Matches BlogsFeed style */}
                 <div className="relative w-full md:w-auto">
-                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/30" />
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/60" />
                     <input
                         type="text"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder="SEARCH TEAM..."
-                        className="bg-foreground/5 border border-white/10 rounded-full py-2.5 pl-12 pr-6 font-oswald text-xs tracking-widest focus:outline-none focus:border-red/50 transition-colors w-full md:w-64 uppercase"
+                        className="bg-foreground/15 border border-foreground/30 rounded-full py-2.5 pl-12 pr-6 font-oswald text-xs tracking-widest focus:outline-none focus:border-red/50 transition-colors w-full md:w-96 uppercase"
                     />
                 </div>
             </div>
@@ -110,7 +109,7 @@ export default function ExpertsCornerClient({ activists }: ExpertsCornerClientPr
                     <div className="flex items-center gap-4 mb-10">
                         <span className="h-px bg-red w-12"></span>
                         <h2 className="text-3xl font-bebas text-foreground tracking-wide">ALEF Officers</h2>
-                        <span className="h-px bg-foreground/10 grow"></span>
+                        <span className="h-px bg-foreground/30 grow"></span>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -158,7 +157,7 @@ export default function ExpertsCornerClient({ activists }: ExpertsCornerClientPr
                     <div className="flex items-center gap-4 mb-10">
                         <span className="h-px bg-red w-12"></span>
                         <h2 className="text-3xl font-bebas text-foreground tracking-wide">ALEF Directors</h2>
-                        <span className="h-px bg-foreground/10 grow"></span>
+                        <span className="h-px bg-foreground/30 grow"></span>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -204,7 +203,7 @@ export default function ExpertsCornerClient({ activists }: ExpertsCornerClientPr
                     <div className="flex items-center gap-4 mb-10">
                         <span className="h-px bg-red w-12"></span>
                         <h2 className="text-3xl font-bebas text-foreground tracking-wide">ALEF Expert Advisors</h2>
-                        <span className="h-px bg-foreground/10 grow"></span>
+                        <span className="h-px bg-foreground/30 grow"></span>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

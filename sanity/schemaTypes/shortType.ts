@@ -30,6 +30,17 @@ export const shortType = defineType({
             description: 'The URL of the short video (e.g., Facebook Reel, Instagram Reel, YouTube Short)',
             validation: (rule) => rule.required(),
         }),
+        // --- NEW FIELD ADDED HERE ---
+        defineField({
+            name: 'thumbnail',
+            title: 'Cover Image',
+            type: 'image',
+            description: 'Upload a cover image for Facebook/Instagram/TikTok videos (Auto-generated for YouTube if left empty)',
+            options: {
+                hotspot: true,
+            },
+        }),
+        // ---------------------------
         defineField({
             name: 'platform',
             title: 'Platform',
@@ -57,6 +68,7 @@ export const shortType = defineType({
         select: {
             title: 'title',
             subtitle: 'platform',
+            media: 'thumbnail' // Update preview to show image
         },
     },
 })
