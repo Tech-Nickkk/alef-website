@@ -103,7 +103,7 @@ export default function Navbar() {
                 { label: "Events", href: "/events" }
             ],
         },
-        { label: "Store", href: "/alef-store" },
+        // { label: "Store", href: "/alef-store" },
         {
             label: "Contact",
             href: "#",
