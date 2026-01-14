@@ -98,21 +98,15 @@ const DIRECT_LOSSES = [
 ];
 
 const GALLERY_IMAGES = [
-    // Left Lane: 1, 2, 3, 4, 5, 7 (skip 6)
+    // Left Lane: 1, 2, 3
     { src: "/houseOfCorruption/house-of-corruption-img-1.jpg", alt: "Narco Funding Graph", caption: "Illicit Revenue Streams", side: "left" },
     { src: "/houseOfCorruption/house-of-corruption-img-2.jpg", alt: "Shadow Banking", caption: "Currency Manipulation", side: "left" },
     { src: "/houseOfCorruption/house-of-corruption-img-3.jpg", alt: "The Venezuela Connection", caption: "Gold & Crypto Laundering", side: "left" },
-    { src: "/houseOfCorruption/house-of-corruption-img-4.jpg", alt: "Fuel Cartel", caption: "Energy Sector Corruption", side: "left" },
-    { src: "/houseOfCorruption/house-of-corruption-img-5.jpg", alt: "Laundering Map", caption: "Global Money Flow", side: "left" },
-    { src: "/houseOfCorruption/house-of-corruption-img-6.png", alt: "Crisis Summary", caption: "The Aftermath", side: "left" },
 
-    // Right Lane: 7, 5, 4, 3, 2, 1 (skip 6, reversed)
-    { src: "/houseOfCorruption/house-of-corruption-img-6.png", alt: "Crisis Summary", caption: "The Aftermath", side: "right" },
-    { src: "/houseOfCorruption/house-of-corruption-img-5.jpg", alt: "Laundering Map", caption: "Global Money Flow", side: "right" },
+    // Right Lane: 4, 5, 6
     { src: "/houseOfCorruption/house-of-corruption-img-4.jpg", alt: "Fuel Cartel", caption: "Energy Sector Corruption", side: "right" },
-    { src: "/houseOfCorruption/house-of-corruption-img-3.jpg", alt: "The Venezuela Connection", caption: "Gold & Crypto Laundering", side: "right" },
-    { src: "/houseOfCorruption/house-of-corruption-img-2.jpg", alt: "Shadow Banking", caption: "Currency Manipulation", side: "right" },
-    { src: "/houseOfCorruption/house-of-corruption-img-1.jpg", alt: "Narco Funding Graph", caption: "Illicit Revenue Streams", side: "right" },
+    { src: "/houseOfCorruption/house-of-corruption-img-5.jpg", alt: "Laundering Map", caption: "Global Money Flow", side: "right" },
+    { src: "/houseOfCorruption/house-of-corruption-img-6.png", alt: "Crisis Summary", caption: "The Aftermath", side: "right" },
 ];
 
 const indirectStats = [
@@ -208,7 +202,7 @@ export default function HouseOfCorruptionPage() {
             scrollTrigger: {
                 trigger: ".counter-section",
                 start: "top top",
-                end: "+=300%",
+                end: "+=150%",
                 pin: true,
                 scrub: 1,
                 onUpdate: (self) => setCounterValue(Math.floor(Math.max(0, self.progress) * 1000))
@@ -223,11 +217,12 @@ export default function HouseOfCorruptionPage() {
 
             if (isDesktop) {
                 // Vertical Animation (Desktop)
-                gsap.set(".left-lane", { y: "120vh" });
-                gsap.set(".right-lane", { y: "-500vh" });
+                // Adjusted y values for 3 images to prevent excessive scrolling speed
+                gsap.set(".left-lane", { y: "100vh" });
+                gsap.set(".right-lane", { y: "-150vh" });
 
-                tl.to(".left-lane", { y: "-500vh", ease: "none", duration: 1 }, 0)
-                    .to(".right-lane", { y: "120vh", ease: "none", duration: 1 }, 0);
+                tl.to(".left-lane", { y: "-150vh", ease: "none", duration: 1 }, 0)
+                    .to(".right-lane", { y: "100vh", ease: "none", duration: 1 }, 0);
             }
 
             if (isMobile) {
@@ -241,26 +236,7 @@ export default function HouseOfCorruptionPage() {
             }
         });
 
-        mm.add("(min-width: 1024px)", () => {
-            const container = document.querySelector(".horizontal-container") as HTMLElement;
-            if (container) {
-                // Dynamic calculation helper for resize support
-                const getScrollAmount = () => container.scrollWidth - window.innerWidth;
-
-                gsap.to(container, {
-                    x: () => -getScrollAmount(),
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: ".direct-losses-wrapper",
-                        start: "top top",
-                        end: () => "+=" + getScrollAmount(),
-                        pin: true,
-                        scrub: 1,
-                        invalidateOnRefresh: true,
-                    }
-                });
-            }
-        });
+        // Horizontal Scroll for Direct Losses REMOVED per user request
 
         // Center Line Animation (Desktop Only)
         mm.add("(min-width: 768px)", () => {
@@ -447,13 +423,13 @@ export default function HouseOfCorruptionPage() {
                     text="Verified financial data extracted from international audits and forensic reports."
                 />
 
-                {/* Horizontal Scroll Wrapper (Desktop) */}
-                <div className="direct-losses-wrapper hidden lg:flex h-screen items-center overflow-hidden sticky top-0 bg-background">
-                    <div className="horizontal-container flex px-12 gap-12 w-max">
+                {/* Grid View (Desktop) - Replaces Horizontal Scroll */}
+                <div className="direct-losses-wrapper hidden lg:block py-24 bg-background">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1400px] mx-auto px-12">
                         {DIRECT_LOSSES.map((item, index) => (
                             <div
                                 key={index}
-                                className="dossier-card w-[450px] h-[600px] bg-blue relative flex flex-col p-10 group shadow-2xl rounded-sm"
+                                className="dossier-card w-full h-[600px] bg-blue relative flex flex-col p-10 group shadow-2xl rounded-sm hover:-translate-y-2 transition-transform duration-300"
                             >
                                 {/* Card Header */}
                                 <div className="flex justify-between items-start mb-12">

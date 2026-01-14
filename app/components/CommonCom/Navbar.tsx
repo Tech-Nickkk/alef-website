@@ -90,7 +90,8 @@ export default function Navbar() {
                 { label: "Blogs & Articles", href: "/blogs-and-articles" },
                 { label: "House of Corruption", href: "/house-of-corruption" },
                 { label: "House of Cards", href: "/house-of-cards" },
-                { label: "Archives", href: "/archives" } // Added Archives page link
+                { label: "Archives", href: "/archives" },
+                { label: "Fallen Angels", href: "/fallen-angels" }
             ],
         },
         {

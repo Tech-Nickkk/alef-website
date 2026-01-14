@@ -31,12 +31,7 @@ export default function DonatePage() {
                 <div className="flex justify-center">
                     <div className="relative flex items-center bg-foreground/5 p-1 rounded-full border border-foreground/10 w-[300px]">
                         {/* Sliding Active State */}
-                        <div
-                            className={`absolute left-1 top-1 bottom-1 w-[calc(50%-4px)] bg-red rounded-full shadow-lg transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${donationType === 'monthly' ? 'translate-x-[calc(100%+0px)]' : 'translate-x-0'
-                                }` // Use calc(100%) since width is exactly half of content box.  Actually left-1 means it starts at 4px. content width = 292px. slider width=146px. translate-x-100% moves it 146px to the right. Correct.
-                            }
-                        ></div>
-
+                        <div className={`absolute left-1 top-1 bottom-1 w-[calc(50%-4px)] bg-red rounded-full shadow-lg transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${donationType === 'monthly' ? 'translate-x-[calc(100%+0px)]' : 'translate-x-0'}`}></div>
                         <button
                             onClick={() => setDonationType('one-time')}
                             className={`relative z-10 flex-1 py-3 text-center font-oswald text-sm tracking-widest uppercase transition-colors duration-300 ${donationType === 'one-time'
@@ -86,6 +81,39 @@ export default function DonatePage() {
                             </div>
                         </div>
                     ))}
+                </div>
+
+                {/* Major Sponsor Section */}
+                <div className="relative p-10 border border-foreground/10 bg-foreground/5 hover:bg-blue hover:border-red/50 transition-all duration-500 rounded-xl overflow-hidden group w-full">
+                    <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <div className="w-3 h-3 bg-red rounded-full shadow-[0_0_10px_rgba(220,38,38,0.8)]"></div>
+                    </div>
+
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+                        <div className="text-center md:text-left space-y-2 flex-1">
+                            <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
+                                <span className="w-1.5 h-1.5 bg-red rounded-full animate-pulse"></span>
+                                <span className="font-oswald text-xs tracking-widest text-red uppercase">Visionary Circle</span>
+                            </div>
+                            <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4">
+                                <span className="font-bebas text-5xl md:text-7xl text-foreground group-hover:text-white transition-colors duration-300">
+                                    $5,000+
+                                </span>
+                                <h3 className="font-oswald text-xl md:text-2xl text-foreground group-hover:text-white uppercase tracking-widest">
+                                    Strategic Sponsor
+                                </h3>
+                            </div>
+                            <p className="font-oswald text-sm md:text-base text-foreground/60 group-hover:text-white/70 max-w-2xl leading-relaxed mt-2">
+                                Become a pillar of our movement. Strategic sponsors receive quarterly executive briefings, exclusive access to leadership events, and permanent recognition in our annual transparency report.
+                            </p>
+                        </div>
+
+                        <div className="w-full md:w-auto shrink-0">
+                            <button className="w-full md:w-auto px-10 py-5 bg-transparent border border-foreground/20 group-hover:border-red group-hover:bg-red text-foreground group-hover:text-white font-oswald uppercase tracking-widest text-sm transition-all duration-300">
+                                Become a Sponsor
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Custom Amount */}
