@@ -217,22 +217,33 @@ export default function HouseOfCorruptionPage() {
 
             if (isDesktop) {
                 // Vertical Animation (Desktop)
-                // Adjusted y values for 3 images to prevent excessive scrolling speed
+                // Adjusted y values to -250vh to ensure images are fully off-screen at start/end
                 gsap.set(".left-lane", { y: "100vh" });
-                gsap.set(".right-lane", { y: "-150vh" });
+                gsap.set(".right-lane", { y: "-250vh" });
 
-                tl.to(".left-lane", { y: "-150vh", ease: "none", duration: 1 }, 0)
+                tl.to(".left-lane", { y: "-250vh", ease: "none", duration: 1 }, 0)
                     .to(".right-lane", { y: "100vh", ease: "none", duration: 1 }, 0);
             }
 
             if (isMobile) {
                 // Horizontal Animation (Mobile)
-                // Top lane moves LEFT
-                tl.to(".mobile-top-lane", { x: "-50%", ease: "none", duration: 1 }, 0);
+                // Top lane moves LEFT (Right -> Left)
+                // From: Right Edge of Screen (100vw)
+                // To: Left Edge of Element aligns with Left Edge of Screen + Element Width (fully off left)
+                tl.fromTo(".mobile-top-lane",
+                    { x: "100vw", xPercent: 0 },
+                    { x: 0, xPercent: -100, ease: "none", duration: 1 },
+                    0
+                );
 
-                // Bottom lane moves RIGHT
-                gsap.set(".mobile-bottom-lane", { x: "-50%" });
-                tl.to(".mobile-bottom-lane", { x: "0%", ease: "none", duration: 1 }, 0);
+                // Bottom lane moves RIGHT (Left -> Right)
+                // From: Element fully off left (-100% width)
+                // To: Element fully off right (100vw)
+                tl.fromTo(".mobile-bottom-lane",
+                    { x: 0, xPercent: -100 },
+                    { x: "100vw", xPercent: 0, ease: "none", duration: 1 },
+                    0
+                );
             }
         });
 
@@ -355,7 +366,7 @@ export default function HouseOfCorruptionPage() {
                     <div className="md:hidden w-full h-full relative flex flex-col justify-between py-12">
                         {/* Top Lane - Moves LEFT */}
                         <div className="mobile-top-lane flex gap-6 absolute top-20 left-0 whitespace-nowrap z-10 transform-gpu will-change-transform">
-                            {[...GALLERY_IMAGES, ...GALLERY_IMAGES].map((img, idx) => (
+                            {GALLERY_IMAGES.filter(i => i.side === 'left').map((img, idx) => (
                                 <div
                                     key={`top-${idx}`}
                                     className="relative shrink-0 w-36 h-52 rounded-md overflow-hidden border border-white/20 bg-blue shadow-lg pointer-events-auto active:scale-95 transition-transform"
@@ -375,8 +386,8 @@ export default function HouseOfCorruptionPage() {
                         </div>
 
                         {/* Bottom Lane - Moves RIGHT */}
-                        <div className="mobile-bottom-lane flex gap-6 absolute bottom-24 left-[-100%] whitespace-nowrap z-10 transform-gpu will-change-transform">
-                            {[...GALLERY_IMAGES, ...GALLERY_IMAGES].map((img, idx) => (
+                        <div className="mobile-bottom-lane flex gap-6 absolute bottom-24 left-0 whitespace-nowrap z-10 transform-gpu will-change-transform">
+                            {GALLERY_IMAGES.filter(i => i.side === 'right').map((img, idx) => (
                                 <div
                                     key={`bottom-${idx}`}
                                     className="relative shrink-0 w-36 h-52 rounded-md overflow-hidden border border-white/20 bg-blue shadow-lg pointer-events-auto active:scale-95 transition-transform"
