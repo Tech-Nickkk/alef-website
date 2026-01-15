@@ -3,7 +3,34 @@ import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import { useState } from 'react';
 
 export default function DonatePage() {
-    const [donationType, setDonationType] = useState<'one-time' | 'monthly'>('one-time');
+    const [donationType, setDonationType] = useState<'one-time' | 'monthly' | 'sponsor'>('one-time');
+    const [customAmount, setCustomAmount] = useState('');
+    const [isError, setIsError] = useState(false);
+
+    const handleDonate = () => {
+        if (donationType === 'sponsor') {
+            const amount = parseFloat(customAmount);
+            if (!amount || amount < 5000) {
+                setIsError(true);
+                setCustomAmount(''); // Clear input to show error placeholder
+                return;
+            }
+        }
+        // Proceed with donation logic
+        console.log("Processing donation:", donationType, customAmount);
+    };
+
+    const tiers = donationType === 'sponsor'
+        ? [
+            { amount: "$5,000", label: "STRATEGIC SPONSOR", desc: "Become a pillar of our movement. Receive quarterly executive briefings and exclusive access." },
+            { amount: "$10,000", label: "VISIONARY PARTNER", desc: "Direct impact on our long-term strategy and permanent recognition in our transparency report." },
+            { amount: "$25,000", label: "GLOBAL ALLY", desc: "Highest level of advocacy support with dedicated liaison and strategic alignment." }
+        ]
+        : [
+            { amount: "$100", label: "SUPPORTER", desc: "Support our daily operations and content creation." },
+            { amount: "$500", label: "ADVOCATE", desc: "Help fund our research papers and policy briefs." },
+            { amount: "$1,000", label: "CHAMPION", desc: "Power our international lobbying and events." }
+        ];
 
     return (
         <main className="min-h-screen bg-background pt-32 pb-24 px-6 md:px-12 lg:px-24">
@@ -29,37 +56,37 @@ export default function DonatePage() {
 
                 {/* Donation Type Toggle */}
                 <div className="flex justify-center">
-                    <div className="relative flex items-center bg-foreground/5 p-1 rounded-full border border-foreground/10 w-[300px]">
+                    <div className="relative flex items-center bg-foreground/5 p-1 rounded-full border border-foreground/10 w-[450px]">
                         {/* Sliding Active State */}
-                        <div className={`absolute left-1 top-1 bottom-1 w-[calc(50%-4px)] bg-red rounded-full shadow-lg transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${donationType === 'monthly' ? 'translate-x-[calc(100%+0px)]' : 'translate-x-0'}`}></div>
+                        <div className={`absolute left-1 top-1 bottom-1 w-[calc(33.33%-4px)] bg-red rounded-full shadow-lg transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${donationType === 'monthly' ? 'translate-x-[100%]' :
+                            donationType === 'sponsor' ? 'translate-x-[200%]' :
+                                'translate-x-0'
+                            }`}></div>
+
                         <button
                             onClick={() => setDonationType('one-time')}
-                            className={`relative z-10 flex-1 py-3 text-center font-oswald text-sm tracking-widest uppercase transition-colors duration-300 ${donationType === 'one-time'
-                                ? 'text-white'
-                                : 'text-foreground/60 hover:text-foreground'
-                                }`}
+                            className={`relative z-10 flex-1 py-3 text-center font-oswald text-xs md:text-sm tracking-widest uppercase transition-colors duration-300 ${donationType === 'one-time' ? 'text-white' : 'text-foreground/60 hover:text-foreground'}`}
                         >
                             One-Time
                         </button>
                         <button
                             onClick={() => setDonationType('monthly')}
-                            className={`relative z-10 flex-1 py-3 text-center font-oswald text-sm tracking-widest uppercase transition-colors duration-300 ${donationType === 'monthly'
-                                ? 'text-white'
-                                : 'text-foreground/60 hover:text-foreground'
-                                }`}
+                            className={`relative z-10 flex-1 py-3 text-center font-oswald text-xs md:text-sm tracking-widest uppercase transition-colors duration-300 ${donationType === 'monthly' ? 'text-white' : 'text-foreground/60 hover:text-foreground'}`}
                         >
                             Monthly
+                        </button>
+                        <button
+                            onClick={() => setDonationType('sponsor')}
+                            className={`relative z-10 flex-1 py-3 text-center font-oswald text-xs md:text-sm tracking-widest uppercase transition-colors duration-300 ${donationType === 'sponsor' ? 'text-white' : 'text-foreground/60 hover:text-foreground'}`}
+                        >
+                            Sponsor
                         </button>
                     </div>
                 </div>
 
                 {/* Donation Options */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {[
-                        { amount: "$100", label: "SUPPORTER", desc: "Support our daily operations and content creation." },
-                        { amount: "$500", label: "ADVOCATE", desc: "Help fund our research papers and policy briefs." },
-                        { amount: "$1,000", label: "CHAMPION", desc: "Power our international lobbying and events." }
-                    ].map((tier, idx) => (
+                    {tiers.map((tier, idx) => (
                         <div key={idx} className="group relative p-8 border border-foreground/10 bg-foreground/5 hover:bg-blue hover:border-red/50 transition-all duration-500 rounded-xl overflow-hidden cursor-pointer">
                             <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                                 <div className="w-3 h-3 bg-red rounded-full shadow-[0_0_10px_rgba(220,38,38,0.8)]"></div>
@@ -83,38 +110,7 @@ export default function DonatePage() {
                     ))}
                 </div>
 
-                {/* Major Sponsor Section */}
-                <div className="relative p-10 border border-foreground/10 bg-foreground/5 hover:bg-blue hover:border-red/50 transition-all duration-500 rounded-xl overflow-hidden group w-full">
-                    <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <div className="w-3 h-3 bg-red rounded-full shadow-[0_0_10px_rgba(220,38,38,0.8)]"></div>
-                    </div>
 
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
-                        <div className="text-center md:text-left space-y-2 flex-1">
-                            <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-                                <span className="w-1.5 h-1.5 bg-red rounded-full animate-pulse"></span>
-                                <span className="font-oswald text-xs tracking-widest text-red uppercase">Visionary Circle</span>
-                            </div>
-                            <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4">
-                                <span className="font-bebas text-5xl md:text-7xl text-foreground group-hover:text-white transition-colors duration-300">
-                                    $5,000+
-                                </span>
-                                <h3 className="font-oswald text-xl md:text-2xl text-foreground group-hover:text-white uppercase tracking-widest">
-                                    Strategic Sponsor
-                                </h3>
-                            </div>
-                            <p className="font-oswald text-sm md:text-base text-foreground/60 group-hover:text-white/70 max-w-2xl leading-relaxed mt-2">
-                                Become a pillar of our movement. Strategic sponsors receive quarterly executive briefings, exclusive access to leadership events, and permanent recognition in our annual transparency report.
-                            </p>
-                        </div>
-
-                        <div className="w-full md:w-auto shrink-0">
-                            <button className="w-full md:w-auto px-10 py-5 bg-transparent border border-foreground/20 group-hover:border-red group-hover:bg-red text-foreground group-hover:text-white font-oswald uppercase tracking-widest text-sm transition-all duration-300">
-                                Become a Sponsor
-                            </button>
-                        </div>
-                    </div>
-                </div>
 
                 {/* Custom Amount */}
                 <div className="max-w-2xl mx-auto bg-foreground/5 border border-foreground/10 p-8 rounded-xl">
@@ -125,12 +121,29 @@ export default function DonatePage() {
                                 <span className="absolute left-4 top-1/2 -translate-y-1/2 font-oswald text-foreground/40">$</span>
                                 <input
                                     type="number"
-                                    className="w-full bg-background border border-foreground/10 px-8 py-4 font-bebas text-2xl outline-none focus:border-red transition-colors"
-                                    placeholder="ENTER AMOUNT"
+                                    value={customAmount}
+                                    onChange={(e) => {
+                                        setCustomAmount(e.target.value);
+                                        setIsError(false);
+                                    }}
+                                    className={`w-full bg-background border px-8 py-4 font-bebas text-2xl outline-none transition-colors ${isError
+                                            ? 'border-red placeholder:text-red/80'
+                                            : 'border-foreground/10 focus:border-red'
+                                        }`}
+                                    placeholder={
+                                        isError
+                                            ? "MINIMUM SPONSORSHIP IS $5,000"
+                                            : donationType === 'sponsor'
+                                                ? "ENTER AMOUNT (MIN $5,000)"
+                                                : "ENTER AMOUNT"
+                                    }
                                 />
                             </div>
                         </div>
-                        <button className="w-full md:w-auto px-12 py-4 bg-red hover:bg-[#c4151c] text-white font-oswald font-bold tracking-widest uppercase transition-all shadow-lg shadow-red-500/20">
+                        <button
+                            onClick={handleDonate}
+                            className="w-full md:w-auto px-12 py-4 bg-red hover:bg-[#c4151c] text-white font-oswald font-bold tracking-widest uppercase transition-all shadow-lg shadow-red-500/20"
+                        >
                             Donate {donationType === 'monthly' ? 'Monthly' : 'Now'}
                         </button>
                     </div>
@@ -156,14 +169,9 @@ export default function DonatePage() {
                                 <path d="M4.303 6.096H45.697V25.904H4.303V6.096ZM49.074 0H0.926C0.415 0 0 0.415 0 0.926V31.074C0 31.585 0.415 32 0.926 32H49.074C49.585 32 50 31.585 50 31.074V0.926C50 0.415 49.585 0 49.074 0Z" fill="currentColor" />
                                 <path d="M12.278 18.899H9.492L9.123 20.3H7.424L10.324 12.924H12.426L14.773 20.3H12.871L12.278 18.899ZM10.873 15.341L10.059 17.584H11.724L10.873 15.341ZM33.824 16.505C33.824 15.545 33.249 14.86 32.232 14.86H30.494V18.157H32.232C33.249 18.157 33.824 17.472 33.824 16.505ZM29.071 13.565V19.658H32.122C34.194 19.658 35.212 18.421 35.212 16.505C35.212 14.59 34.194 13.565 32.122 13.565H29.071ZM18.57 19.658V13.565H20.732L21.787 17.159L22.842 13.565H25.023V19.658H23.636V15.01L22.417 19.381H21.139L19.957 15.01V19.658H18.57ZM41.865 17.53H43.917L44.805 19.658H46.339L43.861 13.565H41.865L39.387 19.658H40.941L41.865 17.53ZM42.42 16.273L43.344 18.491H41.458L42.42 16.273Z" fill="currentColor" />
                             </svg>
-                            {/* PayPal */}
-                            <svg className="h-8 w-auto" viewBox="0 0 50 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14.5 9.5H19.5C22.5 9.5 24 10.5 24 13C24 15 23 16.5 20.5 16.5H17.5V21.5H15.5V9.5Z" fill="none" stroke="currentColor" strokeWidth="2" />
-                                <text x="25" y="20" className="text-[10px] font-bold" fill="currentColor" style={{ fontFamily: 'Arial' }}>PayPal</text>
-                            </svg>
                         </div>
                         <p className="font-oswald text-xs text-foreground/50 uppercase tracking-widest">
-                            Secure payments via Credit Card & PayPal
+                            Secure payments via Credit Card
                         </p>
                     </div>
                 </div>

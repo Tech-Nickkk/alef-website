@@ -76,7 +76,7 @@ export default function ChairmanMessage() {
                 </div>
 
                 {/* About Chairman Button */}
-                <div className="flex justify-center mt-12 relative z-10">
+                {/* <div className="flex justify-center mt-12 relative z-10">
                     <Link
                         href="https://3afekra.com/wp-content/uploads/2022/11/%D8%B2%D9%8A%D8%A7%D8%AF-%D8%B9%D8%A8%D8%AF-%D8%A7%D9%84%D9%86%D9%88%D8%B1-.pdf"
                         target="_blank"
@@ -86,7 +86,7 @@ export default function ChairmanMessage() {
                             <div className="absolute inset-0 bg-foreground transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10"></div>
                         </button>
                     </Link>
-                </div>
+                </div> */}
             </div>
         </section>
     );

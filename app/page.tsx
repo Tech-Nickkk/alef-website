@@ -1,4 +1,5 @@
 import Hero from "./components/HomeCom/Hero";
+import PresidentialLetter from "./components/HomeCom/PresidentialLetter";
 import ChairmanMessage from "./components/HomeCom/ChairmanMessage";
 import WhoWeAre from "./components/HomeCom/WhoWeAre";
 import BlogsAndArticles from "./components/HomeCom/BlogsAndArticles";
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <PresidentialLetter />
       <ChairmanMessage />
       <WhoWeAre />
       <CTASection type="subscribe" />

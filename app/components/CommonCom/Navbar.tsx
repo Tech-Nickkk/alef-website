@@ -82,6 +82,7 @@ export default function Navbar() {
                 { label: "Testimonials", href: "/testimonials" }
             ],
         },
+        { label: "Congressional Advocacy Group", href: "/congressional-advocacy-group" },
         {
             label: "Research & News",
             href: "#",
