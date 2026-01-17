@@ -14,7 +14,6 @@ interface CTASectionProps {
 
 export default function CTASection({ type }: CTASectionProps) {
     const containerRef = useRef<HTMLDivElement>(null);
-    const textRef = useRef<HTMLDivElement>(null);
     const content = {
         donate: {
             title: "FUEL THE FIGHT FOR FREEDOM",
@@ -75,7 +74,7 @@ export default function CTASection({ type }: CTASectionProps) {
 
     return (
         <section ref={containerRef} className="py-12 md:py-16 px-6">
-            <div className={`max-w-5xl mx-auto rounded-xl border ${content.borderColor} bg-gradient-to-b ${content.bgGradient} backdrop-blur-sm p-8 md:p-12 relative overflow-hidden group`}>
+            <div className={`max-w-5xl mx-auto rounded-xl border ${content.borderColor} bg-linear-to-b ${content.bgGradient} backdrop-blur-sm p-8 md:p-12 relative overflow-hidden group`}>
 
                 {/* Decorative background noise/texture */}
                 <div className="absolute inset-0 opacity-10 bg-[url('/noise.png')] pointer-events-none mix-blend-overlay"></div>

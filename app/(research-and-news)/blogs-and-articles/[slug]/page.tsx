@@ -1,13 +1,12 @@
-import { sanityFetch, SanityLive } from "@/sanity/lib/live";
+import { client } from "@/sanity/lib/client";
 import { urlFor } from '@/sanity/lib/image';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
+import { Calendar, User } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { PortableText } from '@portabletext/react';
-import ArticleProgress from '../../../components/Blogs/ArticleProgress';
+import ArticleProgressClient from './ArticleProgressClient';
 
-// Custom components for PortableText rendering
 const portableTextComponents = {
     types: {
         image: ({ value }: any) => {
@@ -79,7 +78,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     }
   `;
 
-    const { data: post } = await sanityFetch({ query, params: { slug } });
+    const post = await client.fetch(query, { slug });
 
     if (!post) {
         notFound();
@@ -95,10 +94,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 {/* Article Top Section */}
                 <div className="mb-12">
                     <div className="flex flex-col gap-6">
-                        <div className="flex items-center gap-3">
-                            <span className="w-8 h-px bg-red"></span>
-                            <span className="font-oswald text-sm tracking-[0.3em] text-red uppercase font-medium">Inside ALEF Geopolitics</span>
-                        </div>
+
                         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bebas text-foreground leading-[0.9] uppercase tracking-tight">
                             {post.title}
                         </h1>
@@ -168,9 +164,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
                 {/* Article Body */}
                 <article className="mb-24">
-                    <ArticleProgress>
+                    <ArticleProgressClient>
                         <PortableText value={post.body} components={portableTextComponents} />
-                    </ArticleProgress>
+                    </ArticleProgressClient>
                 </article>
 
                 {/* Bottom Navigation */}
@@ -185,7 +181,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </div>
 
             </main >
-            <SanityLive />
         </div >
     );
 }

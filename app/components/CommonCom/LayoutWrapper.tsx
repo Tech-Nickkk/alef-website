@@ -14,11 +14,12 @@ export default function LayoutWrapper({
 }) {
     const pathname = usePathname();
 
-    // Check if we're on the Sanity Studio route
+    // Check if we're on the Sanity Studio route or Donate Success page
     const isStudioRoute = pathname?.startsWith("/studio");
+    const isDonateSuccess = pathname?.startsWith("/donate/success");
 
-    // If we're on the studio route, render only the children without the site layout
-    if (isStudioRoute) {
+    // If we're on these routes, render only the children without the site layout
+    if (isStudioRoute || isDonateSuccess) {
         return <>{children}</>;
     }
 
@@ -26,7 +27,6 @@ export default function LayoutWrapper({
     return (
         <ThemeProvider>
             <SmoothScroll />
-            {/* <Preloader /> */}
             <Navbar />
             {children}
             <JoinUs />

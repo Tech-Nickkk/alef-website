@@ -87,7 +87,7 @@ export default function EventsPage() {
                             </div>
 
                             {/* CTA */}
-                            <div className="pt-4 flex flex-wrap gap-4">
+                            <div className="pt-4 flex flex-wrap gap-4 justify-center md:justify-start">
                                 <Link
                                     href="https://www.zeffy.com/"
                                     target="_blank"
@@ -99,7 +99,8 @@ export default function EventsPage() {
                                     href="/contact"
                                     className="border border-white/20 hover:border-white text-white px-8 py-4 font-bebas text-lg tracking-widest uppercase transition-all flex items-center gap-2"
                                 >
-                                    <Mail className="w-4 h-4" /> Contact Us
+                                    <Mail className="w-4 h-4" />
+                                    Contact Us
                                 </Link>
                             </div>
 
@@ -216,7 +217,6 @@ export default function EventsPage() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {/* Platinum/Diamond Tier - Full Width on Mobile, Featured */}
                     {[
                         {
                             level: "DIAMOND SPONSOR",
@@ -293,18 +293,18 @@ export default function EventsPage() {
                                 } ${tier.accent ? `hover:${tier.accent}` : 'hover:border-red'}`}
                         >
                             {/* Shine Effect */}
-                            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent z-0 pointer-events-none"></div>
+                            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/10 to-transparent z-0 pointer-events-none"></div>
 
                             {/* Colored Glow Overlay at Bottom */}
-                            <div className={`absolute inset-0 bg-gradient-to-t ${tier.color} opacity-0 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none`}></div>
+                            <div className={`absolute inset-0 bg-linear-to-t ${tier.color} opacity-0 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none`}></div>
 
-                            <div className="p-8 flex flex-col h-full relative z-10">
-                                <div className="mb-6 flex justify-between items-start">
+                            <div className="p-6 md:p-8 flex flex-col h-full relative z-10">
+                                <div className="mb-6 flex justify-between items-center">
                                     <h4 className={`font-bebas text-3xl tracking-wide transition-colors duration-300 ${idx === 0 ? 'text-white' : 'text-white/90 group-hover:text-white'}`}>
                                         {tier.level}
                                     </h4>
                                     {idx === 0 && (
-                                        <span className="bg-red text-white text-[10px] font-oswald font-bold px-2 py-1 rounded-sm tracking-widest uppercase animate-pulse">
+                                        <span className="bg-red text-white text-[8px] md:text-[10px] font-oswald font-bold px-1 md:px-2 py-1 rounded-sm tracking-widest uppercase animate-pulse">
                                             Most Exclusive
                                         </span>
                                     )}
@@ -313,13 +313,13 @@ export default function EventsPage() {
                                 <div className="text-4xl md:text-5xl font-bebas text-white mb-2">{tier.price}</div>
 
                                 {/* Dynamic Separator Line */}
-                                <div className={`h-1 mb-6 transition-all duration-500 ease-out w-12 group-hover:w-full ${tier.color ? `group-hover:bg-gradient-to-r ${tier.color}` : 'group-hover:bg-white'} bg-white/20`}></div>
+                                <div className={`h-1 mb-6 transition-all duration-500 ease-out w-12 group-hover:w-full ${tier.color ? `group-hover:bg-linear-to-r ${tier.color}` : 'group-hover:bg-white'} bg-white/20`}></div>
 
                                 <div className="flex-1 mb-8">
                                     <ul className="space-y-3">
                                         {tier.features.map((feat, i) => (
                                             <li key={i} className="flex items-start gap-3 text-white/70 font-oswald text-sm font-light">
-                                                <span className={`mt-1 w-1 h-1 rounded-full shrink-0 transition-colors duration-300 ${tier.accent ? tier.accent.replace('border-', 'bg-').replace('-200', '-400').replace('-400', '-500') : 'bg-red'}`}></span>
+                                                <span className="mt-1.5 w-1.5 h-1.5 bg-red rounded-full shrink-0"></span>
                                                 {feat}
                                             </li>
                                         ))}

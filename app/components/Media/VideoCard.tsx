@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Play, Instagram, Facebook, Video } from "lucide-react"; // Import platform icons
+import { Play, Instagram, Facebook, Video } from "lucide-react";
 import { urlFor } from "@/sanity/lib/image";
 
 const getAspectRatio = (type: "video" | "short" | "podcast") => {
@@ -128,7 +128,7 @@ export default function VideoCard({ title, videoUrl, thumbnail, publishedAt, pla
                         {new Date(publishedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
                     </span>
                 </div>
-                <h3 className="text-xl font-bebas text-white leading-tight group-hover:text-red transition-colors line-clamp-3">
+                <h3 className="text-xl font-bebas text-white leading-tight transition-colors line-clamp-3">
                     {title}
                 </h3>
             </div>

@@ -1,11 +1,8 @@
-"use client";
-
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import { ShieldCheck, Scale, Globe, TrendingUp, Users, Target, Flag, Briefcase, HandCoins, BarChart3, Radio, CheckCircle2, FileText } from 'lucide-react';
 import Link from "next/link";
 
 export default function CoreValuesPage() {
-    // Data from ALEF Core Values.docx
     const values = [
         {
             title: "Sovereignty",
@@ -94,7 +91,7 @@ export default function CoreValuesPage() {
                             <div className="absolute top-0 right-0 w-16 h-16 md:w-24 md:h-24 bg-white/5 rounded-bl-[60px] md:rounded-bl-[80px]"></div>
                             <div className="relative z-10 flex flex-col h-full gap-4 md:gap-6 text-white">
                                 <div className="flex items-center gap-4">
-                                    <div className="p-3 bg-gradient-to-br from-red to-red/60 rounded-lg text-white shadow-lg">
+                                    <div className="p-3 bg-linear-to-br from-red to-red/60 rounded-lg text-white shadow-lg">
                                         <Target className="w-6 h-6 md:w-8 md:h-8" />
                                     </div>
                                     <span className="font-bebas text-2xl md:text-3xl tracking-wide">Vision</span>

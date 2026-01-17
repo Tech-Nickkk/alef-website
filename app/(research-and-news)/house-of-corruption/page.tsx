@@ -226,19 +226,12 @@ export default function HouseOfCorruptionPage() {
             }
 
             if (isMobile) {
-                // Horizontal Animation (Mobile)
-                // Top lane moves LEFT (Right -> Left)
-                // From: Right Edge of Screen (100vw)
-                // To: Left Edge of Element aligns with Left Edge of Screen + Element Width (fully off left)
                 tl.fromTo(".mobile-top-lane",
                     { x: "100vw", xPercent: 0 },
                     { x: 0, xPercent: -100, ease: "none", duration: 1 },
                     0
                 );
 
-                // Bottom lane moves RIGHT (Left -> Right)
-                // From: Element fully off left (-100% width)
-                // To: Element fully off right (100vw)
                 tl.fromTo(".mobile-bottom-lane",
                     { x: 0, xPercent: -100 },
                     { x: "100vw", xPercent: 0, ease: "none", duration: 1 },
@@ -247,9 +240,6 @@ export default function HouseOfCorruptionPage() {
             }
         });
 
-        // Horizontal Scroll for Direct Losses REMOVED per user request
-
-        // Center Line Animation (Desktop Only)
         mm.add("(min-width: 768px)", () => {
             gsap.fromTo(".center-line",
                 { scaleY: 0, transformOrigin: "top" },
@@ -555,11 +545,11 @@ export default function HouseOfCorruptionPage() {
                         The data is public. The perpetrators are known. The stolen assets are traced. What is missing is accountability.
                     </p>
                     <Link
-                        href="/houseOfCorruption/Total Estimated Money Stolen Summary.pdf"
+                        href="/houseOfCorruption/house-of-corruption-summary.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <button className="group relative bg-foreground text-background px-10 py-3 font-bebas text-lg tracking-[0.2em] uppercase overflow-hidden hover:bg-red hover:text-white transition-all duration-300">
+                        <button className="group relative bg-foreground text-background px-10 py-4 md:py-3 font-bebas text-base md:text-lg tracking-[0.2em] uppercase overflow-hidden hover:bg-red hover:text-white transition-all duration-300 cursor-pointer">
                             <span className="relative z-10 flex items-center gap-4">
                                 CHECK OUT FULL REPORT <MoveRight className="w-4 h-4" />
                             </span>
@@ -570,7 +560,7 @@ export default function HouseOfCorruptionPage() {
 
             {/* IMAGE INSPECTION MODAL */}
             {selectedImage && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 sm:p-8 animate-in fade-in duration-300">
+                <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/95 backdrop-blur-md p-4 sm:p-8 animate-in fade-in duration-300">
                     <button
                         onClick={() => setSelectedImage(null)}
                         className="absolute top-6 right-6 text-white/70 hover:text-red transition-colors p-2 z-50 bg-black/20 rounded-full"

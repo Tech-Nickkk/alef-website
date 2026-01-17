@@ -1,17 +1,12 @@
-"use client";
-
 import Image from "next/image";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function HouseOfCorruption() {
-    const imageSrc = "/home/$1-Trillion-Robbery.jpg";
-
     return (
         <section className="py-12 md:py-24 px-6 md:px-12 lg:px-24">
             <div className="max-w-[1400px] mx-auto">
-                {/* Header Row */}
                 <div className="flex flex-col items-center justify-center mb-6 md:mb-12 pb-6 gap-4 text-center">
                     <AnimatedTitle
                         text="HOUSE OF CORRUPTION"
@@ -24,11 +19,8 @@ export default function HouseOfCorruption() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-                    {/* Left Column: Content Card */}
+                    
                     <div className="bg-blue rounded-2xl p-8 md:p-12 flex flex-col justify-between min-h-[550px] h-auto md:h-[600px] relative group">
-
-                        {/* Technical Label */}
                         <div className="flex justify-between items-start mb-8 font-oswald text-xs tracking-widest text-white/60">
                             <span>CASE FILE: 001</span>
                             <span>TOTAL LOSSES: $1 TRILLION</span>
@@ -70,11 +62,10 @@ export default function HouseOfCorruption() {
                         </div>
                     </div>
 
-                    {/* Right Column: Image Card without Magnifying Glass */}
                     <div className="bg-blue rounded-2xl p-2 h-[500px] md:h-[600px] relative overflow-hidden group">
                         <div className="relative w-full h-full rounded-xl overflow-hidden">
                             <Image
-                                src={imageSrc}
+                                src="/houseOfCorruption/house-of-corruption-img-7.jpg"
                                 alt="$1 Trillion Robbery"
                                 fill
                                 className="object-cover"

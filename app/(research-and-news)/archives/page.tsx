@@ -76,7 +76,7 @@ export default function ArchivesPage() {
                             rel="noopener noreferrer"
                             className={`group relative bg-blue border border-white/10 p-8 hover:bg-light-blue transition-all duration-300 overflow-hidden rounded-lg ${(item as any).highlight ? 'md:col-span-2' : ''}`}
                         >
-                            <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div className="absolute top-0 right-0 p-4 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
                                 <ArrowUpRight className="w-6 h-6 text-white" />
                             </div>
 

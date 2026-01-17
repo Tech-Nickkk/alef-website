@@ -1,6 +1,6 @@
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import MediaFeed from "../../components/Media/MediaFeed";
-import { sanityFetch } from "@/sanity/lib/live";
+import { client } from "@/sanity/lib/client";
 
 export default async function ShortsPage() {
     const query = `*[_type == "short"] | order(publishedAt desc) {
@@ -13,13 +13,10 @@ export default async function ShortsPage() {
     }`;
 
     // Fetch data server-side
-    const { data: shorts } = await sanityFetch({ query });
+    const shorts = await client.fetch(query);
 
     return (
         <main className="min-h-screen w-full bg-background pt-32 pb-20 px-4 md:px-8 relative overflow-hidden">
-
-            {/* Background elements */}
-            <div className="absolute top-0 left-0 w-full h-[50vh] bg-linear-to-b from-blue/10 to-transparent pointer-events-none" />
             <div className="fixed inset-0 pointer-events-none opacity-[0.03]"
                 style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
             </div>
@@ -39,7 +36,6 @@ export default async function ShortsPage() {
                     />
                 </div>
 
-                {/* Content Feed (type="short" triggers 9:16 aspect ratio in cards) */}
                 <div className="w-full">
                     <MediaFeed items={shorts || []} type="short" />
                 </div>

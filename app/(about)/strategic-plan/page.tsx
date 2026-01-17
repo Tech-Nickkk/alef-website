@@ -1,5 +1,3 @@
-"use client";
-
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import {
     ChartBar, Scale, Lock, Briefcase, Landmark, Zap, Users, Globe, ShieldCheck, CheckCircle2
@@ -214,7 +212,7 @@ export default function StrategicPlanPage() {
 
                             <div className="relative z-10 flex flex-col gap-6 md:gap-8 h-full">
                                 <div className="flex items-center gap-4 md:gap-6">
-                                    <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-red to-red/60 rounded-2xl flex items-center justify-center text-white shadow-lg transition-transform duration-300">
+                                    <div className="w-12 h-12 md:w-16 md:h-16 bg-linear-to-br from-red to-red/60 rounded-2xl flex items-center justify-center text-white shadow-lg transition-transform duration-300">
                                         <ShieldCheck className="w-6 h-6 md:w-8 md:h-8" />
                                     </div>
                                     <div>
@@ -235,10 +233,10 @@ export default function StrategicPlanPage() {
                 <div className="relative w-full overflow-hidden rounded-2xl md:rounded-3xl">
                     <div className="absolute inset-0 bg-blue"></div>
                     <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20"></div>
-                    <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 w-full h-1/2 bg-linear-to-t from-black/50 to-transparent"></div>
 
                     <div className="relative z-10 p-8 md:p-24 flex flex-col items-center text-center">
-                        <div className="mb-6 md:mb-8 p-3 md:p-4 bg-white/5 border border-white/10 rounded-full text-red animate-pulse">
+                        <div className="mb-6 md:mb-8 p-3 md:p-4 bg-linear-to-br from-red to-red/60 rounded-full text-white animate-pulse">
                             <CheckCircle2 className="w-8 h-8 md:w-12 md:h-12" />
                         </div>
 
@@ -252,7 +250,7 @@ export default function StrategicPlanPage() {
                                 Lebanon’s road to economic recovery requires a balanced approach by <span className="text-white font-bold">prioritizing stability, strategic incentives, and international partnerships</span>. While full-scale investment remains a challenge, targeted reforms can lay the foundation for future investor confidence.
                             </p>
 
-                            <div className="h-px w-24 md:w-32 bg-gradient-to-r from-transparent via-red to-transparent mx-auto"></div>
+                            <div className="h-px w-24 md:w-32 bg-linear-to-r from-transparent via-red to-transparent mx-auto"></div>
 
                             <p className="font-oswald text-sm md:text-xl text-white/60 leading-relaxed uppercase tracking-wide">
                                 The American Lebanon Education Foundation advocates for a structured Investment Protection & Economic Recovery Plan, ensuring that Lebanon can transition from crisis management to sustainable economic growth.
@@ -261,8 +259,8 @@ export default function StrategicPlanPage() {
                     </div>
 
                     {/* Decorative side accents */}
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-20 md:h-32 bg-gradient-to-b from-transparent via-red to-transparent opacity-50"></div>
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-20 md:h-32 bg-gradient-to-b from-transparent via-red to-transparent opacity-50"></div>
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-20 md:h-32 bg-linear-to-b from-transparent via-red to-transparent opacity-50"></div>
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-20 md:h-32 bg-linear-to-b from-transparent via-red to-transparent opacity-50"></div>
                 </div>
 
                 {/* --- DOWNLOAD DOCUMENT BUTTON --- */}

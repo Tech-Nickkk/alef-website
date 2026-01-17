@@ -1,81 +1,74 @@
-"use client";
-
-import React, { useRef } from "react";
+import React from "react";
 import Image from "next/image";
 import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
 
 const fallenAngels = [
     {
         name: "Kamal Joumblatt",
-        image: "/fallenpatriots/Kamal Joumblatt.jpg",
+        image: "/fallenPatriots/Kamal_Joumblatt.jpg",
         description: "One of Lebanon's most influential political figures, a Druze leader, founder of the Progressive Socialist Party (PSP), and head of the leftist National Movement during the early years of the Lebanese Civil War (1975–1990). A vocal critic of Syrian intervention in Lebanon. Assassinated on March 16, 1977. The killing has long been widely attributed to Syrian intelligence or pro-Syrian elements, aimed at eliminating a powerful opponent to Syrian influence."
     },
     {
         name: "Bachir Gemayel",
-        image: "/fallenpatriots/Bashir_Gemayel.png",
+        image: "/fallenPatriots/Bashir_Gemayel.png",
         description: "(President-elect and Lebanese Forces leader) — Killed on September 14, 1982, by a massive bomb at Kataeb Party headquarters in Beirut, just days before taking office. The attack also killed 23 others."
     },
     {
         name: "Rashid Karami",
-        image: "/fallenpatriots/Rachid_Karami.png",
+        image: "/fallenPatriots/Rachid_Karami.png",
         description: "(Prime Minister) — Killed on June 1, 1987, by a bomb in a helicopter (widely attributed to Syrian involvement)."
     },
     {
         name: "René Moawad",
-        image: "/fallenpatriots/René_Moawad.jpg",
+        image: "/fallenPatriots/Rene_Moawad.jpg",
         description: "(President) — Killed on November 22, 1989, by a car bomb in West Beirut, along with 23 others."
     },
     {
         name: "Rafic Hariri",
-        image: "/fallenpatriots/Rafic Hariri.jpg",
-        role: "Prime Minister", // Highlighting specifically as per text
+        image: "/fallenPatriots/Rafic_Hariri.jpg",
+        role: "Prime Minister", 
         description: "On February 14, 2005. A massive truck bomb in downtown Beirut killed Hariri and 21 others (including former Economy Minister Bassel Fleihan and bodyguards), injuring hundreds. UN-backed Special Tribunal for Lebanon convicted Hezbollah operatives (e.g., Salim Ayyash in 2020, with appeals adding others like Hassan Habib Merhi and Hussein Oneissi in 2022) for involvement in the plot, though Hezbollah's leadership denied responsibility and was not directly implicated. The killing sparked the Cedar Revolution, forcing Syrian troops out of Lebanon after nearly 30 years."
     },
-    // Divider text here in layout: "This event triggered a series of subsequent targeted killings..."
     {
         name: "Samir Kassir",
-        image: "/fallenpatriots/Samir Kassir.jpg",
+        image: "/fallenPatriots/Samir_Kassir.jpg",
         description: "(prominent anti-Syrian journalist) — Car bomb, June 2, 2005."
     },
     {
         name: "Gebran Tueni",
-        image: "/fallenpatriots/Gebran Tuenijpg.jpg",
+        image: "/fallenPatriots/Gebran_Tuenijpg.jpg",
         description: "(MP and An-Nahar newspaper editor, outspoken critic of Syria) — Car bomb, December 12, 2005."
     },
     {
         name: "Pierre Gemayel",
-        image: "/fallenpatriots/Pierre Gemayel.jpg",
+        image: "/fallenPatriots/Pierre_Gemayel.jpg",
         description: "(Minister of Industry, anti-Syrian MP) — Shot dead, November 21, 2006."
     },
     {
         name: "Walid Eido",
-        image: "/fallenpatriots/walid_eido.jpg",
+        image: "/fallenPatriots/walid_eido.jpg",
         description: "(anti-Syrian MP) — Car bomb, June 13, 2007."
     },
     {
         name: "Antoine Ghanem",
-        image: "/fallenpatriots/antoine_ghanem.jpg",
+        image: "/fallenPatriots/antoine_ghanem.jpg",
         description: "(anti-Syrian MP) — Car bomb, September 19, 2007."
     },
     {
         name: "Wissam al-Hassan",
-        image: "/fallenpatriots/wissam al hassan.jpg",
+        image: "/fallenPatriots/wissam_al_hassan.jpg",
         description: "(intelligence chief) — Car bomb in 2012 and investigators into Hariri's death."
     },
     {
         name: "Mohamad Chatah",
-        image: "/fallenpatriots/Mohamad_Chatah.jpg",
+        image: "/fallenPatriots/Mohamad_Chatah.jpg",
         description: "(Lebanese Economist and Diplomat) — Car bomb, December 27, 2013."
     }
 ];
 
 export default function FallenAngelsPage() {
-    const containerRef = useRef(null);
-
-
-
     return (
-        <div className="bg-background min-h-screen flex flex-col relative overflow-hidden" ref={containerRef}>
+        <div className="bg-background min-h-screen flex flex-col relative overflow-hidden">
 
             <main className="grow pt-32 px-4 md:px-8 lg:px-12 max-w-[1400px] mx-auto w-full z-10 relative pb-20">
 

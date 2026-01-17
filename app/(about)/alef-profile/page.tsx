@@ -1,4 +1,3 @@
-"use client";
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import Link from "next/link";
 import { ShieldAlert, Gavel, Radio, Mic2, ShieldCheck, TrendingUp, AlarmClock, Quote } from "lucide-react"; 

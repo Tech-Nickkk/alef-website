@@ -7,7 +7,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
-import { Filter, Search } from "lucide-react";
+import FilterBar from "../../components/CommonCom/FilterBar";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,9 +18,19 @@ const BACK_IMAGE = "/home/card-back.png";
 const FULL_DECK = Array.from({ length: 52 }).map((_, i) => {
     const dataRef = CARD_DATA[i % CARD_DATA.length];
 
-    // Create the "Stamp Title" from the tag (e.g., "TERROR" from "TERROR STRATEGIST")
-    // If specific overrides are needed, they can be done here.
-    const stampTitle = dataRef.tag.split(" ")[0];
+    // Smarter Stamp Logic & One-Liner Enforcement
+    let stampTitle = dataRef.tag.replace(/^THE\s+/, "");
+    if (stampTitle.includes(" & ")) stampTitle = stampTitle.split(" & ")[0];
+    if (stampTitle.includes(" OF ")) stampTitle = stampTitle.split(" OF ")[0];
+
+    // Explicit Overrides for known long ones
+    if (stampTitle.includes("OUT OF TOUCH")) stampTitle = "DISCONNECTED";
+    if (stampTitle.includes("PARALYZED PREMIER")) stampTitle = "PARALYZED";
+    if (stampTitle.includes("ARCHITECT")) stampTitle = "ARCHITECT";
+    if (stampTitle.length > 15) {
+        // Fallback truncation for anything still too long
+        stampTitle = stampTitle.split(" ").slice(0, 2).join(" ");
+    }
 
     return {
         id: `card-${i}`,
@@ -29,7 +39,7 @@ const FULL_DECK = Array.from({ length: 52 }).map((_, i) => {
         back: BACK_IMAGE,
         name: dataRef.name,
         status: dataRef.tag,
-        stamp: stampTitle, // NEW PROPERTY
+        stamp: stampTitle,
         suit: ["Spades", "Hearts", "Diamonds", "Clubs"][Math.floor(i / 13)],
         revealed: false
     };
@@ -142,36 +152,14 @@ export default function HouseOfCardsPage() {
                 </div>
 
                 {/* Filters Row */}
-                <div className="flex flex-wrap items-center justify-between gap-6 py-6 border-y border-foreground/20 mb-12">
-                    <div className="flex items-center gap-8 overflow-x-auto no-scrollbar pb-2 md:pb-0">
-                        {["All", "Spades", "Hearts", "Diamonds", "Clubs"].map((item) => (
-                            <button
-                                key={item}
-                                onClick={() => setFilter(item)}
-                                className={`font-oswald text-sm uppercase tracking-widest transition-all relative ${filter === item ? "text-red" : "text-foreground/40 hover:text-foreground"
-                                    }`}
-                            >
-                                {item}
-                                {filter === item && (
-                                    <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-red"></span>
-                                )}
-                            </button>
-                        ))}
-                    </div>
-
-                    <div className="flex items-center gap-4 w-full md:w-auto justify-center md:justify-end">
-                        <div className="relative w-full md:w-96">
-                            <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-foreground/60" />
-                            <input
-                                type="text"
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                                placeholder="SEARCH ARCHIVE..."
-                                className="bg-foreground/15 border border-foreground/30 rounded-full py-3 pl-14 pr-6 font-oswald text-sm tracking-widest focus:outline-none focus:border-red/50 transition-colors w-full uppercase placeholder:text-foreground/50"
-                            />
-                        </div>
-                    </div>
-                </div>
+                <FilterBar
+                    tabs={["All", "Spades", "Hearts", "Diamonds", "Clubs"]}
+                    activeTab={filter}
+                    onTabChange={setFilter}
+                    searchQuery={searchQuery}
+                    onSearchChange={setSearchQuery}
+                    searchPlaceholder="SEARCH ARCHIVE..."
+                />
 
                 {/* Cards Grid */}
                 <div
@@ -207,15 +195,20 @@ export default function HouseOfCardsPage() {
                                             />
                                         </div>
 
-                                        {/* === NEW STAMP UI === */}
-                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -rotate-12 border-4 border-red/80 px-4 py-1 rounded-sm backdrop-blur-sm pointer-events-none">
-                                            <span className="font-oswald text-2xl font-bold text-red/90 uppercase tracking-widest whitespace-nowrap">
+                                        {/* === STAMP UI === */}
+                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -rotate-12 border-4 border-red/80 px-4 py-1 rounded-sm backdrop-blur-sm pointer-events-none shadow-lg shadow-black/20">
+                                            <span className="font-oswald text-2xl md:text-3xl font-bold text-red/90 uppercase tracking-widest whitespace-nowrap">
                                                 {card.stamp}
                                             </span>
                                         </div>
 
-                                        <div className="absolute bottom-6 left-6 right-6 z-30">
-                                            <p className="font-bebas text-3xl tracking-wide uppercase text-black/90 leading-none drop-shadow-sm">{card.name}</p>
+                                        {/* === NAME CONTAINER === */}
+                                        <div className="absolute bottom-7 left-3 z-30 flex justify-center">
+                                            <div className="bg-[#f0f0f0] px-4 py-2 max-w-full">
+                                                <p className="font-bebas text-xl md:text-2xl tracking-wide uppercase text-black leading-none text-center truncate">
+                                                    {card.name}
+                                                </p>
+                                            </div>
                                         </div>
                                     </Link>
                                 </div>

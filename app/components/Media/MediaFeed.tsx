@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Search } from "lucide-react";
+import FilterBar from "../CommonCom/FilterBar";
 import VideoCard from "./VideoCard";
 
 interface MediaFeedProps {
@@ -42,7 +42,7 @@ export default function MediaFeed({ items, type }: MediaFeedProps) {
             <span>
                 {parts.map((part, index) =>
                     part.toLowerCase() === query.toLowerCase() ? (
-                        <span key={index} className="bg-red/30 text-white rounded px-0.5">
+                        <span key={index} className="bg-red/70 text-white rounded px-0.5">
                             {part}
                         </span>
                     ) : (
@@ -56,31 +56,14 @@ export default function MediaFeed({ items, type }: MediaFeedProps) {
     return (
         <div>
             {/* Filters Row */}
-            <div className="flex flex-wrap items-center justify-center md:justify-between gap-6 py-6 border-y border-foreground/60 mb-12">
-                <div className="flex items-center gap-8 overflow-x-auto no-scrollbar pb-2 md:pb-0">
-                    {years.map((year) => (
-                        <button
-                            key={year}
-                            onClick={() => setFilter(year)}
-                            className={`font-oswald text-sm uppercase tracking-widest relative transition-colors ${filter === year ? "text-red" : "text-foreground/70 hover:text-foreground"}`}
-                        >
-                            {year}
-                            {filter === year && <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-red"></span>}
-                        </button>
-                    ))}
-                </div>
-
-                <div className="relative w-full md:w-auto">
-                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/60" />
-                    <input
-                        type="text"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        placeholder={`SEARCH ARCHIVE...`}
-                        className="bg-foreground/15 border border-foreground/30 rounded-full py-2.5 pl-12 pr-6 font-oswald text-xs tracking-widest focus:outline-none focus:border-red/50 w-full md:w-96 uppercase transition-colors"
-                    />
-                </div>
-            </div>
+            <FilterBar
+                tabs={years}
+                activeTab={filter}
+                onTabChange={setFilter}
+                searchQuery={searchQuery}
+                onSearchChange={setSearchQuery}
+                searchPlaceholder="SEARCH ARCHIVE..."
+            />
 
             {/* Grid */}
             <div className={`grid gap-8 mb-32 ${gridCols}`}>

@@ -1,28 +1,6 @@
 import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
-import { sanityFetch, SanityLive } from "@/sanity/lib/live";
-import BlogsFeed from "./BlogsFeed";
-
-interface Sanityblog {
-    _id: string;
-    title: string;
-    slug: { current: string };
-    publishedAt: string;
-    excerpt: string;
-    mainImage?: {
-        asset: {
-            _ref: string;
-        };
-    };
-    author?: {
-        name: string;
-        discloseName?: boolean;
-        image?: {
-            asset: {
-                _ref: string;
-            };
-        };
-    };
-}
+import { client } from "@/sanity/lib/client";
+import BlogsFeed from "../../components/Blogs/BlogsFeed";
 
 export default async function BlogsPage() {
     const query = `
@@ -41,7 +19,7 @@ export default async function BlogsPage() {
     }
   `;
 
-    const { data: blogs } = await sanityFetch({ query });
+    const blogs = await client.fetch(query);
 
     return (
         <div className="bg-background min-h-screen flex flex-col relative overflow-hidden">
@@ -60,7 +38,6 @@ export default async function BlogsPage() {
                 <BlogsFeed initialBlogs={blogs} />
 
             </main>
-            <SanityLive />
         </div>
     );
 }

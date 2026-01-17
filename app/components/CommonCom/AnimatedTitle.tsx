@@ -23,11 +23,10 @@ export default function AnimatedTitle({ text, className = "" }: AnimatedTitlePro
             scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 85%",
-                toggleActions: "play none none none", // Only plays once
+                toggleActions: "play none none none", 
             }
         });
 
-        // 1. Slow Fade In
         tl.fromTo(chars,
             { opacity: 0 },
             {
@@ -38,7 +37,6 @@ export default function AnimatedTitle({ text, className = "" }: AnimatedTitlePro
             }
         );
 
-        // 2. Flicker Effect (Random dips in opacity)
         tl.to(chars, {
             opacity: 0.2,
             duration: 0.03,

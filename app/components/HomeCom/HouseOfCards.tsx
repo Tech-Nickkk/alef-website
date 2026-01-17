@@ -81,39 +81,26 @@ export default function HouseOfCards() {
 
         // MOBILE/TABLET ANIMATION
         mm.add("(max-width: 1023px)", () => {
-            // Reset to relative layout flow
             gsap.set(cards, { clearProps: "all" });
 
-            // Simple Flip on Scroll (In Place)
             const innerCards = cards.map(c => c.querySelector('.flip-card-inner'));
 
             innerCards.forEach((innerCard, i) => {
                 if (!innerCard) return;
                 gsap.to(innerCard, {
                     scrollTrigger: {
-                        trigger: cards[i], // Trigger based on the card wrapper
-                        start: "top bottom-=100", // Start flipping when card enters somewhat
-                        end: "center center", // Finish flip when centered
+                        trigger: cards[i],
+                        start: "top bottom-=100",
+                        end: "center center",
                         scrub: 1,
                     },
                     rotateY: 180,
-                    ease: "linear" // Linear ease is better for scrub
+                    ease: "linear"
                 });
             });
         });
 
     }, { scope: sectionRef });
-
-    // Helper to get punchy "Stamp" titles from the slug or id
-    const getStampTitle = (slug: string) => {
-        switch(slug) {
-            case "michel-aoun": return "ENABLER";
-            case "naim-qassem": return "PROXY";
-            case "riad-salameh": return "SCHEMER";
-            case "walid-jumblatt": return "CHAMELEON";
-            default: return "CORRUPT";
-        }
-    };
 
     return (
         <section ref={sectionRef} className="py-12 md:py-18 px-6 md:px-12 lg:px-24 overflow-hidden relative">
@@ -137,25 +124,29 @@ export default function HouseOfCards() {
                         {
                             slug: "michel-aoun",
                             name: "Michel Aoun",
-                            front: "/houseofcards/aceOfClub.png",
+                            stampTitle: "ENABLER",
+                            front: "/houseOfCards/aceOfClubs.png",
                             back: "/home/card-back.png"
                         },
                         {
                             slug: "naim-qassem",
                             name: "Naim Qassem",
-                            front: "/houseofcards/aceOfDiamonds.png",
+                            stampTitle: "PROXY",
+                            front: "/houseOfCards/aceOfDiamonds.png",
                             back: "/home/card-back.png"
                         },
                         {
                             slug: "riad-salameh",
                             name: "Riad Salameh",
-                            front: "/houseofcards/kingOfDiamonds.png",
+                            stampTitle: "SCHEMER",
+                            front: "/houseOfCards/kingOfDiamonds.png",
                             back: "/home/card-back.png"
                         },
                         {
                             slug: "walid-jumblatt",
                             name: "Walid Jumblatt",
-                            front: "/houseofcards/kingOfSpades.png",
+                            stampTitle: "CHAMELEON",
+                            front: "/houseOfCards/kingOfSpades.png",
                             back: "/home/card-back.png"
                         }
                     ].map((card, index) => (
@@ -188,14 +179,14 @@ export default function HouseOfCards() {
                                             />
                                         </div>
 
-                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 transform -rotate-12 border-4 border-red/80 px-4 py-1 rounded-sm backdrop-blur-sm pointer-events-none">
+                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 opacity-100 lg:opacity-0 lg:group-hover/card:opacity-100 transition-opacity duration-300 transform -rotate-12 border-4 border-red/80 px-4 py-1 rounded-sm backdrop-blur-sm pointer-events-none">
                                             <span className="font-oswald text-xl md:text-2xl font-bold text-red/90 uppercase tracking-widest whitespace-nowrap">
-                                                {getStampTitle(card.slug)}
+                                                {card.stampTitle}
                                             </span>
                                         </div>
 
                                         <div className="absolute bottom-6 left-8 z-30 text-center">
-                                            <p className="font-bebas text-3xl tracking-wide uppercase text-black/90 leading-none group-hover/card:scale-110 transition-transform duration-300">{card.name}</p>
+                                            <p className="font-bebas md:text-3xl text-2xl tracking-wide uppercase text-black/90 leading-none group-hover/card:scale-110 transition-transform duration-300">{card.name}</p>
                                         </div>
                                     </Link>
                                 </div>

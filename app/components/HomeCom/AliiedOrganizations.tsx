@@ -29,17 +29,15 @@ export default function AlliedOrganizations() {
         const track = trackRef.current;
         if (!track) return;
 
-        // Calculate total width of one set of sponsors
         const totalWidth = track.scrollWidth / 2;
 
-        // Create infinite scroll animation
         gsap.to(track, {
             x: -totalWidth,
-            duration: 30, // Slower for readability
+            duration: 30, 
             ease: "none",
             repeat: -1,
             modifiers: {
-                x: gsap.utils.unitize(x => parseFloat(x) % totalWidth) // Ensures seamless looping
+                x: gsap.utils.unitize(x => parseFloat(x) % totalWidth) 
             }
         });
     }, { scope: trackRef });
@@ -47,8 +45,7 @@ export default function AlliedOrganizations() {
     return (
         <section className="py-16 md:py-24 overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 mb-16">
-                {/* Header */}
-                {/* Header */}
+
                 <div className="flex flex-col items-center text-center gap-4">
                     <AnimatedTitle
                         text="ALLIED ORGANIZATIONS"
@@ -59,11 +56,10 @@ export default function AlliedOrganizations() {
                         STRATEGIC PARTNERS
                     </div>
                 </div>
+
             </div>
 
-            {/* Marquee Container */}
             <div className="relative w-full overflow-hidden">
-                {/* Gradient Masks for smooth fade edges */}
                 <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 z-10 bg-linear-to-r from-background to-transparent"></div>
                 <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 z-10 bg-linear-to-l from-background to-transparent"></div>
 
@@ -71,7 +67,6 @@ export default function AlliedOrganizations() {
                     ref={trackRef}
                     className="flex gap-12 md:gap-24 w-fit px-12"
                 >
-                    {/* Render Double Set for Loop */}
                     {[...ALLIES, ...ALLIES].map((ally, index) => (
                         <Link
                             key={index}
@@ -80,8 +75,7 @@ export default function AlliedOrganizations() {
                             rel="noopener noreferrer"
                             className="shrink-0 flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300 group cursor-pointer"
                         >
-                            {/* Placeholder for Logo - using styled text for now */}
-                            <h3 className="text-2xl md:text-4xl font-bebas text-foreground whitespace-nowrap group-hover:text-red transition-colors">
+                            <h3 className="text-3xl md:text-4xl font-bebas text-foreground whitespace-nowrap group-hover:text-red transition-colors">
                                 {ally.name}
                             </h3>
                         </Link>

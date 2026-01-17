@@ -1,7 +1,7 @@
 import Link from "next/link";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
 import GlowingGrid from "../CommonCom/GlowingGrid";
-import { Video, Smartphone, Mic, Calendar, ArrowRight, Film, Images, Play } from "lucide-react";
+import { Video, Smartphone, Mic, ArrowRight, Images } from "lucide-react";
 
 export default function Media() {
     const mediaItems = [
@@ -58,7 +58,6 @@ export default function Media() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {mediaItems.map((item, index) => (
                         <div key={index} className="bg-blue border border-white/10 p-12 flex flex-col justify-center relative overflow-hidden group rounded-2xl hover:border-white/30 transition-colors duration-500 min-h-[400px]">
-                            {/* Interactive Glowing Grid Background */}
                             <GlowingGrid />
 
                             <div className="relative z-30 h-full flex flex-col justify-between">
