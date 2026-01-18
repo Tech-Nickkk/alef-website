@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import SkeletonImage from "../CommonCom/SkeletonImage";
 import { ArrowRight, User, ChevronLeft, ChevronRight } from "lucide-react";
 import FilterBar from "../CommonCom/FilterBar";
 import { urlFor } from "@/sanity/lib/image";
@@ -114,7 +114,7 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
                             {/* Blog Image */}
                             <div className="relative w-full h-52 overflow-hidden">
                                 {blog.mainImage?.asset ? (
-                                    <Image
+                                    <SkeletonImage
                                         src={urlFor(blog.mainImage).width(600).height(400).url()}
                                         alt={blog.title}
                                         fill
@@ -145,7 +145,7 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
                                     <div className="flex items-center gap-3">
                                         {blog.author?.image?.asset ? (
                                             <div className="relative w-8 h-8 rounded-full overflow-hidden ring-2 ring-red/30">
-                                                <Image
+                                                <SkeletonImage
                                                     src={urlFor(blog.author.image).width(64).height(64).url()}
                                                     alt={blog.author.discloseName === true ? (blog.author.name || 'Author') : 'Author'}
                                                     fill

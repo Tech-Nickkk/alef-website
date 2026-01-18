@@ -1,5 +1,5 @@
 import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
-import Image from "next/image";
+import SkeletonImage from "../../components/CommonCom/SkeletonImage";
 import { Calendar, MapPin, Clock, Building2, User, Ticket, Mail, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -32,7 +32,7 @@ export default function EventsPage() {
                     {/* Image Section - Full Width, Uncropped */}
                     <div className="relative w-full h-auto">
                         <div className="absolute inset-0 bg-blue/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-                        <Image
+                        <SkeletonImage
                             src="/events/event-img-1.jpg"
                             alt="ALEF Event"
                             width={1200}

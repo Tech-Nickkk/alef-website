@@ -266,7 +266,7 @@ export default function StrategicPlanPage() {
                 {/* --- DOWNLOAD DOCUMENT BUTTON --- */}
                 <div className="flex justify-center pt-4 md:pt-8 relative z-10">
                     <Link
-                        href="https://docs.google.com/document/d/e/2PACX-1vRoR3H6yCV9jFGuPrjd7cjgg665X1TxEcd2zRG9I62huy8Wrly7GxLxs_mDvq9i_g/pub"
+                        href="/about/ALEF_Strategic_Plan.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

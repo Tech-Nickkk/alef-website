@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import AnimatedTitle from "../components/CommonCom/AnimatedTitle";
 import FilterBar from "../components/CommonCom/FilterBar";
-import Image from "next/image";
+import SkeletonImage from "../components/CommonCom/SkeletonImage";
 
 // Member Data Types
 interface Member {
@@ -84,7 +84,7 @@ const highlightText = (text: string, query: string) => {
 const MemberCard = ({ member, searchQuery }: { member: Member; searchQuery: string }) => (
     <div className="group relative bg-white/5 border border-black/5 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
         <div className="aspect-4/5 relative overflow-hidden bg-gray-100">
-            <Image
+            <SkeletonImage
                 src={`/congressionalAdvocasy/${member.img}`}
                 alt={member.name}
                 fill

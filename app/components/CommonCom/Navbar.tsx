@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import SkeletonImage from "./SkeletonImage";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTheme } from "./ThemeProvider";
@@ -124,7 +124,7 @@ export default function Navbar() {
                 <div className="shrink-0 cursor-pointer relative z-50">
                     <Link href="/" onClick={() => setIsMenuOpen(false)}>
                         <div className="relative">
-                            <Image src="/home/logo.png" alt="ALEF Logo" width={90} height={90} className="object-contain w-[80px] md:w-[110px]" />
+                            <SkeletonImage src="/home/logo.png" alt="ALEF Logo" width={90} height={90} className="object-contain w-[80px] md:w-[110px]" />
                         </div>
                     </Link>
                 </div>
@@ -235,7 +235,7 @@ export default function Navbar() {
                         <div className="shrink-0 cursor-pointer">
                             <Link href="/" onClick={() => setIsMenuOpen(false)}>
                                 <div className="relative">
-                                    <Image src="/home/logo.png" alt="ALEF Logo" width={90} height={90} className="object-contain w-[80px] md:w-[110px]" />
+                                    <SkeletonImage src="/home/logo.png" alt="ALEF Logo" width={90} height={90} className="object-contain w-[80px] md:w-[110px]" />
                                 </div>
                             </Link>
                         </div>

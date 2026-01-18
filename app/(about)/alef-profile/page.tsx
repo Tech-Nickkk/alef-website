@@ -1,6 +1,6 @@
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import Link from "next/link";
-import { ShieldAlert, Gavel, Radio, Mic2, ShieldCheck, TrendingUp, AlarmClock, Quote } from "lucide-react"; 
+import { ShieldAlert, Gavel, Radio, Mic2, ShieldCheck, TrendingUp, AlarmClock, Quote } from "lucide-react";
 
 export default function AlefProfilePage() {
     return (
@@ -26,7 +26,7 @@ export default function AlefProfilePage() {
                     <div className="relative bg-blue border border-white/10 p-6 md:p-14 rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
                         {/* Decorative Corner */}
                         <div className="absolute top-0 right-0 w-24 h-24 md:w-40 md:h-40 bg-white/5 rounded-bl-[60px] md:rounded-bl-[100px]"></div>
-                        
+
                         <div className="relative z-10">
                             <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start mb-6 md:mb-10">
                                 <div className="p-3 bg-linear-to-br from-red to-red/60 rounded-lg text-white shrink-0 shadow-lg">
@@ -39,22 +39,34 @@ export default function AlefProfilePage() {
 
                             <div className="font-oswald text-white/80 text-base md:text-xl leading-relaxed md:leading-loose space-y-6 text-left md:text-justify">
                                 <p>
-                                    First off, and as the new year unfolds, I personally wish you and your loved ones good health, clarity of purpose, and steady progress toward all that matters most to you. May the year ahead bring meaningful moments, renewed energy, and opportunities beyond your wildest imagination.
+                                    First off, as the new year unfolds, I personally wish you and your loved one’s
+                                    good health, clarity of purpose, and steady progress toward all that matters most
+                                    to you. May the year ahead bring meaningful moments, renewed energy, and
+                                    opportunities that inspire growth and fulfillment.
                                 </p>
                                 <p>
-                                    Having said that, it is with great pride and anticipation that I announce a watershed moment in the American Lebanon Foundation (ALEF) and American Lebanon Political Action Committee (ALPAC) unwavering missions to fortify America's Lebanon’s foundations and effectively lobby the US Administration on behalf of Lebanon.
+                                    Having said that, it is with great pride and anticipation that I announce a
+                                    significant milestone in the American Lebanon Education Foundation (ALEF)
+                                    history to fortify America&#39;s Lebanon’s ties and effectively work with every US
+                                    Administration in a bipartisan way on behalf of Lebanon.
                                 </p>
                                 <p>
-                                    We are unveiling today our cutting-edge digital website platform, a beacon of wisdom and intelligence in our ever-evolving digital landscape.
+                                    To that effect, we are introducing today our modern digital website platform, a
+                                    resource for insights and access to unique information in our ever-evolving
+                                    digital landscape.
                                 </p>
                                 <p>
-                                    Lebanon stands today at the edge of complete institutional collapse. Its democracy, economy, and sovereignty are under siege by Hezbollah—a globally designated terrorist organization entrenched in every layer of government, finance, and daily life. Corruption, clientelism, and militant dominance have left a proud nation defenseless and the Lebanese people voiceless.
+                                    Lebanon stands today facing significant institutional challenges. Its democracy,
+                                    economy, and sovereignty are facing threats from Hezbollah—an internationally
+                                    recognized terrorist group entrenched in every layer of government, finance, and
+                                    daily life. Corruption, clientelism, and militant dominance have left a proud nation
+                                    defenseless and the Lebanese people voiceless.
                                 </p>
-                                <div className="text-white font-bold border-l-4 border-red pl-4 md:pl-6 py-3 md:py-4 bg-white/5 rounded-r-lg text-sm md:text-xl">
-                                    We are done watching. We are acting. This is no longer a time for hope; it is a time for action. The tree of liberty needs periodic refreshment if we are ever to build a real state.
-                                </div>
                                 <p>
-                                    We, Lebanese and American patriots are hereby launching as of today an alternative national salvation plan second to none and are the ONLY American Lebanon Political Action Committee of its kind in the land.
+                                    We are shifting from observation to implementation. Now is the moment to move
+                                    forward with concrete steps. Sustaining liberty requires ongoing effort if we are
+                                    ever to build a real state. It is high time for American and Lebanese patriot
+                                    activists to take the lead in the New Middle East shaping up. If not us, then who?
                                 </p>
                             </div>
                         </div>
@@ -121,7 +133,7 @@ export default function AlefProfilePage() {
                                 </p>
                             </div>
                         </div>
-                        
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                             {[
                                 { title: "Disrupt Financing", desc: "Disrupt global financing and influence networks." },
@@ -151,7 +163,7 @@ export default function AlefProfilePage() {
                             className="text-4xl md:text-6xl font-bold font-bebas text-foreground uppercase leading-none"
                         />
                     </div>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                         {[
                             { icon: <Gavel className="w-6 h-6 md:w-8 md:h-8" />, title: "Task Force", desc: "Launch a National HAA Task Force of legal, financial, and intelligence experts." },
@@ -185,7 +197,7 @@ export default function AlefProfilePage() {
                                 className="text-4xl md:text-6xl font-bold font-bebas text-foreground uppercase leading-none"
                             />
                         </div>
-                        
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                             {/* Opportunity Card */}
                             <div className="relative p-6 md:p-10 border border-white/10 rounded-2xl md:rounded-3xl bg-blue text-white overflow-hidden shadow-xl">
@@ -229,13 +241,14 @@ export default function AlefProfilePage() {
                 </div>
 
                 {/* --- DOWNLOAD DOCUMENT BUTTON --- */}
-                <div className="flex justify-center pt-8 md:pt-12 relative z-10">
+                <div className="flex justify-center pt-8 md:pt-12 relative z-10 w-full">
                     <Link
-                        href="https://docs.google.com/document/d/e/2PACX-1vS6ATAXEEkAVf3wN73K58zLHP67RzgUbgs0q8k8mDoEUldUkfC_36bjuD4KBc-mdw/pub"
+                        href="/about/ALEF_Profile.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="w-full md:w-auto"
                     >
-                        <button className="group relative bg-transparent border border-foreground/70 text-foreground px-12 py-4 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-foreground/50 isolate cursor-pointer">
+                        <button className="w-full md:w-auto group relative bg-transparent border border-foreground/70 text-foreground px-12 py-4 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-foreground/50 isolate cursor-pointer">
                             <span className="relative z-10 group-hover:text-background transition-colors duration-300">
                                 READ FULL PROFILE
                             </span>

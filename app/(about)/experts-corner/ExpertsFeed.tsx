@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import Image from "next/image";
+import SkeletonImage from "@/app/components/CommonCom/SkeletonImage";
 import { Star } from 'lucide-react';
 import FilterBar from "@/app/components/CommonCom/FilterBar";
 import { urlFor } from '@/sanity/lib/image';
@@ -82,7 +82,7 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
                             <div key={officer._id} className="bg-blue border border-light-blue p-6 rounded-sm transition-transform duration-300 group">
                                 <div className="w-full aspect-4/5 bg-black/30 mb-6 rounded-sm relative overflow-hidden flex items-center justify-center bg-linear-to-b from-white/5 to-transparent">
                                     {officer.image ? (
-                                        <Image
+                                        <SkeletonImage
                                             src={urlFor(officer.image).width(400).height(500).url()}
                                             alt={officer.discloseName === true ? (officer.name || 'Officer') : 'Officer'}
                                             fill
@@ -90,7 +90,7 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
                                             unoptimized
                                         />
                                     ) : (
-                                        <Image
+                                        <SkeletonImage
                                             src="/home/default-avatar.svg"
                                             alt="Default Avatar"
                                             fill
@@ -130,7 +130,7 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
                             <div key={director._id} className="bg-blue border border-light-blue p-6 rounded-sm transition-colors duration-300 flex flex-col items-center text-center h-full">
                                 <div className="w-full aspect-4/5 bg-black/30 mb-6 rounded-sm relative overflow-hidden flex items-center justify-center bg-linear-to-b from-white/5 to-transparent shrink-0">
                                     {director.image ? (
-                                        <Image
+                                        <SkeletonImage
                                             src={urlFor(director.image).width(400).height(500).url()}
                                             alt={director.discloseName === true ? (director.name || 'Director') : 'Director'}
                                             fill
@@ -138,7 +138,7 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
                                             unoptimized
                                         />
                                     ) : (
-                                        <Image
+                                        <SkeletonImage
                                             src="/home/default-avatar.svg"
                                             alt="Default Avatar"
                                             fill
@@ -176,7 +176,7 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
                             <div key={advisor._id} className="bg-blue border border-light-blue p-6 rounded-sm transition-colors duration-300 flex flex-col items-center text-center h-full">
                                 <div className="w-full aspect-4/5 bg-black/30 mb-6 rounded-sm relative overflow-hidden flex items-center justify-center bg-linear-to-b from-white/5 to-transparent shrink-0">
                                     {advisor.image ? (
-                                        <Image
+                                        <SkeletonImage
                                             src={urlFor(advisor.image).width(400).height(500).url()}
                                             alt={advisor.discloseName === true ? (advisor.name || 'Advisor') : 'Advisor'}
                                             fill
@@ -184,7 +184,7 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
                                             unoptimized
                                         />
                                     ) : (
-                                        <Image
+                                        <SkeletonImage
                                             src="/home/default-avatar.svg"
                                             alt="Default Avatar"
                                             fill

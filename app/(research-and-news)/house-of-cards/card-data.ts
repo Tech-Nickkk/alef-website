@@ -714,7 +714,7 @@ export const CARD_DATA = [
     {
         id: "ali-hassan-khalil",
         name: "Ali Hassan Khalil",
-        tag: "THE SANCTIONED RIGHT HAND",
+        tag: "THE FINANCE ENFORCER",
         role: "Former Finance Minister / MP",
         image: "/houseOfCards/nineOfSpades.png",
         suit: "Spades",

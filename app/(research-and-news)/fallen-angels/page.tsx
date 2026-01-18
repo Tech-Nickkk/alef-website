@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import SkeletonImage from "../../components/CommonCom/SkeletonImage";
 import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
 
 const fallenAngels = [
@@ -26,7 +26,7 @@ const fallenAngels = [
     {
         name: "Rafic Hariri",
         image: "/fallenPatriots/Rafic_Hariri.jpg",
-        role: "Prime Minister", 
+        role: "Prime Minister",
         description: "On February 14, 2005. A massive truck bomb in downtown Beirut killed Hariri and 21 others (including former Economy Minister Bassel Fleihan and bodyguards), injuring hundreds. UN-backed Special Tribunal for Lebanon convicted Hezbollah operatives (e.g., Salim Ayyash in 2020, with appeals adding others like Hassan Habib Merhi and Hussein Oneissi in 2022) for involvement in the plot, though Hezbollah's leadership denied responsibility and was not directly implicated. The killing sparked the Cedar Revolution, forcing Syrian troops out of Lebanon after nearly 30 years."
     },
     {
@@ -109,7 +109,7 @@ export default function FallenAngelsPage() {
 
                                     {/* Image Container */}
                                     <div className="shrink-0 w-32 h-32 md:w-48 md:h-48 relative rounded-full md:rounded-lg overflow-hidden border-2 border-theme-accent/20 shadow-2xl">
-                                        <Image
+                                        <SkeletonImage
                                             src={angel.image}
                                             alt={angel.name}
                                             fill

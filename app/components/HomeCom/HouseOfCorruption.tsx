@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SkeletonImage from "../CommonCom/SkeletonImage";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -19,7 +19,7 @@ export default function HouseOfCorruption() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    
+
                     <div className="bg-blue rounded-2xl p-8 md:p-12 flex flex-col justify-between min-h-[550px] h-auto md:h-[600px] relative group">
                         <div className="flex justify-between items-start mb-8 font-oswald text-xs tracking-widest text-white/60">
                             <span>CASE FILE: 001</span>
@@ -64,7 +64,7 @@ export default function HouseOfCorruption() {
 
                     <div className="bg-blue rounded-2xl p-2 h-[500px] md:h-[600px] relative overflow-hidden group">
                         <div className="relative w-full h-full rounded-xl overflow-hidden">
-                            <Image
+                            <SkeletonImage
                                 src="/houseOfCorruption/house-of-corruption-img-7.jpg"
                                 alt="$1 Trillion Robbery"
                                 fill

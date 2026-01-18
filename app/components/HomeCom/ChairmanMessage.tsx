@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SkeletonImage from "../CommonCom/SkeletonImage";
 // import Link from "next/link";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
 
@@ -65,7 +65,7 @@ export default function ChairmanMessage() {
                     {/* Image Card - Parallax Effect */}
                     <div className="bg-blue border border-white/10 rounded-2xl p-2 h-[450px] md:h-[600px] relative overflow-hidden group">
                         <div className="relative w-full h-full rounded-xl overflow-hidden">
-                            <Image
+                            <SkeletonImage
                                 src="/home/Ziad Abdelnour.jpg"
                                 alt="Ziad K. Abdelnour"
                                 fill

@@ -371,7 +371,7 @@ export default function CoreValuesPage() {
                 {/* --- DOWNLOAD DOCUMENT BUTTON --- */}
                 <div className="flex justify-center pt-8 md:pt-16 relative z-10">
                     <Link
-                        href="https://docs.google.com/document/d/e/2PACX-1vRNFZ8Ghzj5gKY_asmglxg_n1KTKHQDebY-_p7NodBrreNtUVxUGuf61ExZC3q9yQ/pub"
+                        href="/about/ALEF_Core_Values.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

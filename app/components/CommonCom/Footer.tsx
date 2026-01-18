@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
-import { Mail, Phone, MapPin, Instagram, Facebook, Twitter } from "lucide-react";
+import SkeletonImage from "./SkeletonImage";
+import { Mail, Phone, MapPin, Facebook, Linkedin } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -18,7 +18,7 @@ export default function Footer() {
 
                     <div className="space-y-6">
                         <Link href="/" className="block relative w-32 h-12">
-                            <Image
+                            <SkeletonImage
                                 src="/home/logo.png"
                                 alt="ALEF Logo"
                                 fill
@@ -29,9 +29,8 @@ export default function Footer() {
                             Educating communities and combating terrorism through research, awareness, and policy advocacy.
                         </p>
                         <div className="flex gap-3 pt-2">
-                            <SocialButton icon={<Instagram className="w-4 h-4" />} href="#" />
-                            <SocialButton icon={<Facebook className="w-4 h-4" />} href="#" />
-                            <SocialButton icon={<Twitter className="w-4 h-4" />} href="#" />
+                            <SocialButton icon={<Facebook className="w-4 h-4" />} href="https://www.facebook.com/share/g/1CAf9Dn4A3/" />
+                            <SocialButton icon={<Linkedin className="w-4 h-4" />} href="https://www.linkedin.com/groups/16682004/" />
                         </div>
                     </div>
 
@@ -63,7 +62,7 @@ export default function Footer() {
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-5 h-5 text-red shrink-0 mt-0.5" />
                                 <span className="text-white/70 font-oswald text-sm leading-relaxed">
-                                    Washington, D.C.<br />United States
+                                    New York City,<br />United States
                                 </span>
                             </li>
                             <li className="flex items-center gap-3">
@@ -109,6 +108,7 @@ function SocialButton({ icon, href }: { icon: React.ReactNode, href: string }) {
     return (
         <a
             href={href}
+            target="_blank"
             className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center text-white/60 hover:bg-red hover:border-red hover:text-white transition-all duration-300"
         >
             {icon}

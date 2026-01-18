@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SkeletonImage from "../CommonCom/SkeletonImage";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
 
 export default function PresidentialLetter() {
@@ -22,7 +22,7 @@ export default function PresidentialLetter() {
                 {/* Letter Image */}
                 <div className="relative w-full shadow-2xl rounded-sm overflow-hidden border border-foreground/10 group">
                     <div className="absolute inset-0 bg-blue/5 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-                    <Image
+                    <SkeletonImage
                         src="/home/presidentialLetter.jpg"
                         alt="Letter from President Donald J. Trump"
                         width={1000}

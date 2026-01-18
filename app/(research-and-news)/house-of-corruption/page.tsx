@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import Image from "next/image";
+import SkeletonImage from "../../components/CommonCom/SkeletonImage";
 import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -305,7 +305,7 @@ export default function HouseOfCorruptionPage() {
                                 >
                                     <div className="absolute top-1/2 -left-8 w-8 h-px bg-foreground/20"></div>
                                     <div className="relative w-full h-full border border-light-blue rounded-sm overflow-hidden bg-blue shadow-2xl hover:border-red hover:shadow-[0_0_30px_rgba(220,38,38,0.2)]">
-                                        <Image
+                                        <SkeletonImage
                                             src={img.src}
                                             alt={img.alt}
                                             fill
@@ -333,7 +333,7 @@ export default function HouseOfCorruptionPage() {
                                 >
                                     <div className="absolute top-1/2 -right-8 w-8 h-px bg-foreground/20"></div>
                                     <div className="relative w-full h-full border border-light-blue rounded-sm overflow-hidden bg-blue shadow-2xl hover:border-red hover:shadow-[0_0_30px_rgba(220,38,38,0.2)]">
-                                        <Image
+                                        <SkeletonImage
                                             src={img.src}
                                             alt={img.alt}
                                             fill
@@ -362,7 +362,7 @@ export default function HouseOfCorruptionPage() {
                                     className="relative shrink-0 w-36 h-52 rounded-md overflow-hidden border border-white/20 bg-blue shadow-lg pointer-events-auto active:scale-95 transition-transform"
                                     onClick={() => setSelectedImage(img)}
                                 >
-                                    <Image
+                                    <SkeletonImage
                                         src={img.src}
                                         alt={img.alt}
                                         fill
@@ -383,7 +383,7 @@ export default function HouseOfCorruptionPage() {
                                     className="relative shrink-0 w-36 h-52 rounded-md overflow-hidden border border-white/20 bg-blue shadow-lg pointer-events-auto active:scale-95 transition-transform"
                                     onClick={() => setSelectedImage(img)}
                                 >
-                                    <Image
+                                    <SkeletonImage
                                         src={img.src}
                                         alt={img.alt}
                                         fill
@@ -573,7 +573,7 @@ export default function HouseOfCorruptionPage() {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="relative w-full h-full rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-black">
-                            <Image
+                            <SkeletonImage
                                 src={selectedImage.src}
                                 alt={selectedImage.alt}
                                 fill

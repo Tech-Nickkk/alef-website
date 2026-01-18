@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+
 import { Play, Instagram, Facebook, Video } from "lucide-react";
 import { urlFor } from "@/sanity/lib/image";
 
 const getAspectRatio = (type: "video" | "short" | "podcast") => {
     return type === "short" ? "aspect-[9/16]" : "aspect-video";
 };
+
+import SkeletonImage, { Skeleton } from "../CommonCom/SkeletonImage";
 
 // ... (keep your existing getEmbedUrl function here) ...
 const getEmbedUrl = (url: string, platform?: string) => {
@@ -45,6 +47,7 @@ interface VideoCardProps {
 
 export default function VideoCard({ title, videoUrl, thumbnail, publishedAt, platform, type }: VideoCardProps) {
     const [isPlaying, setIsPlaying] = useState(false);
+    const [isIframeLoading, setIsIframeLoading] = useState(true);
 
     // 1. Try to get Sanity Image
     let posterUrl = thumbnail ? urlFor(thumbnail).url() : null;
@@ -80,7 +83,7 @@ export default function VideoCard({ title, videoUrl, thumbnail, publishedAt, pla
                         aria-label="Play Video"
                     >
                         {posterUrl ? (
-                            <Image
+                            <SkeletonImage
                                 src={posterUrl}
                                 alt={typeof title === 'string' ? title : "Video Thumbnail"}
                                 fill
@@ -103,13 +106,17 @@ export default function VideoCard({ title, videoUrl, thumbnail, publishedAt, pla
                         </div>
                     </button>
                 ) : (
-                    <iframe
-                        src={getEmbedUrl(videoUrl, platform)}
-                        title={typeof title === 'string' ? title : "Video Player"}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                        className="absolute inset-0 w-full h-full"
-                    />
+                    <>
+                        {isIframeLoading && <Skeleton className="absolute inset-0 w-full h-full z-20" />}
+                        <iframe
+                            src={getEmbedUrl(videoUrl, platform)}
+                            title={typeof title === 'string' ? title : "Video Player"}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                            className={`absolute inset-0 w-full h-full transition-opacity duration-500 ${isIframeLoading ? 'opacity-0' : 'opacity-100'}`}
+                            onLoad={() => setIsIframeLoading(false)}
+                        />
+                    </>
                 )}
             </div>
 

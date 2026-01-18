@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState, useMemo } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import SkeletonImage from "../../components/CommonCom/SkeletonImage";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -23,10 +23,16 @@ const FULL_DECK = Array.from({ length: 52 }).map((_, i) => {
     if (stampTitle.includes(" & ")) stampTitle = stampTitle.split(" & ")[0];
     if (stampTitle.includes(" OF ")) stampTitle = stampTitle.split(" OF ")[0];
 
-    // Explicit Overrides for known long ones
-    if (stampTitle.includes("OUT OF TOUCH")) stampTitle = "DISCONNECTED";
-    if (stampTitle.includes("PARALYZED PREMIER")) stampTitle = "PARALYZED";
-    if (stampTitle.includes("ARCHITECT")) stampTitle = "ARCHITECT";
+    // Explicit Overrides for known long ones & Homepage Consistency
+    if (dataRef.id === "michel-aoun") stampTitle = "ENABLER";
+    else if (dataRef.id === "naim-qassem") stampTitle = "PROXY";
+    else if (dataRef.id === "riad-salameh") stampTitle = "SCHEMER";
+    else if (dataRef.id === "walid-jumblatt") stampTitle = "CHAMELEON";
+    else {
+        if (stampTitle.includes("OUT OF TOUCH")) stampTitle = "DISCONNECTED";
+        if (stampTitle.includes("PARALYZED PREMIER")) stampTitle = "PARALYZED";
+        if (stampTitle.includes("ARCHITECT")) stampTitle = "ARCHITECT";
+    }
     if (stampTitle.length > 15) {
         // Fallback truncation for anything still too long
         stampTitle = stampTitle.split(" ").slice(0, 2).join(" ");
@@ -175,7 +181,7 @@ export default function HouseOfCardsPage() {
                             <div className="card-inner absolute inset-0 preserve-3d">
                                 {/* Front (Pattern/Back) */}
                                 <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden border border-white/10 bg-blue">
-                                    <Image
+                                    <SkeletonImage
                                         src={card.back}
                                         alt="Card Back"
                                         fill
@@ -184,28 +190,30 @@ export default function HouseOfCardsPage() {
                                 </div>
 
                                 {/* Back (Revealed Image) */}
-                                <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden border border-red/40 bg-background rotate-y-180 shadow-2xl shadow-red/20 cursor-pointer pointer-events-auto">
-                                    <Link href={`/house-of-cards/${card.slug}`} className="absolute inset-0 z-20">
-                                        <div className="absolute inset-0">
-                                            <Image
+                                <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden border border-black/10 bg-[#f0f0f0] rotate-y-180 shadow-xl shadow-black/5 cursor-pointer pointer-events-auto transition-all duration-300 hover:shadow-2xl hover:border-red/20">
+                                    <Link href={`/house-of-cards/${card.slug}`} className="absolute inset-0 z-20 block w-full h-full">
+                                        <div className="absolute inset-0 flex items-center justify-center">
+                                            <SkeletonImage
                                                 src={card.front}
                                                 alt={card.name}
                                                 fill
-                                                className="object-cover"
+                                                className="object-cover scale-90 transition-transform duration-700 group-hover:scale-95"
                                             />
                                         </div>
 
                                         {/* === STAMP UI === */}
-                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -rotate-12 border-4 border-red/80 px-4 py-1 rounded-sm backdrop-blur-sm pointer-events-none shadow-lg shadow-black/20">
-                                            <span className="font-oswald text-2xl md:text-3xl font-bold text-red/90 uppercase tracking-widest whitespace-nowrap">
+                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -rotate-12 border-4 border-red/80 px-2 py-1 rounded-sm backdrop-blur-sm pointer-events-none shadow-lg shadow-black/20 w-[90%] flex justify-center">
+                                            <span
+                                                className={`font-oswald font-bold text-red/90 uppercase tracking-widest whitespace-normal text-center leading-none ${card.stamp.length > 15 ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl'}`}
+                                            >
                                                 {card.stamp}
                                             </span>
                                         </div>
 
                                         {/* === NAME CONTAINER === */}
-                                        <div className="absolute bottom-7 left-3 z-30 flex justify-center">
-                                            <div className="bg-[#f0f0f0] px-4 py-2 max-w-full">
-                                                <p className="font-bebas text-xl md:text-2xl tracking-wide uppercase text-black leading-none text-center truncate">
+                                        <div className="absolute bottom-6 inset-x-0 z-30 flex justify-center">
+                                            <div className="bg-[#f0f0f0] px-3 py-1 rounded-sm max-w-[95%]">
+                                                <p className={`font-bebas tracking-wide uppercase text-black/90 leading-none text-center truncate group-hover:scale-105 transition-transform duration-300 ${card.name.length > 15 ? 'text-2xl' : 'text-3xl'}`}>
                                                     {card.name}
                                                 </p>
                                             </div>

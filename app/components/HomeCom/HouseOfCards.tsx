@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import SkeletonImage from "../CommonCom/SkeletonImage";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
 import { useRef } from "react";
 import gsap from "gsap";
@@ -160,7 +160,7 @@ export default function HouseOfCards() {
                             <div className="flip-card-inner relative w-full h-full preserve-3d">
 
                                 <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden border border-white/10 bg-blue">
-                                    <Image
+                                    <SkeletonImage
                                         src={card.back}
                                         alt="Card Back"
                                         fill
@@ -171,7 +171,7 @@ export default function HouseOfCards() {
                                 <div className="absolute inset-0 backface-hidden rounded-2xl overflow-visible border border-black/10 bg-[#f0f0f0] rotate-y-180 shadow-xl transition-all duration-500 cursor-pointer pointer-events-auto group/card hover:shadow-2xl hover:shadow-red/10 hover:border-red/20">
                                     <Link href={`/house-of-cards/${card.slug}`} className="absolute inset-0 z-20 block w-full h-full">
                                         <div className="absolute inset-0">
-                                            <Image
+                                            <SkeletonImage
                                                 src={card.front}
                                                 alt={card.name}
                                                 fill
@@ -179,14 +179,18 @@ export default function HouseOfCards() {
                                             />
                                         </div>
 
-                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 opacity-100 lg:opacity-0 lg:group-hover/card:opacity-100 transition-opacity duration-300 transform -rotate-12 border-4 border-red/80 px-4 py-1 rounded-sm backdrop-blur-sm pointer-events-none">
-                                            <span className="font-oswald text-xl md:text-2xl font-bold text-red/90 uppercase tracking-widest whitespace-nowrap">
+                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 opacity-100 lg:opacity-0 lg:group-hover/card:opacity-100 transition-opacity duration-300 transform -rotate-12 border-4 border-red/80 px-2 py-1 rounded-sm backdrop-blur-sm pointer-events-none shadow-lg shadow-black/20 w-[90%] flex justify-center">
+                                            <span className={`font-oswald font-bold text-red/90 uppercase tracking-widest text-center whitespace-normal leading-none drop-shadow-md ${card.stampTitle.length > 10 ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl'}`}>
                                                 {card.stampTitle}
                                             </span>
                                         </div>
 
-                                        <div className="absolute bottom-6 left-8 z-30 text-center">
-                                            <p className="font-bebas md:text-3xl text-2xl tracking-wide uppercase text-black/90 leading-none group-hover/card:scale-110 transition-transform duration-300">{card.name}</p>
+                                        <div className="absolute bottom-6 inset-x-0 z-30 flex justify-center">
+                                            <div className="bg-[#f0f0f0] px-3 py-1 rounded-sm max-w-[95%]">
+                                                <p className={`font-bebas tracking-wide uppercase text-black/90 leading-none text-center truncate group-hover/card:scale-105 transition-transform duration-300 ${card.name.length > 15 ? 'text-xl' : 'text-2xl'}`}>
+                                                    {card.name}
+                                                </p>
+                                            </div>
                                         </div>
                                     </Link>
                                 </div>

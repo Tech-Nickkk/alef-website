@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, use } from "react";
-import Image from "next/image";
+import SkeletonImage from "../../../components/CommonCom/SkeletonImage";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, FileText, ShieldAlert, Fingerprint, Diamond, Club, Heart, Spade, Layers } from "lucide-react";
@@ -18,11 +18,25 @@ export default function CardDetailsPage({ params }: { params: Promise<{ id: stri
     // Determine the Stamp Title based on ID
     let stampTitle = "CORRUPT";
     if (card) {
-        if (card.id === "michel-aoun") stampTitle = "THE ENABLER";
-        else if (card.id === "naim-qassem") stampTitle = "THE PROXY";
-        else if (card.id === "riad-salameh") stampTitle = "THE SCHEMER";
-        else if (card.id === "walid-jumblatt") stampTitle = "THE CHAMELEON";
-        else stampTitle = card.tag.split(" ")[0];
+        // Smarter Stamp Logic & One-Liner Enforcement (Matching Listing Page)
+        stampTitle = card.tag.replace(/^THE\s+/, "");
+        if (stampTitle.includes(" & ")) stampTitle = stampTitle.split(" & ")[0];
+        if (stampTitle.includes(" OF ")) stampTitle = stampTitle.split(" OF ")[0];
+
+        // Explicit Overrides for known long ones & Homepage Consistency
+        if (card.id === "michel-aoun") stampTitle = "ENABLER";
+        else if (card.id === "naim-qassem") stampTitle = "PROXY";
+        else if (card.id === "riad-salameh") stampTitle = "SCHEMER";
+        else if (card.id === "walid-jumblatt") stampTitle = "CHAMELEON";
+        else {
+            if (stampTitle.includes("OUT OF TOUCH")) stampTitle = "DISCONNECTED";
+            if (stampTitle.includes("PARALYZED PREMIER")) stampTitle = "PARALYZED";
+            if (stampTitle.includes("ARCHITECT")) stampTitle = "ARCHITECT";
+        }
+        if (stampTitle.length > 15) {
+            // Fallback truncation for anything still too long
+            stampTitle = stampTitle.split(" ").slice(0, 2).join(" ");
+        }
     }
 
     if (!card) notFound();
@@ -41,77 +55,73 @@ export default function CardDetailsPage({ params }: { params: Promise<{ id: stri
     return (
         <div ref={containerRef} className="bg-background min-h-screen text-foreground font-sans selection:bg-red selection:text-white overflow-hidden">
 
-            {/* Ambient Background */}
-            <div className="fixed inset-0 pointer-events-none z-0">
-
-                <div className="absolute top-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-red/5 blur-[150px] rounded-full"></div>
-            </div>
-
             <main className="relative z-10 pt-32 px-6 md:px-12 lg:px-24 max-w-[1800px] mx-auto">
 
-                {/* Main Dossier Grid */}
-                <div className="grid lg:grid-cols-[1fr_1.5fr] xl:grid-cols-[450px_1fr] gap-12 lg:gap-24 mb-24">
+                {/* Main Dossier Grid Container */}
+                <div className="relative border border-white/10 bg-blue/90 rounded-sm p-6 md:p-10 mb-20 shadow-2xl backdrop-blur-sm overflow-hidden max-w-[1600px] mx-auto">
 
-                    {/* LEFT COLUMN: VISUAL IDENTIFICATION */}
-                    <div className="relative">
-                        {/* Image Container */}
-                        <div className="dossier-image-container relative w-full aspect-3/4 rounded-2xl overflow-hidden border border-white/10 bg-[#f0f0f0] shadow-2xl">
+                    <div className="grid lg:grid-cols-[1fr_1.5fr] xl:grid-cols-[400px_1fr] gap-8 lg:gap-12 relative z-10">
 
-                            {/* The Card Image */}
-                            <Image
-                                src={card.image}
-                                alt={card.name}
-                                fill
-                                className="object-cover scale-90"
-                                priority
-                            />
+                        {/* LEFT COLUMN: VISUAL IDENTIFICATION */}
+                        <div className="relative">
+                            {/* Image Container */}
+                            <div className="dossier-image-container relative w-full aspect-3/4 rounded-2xl overflow-hidden border border-white/10 bg-[#f0f0f0] shadow-2xl">
 
-                            {/* THE STAMP */}
-                            <div className="stamp-mark absolute top-6 right-6 z-20 transform -rotate-12 mix-blend-normal">
-                                <div className="border-[4px] border-red/90 px-4 py-1 rounded-sm backdrop-blur-md bg-black/40 shadow-lg">
-                                    <span className="font-bebas text-4xl md:text-5xl text-red uppercase tracking-widest whitespace-nowrap drop-shadow-md">
-                                        {stampTitle}
-                                    </span>
+                                {/* The Card Image */}
+                                <SkeletonImage
+                                    src={card.image}
+                                    alt={card.name}
+                                    fill
+                                    className="object-cover scale-90"
+                                    priority
+                                />
+
+                                {/* THE STAMP */}
+                                <div className="stamp-mark absolute top-12 right-6 z-20 transform -rotate-12 mix-blend-normal max-w-[90%] pointer-events-none">
+                                    <div className="border-[4px] border-red/90 px-6 py-2 rounded-sm backdrop-blur-sm bg-white/10 shadow-lg flex justify-center">
+                                        <span className={`font-oswald font-bold text-red/90 uppercase tracking-widest text-center whitespace-normal leading-none drop-shadow-md ${stampTitle.length > 10 ? 'text-3xl' : 'text-5xl'}`}>
+                                            {stampTitle}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                {/* NAME OVERLAY - FIXED VISIBILITY */}
+                                <div className="absolute bottom-10 inset-x-0 z-30 flex justify-center select-none">
+                                    <div className="bg-[#f0f0f0] px-6 py-2 rounded-sm max-w-[90%]">
+                                        <p className={`font-bebas tracking-wide uppercase text-black/90 leading-none text-center truncate ${card.name.length > 15 ? 'text-3xl' : 'text-4xl'}`}>
+                                            {card.name}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-
-                            {/* NAME OVERLAY */}
-                            <div className="absolute bottom-10 left-8 z-30 text-center">
-                                <p className="font-bebas text-6xl tracking-wide uppercase text-black/90 leading-none">{card.name}</p>
-                            </div>
                         </div>
-                    </div>
 
-                    {/* RIGHT COLUMN: TEXT CONTENT */}
-                    <div className="flex flex-col justify-center">
-                        <div className="dossier-header-text space-y-4 mb-10">
-                            <div className="flex items-center gap-3">
-                                <span className="h-px w-12 bg-red"></span>
-                                <span className="font-oswald text-red text-sm tracking-[0.3em] uppercase">Target Profile</span>
+                        {/* RIGHT COLUMN: TEXT CONTENT */}
+                        <div className="flex flex-col justify-center">
+                            <div className="dossier-header-text space-y-4 mb-8">
+                                <h1 className="text-5xl md:text-7xl font-bebas leading-[0.85] tracking-tighter uppercase text-white drop-shadow-lg">
+                                    {card.name}
+                                </h1>
+
+                                <p className="font-oswald text-xl text-white/60 uppercase tracking-wide font-bold">
+                                    {card.role}
+                                </p>
                             </div>
 
-                            <h1 className="text-6xl md:text-8xl font-bebas leading-[0.85] tracking-tighter uppercase text-foreground drop-shadow-lg">
-                                {card.name}
-                            </h1>
+                            {/* Summary Box */}
+                            <div className="dossier-header-text bg-black/20 border-l-4 border-red p-6 rounded-r-sm mb-8 backdrop-blur-sm">
+                                <p className="font-oswald text-lg text-white/80 leading-relaxed font-light">
+                                    {card.summary}
+                                </p>
+                            </div>
 
-                            <p className="font-oswald text-xl md:text-2xl text-foreground/60 uppercase tracking-wide font-bold">
-                                {card.role}
-                            </p>
-                        </div>
-
-                        {/* Summary Box */}
-                        <div className="dossier-header-text bg-foreground/5 border-l-4 border-red p-6 md:p-8 rounded-r-sm mb-10 backdrop-blur-sm">
-                            <p className="font-oswald text-lg md:text-xl text-foreground/80 leading-relaxed font-light">
-                                {card.summary}
-                            </p>
-                        </div>
-
-                        {/* Quote */}
-                        <div className="dossier-header-text relative max-w-2xl">
-                            <span className="absolute -top-6 -left-4 font-bebas text-8xl text-foreground/5 z-0">"</span>
-                            <blockquote className="relative z-10 font-bebas text-3xl md:text-4xl text-foreground/90 uppercase leading-tight tracking-wide italic">
-                                "{card.quote}"
-                            </blockquote>
+                            {/* Quote */}
+                            <div className="dossier-header-text relative max-w-2xl">
+                                <span className="absolute -top-5 -left-4 font-bebas text-7xl text-white/5 z-0">"</span>
+                                <blockquote className="relative z-10 font-bebas text-2xl md:text-3xl text-white/90 uppercase leading-tight tracking-wide italic">
+                                    "{card.quote}"
+                                </blockquote>
+                            </div>
                         </div>
                     </div>
                 </div>

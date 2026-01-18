@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SkeletonImage from "../CommonCom/SkeletonImage";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
 import { client } from "../../../sanity/lib/client";
 import { urlFor } from "../../../sanity/lib/image";
@@ -106,10 +107,12 @@ export default async function BlogsAndArticles() {
                     {/* Image Card */}
                     <div className="bg-blue border border-white/10 rounded-2xl p-2 min-h-[400px] h-full relative overflow-hidden group">
                         {blog.mainImage?.asset && (
-                            <img
+                            <SkeletonImage
                                 src={urlFor(blog.mainImage).url()}
                                 alt={blog.title}
-                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                unoptimized
                             />
                         )}
 

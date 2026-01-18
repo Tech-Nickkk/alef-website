@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Skeleton } from "../CommonCom/SkeletonImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,6 +14,8 @@ export default function Hero() {
     const videoRef = useRef<HTMLDivElement>(null);
     const [isMounted, setIsMounted] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+    const [isModalVideoLoaded, setIsModalVideoLoaded] = useState(false);
 
     useEffect(() => {
         setIsMounted(true);
@@ -42,13 +45,14 @@ export default function Hero() {
         }
         return () => {
             document.body.style.overflow = 'unset';
+            setIsModalVideoLoaded(false); // Reset modal video loading state on close
         };
     }, [isModalOpen]);
 
     if (!isMounted) {
         return (
             <section ref={heroRef} className="relative min-h-screen flex flex-col overflow-hidden bg-black">
-                {/* Fallback/Loader could go here, or just a black background to match video start */}
+                <Skeleton className="absolute inset-0 w-full h-full" />
             </section>
         );
     }
@@ -57,12 +61,14 @@ export default function Hero() {
         <section ref={heroRef} className="relative min-h-screen flex flex-col overflow-hidden">
             {/* Background Video */}
             <div ref={videoRef} className="absolute inset-0 z-0 hero-video pointer-events-none">
+                {!isVideoLoaded && <Skeleton className="absolute inset-0 w-full h-full z-10" />}
                 <video
-                    className="absolute top-1/2 left-1/2 w-full h-full min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover"
+                    className={`absolute top-1/2 left-1/2 w-full h-full min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover transition-opacity duration-700 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
                     autoPlay
                     muted
                     loop
                     playsInline
+                    onLoadedData={() => setIsVideoLoaded(true)}
                 >
                     <source src="/home/hero-intro-video.mp4" type="video/mp4" />
                 </video>
@@ -117,11 +123,13 @@ export default function Hero() {
                         className="relative w-full max-w-6xl aspect-video rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-black"
                         onClick={(e) => e.stopPropagation()}
                     >
+                        {!isModalVideoLoaded && <Skeleton className="absolute inset-0 w-full h-full z-20" />}
                         <video
-                            className="w-full h-full object-contain"
+                            className={`w-full h-full object-contain transition-opacity duration-500 ${isModalVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
                             controls
                             autoPlay
                             playsInline
+                            onLoadedData={() => setIsModalVideoLoaded(true)}
                         >
                             <source src="/home/hero-detailed-video.mp4" type="video/mp4" />
                             Your browser does not support the video tag.

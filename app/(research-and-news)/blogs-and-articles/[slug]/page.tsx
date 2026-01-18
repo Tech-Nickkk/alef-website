@@ -1,7 +1,7 @@
 import { client } from "@/sanity/lib/client";
 import { urlFor } from '@/sanity/lib/image';
 import Link from 'next/link';
-import Image from 'next/image';
+import SkeletonImage from "@/app/components/CommonCom/SkeletonImage";
 import { Calendar, User } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { PortableText } from '@portabletext/react';
@@ -14,7 +14,7 @@ const portableTextComponents = {
             return (
                 <figure className="my-10 overflow-hidden rounded-sm border border-white/10 group">
                     <div className="relative aspect-video w-full">
-                        <Image
+                        <SkeletonImage
                             src={urlFor(value).width(1200).url()}
                             alt={value.alt || 'ALEF Blog Image'}
                             fill
@@ -107,7 +107,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <div className="flex items-center gap-4">
                         {post.author?.image ? (
                             <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-red/20">
-                                <Image
+                                <SkeletonImage
                                     src={urlFor(post.author.image).width(128).height(128).url()}
                                     alt={post.author.discloseName === true ? post.author.name : 'Author'}
                                     fill
@@ -149,7 +149,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     post.mainImage && (
                         <div className="mb-20">
                             <div className="relative aspect-video w-full rounded-sm overflow-hidden shadow-2xl border border-theme-white/10">
-                                <Image
+                                <SkeletonImage
                                     src={urlFor(post.mainImage).width(1200).height(675).url()}
                                     alt={post.title}
                                     fill
