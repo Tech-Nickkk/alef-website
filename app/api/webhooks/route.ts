@@ -1,8 +1,8 @@
 import { headers } from 'next/headers';
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
-import { db } from '@/lib/firebaseAdmin'; 
-import * as admin from 'firebase-admin'; 
+import { db } from '@/lib/firebaseAdmin';
+import * as admin from 'firebase-admin';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET!;
@@ -27,10 +27,10 @@ export async function POST(req: Request) {
 
     // --- EXTRACT DATA ---
     const { firebaseUserId, donationType, isSponsor } = session.metadata || {};
-    
+
     // Amount comes in cents, so divide by 100
     const amount = session.amount_total ? session.amount_total / 100 : 0;
-    
+
     const customerEmail = session.customer_details?.email;
     const stripeCustomerId = session.customer as string;
 
@@ -38,8 +38,8 @@ export async function POST(req: Request) {
 
     // SAFETY CHECK: In the rare case metadata is missing, don't crash the server
     if (!firebaseUserId) {
-        console.error("Missing firebaseUserId in session metadata");
-        return NextResponse.json({ error: 'Missing User ID' }, { status: 400 });
+      console.error("Missing firebaseUserId in session metadata");
+      return NextResponse.json({ error: 'Missing User ID' }, { status: 400 });
     }
 
     try {
@@ -54,24 +54,24 @@ export async function POST(req: Request) {
         stripeSessionId: session.id,
         stripeCustomerId: stripeCustomerId,
         donationType: donationType,
-        userId: firebaseUserId, 
+        userId: firebaseUserId,
       });
 
       // --- ACTION B: Update User Profile ---
       // Since we enforce login, we update the user document directly
       const userRef = db.collection('users').doc(firebaseUserId);
-      
+
       await userRef.set({
         stripeCustomerId: stripeCustomerId,
         lastDonationDate: new Date(),
         totalDonated: admin.firestore.FieldValue.increment(amount),
         isSponsor: isSponsor === 'true' ? true : undefined
       }, { merge: true });
-      
+
       await userRef.collection('payment_history').add({
-          donationId: donationRef.id,
-          amount,
-          date: new Date()
+        donationId: donationRef.id,
+        amount,
+        date: new Date()
       });
 
       // --- ACTION C: Add to Public Sponsors List ---
@@ -86,17 +86,18 @@ export async function POST(req: Request) {
         const sponsorName = session.custom_fields?.[0]?.text?.value || customerEmail?.split('@')[0] || "Anonymous Sponsor";
 
         await db.collection('sponsors').add({
-            name: sponsorName,
-            amount: amount,
-            tier: tier,
-            joinedAt: new Date(),
-            display: true 
+          name: sponsorName,
+          amount: amount,
+          tier: tier,
+          joinedAt: new Date(),
+          display: true
         });
       }
 
     } catch (error) {
       console.error('Error updating Firebase:', error);
-      return NextResponse.json({ error: 'Firebase update failed' }, { status: 500 });
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      return NextResponse.json({ error: `Firebase update failed: ${errorMessage}` }, { status: 500 });
     }
   }
 
