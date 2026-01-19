@@ -14,12 +14,13 @@ export default function LayoutWrapper({
 }) {
     const pathname = usePathname();
 
-    // Check if we're on the Sanity Studio route or Donate Success page
+    // Check if we're on the Sanity Studio route or Donate Success page or Login page
     const isStudioRoute = pathname?.startsWith("/studio");
     const isDonateSuccess = pathname?.startsWith("/donate/success");
+    const isLoginPage = pathname?.startsWith("/login");
 
     // If we're on these routes, render only the children without the site layout
-    if (isStudioRoute || isDonateSuccess) {
+    if (isStudioRoute || isDonateSuccess || isLoginPage) {
         return <>{children}</>;
     }
 

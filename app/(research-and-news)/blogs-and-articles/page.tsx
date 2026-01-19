@@ -2,6 +2,8 @@ import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
 import { client } from "@/sanity/lib/client";
 import BlogsFeed from "../../components/Blogs/BlogsFeed";
 
+export const revalidate = 60;
+
 export default async function BlogsPage() {
     const query = `
     *[_type == "blog"] | order(publishedAt desc) {

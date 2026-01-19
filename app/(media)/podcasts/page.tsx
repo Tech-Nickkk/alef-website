@@ -2,6 +2,8 @@ import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
 import MediaFeed from "../../components/Media/MediaFeed";
 import { client } from "@/sanity/lib/client";
 
+export const revalidate = 60;
+
 export default async function PodcastsPage() {
     const query = `*[_type == "podcast"] | order(publishedAt desc) {
         _id,

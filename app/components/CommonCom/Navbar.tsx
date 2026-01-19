@@ -8,6 +8,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTheme } from "./ThemeProvider";
 import { useGSAP } from "@gsap/react";
 import { createPortal } from "react-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "@/lib/firebase";
+import { signOut } from "firebase/auth";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,6 +20,7 @@ export default function Navbar() {
     const [isLangOpen, setIsLangOpen] = useState(false);
     const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
     const [mounted, setMounted] = useState(false);
+    const [user, loading] = useAuthState(auth);
 
     useGSAP(() => {
         const showAnim = gsap.from(navRef.current, {
@@ -118,7 +122,7 @@ export default function Navbar() {
 
     return (
         <>
-            <nav ref={navRef} className="fixed top-0 z-50 w-full px-4 md:px-8 lg:px-12 flex items-center justify-between bg-background navbar-container h-16 md:h-20 overflow-visible">
+            <nav ref={navRef} className="fixed top-0 z-50 w-full px-4 md:px-6 flex items-center justify-between bg-background navbar-container h-16 md:h-20 overflow-visible">
 
                 {/* Left: Logo */}
                 <div className="shrink-0 cursor-pointer relative z-50">
@@ -203,8 +207,28 @@ export default function Navbar() {
                                 </ul>
                             </div>
                         </div>
+
                     </div>
 
+                    {/* Login Button */}
+                    <div className="hidden xl:block">
+                        {user ? (
+                            <div className="flex items-center gap-4">
+                                <span className="text-background text-xs uppercase font-oswald">Hello, {user.displayName}</span>
+                                <button
+                                    onClick={() => signOut(auth)}
+                                    className="text-red-500 hover:text-red-400 text-xs uppercase font-oswald tracking-widest"
+                                >
+                                    Logout
+                                </button>
+                            </div>
+                        ) : (
+                            <Link href="/login" className="text-foreground/90 hover:text-foreground transition-colors p-2 hover:bg-foreground/10 rounded-none flex items-center justify-center" aria-label="Login">
+                                <UserIcon className="w-5 h-5" />
+                            </Link>
+                        )}
+                    </div>
+                    
                     {/* Donate - Always Visible */}
                     <div className="relative group">
                         <Link href="/donate">
@@ -376,4 +400,8 @@ function MenuIcon({ className }: { className?: string }) {
 
 function XIcon({ className }: { className?: string }) {
     return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>;
+}
+
+function UserIcon({ className }: { className?: string }) {
+    return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>;
 }

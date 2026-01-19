@@ -2,6 +2,8 @@ import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import MediaFeed from "../../components/Media/MediaFeed";
 import { client } from "@/sanity/lib/client";
 
+export const revalidate = 60;
+
 export default async function ShortsPage() {
     const query = `*[_type == "short"] | order(publishedAt desc) {
         _id,

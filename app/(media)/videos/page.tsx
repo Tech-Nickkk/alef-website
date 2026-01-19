@@ -1,6 +1,8 @@
 import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
-import MediaFeed from "../../components/Media/MediaFeed"; 
+import MediaFeed from "../../components/Media/MediaFeed";
 import { client } from "@/sanity/lib/client";
+
+export const revalidate = 60;
 
 export default async function VideosPage() {
     const query = `*[_type == "video"] | order(publishedAt desc) {

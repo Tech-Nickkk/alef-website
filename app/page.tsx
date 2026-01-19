@@ -1,4 +1,6 @@
 import Hero from "./components/HomeCom/Hero";
+
+export const revalidate = 60;
 import PresidentialLetter from "./components/HomeCom/PresidentialLetter";
 import ChairmanMessage from "./components/HomeCom/ChairmanMessage";
 import WhoWeAre from "./components/HomeCom/WhoWeAre";

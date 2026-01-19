@@ -124,5 +124,5 @@ html.lenis body {
     rgba(255,255,255,0.05) 100%
   );
   background-size: 200% 100%;
-  animation: shimmer 1.5s infinite linear;
+  animation: shimmer 3s infinite linear;
 }

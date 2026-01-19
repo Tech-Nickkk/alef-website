@@ -7,6 +7,8 @@ import { notFound } from 'next/navigation';
 import { PortableText } from '@portabletext/react';
 import ArticleProgressClient from './ArticleProgressClient';
 
+export const revalidate = 60;
+
 const portableTextComponents = {
     types: {
         image: ({ value }: any) => {

@@ -5,7 +5,11 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 export async function POST(req: Request) {
   try {
-    const { amount, donationType } = await req.json();
+    const { amount, donationType, userId, userEmail } = await req.json();
+
+    if (!userId) {
+        return NextResponse.json({ error: "Authentication required" }, { status: 401 });
+    }
 
     const isSubscription = donationType === 'monthly';
 
@@ -33,8 +37,11 @@ export async function POST(req: Request) {
       ],
       success_url: `${req.headers.get('origin')}/donate/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${req.headers.get('origin')}/donate?canceled=true`,
+      customer_email: userEmail,
       metadata: {
         type: donationType, 
+        firebaseUserId: userId, 
+        isSponsor: donationType === 'sponsor' ? 'true' : 'false',
       },
     });
 

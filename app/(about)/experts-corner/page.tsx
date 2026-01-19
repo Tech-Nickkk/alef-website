@@ -1,5 +1,7 @@
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import { client } from "@/sanity/lib/client";
+
+export const revalidate = 60;
 import ExpertsFeed from "./ExpertsFeed";
 
 export default async function ExpertsCornerPage() {

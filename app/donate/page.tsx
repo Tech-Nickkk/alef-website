@@ -1,23 +1,39 @@
 "use client";
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import { useState } from 'react';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "@/lib/firebase";
+import { useRouter } from "next/navigation";
 
 export default function DonatePage() {
     const [donationType, setDonationType] = useState<'one-time' | 'monthly' | 'sponsor'>('one-time');
     const [customAmount, setCustomAmount] = useState('');
     const [isError, setIsError] = useState(false);
-    const [isLoading, setIsLoading] = useState(false); // Added loading state
+    const [isLoading, setIsLoading] = useState(false);
+    const [user] = useAuthState(auth);
+    const router = useRouter();
 
-    // 1. Helper to handle the API call
     const processPayment = async (amount: number) => {
+
+        if (!user) {
+            const confirmLogin = confirm("You must be logged in to donate. Would you like to log in now?");
+            if (confirmLogin) {
+                router.push("/login");
+            }
+            return; 
+        }
+
         setIsLoading(true);
+
         try {
             const response = await fetch('/api/checkout', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
                     amount: amount, 
-                    donationType: donationType 
+                    donationType: donationType,
+                    userId: user.uid, 
+                    userEmail: user.email
                 }),
             });
 
@@ -29,7 +45,6 @@ export default function DonatePage() {
                 return;
             }
 
-            // Redirect to Stripe
             if (url) window.location.href = url;
 
         } catch (error) {
@@ -39,9 +54,7 @@ export default function DonatePage() {
         }
     };
 
-    // 2. Your existing logic, updated to call processPayment
     const handleDonate = () => {
-        // If Custom Amount is filled, use that
         if (customAmount) {
             const amount = parseFloat(customAmount);
             
@@ -60,9 +73,6 @@ export default function DonatePage() {
 
             processPayment(amount);
         } else {
-            // Logic for when they didn't type a custom amount but clicked "Donate Now"
-            // Usually, this button is for the custom input. 
-            // The Tier buttons below handle their own clicks.
             alert("Please select a tier or enter an amount.");
         }
     };
@@ -104,7 +114,7 @@ export default function DonatePage() {
                 {/* Donation Type Toggle */}
                 <div className="flex justify-center">
                     <div className="relative flex items-center bg-foreground/5 p-1 rounded-full border border-foreground/10 w-[450px]">
-                        <div className={`absolute left-1 top-1 bottom-1 w-[calc(33.33%-4px)] bg-red rounded-full shadow-lg transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${donationType === 'monthly' ? 'translate-x-[100%]' :
+                        <div className={`absolute left-1 top-1 bottom-1 w-[calc(33.33%-4px)] bg-red rounded-full shadow-lg transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${donationType === 'monthly' ? 'translate-x-full' :
                             donationType === 'sponsor' ? 'translate-x-[200%]' :
                                 'translate-x-0'
                             }`}></div>
@@ -185,8 +195,6 @@ export default function DonatePage() {
                 </div>
 
                 <div className="text-center space-y-4 pt-8">
-                     {/* Your existing Footer text/SVG icons here (No changes needed) */}
-                     {/* ... Paste your SVG code here ... */}
                      <p className="font-oswald text-xs text-foreground/40 uppercase tracking-widest">
                         * ALEF is a registered 501(c)(3) non-profit organization. All donations are tax-deductible.
                     </p>
