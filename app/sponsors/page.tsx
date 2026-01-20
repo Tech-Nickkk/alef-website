@@ -1,86 +1,76 @@
-"use client";
-import AnimatedTitle from "../components/CommonCom/AnimatedTitle";
-import { useEffect, useState } from "react";
-import { db } from "@/lib/firebase"; 
-import { collection, query, orderBy, getDocs } from "firebase/firestore";
+import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
+import { ShieldCheck, Star, HeartHandshake } from "lucide-react";
 
 export default function SponsorsPage() {
-    const [sponsors, setSponsors] = useState<any[]>([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchSponsors = async () => {
-            try {
-                // Fetch sponsors sorted by highest amount first
-                const q = query(
-                    collection(db, "sponsors"), 
-                    orderBy("amount", "desc") 
-                );
-                
-                const querySnapshot = await getDocs(q);
-                const data = querySnapshot.docs.map(doc => doc.data());
-                setSponsors(data);
-            } catch (error) {
-                console.error("Error fetching sponsors:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-        
-        fetchSponsors();
-    }, []);
-
-    // 1. Loading State
-    if (loading) {
-         return (
-            <div className="min-h-screen bg-theme-black flex items-center justify-center">
-                <p className="font-oswald text-white/50 animate-pulse tracking-widest uppercase">Loading...</p>
-            </div>
-         );
-    }
-
-    // 2. FALLBACK: Use your original "In Progress" UI if no sponsors exist
-    if (sponsors.length === 0) {
-        return (
-            <div className="bg-theme-black min-h-screen flex flex-col relative overflow-hidden items-center justify-center">
-                <main className="relative z-10 text-center px-4">
-                    <AnimatedTitle
-                        text="IN PROGRESS"
-                        className="text-6xl md:text-9xl font-bebas text-theme-white mb-6 justify-center flex"
-                    />
-                    <div className="h-1 w-32 bg-red-600 mx-auto mb-8"></div>
-                    <p className="font-oswald text-xl md:text-3xl text-theme-white/70 tracking-widest uppercase">
-                        This page is currently under development.
-                    </p>
-                </main>
-            </div>
-        );
-    }
-
-    // 3. REAL UI: If sponsors exist, show the list
     return (
-        <div className="bg-theme-black min-h-screen pt-32 px-6">
-            <div className="text-center mb-16">
-                 <AnimatedTitle text="OUR SPONSORS" className="text-6xl md:text-8xl font-bebas text-theme-white" />
-                 <p className="font-oswald text-white/60 mt-4 tracking-widest uppercase">
-                    Partners powering our mission
-                 </p>
-            </div>
-
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                {sponsors.map((sponsor, idx) => (
-                    <div key={idx} className="group p-8 border border-white/10 bg-white/5 rounded-xl text-center hover:bg-white/10 transition-colors duration-300">
-                        <div className="mb-4">
-                            {/* You can replace this with an actual logo if you add image uploads later */}
-                            <div className="w-16 h-16 bg-red-600/20 rounded-full mx-auto flex items-center justify-center text-red-500 font-bebas text-2xl">
-                                {sponsor.name.charAt(0)}
-                            </div>
-                        </div>
-                        <h3 className="text-2xl font-bebas text-white group-hover:text-red-500 transition-colors">{sponsor.name}</h3>
-                        <p className="text-white/40 font-oswald text-xs tracking-widest uppercase mt-2">{sponsor.tier}</p>
+        <main className="min-h-screen bg-background pt-24 md:pt-32 pb-16 px-4 md:px-12 lg:px-24">
+            <div className="max-w-7xl mx-auto space-y-16">
+                
+                {/* Header */}
+                <div className="text-center space-y-6">
+                    <div className="flex items-center justify-center gap-3">
+                        <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-red rounded-full animate-pulse"></span>
+                        <span className="font-oswald text-red tracking-[0.2em] uppercase text-xs md:text-sm font-bold">
+                            Our Supporters
+                        </span>
+                        <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-red rounded-full animate-pulse"></span>
                     </div>
-                ))}
-             </div>
-        </div>
+
+                    <AnimatedTitle
+                        text="OUR SPONSORS"
+                        className="text-4xl md:text-7xl lg:text-8xl font-bold font-bebas text-foreground uppercase leading-none"
+                    />
+                    
+                    <p className="font-oswald text-foreground/60 text-lg max-w-2xl mx-auto">
+                        We are deeply grateful to the visionaries and partners who empower our mission.
+                    </p>
+                </div>
+
+                {/* Static Placeholder Content */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                    <div className="bg-foreground/5 border border-foreground/10 p-8 rounded-2xl text-center space-y-4">
+                        <div className="w-12 h-12 bg-red/10 rounded-full flex items-center justify-center mx-auto text-red">
+                            <Star className="w-6 h-6" />
+                        </div>
+                        <h3 className="font-bebas text-2xl text-foreground">Community Partners</h3>
+                        <p className="font-oswald text-foreground/60 text-sm">
+                            Thank you to the individuals who support us every day.
+                        </p>
+                    </div>
+
+                    <div className="bg-foreground/5 border border-foreground/10 p-8 rounded-2xl text-center space-y-4 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-16 h-16 bg-red/5 rounded-bl-full"></div>
+                        <div className="w-12 h-12 bg-red/10 rounded-full flex items-center justify-center mx-auto text-red">
+                            <ShieldCheck className="w-6 h-6" />
+                        </div>
+                        <h3 className="font-bebas text-2xl text-foreground">Strategic Allies</h3>
+                        <p className="font-oswald text-foreground/60 text-sm">
+                            Key partners helping us drive legislative change.
+                        </p>
+                    </div>
+
+                    <div className="bg-foreground/5 border border-foreground/10 p-8 rounded-2xl text-center space-y-4">
+                        <div className="w-12 h-12 bg-red/10 rounded-full flex items-center justify-center mx-auto text-red">
+                            <HeartHandshake className="w-6 h-6" />
+                        </div>
+                        <h3 className="font-bebas text-2xl text-foreground">Global Visionaries</h3>
+                        <p className="font-oswald text-foreground/60 text-sm">
+                            Leaders committed to a free and sovereign Lebanon.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Call to Action */}
+                <div className="text-center pt-12 border-t border-foreground/10">
+                    <p className="font-oswald text-foreground/50 uppercase tracking-widest text-sm mb-6">
+                        Want to become a sponsor?
+                    </p>
+                    <a href="/donate" className="inline-block bg-red hover:bg-[#c4151c] text-white px-8 py-3 uppercase font-oswald tracking-widest text-sm rounded transition-colors shadow-lg shadow-red/20">
+                        Support Our Mission
+                    </a>
+                </div>
+
+            </div>
+        </main>
     );
 }

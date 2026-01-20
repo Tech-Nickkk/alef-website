@@ -38,10 +38,10 @@ export async function POST(req: Request) {
       success_url: `${req.headers.get('origin')}/donate/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${req.headers.get('origin')}/donate?canceled=true`,
       customer_email: userEmail,
+    
       metadata: {
-        type: donationType, 
+        donationType: donationType, 
         firebaseUserId: userId, 
-        isSponsor: donationType === 'sponsor' ? 'true' : 'false',
       },
     });
 

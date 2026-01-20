@@ -32,7 +32,7 @@ export default function ArticleProgressClient({ children }: { children: React.Re
     return (
         <div ref={containerRef} className="relative">
             {/* Scroll Progress Line */}
-            <div className="absolute -left-8 md:-left-12 top-0 bottom-0 w-[1px] bg-foreground/10 hidden xl:block">
+            <div className="absolute -left-8 md:-left-12 top-0 bottom-0 w-px bg-foreground/10 hidden xl:block">
                 <div
                     ref={progressRef}
                     className="w-full bg-red origin-top h-0"

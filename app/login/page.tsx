@@ -50,13 +50,33 @@ export default function LoginPage() {
             router.push("/");
         } catch (err: any) {
             console.error("Auth error", err);
-            let msg = "An error occurred.";
-            if (err.code === 'auth/invalid-email') msg = "Invalid email address.";
-            else if (err.code === 'auth/user-disabled') msg = "User account disabled.";
-            else if (err.code === 'auth/user-not-found') msg = "No user found with this email.";
-            else if (err.code === 'auth/wrong-password') msg = "Incorrect password.";
-            else if (err.code === 'auth/email-already-in-use') msg = "Email already in use.";
-            else if (err.code === 'auth/weak-password') msg = "Password is too weak.";
+
+            let msg = "Unable to sign in. Please check your details and try again.";
+
+            if (
+                err.code === 'auth/user-not-found' || 
+                err.code === 'auth/wrong-password' || 
+                err.code === 'auth/invalid-credential' || 
+                err.code === 'auth/invalid-login-credentials'
+            ) {
+                msg = "Invalid email or password."; 
+            }
+
+            else if (err.code === 'auth/user-disabled') {
+                msg = "This account has been disabled. Please contact support.";
+            }
+
+            else if (err.code === 'auth/too-many-requests') {
+                msg = "Too many failed attempts. Please try again later.";
+            }
+
+            else if (err.code === 'auth/email-already-in-use') {
+                msg = "An account with this email already exists.";
+            }
+
+            else if (err.code === 'auth/weak-password') {
+                msg = "Password should be at least 6 characters.";
+            }
 
             setError(msg);
             setLoading(false);
@@ -70,7 +90,6 @@ export default function LoginPage() {
 
     return (
         <div className="min-h-screen bg-background flex items-center justify-center p-4 relative overflow-hidden font-oswald text-foreground">
-            {/* Back to Home Arrow */}
             <Link
                 href="/"
                 className="absolute top-8 left-8 z-50 p-3 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:scale-105 transition-all duration-300 group"
@@ -79,7 +98,6 @@ export default function LoginPage() {
                 <ArrowLeft className="w-6 h-6 text-foreground/80 group-hover:text-foreground transition-colors" />
             </Link>
 
-            {/* Background Ambience - Adjusted to match the blue theme better */}
             <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-blue/20 rounded-full blur-[120px] pointer-events-none" />
             <div className="absolute bottom-[-10%] right-[-5%] w-[40%] h-[40%] bg-red/10 rounded-full blur-[100px] pointer-events-none" />
 
@@ -98,7 +116,6 @@ export default function LoginPage() {
 
                 <form onSubmit={handleEmailAuth} className="space-y-6">
 
-                    {/* Email Input */}
                     <div className="space-y-2">
                         <label className="text-xs font-semibold text-white/70 uppercase tracking-widest ml-1">Email Address</label>
                         <div className="relative group">
@@ -116,7 +133,6 @@ export default function LoginPage() {
                         </div>
                     </div>
 
-                    {/* Password Input */}
                     <div className="space-y-2">
                         <label className="text-xs font-semibold text-white/70 uppercase tracking-widest ml-1">Password</label>
                         <div className="relative group">
@@ -141,14 +157,12 @@ export default function LoginPage() {
                         </div>
                     </div>
 
-                    {/* Error Message */}
                     {error && (
                         <div className="text-red-400 text-sm bg-red-500/10 p-3 rounded-lg border border-red-500/20 text-center font-sans">
                             {error}
                         </div>
                     )}
 
-                    {/* Submit Button */}
                     <button
                         type="submit"
                         disabled={loading}

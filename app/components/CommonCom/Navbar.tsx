@@ -10,7 +10,6 @@ import { useGSAP } from "@gsap/react";
 import { createPortal } from "react-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase";
-import { signOut } from "firebase/auth";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,7 +19,7 @@ export default function Navbar() {
     const [isLangOpen, setIsLangOpen] = useState(false);
     const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
     const [mounted, setMounted] = useState(false);
-    const [user, loading] = useAuthState(auth);
+    const [user] = useAuthState(auth);
 
     useGSAP(() => {
         const showAnim = gsap.from(navRef.current, {
@@ -210,18 +209,28 @@ export default function Navbar() {
 
                     </div>
 
-                    {/* Login Button */}
+                    {/* Login / Profile Button */}
                     <div className="hidden xl:block">
                         {user ? (
-                            <div className="flex items-center gap-4">
-                                <span className="text-background text-xs uppercase font-oswald">Hello, {user.displayName}</span>
-                                <button
-                                    onClick={() => signOut(auth)}
-                                    className="text-red-500 hover:text-red-400 text-xs uppercase font-oswald tracking-widest"
-                                >
-                                    Logout
-                                </button>
-                            </div>
+                            <Link 
+                                href="/profile" 
+                                className="relative flex items-center justify-center w-10 h-10 rounded-full overflow-hidden border border-foreground/20 hover:border-red transition-all duration-300 group"
+                                aria-label="My Profile"
+                            >
+                                {user.photoURL ? (
+                                    <img 
+                                        src={user.photoURL} 
+                                        alt={user.displayName || "User Profile"} 
+                                        className="w-full h-full object-cover" 
+                                    />
+                                ) : (
+                                    <div className="w-full h-full bg-foreground/5 flex items-center justify-center group-hover:bg-foreground/10 transition-colors">
+                                        <span className="font-bebas text-lg text-foreground/70 group-hover:text-foreground">
+                                            {user.displayName ? user.displayName.charAt(0).toUpperCase() : <UserIcon className="w-5 h-5" />}
+                                        </span>
+                                    </div>
+                                )}
+                            </Link>
                         ) : (
                             <Link href="/login" className="text-foreground/90 hover:text-foreground transition-colors p-2 hover:bg-foreground/10 rounded-none flex items-center justify-center" aria-label="Login">
                                 <UserIcon className="w-5 h-5" />
@@ -254,7 +263,7 @@ export default function Navbar() {
                 <div
                     className={`fixed inset-0 bg-background z-999 transition-transform duration-500 cubic-bezier(0.7,0,0.3,1) flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
                 >
-                    {/* Mobile Header (Logo + Close) - Fixed at top, matches Navbar layout */}
+                    {/* Mobile Header (Logo + Close) */}
                     <div className="shrink-0 flex items-center justify-between px-4 md:px-8 lg:px-12 h-16 md:h-20 border-b border-foreground/5 bg-background relative z-10">
                         <div className="shrink-0 cursor-pointer">
                             <Link href="/" onClick={() => setIsMenuOpen(false)}>
@@ -327,6 +336,17 @@ export default function Navbar() {
                                         }
                                     </div>
                                 ))}
+
+                                {/* Mobile Profile Link */}
+                                <div className="border-b border-foreground/5 pb-4">
+                                     <Link
+                                        href={user ? "/profile" : "/login"}
+                                        onClick={() => setIsMenuOpen(false)}
+                                        className="text-3xl font-bebas text-foreground tracking-wide hover:text-theme-accent transition-colors block w-full"
+                                    >
+                                        {user ? "My Profile" : "Login"}
+                                    </Link>
+                                </div>
                             </div>
 
                             {/* Mobile Preferences (Language + Theme) */}

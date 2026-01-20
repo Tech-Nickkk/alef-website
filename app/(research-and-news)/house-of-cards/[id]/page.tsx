@@ -78,7 +78,7 @@ export default function CardDetailsPage({ params }: { params: Promise<{ id: stri
 
                                 {/* THE STAMP */}
                                 <div className="stamp-mark absolute top-12 right-6 z-20 transform -rotate-12 mix-blend-normal max-w-[90%] pointer-events-none">
-                                    <div className="border-[4px] border-red/90 px-6 py-2 rounded-sm backdrop-blur-sm bg-white/10 shadow-lg flex justify-center">
+                                    <div className="border-4 border-red/90 px-6 py-2 rounded-sm backdrop-blur-sm bg-white/10 shadow-lg flex justify-center">
                                         <span className={`font-oswald font-bold text-red/90 uppercase tracking-widest text-center whitespace-normal leading-none drop-shadow-md ${stampTitle.length > 10 ? 'text-3xl' : 'text-5xl'}`}>
                                             {stampTitle}
                                         </span>

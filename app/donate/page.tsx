@@ -20,7 +20,7 @@ export default function DonatePage() {
             if (confirmLogin) {
                 router.push("/login");
             }
-            return; 
+            return;
         }
 
         setIsLoading(true);

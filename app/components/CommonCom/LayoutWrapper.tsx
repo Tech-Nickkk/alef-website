@@ -24,14 +24,16 @@ export default function LayoutWrapper({
         return <>{children}</>;
     }
 
+    const isProfilePage = pathname?.startsWith("/profile");
+
     // For all other routes, render the full site layout
     return (
         <ThemeProvider>
             <SmoothScroll />
             <Navbar />
             {children}
-            <JoinUs />
-            <Footer />
+            {!isProfilePage && <JoinUs />}
+            {!isProfilePage && <Footer />}
         </ThemeProvider>
     );
 }
