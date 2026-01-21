@@ -155,7 +155,7 @@ async function handleSubscriptionChange(subscription: Stripe.Subscription) {
   const userRef = usersSnapshot.docs[0].ref;
 
   await userRef.update({
-    subscriptionStatus: subscription.status, // e.g., 'active', 'canceled', 'past_due'
+    subscriptionStatus: subscription.status, 
     subscriptionId: subscription.id
   });
 }
