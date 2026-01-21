@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -35,6 +35,14 @@ export default function Hero() {
             });
         }
     }, { scope: heroRef, dependencies: [isMounted] });
+
+    const scrollToJoin = (e: React.MouseEvent) => {
+        e.preventDefault();
+        const joinSection = document.getElementById('join-us');
+        if (joinSection) {
+            joinSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     // Lock body scroll when modal is open
     useEffect(() => {
@@ -90,10 +98,10 @@ export default function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-4">
-                        <Link href="#join-us" className="group bg-red hover:bg-[#c4151c] px-8 py-3 text-sm font-semibold transition-all shadow-lg shadow-red-900/30 flex items-center justify-center gap-3 w-full sm:w-auto uppercase tracking-widest rounded-none font-oswald cursor-pointer text-white">
+                        <button onClick={scrollToJoin} className="group bg-red hover:bg-[#c4151c] px-8 py-3 text-sm font-semibold transition-all shadow-lg shadow-red-900/30 flex items-center justify-center gap-3 w-full sm:w-auto uppercase tracking-widest rounded-none font-oswald cursor-pointer text-white">
                             JOIN US
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </Link>
+                        </button>
 
                         <button
                             onClick={() => setIsModalOpen(true)}

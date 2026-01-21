@@ -212,16 +212,16 @@ export default function Navbar() {
                     {/* Login / Profile Button */}
                     <div className="hidden xl:block">
                         {user ? (
-                            <Link 
-                                href="/profile" 
+                            <Link
+                                href="/profile"
                                 className="relative flex items-center justify-center w-10 h-10 rounded-full overflow-hidden border border-foreground/20 hover:border-red transition-all duration-300 group"
                                 aria-label="My Profile"
                             >
                                 {user.photoURL ? (
-                                    <img 
-                                        src={user.photoURL} 
-                                        alt={user.displayName || "User Profile"} 
-                                        className="w-full h-full object-cover" 
+                                    <img
+                                        src={user.photoURL}
+                                        alt={user.displayName || "User Profile"}
+                                        className="w-full h-full object-cover"
                                     />
                                 ) : (
                                     <div className="w-full h-full bg-foreground/5 flex items-center justify-center group-hover:bg-foreground/10 transition-colors">
@@ -237,7 +237,7 @@ export default function Navbar() {
                             </Link>
                         )}
                     </div>
-                    
+
                     {/* Donate - Always Visible */}
                     <div className="relative group">
                         <Link href="/donate">
@@ -339,7 +339,7 @@ export default function Navbar() {
 
                                 {/* Mobile Profile Link */}
                                 <div className="border-b border-foreground/5 pb-4">
-                                     <Link
+                                    <Link
                                         href={user ? "/profile" : "/login"}
                                         onClick={() => setIsMenuOpen(false)}
                                         className="text-3xl font-bebas text-foreground tracking-wide hover:text-theme-accent transition-colors block w-full"
