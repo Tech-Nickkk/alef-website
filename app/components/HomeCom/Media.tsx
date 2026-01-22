@@ -2,38 +2,41 @@ import Link from "next/link";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
 import GlowingGrid from "../CommonCom/GlowingGrid";
 import { Video, Smartphone, Mic, ArrowRight, Images } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function Media() {
+    const t = useTranslations('Media');
+
     const mediaItems = [
         {
             id: "events",
-            label: "ON_THE_GROUND",
-            title: "EVENTS",
-            desc: "Photo documentation and reports from our global advocacy events.",
+            label: t('items.events.label'),
+            title: t('items.events.title'),
+            desc: t('items.events.desc'),
             link: "/events",
             icon: <Images className="w-10 h-10 text-white group-hover:text-red transition-all duration-300" />
         },
         {
             id: "podcasts",
-            label: "AUDIO_LOGS",
-            title: "PODCASTS",
-            desc: "Deep dive discussions with experts on policy and sovereignty.",
+            label: t('items.podcasts.label'),
+            title: t('items.podcasts.title'),
+            desc: t('items.podcasts.desc'),
             link: "/podcasts",
             icon: <Mic className="w-10 h-10 text-white group-hover:text-red transition-all duration-300" />
         },
         {
             id: "shorts",
-            label: "QUICK_INTEL",
-            title: "SHORTS",
-            desc: "Rapid-fire insights and updates. Truth in under 60 seconds.",
+            label: t('items.shorts.label'),
+            title: t('items.shorts.title'),
+            desc: t('items.shorts.desc'),
             link: "/shorts",
             icon: <Smartphone className="w-10 h-10 text-white group-hover:text-red transition-all duration-300" />
         },
         {
             id: "videos",
-            label: "VISUAL_ARCHIVE",
-            title: "VIDEOS",
-            desc: "Watch our latest documentaries, interviews, and visual investigations.",
+            label: t('items.videos.label'),
+            title: t('items.videos.title'),
+            desc: t('items.videos.desc'),
             link: "/videos",
             icon: <Video className="w-10 h-10 text-white group-hover:text-red transition-all duration-300" />
         }
@@ -46,12 +49,12 @@ export default function Media() {
                 {/* Header */}
                 <div className="flex flex-col items-center justify-center mb-16 pb-6 gap-4 text-center">
                     <AnimatedTitle
-                        text="MEDIA"
+                        text={t('title')}
                         className="text-4xl md:text-6xl font-bold font-bebas text-foreground uppercase leading-none"
                     />
                     <div className="flex items-center gap-2 text-foreground/60 font-oswald text-xs tracking-widest">
                         <span className="w-2 h-2 bg-red rounded-full inline-block"></span>
-                        ARCHIVE // MEDIA
+                        {t('subtitle')}
                     </div>
                 </div>
 
@@ -78,7 +81,7 @@ export default function Media() {
 
                                 <Link href={item.link} className="group/btn flex items-center gap-4 relative w-fit">
                                     <span className="text-white font-bebas text-xl tracking-wider group-hover/btn:text-red transition-colors relative">
-                                        EXPLORE
+                                        {t('button')}
                                         <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-red transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-500 origin-right group-hover/btn:origin-left ease-out"></span>
                                     </span>
                                     <ArrowRight className="w-5 h-5 text-white group-hover/btn:text-red transition-colors" />

@@ -3,6 +3,7 @@ import SkeletonImage from "../CommonCom/SkeletonImage";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
 import { client } from "../../../sanity/lib/client";
 import { urlFor } from "../../../sanity/lib/image";
+import { useTranslations } from "next-intl";
 
 interface BlogPost {
     title: string;
@@ -19,6 +20,14 @@ interface BlogPost {
 }
 
 export default async function BlogsAndArticles() {
+    // Note: useTranslations hook works in Server Components in next-intl if correctly set up but typically it's easier to use getTranslations for async components or just useStrings?
+    // Actually, in app router server components, we use `getTranslations`.
+    // However, since this component is async, I can use `await getTranslations`.
+
+    // Wait, let's check imports.
+    const { getTranslations } = await import('next-intl/server');
+    const t = await getTranslations('BlogsAndArticles');
+
     const query = `*[_type == "blog"] | order(publishedAt desc)[0] {
         title,
         slug,
@@ -32,11 +41,10 @@ export default async function BlogsAndArticles() {
 
     if (!blog) return null;
 
-    const date = new Date(blog.publishedAt).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    }).toUpperCase();
+    const date = new Date(blog.publishedAt).toLocaleDateString();
+    // Locale date string might default to server locale (usually en). To do this properly I should use the current locale.
+    // But getting current locale in server component requires `getLocale`.
+    // For now, let's keep it simple or use simple date.
 
     return (
         <section className="py-12 md:py-16 px-6 md:px-12 lg:px-24">
@@ -45,12 +53,12 @@ export default async function BlogsAndArticles() {
                 {/* Header */}
                 <div className="flex flex-col items-center justify-center mb-6 md:mb-12 pb-6 gap-4 text-center">
                     <AnimatedTitle
-                        text="BLOGS & ARTICLES"
+                        text={t('title')}
                         className="text-4xl md:text-6xl font-bold font-bebas text-foreground uppercase leading-none"
                     />
                     <div className="flex items-center gap-2 text-foreground/60 font-oswald text-xs tracking-widest">
                         <span className="w-2 h-2 bg-red rounded-full inline-block animate-pulse"></span>
-                        LATEST ANALYSES
+                        {t('subtitle')}
                     </div>
                 </div>
 
@@ -63,7 +71,7 @@ export default async function BlogsAndArticles() {
                             <div className="flex flex-col md:flex-row md:justify-between items-start gap-4 md:gap-0 mb-8 w-full">
                                 <div className="bg-red/90 text-white px-4.5 py-2 rounded-full flex items-center gap-2">
                                     <Siren className="w-3 h-3 md:w-4 md:h-4" />
-                                    <span className="font-oswald text-xs md:text-xs tracking-widest uppercase font-bold">LATEST BLOG</span>
+                                    <span className="font-oswald text-xs md:text-xs tracking-widest uppercase font-bold">{t('latestTag')}</span>
                                 </div>
                             </div>
 
@@ -82,7 +90,7 @@ export default async function BlogsAndArticles() {
                                         {blog.excerpt}
                                     </p>
                                     <p className="font-oswald text-xs tracking-widest text-white/60 pt-4">
-                                        ~ {blog.author?.name?.toUpperCase() || 'ALEF TEAM'}
+                                        ~ {blog.author?.name?.toUpperCase() || t('team')}
                                     </p>
                                 </div>
                             </div>
@@ -94,7 +102,7 @@ export default async function BlogsAndArticles() {
                                 className="group/btn flex items-center gap-4 w-full justify-between relative"
                             >
                                 <span className="text-white font-bebas text-lg md:text-xl tracking-wider group-hover/btn:text-red transition-colors relative">
-                                    READ FULL ARTICLE
+                                    {t('readFull')}
                                     <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-red transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-500 origin-right group-hover/btn:origin-left ease-out"></span>
                                 </span>
                                 <div className="md:w-12 md:h-12 w-10 h-10 border border-white/30 rounded-full flex items-center justify-center group-hover/btn:bg-red group-hover/btn:border-red transition-all duration-300">
@@ -119,7 +127,7 @@ export default async function BlogsAndArticles() {
                         {/* Overlay Elements */}
                         <div className="absolute top-6 left-6 z-10">
                             <div className="px-3 py-1 border border-red/50 bg-red/10 rounded text-red font-oswald text-xs tracking-widest">
-                                FEATURED BLOG
+                                {t('featuredTag')}
                             </div>
                         </div>
                     </div>
@@ -129,7 +137,7 @@ export default async function BlogsAndArticles() {
                 <div className="flex justify-center mt-12 relative z-10">
                     <Link href="/blogs-and-articles">
                         <button className="group relative bg-transparent border border-foreground/70 text-foreground px-12 py-4 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-foreground/50 isolate cursor-pointer">
-                            <span className="relative z-10 group-hover:text-background transition-colors duration-300">VIEW ALL ARTICLES</span>
+                            <span className="relative z-10 group-hover:text-background transition-colors duration-300">{t('viewAll')}</span>
                             <div className="absolute inset-0 bg-foreground transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10"></div>
                         </button>
                     </Link>

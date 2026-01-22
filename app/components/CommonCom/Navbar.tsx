@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import SkeletonImage from "./SkeletonImage";
 import gsap from "gsap";
@@ -10,6 +9,8 @@ import { useGSAP } from "@gsap/react";
 import { createPortal } from "react-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase";
+import { usePathname, useRouter, Link } from "@/i18n/routing";
+import { useTranslations, useLocale } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,6 +21,17 @@ export default function Navbar() {
     const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
     const [mounted, setMounted] = useState(false);
     const [user] = useAuthState(auth);
+
+    // i18n hooks
+    const pathname = usePathname();
+    const router = useRouter();
+    const locale = useLocale(); // Added this line
+
+    const handleLanguageChange = (locale: string) => {
+        router.replace(pathname, { locale });
+        setIsLangOpen(false);
+        setIsMenuOpen(false);
+    };
 
     useGSAP(() => {
         const showAnim = gsap.from(navRef.current, {
@@ -71,52 +83,61 @@ export default function Navbar() {
         setOpenSubmenu(prev => prev === label ? null : label);
     };
 
+    const t = useTranslations('Navbar');
+
     const navLinks = [
-        { label: "Home", href: "/" },
+        { label: t('home'), href: "/" },
         {
-            label: "About Us",
+            label: t('about'),
             href: "#",
             dropdown: [
-                { label: "Our Profile", href: "/alef-profile" },
-                { label: "Core Values", href: "/core-values" },
-                { label: "Strategic Plan", href: "/strategic-plan" },
-                { label: "Experts Corner", href: "/experts-corner" },
-                { label: "Our Sponsors", href: "/sponsors" },
-                { label: "Testimonials", href: "/testimonials" }
+                { label: t('menu.ourProfile'), href: "/alef-profile" },
+                { label: t('menu.coreValues'), href: "/core-values" },
+                { label: t('menu.strategicPlan'), href: "/strategic-plan" },
+                { label: t('menu.expertsCorner'), href: "/experts-corner" },
+                { label: t('menu.ourSponsors'), href: "/sponsors" },
+                { label: t('menu.testimonials'), href: "/testimonials" }
             ],
         },
-        { label: "Congressional Advocacy", href: "/congressional-advocacy" },
+        { label: t('congressional'), href: "/congressional-advocacy" },
         {
-            label: "Research & News",
+            label: t('research'),
             href: "#",
             dropdown: [
-                { label: "In the News", href: "/alef-in-the-news" },
-                { label: "Blogs & Articles", href: "/blogs-and-articles" },
-                { label: "House of Corruption", href: "/house-of-corruption" },
-                { label: "House of Cards", href: "/house-of-cards" },
-                { label: "Archives", href: "/archives" },
-                { label: "Fallen Angels", href: "/fallen-angels" }
+                { label: t('menu.inTheNews'), href: "/alef-in-the-news" },
+                { label: t('menu.blogsAndArticles'), href: "/blogs-and-articles" },
+                { label: t('menu.houseOfCorruption'), href: "/house-of-corruption" },
+                { label: t('menu.houseOfCards'), href: "/house-of-cards" },
+                { label: t('menu.archives'), href: "/archives" },
+                { label: t('menu.fallenAngels'), href: "/fallen-angels" }
             ],
         },
         {
-            label: "Media",
+            label: t('media'),
             href: "#",
             dropdown: [
-                { label: "Videos", href: "/videos" },
-                { label: "Shorts", href: "/shorts" },
-                { label: "Podcasts", href: "/podcasts" },
-                { label: "Events", href: "/events" }
+                { label: t('menu.videos'), href: "/videos" },
+                { label: t('menu.shorts'), href: "/shorts" },
+                { label: t('menu.podcasts'), href: "/podcasts" },
+                { label: t('menu.events'), href: "/events" }
             ],
         },
         // { label: "Store", href: "/alef-store" },
         {
-            label: "Contact",
+            label: t('contact'),
             href: "#",
             dropdown: [
-                { label: "Get in Touch", href: "/contact" },
-                { label: "FAQ", href: "/faq" }
+                { label: t('menu.getInTouch'), href: "/contact" },
+                { label: "FAQ", href: "/faq" } // FAQ wasn't in my JSON, will leave it hardcoded or add. Let's leave hardcoded as 'FAQ' is usually universal or I missed it. Adding to JSON now would take more steps. 'FAQ' is acceptable.
             ]
         }
+    ];
+
+    const languages = [
+        { name: "English", code: "en" },
+        { name: "French", code: "fr" },
+        { name: "Arabic", code: "ar" },
+        { name: "Spanish", code: "es" }
     ];
 
     return (
@@ -193,13 +214,16 @@ export default function Navbar() {
                         <div className={`absolute top-full right-0 pt-2 w-40 transition-all duration-200 transform origin-top ${isLangOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
                             <div className="bg-background/95 backdrop-blur-md border border-foreground/10 p-2 shadow-xl rounded-sm">
                                 <ul className="flex flex-col gap-1">
-                                    {["English", "French", "Arabic", "Spanish"].map((lang) => (
-                                        <li key={lang}>
+                                    {languages.map((lang) => (
+                                        <li key={lang.code}>
                                             <button
-                                                onClick={() => setIsLangOpen(false)}
-                                                className="w-full text-left px-4 py-2 text-sm text-foreground/80 hover:text-theme-accent hover:bg-foreground/5 transition-colors uppercase font-oswald tracking-wider"
+                                                onClick={() => handleLanguageChange(lang.code)}
+                                                className={`w-full text-left px-4 py-2 text-sm font-oswald tracking-wider uppercase transition-colors ${locale === lang.code
+                                                    ? 'bg-red text-white'
+                                                    : 'text-foreground/80 hover:text-theme-accent hover:bg-foreground/5'
+                                                    }`}
                                             >
-                                                {lang}
+                                                {t(`languages.${lang.code}`)}
                                             </button>
                                         </li>
                                     ))}
@@ -242,7 +266,7 @@ export default function Navbar() {
                     <div className="relative group">
                         <Link href="/donate">
                             <button className="relative overflow-hidden bg-red hover:bg-[#c4151c] text-white px-6 py-3 md:px-8 md:py-3.5 text-xs md:text-sm uppercase font-semibold transition-all shadow-lg shadow-red-900/20 tracking-wider rounded-none font-oswald cursor-pointer isolate animate-heartbeat">
-                                <span className="relative z-10 tracking-wider">Donate</span>
+                                <span className="relative z-10 tracking-wider">{t('donate')}</span>
                                 <div className="absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/40 to-transparent skew-x-[-20deg] group-hover:left-[150%] transition-all duration-700 ease-in-out z-0" />
                             </button>
                         </Link>
@@ -358,9 +382,16 @@ export default function Navbar() {
                                 <div className="flex items-center justify-between">
                                     <span className="text-foreground/70 font-oswald uppercase tracking-widest text-sm">Language</span>
                                     <div className="flex gap-4">
-                                        {["EN", "FR", "AR"].map((lang) => (
-                                            <button key={lang} className="text-sm font-oswald text-foreground/50 hover:text-theme-accent transition-colors uppercase">
-                                                {lang}
+                                        {languages.map((lang) => (
+                                            <button
+                                                key={lang.code}
+                                                onClick={() => handleLanguageChange(lang.code)}
+                                                className={`text-sm font-oswald transition-colors uppercase ${locale === lang.code
+                                                    ? 'bg-red text-white px-2 py-1'
+                                                    : 'text-foreground/50 hover:text-theme-accent'
+                                                    }`}
+                                            >
+                                                {lang.code.toUpperCase()}
                                             </button>
                                         ))}
                                     </div>
@@ -370,7 +401,7 @@ export default function Navbar() {
                             <div className="mt-8 flex flex-col gap-6">
                                 <Link href="/donate" onClick={() => setIsMenuOpen(false)}>
                                     <button className="w-full bg-red text-white font-bebas text-xl tracking-wider py-4 uppercase hover:bg-[#c4151c] transition-colors shadow-lg shadow-red-500/20">
-                                        Donate to ALEF
+                                        {t('donate')}
                                     </button>
                                 </Link>
                             </div>

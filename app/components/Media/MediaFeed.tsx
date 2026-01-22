@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import FilterBar from "../CommonCom/FilterBar";
 import VideoCard from "./VideoCard";
+import { useTranslations } from "next-intl";
 
 interface MediaFeedProps {
     items: any[];
@@ -10,6 +11,7 @@ interface MediaFeedProps {
 }
 
 export default function MediaFeed({ items, type }: MediaFeedProps) {
+    const t = useTranslations("MediaFeed");
     const [filter, setFilter] = useState("All");
     const [searchQuery, setSearchQuery] = useState("");
 
@@ -17,6 +19,14 @@ export default function MediaFeed({ items, type }: MediaFeedProps) {
         const uniqueYears = Array.from(new Set(items.map(item =>
             new Date(item.publishedAt).getFullYear().toString()
         ))).sort((a, b) => b.localeCompare(a));
+
+        // We need to translate "All" if it's displayed, but keep it as "All" for logic or map it
+        // Ideally, we keep the value "All" but display the translated string.
+        // The FilterBar likely displays the string directly. 
+        // For simplicity, we can let FilterBar handle "All" display if passed, or we pass translated strings.
+        // Let's pass "All" as key, but FilterBar logic might need adjustment if it doesn't support label vs value.
+        // Assuming FilterBar displays the tab string directly:
+
         return ["All", ...uniqueYears];
     }, [items]);
 
@@ -57,12 +67,12 @@ export default function MediaFeed({ items, type }: MediaFeedProps) {
         <div>
             {/* Filters Row */}
             <FilterBar
-                tabs={years}
-                activeTab={filter}
-                onTabChange={setFilter}
+                tabs={years.map(y => y === "All" ? t("all") : y)} // Translate "All" for display
+                activeTab={filter === "All" ? t("all") : filter} // Match translated active tab
+                onTabChange={(tab) => setFilter(tab === t("all") ? "All" : tab)} // Map back to "All" for logic
                 searchQuery={searchQuery}
                 onSearchChange={setSearchQuery}
-                searchPlaceholder="SEARCH ARCHIVE..."
+                searchPlaceholder={t("searchPlaceholder")}
             />
 
             {/* Grid */}
@@ -85,13 +95,13 @@ export default function MediaFeed({ items, type }: MediaFeedProps) {
                         <div className="flex flex-col items-center gap-4">
                             <span className="text-4xl">🔍</span>
                             <p className="text-foreground/60 text-xl font-oswald tracking-widest uppercase">
-                                No {type}s found matching "{searchQuery}".
+                                {t("noResults", { type: type, query: searchQuery })}
                             </p>
                             <button
                                 onClick={() => { setFilter("All"); setSearchQuery(""); }}
                                 className="text-red font-oswald text-sm underline underline-offset-4 hover:text-white transition-colors"
                             >
-                                CLEAR FILTERS
+                                {t("clearFilters")}
                             </button>
                         </div>
                     </div>

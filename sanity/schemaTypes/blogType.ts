@@ -12,6 +12,10 @@ export const blogType = defineType({
       type: 'string',
     }),
     defineField({
+      name: 'language',
+      type: 'string',
+    }),
+    defineField({
       name: 'slug',
       type: 'slug',
       options: {

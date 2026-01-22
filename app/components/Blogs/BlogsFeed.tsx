@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import SkeletonImage from "../CommonCom/SkeletonImage";
 import { ArrowRight, User, ChevronLeft, ChevronRight } from "lucide-react";
 import FilterBar from "../CommonCom/FilterBar";
 import { urlFor } from "@/sanity/lib/image";
+import { useTranslations, useLocale } from "next-intl";
 
 interface Sanityblog {
     _id: string;
@@ -34,6 +35,8 @@ interface BlogsFeedProps {
 }
 
 export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
+    const t = useTranslations('BlogsPage');
+    const locale = useLocale();
     const ITEMS_PER_PAGE = 9;
     const [filter, setFilter] = useState("All"); // Year filter
     const [searchQuery, setSearchQuery] = useState("");
@@ -52,7 +55,7 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
     const filteredBlogs = useMemo(() => {
         return initialBlogs.filter(blog => {
             const blogYear = blog.publishedAt ? new Date(blog.publishedAt).getFullYear().toString() : "N/A";
-            const blogAuthor = blog.author?.discloseName ? blog.author.name : "Anonymous";
+            const blogAuthor = blog.author?.discloseName ? blog.author.name : t('anonymous');
 
             const matchesYear = filter === "All" || blogYear === filter;
             const matchesSearch = blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -61,7 +64,7 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
 
             return matchesYear && matchesSearch;
         });
-    }, [initialBlogs, filter, searchQuery]);
+    }, [initialBlogs, filter, searchQuery, t]);
 
     // Reset to page 1 when filters change
     useEffect(() => {
@@ -94,12 +97,12 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
         <>
             {/* Filters Row */}
             <FilterBar
-                tabs={years}
-                activeTab={filter}
-                onTabChange={setFilter}
+                tabs={years.map(y => y === "All" ? t('all') : y)}
+                activeTab={filter === "All" ? t('all') : filter}
+                onTabChange={(tab) => setFilter(tab === t('all') ? "All" : tab)}
                 searchQuery={searchQuery}
                 onSearchChange={setSearchQuery}
-                searchPlaceholder="SEARCH ARTICLES..."
+                searchPlaceholder={t('searchPlaceholder')}
             />
 
             {/* Blogs Grid */}
@@ -159,12 +162,12 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
                                             </div>
                                         )}
                                         <span className="font-oswald text-sm text-white/60">
-                                            {highlightText(blog.author?.discloseName === true ? (blog.author?.name || 'Anonymous') : '★★★★★★', searchQuery)}
+                                            {highlightText(blog.author?.discloseName === true ? (blog.author?.name || t('anonymous')) : '★★★★★★', searchQuery)}
                                         </span>
                                     </div>
 
                                     <span className="font-oswald text-xs text-white/40 tracking-wider uppercase">
-                                        {blog.publishedAt && new Date(blog.publishedAt).toLocaleDateString("en-US", {
+                                        {blog.publishedAt && new Date(blog.publishedAt).toLocaleDateString(locale, {
                                             year: "numeric", month: "short", day: "numeric"
                                         })}
                                     </span>
@@ -173,7 +176,7 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
                                 {/* Read More */}
                                 <div className="flex items-center gap-2 mt-4 pt-4 border-t border-white/10">
                                     <span className="text-white font-bebas text-lg tracking-wider group-hover:text-red transition-colors">
-                                        READ FULL ARTICLE
+                                        {t('readFull')}
                                     </span>
                                     <ArrowRight className="w-4 h-4 text-white group-hover:text-red transition-colors transform group-hover:translate-x-1 duration-300" />
                                 </div>
@@ -185,7 +188,7 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
                         <div className="flex flex-col items-center gap-4">
                             <span className="text-4xl">🔍</span>
                             <p className="text-foreground/60 text-xl font-oswald tracking-widest uppercase">
-                                No articles found matching your criteria.
+                                {t('noResults')}
                             </p>
                             <button
                                 onClick={() => {
@@ -194,7 +197,7 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
                                 }}
                                 className="text-red font-oswald text-sm underline underline-offset-4 hover:text-white transition-colors"
                             >
-                                CLEAR FILTERS
+                                {t('clearFilters')}
                             </button>
                         </div>
                     </div>
@@ -213,7 +216,7 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
                         className="group flex items-center gap-2 px-4 py-2 border border-foreground/30 rounded-full hover:bg-red hover:border-red hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:border-foreground/30 disabled:hover:text-foreground transition-all duration-300"
                     >
                         <ChevronLeft className="w-4 h-4" />
-                        <span className="font-bebas text-lg tracking-wider hidden sm:inline">Previous</span>
+                        <span className="font-bebas text-lg tracking-wider hidden sm:inline">{t('previous')}</span>
                     </button>
 
                     <div className="flex items-center gap-2">
@@ -242,7 +245,7 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
                         disabled={currentPage === totalPages}
                         className="group flex items-center gap-2 px-4 py-2 border border-foreground/30 rounded-full hover:bg-red hover:border-red hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:border-foreground/30 disabled:hover:text-foreground transition-all duration-300"
                     >
-                        <span className="font-bebas text-lg tracking-wider hidden sm:inline">Next</span>
+                        <span className="font-bebas text-lg tracking-wider hidden sm:inline">{t('next')}</span>
                         <ChevronRight className="w-4 h-4" />
                     </button>
                 </div>

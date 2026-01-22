@@ -6,10 +6,12 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Skeleton } from "../CommonCom/SkeletonImage";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
+    const t = useTranslations('Hero');
     const heroRef = useRef<HTMLElement>(null);
     const videoRef = useRef<HTMLDivElement>(null);
     const [isMounted, setIsMounted] = useState(false);
@@ -87,19 +89,19 @@ export default function Hero() {
             {/* Hero Content */}
             <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-6 md:px-12 lg:px-24 w-full max-w-[1920px] mx-auto text-center">
                 <div className="max-w-4xl space-y-5 hero-content text-white">
-                    <h1 className="text-4xl md:text-8xl font-bold uppercase tracking-wide font-bebas">
-                        Exposing Hezbollah’s<br />
-                        Grip Latest Analysis
-                    </h1>
+                    <h1
+                        className="text-4xl md:text-8xl font-bold uppercase tracking-wide font-bebas"
+                        dangerouslySetInnerHTML={{ __html: t.raw('title') }}
+                    />
 
-                    <p className="text-base md:text-2xl max-w-2xl leading-relaxed font-oswald">
-                        Educating to Eradicate Terrorism in Lebanon <br />
-                        <span>Quality. Independence. Impact.</span>
+                    <p className="text-base md:text-2xl leading-relaxed font-oswald">
+                        {t('subtitle')} <br />
+                        <span>{t('tagline')}</span>
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-4">
                         <button onClick={scrollToJoin} className="group bg-red hover:bg-[#c4151c] px-8 py-3 text-sm font-semibold transition-all shadow-lg shadow-red-900/30 flex items-center justify-center gap-3 w-full sm:w-auto uppercase tracking-widest rounded-none font-oswald cursor-pointer text-white">
-                            JOIN US
+                            {t('joinUs')}
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </button>
 
@@ -109,7 +111,7 @@ export default function Hero() {
                         >
                             <span className="absolute inset-0 bg-white transition-transform duration-500 ease-out origin-top scale-y-0 group-hover:origin-bottom group-hover:scale-y-100 -z-10" />
                             <span className="relative z-10 flex items-center gap-3 cursor-pointer">
-                                Watch Video
+                                {t('watchVideo')}
                                 <PlayCircleIcon className="w-5 h-5" />
                             </span>
                         </button>

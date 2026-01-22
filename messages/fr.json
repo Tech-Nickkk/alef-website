@@ -1,0 +1,2843 @@
+{
+    "Navbar": {
+        "home": "Accueil",
+        "about": "À Propos",
+        "congressional": "Plaidoyer au Congrès",
+        "research": "Recherche & Actualités",
+        "media": "Médias",
+        "contact": "Contact",
+        "donate": "Faire un Don",
+        "login": "Connexion",
+        "profile": "Mon Profil",
+        "languages": {
+            "en": "Anglais",
+            "fr": "Français",
+            "ar": "Arabe",
+            "es": "Espagnol"
+        },
+        "menu": {
+            "ourProfile": "Notre Profil",
+            "coreValues": "Valeurs Fondamentales",
+            "strategicPlan": "Plan Stratégique",
+            "expertsCorner": "Coin des Experts",
+            "ourSponsors": "Nos Sponsors",
+            "testimonials": "Témoignages",
+            "inTheNews": "Dans l'Actualité",
+            "blogsAndArticles": "Blogs & Articles",
+            "houseOfCorruption": "Maison de la Corruption",
+            "houseOfCards": "Château de Cartes",
+            "archives": "Archives",
+            "fallenAngels": "Anges Déchus",
+            "videos": "Vidéos",
+            "shorts": "Shorts",
+            "podcasts": "Podcasts",
+            "events": "Événements",
+            "getInTouch": "Contactez-nous"
+        }
+    },
+    "Hero": {
+        "title": "Dernière Analyse sur <br /> l'Emprise du Hezbollah",
+        "subtitle": "Éduquer pour Éradiquer le Terrorisme au Liban",
+        "tagline": "Qualité. Indépendance. Impact.",
+        "joinUs": "REJOIGNEZ-NOUS",
+        "watchVideo": "Voir la Vidéo"
+    },
+    "PresidentialLetter": {
+        "title": "CORRESPONDANCE PRÉSIDENTIELLE",
+        "subtitle": "COMMUNICATION OFFICIELLE",
+        "alt": "Lettre du Président Donald J. Trump"
+    },
+    "ChairmanMessage": {
+        "title": "MESSAGE DU PRÉSIDENT",
+        "subtitle": "LEADERSHIP // FONDATEUR",
+        "statement": "// DÉCLARATION",
+        "author": "~ ZIAD K. ABDELNOUR",
+        "welcome": "BIENVENUE À LA FONDATION AMÉRICAINE POUR L'ÉDUCATION AU LIBAN.",
+        "p1": "La Fondation Américaine pour l'Éducation au Liban est un collectif de professionnels, militants et dirigeants libanais et américains unis par une vision commune d'un Liban libre, souverain et prospère. En tant que mouvement indépendant et non partisan, nous nous engageons à démanteler la corruption, à restaurer la gouvernance et à plaider pour la place légitime du Liban au sein de la communauté internationale.",
+        "p2": "Notre mission est de plaider pour des réformes politiques, économiques et sécuritaires, en s'engageant auprès des décideurs internationaux pour soutenir la souveraineté du Liban. Nous nous efforçons de lutter contre la corruption et les influences militantes qui sapent la stabilité tout en favorisant l'implication de la diaspora dans la reconstruction et la croissance économique du Liban.",
+        "p3": "Nous croyons en la Souveraineté, défendant l'indépendance du Liban face à la domination étrangère. Nous prônons la Transparence et la Responsabilité, croyant en une gouvernance éthique et un leadership responsable. Nous luttons pour la Liberté Économique, favorisant l'investissement, la création d'emplois et la stabilité financière.",
+        "p4": "L'État de Droit est non négociable ; nous plaidons pour une justice et des forces de sécurité indépendantes. Nous bâtissons un Liban basé sur la Méritocratie et la Performance, valorisant les compétences et l'excellence du leadership au-dessus de l'allégeance sectaire.",
+        "p5": "Rejoignez-nous dans ce combat critique pour l'âme de notre nation. Ensemble, nous pouvons conduire des solutions politiques pour un Liban autonome et prospère."
+    },
+    "WhoWeAre": {
+        "title": "QUI SOMMES-NOUS",
+        "subtitle": "MISSION // VISION",
+        "items": {
+            "01": {
+                "subtitle": "IDENTITÉ",
+                "title": "Profil ALEF",
+                "description": "Un collectif de professionnels libanais et américains unis par une vision partagée d'un Liban libre, souverain et prospère."
+            },
+            "02": {
+                "subtitle": "PRINCIPES",
+                "title": "Valeurs Clés",
+                "description": "Souveraineté, Transparence, Liberté Économique, État de Droit et Méritocratie. Nous croyons en une gouvernance éthique."
+            },
+            "03": {
+                "subtitle": "FUTUR",
+                "title": "Plan Stratégique",
+                "description": "Établir un Liban transparent, responsable et autonome, libre de toute influence extérieure, où la justice prévaut."
+            },
+            "04": {
+                "subtitle": "LEADERSHIP",
+                "title": "Coin des Experts",
+                "description": "Rencontrez les officiers, directeurs et conseillers dévoués qui pilotent notre mission, dirigés par Ziad K. Abdelnour."
+            }
+        }
+    },
+    "CTASection": {
+        "donate": {
+            "title": "SOUTENEZ LE COMBAT POUR LA LIBERTÉ",
+            "subtitle": "VOTRE CONTRIBUTION SOUTIENT DIRECTEMENT NOTRE PLAIDOYER POUR UN LIBAN SOUVERAIN.",
+            "button": "FAIRE UN DON",
+            "tag": "Action Urgente"
+        },
+        "subscribe": {
+            "title": "RESTEZ EN AVANCE SUR LA VAGUE",
+            "subtitle": "RECEVEZ DES RENSEIGNEMENTS CRITIQUES ET DES MISES À JOUR DIRECTEMENT DANS VOTRE BOÎTE DE RÉCEPTION.",
+            "button": "S'ABONNER MAINTENANT",
+            "tag": "Briefing"
+        },
+        "join": {
+            "title": "TENEZ-VOUS AVEC NOUS",
+            "subtitle": "REJOIGNEZ UN RÉSEAU DE LEADERS ENGAGÉS À RECONSTRUIRE NOTRE NATION.",
+            "button": "DEVENIR MEMBRE",
+            "tag": "Mobilisation"
+        }
+    },
+    "BlogsAndArticles": {
+        "title": "BLOGS & ARTICLES",
+        "subtitle": "DERNIÈRES ANALYSES",
+        "latestTag": "DERNIER BLOG",
+        "readFull": "LIRE L'ARTICLE COMPLET",
+        "featuredTag": "BLOG EN VEDETTE",
+        "viewAll": "VOIR TOUS LES ARTICLES",
+        "team": "ÉQUIPE ALEF"
+    },
+    "AlliedOrganizations": {
+        "title": "ORGANISATIONS ALLIÉES",
+        "subtitle": "PARTENAIRES STRATÉGIQUES"
+    },
+    "HouseOfCorruptionPage": {
+        "hero": {
+            "tag": "Audit Financier Confidentiel",
+            "title": "LE CASSE DE 1000 MILLIARDS $",
+            "desc": "Un transfert systématique de richesse. Vol direct, argent blanchi et potentiel gaspillé.",
+            "scroll": "Initier l'Inspection"
+        },
+        "counter": {
+            "label": "Impact Économique Total",
+            "desc": "Équivalent à la perte du PIB entier de la nation... <span className='text-red'>chaque année.</span>"
+        },
+        "directLosses": {
+            "subtitle": "Pièce À Conviction A",
+            "title": "PERTES DIRECTES",
+            "text": "Données financières vérifiées extraites d'audits internationaux et de rapports médico-légaux.",
+            "sourceLabel": "Source",
+            "items": {
+                "DL-01": {
+                    "title": "FONDS PUBLICS DÉTOURNÉS",
+                    "desc": "Vol systématique par la classe politique via des contrats d'État et le pillage du trésor.",
+                    "source": "FMI, Banque mondiale, Rapports de l'UE"
+                },
+                "DL-02": {
+                    "title": "BLANCHIMENT D'ARGENT OFFSHORE",
+                    "desc": "Fuite illicite de capitaux transférés vers des comptes en Suisse, en France et dans des paradis fiscaux.",
+                    "source": "Swiss Leaks, Pandora Papers"
+                },
+                "DL-03": {
+                    "title": "PONZI DU SECTEUR BANCAIRE",
+                    "desc": "Ingénierie financière de la Banque Centrale (BDL) conçue pour couvrir le déficit de l'État en utilisant les fonds des déposants.",
+                    "source": "Banque mondiale, Rapports d'audit"
+                },
+                "DL-04": {
+                    "title": "GASPILLAGE INFRASTRUCTUREL",
+                    "desc": "Projets fantômes dans les barrages, les routes et les conseils qui ont été payés mais jamais achevés.",
+                    "source": "Cour des comptes libanaise"
+                },
+                "DL-05": {
+                    "title": "CARBURANT & ÉLECTRICITÉ",
+                    "desc": "Importations de carburant défectueux (Sonatrach), appels d'offres truqués et cartels de générateurs.",
+                    "source": "Rapports du ministère de l'Énergie"
+                },
+                "DL-06": {
+                    "title": "DOUANES & CONTREBANDE",
+                    "desc": "Revenus perdus à cause de la contrebande de marchandises, de carburant et de drogues à travers des frontières poreuses.",
+                    "source": "FMI, Rapports des douanes"
+                },
+                "DL-07": {
+                    "title": "FRAUDE DU SECTEUR TÉLÉCOM",
+                    "desc": "Surfacturation flagrante des services et détournement des revenus du secteur.",
+                    "source": "Ministère des Télécommunications, Banque mondiale"
+                },
+                "DL-08": {
+                    "title": "SAISIES IMMOBILIÈRES",
+                    "desc": "Acquisition illégale de terres publiques (Mashaa) et de zones côtières par les élites politiques.",
+                    "source": "Enquêtes du Registre foncier"
+                }
+            }
+        },
+        "gallery": {
+            "img1": {
+                "title": "Graphique Financement Narco",
+                "caption": "Flux de revenus illicites"
+            },
+            "img2": {
+                "title": "Banque de l'Ombre",
+                "caption": "Manipulation monétaire"
+            },
+            "img3": {
+                "title": "La Connexion Vénézuélienne",
+                "caption": "Blanchiment d'or & Crypto"
+            },
+            "img4": {
+                "title": "Cartel du Carburant",
+                "caption": "Corruption du secteur énergétique"
+            },
+            "img5": {
+                "title": "Carte du Blanchiment",
+                "caption": "Flux d'argent mondial"
+            },
+            "img6": {
+                "title": "Résumé de la Crise",
+                "caption": "Les Conséquences"
+            }
+        },
+        "indirectLosses": {
+            "subtitle": "Pièce À Conviction B : Coût de la Vie",
+            "title": "LE COÛT HUMAIN",
+            "text": "Ce n'est pas seulement de l'argent perdu ; c'est du temps et un avenir volés.",
+            "items": {
+                "IL-01": {
+                    "title": "ÉMIGRATION DE MASSE",
+                    "label": "PIB PERDU (1975-2023)",
+                    "detail": "Plus de 3,5 millions de Libanais ont émigré depuis 1975. Des professionnels hautement qualifiés sont partis, affaiblissant l'économie. Des milliards perdus en investissements, salaires et entrepreneuriat manqués."
+                },
+                "IL-02": {
+                    "title": "COÛTS DES GÉNÉRATEURS PRIVÉS",
+                    "label": "CRISE DE L'ÉLECTRICITÉ",
+                    "detail": "Les Libanais contraints de compter sur des générateurs privés en raison d'un réseau national défaillant. Les familles paient 200-500 $/mois pour une énergie peu fiable."
+                },
+                "IL-03": {
+                    "title": "DÉPÔTS BANCAIRES VOLÉS",
+                    "label": "CRISE FINANCIÈRE (2019-2023)",
+                    "detail": "Les banques libanaises ont gelé les comptes et empêché les déposants de retirer leur argent. Les banquiers ont transféré des milliards à l'étranger tandis que les gens ordinaires perdaient leurs économies."
+                },
+                "IL-04": {
+                    "title": "CONGESTION DU TRAFIC",
+                    "label": "TEMPS DE TRAJET PERDU",
+                    "detail": "Les Libanais passent en moyenne 1,5 à 3 heures par jour coincés dans les embouteillages. Pertes de productivité équivalentes à 5% du PIB du Liban/an."
+                },
+                "IL-05": {
+                    "title": "EXPLOSION DU PORT DE BEYROUTH",
+                    "label": "PERTES ÉCONOMIQUES",
+                    "detail": "L'explosion de 2020 a détruit des entreprises, des maisons et des infrastructures économiques clés. Des milliards de revenus commerciaux perdus en raison de la mauvaise gestion du port."
+                },
+                "IL-06": {
+                    "title": "PERTE D'INVESTISSEMENT ÉTRANGER",
+                    "label": "DUE À LA CORRUPTION",
+                    "detail": "Les investisseurs internationaux se sont retirés du Liban en raison de l'instabilité politique et de la fraude financière."
+                },
+                "IL-07": {
+                    "title": "CRISE SANITAIRE",
+                    "label": "POLLUTION & CONTAMINATION DE L'EAU",
+                    "detail": "La crise des déchets au Liban a entraîné une pollution massive. Un mauvais assainissement a augmenté les taux de maladies, affectant la productivité de la main-d'œuvre."
+                }
+            }
+        },
+        "cta": {
+            "title": "L'EFFONDREMENT DU LIBAN N'EST PAS UNE CATASTROPHE.<br /><span class='text-red'>C'EST UNE SCÈNE DE CRIME.</span>",
+            "text": "Les données sont publiques. Les auteurs sont connus. Les avoirs volés sont tracés. Ce qui manque, c'est la responsabilité.",
+            "button": "VOIR LE RAPPORT COMPLET"
+        }
+    },
+    "HouseOfCards": {
+        "title": "CHÂTEAU DE CARTES",
+        "subtitle": "ARCHIVE // PROFILS",
+        "button": "VOIR L'ARCHIVE COMPLÈTE",
+        "cards": {
+            "michel": {
+                "name": "Michel Aoun",
+                "stamp": "FACILITATEUR"
+            },
+            "naim": {
+                "name": "Naim Qassem",
+                "stamp": "MANDATAIRE"
+            },
+            "riad": {
+                "name": "Riad Salameh",
+                "stamp": "MANIGANCEUR"
+            },
+            "walid": {
+                "name": "Walid Jumblatt",
+                "stamp": "CAMÉLÉON"
+            }
+        }
+    },
+    "Media": {
+        "title": "MÉDIAS",
+        "subtitle": "ARCHIVE // MÉDIAS",
+        "button": "EXPLORER",
+        "items": {
+            "events": {
+                "label": "SUR LE TERRAIN",
+                "title": "ÉVÉNEMENTS",
+                "desc": "Documentation photo et rapports de nos événements de plaidoyer mondiaux."
+            },
+            "podcasts": {
+                "label": "JOURNAUX AUDIO",
+                "title": "PODCASTS",
+                "desc": "Discussions approfondies avec des experts sur la politique et la souveraineté."
+            },
+            "shorts": {
+                "label": "INFO RAPIDE",
+                "title": "SHORTS",
+                "desc": "Aperçus et mises à jour rapides. La vérité en moins de 60 secondes."
+            },
+            "videos": {
+                "label": "ARCHIVE VISUELLE",
+                "title": "VIDÉOS",
+                "desc": "Regardez nos derniers documentaires, interviews et enquêtes visuelles."
+            }
+        }
+    },
+    "CongressionalActions": {
+        "title": "ACTIONS DU CONGRÈS",
+        "subtitle": "LÉGISLATION // MISES À JOUR",
+        "desc": "DERNIÈRES MISES À JOUR LÉGISLATIVES CONTRE LE HEZBOLLAH (118E CONGRÈS)",
+        "readBill": "LIRE LE PROJET DE LOI OFFICIEL",
+        "items": {
+            "bill1": {
+                "id": "S. 2237",
+                "title": "Loi de 2023 sur la Prévention du Blanchiment d'Argent du Hezbollah",
+                "date": "11 Juillet 2023",
+                "desc": "Impose des sanctions plus strictes aux entités aidant le blanchiment d'argent du Hezbollah, notamment via le trafic de drogue. Elle cible les systèmes financiers plutôt que l'influence militaire.",
+                "link": "https://www.congress.gov/bill/118th-congress/senate-bill/2237"
+            },
+            "bill2": {
+                "id": "H.R. 3358",
+                "title": "Loi de 2023 sur la Sécurité et la Responsabilité du Liban",
+                "date": "16 Mai 2023",
+                "desc": "Conditionne l'aide américaine au renforcement des forces de sécurité libanaises et à la réduction de l'influence du Hezbollah, en mettant l'accent sur le soutien militaire plutôt que sur des sanctions générales.",
+                "link": "https://www.congress.gov/bill/118th-congress/house-bill/3358"
+            },
+            "bill3": {
+                "id": "S. 2935",
+                "title": "Désignation du Hezbollah comme Organisation Criminelle Transnationale",
+                "date": "27 Septembre 2023",
+                "desc": "Vise à classer le Hezbollah comme une organisation criminelle transnationale, permettant des actions policières contre ses réseaux de drogue et de contrebande.",
+                "link": "https://www.congress.gov/bill/118th-congress/senate-bill/2935"
+            },
+            "bill4": {
+                "id": "H.R. 1844",
+                "title": "Loi PAGER",
+                "date": "28 Mars 2023",
+                "desc": "Bloque les fonds destinés à l'armée libanaise jusqu'à ce qu'elle coupe les liens avec les mandataires iraniens comme le Hezbollah et démantèle leurs bastions.",
+                "link": "https://www.congress.gov/bill/118th-congress/house-bill/1844"
+            }
+        }
+    },
+    "JoinUs": {
+        "tag": "Faites partie de la solution",
+        "title": "REJOIGNEZ LE MOUVEMENT",
+        "description": "Aidez-nous à construire notre réseau. Fournissez vos coordonnées pour rejoindre notre liste de diffusion.",
+        "placeholderName": "NOM COMPLET",
+        "placeholderEmail": "ENTREZ UN EMAIL SÉCURISÉ",
+        "button": "REJOINDRE MAINTENANT",
+        "buttonLoading": "INSCRIPTION...",
+        "privacy": "* Vos informations sont sécurisées. Nous les utilisons pour constituer notre liste de diffusion.",
+        "successTitle": "BIENVENUE DANS L'ÉQUIPE",
+        "successMessage": "Vous avez rejoint le mouvement avec succès. <br/>Surveillez votre boîte de réception pour des mises à jour exclusives.",
+        "error": "Échec de la connexion. Veuillez réessayer.",
+        "defaultError": "Quelque chose a mal tourné."
+    },
+    "Footer": {
+        "description": "Éduquer les communautés et combattre le terrorisme par la recherche, la sensibilisation et le plaidoyer politique.",
+        "explore": "EXPLORER",
+        "resources": "RESSOURCES",
+        "contact": "CONTACT",
+        "rights": "A.L.E.F. Tous droits réservés.",
+        "privacy": "Politique de Confidentialité",
+        "terms": "Conditions d'Utilisation",
+        "address": "New York,<br />États-Unis"
+    },
+    "LoginPage": {
+        "welcomeBack": "BON RETOUR",
+        "createAccount": "CRÉER UN COMPTE",
+        "enterDetails": "Entrez vos coordonnées pour accéder à votre compte",
+        "joinUs": "Rejoignez-nous et commencez votre voyage aujourd'hui",
+        "emailLabel": "Adresse Email",
+        "emailPlaceholder": "nom@exemple.com",
+        "passwordLabel": "Mot de passe",
+        "passwordPlaceholder": "••••••••",
+        "signIn": "Se Connecter",
+        "signUp": "S'inscrire",
+        "orContinue": "OU CONTINUER AVEC",
+        "google": "Google",
+        "noAccount": "Vous n'avez pas de compte ? ",
+        "hasAccount": "Vous avez déjà un compte ? ",
+        "signupAction": "S'inscrire",
+        "signinAction": "Se connecter",
+        "errors": {
+            "generic": "Impossible de se connecter. Veuillez vérifier vos informations et réessayer.",
+            "invalid": "Email ou mot de passe invalide.",
+            "disabled": "Ce compte a été désactivé. Veuillez contacter le support.",
+            "tooMany": "Trop de tentatives échouées. Veuillez réessayer plus tard.",
+            "exists": "Un compte avec cet email existe déjà.",
+            "weak": "Le mot de passe doit contenir au moins 6 caractères.",
+            "googleFailed": "Échec de la connexion avec Google."
+        }
+    },
+    "ContactPage": {
+        "title": "CONTACTEZ-NOUS",
+        "subtitle": "PRENDRE CONTACT",
+        "description": "Vous avez des questions ou souhaitez en savoir plus sur notre mission ? Contactez-nous.",
+        "form": {
+            "title": "ENVOYEZ-NOUS UN MESSAGE",
+            "nameLabel": "NOM COMPLET",
+            "namePlaceholder": "Jean Dupont",
+            "emailLabel": "ADRESSE E-MAIL",
+            "emailPlaceholder": "jean@exemple.com",
+            "orgLabel": "ORGANISATION (OPTIONNEL)",
+            "orgPlaceholder": "Nom de l'entreprise",
+            "subjectLabel": "SUJET",
+            "subjects": {
+                "general": "Demande générale",
+                "media": "Demande média",
+                "partnership": "Opportunité de partenariat",
+                "volunteer": "Bénévolat",
+                "donation": "Soutien aux dons",
+                "other": "Autre"
+            },
+            "messageLabel": "MESSAGE",
+            "messagePlaceholder": "Comment pouvons-nous vous aider ?",
+            "submit": "ENVOYER LE MESSAGE",
+            "sending": "ENVOI EN COURS...",
+            "sent": "MESSAGE ENVOYÉ"
+        }
+    },
+    "AlefProfilePage": {
+        "header": {
+            "subtitle": "À Propos de la Fondation",
+            "title": "PROFIL ALEF"
+        },
+        "chairmanMessage": {
+            "title": "Chers Patriotes et Amis de la Liberté et de la Prospérité,",
+            "p1": "Tout d'abord, alors que la nouvelle année commence, je vous souhaite personnellement, ainsi qu'à vos proches, une bonne santé, une clarté d'objectif et des progrès constants vers tout ce qui compte le plus pour vous.",
+            "p2": "Cela dit, c'est avec une grande fierté et anticipation que j'annonce une étape importante dans l'histoire de la Fondation Américaine pour l'Éducation au Liban (ALEF) pour renforcer les liens entre l'Amérique et le Liban.",
+            "p3": "À cet effet, nous présentons aujourd'hui notre plateforme numérique moderne, une ressource pour des idées et un accès à des informations uniques.",
+            "p4": "Le Liban fait face aujourd'hui à des défis institutionnels importants. Sa démocratie, son économie et sa souveraineté sont menacées par le Hezbollah.",
+            "p5": "Nous passons de l'observation à la mise en œuvre. Il est temps d'avancer avec des étapes concrètes."
+        },
+        "whoWeAre": {
+            "foundation": {
+                "subtitle": "La Fondation",
+                "title": "ALEF",
+                "desc": "Une force mondiale de professionnels libanais et américains engagés à démanteler la corruption.",
+                "tag": "Ouvert aux citoyens de toute nationalité"
+            },
+            "pac": {
+                "subtitle": "Le Bras Politique",
+                "title": "ALPAC",
+                "desc": "Le SEUL Comité d'Action Politique Américano-Libanais de ce type, dédié au lobbying politique direct.",
+                "tag": "Ouvert uniquement aux citoyens américains"
+            }
+        },
+        "baa": {
+            "tag": "Campagne Urgente",
+            "title": "La Loi sur la Responsabilité du Hezbollah (HAA)",
+            "desc": "Nous lançons le HAA pour démanteler les réseaux qui tiennent le Liban en otage.",
+            "points": {
+                "0": {
+                    "title": "Perturber le Financement",
+                    "desc": "Perturber le financement mondial et les réseaux d'influence."
+                },
+                "1": {
+                    "title": "Pression sur le Congrès",
+                    "desc": "Faire pression sur le Congrès américain pour des sanctions plus strictes."
+                },
+                "2": {
+                    "title": "Mobiliser la Diaspora",
+                    "desc": "Mobiliser la diaspora pour influencer la politique."
+                },
+                "3": {
+                    "title": "Cibler les Acteurs Clés",
+                    "desc": "Cibler les principaux acteurs du secteur financier."
+                }
+            }
+        },
+        "support": {
+            "title": "Pourquoi Votre Soutien Compte",
+            "tiers": {
+                "0": {
+                    "title": "Groupe de Travail",
+                    "desc": "Lancer un groupe de travail national HAA d'experts."
+                },
+                "1": {
+                    "title": "Opérations Médias",
+                    "desc": "Étendre les opérations médiatiques ciblées."
+                },
+                "2": {
+                    "title": "Plaidoyer",
+                    "desc": "Organiser des événements de plaidoyer de haut niveau."
+                },
+                "3": {
+                    "title": "Gardiens",
+                    "desc": "Construire le programme de donateurs 'Gardiens de la Souveraineté'."
+                }
+            }
+        },
+        "whyNow": {
+            "title": "Pourquoi Maintenant ?",
+            "opportunity": {
+                "title": "OPPORTUNITÉ",
+                "headline": "L'inquiétude bipartisane à Washington grandit—nous devons saisir cette fenêtre.",
+                "desc": "L'administration américaine actuelle est notre meilleur allié."
+            },
+            "urgency": {
+                "title": "URGENCE",
+                "headline": "Le peuple libanais est prêt. Si nous n'agissons pas maintenant, nous n'aurons peut-être jamais d'autre chance.",
+                "desc": "L'effondrement socio-économique s'accélère."
+            }
+        },
+        "downloadButton": "LIRE LE PROFIL COMPLET"
+    },
+    "CoreValuesPage": {
+        "header": {
+            "subtitle": "Notre Fondation",
+            "title": "MISSION & VALEURS FONDAMENTALES",
+            "tagline": "Un collectif de professionnels libanais et américains unis par une vision partagée."
+        },
+        "introduction": {
+            "title": "Introduction",
+            "desc": "La Fondation Américaine pour l'Éducation au Liban est un collectif de professionnels unis par une vision commune."
+        },
+        "vision": {
+            "title": "Vision",
+            "desc": "Établir un Liban transparent, responsable et autonome."
+        },
+        "mission": {
+            "title": "Mission",
+            "list": {
+                "0": "Plaider pour des réformes politiques, économiques et sécuritaires.",
+                "1": "S'engager auprès des décideurs internationaux.",
+                "2": "Combattre la corruption et les influences militantes.",
+                "3": "Promouvoir l'implication de la diaspora.",
+                "4": "Conduire des solutions politiques."
+            }
+        },
+        "values": {
+            "title": "VALEURS FONDAMENTALES",
+            "items": {
+                "0": {
+                    "title": "Souveraineté",
+                    "desc": "Défendre l'indépendance du Liban."
+                },
+                "1": {
+                    "title": "Transparence",
+                    "desc": "Croire en une gouvernance éthique."
+                },
+                "2": {
+                    "title": "Liberté Économique",
+                    "desc": "Promouvoir l'investissement et la création d'emplois."
+                },
+                "3": {
+                    "title": "État de Droit",
+                    "desc": "Plaider pour une justice indépendante."
+                },
+                "4": {
+                    "title": "Méritocratie",
+                    "desc": "Bâtir un Liban basé sur les compétences."
+                }
+            }
+        },
+        "pillars": {
+            "title": "PILIERS STRATÉGIQUES",
+            "subtitle": "Les fondations de notre feuille de route",
+            "items": {
+                "0": {
+                    "title": "Réforme Politique",
+                    "desc": "Mettre fin à la politique sectaire."
+                },
+                "1": {
+                    "title": "Revitalisation Économique",
+                    "desc": "Réformes bancaires et partenariats."
+                },
+                "2": {
+                    "title": "Sécurité & Stabilité",
+                    "desc": "Désarmement des acteurs non étatiques."
+                },
+                "3": {
+                    "title": "Médias & Sensibilisation",
+                    "desc": "Façonner les récits mondiaux."
+                }
+            }
+        },
+        "initiatives": {
+            "title": "INITIATIVES CLÉS",
+            "items": {
+                "0": {
+                    "t": "Loi sur la Responsabilité du Hezbollah",
+                    "d": "Lobbying pour la responsabilité légale."
+                },
+                "1": {
+                    "t": "Protection des Investissements",
+                    "d": "Attirer les investissements."
+                },
+                "2": {
+                    "t": "Plaidoyer Chapitre VII ONU",
+                    "d": "Promouvoir l'intervention internationale."
+                },
+                "3": {
+                    "t": "Programme d'Engagement de la Diaspora",
+                    "d": "Mobiliser les expatriés."
+                },
+                "4": {
+                    "t": "Stratégie d'Influence Médiatique",
+                    "d": "Cibler les médias internationaux."
+                }
+            }
+        },
+        "diversity": {
+            "title": "DIVERSITÉ DES VOIX",
+            "desc": "Améliorer la prise de décision légitime.",
+            "cards": {
+                "0": {
+                    "title": "Conseil Consultatif Inclusif",
+                    "desc": "Refléter la démographie diverse du Liban."
+                },
+                "1": {
+                    "title": "Engagement Communautaire",
+                    "desc": "Encourager la participation."
+                },
+                "2": {
+                    "title": "Groupes de Travail",
+                    "desc": "Expertise variée en droit et économie."
+                },
+                "3": {
+                    "title": "Collaboration",
+                    "desc": "Partenariat avec les organisations locales."
+                }
+            },
+            "structure": {
+                "title": "Structure Organisationnelle",
+                "executive": "Conseil Exécutif",
+                "advisory": "Conseil Consultatif",
+                "taskForces": "Groupes de Travail",
+                "partners": "Partenaires Mondiaux"
+            }
+        },
+        "funding": {
+            "tag": "Durabilité",
+            "title": "Financement & Soutien",
+            "desc": "ALEF s'engage à une approche transparente du financement.",
+            "list": {
+                "0": "Sources Diverses",
+                "1": "Campagnes de Levée de Fonds",
+                "2": "Partenariats Corporatifs",
+                "3": "Demandes de Subventions",
+                "4": "Rapports Transparents",
+                "5": "Engagement Communautaire"
+            }
+        },
+        "metrics": {
+            "title": "INDICATEURS DE SUCCÈS",
+            "desc": "Nous croyons en un impact mesurable.",
+            "cards": {
+                "0": {
+                    "title": "Responsabilité",
+                    "goal": "Responsabilité Légale",
+                    "m1": "Suivre les actions",
+                    "m2": "Mesurer la couverture médiatique"
+                },
+                "1": {
+                    "title": "Reprise Économique",
+                    "goal": "Attirer l'Investissement",
+                    "m1": "Cibler 500M$",
+                    "m2": "Surveiller la création d'emplois"
+                },
+                "2": {
+                    "title": "Chapitre VII ONU",
+                    "goal": "Intervention Internationale",
+                    "m1": "Compter les pays",
+                    "m2": "Évaluer les résolutions"
+                },
+                "3": {
+                    "title": "Diaspora",
+                    "goal": "Mobiliser les Expatriés",
+                    "m1": "2000 membres",
+                    "m2": "Mesurer le financement"
+                },
+                "4": {
+                    "title": "Influence Média",
+                    "goal": "Refaçonner le Récit",
+                    "m1": "Évaluer les sentiments",
+                    "m2": "Suivre les comms"
+                },
+                "5": {
+                    "title": "Réforme Politique",
+                    "goal": "Élections Équitables",
+                    "m1": "Surveiller les progrès",
+                    "m2": "Sondages d'opinion"
+                }
+            }
+        },
+        "downloadButton": "LIRE LES VALEURS"
+    },
+    "StrategicPlanPage": {
+        "header": {
+            "subtitle": "Feuille de Route pour la Reprise",
+            "title": "PLAN STRATÉGIQUE",
+            "tagline": "Reconstruire la Confiance des Investisseurs au Liban"
+        },
+        "executiveSummary": {
+            "title": "Résumé Exécutif",
+            "p1": "Avec un nouveau gouvernement en place, la question reste de savoir si le Liban peut attirer des investissements.",
+            "p2": "Bien que l'Investissement Direct Étranger (IDE) à grande échelle soit prématuré, des incitations spécifiques pourraient créer des opportunités.",
+            "p3": "Ce dossier présente les mesures politiques clés nécessaires."
+        },
+        "preconditions": {
+            "title": "PRÉCONDITIONS POLITIQUES & SÉCURITAIRES",
+            "card1": {
+                "title": "A. Stabilité Politique & Gouvernance",
+                "list": {
+                    "0": "Le gouvernement doit mettre en œuvre des réformes crédibles.",
+                    "1": "Des cadres de gouvernance transparents doivent être introduits."
+                }
+            },
+            "card2": {
+                "title": "B. Garanties de Sécurité & Désarmement",
+                "list": {
+                    "0": "Les risques de sécurité, principalement la présence armée du Hezbollah, doivent être traités.",
+                    "1": "Soutien international au rôle élargi de la FINUL."
+                }
+            }
+        },
+        "incentives": {
+            "title": "INCITATIONS À L'INVESTISSEMENT CLÉS",
+            "desc": "Opportunités stratégiques pour une croissance confiante",
+            "cards": {
+                "0": {
+                    "title": "Incitations Fiscales",
+                    "l0": "Réductions d'impôts...",
+                    "l1": "Zéro impôt pour les capitaux rapatriés...",
+                    "l2": "Protection contre les contrôles de capitaux."
+                },
+                "1": {
+                    "title": "Secteur Bancaire",
+                    "l0": "Mesures de stabilisation FMI...",
+                    "l1": "Lois transparentes sur le contrôle des capitaux..."
+                },
+                "2": {
+                    "title": "Partenariats Public-Privé",
+                    "l0": "Énergie renouvelable...",
+                    "l1": "Reconstruction du port...",
+                    "l2": "Infrastructure numérique..."
+                },
+                "3": {
+                    "title": "Fonds d'Inv. Diaspora",
+                    "l0": "Véhicule d'investissement...",
+                    "l1": "Mécanismes de réduction des risques..."
+                }
+            }
+        },
+        "partnerships": {
+            "title": "PARTENARIATS INTERNATIONAUX STRATÉGIQUES",
+            "desc": "Construire des ponts pour la stabilité économique",
+            "card1": {
+                "title": "Alliés du Golfe & Occidentaux",
+                "subtitle": "Coopération Mondiale",
+                "desc": "Renforcer les liens économiques avec les États-Unis, l'Arabie Saoudite, les EAU et la France."
+            },
+            "card2": {
+                "title": "Surveillance & Garanties",
+                "subtitle": "Sécurité & Conformité",
+                "desc": "Protection des investissements étrangers par des mécanismes internationaux."
+            }
+        },
+        "conclusion": {
+            "title": "Conclusion : Une Approche par Phases",
+            "p1": "La route du Liban vers la reprise économique nécessite une approche équilibrée.",
+            "p2": "La Fondation Américaine pour l'Éducation au Liban plaide pour un plan structuré."
+        },
+        "downloadButton": "LIRE LE PLAN COMPLET"
+    },
+    "ExpertsCornerPage": {
+        "title": "COIN DES EXPERTS",
+        "desc": "Rencontrez l'équipe de direction dévouée et notre réseau d'experts-conseils pilotant la mission de la Fondation.",
+        "filters": {
+            "all": "Tous",
+            "officers": "Officiers",
+            "directors": "Directeurs",
+            "advisors": "Conseillers Experts",
+            "searchPlaceholder": "RECHERCHER L'ÉQUIPE...",
+            "noResults": "Aucun membre trouvé correspondant à",
+            "clear": "EFFACER LES FILTRES"
+        },
+        "sections": {
+            "officers": "Officiers ALEF",
+            "directors": "Directeurs ALEF",
+            "advisors": "Conseillers Experts ALEF"
+        }
+    },
+    "SponsorsPage": {
+        "header": {
+            "subtitle": "Nos Supporters",
+            "title": "NOS SPONSORS",
+            "description": "Nous sommes profondément reconnaissants envers les visionnaires et les partenaires qui renforcent notre mission."
+        },
+        "partners": {
+            "community": {
+                "title": "Partenaires Communautaires",
+                "description": "Merci aux personnes qui nous soutiennent chaque jour."
+            },
+            "strategic": {
+                "title": "Alliés Stratégiques",
+                "description": "Des partenaires clés nous aidant à conduire un changement législatif."
+            },
+            "visionaries": {
+                "title": "Visionnaires Mondiaux",
+                "description": "Des leaders engagés pour un Liban libre et souverain."
+            }
+        },
+        "cta": {
+            "text": "Vous voulez devenir sponsor ?",
+            "button": "Soutenir Notre Mission"
+        }
+    },
+    "DonatePage": {
+        "header": {
+            "tag": "Soutenez la Cause",
+            "title": "ALIMENTEZ LE MOUVEMENT",
+            "description": "Votre contribution alimente notre combat pour un Liban souverain, libre et prospère. Chaque dollar soutient directement nos opérations de plaidoyer, de recherche et de sensibilisation mondiale."
+        },
+        "toggles": {
+            "oneTime": "Une Fois",
+            "monthly": "Mensuel",
+            "sponsor": "Sponsor"
+        },
+        "tiers": {
+            "sponsor": {
+                "strategic": {
+                    "label": "SPONSOR STRATÉGIQUE",
+                    "desc": "Devenez un pilier de notre mouvement. Recevez des briefings exécutifs trimestriels et un accès exclusif."
+                },
+                "visionary": {
+                    "label": "PARTENAIRE VISIONNAIRE",
+                    "desc": "Impact direct sur notre stratégie à long terme et reconnaissance permanente dans notre rapport de transparence."
+                },
+                "global": {
+                    "label": "ALLIÉ MONDIAL",
+                    "desc": "Plus haut niveau de soutien au plaidoyer avec liaison dédiée et alignement stratégique."
+                }
+            },
+            "support": {
+                "supporter": {
+                    "label": "SUPPORTER",
+                    "desc": "Soutenez nos opérations quotidiennes et la création de contenu."
+                },
+                "advocate": {
+                    "label": "DÉFENSEUR",
+                    "desc": "Aidez à financer nos documents de recherche et nos notes de politique."
+                },
+                "champion": {
+                    "label": "CHAMPION",
+                    "desc": "Propulsez notre lobbying international et nos événements."
+                }
+            }
+        },
+        "customAmount": {
+            "label": "Autre Montant",
+            "placeholder": "ENTRER LE MONTANT",
+            "placeholderMin": "ENTRER LE MONTANT (MIN 5 000 $)",
+            "errorMin": "LE PARRAINAGE MINIMUM EST DE 5 000 $",
+            "button": "Faire un Don",
+            "buttonMonthly": "Don Mensuel",
+            "buttonWait": "Attendez..."
+        },
+        "buttons": {
+            "select": "Sélectionner",
+            "months": "Mensuel",
+            "processing": "Traitement..."
+        },
+        "alerts": {
+            "validAmount": "Veuillez entrer un montant valide",
+            "selectTier": "Veuillez sélectionner un niveau ou entrer un montant.",
+            "paymentError": "Erreur de Paiement : ",
+            "connectError": "Impossible de se connecter au serveur de paiement.",
+            "loginRequired": "Vous devez être connecté pour faire un don. Voulez-vous vous connecter maintenant ?"
+        },
+        "footer": {
+            "taxInfo": "* ALEF est une organisation à but non lucratif enregistrée 501(c)(3). Tous les dons sont déductibles d'impôt."
+        }
+    },
+    "ProfilePage": {
+        "title": "MON PROFIL",
+        "anonymousUser": "Utilisateur Anonyme",
+        "totalImpact": "Impact Total",
+        "manageBilling": "Gérer la Facturation",
+        "signOut": "Se Déconnecter",
+        "history": {
+            "title": "Historique des Dons",
+            "empty": "Aucun historique trouvé.",
+            "status": "Réussi",
+            "types": {
+                "monthly": "Don Mensuel",
+                "monthlyRenewal": "Renouvellement Mensuel",
+                "sponsor": "Parrainage",
+                "oneTime": "Don Unique"
+            }
+        },
+        "alerts": {
+            "portalError": "Erreur lors de l'ouverture du portail : ",
+            "genericError": "Quelque chose a mal tourné."
+        }
+    },
+    "TestimonialsPage": {
+        "title": "EN COURS",
+        "description": "Cette page est actuellement en cours de développement."
+    },
+    "CongressionalAdvocacyPage": {
+        "title": "GROUPE DE PLAIDOYER AU CONGRÈS",
+        "subtitle": "SOUTIEN BIPARTISAN",
+        "intro": {
+            "p1": "Nous, à la Fondation Américaine pour l'Éducation au Liban (ALEF), tenons à remercier ces formidables membres bipartisans du Congrès américain qui soutiennent publiquement notre position contre l'axe iranien/Hezbollah.",
+            "p2": "Au fil des ans, ce groupe a servi de voix principale au Congrès appelant à la fois à un soutien accru des États-Unis pour libérer le Liban des chaînes du Hezbollah ainsi qu'aux réformes nécessaires de la part des dirigeants libanais."
+        },
+        "filters": {
+            "all": "Tous",
+            "senate": "Sénat",
+            "house": "Chambre",
+            "searchPlaceholder": "RECHERCHER DES MEMBRES...",
+            "noResults": "Aucun membre trouvé correspondant à",
+            "clear": "EFFACER LES FILTRES"
+        },
+        "sections": {
+            "senate": "Sénat des États-Unis",
+            "house": "Chambre des Représentants",
+            "republicans": "Républicains",
+            "democrats": "Démocrates"
+        },
+        "members": {
+            "senate_republicans": [
+                {
+                    "name": "Charles Grassley",
+                    "state": "IA",
+                    "desc": "Président pro tempore du Sénat américain",
+                    "img": "Charles Grassley.jpg"
+                },
+                {
+                    "name": "Jim Risch",
+                    "state": "ID",
+                    "desc": "Président de la commission des affaires étrangères du Sénat",
+                    "img": "Jim Risch.jpg"
+                },
+                {
+                    "name": "Joe Wilson",
+                    "state": "SC",
+                    "desc": "Président du sous-comité sur le Moyen-Orient et membre du comité des services armés de la Chambre",
+                    "img": "Joe Wilson.jpg"
+                },
+                {
+                    "name": "Darin Lahood",
+                    "state": "IL",
+                    "desc": "Coprésident du caucus bipartisan d'amitié américano-libanaise.",
+                    "img": "Darin Lahood.jpg"
+                },
+                {
+                    "name": "James Lankford",
+                    "state": "OK",
+                    "desc": "Coprésident du caucus bipartisan des accords d'Abraham au Sénat.",
+                    "img": "James Lankford.jpg"
+                },
+                {
+                    "name": "Joni Ernst",
+                    "state": "IA",
+                    "desc": "Coprésidente du caucus bipartisan des accords d'Abraham au Sénat,",
+                    "img": "Joni Ernst.jpg"
+                },
+                {
+                    "name": "Lindsey Graham",
+                    "state": "SC",
+                    "desc": "Commission des crédits du Sénat.",
+                    "img": "Lindsey Graham.jpg"
+                },
+                {
+                    "name": "Tom Cotton",
+                    "state": "AZ",
+                    "desc": "Sécurité nationale et politique étrangère.",
+                    "img": "Tom Cotton.jpg"
+                },
+                {
+                    "name": "Todd Young",
+                    "state": "IN",
+                    "desc": "Membre de haut rang du sous-comité des relations étrangères du Sénat",
+                    "img": "Todd Young.jpg"
+                },
+                {
+                    "name": "Roger Wicker",
+                    "state": "MS",
+                    "desc": "Politique de défense, financement militaire et sécurité nationale,",
+                    "img": "Roger Wicker.jpg"
+                },
+                {
+                    "name": "Steve Daines",
+                    "state": "MT",
+                    "desc": "Membre du comité des relations étrangères du Sénat avec une expérience directe du Hezbollah",
+                    "img": "Steve Daines.jpg"
+                },
+                {
+                    "name": "Rick Scott",
+                    "state": "FL",
+                    "desc": "Opposant déclaré à l'Iran et à son mandataire terroriste, le Hezbollah.",
+                    "img": "Rick Scott.jpg"
+                },
+                {
+                    "name": "Ted Cruz",
+                    "state": "TX",
+                    "desc": "Opposant déclaré à l'Iran et à son mandataire terroriste, le Hezbollah.",
+                    "img": "Ted Cruz.jpg"
+                }
+            ],
+            "senate_democrats": [
+                {
+                    "name": "Mark Warner",
+                    "state": "VA",
+                    "desc": "Président du comité spécial du renseignement du Sénat",
+                    "img": "Mark Warner.jpg"
+                },
+                {
+                    "name": "Ron Wyden",
+                    "state": "OR",
+                    "desc": "Influenceur clé sur la sécurité nationale, l'aide étrangère et les questions de renseignement.",
+                    "img": "Ron Wyden.jpg"
+                },
+                {
+                    "name": "Mark Kelly",
+                    "state": "AZ",
+                    "desc": "Membre des commissions des forces armées et du renseignement du Sénat,",
+                    "img": "Mark Kelly.jpg"
+                },
+                {
+                    "name": "Elissa Slotkin",
+                    "state": "MI",
+                    "desc": "Ancienne analyste de la CIA avec une expérience au Moyen-Orient et membre du comité des forces armées du Sénat",
+                    "img": "Elissa Slotkin.jpg"
+                }
+            ],
+            "house_republicans": [
+                {
+                    "name": "Michael McCaul",
+                    "state": "TX",
+                    "desc": "Président de la commission des affaires étrangères de la Chambre",
+                    "img": "Michael McCaul.jpg"
+                },
+                {
+                    "name": "Mike Lawler",
+                    "state": "NY",
+                    "desc": "Président du sous-comité des affaires étrangères de la Chambre sur le Moyen-Orient et l'Afrique du Nord,",
+                    "img": "Mike Lawler.jpg"
+                },
+                {
+                    "name": "Zach Nunn",
+                    "state": "IA",
+                    "desc": "Président du groupe de travail républicain sur la sécurité nationale",
+                    "img": "zach nunn.jpg"
+                },
+                {
+                    "name": "Dave McCormick",
+                    "state": "PA",
+                    "desc": "Président du sous-comité sur le contre-terrorisme",
+                    "img": "dave mc cormick.jpg"
+                },
+                {
+                    "name": "Darrell Issa",
+                    "state": "CA",
+                    "desc": "Vice-président de la commission des affaires étrangères de la Chambre",
+                    "img": "darrell issa.jpg"
+                },
+                {
+                    "name": "Joe Wilson",
+                    "state": "SC",
+                    "desc": "Membre de la commission des affaires étrangères de la Chambre",
+                    "img": "Joe Wilson.jpg"
+                },
+                {
+                    "name": "Don Bacon",
+                    "state": "IL",
+                    "desc": "Siège au comité des services armés de la Chambre et au comité permanent spécial du renseignement",
+                    "img": "Don Bacon.jpg"
+                },
+                {
+                    "name": "Mark Messmer",
+                    "state": "IN",
+                    "desc": "Siège au comité des services armés de la Chambre,",
+                    "img": "Mark Messmer.jpg"
+                },
+                {
+                    "name": "Brian Mast",
+                    "state": "FL",
+                    "desc": "Siège au comité des affaires étrangères de la Chambre",
+                    "img": "Brian Mast.jpg"
+                },
+                {
+                    "name": "Mike Rogers",
+                    "state": "MI",
+                    "desc": "Siège au comité des relations étrangères du Sénat",
+                    "img": "Mike Rogers.jpg"
+                },
+                {
+                    "name": "Jefferson Shreve",
+                    "state": "IN",
+                    "desc": "Opposant déclaré à l'Iran et à son mandataire terroriste, le Hezbollah.",
+                    "img": "Jefferson Shreve.jpg"
+                },
+                {
+                    "name": "Claudia Tenney",
+                    "state": "NY",
+                    "desc": "Sécurité nationale, contre-terrorisme et menaces étrangères.",
+                    "img": "Claudia Tenney.jpg"
+                },
+                {
+                    "name": "Greg Steube",
+                    "state": "FL",
+                    "desc": "Législation de la loi PAGER",
+                    "img": "Greg Steube.jpg"
+                }
+            ],
+            "house_democrats": [
+                {
+                    "name": "Josh Gottheimer",
+                    "state": "NJ",
+                    "desc": "Opposant déclaré à l'Iran et à son mandataire terroriste, le Hezbollah.",
+                    "img": "josh gottheimer.jpg"
+                },
+                {
+                    "name": "Brad Schneider",
+                    "state": "IL",
+                    "desc": "Coprésident du caucus bipartisan des accords d'Abraham",
+                    "img": "brad schneider.jpg"
+                },
+                {
+                    "name": "Ritchie Torres",
+                    "state": "NY",
+                    "desc": "Opposant déclaré à l'Iran et à son mandataire terroriste, le Hezbollah.",
+                    "img": "Ritchie Torres.jpg"
+                },
+                {
+                    "name": "Don Davis",
+                    "state": "NC",
+                    "desc": "Siège au comité des services armés de la Chambre, influençant la politique de défense américaine et la préparation militaire.",
+                    "img": "don davis.jpg"
+                },
+                {
+                    "name": "Jacky Rosen",
+                    "state": "NV",
+                    "desc": "A codirigé la loi bipartisane 'Pas de Hezbollah dans notre hémisphère' pour contrer les opérations du Hezbollah en Amérique latine",
+                    "img": "jacky rosen.jpg"
+                },
+                {
+                    "name": "Jimmy Panetta",
+                    "state": "CA",
+                    "desc": "Fils de l'ancien secrétaire à la Défense Leon Panetta. Expert en diplomatie au Moyen-Orient",
+                    "img": "Jimmy panetta.jpg"
+                },
+                {
+                    "name": "Brad Sherman",
+                    "state": "CA",
+                    "desc": "Membre de la commission des affaires étrangères de la Chambre. Influence majeure sur la politique étrangère américaine au Moyen-Orient.",
+                    "img": "brad sherman.jpg"
+                },
+                {
+                    "name": "Gregory Meeks",
+                    "state": "NY",
+                    "desc": "Membre de la commission des affaires étrangères de la Chambre, l'un des principaux démocrates influençant la politique étrangère américaine,",
+                    "img": "Gregory meeks.jpg"
+                }
+            ]
+        }
+    },
+    "AlefInTheNewsPage": {
+        "title": "EN COURS",
+        "description": "Cette page est actuellement en cours de développement."
+    },
+    "BlogsPage": {
+        "title": "BLOGS & ARTICLES",
+        "desc": "Analyse approfondie, stratégie géopolitique et mises à jour critiques.",
+        "searchPlaceholder": "RECHERCHER DES ARTICLES...",
+        "readFull": "LIRE L'ARTICLE COMPLET",
+        "noResults": "Aucun article trouvé correspondant à vos critères.",
+        "clearFilters": "EFFACER LES FILTRES",
+        "previous": "Précédent",
+        "next": "Suivant",
+        "all": "Tous",
+        "anonymous": "Anonyme"
+    },
+    "BlogPostPage": {
+        "published": "Publié",
+        "recentUpdate": "Mise à jour récente",
+        "authorFallback": "Auteur",
+        "alefAnalysts": "Analystes ALEF",
+        "strategicPolicy": "Politique Stratégique",
+        "endOfDispatch": "Fin de la dépêche",
+        "returnToArchives": "Retour aux archives"
+    },
+    "HouseOfCardsPage": {
+        "hero": {
+            "title": "CHÂTEAU DE CARTES",
+            "desc": "L'archive complète des dossiers. Chaque carte révèle une histoire, une connexion ou un avertissement.",
+            "visibleDossiers": "Dossiers Visibles",
+            "decryptMore": "DÉCRYPTER PLUS DE DOSSIERS",
+            "secureArchive": "SÉCURISER L'ARCHIVE RÉCUPÉRÉE",
+            "decrypting": "DÉCRYPTAGE DE {count} / {total} ENTRÉES",
+            "fullArchive_accessible": "ARCHIVE COMPLÈTE ACCESSIBLE"
+        },
+        "filters": {
+            "searchPlaceholder": "RECHERCHER DANS L'ARCHIVE...",
+            "all": "Tous",
+            "spades": "Piques",
+            "hearts": "Cœurs",
+            "diamonds": "Carreaux",
+            "clubs": "Trèfles"
+        },
+        "detail": {
+            "returnToArchive": "Retour à l'archive",
+            "endOfDossier": "Fin du Dossier",
+            "evidence": "Preuves et Activités"
+        },
+        "cards": {
+            "michel-aoun": {
+                "name": "Michel Aoun",
+                "tag": "ALLIANCES SECTAIRES ET EFFONDREMENT",
+                "stamp": "LE FACILITATEUR",
+                "role": "Ancien Président du Liban",
+                "summary": "Ancien commandant de l'armée et chef de faction de la guerre civile. Des enquêtes judiciaires et médiatiques indiquent qu'il a toléré une corruption généralisée parmi ses loyalistes et détourné le blâme des scandales tandis que sa famille faisait face à des allégations de corruption. La présidence d'Aoun s'est terminée au milieu de la ruine économique, de l'impasse politique et d'enquêtes continues sur le détournement de fonds publics et la catastrophe du port de Beyrouth.",
+                "quote": "Présenté comme un 'homme fort' réformiste, Aoun a laissé derrière lui une nation divisée et des institutions défaillantes.",
+                "sections": [
+                    {
+                        "title": "ACCUSATIONS DE CORRUPTION GÉNÉRALISÉE",
+                        "content": [
+                            "Soupçonné d'avoir détourné des fonds publics à l'étranger via des comptes familiaux depuis les années 1980, faisant maintenant l'objet d'enquêtes judiciaires.",
+                            "Son gendre Gebran Bassil, sanctionné par les États-Unis, a profité du patronage politique d'Aoun pour dominer les ministères, accusé d'enrichissement illicite.",
+                            "Accusé de protéger la corruption criminelle parmi ses loyalistes et d'assurer une loyauté sectaire."
+                        ]
+                    },
+                    {
+                        "title": "ALLIANCE AVEC LE HEZBOLLAH ET OBSTRUCTION POLITIQUE",
+                        "content": [
+                            "Aligné avec le Hezbollah durant sa présidence, facilitant sa domination politique et militaire ; a bloqué les actions judiciaires contre le Hezbollah.",
+                            "Le Courant Patriotique Libre, sa faction politique, est impliqué dans la protection des activités économiques illicites du Hezbollah."
+                        ]
+                    },
+                    {
+                        "title": "PROMESSES TRAHIES ET ALLIANCES ÉTRANGÈRES",
+                        "content": [
+                            "Son alliance avec le Hezbollah et son soutien au régime Assad ont isolé le Liban, renforçant l'influence de l'Iran et isolant le Liban de ses partenaires occidentaux et du Golfe critiques.",
+                            "A soutenu le régime Assad dans la guerre civile syrienne, nuisant davantage à la réputation internationale du Liban et faisant fuir les investissements.",
+                            "Les manifestations massives de 2019 ont blâmé Aoun et ses revirements politiques pour avoir plongé le Liban dans une pauvreté record, l'inégalité et l'effondrement des infrastructures."
+                        ]
+                    },
+                    {
+                        "title": "HÉRITAGE DE CRISE ET DE PARALYSIE",
+                        "content": [
+                            "A supervisé l'effondrement économique du Liban et l'explosion du port de Beyrouth.",
+                            "A laissé un État fracturé avec une instabilité économique et politique continue.",
+                            "Multiples enquêtes en cours pour corruption et négligence."
+                        ]
+                    }
+                ]
+            },
+            "naim-qassem": {
+                "name": "Naim Qassem",
+                "tag": "STRATÈGE DE LA TERREUR & CHEF DES PROXIES IRANIENS",
+                "stamp": "LE MANDATAIRE",
+                "role": "Secrétaire Général du Hezbollah",
+                "summary": "Ancien Secrétaire Général adjoint (1991-2024). Chef terroriste désigné par les États-Unis et chef stratégique du Hezbollah, Qassem est connu pour fusionner le commandement militaire et les menaces publiques contre le désarmement libanais. En tant que successeur de Nasrallah, il approfondit la portée de l'Iran, rejette tout compromis et menace ouvertement de guerre civile tout en ciblant les intérêts américains et israéliens.",
+                "quote": "Sur ordre de l'Iran, Qassem sacrifie l'avenir du Liban pour les armes du Hezbollah.",
+                "sections": [
+                    {
+                        "title": "CERVEAU MILITARO-CLÉRICAL",
+                        "content": [
+                            "A cofondé le Hezbollah en 1982 après l'invasion israélienne ; est devenu le stratège le plus influent.",
+                            "A supervisé les campagnes électorales, les réseaux de financement iraniens et la politique opérationnelle.",
+                            "A fusionné les sphères militante et politique pour bloquer le désarmement et les réformes.",
+                            "Rejette toute séparation entre l'aile politique et l'aile armée du Hezbollah."
+                        ]
+                    },
+                    {
+                        "title": "MENACES TERRORISTES DÉSIGNÉES ET SANCTIONS",
+                        "content": [
+                            "Sanctionné par le Trésor américain en tant que Terroriste Mondial Spécialement Désigné (SDGT).",
+                            "Lié par les services de renseignement américains au soutien d'attaques ayant tué des centaines d'Américains, y compris l'attentat contre les casernes des Marines à Beyrouth en 1983."
+                        ]
+                    },
+                    {
+                        "title": "RÉSEAUX RÉGIONAUX ET INFLUENCE IRANIENNE",
+                        "content": [
+                            "Agit comme le principal canal de Téhéran, s'en remettant au Guide Suprême iranien dans les décisions du conseil stratégique.",
+                            "A accru l'alignement du Hezbollah avec la Force Qods du CGRI iranien, étendant les menaces par procuration contre Israël, l'Arabie Saoudite et les actifs américains.",
+                            "S'est installé à Téhéran fin 2024 après des assassinats de dirigeants, cimentant à la fois sa loyauté et son immunité sous la protection iranienne."
+                        ]
+                    },
+                    {
+                        "title": "POLITIQUE AMÉRICAINE ET CRISE DU LIBAN",
+                        "content": [
+                            "Les menaces ouvertes de Qassem ('pas de vie au Liban' si le Hezbollah est désarmé) sont vues comme des avertissements voilés de guerre civile.",
+                            "Entrave les efforts de l'ONU et des États-Unis pour appliquer la résolution 1701 et isoler les mandataires iraniens.",
+                            "Orchestre la propagande, l'évasion des sanctions et la collecte de fonds mondiale, le DOJ/OFAC ciblant ses structures de soutien.",
+                            "Les agences américaines le relient au blanchiment d'argent organisationnel et au narco-financement dans le monde entier."
+                        ]
+                    }
+                ]
+            },
+            "nabih-berri": {
+                "name": "Nabih Berri",
+                "tag": "THE UNTOUCHABLE",
+                "stamp": "UNTOUCHABLE",
+                "role": "Speaker of Parliament",
+                "summary": "The longest-serving parliament speaker in the world, holding the gavel since 1992. A master of political maneuvering, Berri controls the legislative agenda and leads the Amal Movement. He is accused of turning the parliament into a fortress for the corrupt elite, orchestrating the paralysis of state institutions, and using the 'Council of the South' as a patronage mill.",
+                "quote": "I am the master of the game; nothing passes without my signature.",
+                "sections": [
+                    {
+                        "title": "PARLIAMENTARY DICTATORSHIP",
+                        "content": [
+                            "Has successfully blocked every major reform bill in the last decade, including capital controls and forensic audits.",
+                            "Uses his power to shut down parliament sessions whenever his political interests are threatened."
+                        ]
+                    },
+                    {
+                        "title": "COUNCIL OF THE SOUTH CORRUPTION",
+                        "content": [
+                            "Accused of treating the state-funded Council of the South as a private bank for the Amal Movement.",
+                            "Billions of dollars in infrastructure projects awarded to loyalists with little to show on the ground."
+                        ]
+                    },
+                    {
+                        "title": "BLOCKING JUSTICE",
+                        "content": [
+                            "Instrumental in protecting MPs and ministers from being questioned in the Beirut Port explosion investigation.",
+                            "His 'security police' in parliament were filmed attacking protesters during the 2019 revolution."
+                        ]
+                    }
+                ]
+            },
+            "hassan-nasrallah": {
+                "name": "Hassan Nasrallah",
+                "tag": "THE ARCHITECT OF THE PARALLEL STATE",
+                "stamp": "ARCHITECT",
+                "role": "Late Hezbollah Leader",
+                "summary": "For over three decades, he built a 'state within a state,' commanding a militia more powerful than the Lebanese Army. His allegiance to Iran dragged Lebanon into regional conflicts, economic isolation, and devastating wars. He established a parallel economy and security apparatus that hollowed out Lebanon's sovereignty and institutions.",
+                "quote": "We have our own money, our own arms, and our own decisions.",
+                "sections": [
+                    {
+                        "title": "STATE CAPTURE",
+                        "content": [
+                            "Systematically eroded the authority of the Lebanese state, creating a parallel communication network, banking system (Al-Qard Al-Hassan), and army.",
+                            "Used the 'resistance' narrative to justify holding onto illegal weapons in violation of UN resolutions."
+                        ]
+                    },
+                    {
+                        "title": "REGIONAL WARS",
+                        "content": [
+                            "Unilaterally dragged Lebanon into the Syrian Civil War and conflicts with Israel, isolating the country from the Arab world and the West.",
+                            "Transformed Lebanon into a forward operating base for the Iranian Revolutionary Guard."
+                        ]
+                    },
+                    {
+                        "title": "ASSASSINATIONS & TERROR",
+                        "content": [
+                            "Implicated by international tribunals in the assassination of Prime Minister Rafic Hariri.",
+                            "His organization is designated as a terrorist entity by the US, EU, GCC, and others."
+                        ]
+                    }
+                ]
+            },
+            "riad-salameh": {
+                "name": "Riad Salameh",
+                "tag": "EMBEZZLEMENT & GLOBAL IMPUNITY",
+                "stamp": "SCHEMER",
+                "role": "Former Central Bank Governor of Lebanon",
+                "summary": "Lebanon's most notorious financial defendant. Former Central Bank Governor of Lebanon (1993-2023). The 'mastermind' banker praised as a wizard, unmasked as the architect of Lebanon's collapse. Built a network for elite embezzlement, laundering, and regime survival. Salameh's legacy is a bankrupt nation, shattered currency, and unchecked corruption with global footprints.",
+                "quote": "Salameh ran Lebanon's finances for 30 years, then dodged prosecution while evidence mounted.",
+                "sections": [
+                    {
+                        "title": "THE ARCHITECT OF FINANCIAL FRAUD AND RUIN",
+                        "content": [
+                            "Embezzled $330M+ in public funds (2002-2015) via his brother's firm, Forry Associates, hiding proceeds through shell companies and European real estate.",
+                            "Arrested in September 2024 on $42M embezzlement charges, bail cut from $53M to $14M.",
+                            "Posted $14M bail in Sept 2025 despite frozen assets.",
+                            "Ran a Ponzi scheme to prop up Lebanon's pound; $70 billion in losses."
+                        ]
+                    },
+                    {
+                        "title": "HEZBOLLAH & POLITICAL ENABLERS",
+                        "content": [
+                            "Allowed Hezbollah's cash networks to thrive, turning a blind eye to illegal dollar flows and sanctioned exchange houses.",
+                            "Accused of enabling systemic corruption with political allies, especially Hariri, ignoring bankruptcy warnings for decades."
+                        ]
+                    },
+                    {
+                        "title": "SALAMEH'S CIRCLE OF IMPUNITY",
+                        "content": [
+                            "Raja Salameh (Brother): Sanctioned and indicted in Paris for $330M embezzlement and laundering scams.",
+                            "Nady Salameh (Son): Sanctioned, properties frozen.",
+                            "Marianne Hoayek (Assistant): Sanctioned for aiding corruption deals and funneling offshore commissions.",
+                            "Anna Kosakova (Associate): Sanctioned for laundering Salameh's real estate empire."
+                        ]
+                    },
+                    {
+                        "title": "INTERNATIONAL INVESTIGATIONS, GLOBAL FALLOUT",
+                        "content": [
+                            "Under probe in Switzerland, France, Germany, and Luxembourg for laundering $300M+ with $100M moved through EU banks, unchecked.",
+                            "French and German arrest warrants issued.",
+                            "Sanctioned by U.S., UK, and Canada since August 2023; Interpol red notice active."
+                        ]
+                    }
+                ]
+            },
+            "walid-jumblatt": {
+                "name": "Walid Jumblatt",
+                "tag": "BRIBERY & BETRAYAL",
+                "stamp": "CHAMELEON",
+                "role": "Druze Leader",
+                "summary": "Former Head of Progressive Socialist Party (1977-2023). Accused of smuggling $500M abroad during Lebanon's crisis, while hypocritically condemning others' capital flight. Controls Druze areas through patronage and vote-buying, with wealth from family estates and telecoms tied to feudal networks.",
+                "quote": "Master of sectarian patronage and silent deals.",
+                "sections": [
+                    {
+                        "title": "THE KINGMAKER WHO SWITCHES SIDES",
+                        "content": [
+                            "Supported Hezbollah's armed 'resistance,' now flips to calling for their disarmament.",
+                            "Peddles deals with Syria, Turkey, and Gulf states - whoever pays to keep his Druze fiefdom safe.",
+                            "Denies Lebanese claim to Shebaa Farms, sacrificing national sovereignty for geopolitical gain.",
+                            "Accused of smuggling $500M during Lebanon's crisis."
+                        ]
+                    },
+                    {
+                        "title": "INNER CIRCLE",
+                        "content": [
+                            "Taymour Jumblatt: Born to rule; inherits power, wealth, and a legacy of misused funds.",
+                            "PSP loyalists: Masters of vote-buying, public contract abuse, and sectarian favoritism.",
+                            "Party allies: Linked to cover-ups and corruption probes; influence protected by family ties.",
+                            "Hezbollah & Berri: Deals built on silence, mutual protection, and deflecting blame for Lebanon's collapse."
+                        ]
+                    },
+                    {
+                        "title": "THE PROTECTED WARLORD",
+                        "content": [
+                            "Linked to brutal 1980s civil war massacres, yet immune from justice under amnesty laws.",
+                            "Resigned as party head but pulls strings behind the scenes.",
+                            "Shapes Lebanon's broken sectarian politics to stay in power."
+                        ]
+                    },
+                    {
+                        "title": "THE DIVIDED STATE",
+                        "content": [
+                            "Druze lands torn by bitter rivalries with Arslan, Wahab, and Syrian Druze factions.",
+                            "Jumblatt manipulates these divisions to maintain grip on power, alienating many Druze."
+                        ]
+                    }
+                ]
+            },
+            "gebran-bassil": {
+                "name": "Gebran Bassil",
+                "tag": "THE SHADOW PRESIDENT",
+                "stamp": "SHADOW PRESIDENT",
+                "role": "Head of FPM / MP",
+                "summary": "The son-in-law of Michel Aoun and the most sanctioned Christian politician in Lebanon. As Minister of Energy for over a decade (directly or via proxy), he oversaw the waste of $40 billion on a non-existent electricity sector. He is widely blamed for obstructing government formation for months at a time to secure cabinet seats, embodying the worst of the 'clientelist' system.",
+                "quote": "They don't let us work.",
+                "sections": [
+                    {
+                        "title": "ENERGY SECTOR BLACK HOLE",
+                        "content": [
+                            "Presided over the Ministry of Energy during the period of its biggest losses, contributing to half of Lebanon's public debt.",
+                            "Promised 24/7 electricity by 2013; delivered total darkness by 2021."
+                        ]
+                    },
+                    {
+                        "title": "MAGNITSKY SANCTIONS",
+                        "content": [
+                            "Sanctioned by the US Treasury under the Global Magnitsky Act for significant corruption and misappropriation of state assets.",
+                            "Labeled as a primary enabler of Hezbollah's political influence within the Christian community."
+                        ]
+                    },
+                    {
+                        "title": "SECTARIAN AGITATION",
+                        "content": [
+                            "Built his political career on divisive sectarian rhetoric, alienating other communities to consolidate Christian votes.",
+                            "Accused of trading national sovereignty for personal political ambitions."
+                        ]
+                    }
+                ]
+            },
+            "ali-hassan-khalil": {
+                "name": "Ali Hassan Khalil",
+                "tag": "THE FINANCE ENFORCER",
+                "stamp": "FINANCE ENFORCER",
+                "role": "MP / Former Finance Minister",
+                "summary": "Nabih Berri's right-hand man and the gatekeeper of the Finance Ministry. Sanctioned by the US for aiding Hezbollah and for corruption. He is infamous for refusing to sign judicial decrees to block the Beirut Port investigation and for engineering the 'financial engineering' laws alongside Salameh that wiped out people's savings.",
+                "quote": "The signature is mine, and I will not sign.",
+                "sections": [
+                    {
+                        "title": "BLOCKING THE PORT INVESTIGATION",
+                        "content": [
+                            "Refused to sign the judicial appointments needed to keep the Beirut Port Blast investigation alive.",
+                            "Issued an arrest warrant for Judge Tarek Bitar in a brazen attempt to intimidate the judiciary."
+                        ]
+                    },
+                    {
+                        "title": "MINISTRY OF FINANCE CORRUPTION",
+                        "content": [
+                            "Used the Finance Ministry as a tool for sectarian patronage, hiring thousands of illegal employees.",
+                            "Blocked forensic audits that would have exposed the scale of theft in the public sector."
+                        ]
+                    },
+                    {
+                        "title": "SANCTIONS & HEZBOLLAH LINKS",
+                        "content": [
+                            "Sanctioned by the US for providing material support to Hezbollah and leveraging his political position for financial gain.",
+                            "Accused of moving money for Hezbollah through state institutions."
+                        ]
+                    }
+                ]
+            },
+            "ghada-aoun": {
+                "name": "Ghada Aoun",
+                "tag": "THE ROGUE PROSECUTOR",
+                "stamp": "ROGUE PROSECUTOR",
+                "role": "Mount Lebanon Public Prosecutor",
+                "summary": "A polarizing judicial figure known for her televised raids on financial institutions. While claiming to fight corruption, her investigations are widely criticized as politically motivated witch-hunts targeting opponents of the Free Patriotic Movement (FPM). She has repeatedly defied judicial dismissal orders, exposing the complete breakdown of the Lebanese judicial hierarchy.",
+                "quote": "Justice used as a political weapon ceases to be justice.",
+                "sections": [
+                    {
+                        "title": "POLITICIZED RAIDS",
+                        "content": [
+                            "Orchestrated dramatic, media-covered raids on the Mecattaf money exchange and various banks, often accompanied by FPM activists rather than security forces.",
+                            "Accused of selectively targeting banks aligned with her political rivals while ignoring others.",
+                            "Her refusal to step down despite dismissal by the Public Prosecutor signaled the end of judicial chain of command."
+                        ]
+                    },
+                    {
+                        "title": "JUDICIAL ANARCHY",
+                        "content": [
+                            "Dismissed from investigations multiple times by the Higher Judicial Council but refused to comply, breaking locks and entering sealed offices by force.",
+                            "Faces over 20 complaints before the Judicial Inspection Authority, the highest for any judge in Lebanese history.",
+                            "Actions have been described by legal experts as contributing to the total paralysis of the judiciary."
+                        ]
+                    }
+                ]
+            },
+            "jamil-al-sayed": {
+                "name": "Jamil al-Sayed",
+                "tag": "ARCHITECT OF THE SECURITY STATE",
+                "stamp": "ARCHITECT",
+                "role": "Member of Parliament / Former General Security Chief",
+                "summary": "The former Director General of General Security who constructed the Syrian-Lebanese security apparatus that dominated Lebanon post-civil war. Though released from detention in the Hariri assassination case due to 'insufficient evidence', he remains the symbol of the 'police state' era, using intimidation and intelligence dossiers to maintain influence.",
+                "quote": "The dossiers never disappear, they just change hands.",
+                "sections": [
+                    {
+                        "title": "THE SYRIAN PROCONSUL",
+                        "content": [
+                            "Served as the primary enforcer of Syrian hegemony in Lebanon, orchestrating crackdowns on anti-Syrian activists and politicians.",
+                            "Reinvented himself as an MP allied with Hezbollah, using his parliamentary immunity to attack judicial investigations.",
+                            "Accused of maintaining a private intelligence network to blackmail political rivals."
+                        ]
+                    },
+                    {
+                        "title": "JUSTICE DELAYED",
+                        "content": [
+                            "Detained for four years in connection with the Rafic Hariri assassination; his release was celebrated by Hezbollah as a victory against 'politicized international justice'.",
+                            "Continues to threaten judges and journalists who investigate the security sector's dark history."
+                        ]
+                    }
+                ]
+            },
+            "mohammad-haidar": {
+                "name": "Mohammad Haidar",
+                "tag": "THE GATEKEEPER",
+                "stamp": "GATEKEEPER",
+                "role": "Hezbollah Security Official / MP",
+                "summary": "A key figure in Hezbollah's security apparatus, often operating in the shadows. He is alleged to oversee the party's control over critical infrastructure, including Beirut-Rafic Hariri International Airport, facilitating the unchecked flow of illicit goods and cash that sustains the parallel state.",
+                "quote": "Whoever controls the ports, controls the lifeline of the nation.",
+                "sections": [
+                    {
+                        "title": "AIRPORT HEGEMONY",
+                        "content": [
+                            "Alleged to enforce Hezbollah's de facto authority over airport security, bypassing state customs and oversight.",
+                            "Linked to networks that transport cash and sensitive equipment from Iran, violating UN resolutions.",
+                            "His influence ensures that the state remains blind to the parallel economy moving through its own borders."
+                        ]
+                    },
+                    {
+                        "title": "THE PARALLEL ECONOMY",
+                        "content": [
+                            "Part of the network managing the party's financing, insulating it from the national banking collapse.",
+                            "Resistance to IMF reforms is driven by the need to protect these illicit supply lines from international scrutiny."
+                        ]
+                    }
+                ]
+            },
+            "nawaf-salam": {
+                "name": "Nawaf Salam",
+                "tag": "THE PARALYZED PREMIER",
+                "stamp": "PARALYZED",
+                "role": "Prime Minister of Lebanon / Former ICJ Judge",
+                "summary": "Appointed Prime Minister in early 2025 as a 'reformist hope' backed by the West. However, his tenure has been marked by total paralysis. Boycotted by the 'Shia Duo' and unable to implement a single IMF reform, Salam represents the failure of the 'technocratic solution' in a system ruled by warlords.",
+                "quote": "Good intentions die quickly in the graveyard of Lebanese politics.",
+                "sections": [
+                    {
+                        "title": "THE FAILED WESTERN GAMBIT",
+                        "content": [
+                            "His appointment was intended to unlock international aid, but his inability to confront Hezbollah's veto power left the country in limbo.",
+                            "Labeled as 'The Weakest PM' by critics after failing to enforce security appointments or border controls.",
+                            "His tenure proved that without disarming militias, even the most qualified judge is powerless."
+                        ]
+                    },
+                    {
+                        "title": "INSTITUTIONAL DEADLOCK",
+                        "content": [
+                            "Forced to govern without a functioning cabinet due to sectarian boycotts.",
+                            "His promises of 'accountability' for the Beirut Blast were immediately blocked by the entrenched political class he swore to fight."
+                        ]
+                    }
+                ]
+            },
+            "amer-bisat": {
+                "name": "Amer Bisat",
+                "tag": "THE IGNORED PROPHET",
+                "stamp": "IGNORED PROPHET",
+                "role": "Economist / Former IMF Official",
+                "summary": "A leading global economist and BlackRock executive who diagnosed Lebanon's crisis years before the collapse. His comprehensive rescue plans were systematically ignored by the ruling elite, who preferred to loot the remaining reserves rather than implement the forensic audits he demanded.",
+                "quote": "They knew the ship was sinking and chose to sell the lifeboats.",
+                "sections": [
+                    {
+                        "title": "THE LOST DECADE",
+                        "content": [
+                            "Co-authored the '10 Point Action Plan' warning of a 'lost decade' if immediate capital controls weren't implemented in 2020.",
+                            "His exclusion from decision-making roles highlights the regime's allergy to competence and transparency.",
+                            "Remains a vocal critic of the 'Lirification' of deposits, calling it the largest wealth transfer from the poor to the rich in history."
+                        ]
+                    },
+                    {
+                        "title": "TECHNOCRATIC EXILE",
+                        "content": [
+                            "Represents the diaspora talent pool that Lebanon desperately needs but refuses to empower.",
+                            "His warnings about the Central Bank's Ponzi scheme were dismissed as 'pessimism' until the savings of millions evaporated."
+                        ]
+                    }
+                ]
+            },
+            "fadi-akiki": {
+                "name": "Fadi Akiki",
+                "tag": "THE MILITARY INQUISITOR",
+                "stamp": "MILITARY INQUISITOR",
+                "role": "Government Commissioner to the Military Court",
+                "summary": "The judicial hammer of the establishment. As the head of the Military Court, Akiki is accused of weaponizing military justice to target activists, protesters, and religious figures critical of Hezbollah, while burying investigations into militia violence like the Tayyouneh clashes.",
+                "quote": "In the military court, orders from above weigh more than the law.",
+                "sections": [
+                    {
+                        "title": "TARGETING DISSENT",
+                        "content": [
+                            "Infamously detained Archbishop Moussa al-Hajj, confiscating aid for the poor in a move seen as intimidation of the Church.",
+                            "Routinely summons activists and journalists for 'insulting the presidency' or 'disturbing the peace,' effectively criminalizing free speech.",
+                            "Criticized by human rights groups for using broad 'terrorism' charges to detain peaceful protesters."
+                        ]
+                    },
+                    {
+                        "title": "SELECTIVE JUSTICE",
+                        "content": [
+                            "Accused of stalling investigations into the killing of UNIFIL peacekeepers to protect Hezbollah-linked suspects.",
+                            "His tenure cemented the Military Court's reputation as a tool for political repression rather than national security."
+                        ]
+                    }
+                ]
+            },
+            "najib-mikati": {
+                "name": "Najib Mikati",
+                "tag": "THE TEFLON BILLIONAIRE",
+                "stamp": "TEFLON BILLIONAIRE",
+                "role": "Former Prime Minister / Telecom Mogul",
+                "summary": "Lebanon's richest man and perennial Prime Minister. While his home city of Tripoli sank into extreme poverty, Mikati's wealth soared. Implicated in the Pandora Papers and subject to money laundering investigations in France, he represents the collision of private profit and public office.",
+                "quote": "Business as usual, even while the country burns.",
+                "sections": [
+                    {
+                        "title": "GLOBAL INVESTIGATIONS",
+                        "content": [
+                            "Under investigation by French prosecutors since 2024 for money laundering and illicit enrichment involving offshore assets.",
+                            "Named in the Pandora Papers for using tax havens to purchase property in Monaco while Lebanon's economy collapsed.",
+                            "Accused of benefiting from subsidized housing loans meant for the poor to acquire luxury real estate."
+                        ]
+                    },
+                    {
+                        "title": "CONFLICT OF INTEREST",
+                        "content": [
+                            "His telecom empire was built on state monopolies awarded during the Syrian occupation era.",
+                            "As PM, he was accused of delaying necessary banking reforms to protect the interests of the bank-owning political class, including himself."
+                        ]
+                    }
+                ]
+            },
+            "paul-morcos": {
+                "name": "Paul Morcos",
+                "tag": "THE SYSTEM'S LAWYER",
+                "stamp": "SYSTEM'S LAWYER",
+                "role": "Minister of Information / Legal Expert",
+                "summary": "The smooth-talking legal face of the establishment. Often appearing on TV to defend the banking sector's 'rights' and justify the blocking of forensic audits. Appointed Minister of Information in 2025, he uses his legal expertise to draft loopholes that allow the elite to evade accountability.",
+                "quote": "He finds the legal clauses that let the guilty sleep at night.",
+                "sections": [
+                    {
+                        "title": "DEFENDING THE INDEFENSIBLE",
+                        "content": [
+                            "Argued that 'Banking Secrecy' prevented forensic audits, providing the legal cover for Riad Salameh's obstructionism.",
+                            "Founder of a legal consultancy that advises the very banks holding depositors' money hostage.",
+                            "His appointment as Minister was seen as a move to control the narrative and suppress leaks about government corruption."
+                        ]
+                    },
+                    {
+                        "title": "LEGAL GYMNASTICS",
+                        "content": [
+                            "Master of the 'committee solution'—proposing endless legal committees to delay urgent reforms until international interest fades.",
+                            "Drafted capital control proposals that legalized the theft of deposits while protecting bank shareholders."
+                        ]
+                    }
+                ]
+            },
+            "alain-bifani": {
+                "name": "Alain Bifani",
+                "tag": "THE WHISTLEBLOWER",
+                "stamp": "WHISTLEBLOWER",
+                "role": "Former Director General of Finance",
+                "summary": "The second-highest financial official who resigned in protest in 2020. He was the first to officially expose the 'Ponzi scheme' run by the banks and the Central Bank. Vilified by the establishment for revealing the scale of losses, he accuses the ruling class of choosing to implode the economy rather than admit bankruptcy.",
+                "quote": "They chose to sacrifice the people to save the banks' shareholders.",
+                "sections": [
+                    {
+                        "title": "EXPOSING THE LOSSES",
+                        "content": [
+                            "Architect of the government's 2020 recovery plan that first quantified the $69 billion hole in the financial sector.",
+                            "Accused the banking association and parliament of 'organized denial' to sabotage negotiations with the IMF."
+                        ]
+                    },
+                    {
+                        "title": "SYSTEMIC COLLUSION",
+                        "content": [
+                            "Testified that politicians and bankers conspired to smuggle their own money out of the country while freezing small depositors' accounts.",
+                            "His resignation signaled the end of any internal attempt to fix the system from within."
+                        ]
+                    }
+                ]
+            },
+            "ghazi-zeaiter": {
+                "name": "Ghazi Zeaiter",
+                "tag": "THE FUGITIVE MP",
+                "stamp": "FUGITIVE MP",
+                "role": "MP / Former Minister of Public Works",
+                "summary": "A central figure in the Beirut Port explosion investigation. As the former Minister of Public Works, he oversaw the port during the period the ammonium nitrate was stored. He has become the face of 'parliamentary immunity,' refusing to appear for questioning and suing the judges who try to investigate him.",
+                "quote": "Immunity is my right, and I will not waive it.",
+                "sections": [
+                    {
+                        "title": "WANTED FOR QUESTIONING",
+                        "content": [
+                            "Issued an arrest warrant by Judge Tarek Bitar, which he has successfully evaded due to political protection.",
+                            "Accused of negligence leading to homicide for failing to remove the explosive material despite knowing of its presence."
+                        ]
+                    },
+                    {
+                        "title": "JUDICIAL WARFARE",
+                        "content": [
+                            "Along with Ali Hassan Khalil, he filed dozens of lawsuits to freeze the port investigation, successfully stalling justice for years.",
+                            "Re-elected to parliament in 2022, renewing the immunity that protects him from prosecution."
+                        ]
+                    }
+                ]
+            },
+            "ibrahim-kanaan": {
+                "name": "Ibrahim Kanaan",
+                "tag": "THE AUDITOR OF DOOM",
+                "stamp": "AUDITOR",
+                "role": "Head of Finance & Budget Committee",
+                "summary": "The veteran MP who spent years 'auditing' budgets that never added up. As the head of the Finance Committee, he led the parliamentary challenge against the government's own financial recovery plan in 2020, disputing the loss figures. This delay effectively torpedoed the IMF deal and allowed banks to liquidate their assets while depositors were left with nothing.",
+                "quote": "We need to double-check the numbers while the ship sinks.",
+                "sections": [
+                    {
+                        "title": "THE LOSS DISPUTE",
+                        "content": [
+                            "Famous for chairing the committee that claimed the government's estimated financial losses were exaggerated, aligning himself with the banking lobby.",
+                            "His actions delayed the acknowledgment of bankruptcy, costing the economy billions in lost reserves."
+                        ]
+                    },
+                    {
+                        "title": "POLITICAL COVER",
+                        "content": [
+                            "A key member of the Free Patriotic Movement who provided the 'technocratic' cover for political obstructionism.",
+                            "Oversaw the employment of thousands of illegal hires in the public sector before elections."
+                        ]
+                    }
+                ]
+            },
+            "mohammad-raad": {
+                "name": "Mohammad Raad",
+                "tag": "THE IRON WALL",
+                "stamp": "IRON WALL",
+                "role": "Head of Loyalty to the Resistance Bloc",
+                "summary": "The unsmiling face of Hezbollah in parliament. As the head of its bloc, he delivers the party's ultimatums to the state. He famously told opponents who disagreed with the party's choices to 'drink sea water,' symbolizing the militia's dominance over political discourse.",
+                "quote": "We have the patience to wait for centuries.",
+                "sections": [
+                    {
+                        "title": "PARLIAMENTARY VETO",
+                        "content": [
+                            "Orchestrates the blocking of presidential elections by withdrawing his bloc from sessions to lose quorum.",
+                            "Ensures that no legislation passes that could threaten the party's military or financial autonomy."
+                        ]
+                    },
+                    {
+                        "title": "IDEOLOGICAL ENFORCER",
+                        "content": [
+                            "Regularly attacks opponents as 'traitors' or 'western agents' to silence dissent.",
+                            "Justifies the parallel economy and weapons as essential for national defense."
+                        ]
+                    }
+                ]
+            },
+            "ali-mamluk": {
+                "name": "Ali Mamluk",
+                "tag": "THE PUPPET MASTER",
+                "stamp": "PUPPET MASTER",
+                "role": "Syrian Security Chief",
+                "summary": "A symbol of the continued Syrian intelligence interference in Lebanon. Indicted for plotting terror attacks with Michel Samaha to incite sectarian strife. Despite being a foreign official, his influence permeates the Lebanese security and political structure, representing the 'tutelage' that never truly ended.",
+                "quote": "Chaos is a tool of control.",
+                "sections": [
+                    {
+                        "title": "THE SAMAHA-MAMLUK PLOT",
+                        "content": [
+                            "Indicted by the Lebanese military tribunal for smuggling explosives into Lebanon to assassinate religious and political figures.",
+                            "The plot was intended to trigger a civil war to divert attention from the uprising in Syria."
+                        ]
+                    },
+                    {
+                        "title": "SANCTIONED ENFORCER",
+                        "content": [
+                            "Under US and EU sanctions for human rights abuses in Syria and destabilizing activities in Lebanon.",
+                            "Maintains deep channels with Lebanese allies to ensure Beirut remains aligned with the 'Axis of Resistance'."
+                        ]
+                    }
+                ]
+            },
+            "amin-salam": {
+                "name": "Amin Salam",
+                "tag": "THE OUT OF TOUCH",
+                "stamp": "OUT",
+                "role": "Minister of Economy",
+                "summary": "Appointed as a technocrat, he became famous for diplomatic gaffes and ineffective policies. His attempt to rebuild the grain silos by appealing to the Emir of Kuwait 'with a stroke of a pen' caused a diplomatic scandal. He oversaw the 'dollarization' of supermarkets, which failed to curb inflation.",
+                "quote": "I can fix this with a stroke of a pen.",
+                "sections": [
+                    {
+                        "title": "DIPLOMATIC GAFFES",
+                        "content": [
+                            "Caused a diplomatic rift with Kuwait by casually suggesting their Emir could rebuild the port silos personally.",
+                            "Criticized for lacking political maturity and understanding of historical diplomatic relations."
+                        ]
+                    },
+                    {
+                        "title": "THE DOLLARIZATION FAILURE",
+                        "content": [
+                            "Authorized the pricing of goods in dollars, claiming it would protect consumers, but prices continued to skyrocket.",
+                            "Accused of serving the interests of the supermarket cartels rather than the impoverished citizens."
+                        ]
+                    }
+                ]
+            },
+            "ali-hassan-khalil-9": {
+                "name": "Ali Hassan Khalil",
+                "tag": "THE FINANCE ENFORCER",
+                "stamp": "FINANCE ENFORCER",
+                "role": "Former Finance Minister / MP",
+                "summary": "Nabih Berri's political enforcer and the longest-serving Finance Minister during the collapse. Sanctioned by the US for corruption and material support to Hezbollah. He is currently a fugitive from justice in the Beirut Blast probe, yet he continues to sit in parliament, shielded by immunity.",
+                "quote": "I am immune, and the judge is politicized.",
+                "sections": [
+                    {
+                        "title": "WANTED & SANCTIONED",
+                        "content": [
+                            "Issued an arrest warrant by Judge Tarek Bitar for the Port Blast but refused to appear, claiming the judge lacked authority.",
+                            "Sanctioned by the US Treasury for demanding kickbacks on government contracts and moving money for Hezbollah."
+                        ]
+                    },
+                    {
+                        "title": "FINANCIAL ENGINEER",
+                        "content": [
+                            "Signed off on the financial engineering decrees that led to the Ponzi scheme collapse.",
+                            "Accused of using the Ministry of Finance to block appointments and contracts that didn't benefit his political allies."
+                        ]
+                    }
+                ]
+            },
+            "mohamad-fneish": {
+                "name": "Mohamad Fneish",
+                "tag": "THE PARTY'S MINISTER",
+                "stamp": "PARTY'S MINISTER",
+                "role": "Former Minister of Administrative Reform",
+                "summary": "A veteran Hezbollah minister known for his soft-spoken demeanor which masks hardline loyalty. While he served as Minister of Administrative Reform, the state bureaucracy crumbled. He is often the figure used by the party to interface with the state institutions they ultimately undermine.",
+                "quote": "Reform is good, as long as it doesn't touch the Resistance.",
+                "sections": [
+                    {
+                        "title": "THE BROTHER'S SCANDAL",
+                        "content": [
+                            "His brother was deeply implicated in the 'Forgery of Medicine' scandal, selling expired and fake drugs to cancer patients.",
+                            "Fneish claimed he would 'lift the cover' off anyone involved, yet his brother remained elusive, highlighting the party's protection network."
+                        ]
+                    },
+                    {
+                        "title": "INSTITUTIONAL CAPTURE",
+                        "content": [
+                            "Ensured that the 'Administrative Reform' ministry never actually reformed the sectarian hiring practices that benefit his party.",
+                            "Represented the party's interests in cabinet votes, ensuring state policy aligned with regional axes."
+                        ]
+                    }
+                ]
+            },
+            "emile-lahoud": {
+                "name": "Emile Lahoud",
+                "tag": "THE SYRIAN CAPTAIN",
+                "stamp": "SYRIAN CAPTAIN",
+                "role": "Former President of Lebanon",
+                "summary": "The General-turned-President who symbolized the peak of the Syrian occupation. His term was forcibly extended in 2004, triggering the events that led to Hariri's assassination. He presided over the polarization of the country and the entrenchment of the security state.",
+                "quote": "I am the captain of the ship, even if it is sinking.",
+                "sections": [
+                    {
+                        "title": "THE FORCED EXTENSION",
+                        "content": [
+                            "His term extension, coerced by Damascus, violated the constitution and led to UN Resolution 1559.",
+                            "Stood by the Syrian regime during the Cedar Revolution, isolating the presidency from the street."
+                        ]
+                    },
+                    {
+                        "title": "INSTITUTIONAL PARALYSIS",
+                        "content": [
+                            "Spent his final years in office boycotting the government, setting the precedent for the political vacuums that followed.",
+                            "Defended the 'security apparatus' accused of orchestrating political assassinations."
+                        ]
+                    }
+                ]
+            },
+            "fouad-siniora": {
+                "name": "Fouad Siniora",
+                "tag": "THE ACCOUNTANT",
+                "stamp": "ACCOUNTANT",
+                "role": "Former Prime Minister",
+                "summary": "Hariri's long-time finance minister and PM during the 2006 war. He is accused by opponents of 'losing' $11 billion in unrecorded spending (a claim he denies as political targeting). To his supporters, he is a statesman; to his critics, the architect of the debt-based economic model.",
+                "quote": "We spent the money to keep the state running.",
+                "sections": [
+                    {
+                        "title": "THE $11 BILLION CONTROVERSY",
+                        "content": [
+                            "Accused of spending $11 billion between 2006 and 2009 without parliamentary budget approval.",
+                            "Claims the spending was necessary extra-budgetary payments for debts and wages during a political blockade."
+                        ]
+                    },
+                    {
+                        "title": "FISCAL ENGINEER",
+                        "content": [
+                            "Architect of the Paris II and III donor conferences which piled more debt onto Lebanon without structural reforms.",
+                            "Oversaw the banking policies that incentivized high interest rates on government debt."
+                        ]
+                    }
+                ]
+            },
+            "saad-hariri": {
+                "name": "Saad Hariri",
+                "tag": "THE RELUCTANT HEIR",
+                "stamp": "RELUCTANT HEIR",
+                "role": "Former Prime Minister",
+                "summary": "Inherited a political empire he couldn't maintain. His compromises with Hezbollah (the 'Presidential Settlement') alienated his Gulf backers and failed to stabilize Lebanon. He bowed out of politics in 2022, leaving the Sunni community leaderless and the country in freefall.",
+                "quote": "I am suspending my political work.",
+                "sections": [
+                    {
+                        "title": "THE FAILED SETTLEMENT",
+                        "content": [
+                            "Elected Michel Aoun as president in 2016 in a deal that surrendered executive power for a facade of stability.",
+                            "His capitulation to Hezbollah's demands led to Saudi Arabia cutting financial support to Lebanon."
+                        ]
+                    },
+                    {
+                        "title": "ECONOMIC LEGACY",
+                        "content": [
+                            "His governments continued the borrowing policies of his father, ignoring warnings of the coming crash.",
+                            "Resigned in 2019 under pressure from the streets, admitting the political class had failed."
+                        ]
+                    }
+                ]
+            },
+            "sleiman-frangieh": {
+                "name": "Sleiman Frangieh",
+                "tag": "THE SYSTEM'S CHILD",
+                "stamp": "SYSTEM'S CHILD",
+                "role": "Head of Marada Movement",
+                "summary": "The 'Crown Prince' of the North and Hezbollah's preferred candidate for president. He prides himself on his personal friendship with Bashar al-Assad. His candidacy paralyzed the parliament for years, as the 'Shia Duo' refused to consider anyone else.",
+                "quote": "My grandfather told me...",
+                "sections": [
+                    {
+                        "title": "HEZBOLLAH'S CHOICE",
+                        "content": [
+                            "Backed by the 'Axis of Resistance' for the presidency, blocking any reformist candidate.",
+                            "Openly supports the 'Army-People-Resistance' formula that legitimizes Hezbollah's weapons."
+                        ]
+                    },
+                    {
+                        "title": "FEUDAL LORD",
+                        "content": [
+                            "Inherited his political seat from his grandfather and father, representing the entrenched feudal system.",
+                            "His ministry (Public Works) was famously associated with the corrupt 'Ministry of Asphalt' patronage networks."
+                        ]
+                    }
+                ]
+            },
+            "jihad-al-arab": {
+                "name": "Jihad al-Arab",
+                "tag": "THE CONTRACTOR",
+                "stamp": "CONTRACTOR",
+                "role": "State Contractor",
+                "summary": "The symbol of crony capitalism in Lebanon. A contractor close to Saad Hariri, he was awarded contracts worth hundreds of millions for garbage collection and infrastructure projects that often failed or were never completed. Sanctioned by the US Treasury for corruption.",
+                "quote": "The tenders are won before they are announced.",
+                "sections": [
+                    {
+                        "title": "GARBAGE & LANDFILLS",
+                        "content": [
+                            "Awarded the coastal landfill contracts that polluted the Mediterranean, allegedly without proper environmental oversight.",
+                            "Accused of inflating costs for waste management services while the streets filled with trash."
+                        ]
+                    },
+                    {
+                        "title": "US SANCTIONS",
+                        "content": [
+                            "Sanctioned for 'contributing to the breakdown of the rule of law' and using political connections to win no-bid contracts.",
+                            "His projects, like the 'disappearing' bridge repairs, are cited as prime examples of state theft."
+                        ]
+                    }
+                ]
+            },
+            "michel-sleiman": {
+                "name": "Michel Sleiman",
+                "tag": "THE NEUTRAL GENERAL",
+                "stamp": "NEUTRAL GENERAL",
+                "role": "Former President of Lebanon",
+                "summary": "The President who tried to disassociate Lebanon from regional wars with the 'Baabda Declaration,' only to be mocked by Hezbollah as having 'wooden' logic. His tenure saw the beginning of the Syrian refugee crisis and the erosion of the state's monopoly on violence.",
+                "quote": "Neutrality is the only salvation.",
+                "sections": [
+                    {
+                        "title": "BAABDA DECLARATION",
+                        "content": [
+                            "Broker of the 2012 agreement to keep Lebanon neutral in the Syrian war, which Hezbollah famously violated days later.",
+                            "Called for a defense strategy that would integrate Hezbollah's arms into the state, making him a target of the militia."
+                        ]
+                    },
+                    {
+                        "title": "POLITICAL ISOLATION",
+                        "content": [
+                            "Left office without a successor, beginning the cycle of presidential vacuums.",
+                            "His influence waned as the political polarization between March 8 and March 14 destroyed the center."
+                        ]
+                    }
+                ]
+            },
+            "hussein-fadlallah": {
+                "name": "Hussein Fadlallah",
+                "tag": "THE DEFIANT VOICE",
+                "stamp": "DEFIANT VOICE",
+                "role": "Member of Parliament (Hezbollah)",
+                "summary": "A vocal MP from the Loyalty to the Resistance bloc. Fadlallah is known for his fiery rhetoric that frames Lebanon's economic collapse entirely as an 'American siege' and external conspiracy. He represents the narrative that absolves the ruling class of responsibility by externalizing the crisis to foreign enemies.",
+                "quote": "The crisis is a tool of war against the Resistance.",
+                "sections": [
+                    {
+                        "title": "NARRATIVE WARFARE",
+                        "content": [
+                            "Consistently frames the financial crisis not as a result of corruption or mismanagement, but as a US-orchestrated punishment for Lebanon's support of Hezbollah.",
+                            "Rejects the notion that the party's alliance with corrupt figures contributed to the state's bankruptcy."
+                        ]
+                    },
+                    {
+                        "title": "BLOCKING WESTERN REFORM",
+                        "content": [
+                            "Part of the parliamentary bloc that views IMF conditions as tools of foreign tutelage.",
+                            "Advocates for an 'Eastern orientation' (Iran/China/Russia) as an alternative to the West, despite the lack of tangible economic results from these partners."
+                        ]
+                    }
+                ]
+            },
+            "salim-sfeir": {
+                "name": "Salim Sfeir",
+                "tag": "THE DENIER",
+                "stamp": "DENIER",
+                "role": "Head of Association of Banks",
+                "summary": "The face of the banking crisis. As head of the Association of Banks (ABL), he famously declared 'The money is safe' while banks were locking doors. He led the ferocious lobbying campaign against the IMF plan, protecting bank shareholders at the expense of depositors.",
+                "quote": "We are not bankrupt; we just don't have liquidity.",
+                "sections": [
+                    {
+                        "title": "ORGANIZED DENIAL",
+                        "content": [
+                            "Led the campaign to torpedo the 2020 Lazard recovery plan, arguing that the state, not banks, should bear the losses.",
+                            "Infamously stated 'the money is there' days before banks imposed total capital controls."
+                        ]
+                    },
+                    {
+                        "title": "PROTECTING SHAREHOLDERS",
+                        "content": [
+                            "Accused of prioritizing the protection of bank capital over the life savings of millions of Lebanese.",
+                            "His statements are seen as gaslighting a population that has lost everything."
+                        ]
+                    }
+                ]
+            },
+            "albert-kostanian": {
+                "name": "Albert Kostanian",
+                "tag": "THE PUNDIT",
+                "stamp": "PUNDIT",
+                "role": "Media Figure / Strategist",
+                "summary": "A former Kataeb strategist turned media host. Through his show 'Vision 2030', he dissects the collapse but is criticized by some as part of the 'talking heads' ecosystem that normalizes the crisis. He represents the intellectual class that analyzes the Titanic as it sinks.",
+                "quote": "We need a vision, not just a reaction.",
+                "sections": [
+                    {
+                        "title": "MEDIA INFLUENCE",
+                        "content": [
+                            "Hosts high-level debates that highlight the government's failures but rarely lead to actionable change.",
+                            "Represents the transition of political operatives into media influencers."
+                        ]
+                    },
+                    {
+                        "title": "REFORMIST RHETORIC",
+                        "content": [
+                            "Advocates for secularism and decentralization, yet comes from a traditional sectarian party background.",
+                            "Critiques the 'mafia-militia' alliance while operating within the media platforms owned by the elite."
+                        ]
+                    }
+                ]
+            },
+            "marwan-kheireddine": {
+                "name": "Marwan Kheireddine",
+                "tag": "THE YOUNG TURK",
+                "stamp": "YOUNG TURK",
+                "role": "Chairman of AM Bank",
+                "summary": "A former minister and banker who became the aggressive defender of the banking sector. Indicted in France for money laundering in connection with Riad Salameh. He famously ran for parliament in 2022 on a platform of protecting depositors, only to lose spectacularly.",
+                "quote": "The banks did not steal your money.",
+                "sections": [
+                    {
+                        "title": "FRENCH INDICTMENT",
+                        "content": [
+                            "Indicted by French prosecutors for participation in a criminal conspiracy and money laundering.",
+                            "Accused of falsifying records to hide Riad Salameh's wealth in his bank."
+                        ]
+                    },
+                    {
+                        "title": "LIRIFICATION",
+                        "content": [
+                            "A vocal proponent of 'Lirification'—forcing depositors to withdraw dollars in worthless local currency.",
+                            "Known for his aggressive media appearances attacking anyone who criticizes the banks."
+                        ]
+                    }
+                ]
+            },
+            "raja-salameh": {
+                "name": "Raja Salameh",
+                "tag": "THE CONDUIT",
+                "stamp": "CONDUIT",
+                "role": "Brother of Riad Salameh",
+                "summary": "The younger brother of the Central Bank Governor and the owner of 'Forry Associates'. He is the key figure in the embezzlement scheme, accused of receiving over $300 million in illicit commissions from the Central Bank and funneling them to offshore accounts.",
+                "quote": "The silent partner in the heist of the century.",
+                "sections": [
+                    {
+                        "title": "FORRY ASSOCIATES",
+                        "content": [
+                            "Signed a secret contract with the Central Bank that garnered millions in commissions for doing no work.",
+                            "Arrested in Lebanon and France for illicit enrichment and money laundering."
+                        ]
+                    },
+                    {
+                        "title": "FAMILY BUSINESS",
+                        "content": [
+                            "His arrest broke the aura of untouchability surrounding the Salameh family.",
+                            "Used real estate in Paris and London to launder the proceeds of the alleged embezzlement."
+                        ]
+                    }
+                ]
+            },
+            "salim-jreissati": {
+                "name": "Salim Jreissati",
+                "tag": "THE LEGAL FIXER",
+                "stamp": "LEGAL FIXER",
+                "role": "Former Justice Minister",
+                "summary": "The legal mastermind for the Aoun presidency. Sanctioned by the US for using his position as Justice Minister to undermine investigations and protect political allies. He is accused of turning the judiciary into a tool for political retribution.",
+                "quote": "The law is what we interpret it to be.",
+                "sections": [
+                    {
+                        "title": "JUDICIAL INTERFERENCE",
+                        "content": [
+                            "Sanctioned by the US Treasury for soliciting bribes and interfering in judicial proceedings.",
+                            "Accused of pressuring judges to release assistants of Hezbollah financiers."
+                        ]
+                    },
+                    {
+                        "title": "THE PRESIDENT'S SHIELD",
+                        "content": [
+                            "Drafted the legal theories that justified the paralysis of the government and the obstruction of appointments.",
+                            "Acted as the gatekeeper for the presidency, filtering legal files to suit political agendas."
+                        ]
+                    }
+                ]
+            },
+            "ghassan-oueidat": {
+                "name": "Ghassan Oueidat",
+                "tag": "THE PROTECTOR",
+                "stamp": "PROTECTOR",
+                "role": "Cassation Public Prosecutor",
+                "summary": "The highest-ranking prosecutor who dealt the final blow to the Beirut Port investigation. In an unprecedented move, he charged the judge investigating him (Tarek Bitar) and ordered the release of all 17 detainees connected to the blast, effectively ending accountability for the crime.",
+                "quote": "In the palace of justice, the prosecutor rules, not the law.",
+                "sections": [
+                    {
+                        "title": "THE COUP AGAINST JUSTICE",
+                        "content": [
+                            "Issued a circular ordering security forces not to execute Judge Bitar's warrants, crippling the investigation.",
+                            "Recused himself from the case due to family ties to a charged minister, then returned to crush the probe when it targeted his allies."
+                        ]
+                    },
+                    {
+                        "title": "SYSTEMIC IMPUNITY",
+                        "content": [
+                            "His release of all port blast detainees was described by legal experts as a 'coup' against the judicial system.",
+                            "Represents the judiciary's total subservience to the political establishment."
+                        ]
+                    }
+                ]
+            },
+            "youssef-fenianos": {
+                "name": "Youssef Fenianos",
+                "tag": "THE SANCTIONED MINISTER",
+                "stamp": "SANCTIONED MINISTER",
+                "role": "Former Minister of Public Works",
+                "summary": "A key figure in the Marada Movement, he served as Minister of Public Works when the ammonium nitrate was stored at the port. He was sanctioned by the US Treasury for channeling state funds to Hezbollah and engaging in corruption.",
+                "quote": "Public works for private gains.",
+                "sections": [
+                    {
+                        "title": "US SANCTIONS",
+                        "content": [
+                            "Sanctioned by the OFAC for providing 'material support' to Hezbollah and ensuring the party received government contracts.",
+                            "Accused of prioritizing party loyalty over public safety, ignoring warnings about explosive materials at the port."
+                        ]
+                    },
+                    {
+                        "title": "PORT RESPONSIBILITY",
+                        "content": [
+                            "Charged with negligence by the judicial investigator for failing to secure the port despite knowing of the danger.",
+                            "Refused to appear for questioning, protected by the 'immunity' granted by his political allies."
+                        ]
+                    }
+                ]
+            },
+            "edmond-fadel": {
+                "name": "Edmond Fadel",
+                "tag": "THE INTELLIGENCE VETERAN",
+                "stamp": "INTELLIGENCE VETERAN",
+                "role": "Former Head of Army Intelligence",
+                "summary": "A long-serving security chief who operated in the shadows during critical periods of instability. His tenure saw the rise of extremist groups and complex security challenges. Like many in the security apparatus, he maintained the delicate balance between state duties and sectarian red lines.",
+                "quote": "Intelligence is knowing what to ignore.",
+                "sections": [
+                    {
+                        "title": "THE SECURITY BLACK BOX",
+                        "content": [
+                            "Managed the army's intelligence wing during the spillover of the Syrian war into Lebanon.",
+                            "Criticized for the opacity of intelligence operations and the handling of Islamist detainees."
+                        ]
+                    },
+                    {
+                        "title": "SURVIVING THE PURGES",
+                        "content": [
+                            "Navigated the treacherous political landscape to retain influence even after leaving office.",
+                            "Represents the 'Deep State' security architecture that remains constant regardless of who is in government."
+                        ]
+                    }
+                ]
+            },
+            "camille-daher": {
+                "name": "Camille Daher",
+                "tag": "THE SUCCESSOR",
+                "stamp": "SUCCESSOR",
+                "role": "Former Head of Army Intelligence",
+                "summary": "Succeeded Edmond Fadel as intelligence chief. His appointment was a subject of fierce political tug-of-war, highlighting how even sensitive security posts are divvied up like spoils of war. He continued the policy of 'security by consensus' rather than strict law enforcement.",
+                "quote": "Security is a negotiated settlement.",
+                "sections": [
+                    {
+                        "title": "POLITICAL APPOINTMENT",
+                        "content": [
+                            "His rise to the top of military intelligence was brokered by political deal-making rather than pure meritocracy.",
+                            "Operated under the constraints of the 'sectarian balance' that prevents the army from confronting major militias."
+                        ]
+                    },
+                    {
+                        "title": "MANAGING CHAOS",
+                        "content": [
+                            "Oversaw security during the height of the refugee crisis and border tensions.",
+                            "Accused by activists of monitoring civil society movements rather than focusing solely on external threats."
+                        ]
+                    }
+                ]
+            },
+            "najah-wakim": {
+                "name": "Najah Wakim",
+                "tag": "THE ORIGINAL WHISTLEBLOWER",
+                "stamp": "ORIGINAL WHISTLEBLOWER",
+                "role": "Former MP / Author",
+                "summary": "A veteran parliamentarian who wrote the seminal book 'Black Hands' (Al Ayadi Al Sawda) in the late 90s, documenting the corruption of the Hariri era when it was dangerous to do so. While controversial for his regional alignments, his early warnings about the debt-based economy and state looting proved fiercely accurate decades later.",
+                "quote": "I told you so thirty years ago.",
+                "sections": [
+                    {
+                        "title": "THE BLACK HANDS",
+                        "content": [
+                            "Author of the best-selling book that first exposed the systemic looting of the state treasury by the post-war militia-business alliance.",
+                            "Faced immense political pressure and legal threats for naming names when the 'reconstruction' myth was at its peak."
+                        ]
+                    },
+                    {
+                        "title": "THE ETERNAL OPPOSITION",
+                        "content": [
+                            "A consistent critic of the 'Harirism' economic model that relied on high interest rates and debt.",
+                            "His marginalization by the mainstream political class highlights how the system purges those who attack its financial roots."
+                        ]
+                    }
+                ]
+            },
+            "charbel-nahas": {
+                "name": "Charbel Nahas",
+                "tag": "THE RADICAL REFORMER",
+                "stamp": "RADICAL REFORMER",
+                "role": "Former Minister / Economist",
+                "summary": "The only minister to resign twice in protest against the system. An economist who predicted the financial crash with mathematical precision years in advance. As the head of 'Citizens in a State,' he advocates for a total secular transition, rejecting the sectarian regime entirely. He is the technocrat who refused to compromise.",
+                "quote": "Legitimacy does not come from the sects, but from the state.",
+                "sections": [
+                    {
+                        "title": "RESIGNATION IN PROTEST",
+                        "content": [
+                            "Resigned as Minister of Labor after the cabinet refused to implement his plan for universal healthcare and fair wages.",
+                            "Blocked the signing of decrees he deemed illegal during his tenure as Telecom Minister, clashing with the entrenched elite."
+                        ]
+                    },
+                    {
+                        "title": "DIAGNOSING THE COLLAPSE",
+                        "content": [
+                            "Argued for decades that the bank-centric economy was a Ponzi scheme designed to transfer wealth from the public to a few oligarchs.",
+                            "His political movement (MMFID) offers one of the few comprehensive—albeit radical—roadmaps for a transition of power."
+                        ]
+                    }
+                ]
+            },
+            "wafic-safa": {
+                "name": "Wafic Safa",
+                "tag": "THE FIXER",
+                "stamp": "FIXER",
+                "role": "Hezbollah Security Official",
+                "summary": "The head of Hezbollah's Liaison and Coordination Unit. He is the party's main channel to the Lebanese state and foreign diplomats. Sanctioned by the US, he is infamous for allegedly threatening the Port Blast judge, Tarek Bitar, right inside the Palace of Justice.",
+                "quote": "We will uproot you.",
+                "sections": [
+                    {
+                        "title": "THREATENING JUSTICE",
+                        "content": [
+                            "Allegedly sent a message to Judge Bitar: 'We will uproot you,' a threat that preceded the suspension of the investigation.",
+                            "Acts as the enforcer who ensures that state institutions do not cross the party's red lines."
+                        ]
+                    },
+                    {
+                        "title": "SANCTIONED INTERMEDIARY",
+                        "content": [
+                            "Sanctioned by the US Treasury for exploiting Lebanon's ports and borders to smuggle contraband.",
+                            "Controls the 'parallel customs' that allows the party to bypass state taxes and oversight."
+                        ]
+                    }
+                ]
+            },
+            "sobhi-tabbara": {
+                "name": "Sobhi Tabbara",
+                "tag": "THE STATE'S LAWYER",
+                "stamp": "STATE'S LAWYER",
+                "role": "Legal Advisor / Attorney",
+                "summary": "A prominent lawyer often tasked with representing the state in its most controversial cases. He has been criticized for defending the interests of the political establishment under the guise of defending the 'State,' particularly in cases involving financial crimes and the port explosion, effectively acting as a legal shield for the regime.",
+                "quote": "I defend the institution, not the individual.",
+                "sections": [
+                    {
+                        "title": "DEFENDING THE ESTABLISHMENT",
+                        "content": [
+                            "Represented the Lebanese State in legal battles against foreign companies and internal corruption probes, often prioritizing the regime's image over accountability.",
+                            "His legal maneuvers are seen by critics as tactics to delay justice and bury sensitive files in endless litigation."
+                        ]
+                    },
+                    {
+                        "title": "CONFLICT OF INTEREST",
+                        "content": [
+                            "Accused of navigating the fine line between private practice and public representation, serving the very officials who appointed him.",
+                            "Part of the legal circle that drafts the loopholes allowing politicians to evade prosecution."
+                        ]
+                    }
+                ]
+            },
+            "abbas-ibrahim": {
+                "name": "Abbas Ibrahim",
+                "tag": "THE MEDIATOR",
+                "stamp": "MEDIATOR",
+                "role": "Former General Security Chief",
+                "summary": "The man who was everywhere. As General Security chief, he acted as a diplomat, hostage negotiator, and politician. Despite his 'clean' image, he was charged in the Port Blast investigation but refused to appear, shielded by the Ministry of Interior.",
+                "quote": "I am the bridge between all contradictions.",
+                "sections": [
+                    {
+                        "title": "ABOVE THE LAW",
+                        "content": [
+                            "Issued an arrest warrant by Judge Bitar, which the Interior Minister refused to execute.",
+                            "Used his diplomatic connections to market himself as indispensable to the West, buying immunity at home."
+                        ]
+                    },
+                    {
+                        "title": "THE DEALMAKER",
+                        "content": [
+                            "Broker of shady deals involving oil imports and security arrangements.",
+                            "His tenure solidified General Security as a political power base rather than just an administrative agency."
+                        ]
+                    }
+                ]
+            },
+            "hassan-diab": {
+                "name": "Hassan Diab",
+                "tag": "THE PROFESSOR",
+                "stamp": "PROFESSOR",
+                "role": "Former Prime Minister",
+                "summary": "The technocrat who presided over the default and the explosion. Diab claimed to be fighting corruption but ended up as a shield for the ruling class. He is the first PM to be charged with negligence in the port case, a charge he dismisses as politically motivated targeting of the Sunni position.",
+                "quote": "I did not know the danger.",
+                "sections": [
+                    {
+                        "title": "THE DEFAULT",
+                        "content": [
+                            "Oversaw the first sovereign default in Lebanon's history without a backup plan, accelerating the currency's freefall.",
+                            "His government was paralyzed by the very parties that appointed him."
+                        ]
+                    },
+                    {
+                        "title": "PORT NEGLIGENCE",
+                        "content": [
+                            "Admitted to knowing about the ammonium nitrate prior to the blast but 'forgot' or was told it was safe.",
+                            "Resigned in the wake of the explosion but continued as caretaker PM, doing little to address the crisis."
+                        ]
+                    }
+                ]
+            },
+            "rakan-nasreddine": {
+                "name": "Rakan Nasreddine",
+                "tag": "THE BUREAUCRAT",
+                "stamp": "BUREAUCRAT",
+                "role": "Public Official",
+                "summary": "A figure representing the mid-level bureaucracy that enables the system's dysfunction. Often cited in proposed government lineups or administrative roles, figures like him represent the 'technocratic facade' used to cover political quotas.",
+                "quote": "I just follow the regulations.",
+                "sections": [
+                    {
+                        "title": "THE COG IN THE MACHINE",
+                        "content": [
+                            "Represents the thousands of civil servants appointed through sectarian quotas rather than merit.",
+                            "Part of the administrative state that processes corruption rather than preventing it."
+                        ]
+                    },
+                    {
+                        "title": "SILENT COMPLICITY",
+                        "content": [
+                            "Operates in the background, ensuring the paperwork for the corrupt deals is technically correct.",
+                            "The banality of evil in administrative form."
+                        ]
+                    }
+                ]
+            },
+            "imad-ousman": {
+                "name": "Imad Ousman",
+                "tag": "THE PROTECTED GENERAL",
+                "stamp": "PROTECTED GENERAL",
+                "role": "Director General of ISF",
+                "summary": "Head of the Internal Security Forces. He famously refused to execute the arrest warrant against Riad Salameh, physically blocking State Security from entering Salameh's home. He represents the security forces acting as private guards for the elite.",
+                "quote": "I take my orders from politics, not judges.",
+                "sections": [
+                    {
+                        "title": "BLOCKING JUSTICE",
+                        "content": [
+                            "Personally intervened to prevent the arrest of the Central Bank Governor, citing 'instability'.",
+                            "Prosecuted by Judge Ghada Aoun for obstruction of justice, but shielded by the Prime Minister."
+                        ]
+                    },
+                    {
+                        "title": "SECTARIAN LOYALTY",
+                        "content": [
+                            "His loyalty to the Future Movement often superseded his duty to the judiciary.",
+                            "Transformed the ISF into a partisan tool in the political battles."
+                        ]
+                    }
+                ]
+            },
+            "jean-kahwaji": {
+                "name": "Jean Kahwaji",
+                "tag": "THE WEALTHY GENERAL",
+                "stamp": "WEALTHY GENERAL",
+                "role": "Former Army Commander",
+                "summary": "The former Army Commander who was indicted for illicit enrichment. Investigators found millions of dollars in his bank accounts that could not be explained by his official salary. He symbolizes the corruption that even reached the military, the country's most trusted institution.",
+                "quote": "The uniform did not protect the integrity.",
+                "sections": [
+                    {
+                        "title": "ILLICIT ENRICHMENT",
+                        "content": [
+                            "One of eight retired officers charged with accumulating vast wealth through corrupt means.",
+                            "Allegedly used his position to secure contracts and favors for associates."
+                        ]
+                    },
+                    {
+                        "title": "EROSION OF TRUST",
+                        "content": [
+                            "His indictment shook the public's faith in the military establishment.",
+                            "Proved that the 'corruption virus' had infected the security sector deeply."
+                        ]
+                    }
+                ]
+            },
+            "abdel-rahman-mabsout": {
+                "name": "Abdel Rahman Mabsout",
+                "tag": "THE TERRORIST",
+                "stamp": "TERRORIST",
+                "role": "ISIS Operative",
+                "summary": "The lone wolf terrorist who attacked Tripoli in 2019. A former ISIS member who had been detained and released, his rampage exposed the failures of the judicial and rehabilitation systems. He represents the violent blowback of the state's security failures.",
+                "quote": "The system creates its own monsters.",
+                "sections": [
+                    {
+                        "title": "SECURITY FAILURE",
+                        "content": [
+                            "Released from prison despite known extremist ties, only to launch a deadly attack months later.",
+                            "His case highlighted the lack of coordination and the revolving door of Lebanese prisons."
+                        ]
+                    },
+                    {
+                        "title": "THE VIOLENT END",
+                        "content": [
+                            "Killed four security personnel before blowing himself up.",
+                            "A grim reminder of the radicalization festering in the country's neglected peripheries."
+                        ]
+                    }
+                ]
+            },
+            "joker-chaos": {
+                "name": "Systemic Chaos",
+                "tag": "THE VOID",
+                "stamp": "VOID",
+                "role": "The State of Decay",
+                "summary": "The wildcard that trumps all plans. It represents the unpredictability of living in a failed state—hyperinflation, sudden blackouts, stray bullets, and the total absence of a safety net. It is the daily reality of the Lebanese citizen.",
+                "quote": "Expect the worst, and it will still surprise you.",
+                "sections": [
+                    {
+                        "title": "TOTAL COLLAPSE",
+                        "content": [
+                            "The erasure of savings, hopes, and futures.",
+                            "The rule of the jungle replacing the rule of law."
+                        ]
+                    }
+                ]
+            },
+            "joker-meddling": {
+                "name": "Foreign Meddling",
+                "tag": "THE PUPPET MASTER",
+                "stamp": "PUPPET MASTER",
+                "role": "External Influence",
+                "summary": "The invisible hand that moves the cards. Whether from the West or the East, foreign powers have always treated Lebanon as a proxy battlefield. This card represents the fact that the true decision-makers are often not even in the deck.",
+                "quote": "Sovereignty is a myth.",
+                "sections": [
+                    {
+                        "title": "PROXY WARS",
+                        "content": [
+                            "Decisions made in Tehran, Washington, Riyadh, or Paris that determine the fate of Beirut.",
+                            "The eternal curse of being a small country in a dangerous neighborhood."
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "ArchivesPage": {
+        "title": "ARCHIVES",
+        "description": "Résolutions officielles, actions législatives et documents historiques.",
+        "readDocument": "Lire le document",
+        "items": {
+            "hezbollahAccountability": {
+                "title": "Loi sur la responsabilité du Hezbollah (HAA)",
+                "description": "Un cadre législatif complet conçu pour démanteler la corruption, perturber le financement illicite et restaurer la souveraineté du Liban."
+            },
+            "res1559": {
+                "title": "Résolution 1559 du Conseil de sécurité de l'ONU"
+            },
+            "res1680": {
+                "title": "Résolution 1680 du Conseil de sécurité de l'ONU"
+            },
+            "res1701": {
+                "title": "Résolution 1701 du Conseil de sécurité de l'ONU"
+            },
+            "hr533": {
+                "title": "Résolution de la Chambre 533",
+                "description": "Initiée par le membre du Congrès Robert Dornan (27e district de Californie) et présentée par Charles Chartouni."
+            },
+            "shreveBill": {
+                "title": "Le représentant Shreve présente un projet de loi pour contrer le régime de terreur de l'Iran"
+            },
+            "noHezbollahAct": {
+                "title": "Loi 'Pas de Hezbollah dans notre hémisphère'",
+                "description": "Présentée par les sénateurs américains John Curtis et Jacky Rosen."
+            },
+            "charlesMalik": {
+                "title": "Les documents de Charles Malik à la Bibliothèque du Congrès"
+            },
+            "cfrLebanon": {
+                "title": "Liban : Comment Israël, le Hezbollah et les puissances régionales façonnent son avenir",
+                "description": "Council on Foreign Relations."
+            },
+            "randHezbollah": {
+                "title": "Les réseaux du Hezbollah en Amérique latine",
+                "description": "Implications potentielles pour la politique et la recherche américaines."
+            }
+        }
+    },
+    "FallenAngelsPage": {
+        "title": "ANGES DÉCHUS",
+        "description": {
+            "p1": "Le Liban a une longue et tragique histoire de violence politique, de nombreux dirigeants et personnalités influentes ayant été victimes d'assassinats.",
+            "p2": "Ces actes découlent souvent de la politique confessionnelle complexe du pays et des interventions étrangères.",
+            "p3": "Voici quelques-uns des cas les plus notables :"
+        },
+        "triggerText": "Cet événement a déclenché une série d'assassinats ciblés ultérieurs, principalement contre des figures anti-syriennes :",
+        "footer": {
+            "text1": "Avec les dizaines d'autres victimes",
+            "text2": "tombées à ce jour"
+        },
+        "angels": {
+            "kamalJoumblatt": {
+                "name": "Kamal Joumblatt",
+                "desc": "L'une des figures politiques les plus influentes du Liban. Assassiné le 16 mars 1977."
+            },
+            "bachirGemayel": {
+                "name": "Bachir Gemayel",
+                "desc": "(Président élu) — Tué le 14 septembre 1982 par une bombe massive."
+            },
+            "rashidKarami": {
+                "name": "Rashid Karami",
+                "desc": "(Premier ministre) — Tué le 1er juin 1987."
+            },
+            "reneMoawad": {
+                "name": "René Moawad",
+                "desc": "(Président) — Tué le 22 novembre 1989."
+            },
+            "raficHariri": {
+                "name": "Rafic Hariri",
+                "role": "Premier ministre",
+                "desc": "Le 14 février 2005, tué par un attentat au camion piégé qui a déclenché la Révolution du Cèdre."
+            },
+            "samirKassir": {
+                "name": "Samir Kassir",
+                "desc": "(journaliste) — Voiture piégée, 2 juin 2005."
+            },
+            "gebranTueni": {
+                "name": "Gebran Tueni",
+                "desc": "(Député et éditeur) — Voiture piégée, 12 décembre 2005."
+            },
+            "pierreGemayel": {
+                "name": "Pierre Gemayel",
+                "desc": "(Ministre) — Abattu le 21 novembre 2006."
+            },
+            "walidEido": {
+                "name": "Walid Eido",
+                "desc": "(Député) — Voiture piégée, 13 juin 2007."
+            },
+            "antoineGhanem": {
+                "name": "Antoine Ghanem",
+                "desc": "(Député) — Voiture piégée, 19 septembre 2007."
+            },
+            "wissamAlHassan": {
+                "name": "Wissam al-Hassan",
+                "desc": "(Chef du renseignement) — Voiture piégée en 2012."
+            },
+            "mohamadChatah": {
+                "name": "Mohamad Chatah",
+                "desc": "(Économiste) — Voiture piégée, 27 décembre 2013."
+            }
+        }
+    },
+    "VideosPage": {
+        "subtitle": "ARCHIVES MÉDIAS",
+        "title": "VIDÉOS",
+        "description": "Regardez nos dernières couvertures, interviews et analyses approfondies."
+    },
+    "ShortsPage": {
+        "subtitle": "ARCHIVES MÉDIAS",
+        "title": "SHORTS"
+    },
+    "PodcastsPage": {
+        "subtitle": "ARCHIVES AUDIO",
+        "title": "PODCAST",
+        "description": "Conversations critiques sur la géopolitique, l'économie et les forces invisibles qui façonnent notre monde."
+    },
+    "EventsPage": {
+        "header": {
+            "tagline": "Célébration d'Inauguration",
+            "title": "RASSEMBLEMENT DE PATRIOTES",
+            "description": "ALEF prépare une célébration d'inauguration spéciale et un rassemblement prestigieux de patriotes et d'amis de la liberté. Cette étape importante offre une occasion unique de définir la voie à suivre pour 2026 et au-delà."
+        },
+        "hero": {
+            "titlePart1": "L'AVENIR DU",
+            "titlePart2": "LIBAN",
+            "descriptionPart1": "Rejoignez-nous pour une soirée de dialogue, d'unité et de vision. Nous présenterons le",
+            "descriptionPart2": "Brief ALEF et l'Agenda orienté vers l'action sur le Liban et le Moyen-Orient",
+            "date": "14 Avril 2026",
+            "calendarNote": "Notez la date",
+            "reception": "18h00 Réception",
+            "dinner": "20h00 Dîner",
+            "venueName": "3 West Club",
+            "venueAddress": "3 West 51st Street, New York, NY 10019",
+            "reserveTicket": "Réserver un billet",
+            "contactUs": "Contactez-nous"
+        },
+        "officials": {
+            "title": "Officiels Américains et Internationaux Invités",
+            "executiveTitle": "Exécutif & Administration",
+            "whiteHouse": "La Maison Blanche",
+            "whiteHouseDesc": "Le Président et Mme Trump ; Responsables du Conseil de sécurité nationale",
+            "stateDept": "Département d'État",
+            "stateDeptDesc": "Envoyé spécial pour le Liban ; Secrétaire adjoint aux affaires du Proche-Orient ; Chargés du bureau Liban",
+            "defenseDept": "Département de la Défense",
+            "defenseDeptDesc": "Responsables supervisant l'assistance militaire au Liban",
+            "legislativeTitle": "Législatif & International",
+            "un": "Nations Unies",
+            "unDesc": "Dirigeants de l'OCHA et d'autres agences axées sur le Liban",
+            "congress": "Congrès des États-Unis",
+            "congressDesc1": "Le Caucus d'amitié américano-libanais",
+            "congressDesc2": "Membres et personnel des commissions des affaires étrangères et de la défense de la Chambre/Sénat"
+        },
+        "sponsors": {
+            "title": "Opportunités de Parrainage",
+            "subtitle": "Augmentez Votre Impact",
+            "selectPackage": "Sélectionner le forfait",
+            "mostExclusive": "Le Plus Exclusif",
+            "levels": {
+                "diamond": {
+                    "name": "SPONSOR DIAMANT",
+                    "features": [
+                        "Les sponsors Diamant sont des partenaires clés et des leaders dans le soutien de la mission d'ALEF.",
+                        "Recevez un accès VIP exclusif, des sièges privilégiés et une reconnaissance personnalisée soulignant votre soutien pour le dîner d'inauguration ALEF 2026.",
+                        "Votre marque sera célébrée comme un contributeur essentiel à notre succès continu."
+                    ]
+                },
+                "platinum": {
+                    "name": "SPONSOR PLATINE",
+                    "features": [
+                        "Une table pour 8 personnes (ALEF placera 2 invités supplémentaires)",
+                        "Sièges avec les honorés (selon disponibilité)",
+                        "Annonce pleine page en vedette dans le livret du programme",
+                        "Reconnaissance du nom et du logo dans les supports marketing de l'événement et le communiqué de presse",
+                        "Présence sur les réseaux sociaux avant et après l'événement",
+                        "Placement privilégié du nom et du logo en tant que Sponsor Platine sur le site web et les réseaux sociaux d'ALEF"
+                    ]
+                },
+                "gold": {
+                    "name": "SPONSOR OR",
+                    "features": [
+                        "Une table pour 8 personnes (ALEF placera 2 invités supplémentaires)",
+                        "Annonce pleine page dans le programme",
+                        "Reconnaissance du nom et du logo sur les supports marketing de l'événement et le communiqué de presse",
+                        "Présence sur les réseaux sociaux avant et après l'événement"
+                    ]
+                },
+                "sapphire": {
+                    "name": "SPONSOR SAPHIR",
+                    "features": [
+                        "Une table pour 8 personnes (ALEF placera 2 invités supplémentaires)",
+                        "Annonce pleine page dans le programme",
+                        "Reconnaissance du nom et du logo dans les supports marketing de l'événement et le communiqué de presse"
+                    ]
+                },
+                "silver": {
+                    "name": "SPONSOR ARGENT",
+                    "features": [
+                        "Demi-table pour 4 personnes (ALEF placera 2 invités supplémentaires)",
+                        "Annonce demi-page dans le programme",
+                        "Reconnaissance du nom et du logo en tant que Sponsor Argent"
+                    ]
+                },
+                "individual": {
+                    "name": "BILLET INDIVIDUEL",
+                    "features": [
+                        "Forfait 1 billet"
+                    ]
+                }
+            }
+        },
+        "accommodations": {
+            "title": "Hébergements Officiels",
+            "subtitle": "Partenaires Préférés pour Votre Séjour",
+            "viewProperty": "Voir la propriété",
+            "items": {
+                "hotel1": {
+                    "name": "3 West Club",
+                    "address": "3 West 51st Street, NYC"
+                },
+                "hotel2": {
+                    "name": "Warwick New York",
+                    "address": "65 West 54th Street, NYC"
+                },
+                "hotel3": {
+                    "name": "New York Hilton Midtown",
+                    "address": "1335 6th Ave, NYC"
+                }
+            }
+        }
+    },
+    "MediaFeed": {
+        "searchPlaceholder": "RECHERCHER DANS L'ARCHIVE...",
+        "noResults": "Aucun {type} trouvé correspondant à \"{query}\"",
+        "clearFilters": "EFFACER LES FILTRES",
+        "all": "Tous"
+    },
+    "FAQPage": {
+        "title": "FOIRE AUX QUESTIONS",
+        "description": "Comprendre les complexités de l'influence du Hezbollah, la politique américaine et la voie vers un Liban souverain.",
+        "stillHaveQuestions": "ENCORE DES QUESTIONS ?",
+        "contactUs": "CONTACTEZ-NOUS",
+        "questions": {
+            "q1": {
+                "question": "Quelles stratégies spécifiques le Hezbollah a-t-il utilisées sous sa nouvelle direction pour montrer qu'il peut rebondir après le conflit ?",
+                "answer": "La direction du Hezbollah s'est appuyée sur de multiples fronts pour maintenir sa pertinence. Militairement, ils utilisent des événements spécifiques (comme des escalades à la frontière syrienne) pour montrer que le commandement central est toujours aux commandes. Politiquement, ils tirent parti de leur alliance avec Nabih Berri pour influencer les nominations et la formation du gouvernement. Dans les médias, ils restent agressifs contre les responsables de l'État, et ils utilisent l'appareil judiciaire et sécuritaire pour terroriser les opposants qui s'élèvent contre leurs armes ou les processus de paix."
+            },
+            "q2": {
+                "question": "Quels moyens alternatifs le Hezbollah a-t-il trouvés pour financer ses opérations ?",
+                "answer": "Le Hezbollah dépend fortement de la contrebande d'argent liquide. Cela se produit dans une moindre mesure par l'aéroport, mais principalement par le port de Beyrouth et les passages frontaliers légaux et illégaux avec la Syrie."
+            },
+            "q3": {
+                "question": "Comment le soutien financier de l'Iran affecte-t-il le Hezbollah et comment les États-Unis devraient-ils réagir ?",
+                "answer": "Bien que le soutien iranien soit essentiel, le Hezbollah exploite également un réseau de type 'mafieux' impliquant le trafic de drogue et le blanchiment d'argent. Ils vendent des produits importés à prix réduit en contrôlant les douanes au port de Beyrouth pour échapper aux taxes. De plus, les institutions locales du secteur privé dans les secteurs financiers leur rapportent des revenus. La réponse américaine doit impliquer une pression des autorités monétaires locales pour fermer ces entreprises."
+            },
+            "q4": {
+                "question": "Quelles réformes sont nécessaires pour réduire l'influence du Hezbollah ?",
+                "answer": "La réforme commence par la libération des actifs appartenant à l'État, similaire aux améliorations récentes à l'aéroport. Le port de Beyrouth doit être libéré du contrôle partisan et les passages frontaliers officiels avec la Syrie doivent être strictement surveillés. De plus, les appareils de sécurité, de l'armée et judiciaire doivent être purgés des agents du Hezbollah pour restaurer la souveraineté de l'État."
+            },
+            "q5": {
+                "question": "Quelles mesures devraient être prises pour élargir et appliquer les sanctions contre le Hezbollah ?",
+                "answer": "Les sanctions devraient viser l'ensemble de l'écosystème aidant le Hezbollah, y compris les établissements politiques, sécuritaires, diplomatiques et médiatiques. Une pression de haut niveau doit être exercée sur le gouvernement libanais pour démanteler l'infrastructure militaire et sécuritaire du Hezbollah et sa capacité à intimider les opposants internes."
+            },
+            "q6": {
+                "question": "Comment les agences américaines peuvent-elles se coordonner pour relever les défis de gouvernance et de sécurité au Liban ?",
+                "answer": "Une approche multi-agences est requise : la DEA doit continuer de cibler les routes du trafic de drogue. Le département du Trésor doit sanctionner agressivement les alliés du Hezbollah (politiciens, juges, personnalités médiatiques) et tracer le blanchiment d'argent, tout en faisant pression pour des saisies d'actifs en Europe, aux États-Unis et en Afrique. Enfin, le ministère de la Justice devrait émettre des mandats d'arrêt contre les individus profondément impliqués dans la propagande et la facilitation de la sécurité du Hezbollah."
+            },
+            "q7": {
+                "question": "Comment renforcer les partenariats internationaux pour contrer le Hezbollah ?",
+                "answer": "Une pression maximale doit être exercée sur tous les partenaires internationaux pour inscrire officiellement les ailes militaire et politique du Hezbollah comme organisations terroristes. Cela devrait être suivi par l'ajout progressif de tous les partis et entités alliés à ces listes terroristes pour isoler l'organisation à l'échelle mondiale."
+            }
+        }
+    },
+    "HouseOfCorruption": {
+        "title": "MAISON DE LA CORRUPTION",
+        "subtitle": "AUDIT FINANCIER",
+        "caseFile": "DOSSIER #001",
+        "totalLosses": "+1 BILLION $",
+        "cardTitle": "LE VOL D'UN BILLION DE DOLLARS",
+        "p1": "L'effondrement économique du Liban n'était pas un accident—c'était un <span class='text-red'>vol orchestré</span>.",
+        "p2": "Des fonds publics détournés au blanchiment d'argent offshore, des systèmes de Ponzi au gaspillage d'infrastructures, les chiffres racontent une histoire de <span class='text-red'>pillage systématique</span>.",
+        "p3": "Voici la ventilation complète de la façon dont la richesse du Liban a été volée, cachée et perdue.",
+        "button": "VOIR L'AUDIT COMPLET"
+    }
+}

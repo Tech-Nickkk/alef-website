@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(useGSAP);
 
@@ -17,12 +18,13 @@ const ALLIES = [
     { name: "Young America’s Foundation", url: "https://yaf.org/" },
     { name: "The Livingston Group", url: "https://www.livingstongroupdc.com/" },
     { name: "Turning Point USA", url: "https://tpusa.com/" },
-    { name: "Foreign policy Research Institute", url: "https://www.fpri.org/"},
-    { name: "Transparency News", url: "https://transparency.news/"},
-    { name: "Washington Institute for Near East Policy", url: "https://www.washingtoninstitute.org/"}
+    { name: "Foreign policy Research Institute", url: "https://www.fpri.org/" },
+    { name: "Transparency News", url: "https://transparency.news/" },
+    { name: "Washington Institute for Near East Policy", url: "https://www.washingtoninstitute.org/" }
 ];
 
 export default function AlliedOrganizations() {
+    const t = useTranslations('AlliedOrganizations');
     const trackRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
@@ -33,11 +35,11 @@ export default function AlliedOrganizations() {
 
         gsap.to(track, {
             x: -totalWidth,
-            duration: 30, 
+            duration: 30,
             ease: "none",
             repeat: -1,
             modifiers: {
-                x: gsap.utils.unitize(x => parseFloat(x) % totalWidth) 
+                x: gsap.utils.unitize(x => parseFloat(x) % totalWidth)
             }
         });
     }, { scope: trackRef });
@@ -48,24 +50,25 @@ export default function AlliedOrganizations() {
 
                 <div className="flex flex-col items-center text-center gap-4">
                     <AnimatedTitle
-                        text="ALLIED ORGANIZATIONS"
+                        text={t('title')}
                         className="text-4xl md:text-6xl font-bold font-bebas text-foreground uppercase leading-none"
                     />
                     <div className="flex items-center gap-2 text-foreground/60 font-oswald text-xs tracking-widest">
                         <span className="w-2 h-2 bg-red rounded-full inline-block"></span>
-                        STRATEGIC PARTNERS
+                        {t('subtitle')}
                     </div>
                 </div>
 
             </div>
 
-            <div className="relative w-full overflow-hidden">
+            <div className="relative w-full overflow-hidden" dir="ltr">
                 <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 z-10 bg-linear-to-r from-background to-transparent"></div>
                 <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 z-10 bg-linear-to-l from-background to-transparent"></div>
 
                 <div
                     ref={trackRef}
                     className="flex gap-12 md:gap-24 w-fit px-12"
+                    dir="ltr"
                 >
                     {[...ALLIES, ...ALLIES].map((ally, index) => (
                         <Link

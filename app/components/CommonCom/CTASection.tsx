@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,31 +14,35 @@ interface CTASectionProps {
 }
 
 export default function CTASection({ type }: CTASectionProps) {
+    const t = useTranslations('CTASection');
     const containerRef = useRef<HTMLDivElement>(null);
     const content = {
         donate: {
-            title: "FUEL THE FIGHT FOR FREEDOM",
-            subtitle: "YOUR CONTRIBUTION DIRECTLY SUPPORTS OUR ADVOCACY FOR A SOVEREIGN LEBANON.",
-            buttonText: "MAKE A DONATION",
+            title: t('donate.title'),
+            subtitle: t('donate.subtitle'),
+            buttonText: t('donate.button'),
             link: "/donate",
             bgGradient: "from-blue/10 to-transparent",
-            borderColor: "border-red/20"
+            borderColor: "border-red/20",
+            tag: t('donate.tag')
         },
         subscribe: {
-            title: "STAY AHEAD OF THE WAVE",
-            subtitle: "GET CRITICAL INTELLIGENCE AND UPDATES DELIVERED DIRECTLY TO YOUR INBOX.",
-            buttonText: "SUBSCRIBE NOW",
+            title: t('subscribe.title'),
+            subtitle: t('subscribe.subtitle'),
+            buttonText: t('subscribe.button'),
             link: "#join-us",
             bgGradient: "from-foreground/5 to-transparent",
-            borderColor: "border-foreground/10"
+            borderColor: "border-foreground/10",
+            tag: t('subscribe.tag')
         },
         join: {
-            title: "STAND WITH US",
-            subtitle: "JOIN A NETWORK OF LEADERS COMMITTED TO REBUILDING OUR NATION.",
-            buttonText: "BECOME A MEMBER",
+            title: t('join.title'),
+            subtitle: t('join.subtitle'),
+            buttonText: t('join.button'),
             link: "#join-us",
             bgGradient: "from-red/5 to-transparent",
-            borderColor: "border-blue/20"
+            borderColor: "border-blue/20",
+            tag: t('join.tag')
         }
     }[type];
 
@@ -88,7 +93,7 @@ export default function CTASection({ type }: CTASectionProps) {
                         <div className="flex items-center justify-center md:justify-start gap-3">
                             <span className={`w-1.5 h-1.5 rounded-full bg-red ${type === 'donate' ? 'animate-pulse' : ''}`}></span>
                             <span className="font-oswald text-xs tracking-[0.2em] uppercase text-red">
-                                {type === 'donate' ? 'Urgent Action' : type === 'subscribe' ? 'Briefing' : 'Mobilization'}
+                                {content.tag}
                             </span>
                         </div>
 
