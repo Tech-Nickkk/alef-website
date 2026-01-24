@@ -10,7 +10,7 @@ export const shortType = defineType({
         defineField({
             name: 'title',
             title: 'Title',
-            type: 'string',
+            type: 'localizedString',
             validation: (rule) => rule.required(),
         }),
         defineField({
@@ -18,7 +18,7 @@ export const shortType = defineType({
             title: 'Slug',
             type: 'slug',
             options: {
-                source: 'title',
+                source: 'title.en',
                 maxLength: 96,
             },
             validation: (rule) => rule.required(),
@@ -66,9 +66,17 @@ export const shortType = defineType({
     ],
     preview: {
         select: {
-            title: 'title',
+            title: 'title.en',
             subtitle: 'platform',
-            media: 'thumbnail' // Update preview to show image
+            media: 'thumbnail'
         },
+        prepare(selection) {
+            const { title, subtitle, media } = selection
+            return {
+                title: title || 'Untitled Short',
+                subtitle: subtitle,
+                media: media
+            }
+        }
     },
 })

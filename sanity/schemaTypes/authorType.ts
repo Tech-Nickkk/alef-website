@@ -9,13 +9,13 @@ export const authorType = defineType({
   fields: [
     defineField({
       name: 'name',
-      type: 'string',
+      type: 'localizedString',
     }),
     defineField({
       name: 'slug',
       type: 'slug',
       options: {
-        source: 'name',
+        source: 'name.en', // Changed source to name.en
       },
     }),
     defineField({
@@ -43,7 +43,7 @@ export const authorType = defineType({
     defineField({
       name: 'position',
       title: 'Position',
-      type: 'string',
+      type: 'localizedString',
       description: 'Role title like "Founding Chairman" or "Vice Chairman". Primary label for Officers.',
     }),
     defineField({
@@ -63,7 +63,7 @@ export const authorType = defineType({
   ],
   preview: {
     select: {
-      title: 'name',
+      title: 'name.en', // Updated to select the English name
       media: 'image',
     },
     prepare(selection) {

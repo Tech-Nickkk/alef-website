@@ -25,19 +25,22 @@ export default async function BlogsAndArticles() {
     // However, since this component is async, I can use `await getTranslations`.
 
     // Wait, let's check imports.
-    const { getTranslations } = await import('next-intl/server');
+    const { getTranslations, getLocale } = await import('next-intl/server');
     const t = await getTranslations('BlogsAndArticles');
+    const locale = await getLocale();
 
     const query = `*[_type == "blog"] | order(publishedAt desc)[0] {
-        title,
+        "title": coalesce(title[$locale], title.en, title),
         slug,
         publishedAt,
-        excerpt,
+        "excerpt": coalesce(excerpt[$locale], excerpt.en, excerpt),
         mainImage,
-        author->{name}
+        author->{
+            "name": coalesce(name[$locale], name.en, name)
+        }
     }`;
 
-    const blog: BlogPost | null = await client.fetch(query);
+    const blog: BlogPost | null = await client.fetch(query, { locale });
 
     if (!blog) return null;
 

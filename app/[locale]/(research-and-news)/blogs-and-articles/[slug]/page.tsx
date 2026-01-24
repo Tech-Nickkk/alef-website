@@ -68,21 +68,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     const query = `
     *[_type == "blog" && slug.current == $slug][0] {
       _id,
-      title,
+      "title": coalesce(title[$locale], title.en, title),
       slug,
       publishedAt,
       mainImage,
       author->{
-        name,
+        "name": coalesce(name[$locale], name.en, name),
         discloseName,
         image,
-        position
+        "position": coalesce(position[$locale], position.en, position)
       },
-      body
+      "body": coalesce(body[$locale], body.en, body)
     }
   `;
 
-    const post = await client.fetch(query, { slug });
+    const post = await client.fetch(query, { slug, locale });
 
     if (!post) {
         notFound();

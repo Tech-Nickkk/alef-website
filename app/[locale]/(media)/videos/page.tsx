@@ -1,21 +1,22 @@
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import MediaFeed from "@/app/components/Media/MediaFeed";
 import { client } from "@/sanity/lib/client";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 
 export const revalidate = 60;
 
 export default async function VideosPage() {
+    const locale = await getLocale();
     const query = `*[_type == "video"] | order(publishedAt desc) {
         _id,
-        title,
+        "title": coalesce(title[$locale], title.en, title),
         videoUrl,
         description,
         thumbnail,
         publishedAt
     }`;
 
-    const videos = await client.fetch(query);
+    const videos = await client.fetch(query, { locale });
     const t = await getTranslations("VideosPage");
 
     return (

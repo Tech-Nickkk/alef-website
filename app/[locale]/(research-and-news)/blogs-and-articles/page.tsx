@@ -1,29 +1,30 @@
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import { client } from "@/sanity/lib/client";
 import BlogsFeed from "@/app/components/Blogs/BlogsFeed";
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, getLocale } from 'next-intl/server';
 
 export const revalidate = 60;
 
 export default async function BlogsPage() {
     const t = await getTranslations('BlogsPage');
+    const locale = await getLocale();
     const query = `
     *[_type == "blog"] | order(publishedAt desc) {
       _id,
-      title,
+      "title": coalesce(title[$locale], title.en, title),
       slug,
       publishedAt,
-      excerpt,
+      "excerpt": coalesce(excerpt[$locale], excerpt.en, excerpt),
       mainImage,
       author->{
-        name,
+        "name": coalesce(name[$locale], name.en, name),
         discloseName,
         image
       }
     }
   `;
 
-    const blogs = await client.fetch(query);
+    const blogs = await client.fetch(query, { locale });
 
     return (
         <div className="bg-background min-h-screen flex flex-col relative overflow-hidden">

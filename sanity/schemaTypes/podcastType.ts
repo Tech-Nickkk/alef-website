@@ -8,7 +8,7 @@ export const podcastType = defineType({
         defineField({
             name: 'title',
             title: 'Title',
-            type: 'string',
+            type: 'localizedString',
             validation: (rule) => rule.required(),
         }),
         defineField({
@@ -16,7 +16,7 @@ export const podcastType = defineType({
             title: 'Slug',
             type: 'slug',
             options: {
-                source: 'title',
+                source: 'title.en',
                 maxLength: 96,
             },
             validation: (rule) => rule.required(),
@@ -38,7 +38,13 @@ export const podcastType = defineType({
     ],
     preview: {
         select: {
-            title: 'title',
+            title: 'title.en',
         },
+        prepare(selection) {
+            const { title } = selection
+            return {
+                title: title || 'Untitled Podcast',
+            }
+        }
     },
 })

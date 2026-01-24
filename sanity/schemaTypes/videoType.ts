@@ -10,7 +10,7 @@ export const videoType = defineType({
         defineField({
             name: 'title',
             title: 'Title',
-            type: 'string',
+            type: 'localizedString',
             validation: (rule) => rule.required(),
         }),
         defineField({
@@ -18,7 +18,7 @@ export const videoType = defineType({
             title: 'Slug',
             type: 'slug',
             options: {
-                source: 'title',
+                source: 'title.en',
                 maxLength: 96,
             },
             validation: (rule) => rule.required(),
@@ -40,8 +40,15 @@ export const videoType = defineType({
     ],
     preview: {
         select: {
-            title: 'title',
+            title: 'title.en',
             media: 'thumbnail',
         },
+        prepare(selection) {
+            const { title, media } = selection
+            return {
+                title: title || 'Untitled Video',
+                media: media
+            }
+        }
     },
 })

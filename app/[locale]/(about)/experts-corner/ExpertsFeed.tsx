@@ -5,7 +5,7 @@ import SkeletonImage from "@/app/components/CommonCom/SkeletonImage";
 import { Star } from 'lucide-react';
 import FilterBar from "@/app/components/CommonCom/FilterBar";
 import { urlFor } from '@/sanity/lib/image';
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 interface Author {
     _id: string;
@@ -23,6 +23,7 @@ interface ExpertsFeedProps {
 
 export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
     const t = useTranslations('ExpertsCornerPage');
+    const locale = useLocale();
     const [searchQuery, setSearchQuery] = useState("");
     const [categoryFilter, setCategoryFilter] = useState<"All" | "Officers" | "Directors" | "Expert Advisors">("All");
 
@@ -33,11 +34,22 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
         "Expert Advisors": t('filters.advisors')
     };
 
+    const getString = (val: any) => {
+        if (!val) return "";
+        if (typeof val === 'string') return val;
+        // Prioritize current locale, then fallback to English or others
+        return val[locale] || val.en || val.ar || val.fr || val.es || "";
+    };
+
     const filteredActivists = useMemo(() => {
         return initialActivists.filter(a => {
-            const matchesSearch = (a.name || "").toLowerCase().includes(searchQuery.toLowerCase()) ||
-                (a.position || "").toLowerCase().includes(searchQuery.toLowerCase()) ||
-                (a.description || "").toLowerCase().includes(searchQuery.toLowerCase());
+            const name = getString(a.name);
+            const position = getString(a.position);
+            const description = getString(a.description);
+
+            const matchesSearch = name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                position.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                description.toLowerCase().includes(searchQuery.toLowerCase());
             return matchesSearch;
         });
     }, [initialActivists, searchQuery]);
@@ -114,14 +126,14 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
                                 </div>
                                 <h3 className="text-2xl font-bebas text-white mb-2 transition-colors">
                                     {officer.discloseName === true ? (
-                                        highlightText(officer.name || "", searchQuery)
+                                        highlightText(getString(officer.name) || "", searchQuery)
                                     ) : (
                                         <Star className="w-6 h-6 fill-white inline-block" />
                                     )}
                                 </h3>
                                 {officer.position && (
                                     <p className="font-oswald text-red text-sm tracking-wide uppercase">
-                                        {highlightText(officer.position, searchQuery)}
+                                        {highlightText(getString(officer.position), searchQuery)}
                                     </p>
                                 )}
                             </div>
@@ -162,13 +174,13 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
                                 </div>
                                 <h3 className="text-lg font-bebas text-white mb-3 tracking-wide">
                                     {director.discloseName === true ? (
-                                        highlightText(director.name || "", searchQuery)
+                                        highlightText(getString(director.name) || "", searchQuery)
                                     ) : (
                                         <Star className="w-6 h-6 fill-white inline-block" />
                                     )}
                                 </h3>
                                 <p className="font-oswald text-white/70 text-sm leading-relaxed">
-                                    {highlightText(director.description || director.position || "", searchQuery)}
+                                    {highlightText(getString(director.description) || getString(director.position) || "", searchQuery)}
                                 </p>
                             </div>
                         ))}
@@ -208,13 +220,13 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
                                 </div>
                                 <h3 className="text-lg font-bebas text-white mb-3 tracking-wide">
                                     {advisor.discloseName === true ? (
-                                        highlightText(advisor.name || "", searchQuery)
+                                        highlightText(getString(advisor.name) || "", searchQuery)
                                     ) : (
                                         <Star className="w-6 h-6 fill-white inline-block" />
                                     )}
                                 </h3>
                                 <p className="font-oswald text-white/70 text-sm leading-relaxed">
-                                    {highlightText(advisor.description || advisor.position || "", searchQuery)}
+                                    {highlightText(getString(advisor.description) || getString(advisor.position) || "", searchQuery)}
                                 </p>
                             </div>
                         ))}

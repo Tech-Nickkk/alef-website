@@ -6,7 +6,10 @@ import { authorType } from './authorType'
 import { videoType } from './videoType'
 import { shortType } from './shortType'
 import { podcastType } from './podcastType'
+import { localizedString } from './localizedString'
+import { localizedText } from './localizedText'
+import { localizedBlockContent } from './localizedBlockContent'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [blockContentType, blogType, authorType, videoType, shortType, podcastType],
+  types: [blockContentType, blogType, authorType, videoType, shortType, podcastType, localizedString, localizedText, localizedBlockContent],
 }

@@ -9,17 +9,18 @@ export const blogType = defineType({
   fields: [
     defineField({
       name: 'title',
-      type: 'string',
+      type: 'localizedString',
     }),
     defineField({
       name: 'language',
       type: 'string',
+      hidden: true, // Legacy field, hiding it
     }),
     defineField({
       name: 'slug',
       type: 'slug',
       options: {
-        source: 'title',
+        source: 'title.en', // Update source
       },
     }),
     defineField({
@@ -42,13 +43,25 @@ export const blogType = defineType({
     defineField({
       name: 'excerpt',
       title: 'Excerpt (Short Summary)',
-      type: 'text',
-      rows: 3,
+      type: 'localizedText',
       description: 'This ends up on the card in the blog list.',
     }),
     defineField({
       name: 'body',
-      type: 'blockContent',
+      type: 'localizedBlockContent',
     }),
   ],
+  preview: {
+    select: {
+      title: 'title.en',
+      media: 'mainImage',
+    },
+    prepare(selection) {
+      const { title, media } = selection
+      return {
+        title: title || 'Untitled Blog',
+        media: media,
+      }
+    }
+  },
 })

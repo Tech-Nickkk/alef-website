@@ -29,17 +29,32 @@ export default function ContactPage() {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate form submission
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
 
-        setIsSubmitting(false);
-        setIsSubmitted(true);
+            const data = await response.json();
 
-        // Reset after showing success
-        setTimeout(() => {
-            setIsSubmitted(false);
+            if (!response.ok) {
+                alert(`Error: ${data.error}`); 
+                setIsSubmitting(false);
+                return;
+            }
+
+            // Success!
+            setIsSubmitting(false);
+            setIsSubmitted(true);
             setFormData({ name: '', email: '', organization: '', subject: '', message: '' });
-        }, 3000);
+            setTimeout(() => setIsSubmitted(false), 3000);
+
+        } catch (error) {
+            console.error(error);
+            setIsSubmitting(false);
+            alert("Something went wrong.");
+        }
     };
 
     return (
