@@ -2,10 +2,10 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
   try {
-    const { email, name } = await req.json();
+    const { email, firstName, lastName } = await req.json();
 
-    if (!email || !name) {
-      return NextResponse.json({ error: 'Email and Name are required' }, { status: 400 });
+    if (!email || !firstName) {
+      return NextResponse.json({ error: 'Email and First Name are required' }, { status: 400 });
     }
 
     const apiKey = process.env.BREVO_API_KEY;
@@ -21,11 +21,11 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         email: email,
         attributes: {
-          FNAME: name.split(' ')[0], // First Name
-          LNAME: name.split(' ').slice(1).join(' ') || '', // Last Name (optional)
+          FIRSTNAME: firstName,
+          LASTNAME: lastName || '',
         },
         listIds: [listId],
-        updateEnabled: true, // Update if they already exist
+        updateEnabled: true,
       }),
     });
 

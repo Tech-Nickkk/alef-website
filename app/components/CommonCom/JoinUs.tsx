@@ -9,7 +9,7 @@ export default function JoinUs() {
     const pathname = usePathname();
     const t = useTranslations('JoinUs');
 
-    const [formData, setFormData] = useState({ name: '', email: '' });
+    const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '' });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [message, setMessage] = useState('');
 
@@ -29,7 +29,7 @@ export default function JoinUs() {
             if (res.ok) {
                 setStatus('success');
                 setMessage(t('successMessage'));
-                setFormData({ name: '', email: '' });
+                setFormData({ firstName: '', lastName: '', email: '' });
             } else {
                 setStatus('error');
                 setMessage(data.error || t('defaultError'));
@@ -91,23 +91,35 @@ export default function JoinUs() {
                                     <div className="relative group">
                                         <input
                                             type="text"
-                                            placeholder={t('placeholderName')}
-                                            value={formData.name}
-                                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                            placeholder="First Name"
+                                            value={formData.firstName}
+                                            onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                                             required
                                             className="w-full bg-background text-foreground px-4 py-3 md:px-6 md:py-4 outline-none font-oswald text-base md:text-lg uppercase placeholder:text-gray-400 rounded-sm border border-transparent focus:border-red transition-colors"
                                         />
                                     </div>
                                     <div className="relative group">
                                         <input
-                                            type="email"
-                                            placeholder={t('placeholderEmail')}
-                                            value={formData.email}
-                                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                            type="text"
+                                            placeholder="Last Name"
+                                            value={formData.lastName}
+                                            onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                                             required
                                             className="w-full bg-background text-foreground px-4 py-3 md:px-6 md:py-4 outline-none font-oswald text-base md:text-lg uppercase placeholder:text-gray-400 rounded-sm border border-transparent focus:border-red transition-colors"
                                         />
                                     </div>
+                                </div>
+                                
+                                {/* Email Field below the names */}
+                                <div className="relative group">
+                                    <input
+                                        type="email"
+                                        placeholder={t('placeholderEmail')}
+                                        value={formData.email}
+                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                        required
+                                        className="w-full bg-background text-foreground px-4 py-3 md:px-6 md:py-4 outline-none font-oswald text-base md:text-lg uppercase placeholder:text-gray-400 rounded-sm border border-transparent focus:border-red transition-colors"
+                                    />
                                 </div>
 
                                 <button
