@@ -2,15 +2,11 @@ import { NextResponse, NextRequest } from 'next/server';
 import { parseBody } from 'next-sanity/webhook';
 
 export async function POST(req: NextRequest) {
-    console.log('🔔 Webhook endpoint hit at:', new Date().toISOString());
-
     try {
         const { isValidSignature, body } = await parseBody(
             req,
             process.env.SANITY_WEBHOOK_SECRET
         );
-
-        console.log('📦 Webhook parsed - Valid:', isValidSignature, 'Body:', JSON.stringify(body, null, 2));
 
         if (!isValidSignature) {
             console.error('Invalid Signature');
@@ -26,7 +22,6 @@ export async function POST(req: NextRequest) {
         }
 
         const { title, type, _type, slug } = body as unknown as WebhookBody;
-        console.log('Received Webhook:', { title, type, _type, slug });
 
         // Handle slug if it's an object (common in Sanity) or string
         const slugString = typeof slug === 'object' && slug !== null && 'current' in slug
@@ -41,7 +36,6 @@ export async function POST(req: NextRequest) {
         const docType = type || _type;
 
         if (!titleString || !docType || !slugString) {
-            console.error('Missing required fields:', { title: titleString, type: docType, slug: slugString });
             return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
         }
 
@@ -49,7 +43,6 @@ export async function POST(req: NextRequest) {
         const listId = Number(process.env.BREVO_LIST_ID);
 
         if (!apiKey || isNaN(listId)) {
-            console.error('Missing Brevo Config');
             return NextResponse.json({ message: 'Server misconfigured' }, { status: 500 });
         }
 
@@ -70,14 +63,12 @@ export async function POST(req: NextRequest) {
 
         if (!contactsRes.ok) {
             const err = await contactsRes.text();
-            console.error('Brevo Fetch Contacts Error:', err);
             return NextResponse.json({ message: 'Failed to fetch contacts' }, { status: 500 });
         }
 
         const data = await contactsRes.json();
 
         if (!data.contacts || data.contacts.length === 0) {
-            console.log('No subscribers found in list', listId);
             return NextResponse.json({ message: 'No subscribers found' });
         }
 
@@ -104,15 +95,11 @@ export async function POST(req: NextRequest) {
         const result = await sendRes.json();
 
         if (!sendRes.ok) {
-            console.error('Brevo Send Error:', result);
             return NextResponse.json({ message: 'Failed to send emails', details: result }, { status: 500 });
         }
 
-        console.log('Brevo Success:', result);
-
         return NextResponse.json({ success: true, result });
     } catch (error) {
-        console.error('Notification Error:', error);
         return NextResponse.json({ error: 'Internal Server Error', details: error instanceof Error ? error.message : String(error) }, { status: 500 });
     }
 }
