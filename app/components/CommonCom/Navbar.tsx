@@ -233,8 +233,8 @@ export default function Navbar() {
 
                     </div>
 
-                    {/* Login / Profile Button */}
-                    <div className="hidden xl:block">
+                    {/* Login / Profile Button - Always Visible */}
+                    <div>
                         {user ? (
                             <Link
                                 href="/profile"
@@ -361,16 +361,7 @@ export default function Navbar() {
                                     </div>
                                 ))}
 
-                                {/* Mobile Profile Link */}
-                                <div className="border-b border-foreground/5 pb-4">
-                                    <Link
-                                        href={user ? "/profile" : "/login"}
-                                        onClick={() => setIsMenuOpen(false)}
-                                        className="text-3xl font-bebas text-foreground tracking-wide hover:text-theme-accent transition-colors block w-full"
-                                    >
-                                        {user ? "My Profile" : "Login"}
-                                    </Link>
-                                </div>
+
                             </div>
 
                             {/* Mobile Preferences (Language + Theme) */}
@@ -398,13 +389,6 @@ export default function Navbar() {
                                 </div>
                             </div>
 
-                            <div className="mt-8 flex flex-col gap-6">
-                                <Link href="/donate" onClick={() => setIsMenuOpen(false)}>
-                                    <button className="w-full bg-red text-white font-bebas text-xl tracking-wider py-4 uppercase hover:bg-[#c4151c] transition-colors shadow-lg shadow-red-500/20">
-                                        {t('donate')}
-                                    </button>
-                                </Link>
-                            </div>
                         </div>
                     </div>
                 </div>,

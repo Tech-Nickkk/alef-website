@@ -12,10 +12,12 @@ export async function POST(req: Request) {
         const body = await req.json();
         const { name, email, organization, subject, message } = body;
 
-        // 1. Check for API key first
-        if (!process.env.RESEND_API_KEY) {
-            console.error('RESEND_API_KEY is not set');
-            return NextResponse.json({ error: 'Email service not configured' }, { status: 500 });
+        const clientEmail = process.env.CLIENT_EMAIL;
+        const fromEmail = process.env.RESEND_FROM_EMAIL;
+
+        if (!process.env.RESEND_API_KEY || !clientEmail || !fromEmail) {
+            console.error('RESEND_API_KEY, CLIENT_EMAIL, or RESEND_FROM_EMAIL is not set');
+            return NextResponse.json({ error: 'Email service not fully configured' }, { status: 500 });
         }
 
         console.log('Attempting to send email with Resend...');
@@ -30,9 +32,11 @@ export async function POST(req: Request) {
             })
         );
 
+        const recipients = clientEmail.split(',').map(email => email.trim());
+
         const data = await resend.emails.send({
-            from: process.env.RESEND_FROM_EMAIL || 'ALEF Demo <onboarding@resend.dev>',
-            to: ['nikhildhakad712@gmail.com'],
+            from: fromEmail,
+            to: recipients,
             subject: `Contact Form: ${subject}`,
             replyTo: email,
             html: emailHtml,

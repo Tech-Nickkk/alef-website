@@ -31,7 +31,7 @@ export const podcastType = defineType({
         defineField({
             name: 'publishedAt',
             title: 'Published at',
-            type: 'datetime',
+            type: 'date',
             initialValue: () => new Date().toISOString(),
             validation: (rule) => rule.required(),
         }),
