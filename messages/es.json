@@ -27,6 +27,7 @@
             "houseOfCorruption": "Casa de la Corrupción",
             "houseOfCards": "Castillo de Naipes",
             "archives": "Archivos",
+            "bookRecommendations": "Recomendaciones de Libros",
             "fallenAngels": "Ángeles Caídos",
             "videos": "Videos",
             "shorts": "Cortos",
@@ -2833,5 +2834,55 @@
         "p2": "Desde fondos públicos malversados hasta lavado de dinero offshore, desde esquemas Ponzi hasta desperdicio de infraestructura, los números cuentan una historia de <span class='text-red'>saqueo sistemático</span>.",
         "p3": "Este es el desglose completo de cómo se robó, ocultó y perdió la riqueza del Líbano.",
         "button": "VER AUDITORÍA COMPLETA"
+    },
+    "BookRecommendationsPage": {
+        "title": "RECOMENDACIONES DE LIBROS",
+        "intro": "Recomendaciones de Libros",
+        "books": {
+            "book1": {
+                "title": "The Great Lebanese Heist: Anatomy of a Financial Collapse — Inside the Collapse That Bankrupted a Country and Betrayed Its People",
+                "author": "By Said B."
+            },
+            "book2": {
+                "title": "The Israel Lobby and US Foreign Policy",
+                "author": "By John Mearsheimer and Stephen Walt"
+            },
+            "book3": {
+                "title": "Hezbollah: The Global Footprint of Lebanon's Party of God",
+                "author": "By Matthew Levitt"
+            },
+            "book4": {
+                "title": "From Beirut to Jerusalem",
+                "author": "By Thomas Friedman"
+            },
+            "book5": {
+                "title": "King of Kings: The Iranian Revolution: A Story of Hubris, Delusion and Catastrophic Miscalculation",
+                "author": "By Scott Anderson"
+            },
+            "book6": {
+                "title": "Islamism vs. the West: 35 Years of Geopolitical Struggle",
+                "author": "By Daniel Pipes"
+            },
+            "book7": {
+                "title": "The Secret Apparatus: The Muslim Brotherhood's Industry of Death",
+                "author": "By Cynthia Farahat"
+            },
+            "book8": {
+                "title": "Iran: An Imperialist Republic and U.S. Policy",
+                "author": "By Walid Phares"
+            },
+            "book9": {
+                "title": "Understanding Terrorism: Challenges, Perspectives, and Issues",
+                "author": "By Augustus Martin"
+            },
+            "book10": {
+                "title": "The Lebanese Connection: Corruption, Civil War, and the International Drug Traffic",
+                "author": "By Jonathan Marshall"
+            },
+            "book11": {
+                "title": "The Soros Agenda",
+                "author": "By Rachel Ehrenfeld"
+            }
+        }
     }
 }

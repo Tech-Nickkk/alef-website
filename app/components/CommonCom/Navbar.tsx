@@ -109,6 +109,7 @@ export default function Navbar() {
                 { label: t('menu.houseOfCorruption'), href: "/house-of-corruption" },
                 { label: t('menu.houseOfCards'), href: "/house-of-cards" },
                 { label: t('menu.archives'), href: "/archives" },
+                { label: t('menu.bookRecommendations'), href: "/book-recommendations" },
                 { label: t('menu.fallenAngels'), href: "/fallen-angels" }
             ],
         },
