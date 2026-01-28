@@ -117,7 +117,18 @@
     },
     "AlliedOrganizations": {
         "title": "ORGANISATIONS ALLIÉES",
-        "subtitle": "PARTENAIRES STRATÉGIQUES"
+        "subtitle": "PARTENAIRES STRATÉGIQUES",
+        "heritage": "Heritage Foundation",
+        "aei": "American Enterprise Institute",
+        "hudson": "Hudson Institute",
+        "csp": "Center for Security Policy",
+        "fdd": "Foundation for Defense of Democracies",
+        "yaf": "Young America’s Foundation",
+        "livingston": "The Livingston Group",
+        "tpusa": "Turning Point USA",
+        "fpri": "Foreign policy Research Institute",
+        "transparency": "Transparency News",
+        "winep": "Washington Institute for Near East Policy"
     },
     "HouseOfCorruptionPage": {
         "hero": {
@@ -343,6 +354,8 @@
         "title": "REJOIGNEZ LE MOUVEMENT",
         "description": "Aidez-nous à construire notre réseau. Fournissez vos coordonnées pour rejoindre notre liste de diffusion.",
         "placeholderName": "NOM COMPLET",
+        "placeholderFirstName": "PRÉNOM",
+        "placeholderLastName": "NOM DE FAMILLE",
         "placeholderEmail": "ENTREZ UN EMAIL SÉCURISÉ",
         "button": "REJOINDRE MAINTENANT",
         "buttonLoading": "INSCRIPTION...",
@@ -903,6 +916,7 @@
         },
         "filters": {
             "all": "Tous",
+            "congressLatest": "Dernières Nouvelles du Congrès",
             "senate": "Sénat",
             "house": "Chambre",
             "searchPlaceholder": "RECHERCHER DES MEMBRES...",
@@ -914,6 +928,12 @@
             "house": "Chambre des Représentants",
             "republicans": "Républicains",
             "democrats": "Démocrates"
+        },
+        "latestItem": {
+            "tag": "DERNIÈRE AUDITION",
+            "title": "Politique américaine envers le Liban : Obstacles au démantèlement de l'emprise du Hezbollah sur le pouvoir",
+            "committee": "Commission des affaires étrangères de la Chambre",
+            "access": "Accès complet à l'audition"
         },
         "members": {
             "senate_republicans": [

@@ -91,7 +91,7 @@ export default function JoinUs() {
                                     <div className="relative group">
                                         <input
                                             type="text"
-                                            placeholder="First Name"
+                                            placeholder={t('placeholderFirstName')}
                                             value={formData.firstName}
                                             onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                                             required
@@ -101,7 +101,7 @@ export default function JoinUs() {
                                     <div className="relative group">
                                         <input
                                             type="text"
-                                            placeholder="Last Name"
+                                            placeholder={t('placeholderLastName')}
                                             value={formData.lastName}
                                             onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                                             required
@@ -109,7 +109,7 @@ export default function JoinUs() {
                                         />
                                     </div>
                                 </div>
-                                
+
                                 {/* Email Field below the names */}
                                 <div className="relative group">
                                     <input

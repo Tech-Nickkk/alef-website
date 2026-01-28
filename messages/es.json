@@ -117,7 +117,18 @@
     },
     "AlliedOrganizations": {
         "title": "ORGANIZACIONES ALIADAS",
-        "subtitle": "SOCIOS ESTRATÉGICOS"
+        "subtitle": "SOCIOS ESTRATÉGICOS",
+        "heritage": "Heritage Foundation",
+        "aei": "American Enterprise Institute",
+        "hudson": "Hudson Institute",
+        "csp": "Center for Security Policy",
+        "fdd": "Foundation for Defense of Democracies",
+        "yaf": "Young America’s Foundation",
+        "livingston": "The Livingston Group",
+        "tpusa": "Turning Point USA",
+        "fpri": "Foreign policy Research Institute",
+        "transparency": "Transparency News",
+        "winep": "Washington Institute for Near East Policy"
     },
     "HouseOfCorruptionPage": {
         "hero": {
@@ -344,6 +355,8 @@
         "title": "ÚNETE AL MOVIMIENTO",
         "description": "Ayúdanos a construir nuestra red. Proporciona tus datos de contacto para unirte a nuestra lista de correo.",
         "placeholderName": "NOMBRE COMPLETO",
+        "placeholderFirstName": "NOMBRE",
+        "placeholderLastName": "APELLIDO",
         "placeholderEmail": "INGRESA CORREO SEGURO",
         "button": "ÚNETE AHORA",
         "buttonLoading": "UNIÉNDOSE...",
@@ -901,6 +914,7 @@
         },
         "filters": {
             "all": "Todos",
+            "congressLatest": "Últimas Noticias del Congreso",
             "senate": "Senado",
             "house": "Cámara",
             "searchPlaceholder": "BUSCAR MIEMBROS...",
@@ -912,6 +926,12 @@
             "house": "Cámara de Representantes",
             "republicans": "Republicanos",
             "democrats": "Demócratas"
+        },
+        "latestItem": {
+            "tag": "ÚLTIMA AUDIENCIA",
+            "title": "Política de EE. UU. hacia el Líbano: Obstáculos para desmantelar el control de Hezbolá sobre el poder",
+            "committee": "Comité de Asuntos Exteriores de la Cámara",
+            "access": "Acceso completo a la audiencia"
         },
         "members": {
             "senate_republicans": [

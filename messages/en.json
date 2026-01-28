@@ -117,7 +117,18 @@
     },
     "AlliedOrganizations": {
         "title": "ALLIED ORGANIZATIONS",
-        "subtitle": "STRATEGIC PARTNERS"
+        "subtitle": "STRATEGIC PARTNERS",
+        "heritage": "Heritage Foundation",
+        "aei": "American Enterprise Institute",
+        "hudson": "Hudson Institute",
+        "csp": "Center for Security Policy",
+        "fdd": "Foundation for Defense of Democracies",
+        "yaf": "Young America’s Foundation",
+        "livingston": "The Livingston Group",
+        "tpusa": "Turning Point USA",
+        "fpri": "Foreign policy Research Institute",
+        "transparency": "Transparency News",
+        "winep": "Washington Institute for Near East Policy"
     },
     "HouseOfCorruptionPage": {
         "hero": {
@@ -343,6 +354,8 @@
         "title": "JOIN THE MOVEMENT",
         "description": "Help us build our network. Provide your contact details to join our mailing list.",
         "placeholderName": "FULL NAME",
+        "placeholderFirstName": "FIRST NAME",
+        "placeholderLastName": "LAST NAME",
         "placeholderEmail": "ENTER SECURE EMAIL",
         "button": "JOIN NOW",
         "buttonLoading": "JOINING...",
@@ -907,6 +920,7 @@
         },
         "filters": {
             "all": "All",
+            "congressLatest": "Congress Latest",
             "senate": "Senate",
             "house": "House",
             "searchPlaceholder": "SEARCH MEMBERS...",
@@ -918,6 +932,12 @@
             "house": "House of Representatives",
             "republicans": "Republicans",
             "democrats": "Democrats"
+        },
+        "latestItem": {
+            "tag": "LATEST HEARING",
+            "title": "U.S. Policy Toward Lebanon: Obstacles to Dismantling Hezbollah’s Grip on Power",
+            "committee": "House Foreign Affairs Committee",
+            "access": "Full Hearing Access"
         },
         "members": {
             "senate_republicans": [

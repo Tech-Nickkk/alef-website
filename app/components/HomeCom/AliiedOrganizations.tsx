@@ -10,17 +10,17 @@ import { useTranslations } from "next-intl";
 gsap.registerPlugin(useGSAP);
 
 const ALLIES = [
-    { name: "Heritage Foundation", url: "https://www.heritage.org/" },
-    { name: "American Enterprise Institute", url: "https://www.aei.org/" },
-    { name: "Hudson Institute", url: "https://www.hudson.org/" },
-    { name: "Center for Security Policy", url: "https://centerforsecuritypolicy.org/" },
-    { name: "Foundation for Defense of Democracies", url: "https://www.fdd.org/" },
-    { name: "Young America’s Foundation", url: "https://yaf.org/" },
-    { name: "The Livingston Group", url: "https://www.livingstongroupdc.com/" },
-    { name: "Turning Point USA", url: "https://tpusa.com/" },
-    { name: "Foreign policy Research Institute", url: "https://www.fpri.org/" },
-    { name: "Transparency News", url: "https://transparency.news/" },
-    { name: "Washington Institute for Near East Policy", url: "https://www.washingtoninstitute.org/" }
+    { key: "heritage", url: "https://www.heritage.org/" },
+    { key: "aei", url: "https://www.aei.org/" },
+    { key: "hudson", url: "https://www.hudson.org/" },
+    { key: "csp", url: "https://centerforsecuritypolicy.org/" },
+    { key: "fdd", url: "https://www.fdd.org/" },
+    { key: "yaf", url: "https://yaf.org/" },
+    { key: "livingston", url: "https://www.livingstongroupdc.com/" },
+    { key: "tpusa", url: "https://tpusa.com/" },
+    { key: "fpri", url: "https://www.fpri.org/" },
+    { key: "transparency", url: "https://transparency.news/" },
+    { key: "winep", url: "https://www.washingtoninstitute.org/" }
 ];
 
 export default function AlliedOrganizations() {
@@ -79,7 +79,7 @@ export default function AlliedOrganizations() {
                             className="shrink-0 flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300 group cursor-pointer"
                         >
                             <h3 className="text-3xl md:text-4xl font-bebas text-foreground whitespace-nowrap group-hover:text-red transition-colors">
-                                {ally.name}
+                                {t(ally.key)}
                             </h3>
                         </Link>
                     ))}

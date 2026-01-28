@@ -117,7 +117,18 @@
     },
     "AlliedOrganizations": {
         "title": "المنظمات الحليفة",
-        "subtitle": "شركاء استراتيجيون"
+        "subtitle": "شركاء استراتيجيون",
+        "heritage": "مؤسسة التراث",
+        "aei": "معهد المشاريع الأمريكية",
+        "hudson": "معهد هدسون",
+        "csp": "مركز السياسة الأمنية",
+        "fdd": "مؤسسة الدفاع عن الديمقراطيات",
+        "yaf": "مؤسسة أمريكا الشابة",
+        "livingston": "مجموعة ليفينغستون",
+        "tpusa": "نقطة تحول الولايات المتحدة الأمريكية",
+        "fpri": "معهد أبحاث السياسة الخارجية",
+        "transparency": "أخبار الشفافية",
+        "winep": "معهد واشنطن لسياسة الشرق الأدنى"
     },
     "HouseOfCorruptionPage": {
         "hero": {
@@ -332,7 +343,7 @@
             },
             "bill4": {
                 "id": "H.R. 1844",
-                "title": "قانون PAGER",
+                "title": "قانون بيجر",
                 "date": "28 مارس 2023",
                 "desc": "يمنع التمويل عن الجيش اللبناني حتى يقطع علاقاته مع الوكلاء الإيرانيين مثل حزب الله ويفكك معاقلهم.",
                 "link": "https://www.congress.gov/bill/118th-congress/house-bill/1844"
@@ -344,6 +355,8 @@
         "title": "انضم إلى الحركة",
         "description": "ساعدنا في بناء شبكتنا. قدم تفاصيل الاتصال الخاصة بك للانضمام إلى قائمتنا البريدية.",
         "placeholderName": "الاسم الكامل",
+        "placeholderFirstName": "الاسم الأول",
+        "placeholderLastName": "اسم العائلة",
         "placeholderEmail": "أدخل بريدًا إلكترونيًا آمنًا",
         "button": "انضم الآن",
         "buttonLoading": "جاري الانضمام...",
@@ -361,7 +374,7 @@
         "rights": "A.L.E.F. جميع الحقوق محفوظة.",
         "privacy": "سياسة الخصوصية",
         "terms": "شروط الخدمة",
-        "address": "445 Park Avenue,<br />New York, NY 10022"
+        "address": "٤٤٥ بارك أفينيو،<br />نيويورك، نيويورك ١٠٠٢٢"
     },
     "LoginPage": {
         "welcomeBack": "أهلاً بعودتك",
@@ -908,6 +921,7 @@
         },
         "filters": {
             "all": "الكل",
+            "congressLatest": "آخر مستجدات الكونغرس",
             "senate": "مجلس الشيوخ",
             "house": "مجلس النواب",
             "searchPlaceholder": "البحث عن الأعضاء...",
@@ -919,6 +933,12 @@
             "house": "مجلس النواب",
             "republicans": "الجمهوريون",
             "democrats": "الديمقراطيون"
+        },
+        "latestItem": {
+            "tag": "آخر جلسات الاستماع",
+            "title": "السياسة الأمريكية تجاه لبنان: عقبات أمام تفكيك قبضة حزب الله على السلطة",
+            "committee": "لجنة الشؤون الخارجية في مجلس النواب",
+            "access": "الوصول الكامل للجلسة"
         },
         "members": {
             "senate_republicans": [
@@ -2854,49 +2874,55 @@
         "intro": "توصيات الكتب",
         "books": {
             "book1": {
-                "title": "The Great Lebanese Heist: Anatomy of a Financial Collapse — Inside the Collapse That Bankrupted a Country and Betrayed Its People",
-                "author": "By Said B."
+                "title": "السرقة اللبنانية الكبرى: تشريح الانهيار المالي - داخل الانهيار الذي أفلس دولة وخان شعبها",
+                "author": "بقلم سعيد ب."
             },
             "book2": {
-                "title": "The Israel Lobby and US Foreign Policy",
-                "author": "By John Mearsheimer and Stephen Walt"
+                "title": "اللوبي الإسرائيلي والسياسة الخارجية الأمريكية",
+                "author": "بقلم جون ميرشيمر وستيفن والت"
             },
             "book3": {
-                "title": "Hezbollah: The Global Footprint of Lebanon's Party of God",
-                "author": "By Matthew Levitt"
+                "title": "حزب الله: البصمة العالمية لحزب الله اللبناني",
+                "author": "بقلم ماثيو ليفيت"
             },
             "book4": {
-                "title": "From Beirut to Jerusalem",
-                "author": "By Thomas Friedman"
+                "title": "من بيروت إلى القدس",
+                "author": "بقلم توماس فريدمان"
             },
             "book5": {
-                "title": "King of Kings: The Iranian Revolution: A Story of Hubris, Delusion and Catastrophic Miscalculation",
-                "author": "By Scott Anderson"
+                "title": "ملك الملوك: الثورة الإيرانية: قصة غطرسة ووهم وسوء تقدير كارثي",
+                "author": "بقلم سكوت أندرسون"
             },
             "book6": {
-                "title": "Islamism vs. the West: 35 Years of Geopolitical Struggle",
-                "author": "By Daniel Pipes"
+                "title": "الإسلاموية مقابل الغرب: 35 عامًا من الصراع الجيوسياسي",
+                "author": "بقلم دانيال بايبس"
             },
             "book7": {
-                "title": "The Secret Apparatus: The Muslim Brotherhood's Industry of Death",
-                "author": "By Cynthia Farahat"
+                "title": "الجهاز السري: صناعة الموت عند الإخوان المسلمين",
+                "author": "بقلم سينثيا فرحات"
             },
             "book8": {
-                "title": "Iran: An Imperialist Republic and U.S. Policy",
-                "author": "By Walid Phares"
+                "title": "إيران: جمهورية إمبريالية والسياسة الأمريكية",
+                "author": "بقلم وليد فارس"
             },
             "book9": {
-                "title": "Understanding Terrorism: Challenges, Perspectives, and Issues",
-                "author": "By Augustus Martin"
+                "title": "فهم الإرهاب: تحديات ووجهات نظر وقضايا",
+                "author": "بقلم أوغسطس مارتن"
             },
             "book10": {
-                "title": "The Lebanese Connection: Corruption, Civil War, and the International Drug Traffic",
-                "author": "By Jonathan Marshall"
+                "title": "الرابط اللبناني: الفساد والحرب الأهلية وتجارة المخدرات الدولية",
+                "author": "بقلم جوناثان مارشال"
             },
             "book11": {
-                "title": "The Soros Agenda",
-                "author": "By Rachel Ehrenfeld"
+                "title": "أجندة سوروس",
+                "author": "بقلم راشيل إهرنفيلد"
             }
         }
+    },
+    "MediaFeed": {
+        "searchPlaceholder": "...البحث في الأرشيف",
+        "noResults": "لم يتم العثور على {type}s تطابق \"{query}\"",
+        "clearFilters": "مسح المرشحات",
+        "all": "الكل"
     }
 }
