@@ -2,10 +2,11 @@ import SkeletonImage from "../CommonCom/SkeletonImage";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function HouseOfCorruption() {
     const t = useTranslations('HouseOfCorruption');
+    const locale = useLocale();
 
     return (
         <section className="py-12 md:py-24 px-6 md:px-12 lg:px-24">
@@ -62,7 +63,12 @@ export default function HouseOfCorruption() {
                     <div className="bg-blue rounded-2xl p-2 h-[500px] md:h-[600px] relative overflow-hidden group">
                         <div className="relative w-full h-full rounded-xl overflow-hidden">
                             <SkeletonImage
-                                src="/houseOfCorruption/house-of-corruption-img-7.jpg"
+                                src={
+                                    locale === 'ar' ? '/houseOfCorruption/house-of-corruption-img-7-arabic.png' :
+                                        locale === 'fr' ? '/houseOfCorruption/house-of-corruption-img-7-french.png' :
+                                            locale === 'es' ? '/houseOfCorruption/house-of-corruption-img-7-spanish.png' :
+                                                '/houseOfCorruption/house-of-corruption-img-7.jpg'
+                                }
                                 alt="$1 Trillion Robbery"
                                 fill
                                 className="object-cover"

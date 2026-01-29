@@ -372,6 +372,7 @@
         "resources": "RECURSOS",
         "contact": "CONTACTO",
         "rights": "A.L.E.F. Todos los derechos reservados.",
+        "copyright": "Copyright",
         "privacy": "Política de Privacidad",
         "terms": "Términos de Servicio",
         "address": "445 Park Avenue,<br />New York, NY 10022"
@@ -2903,6 +2904,73 @@
                 "title": "The Soros Agenda",
                 "author": "By Rachel Ehrenfeld"
             }
+        }
+    },
+    "ProfilePage": {
+        "title": "Bienvenido a su perfil",
+        "anonymousUser": "Usuario Anónimo",
+        "signOut": "Cerrar Sesión",
+        "manageBilling": "Administrar Suscripción",
+        "totalImpact": "Impacto Total",
+        "dashboard": {
+            "label": "Su Panel"
+        },
+        "alerts": {
+            "portalError": "Error al crear la sesión del portal: ",
+            "genericError": "Algo salió mal. Por favor, inténtelo de nuevo."
+        },
+        "badges": {
+            "supporter": {
+                "name": "Partidario",
+                "description": "¡Gracias por comenzar su viaje con nosotros!"
+            },
+            "advocate": {
+                "name": "Defensor",
+                "description": "¡Su apoyo constante hace una diferencia real!"
+            },
+            "champion": {
+                "name": "Campeón",
+                "description": "¡Eres un verdadero campeón de nuestra causa!"
+            },
+            "legend": {
+                "name": "Leyenda",
+                "description": "¡Su impacto legendario nos inspira a todos!"
+            }
+        },
+        "tierModal": {
+            "title": "Niveles de Soporte",
+            "subtitle": "Desbloquee insignias exclusivas basadas en sus contribuciones",
+            "totalContributed": "Total Contribuido",
+            "toNextTier": "{amount} para {tierName}",
+            "maxReached": "🎉 ¡Nivel máximo alcanzado!",
+            "current": "Actual",
+            "donateNow": "Donar Ahora"
+        },
+        "memberSince": "Miembro desde",
+        "totalDonations": "Donaciones Totales",
+        "currentBadge": {
+            "label": "Insignia Actual",
+            "viewAll": "Ver todos los niveles",
+            "none": "Aún no hay insignia",
+            "donateToEarn": "Done para ganar"
+        },
+        "history": {
+            "title": "HISTORIAL DE DONACIONES",
+            "timeline": "Su cronograma de contribuciones",
+            "loading": "Cargando historial...",
+            "empty": "No se encontró historial de donaciones.",
+            "status": "COMPLETADO",
+            "types": {
+                "monthly": "Donación Mensual",
+                "monthlyRenewal": "Renovación Mensual",
+                "sponsor": "Patrocinio",
+                "oneTime": "Donación Única"
+            }
+        },
+        "firstImpact": {
+            "title": "Haga su primer impacto",
+            "description": "Su apoyo puede ayudar a marcar la diferencia. Únase a nuestra comunidad de partidarios y ayúdenos a lograr nuestra misión.",
+            "donateNow": "Donar Ahora"
         }
     }
 }

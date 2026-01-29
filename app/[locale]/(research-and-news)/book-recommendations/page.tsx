@@ -1,12 +1,13 @@
 "use client";
 
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function BookRecommendationsPage() {
     const t = useTranslations("BookRecommendationsPage");
+    const locale = useLocale();
 
     const bookKeys = [
         "book1", "book2", "book3", "book4", "book5",
@@ -28,7 +29,12 @@ export default function BookRecommendationsPage() {
                         </div>
                         {/* Uncomment locally once file is moved: */}
                         <Image
-                            src="/research/Bookrecommendations.png"
+                            src={
+                                locale === 'ar' ? '/research/BookrecommendationsArabic.png' :
+                                    locale === 'fr' ? '/research/BookrecommendationsFrench.png' :
+                                        locale === 'es' ? '/research/BookrecommendationsSpanish.png' :
+                                            '/research/Bookrecommendations.png'
+                            }
                             alt="Book Recommendations"
                             fill
                             className="object-cover relative z-10"

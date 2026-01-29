@@ -371,6 +371,7 @@
         "resources": "RESSOURCES",
         "contact": "CONTACT",
         "rights": "A.L.E.F. Tous droits réservés.",
+        "copyright": "Copyright",
         "privacy": "Politique de Confidentialité",
         "terms": "Conditions d'Utilisation",
         "address": "445 Park Avenue,<br />New York, NY 10022"
@@ -2905,6 +2906,73 @@
                 "title": "The Soros Agenda",
                 "author": "By Rachel Ehrenfeld"
             }
+        }
+    },
+    "ProfilePage": {
+        "title": "Bienvenue sur votre profil",
+        "anonymousUser": "Utilisateur Anonyme",
+        "signOut": "Se Déconnecter",
+        "manageBilling": "Gérer l'abonnement",
+        "totalImpact": "Impact Total",
+        "dashboard": {
+            "label": "Votre Tableau de Bord"
+        },
+        "alerts": {
+            "portalError": "Échec de la création de la session du portail : ",
+            "genericError": "Une erreur s'est produite. Veuillez réessayer."
+        },
+        "badges": {
+            "supporter": {
+                "name": "Supporter",
+                "description": "Merci de commencer votre voyage avec nous !"
+            },
+            "advocate": {
+                "name": "Défenseur",
+                "description": "Votre soutien constant fait une réelle différence !"
+            },
+            "champion": {
+                "name": "Champion",
+                "description": "Vous êtes un véritable champion de notre cause !"
+            },
+            "legend": {
+                "name": "Légende",
+                "description": "Votre impact légendaire nous inspire tous !"
+            }
+        },
+        "tierModal": {
+            "title": "Niveaux de Support",
+            "subtitle": "Débloquez des badges exclusifs en fonction de vos contributions",
+            "totalContributed": "Total Contribué",
+            "toNextTier": "{amount} vers {tierName}",
+            "maxReached": "🎉 Niveau max atteint !",
+            "current": "Actuel",
+            "donateNow": "Faire un don"
+        },
+        "memberSince": "Membre depuis",
+        "totalDonations": "Total des dons",
+        "currentBadge": {
+            "label": "Badge Actuel",
+            "viewAll": "Voir tous les niveaux",
+            "none": "Pas encore de badge",
+            "donateToEarn": "Faites un don pour gagner"
+        },
+        "history": {
+            "title": "HISTORIQUE DES DONS",
+            "timeline": "Chronologie de vos contributions",
+            "loading": "Chargement de l'historique...",
+            "empty": "Aucun historique de don trouvé.",
+            "status": "TERMINÉ",
+            "types": {
+                "monthly": "Don mensuel",
+                "monthlyRenewal": "Renouvellement mensuel",
+                "sponsor": "Parrainage",
+                "oneTime": "Don ponctuel"
+            }
+        },
+        "firstImpact": {
+            "title": "Faites votre premier impact",
+            "description": "Votre soutien peut aider à faire la différence. Rejoignez notre communauté de supporters et aidez-nous à réaliser notre mission.",
+            "donateNow": "Faire un don"
         }
     }
 }

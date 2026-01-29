@@ -100,14 +100,10 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div className="border-t border-white/10 pt-8 flex justify-center items-center">
                     <p className="text-white/40 text-[10px] font-oswald uppercase tracking-wider">
-                        © {new Date().getFullYear()} {t('rights')}
+                        {t('copyright')} © {new Date().getFullYear()} {t('rights')}
                     </p>
-                    <div className="flex gap-8">
-                        <Link href="/privacy" className="text-white/40 hover:text-white text-[10px] font-oswald uppercase tracking-wider transition-colors">{t('privacy')}</Link>
-                        <Link href="/terms" className="text-white/40 hover:text-white text-[10px] font-oswald uppercase tracking-wider transition-colors">{t('terms')}</Link>
-                    </div>
                 </div>
             </div>
         </footer>

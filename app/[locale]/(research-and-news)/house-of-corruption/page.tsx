@@ -7,7 +7,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+
 import {
     AlertTriangle,
     Banknote,
@@ -46,6 +47,7 @@ const SectionHeader = ({ subtitle, title, figure, text }: { subtitle: string, ti
 
 export default function HouseOfCorruptionPage() {
     const t = useTranslations('HouseOfCorruptionPage');
+    const locale = useLocale();
     const containerRef = useRef<HTMLDivElement>(null);
     const [counterValue, setCounterValue] = useState(0);
     const [selectedImage, setSelectedImage] = useState<{ id: string, src: string, alt: string, caption: string } | null>(null);
@@ -57,53 +59,53 @@ export default function HouseOfCorruptionPage() {
             amount: "$150B - $180B",
             icon: <Banknote className="w-8 h-8" />
         },
-        {
-            id: "DL-02",
-            amount: "$80B - $100B",
-            icon: <Globe className="w-8 h-8" />
-        },
-        {
-            id: "DL-03",
-            amount: "$70B - $85B",
-            icon: <AlertTriangle className="w-8 h-8" />
-        },
-        {
-            id: "DL-04",
-            amount: "$40B - $60B",
-            icon: <Building2 className="w-8 h-8" />
-        },
-        {
-            id: "DL-05",
-            amount: "$25B - $35B",
-            icon: <Zap className="w-8 h-8" />
-        },
-        {
-            id: "DL-06",
-            amount: "$15B - $25B",
-            icon: <ShieldAlert className="w-8 h-8" />
-        },
-        {
-            id: "DL-07",
-            amount: "$12B - $18B",
-            icon: <Siren className="w-8 h-8" />
-        },
-        {
-            id: "DL-08",
-            amount: "$10B - $15B",
-            icon: <Scale className="w-8 h-8" />
-        }
+        // ... (rest of DIRECT_LOSSES items remain the same, just showing structure for context)
+        { id: "DL-02", amount: "$80B - $100B", icon: <Globe className="w-8 h-8" /> },
+        { id: "DL-03", amount: "$70B - $85B", icon: <AlertTriangle className="w-8 h-8" /> },
+        { id: "DL-04", amount: "$40B - $60B", icon: <Building2 className="w-8 h-8" /> },
+        { id: "DL-05", amount: "$25B - $35B", icon: <Zap className="w-8 h-8" /> },
+        { id: "DL-06", amount: "$15B - $25B", icon: <ShieldAlert className="w-8 h-8" /> },
+        { id: "DL-07", amount: "$12B - $18B", icon: <Siren className="w-8 h-8" /> },
+        { id: "DL-08", amount: "$10B - $15B", icon: <Scale className="w-8 h-8" /> }
     ];
+
+    const getLocalizedImage = (id: string, defaultExt: string) => {
+        let suffix = "";
+        if (locale === 'ar') suffix = "-arabic";
+        else if (locale === 'fr') suffix = "-french";
+        else if (locale === 'es') suffix = "-spanish";
+
+        // Handle specific extensions based on the file list
+        let ext = defaultExt;
+        if (suffix !== "") {
+            // based on file list, all localized files are .png except none? all seem to be .png in list
+            // "house-of-corruption-img-1-arabic.png", "house-of-corruption-img-1.jpg"
+            // So for localized, it is .png. For default, it is mixed (.jpg or .png)
+            ext = ".png";
+        }
+
+        // Wait, looking at the file list:
+        // img-1: default jpg, localized png
+        // img-2: default jpg, localized png
+        // img-3: default jpg, localized png
+        // img-4: default jpg, localized png
+        // img-5: default jpg, localized png
+        // img-6: default png, localized png
+        // img-7: default jpg, localized png
+
+        return `/houseOfCorruption/house-of-corruption-${id.replace('img', 'img-')}${suffix}${ext}`;
+    };
 
     const GALLERY_IMAGES = [
         // Left Lane: 1, 2, 3
-        { id: "img1", src: "/houseOfCorruption/house-of-corruption-img-1.jpg", side: "left" },
-        { id: "img2", src: "/houseOfCorruption/house-of-corruption-img-2.jpg", side: "left" },
-        { id: "img3", src: "/houseOfCorruption/house-of-corruption-img-3.jpg", side: "left" },
+        { id: "img1", src: getLocalizedImage("img1", ".jpg"), side: "left" },
+        { id: "img2", src: getLocalizedImage("img2", ".jpg"), side: "left" },
+        { id: "img3", src: getLocalizedImage("img3", ".jpg"), side: "left" },
 
         // Right Lane: 4, 5, 6
-        { id: "img4", src: "/houseOfCorruption/house-of-corruption-img-4.jpg", side: "right" },
-        { id: "img5", src: "/houseOfCorruption/house-of-corruption-img-5.jpg", side: "right" },
-        { id: "img6", src: "/houseOfCorruption/house-of-corruption-img-6.png", side: "right" },
+        { id: "img4", src: getLocalizedImage("img4", ".jpg"), side: "right" },
+        { id: "img5", src: getLocalizedImage("img5", ".jpg"), side: "right" },
+        { id: "img6", src: getLocalizedImage("img6", ".png"), side: "right" }, // img6 default is png
     ];
 
     const indirectStats = [

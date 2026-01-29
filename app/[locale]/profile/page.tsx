@@ -315,22 +315,22 @@ export default function ProfilePage() {
                                 <Award className="w-8 h-8 text-amber-400" />
                             </div>
                             <div>
-                                <h3 className="font-bebas text-3xl text-foreground">Supporter Tiers</h3>
-                                <p className="font-oswald text-foreground/50 text-sm">Unlock exclusive badges based on your contributions</p>
+                                <h3 className="font-bebas text-3xl text-foreground">{t('tierModal.title')}</h3>
+                                <p className="font-oswald text-foreground/50 text-sm">{t('tierModal.subtitle')}</p>
                             </div>
                         </div>
 
                         {/* Progress Bar */}
                         <div className="bg-foreground/5 rounded-xl p-4 mb-6 border border-foreground/10">
                             <div className="flex items-center justify-between mb-3">
-                                <span className="font-oswald text-sm text-foreground/60 uppercase tracking-wider">Total Contributed: <span className="text-foreground font-semibold text-base">${totalDonated.toLocaleString()}</span></span>
+                                <span className="font-oswald text-sm text-foreground/60 uppercase tracking-wider">{t('tierModal.totalContributed')}: <span className="text-foreground font-semibold text-base">${totalDonated.toLocaleString()}</span></span>
                                 {badgeInfo.nextBadge && (
                                     <span className="font-oswald text-sm text-foreground/50">
-                                        ${badgeInfo.amountToNext.toLocaleString()} to {badgeInfo.nextBadge.name}
+                                        {t('tierModal.toNextTier', { amount: `$${badgeInfo.amountToNext.toLocaleString()}`, tierName: t(`badges.${badgeInfo.nextBadge.name.toLowerCase()}.name`) })}
                                     </span>
                                 )}
                                 {!badgeInfo.nextBadge && badgeInfo.currentBadge && (
-                                    <span className="font-oswald text-sm text-green-500">🎉 Max tier reached!</span>
+                                    <span className="font-oswald text-sm text-green-500">{t('tierModal.maxReached')}</span>
                                 )}
                             </div>
                             {badgeInfo.nextBadge && (
@@ -362,7 +362,7 @@ export default function ProfilePage() {
                                     >
                                         {isCurrentTier && (
                                             <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-red text-white text-[9px] font-oswald uppercase tracking-wider px-2 py-0.5 rounded-full">
-                                                Current
+                                                {t('tierModal.current')}
                                             </div>
                                         )}
                                         <div className={`w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-3 ${isUnlocked
@@ -376,7 +376,7 @@ export default function ProfilePage() {
                                             )}
                                         </div>
                                         <h4 className={`font-bebas text-xl ${isUnlocked ? 'text-foreground' : 'text-foreground/50'}`}>
-                                            {tier.name}
+                                            {t(`badges.${tier.name.toLowerCase()}.name`)}
                                         </h4>
                                         <p className="font-oswald text-xs text-foreground/40 uppercase mt-1">
                                             {tier.maxAmount === Infinity
@@ -401,7 +401,7 @@ export default function ProfilePage() {
                             <Link href="/donate" onClick={() => setShowTierInfo(false)}>
                                 <button className="inline-flex items-center gap-2 px-8 py-3 bg-red hover:bg-[#c4151c] text-white font-oswald font-semibold tracking-wider uppercase rounded-xl transition-all duration-300 text-sm shadow-lg shadow-red/20">
                                     <Heart className="w-5 h-5" />
-                                    Donate Now
+                                    {t('tierModal.donateNow')}
                                 </button>
                             </Link>
                         </div>
@@ -416,7 +416,7 @@ export default function ProfilePage() {
                     <div className="text-center mb-16">
                         <div className="inline-flex items-center gap-2 bg-foreground/5 border border-foreground/10 px-4 py-2 rounded-full mb-6">
                             <Sparkles className="w-4 h-4 text-red" />
-                            <span className="font-oswald text-xs text-foreground/60 uppercase tracking-widest">Your Dashboard</span>
+                            <span className="font-oswald text-xs text-foreground/60 uppercase tracking-widest">{t('dashboard.label')}</span>
                         </div>
                         <AnimatedTitle
                             text={t('title')}
@@ -470,7 +470,7 @@ export default function ProfilePage() {
                                         <span className="hidden md:block w-1 h-1 rounded-full bg-foreground/30"></span>
                                         <div className="flex items-center gap-2 font-oswald text-sm tracking-wider">
                                             <Calendar className="w-4 h-4" />
-                                            <span>Member since {getMemberSince()}</span>
+                                            <span>{t('memberSince')} {getMemberSince()}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -529,7 +529,7 @@ export default function ProfilePage() {
                                     <div className="w-12 h-12 rounded-xl bg-blue/20 flex items-center justify-center">
                                         <Heart className="w-6 h-6 text-blue" />
                                     </div>
-                                    <p className="font-oswald text-xs text-foreground/60 uppercase tracking-widest">Total Donations</p>
+                                    <p className="font-oswald text-xs text-foreground/60 uppercase tracking-widest">{t('totalDonations')}</p>
                                 </div>
                                 <p className="text-4xl font-bebas text-foreground">{donationHistory.length}</p>
                             </div>
@@ -563,7 +563,7 @@ export default function ProfilePage() {
                                             <Lock className="w-6 h-6 text-foreground/40" />
                                         )}
                                     </div>
-                                    <p className="font-oswald text-xs text-foreground/60 uppercase tracking-widest">Current Badge</p>
+                                    <p className="font-oswald text-xs text-foreground/60 uppercase tracking-widest">{t('currentBadge.label')}</p>
                                 </div>
 
                                 {badgeInfo.currentBadge ? (
@@ -572,11 +572,11 @@ export default function ProfilePage() {
                                     </p>
                                 ) : (
                                     <div>
-                                        <p className="text-2xl font-bebas text-foreground/40 mb-2">No Badge Yet</p>
+                                        <p className="text-2xl font-bebas text-foreground/40 mb-2">{t('currentBadge.none')}</p>
                                         <Link href="/donate">
                                             <span className="inline-flex items-center gap-1 text-xs font-oswald text-red hover:text-red/80 transition-colors uppercase tracking-wider cursor-pointer">
                                                 <Heart className="w-3 h-3" />
-                                                Donate to earn
+                                                {t('currentBadge.donateToEarn')}
                                                 <ChevronRight className="w-3 h-3" />
                                             </span>
                                         </Link>
@@ -595,7 +595,7 @@ export default function ProfilePage() {
                                 </div>
                                 <div>
                                     <h3 className="font-bebas text-2xl text-foreground tracking-wide">{t('history.title')}</h3>
-                                    <p className="font-oswald text-xs text-foreground/50 uppercase tracking-widest">Your contribution timeline</p>
+                                    <p className="font-oswald text-sm text-foreground/50 uppercase tracking-widest">{t('history.timeline')}</p>
                                 </div>
                             </div>
 
@@ -603,7 +603,7 @@ export default function ProfilePage() {
                                 {dataLoading ? (
                                     <div className="p-12 text-center">
                                         <Loader2 className="w-8 h-8 animate-spin mx-auto text-foreground/40" />
-                                        <p className="mt-4 font-oswald text-foreground/40 text-sm uppercase tracking-widest">Loading history...</p>
+                                        <p className="mt-4 font-oswald text-foreground/40 text-sm uppercase tracking-widest">{t('history.loading')}</p>
                                     </div>
                                 ) : donationHistory.length > 0 ? (
                                     <div className="divide-y divide-foreground/5">
@@ -667,14 +667,14 @@ export default function ProfilePage() {
                                 <div className="w-20 h-20 rounded-2xl bg-red/10 flex items-center justify-center mx-auto mb-6">
                                     <Heart className="w-10 h-10 text-red" />
                                 </div>
-                                <h3 className="font-bebas text-3xl md:text-4xl text-foreground mb-3">Make Your First Impact</h3>
+                                <h3 className="font-bebas text-3xl md:text-4xl text-foreground mb-3">{t('firstImpact.title')}</h3>
                                 <p className="font-oswald text-foreground/60 max-w-md mx-auto mb-8">
-                                    Your support can help make a difference. Join our community of supporters and help us achieve our mission.
+                                    {t('firstImpact.description')}
                                 </p>
                                 <Link href="/donate">
                                     <button className="inline-flex items-center gap-3 px-8 py-4 bg-red hover:bg-[#c4151c] text-white font-oswald font-bold tracking-widest uppercase rounded-xl transition-all duration-300 shadow-lg shadow-red/30 group">
                                         <Heart className="w-5 h-5" />
-                                        Donate Now
+                                        {t('firstImpact.donateNow')}
                                         <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                     </button>
                                 </Link>

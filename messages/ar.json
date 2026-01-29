@@ -372,6 +372,7 @@
         "resources": "الموارد",
         "contact": "اتصل",
         "rights": "A.L.E.F. جميع الحقوق محفوظة.",
+        "copyright": "حقوق النشر",
         "privacy": "سياسة الخصوصية",
         "terms": "شروط الخدمة",
         "address": "٤٤٥ بارك أفينيو،<br />نيويورك، نيويورك ١٠٠٢٢"
@@ -2924,5 +2925,72 @@
         "noResults": "لم يتم العثور على {type}s تطابق \"{query}\"",
         "clearFilters": "مسح المرشحات",
         "all": "الكل"
+    },
+    "ProfilePage": {
+        "title": "مرحباً بك في ملفك الشخصي",
+        "anonymousUser": "مستخدم مجهول",
+        "signOut": "تسجيل الخروج",
+        "manageBilling": "إدارة الاشتراك",
+        "totalImpact": "الأثر الإجمالي",
+        "dashboard": {
+            "label": "لوحة المعلومات الخاصة بك"
+        },
+        "alerts": {
+            "portalError": "فشل إنشاء جلسة البوابة: ",
+            "genericError": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+        },
+        "badges": {
+            "supporter": {
+                "name": "داعم",
+                "description": "شكراً لبدء رحلتك معنا!"
+            },
+            "advocate": {
+                "name": "مناصر",
+                "description": "دعمك المستمر يحدث فرقاً حقيقياً!"
+            },
+            "champion": {
+                "name": "بطل",
+                "description": "أنت بطل حقيقي لقضيتنا!"
+            },
+            "legend": {
+                "name": "أسطورة",
+                "description": "تأثيرك الأسطوري يلهمنا جميعاً!"
+            }
+        },
+        "tierModal": {
+            "title": "مستويات الداعمين",
+            "subtitle": "اكتشف شارات حصرية بناءً على مساهماتك",
+            "totalContributed": "إجمالي المساهمات",
+            "toNextTier": "{amount} إلى {tierName}",
+            "maxReached": "🎉 تم الوصول إلى أعلى مستوى!",
+            "current": "الحالي",
+            "donateNow": "تبرع الآن"
+        },
+        "memberSince": "عضو منذ",
+        "totalDonations": "إجمالي التبرعات",
+        "currentBadge": {
+            "label": "الشارة الحالية",
+            "viewAll": "عرض جميع المستويات",
+            "none": "لا توجد شارة بعد",
+            "donateToEarn": "تبرع لتكسب"
+        },
+        "history": {
+            "title": "سجل التبرعات",
+            "timeline": "الجدول الزمني لمساهماتك",
+            "loading": "جاري تحميل السجل...",
+            "empty": "لم يتم العثور على سجل تبرعات.",
+            "status": "مكتمل",
+            "types": {
+                "monthly": "تبرع شهري",
+                "monthlyRenewal": "تجديد شهري",
+                "sponsor": "رعاية",
+                "oneTime": "تبرع لمرة واحدة"
+            }
+        },
+        "firstImpact": {
+            "title": "اصنع تأثيرك الأول",
+            "description": "دعمك يمكن أن يساعد في إحداث فرق. انضم إلى مجتمع الداعمين لدينا وساعدنا في تحقيق مهمتنا.",
+            "donateNow": "تبرع الآن"
+        }
     }
 }

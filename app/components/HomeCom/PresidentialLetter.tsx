@@ -1,9 +1,10 @@
 import SkeletonImage from "../CommonCom/SkeletonImage";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function PresidentialLetter() {
     const t = useTranslations('PresidentialLetter');
+    const locale = useLocale();
 
     return (
         <section className="py-12 md:py-24 px-6 md:px-12 lg:px-24">
@@ -25,7 +26,12 @@ export default function PresidentialLetter() {
                 <div className="relative w-full rounded-sm overflow-hidden group">
                     <div className="absolute inset-0 z-10 pointer-events-none"></div>
                     <SkeletonImage
-                        src="/home/presidentialLetter.png"
+                        src={
+                            locale === 'ar' ? '/home/presidentialLetterArabic.png' :
+                                locale === 'fr' ? '/home/presidentialLetterFrench.png' :
+                                    locale === 'es' ? '/home/presidentialLetterSpanish.png' :
+                                        '/home/presidentialLetter.png'
+                        }
                         alt={t('alt')}
                         width={1000}
                         height={1400}
