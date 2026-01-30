@@ -44,8 +44,15 @@ export async function POST(req: Request) {
       success_url: `${req.headers.get('origin')}/donate/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${req.headers.get('origin')}/donate?canceled=true`,
 
-      // If we have an existing customer ID, use it. Otherwise, use the email to create a new one.
-      ...(userData?.stripeCustomerId ? { customer: userData.stripeCustomerId } : { customer_email: userEmail }),
+      // If we have an existing customer ID, use it.
+      // Otherwise, use the email and force creation of a new Customer ID (even for one-time payments).
+      ...(userData?.stripeCustomerId
+        ? { customer: userData.stripeCustomerId }
+        : {
+          customer_email: userEmail,
+          ...(!isSubscription && { customer_creation: 'always' })
+        }
+      ),
 
       metadata: {
         donationType: donationType,
