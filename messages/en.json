@@ -2936,6 +2936,12 @@
             "portalError": "Failed to create portal session: ",
             "genericError": "Something went wrong. Please try again."
         },
+        "noSubscription": {
+            "title": "No Active Subscription",
+            "message": "You currently don't have an active subscription. Donate monthly to activate your monthly subscription.",
+            "activate": "Activate Subscription",
+            "close": "Close"
+        },
         "badges": {
             "supporter": {
                 "name": "Supporter",

@@ -28,8 +28,8 @@ import {
     ArrowLeft,
     Sparkles,
     ChevronRight,
-    HelpCircle,
     X,
+    HelpCircle,
     Star,
     Crown,
     Shield,
@@ -51,8 +51,8 @@ const BADGE_TIERS = [
     {
         name: "Supporter",
         icon: Shield,
-        minAmount: 50,
-        maxAmount: 249,
+        minAmount: 250,
+        maxAmount: 499,
         color: "from-emerald-500 to-emerald-600",
         bgColor: "bg-emerald-500/10",
         borderColor: "border-emerald-500/30",
@@ -62,7 +62,7 @@ const BADGE_TIERS = [
     {
         name: "Advocate",
         icon: Star,
-        minAmount: 250,
+        minAmount: 500,
         maxAmount: 999,
         color: "from-blue to-blue/80",
         bgColor: "bg-blue/10",
@@ -142,6 +142,7 @@ export default function ProfilePage() {
     const [totalDonated, setTotalDonated] = useState(0);
     const [donationHistory, setDonationHistory] = useState<DonationHistoryItem[]>([]);
     const [showTierInfo, setShowTierInfo] = useState(false);
+    const [showNoSubscriptionMsg, setShowNoSubscriptionMsg] = useState(false);
 
     const [portalLoading, setPortalLoading] = useState(false);
     const [dataLoading, setDataLoading] = useState(true);
@@ -215,6 +216,11 @@ export default function ProfilePage() {
     };
 
     const handleManageSubscription = async () => {
+        if (!isDonor) {
+            setShowNoSubscriptionMsg(true);
+            return;
+        }
+
         setPortalLoading(true);
         try {
             const res = await fetch('/api/create-portal-session', {
@@ -409,6 +415,55 @@ export default function ProfilePage() {
                 </div>
             )}
 
+            {/* No Subscription Modal */}
+            {showNoSubscriptionMsg && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
+                    <div className="bg-background border border-foreground/10 rounded-2xl shadow-2xl max-w-md w-full relative overflow-hidden animate-in zoom-in-95 duration-200">
+                        {/* Close Button */}
+                        <button
+                            onClick={() => setShowNoSubscriptionMsg(false)}
+                            className="absolute top-4 right-4 p-2 rounded-full hover:bg-foreground/5 transition-colors z-10"
+                        >
+                            <X className="w-5 h-5 text-foreground/60" />
+                        </button>
+
+                        <div className="flex flex-col items-center text-center p-8 pt-10 pb-6">
+                            {/* Icon */}
+                            <div className="w-16 h-16 rounded-full bg-blue/10 flex items-center justify-center mb-6 shadow-inner ring-1 ring-blue/20">
+                                <CreditCard className="w-8 h-8 text-blue" />
+                            </div>
+
+                            {/* Text */}
+                            <h3 className="font-bebas text-3xl tracking-wide mb-3 text-foreground">
+                                {t('noSubscription.title')}
+                            </h3>
+                            <p className="font-oswald text-foreground/60 text-sm leading-relaxed mb-8 max-w-xs mx-auto">
+                                {t('noSubscription.message')}
+                            </p>
+
+                            {/* Action */}
+                            <Link href="/donate" className="w-full" onClick={() => setShowNoSubscriptionMsg(false)}>
+                                <button className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-blue hover:bg-blue/90 text-white font-oswald font-semibold tracking-wider uppercase rounded-xl transition-all duration-300 shadow-lg shadow-blue/20 text-sm group">
+                                    <Heart className="w-4 h-4 fill-white/20" />
+                                    {t('noSubscription.activate')}
+                                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                </button>
+                            </Link>
+
+                            <button
+                                onClick={() => setShowNoSubscriptionMsg(false)}
+                                className="mt-4 font-oswald text-xs text-foreground/40 hover:text-foreground/60 uppercase tracking-widest transition-colors"
+                            >
+                                {t('noSubscription.close')}
+                            </button>
+                        </div>
+
+                        {/* Decorative background element */}
+                        <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-blue/5 to-transparent pointer-events-none" />
+                    </div>
+                </div>
+            )}
+
             <div className="relative z-10 pt-32 pb-20 px-4 md:px-6">
                 <div className="max-w-5xl mx-auto space-y-8">
 
@@ -477,21 +532,19 @@ export default function ProfilePage() {
 
                                 {/* Actions */}
                                 <div className="flex flex-col sm:flex-row gap-3">
-                                    {isDonor && (
-                                        <button
-                                            onClick={handleManageSubscription}
-                                            disabled={portalLoading}
-                                            className="flex items-center justify-center gap-2 px-5 py-3 bg-blue hover:bg-blue/90 text-white font-oswald font-semibold tracking-wider uppercase rounded-xl transition-all duration-300 shadow-lg shadow-blue/20 cursor-pointer text-sm group"
-                                        >
-                                            {portalLoading ? (
-                                                <Loader2 className="w-4 h-4 animate-spin" />
-                                            ) : (
-                                                <CreditCard className="w-4 h-4" />
-                                            )}
-                                            {t('manageBilling')}
-                                            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                        </button>
-                                    )}
+                                    <button
+                                        onClick={handleManageSubscription}
+                                        disabled={portalLoading}
+                                        className="flex items-center justify-center gap-2 px-5 py-3 bg-blue hover:bg-blue/90 text-white font-oswald font-semibold tracking-wider uppercase rounded-xl transition-all duration-300 shadow-lg shadow-blue/20 cursor-pointer text-sm group"
+                                    >
+                                        {portalLoading ? (
+                                            <Loader2 className="w-4 h-4 animate-spin" />
+                                        ) : (
+                                            <CreditCard className="w-4 h-4" />
+                                        )}
+                                        {t('manageBilling')}
+                                        <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                    </button>
 
                                     <button
                                         onClick={handleLogout}

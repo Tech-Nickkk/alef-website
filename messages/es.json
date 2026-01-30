@@ -2919,6 +2919,12 @@
             "portalError": "Error al crear la sesión del portal: ",
             "genericError": "Algo salió mal. Por favor, inténtelo de nuevo."
         },
+        "noSubscription": {
+            "title": "Sin suscripción activa",
+            "message": "Actualmente no tiene una suscripción activa. Done mensualmente para activar su suscripción mensual.",
+            "activate": "Activar suscripción",
+            "close": "Cerrar"
+        },
         "badges": {
             "supporter": {
                 "name": "Partidario",

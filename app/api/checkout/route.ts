@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
+import { db } from '@/lib/firebaseAdmin';
+
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 export async function POST(req: Request) {
@@ -12,6 +14,10 @@ export async function POST(req: Request) {
     }
 
     const isSubscription = donationType === 'monthly';
+
+    // Fetch user to check for existing Stripe Customer ID
+    const userDoc = await db.collection('users').doc(userId).get();
+    const userData = userDoc.exists ? userDoc.data() : null;
 
     const session = await stripe.checkout.sessions.create({
       ...(isSubscription ? {} : { payment_method_types: ['card', 'paypal'] }),
@@ -37,7 +43,9 @@ export async function POST(req: Request) {
       ],
       success_url: `${req.headers.get('origin')}/donate/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${req.headers.get('origin')}/donate?canceled=true`,
-      customer_email: userEmail,
+
+      // If we have an existing customer ID, use it. Otherwise, use the email to create a new one.
+      ...(userData?.stripeCustomerId ? { customer: userData.stripeCustomerId } : { customer_email: userEmail }),
 
       metadata: {
         donationType: donationType,

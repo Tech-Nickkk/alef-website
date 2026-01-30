@@ -2921,6 +2921,12 @@
             "portalError": "Échec de la création de la session du portail : ",
             "genericError": "Une erreur s'est produite. Veuillez réessayer."
         },
+        "noSubscription": {
+            "title": "Aucun abonnement actif",
+            "message": "Vous n'avez actuellement aucun abonnement actif. Faites un don mensuel pour activer votre abonnement mensuel.",
+            "activate": "Activer l'abonnement",
+            "close": "Fermer"
+        },
         "badges": {
             "supporter": {
                 "name": "Supporter",

@@ -84,13 +84,18 @@ async function handleCheckoutSession(session: Stripe.Checkout.Session) {
 
   // Update User Profile
   const userRef = db.collection('users').doc(firebaseUserId);
-  await userRef.set({
-    stripeCustomerId: stripeCustomerId,
+  const userUpdate: any = {
     lastDonationDate: new Date(),
     totalDonated: admin.firestore.FieldValue.increment(amount),
     // If it's a subscription, set status to active initially
     ...(donationType !== 'one-time' && { subscriptionStatus: 'active' })
-  }, { merge: true });
+  };
+
+  if (stripeCustomerId) {
+    userUpdate.stripeCustomerId = stripeCustomerId;
+  }
+
+  await userRef.set(userUpdate, { merge: true });
 
   // Add to History Sub-collection (Use session ID here too for safety)
   await userRef.collection('payment_history').doc(session.id).set({
@@ -105,8 +110,6 @@ async function handleInvoicePaid(invoice: Stripe.Invoice) {
   const stripeCustomerId = invoice.customer as string;
   const amount = invoice.amount_paid / 100;
 
-  // We need to find the user associated with this Stripe Customer ID
-  // Query your users collection to find the doc where stripeCustomerId matches
   const usersSnapshot = await db.collection('users').where('stripeCustomerId', '==', stripeCustomerId).limit(1).get();
 
   if (usersSnapshot.empty) {
@@ -134,7 +137,7 @@ async function handleInvoicePaid(invoice: Stripe.Invoice) {
   await userRef.update({
     lastDonationDate: new Date(),
     totalDonated: admin.firestore.FieldValue.increment(amount),
-    subscriptionStatus: 'active' // Re-confirm active status on payment
+    subscriptionStatus: 'active'
   });
 
   // Add to history
@@ -155,7 +158,7 @@ async function handleSubscriptionChange(subscription: Stripe.Subscription) {
   const userRef = usersSnapshot.docs[0].ref;
 
   await userRef.update({
-    subscriptionStatus: subscription.status, 
+    subscriptionStatus: subscription.status,
     subscriptionId: subscription.id
   });
 }
