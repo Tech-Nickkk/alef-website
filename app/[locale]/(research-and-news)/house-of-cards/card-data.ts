@@ -125,35 +125,37 @@ export const CARD_DATA = [
         ]
     },
     {
-        id: "hassan-nasrallah",
-        name: "Hassan Nasrallah",
-        tag: "THE ARCHITECT OF THE PARALLEL STATE",
-        role: "Late Hezbollah Leader",
+        id: "gebran-bassil",
+        name: "Gebran Bassil",
+        tag: "DIRTY MONEY & CORRUPTION SAGA",
+        role: "Lebanon FPM Leader - MP - Former Minister",
         image: "/houseOfCards/aceOfHearts.png",
         suit: "Hearts",
         rank: "Ace",
-        summary: "For over three decades, he built a 'state within a state,' commanding a militia more powerful than the Lebanese Army. His allegiance to Iran dragged Lebanon into regional conflicts, economic isolation, and devastating wars. He established a parallel economy and security apparatus that hollowed out Lebanon's sovereignty and institutions.",
-        quote: "We have our own money, our own arms, and our own decisions.",
+        summary: "Leading the Free Patriotic Movement, Bassil has been central to Lebanon's energy and political crises. His tenure oversaw billions in sector losses and controversial contracts. Accused of large-scale financial abuse, his 'reformist' claims clash with a legacy of managing ministries that drained public resources and faced sanctions for corruption.",
+        quote: "Dirty Money & Corruption Saga",
         sections: [
             {
-                title: "STATE CAPTURE",
+                title: "CONTRACTS & COMMISSIONS",
                 content: [
-                    "Systematically eroded the authority of the Lebanese state, creating a parallel communication network, banking system (Al-Qard Al-Hassan), and army.",
-                    "Used the 'resistance' narrative to justify holding onto illegal weapons in violation of UN resolutions."
+                    "$7.7Bil in Contracts awarded, with over £57M in commissions and kickbacks indicating large-scale financial abuse.",
+                    "$6M Turkish Powership Commission received from Turkish power ship deals, highlighting individual profiteering.",
+                    "$51M Bisri Dam Commission taken from the Bisri Dam project underscoring significant personal enrichment."
                 ]
             },
             {
-                title: "REGIONAL WARS",
+                title: "SECTOR LOSSES",
                 content: [
-                    "Unilaterally dragged Lebanon into the Syrian Civil War and conflicts with Israel, isolating the country from the Arab world and the West.",
-                    "Transformed Lebanon into a forward operating base for the Iranian Revolutionary Guard."
+                    "$6.1Bil in Sector Losses in Telecom, Energy and Infrastructure, reflecting widespread mismanagement.",
+                    "$40-$50Bil Electricity Sector Losses representing a major drain on public resources.",
+                    "$6Bil Telecom Overpayments in excessive payments, contributing to a total sector spend of $17Bil."
                 ]
             },
             {
-                title: "ASSASSINATIONS & TERROR",
+                title: "ILLICIT GAINS & RESTITUTION",
                 content: [
-                    "Implicated by international tribunals in the assassination of Prime Minister Rafic Hariri.",
-                    "His organization is designated as a terrorist entity by the US, EU, GCC, and others."
+                    "$87M in Direct Illicit Gains estimated, quantifying the personal benefit from corrupt activities.",
+                    "$8.63Bil Total Restitution reflecting the overall financial impact of the scandals."
                 ]
             }
         ]
@@ -252,69 +254,78 @@ export const CARD_DATA = [
         ]
     },
     {
-        id: "gebran-bassil",
-        name: "Gebran Bassil",
-        tag: "THE SHADOW PRESIDENT",
-        role: "Head of FPM / MP",
+        id: "yassine-jaber",
+        name: "Yassine Jaber",
+        tag: "BANKING LOBBIES & SHIITE DUO POLITICS",
+        role: "Finance Minister of Lebanon",
         image: "/houseOfCards/kingOfClubs.png",
         suit: "Clubs",
         rank: "King",
-        summary: "The son-in-law of Michel Aoun and the most sanctioned Christian politician in Lebanon. As Minister of Energy for over a decade (directly or via proxy), he oversaw the waste of $40 billion on a non-existent electricity sector. He is widely blamed for obstructing government formation for months at a time to secure cabinet seats, embodying the worst of the 'clientelist' system.",
-        quote: "They don't let us work.",
+        summary: "While he presents reform programs and negotiates with international institutions, critics say Jaber preserves entrenched networks rather than challenging the system. Despite new digital finance initiatives and improved tax collection, his role remains defined by the country's unresolved crises and skepticism from both citizens and opposition figures.",
+        quote: "Old allies, old scandals. Jaber is what's wrong with Lebanese \"renewal.\"",
         sections: [
             {
-                title: "ENERGY SECTOR BLACK HOLE",
+                title: "THE POLITICAL BURDEN OF AMAL CORRUPTION",
                 content: [
-                    "Presided over the Ministry of Energy during the period of its biggest losses, contributing to half of Lebanon's public debt.",
-                    "Promised 24/7 electricity by 2013; delivered total darkness by 2021."
+                    "Affiliated with the Amal Movement, long accused of corruption and mismanagement in southern Lebanon.",
+                    "Protesters in the 2019 uprising destroyed signs at his Tyre office, showing rage at Amal's entrenched networks."
                 ]
             },
             {
-                title: "MAGNITSKY SANCTIONS",
+                title: "HEZBOLLAH ALLIANCE & BALANCING ACT",
                 content: [
-                    "Sanctioned by the US Treasury under the Global Magnitsky Act for significant corruption and misappropriation of state assets.",
-                    "Labeled as a primary enabler of Hezbollah's political influence within the Christian community."
+                    "Key figure in the \"Shiite Duo\", aligning politically with Hezbollah in multiple governments.",
+                    "Accused of lobbying against Western sanctions on Hezbollah in 2017.",
+                    "Advocated in 2025 for the state's monopoly on arms.",
+                    "Absence from a 2025 Cabinet meeting on disarmament stirred speculation of tension or strategic distancing."
                 ]
             },
             {
-                title: "SECTARIAN AGITATION",
+                title: "REFORM IMAGE VS. PARTY LEGACY",
                 content: [
-                    "Built his political career on divisive sectarian rhetoric, alienating other communities to consolidate Christian votes.",
-                    "Accused of trading national sovereignty for personal political ambitions."
+                    "Defends his record as pro-reform, pushing banking secrecy amendments and tax evasion crackdowns since 2023.",
+                    "Despite these efforts, social media narratives frame him through Amal's legacy of corruption and Hezbollah proximity.",
+                    "Reform proposals face skepticism within both Shia political circles and foreign policy observers wary of dual loyalties."
+                ]
+            },
+            {
+                title: "BACKLASH OVER 2025 FINANCE MINISTER NOMINATION",
+                content: [
+                    "Critics label him a \"Hezbollah puppet\" or a \"banking lobby favorite,\" claiming he enabled cash economies that benefited allies."
                 ]
             }
         ]
     },
     {
-        id: "ali-hassan-khalil",
-        name: "Ali Hassan Khalil",
-        tag: "THE FINANCE ENFORCER",
-        role: "MP / Former Finance Minister",
+        id: "samir-hanna",
+        name: "Samir Hanna",
+        tag: "BANKER FRAUDSTER",
+        role: "CEO of Bank Audi",
         image: "/houseOfCards/kingOfHearts.png",
         suit: "Hearts",
         rank: "King",
-        summary: "Nabih Berri's right-hand man and the gatekeeper of the Finance Ministry. Sanctioned by the US for aiding Hezbollah and for corruption. He is infamous for refusing to sign judicial decrees to block the Beirut Port investigation and for engineering the 'financial engineering' laws alongside Salameh that wiped out people's savings.",
-        quote: "The signature is mine, and I will not sign.",
+        summary: "The long-serving CEO of Bank Audi, one of Lebanon's largest banks. Once hailed as a visionary, he is now central to allegations of colluding with Riad Salameh in 'financial engineering' schemes that generated massive paper profits for banks while bankrupting the state. Hanna is accused of facilitating capital flight for the elite while freezing depositors' savings.",
+        quote: "We did what we had to do to survive, but the cost was the nation itself.",
         sections: [
             {
-                title: "BLOCKING THE PORT INVESTIGATION",
+                title: "THE ENGINEERING OF COLLAPSE",
                 content: [
-                    "Refused to sign the judicial appointments needed to keep the Beirut Port Blast investigation alive.",
-                    "Issued an arrest warrant for Judge Tarek Bitar in a brazen attempt to intimidate the judiciary."
+                    "Key architect of the financial engineering operations with the Central Bank that attracted dollars at unsustainable interest rates.",
+                    "These maneuvers enriched bank shareholders while deepening the sovereign debt crisis."
                 ]
             },
             {
-                title: "MINISTRY OF FINANCE CORRUPTION",
+                title: "SALAMEH'S PARTNER",
                 content: [
-                    "Used the Finance Ministry as a tool for sectarian patronage, hiring thousands of illegal employees.",
-                    "Blocked forensic audits that would have exposed the scale of theft in the public sector."
+                    "Bank Audi, under his leadership, was a primary beneficiary of Riad Salameh's policies.",
+                    "Named in multiple investigations regarding illicit transfers and the 'Forry' scandal commissions."
                 ]
             },
             {
-                title: "SANCTIONS & HEZBOLLAH LINKS",
+                title: "BLOCKING REFORMS",
                 content: [
-                    "Sanctioned by the US for providing material support to Hezbollah and leveraging his political position for financial gain.",
-                    "Accused of moving money for Hezbollah through state institutions."
+                    "Part of the banking lobby that fiercely opposed the Lazard recovery plan, protecting bank capital over depositor rights.",
+                    "Accused of prioritizing dividend payouts to shareholders during the crisis onset."
                 ]
             }
         ]
@@ -352,7 +363,7 @@ export const CARD_DATA = [
     {
         id: "jamil-al-sayed",
         name: "Jamil al-Sayed",
-        tag: "ARCHITECT OF THE SECURITY STATE",
+        tag: "SPYMASTER",
         role: "Member of Parliament / Former General Security Chief",
         image: "/houseOfCards/queenOfClubs.png",
         suit: "Clubs",
@@ -405,34 +416,7 @@ export const CARD_DATA = [
             }
         ]
     },
-    {
-        id: "nawaf-salam",
-        name: "Nawaf Salam",
-        tag: "THE PARALYZED PREMIER",
-        role: "Prime Minister of Lebanon / Former ICJ Judge",
-        image: "/houseOfCards/queenOfSpades.png",
-        suit: "Spades",
-        rank: "Queen",
-        summary: "Appointed Prime Minister in early 2025 as a 'reformist hope' backed by the West. However, his tenure has been marked by total paralysis. Boycotted by the 'Shia Duo' and unable to implement a single IMF reform, Salam represents the failure of the 'technocratic solution' in a system ruled by warlords.",
-        quote: "Good intentions die quickly in the graveyard of Lebanese politics.",
-        sections: [
-            {
-                title: "THE FAILED WESTERN GAMBIT",
-                content: [
-                    "His appointment was intended to unlock international aid, but his inability to confront Hezbollah's veto power left the country in limbo.",
-                    "Labeled as 'The Weakest PM' by critics after failing to enforce security appointments or border controls.",
-                    "His tenure proved that without disarming militias, even the most qualified judge is powerless."
-                ]
-            },
-            {
-                title: "INSTITUTIONAL DEADLOCK",
-                content: [
-                    "Forced to govern without a functioning cabinet due to sectarian boycotts.",
-                    "His promises of 'accountability' for the Beirut Blast were immediately blocked by the entrenched political class he swore to fight."
-                ]
-            }
-        ]
-    },
+
     // --- JACK ---
     {
         id: "amer-bisat",
@@ -518,39 +502,12 @@ export const CARD_DATA = [
             }
         ]
     },
-    {
-        id: "paul-morcos",
-        name: "Paul Morcos",
-        tag: "THE SYSTEM'S LAWYER",
-        role: "Minister of Information / Legal Expert",
-        image: "/houseOfCards/jackOfClubs.png",
-        suit: "Clubs",
-        rank: "Jack",
-        summary: "The smooth-talking legal face of the establishment. Often appearing on TV to defend the banking sector's 'rights' and justify the blocking of forensic audits. Appointed Minister of Information in 2025, he uses his legal expertise to draft loopholes that allow the elite to evade accountability.",
-        quote: "He finds the legal clauses that let the guilty sleep at night.",
-        sections: [
-            {
-                title: "DEFENDING THE INDEFENSIBLE",
-                content: [
-                    "Argued that 'Banking Secrecy' prevented forensic audits, providing the legal cover for Riad Salameh's obstructionism.",
-                    "Founder of a legal consultancy that advises the very banks holding depositors' money hostage.",
-                    "His appointment as Minister was seen as a move to control the narrative and suppress leaks about government corruption."
-                ]
-            },
-            {
-                title: "LEGAL GYMNASTICS",
-                content: [
-                    "Master of the 'committee solution'—proposing endless legal committees to delay urgent reforms until international interest fades.",
-                    "Drafted capital control proposals that legalized the theft of deposits while protecting bank shareholders."
-                ]
-            }
-        ]
-    },
+
     // --- 10 ---
     {
         id: "alain-bifani",
         name: "Alain Bifani",
-        tag: "THE WHISTLEBLOWER",
+        tag: "UNACCOUNTABLE WHISTLEBLOWER",
         role: "Former Director General of Finance",
         image: "/houseOfCards/tenOfDiamonds.png",
         suit: "Diamonds",
@@ -604,7 +561,7 @@ export const CARD_DATA = [
     {
         id: "ibrahim-kanaan",
         name: "Ibrahim Kanaan",
-        tag: "THE AUDITOR OF DOOM",
+        tag: "SCAM AUDITOR",
         role: "Head of Finance & Budget Committee",
         image: "/houseOfCards/tenOfSpades.png",
         suit: "Spades",
@@ -684,33 +641,7 @@ export const CARD_DATA = [
             }
         ]
     },
-    {
-        id: "amin-salam",
-        name: "Amin Salam",
-        tag: "THE OUT OF TOUCH",
-        role: "Minister of Economy",
-        image: "/houseOfCards/nineOfHearts.png",
-        suit: "Hearts",
-        rank: "9",
-        summary: "Appointed as a technocrat, he became famous for diplomatic gaffes and ineffective policies. His attempt to rebuild the grain silos by appealing to the Emir of Kuwait 'with a stroke of a pen' caused a diplomatic scandal. He oversaw the 'dollarization' of supermarkets, which failed to curb inflation.",
-        quote: "I can fix this with a stroke of a pen.",
-        sections: [
-            {
-                title: "DIPLOMATIC GAFFES",
-                content: [
-                    "Caused a diplomatic rift with Kuwait by casually suggesting their Emir could rebuild the port silos personally.",
-                    "Criticized for lacking political maturity and understanding of historical diplomatic relations."
-                ]
-            },
-            {
-                title: "THE DOLLARIZATION FAILURE",
-                content: [
-                    "Authorized the pricing of goods in dollars, claiming it would protect consumers, but prices continued to skyrocket.",
-                    "Accused of serving the interests of the supermarket cartels rather than the impoverished citizens."
-                ]
-            }
-        ]
-    },
+
     {
         id: "ali-hassan-khalil-9",
         name: "Ali Hassan Khalil",
@@ -794,33 +725,7 @@ export const CARD_DATA = [
             }
         ]
     },
-    {
-        id: "fouad-siniora",
-        name: "Fouad Siniora",
-        tag: "THE ACCOUNTANT",
-        role: "Former Prime Minister",
-        image: "/houseOfCards/eightOfClubs.png",
-        suit: "Clubs",
-        rank: "8",
-        summary: "Hariri's long-time finance minister and PM during the 2006 war. He is accused by opponents of 'losing' $11 billion in unrecorded spending (a claim he denies as political targeting). To his supporters, he is a statesman; to his critics, the architect of the debt-based economic model.",
-        quote: "We spent the money to keep the state running.",
-        sections: [
-            {
-                title: "THE $11 BILLION CONTROVERSY",
-                content: [
-                    "Accused of spending $11 billion between 2006 and 2009 without parliamentary budget approval.",
-                    "Claims the spending was necessary extra-budgetary payments for debts and wages during a political blockade."
-                ]
-            },
-            {
-                title: "FISCAL ENGINEER",
-                content: [
-                    "Architect of the Paris II and III donor conferences which piled more debt onto Lebanon without structural reforms.",
-                    "Oversaw the banking policies that incentivized high interest rates on government debt."
-                ]
-            }
-        ]
-    },
+
     {
         id: "saad-hariri",
         name: "Saad Hariri",
@@ -877,33 +782,7 @@ export const CARD_DATA = [
     },
 
     // --- 7 ---
-    {
-        id: "jihad-al-arab",
-        name: "Jihad al-Arab",
-        tag: "THE CONTRACTOR",
-        role: "State Contractor",
-        image: "/houseOfCards/sevenOfDiamonds.png",
-        suit: "Diamonds",
-        rank: "7",
-        summary: "The symbol of crony capitalism in Lebanon. A contractor close to Saad Hariri, he was awarded contracts worth hundreds of millions for garbage collection and infrastructure projects that often failed or were never completed. Sanctioned by the US Treasury for corruption.",
-        quote: "The tenders are won before they are announced.",
-        sections: [
-            {
-                title: "GARBAGE & LANDFILLS",
-                content: [
-                    "Awarded the coastal landfill contracts that polluted the Mediterranean, allegedly without proper environmental oversight.",
-                    "Accused of inflating costs for waste management services while the streets filled with trash."
-                ]
-            },
-            {
-                title: "US SANCTIONS",
-                content: [
-                    "Sanctioned for 'contributing to the breakdown of the rule of law' and using political connections to win no-bid contracts.",
-                    "His projects, like the 'disappearing' bridge repairs, are cited as prime examples of state theft."
-                ]
-            }
-        ]
-    },
+
     {
         id: "michel-sleiman",
         name: "Michel Sleiman",
@@ -931,33 +810,7 @@ export const CARD_DATA = [
             }
         ]
     },
-    {
-        id: "hussein-fadlallah",
-        name: "Hussein Fadlallah",
-        tag: "THE DEFIANT VOICE",
-        role: "Member of Parliament (Hezbollah)",
-        image: "/houseOfCards/sevenOfHearts.png",
-        suit: "Hearts",
-        rank: "7",
-        summary: "A vocal MP from the Loyalty to the Resistance bloc. Fadlallah is known for his fiery rhetoric that frames Lebanon's economic collapse entirely as an 'American siege' and external conspiracy. He represents the narrative that absolves the ruling class of responsibility by externalizing the crisis to foreign enemies.",
-        quote: "The crisis is a tool of war against the Resistance.",
-        sections: [
-            {
-                title: "NARRATIVE WARFARE",
-                content: [
-                    "Consistently frames the financial crisis not as a result of corruption or mismanagement, but as a US-orchestrated punishment for Lebanon's support of Hezbollah.",
-                    "Rejects the notion that the party's alliance with corrupt figures contributed to the state's bankruptcy."
-                ]
-            },
-            {
-                title: "BLOCKING WESTERN REFORM",
-                content: [
-                    "Part of the parliamentary bloc that views IMF conditions as tools of foreign tutelage.",
-                    "Advocates for an 'Eastern orientation' (Iran/China/Russia) as an alternative to the West, despite the lack of tangible economic results from these partners."
-                ]
-            }
-        ]
-    },
+
     {
         id: "salim-sfeir",
         name: "Salim Sfeir",
@@ -987,33 +840,7 @@ export const CARD_DATA = [
     },
 
     // --- 6 ---
-    {
-        id: "albert-kostanian",
-        name: "Albert Kostanian",
-        tag: "THE PUNDIT",
-        role: "Media Figure / Strategist",
-        image: "/houseOfCards/sixOfClubs.png",
-        suit: "Clubs",
-        rank: "6",
-        summary: "A former Kataeb strategist turned media host. Through his show 'Vision 2030', he dissects the collapse but is criticized by some as part of the 'talking heads' ecosystem that normalizes the crisis. He represents the intellectual class that analyzes the Titanic as it sinks.",
-        quote: "We need a vision, not just a reaction.",
-        sections: [
-            {
-                title: "MEDIA INFLUENCE",
-                content: [
-                    "Hosts high-level debates that highlight the government's failures but rarely lead to actionable change.",
-                    "Represents the transition of political operatives into media influencers."
-                ]
-            },
-            {
-                title: "REFORMIST RHETORIC",
-                content: [
-                    "Advocates for secularism and decentralization, yet comes from a traditional sectarian party background.",
-                    "Critiques the 'mafia-militia' alliance while operating within the media platforms owned by the elite."
-                ]
-            }
-        ]
-    },
+
     {
         id: "marwan-kheireddine",
         name: "Marwan Kheireddine",
@@ -1182,7 +1009,7 @@ export const CARD_DATA = [
     {
         id: "camille-daher",
         name: "Camille Daher",
-        tag: "THE SUCCESSOR",
+        tag: "MILITARY INTELLIGENCE",
         role: "Former Head of Army Intelligence",
         image: "/houseOfCards/fourOfSpades.png",
         suit: "Spades",
@@ -1233,33 +1060,7 @@ export const CARD_DATA = [
             }
         ]
     },
-    {
-        id: "charbel-nahas",
-        name: "Charbel Nahas",
-        tag: "THE RADICAL REFORMER",
-        role: "Former Minister / Economist",
-        image: "/houseOfCards/fourOfClubs.png",
-        suit: "Clubs",
-        rank: "4",
-        summary: "The only minister to resign twice in protest against the system. An economist who predicted the financial crash with mathematical precision years in advance. As the head of 'Citizens in a State,' he advocates for a total secular transition, rejecting the sectarian regime entirely. He is the technocrat who refused to compromise.",
-        quote: "Legitimacy does not come from the sects, but from the state.",
-        sections: [
-            {
-                title: "RESIGNATION IN PROTEST",
-                content: [
-                    "Resigned as Minister of Labor after the cabinet refused to implement his plan for universal healthcare and fair wages.",
-                    "Blocked the signing of decrees he deemed illegal during his tenure as Telecom Minister, clashing with the entrenched elite."
-                ]
-            },
-            {
-                title: "DIAGNOSING THE COLLAPSE",
-                content: [
-                    "Argued for decades that the bank-centric economy was a Ponzi scheme designed to transfer wealth from the public to a few oligarchs.",
-                    "His political movement (MMFID) offers one of the few comprehensive—albeit radical—roadmaps for a transition of power."
-                ]
-            }
-        ]
-    },
+
     {
         id: "wafic-safa",
         name: "Wafic Safa",
@@ -1346,7 +1147,7 @@ export const CARD_DATA = [
     {
         id: "hassan-diab",
         name: "Hassan Diab",
-        tag: "THE PROFESSOR",
+        tag: "NEGLIGENT TECHNOCRAT",
         role: "Former Prime Minister",
         image: "/houseOfCards/threeOfHearts.png",
         suit: "Hearts",

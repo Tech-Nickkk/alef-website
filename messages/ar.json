@@ -1462,63 +1462,105 @@
                 ]
             },
             "gebran-bassil": {
-                "name": "جبران باسيل",
-                "tag": "رئيس الظل",
-                "stamp": "رئيس الظل",
-                "role": "رئيس التيار الوطني الحر / نائب",
-                "summary": "صهر ميشال عون والسياسي المسيحي الأكثر خضوعاً للعقوبات في لبنان. كوزير للطاقة لأكثر من عقد (بشكل مباشر أو عبر وكيل)، أشرف على هدر 40 مليار دولار على قطاع كهرباء غير موجود. يلقى عليه اللوم على نطاق واسع لعرقلة تشكيل الحكومة لأشهر لتأمين مقاعد وزارية، مجسداً أسوأ ما في نظام 'الزبائنية'.",
-                "quote": "ما خلونا نشتغل.",
+                "name": "Gebran Bassil",
+                "tag": "DIRTY MONEY & CORRUPTION SAGA",
+                "stamp": "DIRTY MONEY",
+                "role": "Lebanon FPM Leader - MP - Former Minister",
+                "summary": "Leading the Free Patriotic Movement, Bassil has been central to Lebanon's energy and political crises. His tenure oversaw billions in sector losses and controversial contracts. Accused of large-scale financial abuse, his 'reformist' claims clash with a legacy of managing ministries that drained public resources and faced sanctions for corruption.",
+                "quote": "Dirty Money & Corruption Saga",
                 "sections": [
                     {
-                        "title": "ثقب أسود في قطاع الطاقة",
+                        "title": "CONTRACTS & COMMISSIONS",
                         "content": [
-                            "ترأس وزارة الطاقة خلال فترة أكبر خسائرها، مساهماً في نصف الدين العام للبنان.",
-                            "وعد بكهرباء 24/7 بحلول عام 2013؛ وقدم ظلاماً دامساً بحلول عام 2021."
+                            "$7.7Bil in Contracts awarded, with over £57M in commissions and kickbacks indicating large-scale financial abuse.",
+                            "$6M Turkish Powership Commission received from Turkish power ship deals, highlighting individual profiteering.",
+                            "$51M Bisri Dam Commission taken from the Bisri Dam project underscoring significant personal enrichment."
                         ]
                     },
                     {
-                        "title": "عقوبات ماغنيتسكي",
+                        "title": "SECTOR LOSSES",
                         "content": [
-                            "خاضع لعقوبات وزارة الخزانة الأمريكية بموجب قانون ماغنيتسكي العالمي لفساد كبير واختلاس أصول الدولة.",
-                            "مصنف كممكن رئيسي لنفوذ حزب الله السياسي داخل المجتمع المسيحي."
+                            "$6.1Bil in Sector Losses in Telecom, Energy and Infrastructure, reflecting widespread mismanagement.",
+                            "$40-$50Bil Electricity Sector Losses representing a major drain on public resources.",
+                            "$6Bil Telecom Overpayments in excessive payments, contributing to a total sector spend of $17Bil."
                         ]
                     },
                     {
-                        "title": "التحريض الطائفي",
+                        "title": "ILLICIT GAINS & RESTITUTION",
                         "content": [
-                            "بنى مسيرته السياسية على الخطاب الطائفي المثير للجدل، منفراً المجتمعات الأخرى لتوحيد الأصوات المسيحية.",
-                            "متهم بمقايضة السيادة الوطنية بطموحات سياسية شخصية."
+                            "$87M in Direct Illicit Gains estimated, quantifying the personal benefit from corrupt activities.",
+                            "$8.63Bil Total Restitution reflecting the overall financial impact of the scandals."
                         ]
                     }
                 ]
             },
-            "ali-hassan-khalil": {
-                "name": "علي حسن خليل",
-                "tag": "منفذ المالية",
-                "stamp": "المنفذ",
-                "role": "نائب / وزير مالية سابق",
-                "summary": "Nabih Berri's right-hand man and the gatekeeper of the Finance Ministry. Sanctioned by the US for aiding Hezbollah and for corruption. He is infamous for refusing to sign judicial decrees to block the Beirut Port investigation and for engineering the 'financial engineering' laws alongside Salameh that wiped out people's savings.",
-                "quote": "The signature is mine, and I will not sign.",
+            "yassine-jaber": {
+                "name": "Yassine Jaber",
+                "tag": "BANKING LOBBIES & SHIITE DUO POLITICS",
+                "stamp": "BANKING LOBBY",
+                "role": "Finance Minister of Lebanon",
+                "summary": "While he presents reform programs and negotiates with international institutions, critics say Jaber preserves entrenched networks rather than challenging the system. Despite new digital finance initiatives and improved tax collection, his role remains defined by the country's unresolved crises and skepticism from both citizens and opposition figures.",
+                "quote": "Old allies, old scandals. Jaber is what's wrong with Lebanese \"renewal.\"",
                 "sections": [
                     {
-                        "title": "BLOCKING THE PORT INVESTIGATION",
+                        "title": "THE POLITICAL BURDEN OF AMAL CORRUPTION",
                         "content": [
-                            "Refused to sign the judicial appointments needed to keep the Beirut Port Blast investigation alive.",
-                            "Issued an arrest warrant for Judge Tarek Bitar in a brazen attempt to intimidate the judiciary."
+                            "Affiliated with the Amal Movement, long accused of corruption and mismanagement in southern Lebanon.",
+                            "Protesters in the 2019 uprising destroyed signs at his Tyre office, showing rage at Amal's entrenched networks."
                         ]
                     },
                     {
-                        "title": "MINISTRY OF FINANCE CORRUPTION",
+                        "title": "HEZBOLLAH ALLIANCE & BALANCING ACT",
                         "content": [
-                            "Used the Finance Ministry as a tool for sectarian patronage, hiring thousands of illegal employees.",
-                            "Blocked forensic audits that would have exposed the scale of theft in the public sector."
+                            "Key figure in the \"Shiite Duo\", aligning politically with Hezbollah in multiple governments.",
+                            "Accused of lobbying against Western sanctions on Hezbollah in 2017.",
+                            "Advocated in 2025 for the state's monopoly on arms.",
+                            "Absence from a 2025 Cabinet meeting on disarmament stirred speculation of tension or strategic distancing."
                         ]
                     },
                     {
-                        "title": "SANCTIONS & HEZBOLLAH LINKS",
+                        "title": "REFORM IMAGE VS. PARTY LEGACY",
                         "content": [
-                            "Sanctioned by the US for providing material support to Hezbollah and leveraging his political position for financial gain.",
-                            "Accused of moving money for Hezbollah through state institutions."
+                            "Defends his record as pro-reform, pushing banking secrecy amendments and tax evasion crackdowns since 2023.",
+                            "Despite these efforts, social media narratives frame him through Amal's legacy of corruption and Hezbollah proximity.",
+                            "Reform proposals face skepticism within both Shia political circles and foreign policy observers wary of dual loyalties."
+                        ]
+                    },
+                    {
+                        "title": "BACKLASH OVER 2025 FINANCE MINISTER NOMINATION",
+                        "content": [
+                            "Critics label him a \"Hezbollah puppet\" or a \"banking lobby favorite,\" claiming he enabled cash economies that benefited allies."
+                        ]
+                    }
+                ]
+            },
+            "samir-hanna": {
+                "name": "Samir Hanna",
+                "tag": "BANKER FRAUDSTER",
+                "stamp": "FRAUDSTER",
+                "role": "CEO of Bank Audi",
+                "summary": "The long-serving CEO of Bank Audi, one of Lebanon's largest banks. Once hailed as a visionary, he is now central to allegations of colluding with Riad Salameh in 'financial engineering' schemes that generated massive paper profits for banks while bankrupting the state. Hanna is accused of facilitating capital flight for the elite while freezing depositors' savings.",
+                "quote": "We did what we had to do to survive, but the cost was the nation itself.",
+                "sections": [
+                    {
+                        "title": "THE ENGINEERING OF COLLAPSE",
+                        "content": [
+                            "Key architect of the financial engineering operations with the Central Bank that attracted dollars at unsustainable interest rates.",
+                            "These maneuvers enriched bank shareholders while deepening the sovereign debt crisis."
+                        ]
+                    },
+                    {
+                        "title": "SALAMEH'S PARTNER",
+                        "content": [
+                            "Bank Audi, under his leadership, was a primary beneficiary of Riad Salameh's policies.",
+                            "Named in multiple investigations regarding illicit transfers and the 'Forry' scandal commissions."
+                        ]
+                    },
+                    {
+                        "title": "BLOCKING REFORMS",
+                        "content": [
+                            "Part of the banking lobby that fiercely opposed the Lazard recovery plan, protecting bank capital over depositor rights.",
+                            "Accused of prioritizing dividend payouts to shareholders during the crisis onset."
                         ]
                     }
                 ]
@@ -1551,7 +1593,7 @@
             },
             "jamil-al-sayed": {
                 "name": "Jamil al-Sayed",
-                "tag": "ARCHITECT OF THE SECURITY STATE",
+                "tag": "SPYMASTER",
                 "stamp": "ARCHITECT",
                 "role": "Member of Parliament / Former General Security Chief",
                 "summary": "The former Director General of General Security who constructed the Syrian-Lebanese security apparatus that dominated Lebanon post-civil war. Though released from detention in the Hariri assassination case due to 'insufficient evidence', he remains the symbol of the 'police state' era, using intimidation and intelligence dossiers to maintain influence.",
@@ -1595,31 +1637,6 @@
                         "content": [
                             "Part of the network managing the party's financing, insulating it from the national banking collapse.",
                             "Resistance to IMF reforms is driven by the need to protect these illicit supply lines from international scrutiny."
-                        ]
-                    }
-                ]
-            },
-            "nawaf-salam": {
-                "name": "Nawaf Salam",
-                "tag": "THE PARALYZED PREMIER",
-                "stamp": "PARALYZED",
-                "role": "Prime Minister of Lebanon / Former ICJ Judge",
-                "summary": "Appointed Prime Minister in early 2025 as a 'reformist hope' backed by the West. However, his tenure has been marked by total paralysis. Boycotted by the 'Shia Duo' and unable to implement a single IMF reform, Salam represents the failure of the 'technocratic solution' in a system ruled by warlords.",
-                "quote": "Good intentions die quickly in the graveyard of Lebanese politics.",
-                "sections": [
-                    {
-                        "title": "THE FAILED WESTERN GAMBIT",
-                        "content": [
-                            "His appointment was intended to unlock international aid, but his inability to confront Hezbollah's veto power left the country in limbo.",
-                            "Labeled as 'The Weakest PM' by critics after failing to enforce security appointments or border controls.",
-                            "His tenure proved that without disarming militias, even the most qualified judge is powerless."
-                        ]
-                    },
-                    {
-                        "title": "INSTITUTIONAL DEADLOCK",
-                        "content": [
-                            "Forced to govern without a functioning cabinet due to sectarian boycotts.",
-                            "His promises of 'accountability' for the Beirut Blast were immediately blocked by the entrenched political class he swore to fight."
                         ]
                     }
                 ]
@@ -1699,34 +1716,9 @@
                     }
                 ]
             },
-            "paul-morcos": {
-                "name": "Paul Morcos",
-                "tag": "THE SYSTEM'S LAWYER",
-                "stamp": "SYSTEM'S LAWYER",
-                "role": "Minister of Information / Legal Expert",
-                "summary": "The smooth-talking legal face of the establishment. Often appearing on TV to defend the banking sector's 'rights' and justify the blocking of forensic audits. Appointed Minister of Information in 2025, he uses his legal expertise to draft loopholes that allow the elite to evade accountability.",
-                "quote": "He finds the legal clauses that let the guilty sleep at night.",
-                "sections": [
-                    {
-                        "title": "DEFENDING THE INDEFENSIBLE",
-                        "content": [
-                            "Argued that 'Banking Secrecy' prevented forensic audits, providing the legal cover for Riad Salameh's obstructionism.",
-                            "Founder of a legal consultancy that advises the very banks holding depositors' money hostage.",
-                            "His appointment as Minister was seen as a move to control the narrative and suppress leaks about government corruption."
-                        ]
-                    },
-                    {
-                        "title": "LEGAL GYMNASTICS",
-                        "content": [
-                            "Master of the 'committee solution'—proposing endless legal committees to delay urgent reforms until international interest fades.",
-                            "Drafted capital control proposals that legalized the theft of deposits while protecting bank shareholders."
-                        ]
-                    }
-                ]
-            },
             "alain-bifani": {
                 "name": "Alain Bifani",
-                "tag": "THE WHISTLEBLOWER",
+                "tag": "UNACCOUNTABLE WHISTLEBLOWER",
                 "stamp": "WHISTLEBLOWER",
                 "role": "Former Director General of Finance",
                 "summary": "The second-highest financial official who resigned in protest in 2020. He was the first to officially expose the 'Ponzi scheme' run by the banks and the Central Bank. Vilified by the establishment for revealing the scale of losses, he accuses the ruling class of choosing to implode the economy rather than admit bankruptcy.",
@@ -1774,7 +1766,7 @@
             },
             "ibrahim-kanaan": {
                 "name": "Ibrahim Kanaan",
-                "tag": "THE AUDITOR OF DOOM",
+                "tag": "SCAM AUDITOR",
                 "stamp": "AUDITOR",
                 "role": "Head of Finance & Budget Committee",
                 "summary": "The veteran MP who spent years 'auditing' budgets that never added up. As the head of the Finance Committee, he led the parliamentary challenge against the government's own financial recovery plan in 2020, disputing the loss figures. This delay effectively torpedoed the IMF deal and allowed banks to liquidate their assets while depositors were left with nothing.",
@@ -1840,30 +1832,6 @@
                         "content": [
                             "Under US and EU sanctions for human rights abuses in Syria and destabilizing activities in Lebanon.",
                             "Maintains deep channels with Lebanese allies to ensure Beirut remains aligned with the 'Axis of Resistance'."
-                        ]
-                    }
-                ]
-            },
-            "amin-salam": {
-                "name": "Amin Salam",
-                "tag": "THE OUT OF TOUCH",
-                "stamp": "OUT",
-                "role": "Minister of Economy",
-                "summary": "Appointed as a technocrat, he became famous for diplomatic gaffes and ineffective policies. His attempt to rebuild the grain silos by appealing to the Emir of Kuwait 'with a stroke of a pen' caused a diplomatic scandal. He oversaw the 'dollarization' of supermarkets, which failed to curb inflation.",
-                "quote": "I can fix this with a stroke of a pen.",
-                "sections": [
-                    {
-                        "title": "DIPLOMATIC GAFFES",
-                        "content": [
-                            "Caused a diplomatic rift with Kuwait by casually suggesting their Emir could rebuild the port silos personally.",
-                            "Criticized for lacking political maturity and understanding of historical diplomatic relations."
-                        ]
-                    },
-                    {
-                        "title": "THE DOLLARIZATION FAILURE",
-                        "content": [
-                            "Authorized the pricing of goods in dollars, claiming it would protect consumers, but prices continued to skyrocket.",
-                            "Accused of serving the interests of the supermarket cartels rather than the impoverished citizens."
                         ]
                     }
                 ]
@@ -1947,30 +1915,6 @@
                     }
                 ]
             },
-            "fouad-siniora": {
-                "name": "Fouad Siniora",
-                "tag": "THE ACCOUNTANT",
-                "stamp": "ACCOUNTANT",
-                "role": "Former Prime Minister",
-                "summary": "Hariri's long-time finance minister and PM during the 2006 war. He is accused by opponents of 'losing' $11 billion in unrecorded spending (a claim he denies as political targeting). To his supporters, he is a statesman; to his critics, the architect of the debt-based economic model.",
-                "quote": "We spent the money to keep the state running.",
-                "sections": [
-                    {
-                        "title": "THE $11 BILLION CONTROVERSY",
-                        "content": [
-                            "Accused of spending $11 billion between 2006 and 2009 without parliamentary budget approval.",
-                            "Claims the spending was necessary extra-budgetary payments for debts and wages during a political blockade."
-                        ]
-                    },
-                    {
-                        "title": "FISCAL ENGINEER",
-                        "content": [
-                            "Architect of the Paris II and III donor conferences which piled more debt onto Lebanon without structural reforms.",
-                            "Oversaw the banking policies that incentivized high interest rates on government debt."
-                        ]
-                    }
-                ]
-            },
             "saad-hariri": {
                 "name": "Saad Hariri",
                 "tag": "THE RELUCTANT HEIR",
@@ -2019,30 +1963,6 @@
                     }
                 ]
             },
-            "jihad-al-arab": {
-                "name": "Jihad al-Arab",
-                "tag": "THE CONTRACTOR",
-                "stamp": "CONTRACTOR",
-                "role": "State Contractor",
-                "summary": "The symbol of crony capitalism in Lebanon. A contractor close to Saad Hariri, he was awarded contracts worth hundreds of millions for garbage collection and infrastructure projects that often failed or were never completed. Sanctioned by the US Treasury for corruption.",
-                "quote": "The tenders are won before they are announced.",
-                "sections": [
-                    {
-                        "title": "GARBAGE & LANDFILLS",
-                        "content": [
-                            "Awarded the coastal landfill contracts that polluted the Mediterranean, allegedly without proper environmental oversight.",
-                            "Accused of inflating costs for waste management services while the streets filled with trash."
-                        ]
-                    },
-                    {
-                        "title": "US SANCTIONS",
-                        "content": [
-                            "Sanctioned for 'contributing to the breakdown of the rule of law' and using political connections to win no-bid contracts.",
-                            "His projects, like the 'disappearing' bridge repairs, are cited as prime examples of state theft."
-                        ]
-                    }
-                ]
-            },
             "michel-sleiman": {
                 "name": "Michel Sleiman",
                 "tag": "THE NEUTRAL GENERAL",
@@ -2067,30 +1987,6 @@
                     }
                 ]
             },
-            "hussein-fadlallah": {
-                "name": "Hussein Fadlallah",
-                "tag": "THE DEFIANT VOICE",
-                "stamp": "DEFIANT VOICE",
-                "role": "Member of Parliament (Hezbollah)",
-                "summary": "A vocal MP from the Loyalty to the Resistance bloc. Fadlallah is known for his fiery rhetoric that frames Lebanon's economic collapse entirely as an 'American siege' and external conspiracy. He represents the narrative that absolves the ruling class of responsibility by externalizing the crisis to foreign enemies.",
-                "quote": "The crisis is a tool of war against the Resistance.",
-                "sections": [
-                    {
-                        "title": "NARRATIVE WARFARE",
-                        "content": [
-                            "Consistently frames the financial crisis not as a result of corruption or mismanagement, but as a US-orchestrated punishment for Lebanon's support of Hezbollah.",
-                            "Rejects the notion that the party's alliance with corrupt figures contributed to the state's bankruptcy."
-                        ]
-                    },
-                    {
-                        "title": "BLOCKING WESTERN REFORM",
-                        "content": [
-                            "Part of the parliamentary bloc that views IMF conditions as tools of foreign tutelage.",
-                            "Advocates for an 'Eastern orientation' (Iran/China/Russia) as an alternative to the West, despite the lack of tangible economic results from these partners."
-                        ]
-                    }
-                ]
-            },
             "salim-sfeir": {
                 "name": "Salim Sfeir",
                 "tag": "THE DENIER",
@@ -2111,30 +2007,6 @@
                         "content": [
                             "Accused of prioritizing the protection of bank capital over the life savings of millions of Lebanese.",
                             "His statements are seen as gaslighting a population that has lost everything."
-                        ]
-                    }
-                ]
-            },
-            "albert-kostanian": {
-                "name": "Albert Kostanian",
-                "tag": "THE PUNDIT",
-                "stamp": "PUNDIT",
-                "role": "Media Figure / Strategist",
-                "summary": "A former Kataeb strategist turned media host. Through his show 'Vision 2030', he dissects the collapse but is criticized by some as part of the 'talking heads' ecosystem that normalizes the crisis. He represents the intellectual class that analyzes the Titanic as it sinks.",
-                "quote": "We need a vision, not just a reaction.",
-                "sections": [
-                    {
-                        "title": "MEDIA INFLUENCE",
-                        "content": [
-                            "Hosts high-level debates that highlight the government's failures but rarely lead to actionable change.",
-                            "Represents the transition of political operatives into media influencers."
-                        ]
-                    },
-                    {
-                        "title": "REFORMIST RHETORIC",
-                        "content": [
-                            "Advocates for secularism and decentralization, yet comes from a traditional sectarian party background.",
-                            "Critiques the 'mafia-militia' alliance while operating within the media platforms owned by the elite."
                         ]
                     }
                 ]
@@ -2285,7 +2157,7 @@
             },
             "camille-daher": {
                 "name": "Camille Daher",
-                "tag": "THE SUCCESSOR",
+                "tag": "MILITARY INTELLIGENCE",
                 "stamp": "SUCCESSOR",
                 "role": "Former Head of Army Intelligence",
                 "summary": "Succeeded Edmond Fadel as intelligence chief. His appointment was a subject of fierce political tug-of-war, highlighting how even sensitive security posts are divvied up like spoils of war. He continued the policy of 'security by consensus' rather than strict law enforcement.",
@@ -2327,30 +2199,6 @@
                         "content": [
                             "A consistent critic of the 'Harirism' economic model that relied on high interest rates and debt.",
                             "His marginalization by the mainstream political class highlights how the system purges those who attack its financial roots."
-                        ]
-                    }
-                ]
-            },
-            "charbel-nahas": {
-                "name": "Charbel Nahas",
-                "tag": "THE RADICAL REFORMER",
-                "stamp": "RADICAL REFORMER",
-                "role": "Former Minister / Economist",
-                "summary": "The only minister to resign twice in protest against the system. An economist who predicted the financial crash with mathematical precision years in advance. As the head of 'Citizens in a State,' he advocates for a total secular transition, rejecting the sectarian regime entirely. He is the technocrat who refused to compromise.",
-                "quote": "Legitimacy does not come from the sects, but from the state.",
-                "sections": [
-                    {
-                        "title": "RESIGNATION IN PROTEST",
-                        "content": [
-                            "Resigned as Minister of Labor after the cabinet refused to implement his plan for universal healthcare and fair wages.",
-                            "Blocked the signing of decrees he deemed illegal during his tenure as Telecom Minister, clashing with the entrenched elite."
-                        ]
-                    },
-                    {
-                        "title": "DIAGNOSING THE COLLAPSE",
-                        "content": [
-                            "Argued for decades that the bank-centric economy was a Ponzi scheme designed to transfer wealth from the public to a few oligarchs.",
-                            "His political movement (MMFID) offers one of the few comprehensive—albeit radical—roadmaps for a transition of power."
                         ]
                     }
                 ]
@@ -2429,7 +2277,7 @@
             },
             "hassan-diab": {
                 "name": "Hassan Diab",
-                "tag": "THE PROFESSOR",
+                "tag": "NEGLIGENT TECHNOCRAT",
                 "stamp": "PROFESSOR",
                 "role": "Former Prime Minister",
                 "summary": "The technocrat who presided over the default and the explosion. Diab claimed to be fighting corruption but ended up as a shield for the ruling class. He is the first PM to be charged with negligence in the port case, a charge he dismisses as politically motivated targeting of the Sunni position.",
