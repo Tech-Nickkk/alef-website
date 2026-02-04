@@ -26,15 +26,15 @@ export default function HouseOfCardsPage() {
     const CARDS_PER_PAGE = 10;
 
     const FULL_DECK = useMemo(() => {
-        return Array.from({ length: 52 }).map((_, i) => {
-            const dataRef = CARD_DATA[i % CARD_DATA.length];
+        return CARD_DATA.map((dataRef, i) => {
             const tKey = `cards.${dataRef.id}`;
-            const suits = [
-                t("filters.spades"),
-                t("filters.hearts"),
-                t("filters.diamonds"),
-                t("filters.clubs")
-            ];
+            let suit = dataRef.suit;
+
+            // Map the data suit to the translated filter text
+            const lowerSuit = dataRef.suit.toLowerCase();
+            if (["spades", "hearts", "diamonds", "clubs"].includes(lowerSuit)) {
+                suit = t(`filters.${lowerSuit}`);
+            }
 
             return {
                 id: `card-${i}`,
@@ -44,7 +44,7 @@ export default function HouseOfCardsPage() {
                 name: t(`${tKey}.name`),
                 status: t(`${tKey}.tag`),
                 stamp: t(`${tKey}.stamp`),
-                suit: suits[Math.floor(i / 13)],
+                suit: suit,
                 revealed: false
             };
         });
