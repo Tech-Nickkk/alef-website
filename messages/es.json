@@ -28,7 +28,7 @@
             "houseOfCards": "Castillo de Naipes",
             "archives": "Archivos",
             "bookRecommendations": "Recomendaciones de Libros",
-            "fallenAngels": "Ángeles Caídos",
+            "fallenAngels": "Mártires",
             "videos": "Videos",
             "shorts": "Cortos",
             "podcasts": "Podcasts",
@@ -878,28 +878,6 @@
         },
         "footer": {
             "taxInfo": "* ALEF es una organización sin fines de lucro registrada 501(c)(3). Todas las donaciones son deducibles de impuestos."
-        }
-    },
-    "ProfilePage": {
-        "title": "MI PERFIL",
-        "anonymousUser": "Usuario Anónimo",
-        "totalImpact": "Impacto Total",
-        "manageBilling": "Administrar Facturación",
-        "signOut": "Cerrar Sesión",
-        "history": {
-            "title": "Historial de Donaciones",
-            "empty": "No se encontró historial.",
-            "status": "Exitoso",
-            "types": {
-                "monthly": "Donación Mensual",
-                "monthlyRenewal": "Renovación Mensual",
-                "sponsor": "Patrocinio",
-                "oneTime": "Donación Única"
-            }
-        },
-        "alerts": {
-            "portalError": "Error al abrir el portal: ",
-            "genericError": "Algo salió mal."
         }
     },
     "TestimonialsPage": {
@@ -2439,6 +2417,10 @@
                 "title": "Resolución de la Cámara 533",
                 "description": "Iniciada por el congresista Robert Dornan (distrito 27 de California) y presentada por Charles Chartouni."
             },
+            "resolution7311": {
+                "title": "Resolución de la Cámara 7311",
+                "description": "Ley de Integridad Electoral del Líbano y Protección del Voto de la Diáspora de 2026"
+            },
             "shreveBill": {
                 "title": "El representante Shreve presenta un proyecto de ley para contrarrestar el régimen de terror de Irán"
             },
@@ -2460,13 +2442,13 @@
         }
     },
     "FallenAngelsPage": {
-        "title": "ÁNGELES CAÍDOS",
+        "title": "MÁRTIRES",
         "description": {
             "p1": "El Líbano tiene una larga y trágica historia de violencia política, con muchos líderes prominentes víctimas de asesinatos.",
             "p2": "Estos actos a menudo derivan de la compleja política sectaria del país y las intervenciones extranjeras.",
             "p3": "Aquí algunos de los casos más notables:"
         },
-        "triggerText": "Este evento desencadenó una serie de asesinatos selectivos posteriores, principalmente contra figuras antisirias:",
+        "triggerText": "Este evento desencadenó una serie de asesinatos posteriores, principalmente contra figuras antisirias:",
         "footer": {
             "text1": "Junto con las docenas de otras víctimas",
             "text2": "que han caído hasta el día de hoy"

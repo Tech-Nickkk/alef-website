@@ -26,6 +26,10 @@ const archiveItems = [
         url: "https://www.congress.gov/bill/100th-congress/house-resolution/533"
     },
     {
+        id: "resolution7311",
+        url: "https://www.congress.gov/bill/119th-congress/house-bill/7311/text"
+    },
+    {
         id: "shreveBill",
         url: "https://shreve.house.gov/media/press-releases/representative-shreve-introduces-bill-counter-irans-regime-terror"
     },
@@ -69,25 +73,7 @@ export default function ArchivesPage() {
                     {archiveItems.map((item, index) => {
                         const titleKey = `items.${item.id}.title`;
                         const descKey = `items.${item.id}.description`;
-                        // Check if description exists by checking if the key provides a translation different from the key itself, 
-                        // or we can just rely on the fact that if it's missing in json it might return the key.
-                        // Better approach with next-intl is t.has() but useTranslations doesn't expose has() directly in all versions.
-                        // We will catch the string. If we didn't put it in JSON, we can assume it doesn't exist.
-                        // However, for this specific set, we know which ones have descriptions. 
-                        // But for cleanest code, we could check if t.raw(descKey) exists or similar.
-                        // Let's assume we just try to render it if it's not equal to the key? 
-                        // Actually, t() returns the key if missing.
-                        // But to be safe, we can just render it. 
-                        // WAIT: 'items.res1559.description' doesn't exist in my JSON. 
-                        // So t('items.res1559.description') will return 'items.res1559.description'.
-                        // We don't want to show that.
-                        // We can iterate the JSON structure using useMessages() or similar, but simpler is to keep the "has description" flag or logic in code?
-                        // Or better: In the JSON, I only added descriptions for some.
-                        // Let's use a helper or just check if the returned string includes "items.".
-
-                        // Re-checking the items:
-                        // I can add a `hasDesc` flag to my `archiveItems` to be explicit.
-                        const hasDesc = ["hezbollahAccountability", "hr533", "noHezbollahAct", "cfrLebanon", "randHezbollah"].includes(item.id);
+                        const hasDesc = ["hezbollahAccountability", "hr533", "resolution7311", "noHezbollahAct", "cfrLebanon", "randHezbollah"].includes(item.id);
 
                         return (
                             <Link

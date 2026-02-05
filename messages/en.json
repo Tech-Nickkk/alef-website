@@ -28,7 +28,7 @@
             "houseOfCards": "House of Cards",
             "archives": "Archives",
             "bookRecommendations": "Book Recommendations",
-            "fallenAngels": "Fallen Angels",
+            "fallenAngels": "Fallen Martyrs",
             "videos": "Videos",
             "shorts": "Shorts",
             "podcasts": "Podcasts",
@@ -884,28 +884,6 @@
         },
         "footer": {
             "taxInfo": "* ALEF is a registered 501(c)(3) non-profit organization. All donations are tax-deductible."
-        }
-    },
-    "ProfilePage": {
-        "title": "MY PROFILE",
-        "anonymousUser": "Anonymous User",
-        "totalImpact": "Total Impact",
-        "manageBilling": "Manage Billing",
-        "signOut": "Sign Out",
-        "history": {
-            "title": "Donation History",
-            "empty": "No history found.",
-            "status": "Successful",
-            "types": {
-                "monthly": "Monthly Donation",
-                "monthlyRenewal": "Monthly Renewal",
-                "sponsor": "Sponsorship",
-                "oneTime": "One-Time Donation"
-            }
-        },
-        "alerts": {
-            "portalError": "Error opening portal: ",
-            "genericError": "Something went wrong."
         }
     },
     "TestimonialsPage": {
@@ -2445,6 +2423,10 @@
                 "title": "House Resolution 533",
                 "description": "Ushered in by Congressman Robert Dornan (California 27th district) and introduced by Charles Chartouni."
             },
+            "resolution7311": {
+                "title": "House Resolution 7311",
+                "description": "Lebanon Election Integrity and Diaspora Voting Protection Act of 2026"
+            },
             "shreveBill": {
                 "title": "Representative Shreve Introduces Bill to Counter Iran's Regime of Terror"
             },
@@ -2466,13 +2448,13 @@
         }
     },
     "FallenAngelsPage": {
-        "title": "FALLEN ANGELS",
+        "title": "FALLEN MARTYRS",
         "description": {
             "p1": "Lebanon has a long and tragic history of political violence, with many prominent leaders, politicians, prime ministers, presidents-elect, and influential figures becoming victims of assassinations, bombings, or targeted killings.",
             "p2": "These acts often stem from the country's complex sectarian politics, civil war (1975–1990), foreign interventions (Syria, Israel, and others), and regional rivalries.",
             "p3": "Here are some of the most notable cases, focusing on high-profile leaders:"
         },
-        "triggerText": "This event triggered a series of subsequent targeted killings, mostly against anti-Syrian figures (often attributed to Syrian intelligence or allies):",
+        "triggerText": "This event triggered a series of subsequent assassinations, mostly against anti-Syrian figures (often attributed to Syrian intelligence or allies):",
         "footer": {
             "text1": "Along with the dozens of other victims",
             "text2": "who have fallen to this day"

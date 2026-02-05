@@ -459,7 +459,7 @@ export default function ProfilePage() {
                         </div>
 
                         {/* Decorative background element */}
-                        <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-blue/5 to-transparent pointer-events-none" />
+                        <div className="absolute top-0 inset-x-0 h-32 bg-linear-to-b from-blue/5 to-transparent pointer-events-none" />
                     </div>
                 </div>
             )}

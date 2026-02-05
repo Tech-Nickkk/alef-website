@@ -28,7 +28,7 @@
             "houseOfCards": "Château de Cartes",
             "archives": "Archives",
             "bookRecommendations": "Recommandations de Livres",
-            "fallenAngels": "Anges Déchus",
+            "fallenAngels": "Les Martyrs",
             "videos": "Vidéos",
             "shorts": "Shorts",
             "podcasts": "Podcasts",
@@ -880,28 +880,6 @@
         },
         "footer": {
             "taxInfo": "* ALEF est une organisation à but non lucratif enregistrée 501(c)(3). Tous les dons sont déductibles d'impôt."
-        }
-    },
-    "ProfilePage": {
-        "title": "MON PROFIL",
-        "anonymousUser": "Utilisateur Anonyme",
-        "totalImpact": "Impact Total",
-        "manageBilling": "Gérer la Facturation",
-        "signOut": "Se Déconnecter",
-        "history": {
-            "title": "Historique des Dons",
-            "empty": "Aucun historique trouvé.",
-            "status": "Réussi",
-            "types": {
-                "monthly": "Don Mensuel",
-                "monthlyRenewal": "Renouvellement Mensuel",
-                "sponsor": "Parrainage",
-                "oneTime": "Don Unique"
-            }
-        },
-        "alerts": {
-            "portalError": "Erreur lors de l'ouverture du portail : ",
-            "genericError": "Quelque chose a mal tourné."
         }
     },
     "TestimonialsPage": {
@@ -2441,6 +2419,10 @@
                 "title": "Résolution de la Chambre 533",
                 "description": "Initiée par le membre du Congrès Robert Dornan (27e district de Californie) et présentée par Charles Chartouni."
             },
+            "resolution7311": {
+                "title": "Résolution de la Chambre 7311",
+                "description": "Loi de 2026 sur l'intégrité des élections libanaises et la protection du vote de la diaspora"
+            },
             "shreveBill": {
                 "title": "Le représentant Shreve présente un projet de loi pour contrer le régime de terreur de l'Iran"
             },
@@ -2462,13 +2444,13 @@
         }
     },
     "FallenAngelsPage": {
-        "title": "ANGES DÉCHUS",
+        "title": "LES MARTYRS",
         "description": {
             "p1": "Le Liban a une longue et tragique histoire de violence politique, de nombreux dirigeants et personnalités influentes ayant été victimes d'assassinats.",
             "p2": "Ces actes découlent souvent de la politique confessionnelle complexe du pays et des interventions étrangères.",
             "p3": "Voici quelques-uns des cas les plus notables :"
         },
-        "triggerText": "Cet événement a déclenché une série d'assassinats ciblés ultérieurs, principalement contre des figures anti-syriennes :",
+        "triggerText": "Cet événement a déclenché une série d'assassinats ultérieurs, principalement contre des figures anti-syriennes :",
         "footer": {
             "text1": "Avec les dizaines d'autres victimes",
             "text2": "tombées à ce jour"
