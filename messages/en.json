@@ -1171,7 +1171,73 @@
         "previous": "Previous",
         "next": "Next",
         "all": "All",
-        "anonymous": "Anonymous"
+        "anonymous": "Anonymous",
+        "submitTitle": "Submit Your Article",
+        "submitDesc": "Share your insights with our editorial board for review."
+    },
+    "SubmitArticlePage": {
+        "title": "SUBMIT YOUR ARTICLE",
+        "subtitle": "Share Your Insights",
+        "description": "Submit your article for review by our editorial board. If approved, it will be published on our platform.",
+        "loginRequired": "Please log in to submit an article",
+        "loginButton": "Login to Continue",
+        "form": {
+            "titleLabel": "Article Title",
+            "titlePlaceholder": "Enter a compelling title for your article",
+            "excerptLabel": "Excerpt",
+            "excerptPlaceholder": "Brief summary of your article (150-300 characters)",
+            "contentLabel": "Article Content",
+            "contentPlaceholder": "Write your article here... (Minimum 500 characters)",
+            "imageLabel": "Featured Image",
+            "imageHelp": "Upload a high-quality image (JPG, PNG, WebP - Max 5MB)",
+            "imageButton": "Choose Image",
+            "imageSelected": "Image Selected",
+            "changeImage": "Change Image",
+            "categoryLabel": "Category",
+            "categoryPlaceholder": "Select a category",
+            "categories": {
+                "politics": "Politics & Governance",
+                "economy": "Economy & Finance",
+                "security": "Security & Defense",
+                "society": "Society & Culture",
+                "international": "International Relations",
+                "analysis": "Analysis & Opinion"
+            },
+            "tagsLabel": "Tags (Optional)",
+            "tagsPlaceholder": "Add relevant tags (comma separated)",
+            "submitButton": "Submit for Review",
+            "submitting": "Submitting...",
+            "cancel": "Cancel"
+        },
+        "validation": {
+            "titleRequired": "Title is required",
+            "titleTooShort": "Title must be at least 10 characters",
+            "excerptRequired": "Excerpt is required",
+            "excerptTooShort": "Excerpt must be at least 150 characters",
+            "contentRequired": "Content is required",
+            "contentTooShort": "Content must be at least 500 characters",
+            "imageRequired": "Featured image is required",
+            "categoryRequired": "Please select a category"
+        },
+        "success": {
+            "title": "Article Submitted!",
+            "message": "Thank you for your submission. Our editorial board will review your article and get back to you via email.",
+            "backButton": "Back to Articles"
+        },
+        "preview": {
+            "title": "Preview",
+            "toggle": "Toggle Preview"
+        },
+        "guidelines": {
+            "title": "Submission Guidelines",
+            "items": [
+                "Articles must be original and not published elsewhere",
+                "Minimum 500 words, maximum 3000 words",
+                "Include credible sources and references",
+                "Use professional and respectful language",
+                "High-quality featured image required"
+            ]
+        }
     },
     "BlogPostPage": {
         "published": "Published",
@@ -1217,32 +1283,30 @@
                     {
                         "title": "PERVASIVE CORRUPTION CHARGES",
                         "content": [
-                            "Alleged to have diverted public funds abroad via family accounts since the 1980s, now a subject of judicial probes.",
-                            "Son-in-law Gebran Bassil, a U.S.-sanctioned figure, leveraged Aoun's political patronage to dominate ministries, accused of corrupt enrichment.",
-                            "Accused of shielding criminal graft among loyalists and securing sectarian loyalty."
+                            "Allegedly diverted public funds abroad via family accounts since the 1980s, amid unconfirmed reports of judicial scrutiny.",
+                            "Son-in-law Gebran Bassil (U.S.-sanctioned for alleged corruption) reportedly leveraged patronage for enrichment and ministry control.",
+                            "Allegedly shielded graft among loyalists to secure sectarian loyalty."
                         ]
                     },
                     {
                         "title": "HEZBOLLAH ALLIANCE & POLITICAL OBSTRUCTION",
                         "content": [
-                            "Aligned with Hezbollah during presidency, facilitating its political and military dominance; blocked judicial actions against Hezbollah.",
-                            "Free Patriotic Movement, his political faction, implicated in shielding Hezbollah's illicit economic activities."
+                            "Aligned with Hezbollah during presidency, reportedly facilitating its dominance and hindering judicial actions.",
+                            "Free Patriotic Movement allegedly implicated in shielding Hezbollah's reported illicit activities."
                         ]
                     },
                     {
                         "title": "BETRAYED PROMISES & FOREIGN ALLIANCES",
                         "content": [
-                            "Alliance with Hezbollah and support for Assad regime isolated Lebanon, entrenching Iran's influence and isolating Lebanon from critical Western and Gulf partners.",
-                            "Supported the Assad regime in Syria's civil war, further damaging Lebanon's international standing and driving away investment.",
-                            "Massive protests in 2019 blamed Aoun and his policy reversals for plunging Lebanon into record poverty, inequality, and infrastructural collapse."
+                            "Alliance with Hezbollah and support for Assad reportedly isolated Lebanon, entrenching Iran's influence and distancing Western/Gulf partners.",
+                            "Supported Assad in Syria's civil war, reportedly damaging Lebanon's standing and investment."
                         ]
                     },
                     {
                         "title": "LEGACY OF CRISIS & PARALYSIS",
                         "content": [
-                            "Oversaw Lebanon's economic collapse and the Beirut port explosion.",
-                            "Left a fractured state with ongoing economic and political instability.",
-                            "Multiple ongoing corruption and negligence investigations."
+                            "Oversaw period of economic collapse and Beirut port explosion.",
+                            "Left a reportedly fractured state with ongoing instability, corruption, and negligence investigations."
                         ]
                     }
                 ]

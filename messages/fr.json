@@ -1167,7 +1167,10 @@
         "previous": "Précédent",
         "next": "Suivant",
         "all": "Tous",
-        "anonymous": "Anonyme"
+        "anonymous": "Anonyme",
+        "submitTitle": "Soumettez votre article",
+        "submitDesc": "Partagez vos idées avec notre comité de rédaction pour examen.",
+        "inProgress": "La fonction de soumission est actuellement en cours."
     },
     "BlogPostPage": {
         "published": "Publié",
@@ -1213,32 +1216,30 @@
                     {
                         "title": "ACCUSATIONS DE CORRUPTION GÉNÉRALISÉE",
                         "content": [
-                            "Soupçonné d'avoir détourné des fonds publics à l'étranger via des comptes familiaux depuis les années 1980, faisant maintenant l'objet d'enquêtes judiciaires.",
-                            "Son gendre Gebran Bassil, sanctionné par les États-Unis, a profité du patronage politique d'Aoun pour dominer les ministères, accusé d'enrichissement illicite.",
-                            "Accusé de protéger la corruption criminelle parmi ses loyalistes et d'assurer une loyauté sectaire."
+                            "Aurait détourné des fonds publics à l'étranger via des comptes familiaux depuis les années 1980, au milieu de rapports non confirmés de surveillance judiciaire.",
+                            "Son gendre Gebran Bassil (sanctionné par les États-Unis pour corruption présumée) aurait mis à profit son protectorat pour son enrichissement et le contrôle des ministères.",
+                            "Aurait protégé la corruption parmi les fidèles pour assurer la loyauté sectaire."
                         ]
                     },
                     {
                         "title": "ALLIANCE AVEC LE HEZBOLLAH ET OBSTRUCTION POLITIQUE",
                         "content": [
-                            "Aligné avec le Hezbollah durant sa présidence, facilitant sa domination politique et militaire ; a bloqué les actions judiciaires contre le Hezbollah.",
-                            "Le Courant Patriotique Libre, sa faction politique, est impliqué dans la protection des activités économiques illicites du Hezbollah."
+                            "Aligné sur le Hezbollah pendant sa présidence, facilitant selon les rapports sa dominance et entravant les actions judiciaires.",
+                            "Le Courant Patriotique Libre serait impliqué dans la protection des activités illicites signalées du Hezbollah."
                         ]
                     },
                     {
                         "title": "PROMESSES TRAHIES ET ALLIANCES ÉTRANGÈRES",
                         "content": [
-                            "Son alliance avec le Hezbollah et son soutien au régime Assad ont isolé le Liban, renforçant l'influence de l'Iran et isolant le Liban de ses partenaires occidentaux et du Golfe critiques.",
-                            "A soutenu le régime Assad dans la guerre civile syrienne, nuisant davantage à la réputation internationale du Liban et faisant fuir les investissements.",
-                            "Les manifestations massives de 2019 ont blâmé Aoun et ses revirements politiques pour avoir plongé le Liban dans une pauvreté record, l'inégalité et l'effondrement des infrastructures."
+                            "L'alliance avec le Hezbollah et le soutien à Assad auraient isolé le Liban, renforçant l'influence de l'Iran et éloignant les partenaires occidentaux et du Golfe.",
+                            "A soutenu Assad dans la guerre civile syrienne, nuisant selon les rapports à la position et aux investissements du Liban."
                         ]
                     },
                     {
                         "title": "HÉRITAGE DE CRISE ET DE PARALYSIE",
                         "content": [
-                            "A supervisé l'effondrement économique du Liban et l'explosion du port de Beyrouth.",
-                            "A laissé un État fracturé avec une instabilité économique et politique continue.",
-                            "Multiples enquêtes en cours pour corruption et négligence."
+                            "A supervisé la période d'effondrement économique et l'explosion du port de Beyrouth.",
+                            "A laissé un État apparemment fracturé avec une instabilité, une corruption et des enquêtes sur la négligence en cours."
                         ]
                     }
                 ]

@@ -1165,7 +1165,10 @@
         "previous": "Anterior",
         "next": "Siguiente",
         "all": "Todos",
-        "anonymous": "Anónimo"
+        "anonymous": "Anónimo",
+        "submitTitle": "Envía tu artículo",
+        "submitDesc": "Comparte tus ideas con nuestro consejo editorial para su revisión.",
+        "inProgress": "La función de envío está actualmente en progreso."
     },
     "BlogPostPage": {
         "published": "Publicado",
@@ -1211,32 +1214,30 @@
                     {
                         "title": "ACUSACIONES DE CORRUPCIÓN GENERALIZADA",
                         "content": [
-                            "Presuntamente desvió fondos públicos al extranjero a través de cuentas familiares desde la década de 1980, ahora sujeto a investigaciones judiciales.",
-                            "Su yerno Gebran Bassil, figura sancionada por EE. UU., aprovechó el patrocinio político de Aoun para dominar ministerios, acusado de enriquecimiento ilícito.",
-                            "Acusado de proteger la corrupción criminal entre leales y asegurar la lealtad sectaria."
+                            "Presuntamente desvió fondos públicos al extranjero a través de cuentas familiares desde la década de 1980, en medio de informes no confirmados de escrutinio judicial.",
+                            "Se informa que su yerno Gebran Bassil (sancionado por EE. UU. por presunta corrupción) aprovechó el patrocinio para el enriquecimiento y el control ministerial.",
+                            "Presuntamente protegió el soborno entre los leales para asegurar la lealtad sectaria."
                         ]
                     },
                     {
                         "title": "ALIANZA CON HEZBOLLAH Y OBSTRUCCIÓN POLÍTICA",
                         "content": [
-                            "Alineado con Hezbollah durante su presidencia, facilitando su dominio político y militar; bloqueó acciones judiciales contra Hezbollah.",
-                            "El Movimiento Patriótico Libre, su facción política, implicado en proteger las actividades económicas ilícitas de Hezbollah."
+                            "Alineado con Hezbollah durante su presidencia, facilitando presuntamente su dominio y obstaculizando las acciones judiciales.",
+                            "El Movimiento Patriótico Libre presuntamente implicado en la protección de las actividades ilícitas reportadas de Hezbollah."
                         ]
                     },
                     {
                         "title": "PROMESAS TRAICIONADAS Y ALIANZAS EXTRANJERAS",
                         "content": [
-                            "Su alianza con Hezbollah y apoyo al régimen de Assad aislaron al Líbano, afianzando la influencia de Irán y aislando al Líbano de socios occidentales y del Golfo críticos.",
-                            "Apoyó al régimen de Assad en la guerra civil de Siria, dañando aún más la reputación internacional del Líbano y ahuyentando la inversión.",
-                            "Protestas masivas en 2019 culparon a Aoun y sus reversiones políticas por hundir al Líbano en una pobreza récord, desigualdad y colapso de infraestructura."
+                            "Se informa que la alianza con Hezbollah y el apoyo a Assad aislaron al Líbano, afianzando la influencia de Irán y distanciando a los socios occidentales y del Golfo.",
+                            "Apoyó a Assad en la guerra civil de Siria, dañando presuntamente la reputación internacional y la inversión del Líbano."
                         ]
                     },
                     {
                         "title": "LEGADO DE CRISIS Y PARÁLISIS",
                         "content": [
-                            "Supervisó el colapso económico del Líbano y la explosión del puerto de Beirut.",
-                            "Dejó un estado fracturado con inestabilidad económica y política continua.",
-                            "Múltiples investigaciones en curso por corrupción y negligencia."
+                            "Supervisó el período de colapso económico y la explosión del puerto de Beirut.",
+                            "Dejó un estado presuntamente fracturado con inestabilidad, corrupción e investigaciones de negligencia en curso."
                         ]
                     }
                 ]

@@ -1,6 +1,7 @@
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import { client } from "@/sanity/lib/client";
 import BlogsFeed from "@/app/components/Blogs/BlogsFeed";
+import SubmitBlog from "@/app/components/Blogs/SubmitBlog";
 import { getTranslations, getLocale } from 'next-intl/server';
 
 export const revalidate = 60;
@@ -41,6 +42,8 @@ export default async function BlogsPage() {
                 </div>
 
                 <BlogsFeed initialBlogs={blogs} />
+
+                <SubmitBlog />
 
             </main>
         </div>

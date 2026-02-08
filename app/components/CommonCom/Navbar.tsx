@@ -202,8 +202,8 @@ export default function Navbar() {
                         <ThemeToggle />
                     </div>
 
-                    {/* Language - Hidden on Mobile/Tablet */}
-                    <div className="hidden xl:block relative">
+                    {/* Language - Always Visible */}
+                    <div className="relative">
                         <button
                             className="text-foreground/90 hover:text-foreground transition-colors p-2 hover:bg-foreground/10 rounded-none cursor-pointer"
                             onClick={() => setIsLangOpen(!isLangOpen)}
@@ -365,28 +365,11 @@ export default function Navbar() {
 
                             </div>
 
-                            {/* Mobile Preferences (Language + Theme) */}
+                            {/* Mobile Preferences (Theme) */}
                             <div className="mt-8 pt-8 border-t border-foreground/10 flex flex-col gap-6">
                                 <div className="flex items-center justify-between">
                                     <span className="text-foreground/70 font-oswald uppercase tracking-widest text-sm">Theme</span>
                                     <ThemeToggle />
-                                </div>
-                                <div className="flex items-center justify-between">
-                                    <span className="text-foreground/70 font-oswald uppercase tracking-widest text-sm">Language</span>
-                                    <div className="flex gap-4">
-                                        {languages.map((lang) => (
-                                            <button
-                                                key={lang.code}
-                                                onClick={() => handleLanguageChange(lang.code)}
-                                                className={`text-sm font-oswald transition-colors uppercase ${locale === lang.code
-                                                    ? 'bg-red text-white px-2 py-1'
-                                                    : 'text-foreground/50 hover:text-theme-accent'
-                                                    }`}
-                                            >
-                                                {lang.code.toUpperCase()}
-                                            </button>
-                                        ))}
-                                    </div>
                                 </div>
                             </div>
 
