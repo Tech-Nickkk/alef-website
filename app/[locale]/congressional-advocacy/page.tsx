@@ -12,6 +12,7 @@ interface Member {
     state: string;
     desc: string;
     img: string;
+    contact?: string;
     chamber?: string;
     party?: string;
 }
@@ -33,8 +34,8 @@ const highlightText = (text: string, query: string) => {
 };
 
 // Card Component
-const MemberCard = ({ member, searchQuery }: { member: Member; searchQuery: string }) => (
-    <div className="group relative bg-white/5 border border-black/5 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
+const MemberCard = ({ member, searchQuery }: { member: Member; searchQuery: string }) => {
+    const content = (
         <div className="aspect-4/5 relative overflow-hidden bg-gray-100">
             <SkeletonImage
                 src={`/congressionalAdvocasy/${member.img}`}
@@ -74,8 +75,29 @@ const MemberCard = ({ member, searchQuery }: { member: Member; searchQuery: stri
                 </div>
             </div>
         </div>
-    </div>
-);
+    );
+
+    const baseClasses = "group relative bg-white/5 border border-black/5 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500";
+
+    if (member.contact) {
+        return (
+            <a
+                href={member.contact}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${baseClasses} cursor-pointer block`}
+            >
+                {content}
+            </a>
+        );
+    }
+
+    return (
+        <div className={baseClasses}>
+            {content}
+        </div>
+    );
+};
 
 export default function CongressionalAdvocacyPage() {
     const t = useTranslations('CongressionalAdvocacyPage');

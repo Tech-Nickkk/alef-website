@@ -8,6 +8,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const bebas = Bebas_Neue({
   subsets: ["latin"],
@@ -52,6 +53,7 @@ export default async function LocaleLayout({
             {children}
           </LayoutWrapper>
           <Analytics />
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''} />
 
           <Script id="brevo-conversations" strategy="afterInteractive">
             {`

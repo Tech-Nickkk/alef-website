@@ -925,79 +925,92 @@
                     "name": "تشارلز جراسلي",
                     "state": "IA",
                     "desc": "الرئيس المؤقت لمجلس الشيوخ الأمريكي",
-                    "img": "Charles Grassley.jpg"
+                    "img": "Charles Grassley.jpg",
+                    "contact": "https://grassley.senate.gov/contact"
                 },
                 {
                     "name": "جيم ريش",
                     "state": "ID",
                     "desc": "رئيس لجنة العلاقات الخارجية بمجلس الشيوخ",
-                    "img": "Jim Risch.jpg"
+                    "img": "Jim Risch.jpg",
+                    "contact": "https://risch.senate.gov/public/index.cfm/email"
                 },
                 {
                     "name": "جو ويلسون",
                     "state": "SC",
                     "desc": "رئيس اللجنة الفرعية للشرق الأوسط ولجنة القوات المسلحة بمجلس النواب",
-                    "img": "Joe Wilson.jpg"
+                    "img": "Joe Wilson.jpg",
+                    "contact": "https://joewilson.house.gov/contact/email-me"
                 },
                 {
                     "name": "دارين لحود",
                     "state": "IL",
                     "desc": "الرئيس المشارك للتجمع النيابي للصداقة الأمريكية اللبنانية.",
-                    "img": "Darin Lahood.jpg"
+                    "img": "Darin Lahood.jpg",
+                    "contact": "https://lahood.house.gov/contact"
                 },
                 {
                     "name": "جيمس لانكفورد",
                     "state": "OK",
                     "desc": "الرئيس المشارك لتجمع اتفاقيات إبراهيم في مجلس الشيوخ.",
-                    "img": "James Lankford.jpg"
+                    "img": "James Lankford.jpg",
+                    "contact": "https://lankford.senate.gov/contact/email"
                 },
                 {
                     "name": "جوني إرنست",
                     "state": "IA",
                     "desc": "الرئيس المشارك لتجمع اتفاقيات إبراهيم في مجلس الشيوخ،",
-                    "img": "Joni Ernst.jpg"
+                    "img": "Joni Ernst.jpg",
+                    "contact": "https://ernst.senate.gov/content/contact-joni"
                 },
                 {
                     "name": "ليندسي جراهام",
                     "state": "SC",
                     "desc": "لجنة المخصصات بمجلس الشيوخ.",
-                    "img": "Lindsey Graham.jpg"
+                    "img": "Lindsey Graham.jpg",
+                    "contact": "https://lgraham.senate.gov/public/index.cfm/e-mail-senator-graham"
                 },
                 {
                     "name": "توم كوتون",
                     "state": "AZ",
                     "desc": "الأمن القومي والسياسة الخارجية.",
-                    "img": "Tom Cotton.jpg"
+                    "img": "Tom Cotton.jpg",
+                    "contact": "https://cotton.senate.gov/contact"
                 },
                 {
                     "name": "تود يونغ",
                     "state": "IN",
                     "desc": "العضو البارز في اللجنة الفرعية للعلاقات الخارجية بمجلس الشيوخ",
-                    "img": "Todd Young.jpg"
+                    "img": "Todd Young.jpg",
+                    "contact": "https://young.senate.gov/contact/email-todd"
                 },
                 {
                     "name": "روجر ويكر",
                     "state": "MS",
                     "desc": "سياسة الدفاع، التمويل العسكري، والأمن القومي،",
-                    "img": "Roger Wicker.jpg"
+                    "img": "Roger Wicker.jpg",
+                    "contact": "https://wicker.senate.gov/public/index.cfm/contact"
                 },
                 {
                     "name": "ستيف داينز",
                     "state": "MT",
                     "desc": "عضو لجنة العلاقات الخارجية بمجلس الشيوخ ولديه خبرة مباشرة في التعامل مع حزب الله",
-                    "img": "Steve Daines.jpg"
+                    "img": "Steve Daines.jpg",
+                    "contact": "https://daines.senate.gov/contact"
                 },
                 {
                     "name": "ريك سكوت",
                     "state": "FL",
                     "desc": "معارض صريح لإيران ووكيلها الإرهابي حزب الله.",
-                    "img": "Rick Scott.jpg"
+                    "img": "Rick Scott.jpg",
+                    "contact": "https://rickscott.senate.gov/contact_rick"
                 },
                 {
                     "name": "تيد كروز",
                     "state": "TX",
                     "desc": "معارض صريح لإيران ووكيلها الإرهابي حزب الله.",
-                    "img": "Ted Cruz.jpg"
+                    "img": "Ted Cruz.jpg",
+                    "contact": "https://cruz.senate.gov/contact/write-ted"
                 }
             ],
             "senate_democrats": [
@@ -1005,25 +1018,29 @@
                     "name": "مارك وارنر",
                     "state": "VA",
                     "desc": "رئيس لجنة الاستخبارات المختارة بمجلس الشيوخ",
-                    "img": "Mark Warner.jpg"
+                    "img": "Mark Warner.jpg",
+                    "contact": "https://warner.senate.gov/public/index.cfm/contactpage"
                 },
                 {
                     "name": "رون وايدن",
                     "state": "OR",
                     "desc": "مؤثر رئيسي في الأمن القومي والمساعدات الخارجية وشؤون الاستخبارات.",
-                    "img": "Ron Wyden.jpg"
+                    "img": "Ron Wyden.jpg",
+                    "contact": "https://wyden.senate.gov/contact/email-ron"
                 },
                 {
                     "name": "مارك كيلي",
                     "state": "AZ",
                     "desc": "عضو لجنتي القوات المسلحة والاستخبارات بمجلس الشيوخ،",
-                    "img": "Mark Kelly.jpg"
+                    "img": "Mark Kelly.jpg",
+                    "contact": "https://kelly.senate.gov/contact/contact-form"
                 },
                 {
                     "name": "إليسا سلوتكين",
                     "state": "MI",
                     "desc": "محللة سابقة في وكالة المخابرات المركزية (CIA) ولديها خبرة في الشرق الأوسط وعضو لجنة القوات المسلحة بمجلس الشيوخ",
-                    "img": "Elissa Slotkin.jpg"
+                    "img": "Elissa Slotkin.jpg",
+                    "contact": "https://slotkin.senate.gov/contact"
                 }
             ],
             "house_republicans": [
@@ -1031,79 +1048,92 @@
                     "name": "مايكل ماكول",
                     "state": "TX",
                     "desc": "رئيس لجنة الشؤون الخارجية بمجلس النواب",
-                    "img": "Michael McCaul.jpg"
+                    "img": "Michael McCaul.jpg",
+                    "contact": "https://mccaul.house.gov/contact"
                 },
                 {
                     "name": "مايك لولر",
                     "state": "NY",
                     "desc": "رئيس اللجنة الفرعية للشؤون الخارجية بمجلس النواب حول الشرق الأوسط وشمال أفريقيا،",
-                    "img": "Mike Lawler.jpg"
+                    "img": "Mike Lawler.jpg",
+                    "contact": "https://lawler.house.gov/contact"
                 },
                 {
                     "name": "زاك نان",
                     "state": "IA",
                     "desc": "رئيس فرقة عمل الأمن القومي الجمهورية",
-                    "img": "zach nunn.jpg"
+                    "img": "zach nunn.jpg",
+                    "contact": "https://nunn.house.gov/contact/email-zach"
                 },
                 {
                     "name": "ديف ماكورميك",
                     "state": "PA",
                     "desc": "رئيس اللجنة الفرعية لمكافحة الإرهاب",
-                    "img": "dave mc cormick.jpg"
+                    "img": "dave mc cormick.jpg",
+                    "contact": "https://mccormick.senate.gov/contact"
                 },
                 {
                     "name": "داريل عيسى",
                     "state": "CA",
                     "desc": "نائب رئيس لجنة الشؤون الخارجية بمجلس النواب",
-                    "img": "darrell issa.jpg"
+                    "img": "darrell issa.jpg",
+                    "contact": "https://issa.house.gov/contact"
                 },
                 {
                     "name": "جو ويلسون",
                     "state": "SC",
                     "desc": "عضو لجنة الشؤون الخارجية بمجلس النواب",
-                    "img": "Joe Wilson.jpg"
+                    "img": "Joe Wilson.jpg",
+                    "contact": "https://joewilson.house.gov/contact/email-me"
                 },
                 {
                     "name": "دون بيكون",
                     "state": "IL",
                     "desc": "يخدم في لجنة القوات المسلحة ولجنة الاستخبارات الدائمة بمجلس النواب",
-                    "img": "Don Bacon.jpg"
+                    "img": "Don Bacon.jpg",
+                    "contact": "https://bacon.house.gov/contact"
                 },
                 {
                     "name": "مارك ميسمر",
                     "state": "IN",
                     "desc": "يخدم في لجنة القوات المسلحة بمجلس النواب،",
-                    "img": "Mark Messmer.jpg"
+                    "img": "Mark Messmer.jpg",
+                    "contact": "https://messmer.house.gov/contact"
                 },
                 {
                     "name": "برايان ماست",
                     "state": "FL",
                     "desc": "يخدم في لجنة الشؤون الخارجية بمجلس النواب",
-                    "img": "Brian Mast.jpg"
+                    "img": "Brian Mast.jpg",
+                    "contact": "https://mast.house.gov/email"
                 },
                 {
                     "name": "مايك روجرز",
                     "state": "MI",
                     "desc": "يخدم في لجنة العلاقات الخارجية بمجلس الشيوخ",
-                    "img": "Mike Rogers.jpg"
+                    "img": "Mike Rogers.jpg",
+                    "contact": "https://mikerogers.house.gov/contact"
                 },
                 {
                     "name": "جيفرسون شريف",
                     "state": "IN",
                     "desc": "معارض صريح لإيران ووكيلها الإرهابي حزب الله.",
-                    "img": "Jefferson Shreve.jpg"
+                    "img": "Jefferson Shreve.jpg",
+                    "contact": "https://shreve.house.gov/contact"
                 },
                 {
                     "name": "كلوديا تيني",
                     "state": "NY",
                     "desc": "الأمن القومي، مكافحة الإرهاب، والتهديدات الخارجية.",
-                    "img": "Claudia Tenney.jpg"
+                    "img": "Claudia Tenney.jpg",
+                    "contact": "https://tenney.house.gov/contact"
                 },
                 {
                     "name": "جريج ستوبي",
                     "state": "FL",
                     "desc": "تشريع قانون PAGER",
-                    "img": "Greg Steube.jpg"
+                    "img": "Greg Steube.jpg",
+                    "contact": "https://steube.house.gov/contact/"
                 }
             ],
             "house_democrats": [
@@ -1111,49 +1141,57 @@
                     "name": "جوش جوتهايمر",
                     "state": "NJ",
                     "desc": "معارض صريح لإيران ووكيلها الإرهابي حزب الله.",
-                    "img": "josh gottheimer.jpg"
+                    "img": "josh gottheimer.jpg",
+                    "contact": "https://gottheimer.house.gov/contact"
                 },
                 {
                     "name": "براد شنايدر",
                     "state": "IL",
                     "desc": "الرئيس المشارك لتجمع اتفاقيات إبراهيم",
-                    "img": "brad schneider.jpg"
+                    "img": "brad schneider.jpg",
+                    "contact": "https://schneider.house.gov/contact"
                 },
                 {
                     "name": "ريتشي توريس",
                     "state": "NY",
                     "desc": "معارض صريح لإيران ووكيلها الإرهابي حزب الله.",
-                    "img": "Ritchie Torres.jpg"
+                    "img": "Ritchie Torres.jpg",
+                    "contact": "https://ritchietorres.house.gov/contact"
                 },
                 {
                     "name": "دون ديفيس",
                     "state": "NC",
                     "desc": "يخدم في لجنة القوات المسلحة بمجلس النواب، ويؤثر على سياسة الدفاع الأمريكية والجاهزية العسكرية.",
-                    "img": "don davis.jpg"
+                    "img": "don davis.jpg",
+                    "contact": "https://dondavis.house.gov/contact"
                 },
                 {
                     "name": "جاكي روزين",
                     "state": "NV",
                     "desc": "قادت قانون 'لا لحزب الله في نصف الكرة الغربي' لمواجهة عمليات حزب الله في أمريكا اللاتينية",
-                    "img": "jacky rosen.jpg"
+                    "img": "jacky rosen.jpg",
+                    "contact": "https://rosen.senate.gov/email-jacky"
                 },
                 {
                     "name": "جيمي بانيتا",
                     "state": "CA",
                     "desc": "ابن وزير الدفاع السابق ليون بانيتا. خبير في دبلوماسية الشرق الأوسط",
-                    "img": "Jimmy panetta.jpg"
+                    "img": "Jimmy panetta.jpg",
+                    "contact": "https://panetta.house.gov/contact"
                 },
                 {
                     "name": "براد شيرمان",
                     "state": "CA",
                     "desc": "عضو لجنة الشؤون الخارجية بمجلس النواب. تأثير كبير على السياسة الخارجية الأمريكية وقضايا الشرق الأوسط.",
-                    "img": "brad sherman.jpg"
+                    "img": "brad sherman.jpg",
+                    "contact": "https://sherman.house.gov/contact"
                 },
                 {
                     "name": "جريجوري ميكس",
                     "state": "NY",
                     "desc": "عضو لجنة الشؤون الخارجية بمجلس النواب، أحد كبار الديمقراطيين المؤثرين في السياسة الخارجية الأمريكية،",
-                    "img": "Gregory meeks.jpg"
+                    "img": "Gregory meeks.jpg",
+                    "contact": "https://meeks.house.gov/contact"
                 }
             ]
         }
@@ -1233,7 +1271,7 @@
             "title": "إرشادات الإرسال",
             "items": [
                 "يجب أن تكون المقالات أصلية وغير منشورة في مكان آخر",
-                "الحد الأدنى 500 كلمة، الحد الأقصى 3000 كلمة",
+                "الحد الأدنى 500 كلمة، الحد الأقصى 800 كلمة",
                 "قم بتضمين مصادر ومراجع موثوقة",
                 "استخدم لغة احترافية ومحترمة",
                 "صورة مميزة عالية الجودة مطلوبة"
@@ -2624,7 +2662,7 @@
     "EventsPage": {
         "header": {
             "tagline": "احتفال الافتتاح",
-            "title": "تجمع الوطنيين",
+            "title": "تجمع من أجل لبنان جديد",
             "description": "تعد 'ألف' لاحتفال افتتاح خاص وتجمع مرموق للوطنيين وأصدقاء الحرية. يمثل هذا الحدث فرصة مهمة لتحديد مسار عام 2026 وما بعده."
         },
         "hero": {
@@ -2656,6 +2694,43 @@
             "congress": "الكونغرس الأمريكي",
             "congressDesc1": "كتلة الصداقة الأمريكية اللبنانية",
             "congressDesc2": "أعضاء وموظفو لجان الشؤون الخارجية والدفاع في مجلسي النواب والشيوخ"
+        },
+        "message": {
+            "sectionTitlePart1": "مستقبل",
+            "sectionTitlePart2": "لبنان",
+            "sectionSubtitle": "انضم إلينا في أمسية للحوار والوحدة والرؤية. سنقدم موجز 'ألف' وجدول الأعمال الموجه نحو العمل بشأن لبنان والشرق الأوسط.",
+            "greeting": "أيها الأصدقاء والوطنيون،",
+            "intro": "يقف لبنان اليوم عند مفترق طرق. يمكننا أن نظل رهائن للصراع والفساد والشلل، أو يمكننا أن ننهض كأمة ذات سيادة ملتزمة بالسلام والعدالة والازدهار.",
+            "conviction": "نقف أمامكم بقناعة: يمكن إنقاذ لبنان. ليس بالتمنيات، بل بالعمل.",
+            "plan": "في 14 أبريل 2026، نقدم ليس فقط رؤية، بل خطة.",
+            "pillar1Title": "دعم المؤسسات",
+            "pillar1Text": "يجب علينا تمكين الجيش اللبناني (LAF) كالمدافع الوحيد عن سيادتنا.",
+            "pillar1Support": "الدعم الدولي يجب أن يعزز قدرات المؤسسات الشرعية، لا الميليشيات.",
+            "pillar2Title": "العدالة وحقوق الإنسان",
+            "pillar2Text": "لا إفلات من العقاب للقتلة. نطالب بالعدالة لضحايا الاغتيالات السياسية.",
+            "pillar2Justice": "يجب أن تكون المحاكم مستقلة، ويجب محاسبة الفساد.",
+            "pillar3Title": "الإصلاح الاقتصادي",
+            "pillar3Robbery": "يجب استعادة الأموال المنهوبة من خلال التدقيق والشفافية.",
+            "pillar3Reform": "اقتصاد حر ومدمج عالمياً هو الطريق للتعافي.",
+            "pillar4Title": "السيادة والحياد",
+            "pillar4Text": "لبنان يجب أن يكون صديقاً للجميع، وليس ساحة معركة لأحد.",
+            "pillar4Future": "نحن نرفض الوصاية الأجنبية وندعم الحياد الإيجابي.",
+            "pillar5Title": "الوحدة الوطنية",
+            "pillar5Text": "تنوعنا هو قوتنا. يجب أن نبني عقداً اجتماعياً جديداً قائماً على المواطنة.",
+            "summaryTitle": "ملخص",
+            "summaryPeace": "السلام هو خيارنا.",
+            "summarySovereignty": "السيادة هي حقنا.",
+            "summaryAlliance": "التحالف مع الدول الديمقراطية هو استراتيجيتنا.",
+            "summaryStability": "الاستقرار هو مطلبنا.",
+            "summaryReform": "الإصلاح هو طريقنا.",
+            "summaryChoice": "الاختيار بين الماضي والمستقبل.",
+            "summaryPath": "هذا هو الطريق إلى الأمام.",
+            "summaryCourage": "نحن نملك الشجاعة للتغيير.",
+            "summaryValues": "<strong>سلام</strong>، حتى ينمو أطفالنا بلا خوف. <strong>عدالة</strong>، حتى يواجه الفاسدون العواقب. <strong>مساءلة</strong>، حتى تعود الأموال المنهوبة. <strong>ازدهار</strong>، حتى يفي لبنان بوعده.",
+            "summaryVision": "رؤية للبنان الجديد.",
+            "summaryTime": "الوقت هو الآن.",
+            "summaryClosing": "معاً، سنبني لبنان الذي نحلم به.",
+            "summaryFarewell": "انضم إلينا."
         },
         "sponsors": {
             "title": "فرص الرعاية",

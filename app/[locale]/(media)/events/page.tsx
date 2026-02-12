@@ -98,7 +98,7 @@ export default function EventsPage() {
         <main className="min-h-screen bg-background pt-32 pb-24 px-6 md:px-12 lg:px-24 flex flex-col items-center">
 
             {/* Header */}
-            <div className="max-w-4xl mx-auto text-center mb-24 space-y-6">
+            <div className="max-w-5xl mx-auto text-center mb-24 space-y-6">
                 <div className="flex items-center justify-center gap-3 mb-4">
                     <span className="w-1.5 h-1.5 bg-red rounded-full animate-pulse"></span>
                     <span className="font-oswald text-red tracking-[0.3em] uppercase text-xs font-bold">{t("header.tagline")}</span>
@@ -193,6 +193,135 @@ export default function EventsPage() {
                                 </Link>
                             </div>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* MESSAGE SECTION */}
+            <div className="w-full max-w-5xl mx-auto mb-24 reveal-anim">
+                <div className="bg-blue border border-white/10 shadow-2xl rounded-sm overflow-hidden">
+                    {/* Content */}
+                    <div className="p-8 md:p-12 lg:p-16 space-y-8 relative">
+                        {/* Decorative Elements matching Hero */}
+                        <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-red/40 to-transparent"></div>
+
+                        {/* Extended Header Area */}
+                        <div className="text-center space-y-6 mb-8">
+                            <h3 className="font-bebas text-5xl md:text-7xl text-white leading-none tracking-wide">
+                                {t("message.sectionTitlePart1")} <span className="text-red">{t("message.sectionTitlePart2")}</span>
+                            </h3>
+                            <p className="font-oswald text-white/80 text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto font-light">
+                                {t("message.sectionSubtitle")}
+                            </p>
+                        </div>
+
+                        {/* Greeting */}
+                        <h4 className="font-bebas text-3xl md:text-4xl text-white mb-6">
+                            {t("message.greeting")}
+                        </h4>
+
+                        {/* Introduction */}
+                        <div className="space-y-6 mb-8">
+                            <p className="font-oswald text-white/90 text-lg md:text-xl leading-relaxed">
+                                {t("message.intro")}
+                            </p>
+
+                            <p className="font-oswald text-white/90 text-lg md:text-xl leading-relaxed">
+                                {t("message.conviction")}
+                            </p>
+
+                            <p className="font-oswald text-white/90 text-lg md:text-xl leading-relaxed">
+                                {t("message.plan")}
+                            </p>
+                        </div>
+
+                        {/* Pillars Grid */}
+                        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 pt-6 mb-8">
+                            {/* Pillar 1 */}
+                            <div className="space-y-3 p-6 bg-white/5 rounded border border-white/5 hover:border-white/10 transition-colors">
+                                <h4 className="font-bebas text-2xl text-red tracking-wide">
+                                    {t("message.pillar1Title")}
+                                </h4>
+                                <div className="font-oswald text-white/90 text-lg leading-relaxed space-y-2">
+                                    <p>{t("message.pillar1Text")}</p>
+                                    <p>{t("message.pillar1Support")}</p>
+                                </div>
+                            </div>
+
+                            {/* Pillar 2 */}
+                            <div className="space-y-3 p-6 bg-white/5 rounded border border-white/5 hover:border-white/10 transition-colors">
+                                <h4 className="font-bebas text-2xl text-red tracking-wide">
+                                    {t("message.pillar2Title")}
+                                </h4>
+                                <div className="font-oswald text-white/90 text-lg leading-relaxed space-y-2">
+                                    <p>{t("message.pillar2Text")}</p>
+                                    <p>{t("message.pillar2Justice")}</p>
+                                </div>
+                            </div>
+
+                            {/* Pillar 3 */}
+                            <div className="space-y-3 p-6 bg-white/5 rounded border border-white/5 hover:border-white/10 transition-colors">
+                                <h4 className="font-bebas text-2xl text-red tracking-wide">
+                                    {t("message.pillar3Title")}
+                                </h4>
+                                <div className="font-oswald text-white/90 text-lg leading-relaxed space-y-2">
+                                    <p>{t("message.pillar3Robbery")}</p>
+                                    <p>{t("message.pillar3Reform")}</p>
+                                </div>
+                            </div>
+
+                            {/* Pillar 4 */}
+                            <div className="space-y-3 p-6 bg-white/5 rounded border border-white/5 hover:border-white/10 transition-colors">
+                                <h4 className="font-bebas text-2xl text-red tracking-wide">
+                                    {t("message.pillar4Title")}
+                                </h4>
+                                <div className="font-oswald text-white/90 text-lg leading-relaxed space-y-2">
+                                    <p>{t("message.pillar4Text")}</p>
+                                    <p>{t("message.pillar4Future")}</p>
+                                </div>
+                            </div>
+
+                            {/* Pillar 5 */}
+                            <div className="space-y-3 p-6 bg-white/5 rounded border border-white/5 hover:border-white/10 transition-colors md:col-span-2 lg:col-span-1 xl:col-span-2">
+                                <h4 className="font-bebas text-2xl text-red tracking-wide">
+                                    {t("message.pillar5Title")}
+                                </h4>
+                                <p className="font-oswald text-white/90 text-lg leading-relaxed">
+                                    {t("message.pillar5Text")}
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Summary Section */}
+                        <div className="border-t border-white/10 pt-10 space-y-6">
+                            <h4 className="font-bebas text-3xl text-white mb-6">
+                                {t("message.summaryTitle")}
+                            </h4>
+
+                            <div className="font-oswald text-white/90 text-lg md:text-xl leading-relaxed space-y-4">
+                                <p>{t("message.summaryPeace")}</p>
+                                <p>{t("message.summarySovereignty")}</p>
+                                <p>{t("message.summaryAlliance")}</p>
+                                <p>{t("message.summaryStability")}</p>
+                                <p>{t("message.summaryReform")}</p>
+                                <p>{t("message.summaryChoice")}</p>
+                                <p>{t("message.summaryPath")}</p>
+                                <p>{t("message.summaryCourage")}</p>
+
+                                <p className="py-2">
+                                    {t.rich("message.summaryValues", {
+                                        strong: (chunks) => <strong className="text-red">{chunks}</strong>
+                                    })}
+                                </p>
+
+                                <p>{t("message.summaryVision")}</p>
+                                <p className="italic text-white/70">{t("message.summaryTime")}</p>
+                                <p>{t("message.summaryClosing")}</p>
+                                <p className="font-bebas text-2xl md:text-3xl text-white pt-4 tracking-wide">
+                                    {t("message.summaryFarewell")}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

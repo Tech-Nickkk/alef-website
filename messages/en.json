@@ -924,79 +924,92 @@
                     "name": "Charles Grassley",
                     "state": "IA",
                     "desc": "President pro tempore of the US Senate",
-                    "img": "Charles Grassley.jpg"
+                    "img": "Charles Grassley.jpg",
+                    "contact": "https://grassley.senate.gov/contact"
                 },
                 {
                     "name": "Jim Risch",
                     "state": "ID",
                     "desc": "Chairman of the Senate Foreign Relations Committee",
-                    "img": "Jim Risch.jpg"
+                    "img": "Jim Risch.jpg",
+                    "contact": "https://risch.senate.gov/public/index.cfm/email"
                 },
                 {
                     "name": "Joe Wilson",
                     "state": "SC",
                     "desc": "Chair of the Subcommittee on the Middle East & House Armed Services Committee",
-                    "img": "Joe Wilson.jpg"
+                    "img": "Joe Wilson.jpg",
+                    "contact": "https://joewilson.house.gov/contact/email-me"
                 },
                 {
                     "name": "Darin Lahood",
                     "state": "IL",
                     "desc": "Co-chair of the bipartisan U.S.-Lebanon Friendship Caucus.",
-                    "img": "Darin Lahood.jpg"
+                    "img": "Darin Lahood.jpg",
+                    "contact": "https://lahood.house.gov/contact"
                 },
                 {
                     "name": "James Lankford",
                     "state": "OK",
                     "desc": "Co-chair of the bipartisan Senate Abraham Accords Caucus.",
-                    "img": "James Lankford.jpg"
+                    "img": "James Lankford.jpg",
+                    "contact": "https://lankford.senate.gov/contact/email"
                 },
                 {
                     "name": "Joni Ernst",
                     "state": "IA",
                     "desc": "Co-chair of the bipartisan Senate Abraham Accords Caucus,",
-                    "img": "Joni Ernst.jpg"
+                    "img": "Joni Ernst.jpg",
+                    "contact": "https://ernst.senate.gov/content/contact-joni"
                 },
                 {
                     "name": "Lindsey Graham",
                     "state": "SC",
                     "desc": "Senate Appropriations Committee.",
-                    "img": "Lindsey Graham.jpg"
+                    "img": "Lindsey Graham.jpg",
+                    "contact": "https://lgraham.senate.gov/public/index.cfm/e-mail-senator-graham"
                 },
                 {
                     "name": "Tom Cotton",
                     "state": "AZ",
                     "desc": "National security and foreign policy.",
-                    "img": "Tom Cotton.jpg"
+                    "img": "Tom Cotton.jpg",
+                    "contact": "https://cotton.senate.gov/contact"
                 },
                 {
                     "name": "Todd Young",
                     "state": "IN",
                     "desc": "Ranking Member on the Senate Foreign Relations Subcommittee",
-                    "img": "Todd Young.jpg"
+                    "img": "Todd Young.jpg",
+                    "contact": "https://young.senate.gov/contact/email-todd"
                 },
                 {
                     "name": "Roger Wicker",
                     "state": "MS",
                     "desc": "Defense policy, military funding, and national security,",
-                    "img": "Roger Wicker.jpg"
+                    "img": "Roger Wicker.jpg",
+                    "contact": "https://wicker.senate.gov/public/index.cfm/contact"
                 },
                 {
                     "name": "Steve Daines",
                     "state": "MT",
                     "desc": "Member of the Senate Foreign Relations Committee with firsthand experience dealing with Hezbollah",
-                    "img": "Steve Daines.jpg"
+                    "img": "Steve Daines.jpg",
+                    "contact": "https://daines.senate.gov/contact"
                 },
                 {
                     "name": "Rick Scott",
                     "state": "FL",
                     "desc": "Vocal opponent of Iran and its terrorist proxy Hezbollah.",
-                    "img": "Rick Scott.jpg"
+                    "img": "Rick Scott.jpg",
+                    "contact": "https://rickscott.senate.gov/contact_rick"
                 },
                 {
                     "name": "Ted Cruz",
                     "state": "TX",
                     "desc": "Vocal opponent of Iran and its terrorist proxy Hezbollah.",
-                    "img": "Ted Cruz.jpg"
+                    "img": "Ted Cruz.jpg",
+                    "contact": "https://cruz.senate.gov/contact/write-ted"
                 }
             ],
             "senate_democrats": [
@@ -1004,25 +1017,29 @@
                     "name": "Mark Warner",
                     "state": "VA",
                     "desc": "Chairman of the Senate Select Committee on Intelligence",
-                    "img": "Mark Warner.jpg"
+                    "img": "Mark Warner.jpg",
+                    "contact": "https://warner.senate.gov/public/index.cfm/contactpage"
                 },
                 {
                     "name": "Ron Wyden",
                     "state": "OR",
                     "desc": "Key influencer on national security, foreign aid and intelligence matters.",
-                    "img": "Ron Wyden.jpg"
+                    "img": "Ron Wyden.jpg",
+                    "contact": "https://wyden.senate.gov/contact/email-ron"
                 },
                 {
                     "name": "Mark Kelly",
                     "state": "AZ",
                     "desc": "Member of the Senate Armed Services and Intelligence Committees,",
-                    "img": "Mark Kelly.jpg"
+                    "img": "Mark Kelly.jpg",
+                    "contact": "https://kelly.senate.gov/contact/contact-form"
                 },
                 {
                     "name": "Elissa Slotkin",
                     "state": "MI",
                     "desc": "Former CIA analyst with Middle East experience and member of the Senate Armed Services Committee",
-                    "img": "Elissa Slotkin.jpg"
+                    "img": "Elissa Slotkin.jpg",
+                    "contact": "https://slotkin.senate.gov/contact"
                 }
             ],
             "house_republicans": [
@@ -1030,79 +1047,92 @@
                     "name": "Michael McCaul",
                     "state": "TX",
                     "desc": "Chairman of the House Foreign Affairs Committee",
-                    "img": "Michael McCaul.jpg"
+                    "img": "Michael McCaul.jpg",
+                    "contact": "https://mccaul.house.gov/contact"
                 },
                 {
                     "name": "Mike Lawler",
                     "state": "NY",
                     "desc": "Chair of the House Foreign Affairs Subcommittee on the Middle East and North Africa,",
-                    "img": "Mike Lawler.jpg"
+                    "img": "Mike Lawler.jpg",
+                    "contact": "https://lawler.house.gov/contact"
                 },
                 {
                     "name": "Zach Nunn",
                     "state": "IA",
                     "desc": "Chair of the Republican National Security Task Force",
-                    "img": "zach nunn.jpg"
+                    "img": "zach nunn.jpg",
+                    "contact": "https://nunn.house.gov/contact/email-zach"
                 },
                 {
                     "name": "Dave McCormick",
                     "state": "PA",
                     "desc": "Chairman of the Subcommittee on Counterterrorism",
-                    "img": "dave mc cormick.jpg"
+                    "img": "dave mc cormick.jpg",
+                    "contact": "https://mccormick.senate.gov/contact"
                 },
                 {
                     "name": "Darrell Issa",
                     "state": "CA",
                     "desc": "Vice Chair of the House Foreign Affairs Committee",
-                    "img": "darrell issa.jpg"
+                    "img": "darrell issa.jpg",
+                    "contact": "https://issa.house.gov/contact"
                 },
                 {
                     "name": "Joe Wilson",
                     "state": "SC",
                     "desc": "Member of House Foreign Affairs Committee",
-                    "img": "Joe Wilson.jpg"
+                    "img": "Joe Wilson.jpg",
+                    "contact": "https://joewilson.house.gov/contact/email-me"
                 },
                 {
                     "name": "Don Bacon",
                     "state": "IL",
                     "desc": "Serves on the House Armed Services Committee and House Permanent Select Committee on Intelligence",
-                    "img": "Don Bacon.jpg"
+                    "img": "Don Bacon.jpg",
+                    "contact": "https://bacon.house.gov/contact"
                 },
                 {
                     "name": "Mark Messmer",
                     "state": "IN",
                     "desc": "Serves on the House Armed Services Committee,",
-                    "img": "Mark Messmer.jpg"
+                    "img": "Mark Messmer.jpg",
+                    "contact": "https://messmer.house.gov/contact"
                 },
                 {
                     "name": "Brian Mast",
                     "state": "FL",
                     "desc": "Serves on the House Foreign Affairs Committee",
-                    "img": "Brian Mast.jpg"
+                    "img": "Brian Mast.jpg",
+                    "contact": "https://mast.house.gov/email"
                 },
                 {
                     "name": "Mike Rogers",
                     "state": "MI",
                     "desc": "Serves on the Senate Foreign Relations Committee",
-                    "img": "Mike Rogers.jpg"
+                    "img": "Mike Rogers.jpg",
+                    "contact": "https://mikerogers.house.gov/contact"
                 },
                 {
                     "name": "Jefferson Shreve",
                     "state": "IN",
                     "desc": "Vocal opponent of Iran and its terrorist proxy Hezbollah.",
-                    "img": "Jefferson Shreve.jpg"
+                    "img": "Jefferson Shreve.jpg",
+                    "contact": "https://shreve.house.gov/contact"
                 },
                 {
                     "name": "Claudia Tenney",
                     "state": "NY",
                     "desc": "National security, counterterrorism, and foreign threats.",
-                    "img": "Claudia Tenney.jpg"
+                    "img": "Claudia Tenney.jpg",
+                    "contact": "https://tenney.house.gov/contact"
                 },
                 {
                     "name": "Greg Steube",
                     "state": "FL",
                     "desc": "PAGER Act Legislation",
-                    "img": "Greg Steube.jpg"
+                    "img": "Greg Steube.jpg",
+                    "contact": "https://steube.house.gov/contact/"
                 }
             ],
             "house_democrats": [
@@ -1110,49 +1140,57 @@
                     "name": "Josh Gottheimer",
                     "state": "NJ",
                     "desc": "Vocal opponent of Iran and its terrorist proxy Hezbollah.",
-                    "img": "josh gottheimer.jpg"
+                    "img": "josh gottheimer.jpg",
+                    "contact": "https://gottheimer.house.gov/contact"
                 },
                 {
                     "name": "Brad Schneider",
                     "state": "IL",
                     "desc": "Co-chair of the bipartisan Abraham Accords Caucus",
-                    "img": "brad schneider.jpg"
+                    "img": "brad schneider.jpg",
+                    "contact": "https://schneider.house.gov/contact"
                 },
                 {
                     "name": "Ritchie Torres",
                     "state": "NY",
                     "desc": "Vocal opponent of Iran and its terrorist proxy Hezbollah.",
-                    "img": "Ritchie Torres.jpg"
+                    "img": "Ritchie Torres.jpg",
+                    "contact": "https://ritchietorres.house.gov/contact"
                 },
                 {
                     "name": "Don Davis",
                     "state": "NC",
                     "desc": "Serves on the House Armed Services Committee, influencing U.S. defense policy and military readiness.",
-                    "img": "don davis.jpg"
+                    "img": "don davis.jpg",
+                    "contact": "https://dondavis.house.gov/contact"
                 },
                 {
                     "name": "Jacky Rosen",
                     "state": "NV",
                     "desc": "Co-led the bipartisan No Hezbollah in Our Hemisphere Act to counter Hezbollah's operations in Latin America",
-                    "img": "jacky rosen.jpg"
+                    "img": "jacky rosen.jpg",
+                    "contact": "https://rosen.senate.gov/email-jacky"
                 },
                 {
                     "name": "Jimmy Panetta",
                     "state": "CA",
                     "desc": "Son of former Defense Secretary Leon Panetta. Expert in Middle East diplomacy",
-                    "img": "Jimmy panetta.jpg"
+                    "img": "Jimmy panetta.jpg",
+                    "contact": "https://panetta.house.gov/contact"
                 },
                 {
                     "name": "Brad Sherman",
                     "state": "CA",
                     "desc": "Member of the House Foreign Affairs Committee. Top influence on U.S. foreign policy Middle East issues.",
-                    "img": "brad sherman.jpg"
+                    "img": "brad sherman.jpg",
+                    "contact": "https://sherman.house.gov/contact"
                 },
                 {
                     "name": "Gregory Meeks",
                     "state": "NY",
                     "desc": "Member of the House Foreign Affairs Committee , one of the top Democrats, influencing U.S. foreign policy,",
-                    "img": "Gregory meeks.jpg"
+                    "img": "Gregory meeks.jpg",
+                    "contact": "https://meeks.house.gov/contact"
                 }
             ]
         }
@@ -1232,7 +1270,7 @@
             "title": "Submission Guidelines",
             "items": [
                 "Articles must be original and not published elsewhere",
-                "Minimum 500 words, maximum 3000 words",
+                "Minimum 500 words, maximum 800 words",
                 "Include credible sources and references",
                 "Use professional and respectful language",
                 "High-quality featured image required"
@@ -2603,7 +2641,7 @@
     "EventsPage": {
         "header": {
             "tagline": "Inauguration Celebration",
-            "title": "GATHERING OF PATRIOTS",
+            "title": "GATHERING FOR A NEW LEBANON",
             "description": "ALEF is preparing a special inauguration celebration and a prestigious gathering of patriots and friends of freedom. This milestone provides an important opportunity to define the path forward for 2026 and beyond."
         },
         "hero": {
@@ -2635,6 +2673,43 @@
             "congress": "U.S. Congress",
             "congressDesc1": "The U.S.–Lebanon Friendship Caucus",
             "congressDesc2": "Members and staff of House/Senate Foreign Affairs and Defense Committees"
+        },
+        "message": {
+            "sectionTitlePart1": "THE FUTURE OF",
+            "sectionTitlePart2": "LEBANON",
+            "sectionSubtitle": "Join us for an evening of dialogue, unity, and vision. We will present the ALEF Brief and Action Driven Agenda on Lebanon & Middle East.",
+            "greeting": "Dear Friends and Patriots,",
+            "intro": "Lebanon today stands at a crossroads. We can remain hostages to conflict, corruption, and paralysis, or we can rise as a sovereign nation committed to peace, justice, and prosperity.",
+            "conviction": "We stand before you with conviction: Lebanon can be saved. Not through wishes, but through action.",
+            "plan": "What we present is not aspiration. It is a concrete, phased plan built on five pillars:",
+            "pillar1Title": "First: Security and Sovereignty",
+            "pillar1Text": "We will fully implement UN Resolution 1701, restore the state's monopoly over arms, and empower the Lebanese Army as our sole defender. There can be no state within the state. The weapons of the nation must belong to the nation alone.",
+            "pillar1Support": "Our American partners, including Senator Lindsey Graham and many others stand ready to support us if we commit to this principle.",
+            "pillar2Title": "Second: Institutional Reform",
+            "pillar2Text": "Within 100 days, we will establish an independent Judicial Council where judges are selected on merit, not fear.",
+            "pillar2Justice": "A sovereign nation demands sovereign courts. Without justice, there is no Lebanon.",
+            "pillar3Title": "Third: Economic Recovery",
+            "pillar3Robbery": "Our people were robbed. Billions of dollars stolen by corrupt politicians and bankers.",
+            "pillar3Reform": "We will implement IMF-backed reforms, conduct international forensic audits, and recover stolen assets. Every dollar recovered goes to depositors, hospitals, and schools not back to thieves. No more corruption. No more impunity. No more excuses.",
+            "pillar4Title": "Fourth: Investment and Growth",
+            "pillar4Text": "We will mobilize our diaspora through protected investment funds and rebuild infrastructure under international supervision.",
+            "pillar4Future": "Our diaspora will no longer just send money to rescue families; they will invest to build a future.",
+            "pillar5Title": "Fifth: Strategic Partnerships",
+            "pillar5Text": "We will build alliances with the United States, Europe, and the Gulf, not as aid recipients, but as responsible partners.",
+            "summaryTitle": "To sum it up:",
+            "summaryPeace": "For decades, our southern border has been a theater of war. We must have the courage to transform ceasefires into lasting peace with Israel, securing Lebanon's sovereignty and Israel's security no matter what it takes. What has the alternative brought us? Decades of destruction. Generations sacrificed.",
+            "summarySovereignty": "We strongly believe that true sovereignty means making our own decisions about peace, not having them made by foreign proxies.",
+            "summaryAlliance": "We envision a strategic alliance between \"the land of the free\" and \"the land of the cedars\", grounded in shared principles: Freedom over coercion. Institutions over chaos. Sovereignty over proxies.",
+            "summaryStability": "This partnership strengthens regional stability, counters terrorism and extremism, and unlocks growth for both nations.",
+            "summaryReform": "With reform, investment will flow. Jobs will return. Our youth will stay home to build and our entrepreneurs will innovate.",
+            "summaryChoice": "Ladies and gentlemen, we have a choice to make, not someday, but today.",
+            "summaryPath": "The path is clear. The roadmap is ready. The world is willing.",
+            "summaryCourage": "What we need now is courage to choose our children's future over the warlords' past.",
+            "summaryValues": "<strong>Peace</strong>, so our children grow without fear. <strong>Justice</strong>, so the corrupt face consequences. <strong>Accountability</strong>, so stolen wealth is returned. <strong>Prosperity</strong>, so Lebanon fulfills its promise.",
+            "summaryVision": "This is the Lebanon we want. This is the Lebanon we will fight for. This is the Lebanon our children deserve. And this is the Lebanon we invite the world to stand with.",
+            "summaryTime": "The choice is ours. The time is now",
+            "summaryClosing": "Looking forward to having you on board of this great event in the making where we will debate all.",
+            "summaryFarewell": "Have a glorious day"
         },
         "sponsors": {
             "title": "Sponsorship Opportunities",
