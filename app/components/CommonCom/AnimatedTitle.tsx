@@ -14,30 +14,31 @@ interface AnimatedTitleProps {
 
 export default function AnimatedTitle({ text, className = "" }: AnimatedTitleProps) {
     const containerRef = useRef<HTMLDivElement>(null);
+    const isArabic = /[\u0600-\u06FF]/.test(text);
 
     useGSAP(() => {
-        const chars = containerRef.current?.querySelectorAll(".animated-char");
-        if (!chars || chars.length === 0) return;
+        const targets = containerRef.current?.querySelectorAll(".animated-char, .animated-word");
+        if (!targets || targets.length === 0) return;
 
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 85%",
-                toggleActions: "play none none none", 
+                toggleActions: "play none none none",
             }
         });
 
-        tl.fromTo(chars,
+        tl.fromTo(targets,
             { opacity: 0 },
             {
                 opacity: 1,
-                stagger: 0.02,
+                stagger: isArabic ? 0.1 : 0.02,
                 duration: 1.5,
                 ease: "power2.out"
             }
         );
 
-        tl.to(chars, {
+        tl.to(targets, {
             opacity: 0.2,
             duration: 0.03,
             stagger: {
@@ -53,18 +54,33 @@ export default function AnimatedTitle({ text, className = "" }: AnimatedTitlePro
 
     const words = text.split(" ");
 
+    // Filter incompatible classes for Arabic
+    let finalClassName = className;
+    if (isArabic) {
+        finalClassName = finalClassName
+            .replace(/\bfont-bebas\b/g, '')
+            .replace(/\btracking-[a-z]+\b/g, '')
+            .replace(/\buppercase\b/g, '');
+    }
+
     return (
-        <div ref={containerRef} className={className} aria-label={text}>
+        <div ref={containerRef} className={finalClassName} aria-label={text} dir={isArabic ? "rtl" : undefined}>
             {words.map((word, wIdx) => (
                 <span key={wIdx} className="inline-block whitespace-nowrap">
-                    {word.split("").map((char, cIdx) => (
-                        <span
-                            key={cIdx}
-                            className="animated-char inline-block"
-                        >
-                            {char}
+                    {isArabic ? (
+                        <span className="animated-word inline-block">
+                            {word}
                         </span>
-                    ))}
+                    ) : (
+                        word.split("").map((char, cIdx) => (
+                            <span
+                                key={cIdx}
+                                className="animated-char inline-block"
+                            >
+                                {char}
+                            </span>
+                        ))
+                    )}
                     {wIdx < words.length - 1 && <span>&nbsp;</span>}
                 </span>
             ))}

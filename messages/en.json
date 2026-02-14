@@ -357,6 +357,7 @@
         "placeholderFirstName": "FIRST NAME",
         "placeholderLastName": "LAST NAME",
         "placeholderEmail": "ENTER SECURE EMAIL",
+        "placeholderPhone": "PHONE NUMBER (OPTIONAL)",
         "button": "JOIN NOW",
         "buttonLoading": "JOINING...",
         "privacy": "* Your information is secure. We use this to build our mailing list.",

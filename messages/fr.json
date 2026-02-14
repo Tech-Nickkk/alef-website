@@ -357,6 +357,7 @@
         "placeholderFirstName": "PRÉNOM",
         "placeholderLastName": "NOM DE FAMILLE",
         "placeholderEmail": "ENTREZ UN EMAIL SÉCURISÉ",
+        "placeholderPhone": "NUMÉRO DE TÉLÉPHONE (OPTIONNEL)",
         "button": "REJOINDRE MAINTENANT",
         "buttonLoading": "INSCRIPTION...",
         "privacy": "* Vos informations sont sécurisées. Nous les utilisons pour constituer notre liste de diffusion.",

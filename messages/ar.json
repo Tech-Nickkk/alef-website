@@ -358,6 +358,7 @@
         "placeholderFirstName": "الاسم الأول",
         "placeholderLastName": "اسم العائلة",
         "placeholderEmail": "أدخل بريدًا إلكترونيًا آمنًا",
+        "placeholderPhone": "رقم الهاتف (اختياري)",
         "button": "انضم الآن",
         "buttonLoading": "جاري الانضمام...",
         "privacy": "* معلوماتك آمنة. نستخدم هذا لبناء قائمتنا البريدية.",

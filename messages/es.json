@@ -358,6 +358,7 @@
         "placeholderFirstName": "NOMBRE",
         "placeholderLastName": "APELLIDO",
         "placeholderEmail": "INGRESA CORREO SEGURO",
+        "placeholderPhone": "NÚMERO DE TELÉFONO (OPCIONAL)",
         "button": "ÚNETE AHORA",
         "buttonLoading": "UNIÉNDOSE...",
         "privacy": "* Tu información está segura. Usamos esto para construir nuestra lista de correo.",

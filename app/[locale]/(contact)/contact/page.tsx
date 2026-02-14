@@ -39,7 +39,7 @@ export default function ContactPage() {
             const data = await response.json();
 
             if (!response.ok) {
-                alert(`Error: ${data.error}`); 
+                alert(`Error: ${data.error}`);
                 setIsSubmitting(false);
                 return;
             }

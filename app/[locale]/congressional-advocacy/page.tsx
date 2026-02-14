@@ -35,6 +35,9 @@ const highlightText = (text: string, query: string) => {
 
 // Card Component
 const MemberCard = ({ member, searchQuery }: { member: Member; searchQuery: string }) => {
+    const isArabicName = /[\u0600-\u06FF]/.test(member.name);
+    const isArabicDesc = /[\u0600-\u06FF]/.test(member.desc);
+
     const content = (
         <div className="aspect-4/5 relative overflow-hidden bg-gray-100">
             <SkeletonImage
@@ -55,10 +58,10 @@ const MemberCard = ({ member, searchQuery }: { member: Member; searchQuery: stri
                 {/* Name/State Container */}
                 <div className="transform transition-transform duration-500 lg:group-hover:-translate-y-1">
                     <div className="flex items-center gap-3 mb-2">
-                        <h3 className="font-bebas text-3xl tracking-wide drop-shadow-md">
+                        <h3 className={`${isArabicName ? 'font-oswald text-2xl' : 'font-bebas text-3xl tracking-wide'} drop-shadow-md`}>
                             {highlightText(member.name, searchQuery)}
                         </h3>
-                        <span className="bg-red text-white text-[10px] font-bold px-2 py-0.5 rounded font-oswald tracking-widest shadow-sm border border-red/50">{member.state}</span>
+                        <span className={`bg-red text-white text-[10px] font-bold px-2 py-0.5 rounded font-oswald shadow-sm border border-red/50 ${isArabicName ? '' : 'tracking-widest'}`}>{member.state}</span>
                     </div>
                 </div>
 
@@ -67,7 +70,7 @@ const MemberCard = ({ member, searchQuery }: { member: Member; searchQuery: stri
                     <div className="overflow-hidden">
                         <div className="pt-2 lg:pt-3 transition-opacity duration-500 delay-100 opacity-100 lg:opacity-0 lg:group-hover:opacity-100">
                             <div className="w-12 h-0.5 bg-red mb-2 lg:mb-3"></div>
-                            <p className="text-white/90 font-oswald text-sm font-light uppercase tracking-wide leading-relaxed">
+                            <p className={`text-white/90 font-oswald text-sm font-light leading-relaxed ${isArabicDesc ? '' : 'uppercase tracking-wide'}`}>
                                 {member.desc}
                             </p>
                         </div>
