@@ -28,7 +28,8 @@ export default function SubmitArticlePage() {
     const [formData, setFormData] = useState({
         title: "",
         excerpt: "",
-        content: ""
+        content: "",
+        showAuthorName: true
     });
     const [selectedImage, setSelectedImage] = useState<File | null>(null);
     const [imagePreview, setImagePreview] = useState<string>("");
@@ -38,7 +39,10 @@ export default function SubmitArticlePage() {
 
     // Handle input changes
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
+        const target = e.target;
+        const name = target.name;
+        const value = target.type === 'checkbox' ? (target as HTMLInputElement).checked : target.value;
+
         setFormData(prev => ({ ...prev, [name]: value }));
         // Clear error when user starts typing
         if (errors[name]) {
@@ -95,17 +99,43 @@ export default function SubmitArticlePage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        if (!validateForm()) {
+        if (!validateForm() || !user) {
             return;
         }
 
         setIsSubmitting(true);
+        setErrors({});
 
-        // Simulate submission (replace with actual API call later)
-        setTimeout(() => {
-            setIsSubmitting(false);
+        try {
+            const formDataToSend = new FormData();
+            formDataToSend.append('title', formData.title);
+            formDataToSend.append('excerpt', formData.excerpt);
+            formDataToSend.append('content', formData.content);
+            formDataToSend.append('showAuthorName', String(formData.showAuthorName));
+            formDataToSend.append('name', user.displayName || 'Anonymous');
+            formDataToSend.append('email', user.email || '');
+            if (selectedImage) {
+                formDataToSend.append('image', selectedImage);
+            }
+
+            const response = await fetch('/api/submit-article', {
+                method: 'POST',
+                body: formDataToSend,
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.error || 'Failed to submit article');
+            }
+
             setIsSubmitted(true);
-        }, 2000);
+        } catch (error: any) {
+            console.error('Submission error:', error);
+            setErrors({ submit: error.message || 'Something went wrong. Please try again.' });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     // Loading state
@@ -175,7 +205,7 @@ export default function SubmitArticlePage() {
                         className="inline-flex items-center gap-2 mb-8 text-foreground/60 hover:text-foreground transition-colors group"
                     >
                         <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-                        <span className="font-oswald text-sm uppercase tracking-wider">Back to Articles</span>
+                        <span className="font-oswald text-sm uppercase tracking-wider">{t('backToArticles')}</span>
                     </Link>
 
                     {/* Header */}
@@ -197,6 +227,12 @@ export default function SubmitArticlePage() {
 
                     {/* Main Form - Centered */}
                     <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl mx-auto">
+                        {errors.submit && (
+                            <div className="bg-red/10 border border-red/30 rounded-xl p-4 flex items-center gap-3 text-red font-oswald text-sm animate-shake">
+                                <AlertCircle className="w-5 h-5 shrink-0" />
+                                {errors.submit}
+                            </div>
+                        )}
                         {/* Title */}
                         <div className="bg-foreground/5 backdrop-blur-sm border border-foreground/10 rounded-2xl p-6 hover:border-blue/30 transition-colors">
                             <label className="block font-oswald text-sm text-foreground/80 uppercase tracking-wider mb-3">
@@ -313,6 +349,28 @@ export default function SubmitArticlePage() {
                                     {errors.image}
                                 </p>
                             )}
+                        </div>
+
+                        {/* Author Attribution Toggle */}
+                        <div className="bg-foreground/5 backdrop-blur-sm border border-foreground/10 rounded-2xl p-6 hover:border-blue/30 transition-colors flex items-center justify-between gap-4">
+                            <div className="flex-1">
+                                <label className="block font-oswald text-sm text-foreground/80 uppercase tracking-wider mb-1">
+                                    {t('form.showAuthorLabel')}
+                                </label>
+                                <p className="text-xs text-foreground/40 font-oswald leading-relaxed">
+                                    {t('form.showAuthorHelp')}
+                                </p>
+                            </div>
+                            <label className="relative inline-flex items-center cursor-pointer shrink-0">
+                                <input
+                                    type="checkbox"
+                                    name="showAuthorName"
+                                    checked={formData.showAuthorName}
+                                    onChange={handleChange}
+                                    className="sr-only peer"
+                                />
+                                <div className="w-11 h-6 bg-foreground/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue"></div>
+                            </label>
                         </div>
 
                         {/* Submit Buttons */}

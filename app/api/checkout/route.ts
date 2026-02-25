@@ -20,8 +20,9 @@ export async function POST(req: Request) {
     const userData = userDoc.exists ? userDoc.data() : null;
 
     const session = await stripe.checkout.sessions.create({
-      ...(isSubscription ? {} : { payment_method_types: ['card', 'paypal'] }),
+      ...(isSubscription ? {} : { payment_method_types: ['card'] }),
       mode: isSubscription ? 'subscription' : 'payment',
+      ...(isSubscription ? {} : { invoice_creation: { enabled: true } }),
       line_items: [
         {
           price_data: {
@@ -43,7 +44,7 @@ export async function POST(req: Request) {
       ],
       success_url: `${req.headers.get('origin')}/donate/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${req.headers.get('origin')}/donate?canceled=true`,
-      
+
       ...(userData?.stripeCustomerId
         ? { customer: userData.stripeCustomerId }
         : {

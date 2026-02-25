@@ -1209,6 +1209,73 @@
         "submitDesc": "Comparte tus ideas con nuestro consejo editorial para su revisión.",
         "inProgress": "La función de envío está actualmente en progreso."
     },
+    "SubmitArticlePage": {
+        "title": "ENVÍA TU ARTÍCULO",
+        "subtitle": "Comparte tus Ideas",
+        "description": "Envía tu artículo para su revisión por nuestro consejo editorial. Si se aprueba, se publicará en nuestra plataforma.",
+        "loginRequired": "Por favor inicia sesión para enviar un artículo",
+        "loginButton": "Iniciar sesión para continuar",
+        "backToArticles": "Volver a Artículos",
+        "form": {
+            "titleLabel": "Título del Artículo",
+            "titlePlaceholder": "Introduce un título convincente para tu artículo",
+            "excerptLabel": "Extracto",
+            "excerptPlaceholder": "Breve resumen de tu artículo (150-300 caracteres)",
+            "contentLabel": "Contenido del Artículo",
+            "contentPlaceholder": "Escribe tu artículo aquí... (Mínimo 500 caracteres)",
+            "imageLabel": "Imagen Destacada",
+            "imageHelp": "Sube una imagen de alta calidad (JPG, PNG, WebP - Máx 5MB)",
+            "imageButton": "Elegir Imagen",
+            "imageSelected": "Imagen Seleccionada",
+            "changeImage": "Cambiar Imagen",
+            "categoryLabel": "Categoría",
+            "categoryPlaceholder": "Selecciona una categoría",
+            "categories": {
+                "politics": "Política y Gobernanza",
+                "economy": "Economía y Finanzas",
+                "security": "Seguridad y Defensa",
+                "society": "Sociedad y Cultura",
+                "international": "Relaciones Internacionales",
+                "analysis": "Análisis y Opinión"
+            },
+            "tagsLabel": "Etiquetas (Opcional)",
+            "tagsPlaceholder": "Añadir etiquetas pertinentes (separadas por comas)",
+            "showAuthorLabel": "Mostrar mi nombre como autor",
+            "showAuthorHelp": "Si está marcado, tu nombre se mostrará con el artículo. De lo contrario, se publicará como 'Anónimo'.",
+            "submitButton": "Enviar para Revisión",
+            "submitting": "Enviando...",
+            "cancel": "Cancelar"
+        },
+        "validation": {
+            "titleRequired": "El título es obligatorio",
+            "titleTooShort": "El título debe tener al menos 10 caracteres",
+            "excerptRequired": "El extracto es obligatorio",
+            "excerptTooShort": "El extracto debe tener al menos 150 caracteres",
+            "contentRequired": "El contenido es obligatorio",
+            "contentTooShort": "El contenido debe tener al menos 500 caracteres",
+            "imageRequired": "La imagen destacada es obligatoria",
+            "categoryRequired": "Por favor selecciona una categoría"
+        },
+        "success": {
+            "title": "¡Artículo Enviado!",
+            "message": "Gracias por tu envío. Nuestro consejo editorial revisará tu artículo y se pondrá en contacto contigo por correo electrónico.",
+            "backButton": "Volver a Artículos"
+        },
+        "preview": {
+            "title": "Vista Previa",
+            "toggle": "Cambiar Vista Previa"
+        },
+        "guidelines": {
+            "title": "Pautas de Envío",
+            "items": [
+                "Los artículos deben ser originales y no estar publicados en otro lugar",
+                "Mínimo 500 palabras, máximo 800 palabras",
+                "Incluir fuentes y referencias creíbles",
+                "Usar un lenguaje profesional y respetuoso",
+                "Se requiere imagen destacada de alta calidad"
+            ]
+        }
+    },
     "BlogPostPage": {
         "published": "Publicado",
         "recentUpdate": "Actualización reciente",

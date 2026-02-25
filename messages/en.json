@@ -1220,6 +1220,7 @@
         "description": "Submit your article for review by our editorial board. If approved, it will be published on our platform.",
         "loginRequired": "Please log in to submit an article",
         "loginButton": "Login to Continue",
+        "backToArticles": "Back to Articles",
         "form": {
             "titleLabel": "Article Title",
             "titlePlaceholder": "Enter a compelling title for your article",
@@ -1244,6 +1245,8 @@
             },
             "tagsLabel": "Tags (Optional)",
             "tagsPlaceholder": "Add relevant tags (comma separated)",
+            "showAuthorLabel": "Show my name as the author",
+            "showAuthorHelp": "If checked, your name will be displayed with the article. Otherwise, it will be published as 'Anonymous'.",
             "submitButton": "Submit for Review",
             "submitting": "Submitting...",
             "cancel": "Cancel"
