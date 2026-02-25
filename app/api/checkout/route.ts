@@ -20,7 +20,6 @@ export async function POST(req: Request) {
     const userData = userDoc.exists ? userDoc.data() : null;
 
     const session = await stripe.checkout.sessions.create({
-      ...(isSubscription ? {} : { payment_method_types: ['card'] }),
       mode: isSubscription ? 'subscription' : 'payment',
       ...(isSubscription ? {} : { invoice_creation: { enabled: true } }),
       line_items: [
