@@ -9,19 +9,17 @@ export async function POST(req: Request) {
   try {
     const { amount, donationType, userId, userEmail } = await req.json();
 
-    if (!userId) {
-      return NextResponse.json({ error: "Authentication required" }, { status: 401 });
-    }
-
     const isSubscription = donationType === 'monthly';
 
-    // Fetch user to check for existing Stripe Customer ID
-    const userDoc = await db.collection('users').doc(userId).get();
-    const userData = userDoc.exists ? userDoc.data() : null;
+    // Only fetch user data if logged in
+    let userData = null;
+    if (userId) {
+      const userDoc = await db.collection('users').doc(userId).get();
+      userData = userDoc.exists ? userDoc.data() : null;
+    }
 
     const session = await stripe.checkout.sessions.create({
       mode: isSubscription ? 'subscription' : 'payment',
-      ...(isSubscription ? {} : { invoice_creation: { enabled: true } }),
       line_items: [
         {
           price_data: {
@@ -44,17 +42,17 @@ export async function POST(req: Request) {
       success_url: `${req.headers.get('origin')}/donate/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${req.headers.get('origin')}/donate?canceled=true`,
 
+      // If logged in with existing Stripe customer, use that; 
+      // if logged in without Stripe customer, pre-fill email;
+      // if anonymous, Stripe will ask for email on checkout page
       ...(userData?.stripeCustomerId
         ? { customer: userData.stripeCustomerId }
-        : {
-          customer_email: userEmail,
-          ...(!isSubscription && { customer_creation: 'always' })
-        }
+        : userEmail ? { customer_email: userEmail } : {}
       ),
 
       metadata: {
         donationType: donationType,
-        firebaseUserId: userId,
+        ...(userId && { firebaseUserId: userId }),
       },
     });
 

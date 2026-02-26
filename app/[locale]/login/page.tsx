@@ -23,12 +23,28 @@ export default function LoginPage() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
+    // Link any anonymous donations to the newly authenticated user
+    const linkAnonymousDonations = async (uid: string, email: string) => {
+        try {
+            await fetch('/api/link-donations', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userId: uid, userEmail: email }),
+            });
+        } catch (err) {
+            console.error('Failed to link donations:', err);
+        }
+    };
+
     const handleGoogleLogin = async () => {
         setError(null);
         setLoading(true);
         const provider = new GoogleAuthProvider();
         try {
-            await signInWithPopup(auth, provider);
+            const result = await signInWithPopup(auth, provider);
+            if (result.user.email) {
+                await linkAnonymousDonations(result.user.uid, result.user.email);
+            }
             router.push("/");
         } catch (err) {
             console.error("Login failed", err);
@@ -43,10 +59,14 @@ export default function LoginPage() {
         setLoading(true);
 
         try {
+            let result;
             if (isLogin) {
-                await signInWithEmailAndPassword(auth, email, password);
+                result = await signInWithEmailAndPassword(auth, email, password);
             } else {
-                await createUserWithEmailAndPassword(auth, email, password);
+                result = await createUserWithEmailAndPassword(auth, email, password);
+            }
+            if (result.user.email) {
+                await linkAnonymousDonations(result.user.uid, result.user.email);
             }
             router.push("/");
         } catch (err: any) {

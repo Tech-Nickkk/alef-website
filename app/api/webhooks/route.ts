@@ -65,9 +65,7 @@ async function handleCheckoutSession(session: Stripe.Checkout.Session) {
   const amount = session.amount_total ? session.amount_total / 100 : 0;
   const stripeCustomerId = session.customer as string;
 
-  if (!firebaseUserId) return;
-
-  // IDEMPOTENCY FIX: Use session.id as the document ID
+  // Always record the donation (even for anonymous donors)
   const donationRef = db.collection('donations').doc(session.id);
 
   await donationRef.set({
@@ -76,34 +74,35 @@ async function handleCheckoutSession(session: Stripe.Checkout.Session) {
     status: session.payment_status,
     date: admin.firestore.FieldValue.serverTimestamp(),
     donationType: donationType || 'one-time',
-    userId: firebaseUserId,
+    userId: firebaseUserId || 'anonymous',
     email: session.customer_details?.email,
     stripeCustomerId: stripeCustomerId,
     stripeSessionId: session.id,
-  }, { merge: true }); // merge: true prevents overwriting if webhook fires twice
-
-  // Update User Profile
-  const userRef = db.collection('users').doc(firebaseUserId);
-  const userUpdate: any = {
-    lastDonationDate: new Date(),
-    totalDonated: admin.firestore.FieldValue.increment(amount),
-    // If it's a subscription, set status to active initially
-    ...(donationType !== 'one-time' && { subscriptionStatus: 'active' })
-  };
-
-  if (stripeCustomerId) {
-    userUpdate.stripeCustomerId = stripeCustomerId;
-  }
-
-  await userRef.set(userUpdate, { merge: true });
-
-  // Add to History Sub-collection (Use session ID here too for safety)
-  await userRef.collection('payment_history').doc(session.id).set({
-    amount,
-    date: new Date(),
-    type: donationType || 'one-time',
-    stripePaymentId: session.payment_intent || session.id
   }, { merge: true });
+
+  // Only update user profile if they were logged in
+  if (firebaseUserId) {
+    const userRef = db.collection('users').doc(firebaseUserId);
+    const userUpdate: any = {
+      lastDonationDate: new Date(),
+      totalDonated: admin.firestore.FieldValue.increment(amount),
+      ...(donationType !== 'one-time' && { subscriptionStatus: 'active' })
+    };
+
+    if (stripeCustomerId) {
+      userUpdate.stripeCustomerId = stripeCustomerId;
+    }
+
+    await userRef.set(userUpdate, { merge: true });
+
+    // Add to History Sub-collection
+    await userRef.collection('payment_history').doc(session.id).set({
+      amount,
+      date: new Date(),
+      type: donationType || 'one-time',
+      stripePaymentId: session.payment_intent || session.id
+    }, { merge: true });
+  }
 }
 
 async function handleInvoicePaid(invoice: Stripe.Invoice) {

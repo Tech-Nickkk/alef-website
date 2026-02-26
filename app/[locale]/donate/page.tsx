@@ -17,14 +17,6 @@ export default function DonatePage() {
 
     const processPayment = async (amount: number) => {
 
-        if (!user) {
-            const confirmLogin = confirm(t('alerts.loginRequired'));
-            if (confirmLogin) {
-                router.push("/login");
-            }
-            return;
-        }
-
         setIsLoading(true);
 
         try {
@@ -34,8 +26,7 @@ export default function DonatePage() {
                 body: JSON.stringify({
                     amount: amount,
                     donationType: donationType,
-                    userId: user.uid,
-                    userEmail: user.email
+                    ...(user && { userId: user.uid, userEmail: user.email })
                 }),
             });
 
