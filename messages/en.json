@@ -885,6 +885,16 @@
         },
         "footer": {
             "taxInfo": "* ALEF is a registered 501(c)(3) non-profit organization. All donations are tax-deductible."
+        },
+        "portal": {
+            "title": "Manage Your Subscription",
+            "subtitle": "Billing Portal",
+            "description": "Already a monthly donor? Enter the email you used when donating to manage your subscription, update payment methods, or view your billing history.",
+            "emailPlaceholder": "Enter your donation email",
+            "button": "Manage",
+            "loading": "Loading...",
+            "invalidEmail": "Please enter a valid email address.",
+            "genericError": "Something went wrong. Please try again."
         }
     },
     "TestimonialsPage": {

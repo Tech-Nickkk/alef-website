@@ -881,6 +881,16 @@
         },
         "footer": {
             "taxInfo": "* ALEF est une organisation à but non lucratif enregistrée 501(c)(3). Tous les dons sont déductibles d'impôt."
+        },
+        "portal": {
+            "title": "Gérer Votre Abonnement",
+            "subtitle": "Portail de Facturation",
+            "description": "Déjà donateur mensuel ? Entrez l'email que vous avez utilisé lors de votre don pour gérer votre abonnement, mettre à jour vos méthodes de paiement ou consulter votre historique de facturation.",
+            "emailPlaceholder": "Entrez votre email de don",
+            "button": "Gérer",
+            "loading": "Chargement...",
+            "invalidEmail": "Veuillez entrer une adresse email valide.",
+            "genericError": "Quelque chose s'est mal passé. Veuillez réessayer."
         }
     },
     "TestimonialsPage": {

@@ -33,9 +33,6 @@ export async function POST(req: Request) {
       // 2. Handle Recurring Monthly Payments
       case 'invoice.payment_succeeded': {
         const invoice = event.data.object as Stripe.Invoice;
-        // Only process if it's a subscription renewal (subscription field is present)
-        // and ignore the very first payment (billing_reason is not 'subscription_create')
-        // because checkout.session.completed already handles the first one.
         if ((invoice as any).subscription && invoice.billing_reason === 'subscription_cycle') {
           await handleInvoicePaid(invoice);
         }
@@ -109,55 +106,36 @@ async function handleInvoicePaid(invoice: Stripe.Invoice) {
   const stripeCustomerId = invoice.customer as string;
   const amount = invoice.amount_paid / 100;
 
-  const usersSnapshot = await db.collection('users').where('stripeCustomerId', '==', stripeCustomerId).limit(1).get();
-
-  if (usersSnapshot.empty) {
-    console.error('No user found for Stripe Customer:', stripeCustomerId);
-    return;
-  }
-
-  const userDoc = usersSnapshot.docs[0];
-  const userRef = userDoc.ref;
-
   // Record the recurring donation
   await db.collection('donations').doc(invoice.id).set({
     amount: amount,
     currency: invoice.currency,
     status: 'paid',
     date: admin.firestore.FieldValue.serverTimestamp(),
-    donationType: 'monthly-renewal', // or derive from subscription metadata if available
-    userId: userDoc.id,
+    donationType: 'monthly-renewal',
+    userId: 'anonymous', // Always anonymous since we removed auth
     email: invoice.customer_email,
     stripeCustomerId: stripeCustomerId,
     stripeInvoiceId: invoice.id,
-  }, { merge: true });
-
-  // Update totals
-  await userRef.update({
-    lastDonationDate: new Date(),
-    totalDonated: admin.firestore.FieldValue.increment(amount),
-    subscriptionStatus: 'active'
-  });
-
-  // Add to history
-  await userRef.collection('payment_history').doc(invoice.id).set({
-    amount,
-    date: new Date(),
-    type: 'monthly-renewal',
-    stripeInvoiceId: invoice.id
+    subscriptionId: (invoice as any).subscription as string,
   }, { merge: true });
 }
 
 async function handleSubscriptionChange(subscription: Stripe.Subscription) {
-  const stripeCustomerId = subscription.customer as string;
+  // Rather than updating a user profile, we can log the cancellation in Firebase
+  if (subscription.status === 'canceled') {
+    // Optional: We can look up the original donation and mark it as canceled
+    const donationsSnapshot = await db.collection('donations')
+      .where('stripeCustomerId', '==', subscription.customer as string)
+      .where('donationType', '==', 'monthly')
+      .limit(1)
+      .get();
 
-  const usersSnapshot = await db.collection('users').where('stripeCustomerId', '==', stripeCustomerId).limit(1).get();
-  if (usersSnapshot.empty) return;
-
-  const userRef = usersSnapshot.docs[0].ref;
-
-  await userRef.update({
-    subscriptionStatus: subscription.status,
-    subscriptionId: subscription.id
-  });
+    if (!donationsSnapshot.empty) {
+      await donationsSnapshot.docs[0].ref.update({
+        subscriptionStatus: 'canceled',
+        canceledAt: admin.firestore.FieldValue.serverTimestamp()
+      });
+    }
+  }
 }

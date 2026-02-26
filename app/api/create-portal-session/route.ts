@@ -6,30 +6,57 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 export async function POST(req: Request) {
   try {
-    const { userId } = await req.json();
+    const { userId, email } = await req.json();
 
-    // 1. Security Check
-    if (!userId) {
-      return NextResponse.json({ error: "Authentication required" }, { status: 401 });
+    // Must have either userId (authenticated) or email (guest)
+    if (!userId && !email) {
+      return NextResponse.json({ error: "Authentication or email required" }, { status: 401 });
     }
 
-    // 2. Get the Stripe Customer ID from Firebase
-    // We stored this in 'api/webhooks' when they first donated.
-    const userDoc = await db.collection('users').doc(userId).get();
-    const userData = userDoc.data();
+    let stripeCustomerId: string | null = null;
 
-    if (!userData || !userData.stripeCustomerId) {
-      return NextResponse.json({ error: "No subscription history found for this user." }, { status: 404 });
+    if (userId) {
+      // --- Authenticated User: Look up Stripe Customer ID from Firebase ---
+      const userDoc = await db.collection('users').doc(userId).get();
+      const userData = userDoc.data();
+
+      if (userData?.stripeCustomerId) {
+        stripeCustomerId = userData.stripeCustomerId;
+      }
     }
 
-    // 3. Create the Portal Session
-    // This generates a temporary, secure URL where they can manage billing.
+    if (!stripeCustomerId && email) {
+      // --- Guest User: Look up Stripe Customer by email ---
+      const customers = await stripe.customers.list({
+        email: email.toLowerCase().trim(),
+        limit: 1,
+      });
+
+      if (customers.data.length > 0) {
+        stripeCustomerId = customers.data[0].id;
+      }
+    }
+
+    if (!stripeCustomerId) {
+      return NextResponse.json(
+        { error: "No subscription history found. Please make sure you entered the email used during donation." },
+        { status: 404 }
+      );
+    }
+
+    // Create the Portal Session
+    const returnUrl = userId
+      ? `${req.headers.get('origin')}/profile`
+      : `${req.headers.get('origin')}/donate`;
+
     const session = await stripe.billingPortal.sessions.create({
-      customer: userData.stripeCustomerId,
-      return_url: `${req.headers.get('origin')}/profile`, // Where to send them after they are done
+      customer: stripeCustomerId,
+      return_url: returnUrl,
+      ...(process.env.STRIPE_PORTAL_CONFIG_ID && {
+        configuration: process.env.STRIPE_PORTAL_CONFIG_ID,
+      }),
     });
 
-    // 4. Send the URL to the frontend
     return NextResponse.json({ url: session.url });
 
   } catch (err: any) {

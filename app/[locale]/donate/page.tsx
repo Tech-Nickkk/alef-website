@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase";
 import { useRouter } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
+import { CreditCard, Loader2, Mail, ChevronRight } from "lucide-react";
 
 export default function DonatePage() {
     const t = useTranslations('DonatePage');
@@ -14,6 +15,11 @@ export default function DonatePage() {
     const [isLoading, setIsLoading] = useState(false);
     const [user] = useAuthState(auth);
     const router = useRouter();
+
+    // Portal state
+    const [portalEmail, setPortalEmail] = useState('');
+    const [portalLoading, setPortalLoading] = useState(false);
+    const [portalError, setPortalError] = useState('');
 
     const processPayment = async (amount: number) => {
 
@@ -67,6 +73,37 @@ export default function DonatePage() {
             processPayment(amount);
         } else {
             alert(t('alerts.selectTier'));
+        }
+    };
+
+    const handleManagePortal = async () => {
+        if (!portalEmail || !portalEmail.includes('@')) {
+            setPortalError(t('portal.invalidEmail'));
+            return;
+        }
+
+        setPortalLoading(true);
+        setPortalError('');
+
+        try {
+            const res = await fetch('/api/create-portal-session', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: portalEmail }),
+            });
+
+            const data = await res.json();
+
+            if (data.url) {
+                window.location.href = data.url;
+            } else {
+                setPortalError(data.error || t('portal.genericError'));
+            }
+        } catch (error) {
+            console.error(error);
+            setPortalError(t('portal.genericError'));
+        } finally {
+            setPortalLoading(false);
         }
     };
 
@@ -185,6 +222,62 @@ export default function DonatePage() {
                             {isLoading ? t('customAmount.buttonWait') : (donationType === 'monthly' ? t('customAmount.buttonMonthly') : t('customAmount.button'))}
                         </button>
                     </div>
+                </div>
+
+                {/* Manage Subscription Section (for guest/unauthenticated users) */}
+                <div className="max-w-2xl mx-auto bg-foreground/5 border border-foreground/10 p-8 rounded-xl relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue via-blue/50 to-transparent"></div>
+                    <div className="flex items-center gap-3 mb-6">
+                        <div className="w-10 h-10 rounded-xl bg-blue/10 flex items-center justify-center">
+                            <CreditCard className="w-5 h-5 text-blue" />
+                        </div>
+                        <div>
+                            <h3 className="font-bebas text-2xl text-foreground tracking-wide">{t('portal.title')}</h3>
+                            <p className="font-oswald text-xs text-foreground/50 uppercase tracking-widest">{t('portal.subtitle')}</p>
+                        </div>
+                    </div>
+
+                    <p className="font-oswald text-sm text-foreground/60 leading-relaxed mb-6">
+                        {t('portal.description')}
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row gap-4">
+                        <div className="flex-1 relative">
+                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/40" />
+                            <input
+                                type="email"
+                                value={portalEmail}
+                                onChange={(e) => {
+                                    setPortalEmail(e.target.value);
+                                    setPortalError('');
+                                }}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter') handleManagePortal();
+                                }}
+                                placeholder={t('portal.emailPlaceholder')}
+                                className="w-full bg-background border border-foreground/10 focus:border-blue pl-11 pr-4 py-3.5 font-oswald text-sm outline-none transition-colors rounded-lg"
+                            />
+                        </div>
+                        <button
+                            onClick={handleManagePortal}
+                            disabled={portalLoading || !portalEmail}
+                            className="flex items-center justify-center gap-2 px-6 py-3.5 bg-blue hover:bg-blue/90 text-white font-oswald font-semibold tracking-wider uppercase text-sm rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group whitespace-nowrap"
+                        >
+                            {portalLoading ? (
+                                <Loader2 className="w-4 h-4 animate-spin" />
+                            ) : (
+                                <CreditCard className="w-4 h-4" />
+                            )}
+                            {portalLoading ? t('portal.loading') : t('portal.button')}
+                            {!portalLoading && <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+                        </button>
+                    </div>
+
+                    {portalError && (
+                        <p className="mt-4 font-oswald text-sm text-red bg-red/10 border border-red/20 px-4 py-3 rounded-lg">
+                            {portalError}
+                        </p>
+                    )}
                 </div>
 
                 <div className="text-center space-y-4 pt-8">
