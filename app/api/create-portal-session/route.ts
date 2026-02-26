@@ -6,11 +6,16 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 export async function POST(req: Request) {
   try {
-    const { userId, email } = await req.json();
+    const { userId, email, verified } = await req.json();
 
     // Must have either userId (authenticated) or email (guest)
     if (!userId && !email) {
       return NextResponse.json({ error: "Authentication or email required" }, { status: 401 });
+    }
+
+    // For guest users (email-based), require verification
+    if (!userId && email && !verified) {
+      return NextResponse.json({ error: "Email verification required." }, { status: 403 });
     }
 
     let stripeCustomerId: string | null = null;

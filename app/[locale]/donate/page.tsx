@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase";
 import { useRouter } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import { CreditCard, Loader2, Mail, ChevronRight } from "lucide-react";
+import { CreditCard, Loader2, Mail, ChevronRight, ShieldCheck, ArrowLeft } from "lucide-react";
 
 export default function DonatePage() {
     const t = useTranslations('DonatePage');
@@ -16,10 +16,13 @@ export default function DonatePage() {
     const [user] = useAuthState(auth);
     const router = useRouter();
 
-    // Portal state
+    // Portal state — multi-step verification
     const [portalEmail, setPortalEmail] = useState('');
     const [portalLoading, setPortalLoading] = useState(false);
     const [portalError, setPortalError] = useState('');
+    const [portalStep, setPortalStep] = useState<'email' | 'code' | 'verified'>('email');
+    const [verificationCode, setVerificationCode] = useState('');
+    const [codeSent, setCodeSent] = useState(false);
 
     const processPayment = async (amount: number) => {
 
@@ -76,7 +79,8 @@ export default function DonatePage() {
         }
     };
 
-    const handleManagePortal = async () => {
+    // Step 1: Send verification code to email
+    const handleSendCode = async () => {
         if (!portalEmail || !portalEmail.includes('@')) {
             setPortalError(t('portal.invalidEmail'));
             return;
@@ -86,16 +90,17 @@ export default function DonatePage() {
         setPortalError('');
 
         try {
-            const res = await fetch('/api/create-portal-session', {
+            const res = await fetch('/api/portal-verify', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: portalEmail }),
+                body: JSON.stringify({ email: portalEmail, action: 'send' }),
             });
 
             const data = await res.json();
 
-            if (data.url) {
-                window.location.href = data.url;
+            if (data.success) {
+                setPortalStep('code');
+                setCodeSent(true);
             } else {
                 setPortalError(data.error || t('portal.genericError'));
             }
@@ -105,6 +110,80 @@ export default function DonatePage() {
         } finally {
             setPortalLoading(false);
         }
+    };
+
+    // Step 2: Verify the code
+    const handleVerifyCode = async () => {
+        if (!verificationCode || verificationCode.length < 6) {
+            setPortalError(t('portal.invalidCode'));
+            return;
+        }
+
+        setPortalLoading(true);
+        setPortalError('');
+
+        try {
+            const res = await fetch('/api/portal-verify', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email: portalEmail,
+                    code: verificationCode,
+                    action: 'verify',
+                }),
+            });
+
+            const data = await res.json();
+
+            if (data.verified) {
+                // Code verified — now open the portal
+                setPortalStep('verified');
+                await handleOpenPortal();
+            } else {
+                setPortalError(data.error || t('portal.invalidCode'));
+            }
+        } catch (error) {
+            console.error(error);
+            setPortalError(t('portal.genericError'));
+        } finally {
+            setPortalLoading(false);
+        }
+    };
+
+    // Step 3: Open the portal (only after verification)
+    const handleOpenPortal = async () => {
+        setPortalLoading(true);
+
+        try {
+            const res = await fetch('/api/create-portal-session', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: portalEmail, verified: true }),
+            });
+
+            const data = await res.json();
+
+            if (data.url) {
+                window.location.href = data.url;
+            } else {
+                setPortalError(data.error || t('portal.genericError'));
+                setPortalStep('email');
+            }
+        } catch (error) {
+            console.error(error);
+            setPortalError(t('portal.genericError'));
+            setPortalStep('email');
+        } finally {
+            setPortalLoading(false);
+        }
+    };
+
+    // Reset portal to step 1
+    const handlePortalBack = () => {
+        setPortalStep('email');
+        setVerificationCode('');
+        setPortalError('');
+        setCodeSent(false);
     };
 
     const tiers = donationType === 'sponsor'
@@ -229,7 +308,11 @@ export default function DonatePage() {
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue via-blue/50 to-transparent"></div>
                     <div className="flex items-center gap-3 mb-6">
                         <div className="w-10 h-10 rounded-xl bg-blue/10 flex items-center justify-center">
-                            <CreditCard className="w-5 h-5 text-blue" />
+                            {portalStep === 'code' ? (
+                                <ShieldCheck className="w-5 h-5 text-blue" />
+                            ) : (
+                                <CreditCard className="w-5 h-5 text-blue" />
+                            )}
                         </div>
                         <div>
                             <h3 className="font-bebas text-2xl text-foreground tracking-wide">{t('portal.title')}</h3>
@@ -237,41 +320,121 @@ export default function DonatePage() {
                         </div>
                     </div>
 
-                    <p className="font-oswald text-sm text-foreground/60 leading-relaxed mb-6">
-                        {t('portal.description')}
-                    </p>
+                    {/* STEP 1: Email Input */}
+                    {portalStep === 'email' && (
+                        <>
+                            <p className="font-oswald text-sm text-foreground/60 leading-relaxed mb-6">
+                                {t('portal.description')}
+                            </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4">
-                        <div className="flex-1 relative">
-                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/40" />
-                            <input
-                                type="email"
-                                value={portalEmail}
-                                onChange={(e) => {
-                                    setPortalEmail(e.target.value);
-                                    setPortalError('');
-                                }}
-                                onKeyDown={(e) => {
-                                    if (e.key === 'Enter') handleManagePortal();
-                                }}
-                                placeholder={t('portal.emailPlaceholder')}
-                                className="w-full bg-background border border-foreground/10 focus:border-blue pl-11 pr-4 py-3.5 font-oswald text-sm outline-none transition-colors rounded-lg"
-                            />
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <div className="flex-1 relative">
+                                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/40" />
+                                    <input
+                                        type="email"
+                                        value={portalEmail}
+                                        onChange={(e) => {
+                                            setPortalEmail(e.target.value);
+                                            setPortalError('');
+                                        }}
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter') handleSendCode();
+                                        }}
+                                        placeholder={t('portal.emailPlaceholder')}
+                                        className="w-full bg-background border border-foreground/10 focus:border-blue pl-11 pr-4 py-3.5 font-oswald text-sm outline-none transition-colors rounded-lg"
+                                    />
+                                </div>
+                                <button
+                                    onClick={handleSendCode}
+                                    disabled={portalLoading || !portalEmail}
+                                    className="flex items-center justify-center gap-2 px-6 py-3.5 bg-blue hover:bg-blue/90 text-white font-oswald font-semibold tracking-wider uppercase text-sm rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group whitespace-nowrap"
+                                >
+                                    {portalLoading ? (
+                                        <Loader2 className="w-4 h-4 animate-spin" />
+                                    ) : (
+                                        <Mail className="w-4 h-4" />
+                                    )}
+                                    {portalLoading ? t('portal.loading') : t('portal.sendCode')}
+                                    {!portalLoading && <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+                                </button>
+                            </div>
+                        </>
+                    )}
+
+                    {/* STEP 2: Verification Code Input */}
+                    {portalStep === 'code' && (
+                        <>
+                            <div className="bg-blue/5 border border-blue/20 rounded-lg px-4 py-3 mb-6 flex items-start gap-3">
+                                <Mail className="w-4 h-4 text-blue mt-0.5 shrink-0" />
+                                <p className="font-oswald text-sm text-foreground/70">
+                                    {t('portal.codeSentTo')} <strong className="text-foreground">{portalEmail}</strong>
+                                </p>
+                            </div>
+
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <div className="flex-1 relative">
+                                    <ShieldCheck className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/40" />
+                                    <input
+                                        type="text"
+                                        inputMode="numeric"
+                                        maxLength={6}
+                                        value={verificationCode}
+                                        onChange={(e) => {
+                                            const val = e.target.value.replace(/\D/g, '').slice(0, 6);
+                                            setVerificationCode(val);
+                                            setPortalError('');
+                                        }}
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter') handleVerifyCode();
+                                        }}
+                                        placeholder={t('portal.codePlaceholder')}
+                                        className="w-full bg-background border border-foreground/10 focus:border-blue pl-11 pr-4 py-3.5 font-oswald text-sm outline-none transition-colors rounded-lg tracking-[0.3em] text-center"
+                                        autoFocus
+                                    />
+                                </div>
+                                <button
+                                    onClick={handleVerifyCode}
+                                    disabled={portalLoading || verificationCode.length < 6}
+                                    className="flex items-center justify-center gap-2 px-6 py-3.5 bg-blue hover:bg-blue/90 text-white font-oswald font-semibold tracking-wider uppercase text-sm rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group whitespace-nowrap"
+                                >
+                                    {portalLoading ? (
+                                        <Loader2 className="w-4 h-4 animate-spin" />
+                                    ) : (
+                                        <ShieldCheck className="w-4 h-4" />
+                                    )}
+                                    {portalLoading ? t('portal.loading') : t('portal.verifyButton')}
+                                    {!portalLoading && <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+                                </button>
+                            </div>
+
+                            <div className="flex items-center justify-between mt-4">
+                                <button
+                                    onClick={handlePortalBack}
+                                    className="flex items-center gap-1.5 font-oswald text-xs text-foreground/50 hover:text-foreground/80 uppercase tracking-widest transition-colors"
+                                >
+                                    <ArrowLeft className="w-3 h-3" />
+                                    {t('portal.back')}
+                                </button>
+                                <button
+                                    onClick={handleSendCode}
+                                    disabled={portalLoading}
+                                    className="font-oswald text-xs text-blue hover:text-blue/80 uppercase tracking-widest transition-colors disabled:opacity-50"
+                                >
+                                    {t('portal.resendCode')}
+                                </button>
+                            </div>
+                        </>
+                    )}
+
+                    {/* STEP 3: Loading/Redirecting */}
+                    {portalStep === 'verified' && (
+                        <div className="flex flex-col items-center py-4 gap-3">
+                            <Loader2 className="w-6 h-6 animate-spin text-blue" />
+                            <p className="font-oswald text-sm text-foreground/60 uppercase tracking-widest">
+                                {t('portal.redirecting')}
+                            </p>
                         </div>
-                        <button
-                            onClick={handleManagePortal}
-                            disabled={portalLoading || !portalEmail}
-                            className="flex items-center justify-center gap-2 px-6 py-3.5 bg-blue hover:bg-blue/90 text-white font-oswald font-semibold tracking-wider uppercase text-sm rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group whitespace-nowrap"
-                        >
-                            {portalLoading ? (
-                                <Loader2 className="w-4 h-4 animate-spin" />
-                            ) : (
-                                <CreditCard className="w-4 h-4" />
-                            )}
-                            {portalLoading ? t('portal.loading') : t('portal.button')}
-                            {!portalLoading && <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
-                        </button>
-                    </div>
+                    )}
 
                     {portalError && (
                         <p className="mt-4 font-oswald text-sm text-red bg-red/10 border border-red/20 px-4 py-3 rounded-lg">

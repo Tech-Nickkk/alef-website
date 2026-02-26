@@ -889,11 +889,18 @@
         "portal": {
             "title": "Manage Your Subscription",
             "subtitle": "Billing Portal",
-            "description": "Already a monthly donor? Enter the email you used when donating to manage your subscription, update payment methods, or view your billing history.",
+            "description": "Already a monthly donor? Enter the email you used when donating. We'll send a verification code to confirm your identity.",
             "emailPlaceholder": "Enter your donation email",
-            "button": "Manage",
+            "sendCode": "Send Code",
+            "codeSentTo": "A 6-digit verification code has been sent to",
+            "codePlaceholder": "Enter 6-digit code",
+            "verifyButton": "Verify",
+            "back": "Change Email",
+            "resendCode": "Resend Code",
+            "redirecting": "Opening billing portal...",
             "loading": "Loading...",
             "invalidEmail": "Please enter a valid email address.",
+            "invalidCode": "Please enter a valid 6-digit code.",
             "genericError": "Something went wrong. Please try again."
         }
     },

@@ -885,11 +885,18 @@
         "portal": {
             "title": "Gérer Votre Abonnement",
             "subtitle": "Portail de Facturation",
-            "description": "Déjà donateur mensuel ? Entrez l'email que vous avez utilisé lors de votre don pour gérer votre abonnement, mettre à jour vos méthodes de paiement ou consulter votre historique de facturation.",
+            "description": "Déjà donateur mensuel ? Entrez l'email que vous avez utilisé lors de votre don. Nous vous enverrons un code de vérification pour confirmer votre identité.",
             "emailPlaceholder": "Entrez votre email de don",
-            "button": "Gérer",
+            "sendCode": "Envoyer le Code",
+            "codeSentTo": "Un code de vérification à 6 chiffres a été envoyé à",
+            "codePlaceholder": "Entrez le code à 6 chiffres",
+            "verifyButton": "Vérifier",
+            "back": "Changer l'Email",
+            "resendCode": "Renvoyer le Code",
+            "redirecting": "Ouverture du portail de facturation...",
             "loading": "Chargement...",
             "invalidEmail": "Veuillez entrer une adresse email valide.",
+            "invalidCode": "Veuillez entrer un code à 6 chiffres valide.",
             "genericError": "Quelque chose s'est mal passé. Veuillez réessayer."
         }
     },

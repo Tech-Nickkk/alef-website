@@ -883,11 +883,18 @@
         "portal": {
             "title": "Gestiona Tu Suscripción",
             "subtitle": "Portal de Facturación",
-            "description": "¿Ya eres donante mensual? Ingresa el correo electrónico que usaste al donar para gestionar tu suscripción, actualizar métodos de pago o ver tu historial de facturación.",
+            "description": "¿Ya eres donante mensual? Ingresa el correo electrónico que usaste al donar. Te enviaremos un código de verificación para confirmar tu identidad.",
             "emailPlaceholder": "Ingresa tu correo de donación",
-            "button": "Gestionar",
+            "sendCode": "Enviar Código",
+            "codeSentTo": "Se ha enviado un código de verificación de 6 dígitos a",
+            "codePlaceholder": "Ingresa el código de 6 dígitos",
+            "verifyButton": "Verificar",
+            "back": "Cambiar Correo",
+            "resendCode": "Reenviar Código",
+            "redirecting": "Abriendo portal de facturación...",
             "loading": "Cargando...",
             "invalidEmail": "Por favor ingresa una dirección de correo válida.",
+            "invalidCode": "Por favor ingresa un código de 6 dígitos válido.",
             "genericError": "Algo salió mal. Inténtalo de nuevo."
         }
     },
