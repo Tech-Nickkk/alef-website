@@ -233,11 +233,13 @@ export default function ProfilePage() {
             if (data.url) {
                 window.location.href = data.url;
             } else {
-                alert(t('alerts.portalError') + data.error);
+                // Show the nice modal instead of an ugly alert
+                setShowNoSubscriptionMsg(true);
             }
         } catch (error) {
             console.error(error);
-            alert(t('alerts.genericError'));
+            // Show the nice modal instead of an ugly alert
+            setShowNoSubscriptionMsg(true);
         } finally {
             setPortalLoading(false);
         }

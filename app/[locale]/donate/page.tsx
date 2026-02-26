@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase";
 import { useRouter } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import { CreditCard, Loader2, Mail, ChevronRight, ShieldCheck, ArrowLeft } from "lucide-react";
+import { CreditCard, Loader2, Mail, ChevronRight, ShieldCheck, ArrowLeft, Heart, SearchX } from "lucide-react";
 
 export default function DonatePage() {
     const t = useTranslations('DonatePage');
@@ -20,7 +20,7 @@ export default function DonatePage() {
     const [portalEmail, setPortalEmail] = useState('');
     const [portalLoading, setPortalLoading] = useState(false);
     const [portalError, setPortalError] = useState('');
-    const [portalStep, setPortalStep] = useState<'email' | 'code' | 'verified'>('email');
+    const [portalStep, setPortalStep] = useState<'email' | 'code' | 'verified' | 'not_found'>('email');
     const [verificationCode, setVerificationCode] = useState('');
     const [codeSent, setCodeSent] = useState(false);
 
@@ -101,6 +101,9 @@ export default function DonatePage() {
             if (data.success) {
                 setPortalStep('code');
                 setCodeSent(true);
+            } else if (data.errorType === 'not_found') {
+                // Show the nice "no subscription" UI
+                setPortalStep('not_found');
             } else {
                 setPortalError(data.error || t('portal.genericError'));
             }
@@ -184,6 +187,14 @@ export default function DonatePage() {
         setVerificationCode('');
         setPortalError('');
         setCodeSent(false);
+    };
+
+    // Switch to monthly donation tab
+    const handleGoToMonthly = () => {
+        setPortalStep('email');
+        setPortalError('');
+        setDonationType('monthly');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const tiers = donationType === 'sponsor'
@@ -433,6 +444,36 @@ export default function DonatePage() {
                             <p className="font-oswald text-sm text-foreground/60 uppercase tracking-widest">
                                 {t('portal.redirecting')}
                             </p>
+                        </div>
+                    )}
+
+                    {/* No Subscription Found */}
+                    {portalStep === 'not_found' && (
+                        <div className="flex flex-col items-center text-center py-2">
+                            <div className="w-16 h-16 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center mb-5">
+                                <SearchX className="w-8 h-8 text-foreground/30" />
+                            </div>
+                            <h4 className="font-bebas text-2xl text-foreground tracking-wide mb-2">
+                                {t('portal.notFound.title')}
+                            </h4>
+                            <p className="font-oswald text-sm text-foreground/50 leading-relaxed mb-6 max-w-sm">
+                                {t('portal.notFound.message')}
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-3 w-full max-w-xs">
+                                <button
+                                    onClick={handleGoToMonthly}
+                                    className="flex-1 flex items-center justify-center gap-2 px-5 py-3 bg-red hover:bg-[#c4151c] text-white font-oswald font-semibold tracking-wider uppercase text-sm rounded-xl transition-all duration-300 shadow-lg shadow-red/20 group"
+                                >
+                                    <Heart className="w-4 h-4" />
+                                    {t('portal.notFound.donateButton')}
+                                </button>
+                                <button
+                                    onClick={handlePortalBack}
+                                    className="flex-1 flex items-center justify-center gap-2 px-5 py-3 border border-foreground/10 hover:border-foreground/20 text-foreground/60 hover:text-foreground font-oswald tracking-wider uppercase text-sm rounded-xl transition-all duration-300"
+                                >
+                                    {t('portal.notFound.tryAgain')}
+                                </button>
+                            </div>
                         </div>
                     )}
 

@@ -48,7 +48,7 @@ export async function POST(req: Request) {
 
             if (customers.data.length === 0) {
                 return NextResponse.json(
-                    { error: 'No donation history found for this email.' },
+                    { error: 'No donation history found for this email.', errorType: 'not_found' },
                     { status: 404 }
                 );
             }

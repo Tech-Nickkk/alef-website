@@ -901,7 +901,13 @@
             "loading": "Loading...",
             "invalidEmail": "Please enter a valid email address.",
             "invalidCode": "Please enter a valid 6-digit code.",
-            "genericError": "Something went wrong. Please try again."
+            "genericError": "Something went wrong. Please try again.",
+            "notFound": {
+                "title": "No Subscription Found",
+                "message": "We couldn't find any monthly donation linked to this email. Start a monthly donation to manage your subscription here.",
+                "donateButton": "Donate Monthly",
+                "tryAgain": "Try Another Email"
+            }
         }
     },
     "TestimonialsPage": {

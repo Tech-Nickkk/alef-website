@@ -897,7 +897,13 @@
             "loading": "Chargement...",
             "invalidEmail": "Veuillez entrer une adresse email valide.",
             "invalidCode": "Veuillez entrer un code à 6 chiffres valide.",
-            "genericError": "Quelque chose s'est mal passé. Veuillez réessayer."
+            "genericError": "Quelque chose s'est mal passé. Veuillez réessayer.",
+            "notFound": {
+                "title": "Aucun Abonnement Trouvé",
+                "message": "Nous n'avons trouvé aucun don mensuel lié à cet email. Commencez un don mensuel pour gérer votre abonnement ici.",
+                "donateButton": "Don Mensuel",
+                "tryAgain": "Essayer un Autre Email"
+            }
         }
     },
     "TestimonialsPage": {

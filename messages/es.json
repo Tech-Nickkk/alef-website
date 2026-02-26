@@ -895,7 +895,13 @@
             "loading": "Cargando...",
             "invalidEmail": "Por favor ingresa una dirección de correo válida.",
             "invalidCode": "Por favor ingresa un código de 6 dígitos válido.",
-            "genericError": "Algo salió mal. Inténtalo de nuevo."
+            "genericError": "Algo salió mal. Inténtalo de nuevo.",
+            "notFound": {
+                "title": "No Se Encontró Suscripción",
+                "message": "No pudimos encontrar ninguna donación mensual vinculada a este correo. Comienza una donación mensual para gestionar tu suscripción aquí.",
+                "donateButton": "Donar Mensualmente",
+                "tryAgain": "Probar Otro Correo"
+            }
         }
     },
     "TestimonialsPage": {
