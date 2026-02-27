@@ -5,7 +5,8 @@ import {
     GoogleAuthProvider,
     signInWithPopup,
     signInWithEmailAndPassword,
-    createUserWithEmailAndPassword
+    createUserWithEmailAndPassword,
+    updateProfile
 } from "firebase/auth";
 import { useRouter, Link } from "@/i18n/routing";
 import AnimatedTitle from "../../components/CommonCom/AnimatedTitle";
@@ -64,6 +65,12 @@ export default function LoginPage() {
                 result = await signInWithEmailAndPassword(auth, email, password);
             } else {
                 result = await createUserWithEmailAndPassword(auth, email, password);
+
+                // Set default username like usalefuserXXXX
+                const randomId = Math.floor(1000 + Math.random() * 9000);
+                const defaultName = `usalefuser${randomId}`;
+                const defaultPhotoURL = `/home/profile-logo-2.png`;
+                await updateProfile(result.user, { displayName: defaultName, photoURL: defaultPhotoURL });
             }
             if (result.user.email) {
                 await linkAnonymousDonations(result.user.uid, result.user.email);
@@ -113,10 +120,13 @@ export default function LoginPage() {
         <div className="min-h-screen bg-background flex items-center justify-center p-4 relative overflow-hidden font-oswald text-foreground">
             <Link
                 href="/"
-                className="absolute top-8 left-8 z-50 p-3 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:scale-105 transition-all duration-300 group"
-                aria-label="Back to Home"
+                className="absolute top-6 left-6 md:top-8 md:left-8 z-50 flex items-center gap-3 px-5 py-3 bg-foreground/5 border border-foreground/10 rounded-full hover:bg-foreground/10 hover:shadow-md transition-all duration-300 group backdrop-blur-sm text-foreground/70 hover:text-foreground"
+                aria-label="Back"
             >
-                <ArrowLeft className="w-6 h-6 text-foreground/80 group-hover:text-foreground transition-colors" />
+                <ArrowLeft className="w-5 h-5 transition-transform group-hover:-translate-x-1" />
+                <span className="font-oswald text-sm font-medium tracking-widest uppercase hidden sm:block">
+                    Back
+                </span>
             </Link>
 
             <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-blue/20 rounded-full blur-[120px] pointer-events-none" />

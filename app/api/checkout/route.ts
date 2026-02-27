@@ -42,9 +42,6 @@ export async function POST(req: Request) {
       success_url: `${req.headers.get('origin')}/donate/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${req.headers.get('origin')}/donate?canceled=true`,
 
-      // If logged in with existing Stripe customer, use that; 
-      // if logged in without Stripe customer, pre-fill email;
-      // if anonymous, Stripe will ask for email on checkout page
       ...(userData?.stripeCustomerId
         ? { customer: userData.stripeCustomerId }
         : userEmail ? { customer_email: userEmail } : {}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, db } from "@/lib/firebase";
+import { auth, db, storage } from "@/lib/firebase";
 import { useRouter, Link } from "@/i18n/routing";
 import { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
@@ -34,7 +34,10 @@ import {
     Crown,
     Shield,
     Gem,
-    Lock
+    Lock,
+    Edit2,
+    Check,
+    Camera
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -143,6 +146,12 @@ export default function ProfilePage() {
     const [donationHistory, setDonationHistory] = useState<DonationHistoryItem[]>([]);
     const [showTierInfo, setShowTierInfo] = useState(false);
     const [showNoSubscriptionMsg, setShowNoSubscriptionMsg] = useState(false);
+
+    const [isEditingName, setIsEditingName] = useState(false);
+    const [newName, setNewName] = useState("");
+    const [isSavingName, setIsSavingName] = useState(false);
+
+    const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
 
     const [portalLoading, setPortalLoading] = useState(false);
     const [dataLoading, setDataLoading] = useState(true);
@@ -293,14 +302,6 @@ export default function ProfilePage() {
                 <div className="absolute top-[30%] right-[10%] w-[30%] h-[30%] bg-theme-accent/5 rounded-full blur-[100px]" />
             </div>
 
-            {/* Back Button */}
-            <Link
-                href="/"
-                className="fixed top-24 left-6 z-50 p-3 bg-foreground/5 border border-foreground/10 rounded-full hover:bg-foreground/10 hover:scale-105 transition-all duration-300 group backdrop-blur-sm"
-                aria-label="Back to Home"
-            >
-                <ArrowLeft className="w-5 h-5 text-foreground/70 group-hover:text-foreground transition-colors" />
-            </Link>
 
             {/* Tier Info Modal */}
             {showTierInfo && (
@@ -493,22 +494,61 @@ export default function ProfilePage() {
                             <div className="flex flex-col md:flex-row items-center md:items-end gap-6 md:gap-8">
                                 {/* Avatar */}
                                 <div className="relative group">
-                                    <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl border-4 border-background shadow-2xl overflow-hidden bg-foreground/10 flex items-center justify-center transform group-hover:scale-[1.02] transition-transform duration-300">
-                                        {user.photoURL ? (
-                                            <img
-                                                src={user.photoURL}
-                                                alt="Profile"
-                                                className="w-full h-full object-cover"
-                                            />
-                                        ) : (
-                                            <div className="w-full h-full bg-linear-to-br from-blue/20 to-red/20 flex items-center justify-center">
-                                                <User className="w-16 h-16 text-foreground/40" />
+                                    <label htmlFor="photo-upload" className="cursor-pointer relative block w-32 h-32 md:w-40 md:h-40 rounded-2xl border-4 border-background shadow-2xl overflow-hidden bg-foreground/10 transform group-hover:scale-[1.02] transition-transform duration-300">
+                                        {isUploadingPhoto ? (
+                                            <div className="w-full h-full bg-linear-to-br from-blue/20 to-red/20 flex flex-col items-center justify-center gap-2">
+                                                <Loader2 className="w-8 h-8 text-foreground/40 animate-spin" />
                                             </div>
+                                        ) : user.photoURL ? (
+                                            <>
+                                                <img
+                                                    src={user.photoURL}
+                                                    alt="Profile"
+                                                    className="w-full h-full object-cover"
+                                                />
+                                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <Camera className="w-8 h-8 text-white" />
+                                                </div>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <div className="w-full h-full bg-linear-to-br from-blue/20 to-red/20 flex items-center justify-center">
+                                                    <User className="w-16 h-16 text-foreground/40" />
+                                                </div>
+                                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <Camera className="w-8 h-8 text-white" />
+                                                </div>
+                                            </>
                                         )}
-                                    </div>
+                                    </label>
+                                    <input
+                                        type="file"
+                                        id="photo-upload"
+                                        accept="image/*"
+                                        className="hidden"
+                                        onChange={async (e) => {
+                                            const file = e.target.files?.[0];
+                                            if (!file || !user) return;
+                                            setIsUploadingPhoto(true);
+                                            try {
+                                                const { ref, uploadBytesResumable, getDownloadURL } = await import("firebase/storage");
+                                                const storageRef = ref(storage, `profile_pictures/${user.uid}/${file.name}`);
+                                                const uploadTask = await uploadBytesResumable(storageRef, file);
+                                                const downloadURL = await getDownloadURL(uploadTask.ref);
+                                                const { updateProfile } = await import("firebase/auth");
+                                                await updateProfile(user, { photoURL: downloadURL });
+                                                await user.reload();
+                                            } catch (error) {
+                                                console.error("Failed to upload photo:", error);
+                                            } finally {
+                                                setIsUploadingPhoto(false);
+                                            }
+                                        }}
+                                        disabled={isUploadingPhoto}
+                                    />
                                     {/* Current Badge on Avatar */}
                                     {badgeInfo.currentBadge && (
-                                        <div className={`absolute -bottom-2 -right-2 p-2.5 rounded-xl shadow-lg bg-linear-to-br ${badgeInfo.currentBadge.color}`}>
+                                        <div className={`absolute -bottom-2 -right-2 p-2.5 rounded-xl shadow-lg bg-linear-to-br ${badgeInfo.currentBadge.color} pointer-events-none`}>
                                             <badgeInfo.currentBadge.icon className="w-5 h-5 text-white" />
                                         </div>
                                     )}
@@ -516,9 +556,59 @@ export default function ProfilePage() {
 
                                 {/* User Info */}
                                 <div className="flex-1 text-center md:text-left space-y-2 pb-2">
-                                    <h2 className="text-3xl md:text-4xl font-bebas text-foreground tracking-wide">
-                                        {user.displayName || t('anonymousUser')}
-                                    </h2>
+                                    {isEditingName ? (
+                                        <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+                                            <input
+                                                type="text"
+                                                value={newName}
+                                                onChange={(e) => setNewName(e.target.value)}
+                                                className="bg-foreground/5 border border-foreground/20 rounded-lg px-3 py-1.5 text-2xl md:text-3xl font-bebas text-foreground focus:outline-none focus:border-red transition-colors w-full max-w-[200px]"
+                                                autoFocus
+                                            />
+                                            <button
+                                                onClick={async () => {
+                                                    if (!user || !newName.trim()) return;
+                                                    setIsSavingName(true);
+                                                    try {
+                                                        const { updateProfile } = await import("firebase/auth");
+                                                        await updateProfile(user, { displayName: newName.trim() });
+                                                        await user.reload();
+                                                        setIsEditingName(false);
+                                                    } catch (error) {
+                                                        console.error("Failed to update name:", error);
+                                                    } finally {
+                                                        setIsSavingName(false);
+                                                    }
+                                                }}
+                                                disabled={isSavingName}
+                                                className="p-2 bg-green-500/20 text-green-500 rounded-lg hover:bg-green-500/30 transition-colors disabled:opacity-50"
+                                            >
+                                                {isSavingName ? <Loader2 className="w-5 h-5 animate-spin" /> : <Check className="w-5 h-5" />}
+                                            </button>
+                                            <button
+                                                onClick={() => setIsEditingName(false)}
+                                                disabled={isSavingName}
+                                                className="p-2 bg-red/20 text-red rounded-lg hover:bg-red/30 transition-colors disabled:opacity-50"
+                                            >
+                                                <X className="w-5 h-5" />
+                                            </button>
+                                        </div>
+                                    ) : (
+                                        <div className="flex items-center justify-center md:justify-start gap-3">
+                                            <h2 className="text-3xl md:text-4xl font-bebas text-foreground tracking-wide">
+                                                {user.displayName || t('anonymousUser')}
+                                            </h2>
+                                            <button
+                                                onClick={() => {
+                                                    setNewName(user.displayName || "");
+                                                    setIsEditingName(true);
+                                                }}
+                                                className="p-2 text-foreground/40 hover:text-foreground hover:bg-foreground/10 rounded-full transition-colors"
+                                            >
+                                                <Edit2 className="w-4 h-4" />
+                                            </button>
+                                        </div>
+                                    )}
                                     <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-foreground/60">
                                         <div className="flex items-center gap-2 font-oswald text-sm tracking-wider">
                                             <Mail className="w-4 h-4" />
