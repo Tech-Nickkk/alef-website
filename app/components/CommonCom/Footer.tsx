@@ -100,11 +100,32 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-white/40 text-[10px] font-oswald uppercase tracking-wider">
-                        {t('copyright')} © {new Date().getFullYear()} {t('rights')}
-                    </p>
-                    <div className="flex gap-6">
+                <div className="border-t border-white/10 pt-8 grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+                    {/* Left: Copyright */}
+                    <div className="flex justify-center lg:justify-start">
+                        <p className="text-white/40 text-[10px] font-oswald uppercase tracking-wider whitespace-nowrap">
+                            {t('copyright')} © {new Date().getFullYear()} {t('rights')}
+                        </p>
+                    </div>
+
+                    {/* Center: Legal Disclaimer */}
+                    <div className="flex justify-center text-center">
+                        <span className="text-white/40 text-[10px] font-oswald uppercase tracking-wider">
+                            {t('legal1')}
+                            <a
+                                href="/footerDocuments/Legal Notice and Disclaimer.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-white transition-colors underline underline-offset-2 mx-1"
+                            >
+                                {t('legal2')}
+                            </a>
+                            {t('legal3')}
+                        </span>
+                    </div>
+
+                    {/* Right: Privacy & Terms */}
+                    <div className="flex flex-wrap justify-center lg:justify-end gap-x-6 gap-y-4">
                         <a
                             href="/footerDocuments/privacyPolicy.pdf"
                             target="_blank"

@@ -375,6 +375,9 @@
         "copyright": "Copyright",
         "privacy": "Privacy Policy",
         "terms": "Terms of Service",
+        "legal1": "All content is for informational purposes only. See our full ",
+        "legal2": "Legal Notice & Disclaimer",
+        "legal3": " for details.",
         "address": "445 Park Avenue,<br />New York, NY 10022"
     },
     "LoginPage": {

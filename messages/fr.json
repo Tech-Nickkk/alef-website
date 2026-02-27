@@ -375,6 +375,9 @@
         "copyright": "Copyright",
         "privacy": "Politique de Confidentialité",
         "terms": "Conditions d'Utilisation",
+        "legal1": "Tout le contenu est à titre informatif seulement. Voir notre ",
+        "legal2": "Avis Légal et Clause de Non-responsabilité",
+        "legal3": " complet pour plus de détails.",
         "address": "445 Park Avenue,<br />New York, NY 10022"
     },
     "LoginPage": {
