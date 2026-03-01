@@ -66,7 +66,7 @@ export default function Media() {
                             <div className="relative z-30 h-full flex flex-col justify-between">
                                 <div>
                                     <div className="flex justify-between items-start mb-6">
-                                        <span className="font-oswald text-xs tracking-[0.2em] text-red block">{item.label}</span>
+                                        <span className="font-oswald text-sm tracking-[0.2em] text-red block">{item.label}</span>
                                         <div className="p-3 bg-white/5 rounded-full border border-white/10 group-hover:border-red/50 transition-colors">
                                             {item.icon}
                                         </div>
@@ -74,7 +74,7 @@ export default function Media() {
 
                                     <h2 className="text-4xl md:text-5xl font-bold text-white font-bebas mb-6 leading-none group-hover:translate-x-2 transition-transform duration-500">{item.title}</h2>
 
-                                    <p className="text-white/60 font-oswald text-lg leading-relaxed mb-8 max-w-sm">
+                                    <p className="text-white/60 font-oswald text-xl leading-relaxed mb-8 max-w-sm">
                                         {item.desc}
                                     </p>
                                 </div>

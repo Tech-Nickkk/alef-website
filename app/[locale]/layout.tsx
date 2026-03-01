@@ -25,6 +25,11 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   title: "Alef Website",
   description: "Alef Website",
+  icons: {
+    icon: "/home/profile-logo-2.png",
+    shortcut: "/home/profile-logo-2.png",
+    apple: "/home/profile-logo-2.png",
+  },
 };
 
 export default async function LocaleLayout({

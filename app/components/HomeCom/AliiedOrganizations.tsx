@@ -45,7 +45,7 @@ export default function AlliedOrganizations() {
     }, { scope: trackRef });
 
     return (
-        <section className="py-16 md:py-24 overflow-hidden">
+        <section className="py-12 md:py-24 overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 mb-16">
 
                 <div className="flex flex-col items-center text-center gap-4">

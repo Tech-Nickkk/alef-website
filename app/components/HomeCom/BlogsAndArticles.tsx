@@ -50,7 +50,7 @@ export default async function BlogsAndArticles() {
     // For now, let's keep it simple or use simple date.
 
     return (
-        <section className="py-12 md:py-16 px-6 md:px-12 lg:px-24">
+        <section className="py-12 md:py-24 px-6 md:px-12 lg:px-24">
             <div className="max-w-[1400px] mx-auto">
 
                 {/* Header */}

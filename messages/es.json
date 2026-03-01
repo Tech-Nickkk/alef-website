@@ -353,7 +353,7 @@
     "JoinUs": {
         "tag": "Sé parte de la solución",
         "title": "ÚNETE AL MOVIMIENTO",
-        "description": "Ayúdanos a construir nuestra red. Proporciona tus datos de contacto para unirte a nuestra lista de correo.",
+        "description": "Manténgase informado. Proporcione sus datos de contacto para unirse a nuestra lista de correo.",
         "placeholderName": "NOMBRE COMPLETO",
         "placeholderFirstName": "NOMBRE",
         "placeholderLastName": "APELLIDO",
@@ -361,7 +361,7 @@
         "placeholderPhone": "NÚMERO DE TELÉFONO (OPCIONAL)",
         "button": "ÚNETE AHORA",
         "buttonLoading": "UNIÉNDOSE...",
-        "privacy": "* Tu información está segura. Usamos esto para construir nuestra lista de correo.",
+        "privacy": "* Tu información está segura. <a>Ver nuestra política de privacidad.</a>",
         "successTitle": "BIENVENIDO AL EQUIPO",
         "successMessage": "Te has unido al movimiento con éxito. <br/>Mantente atento a tu bandeja de entrada para actualizaciones exclusivas.",
         "error": "Error al conectar. Por favor intenta de nuevo.",

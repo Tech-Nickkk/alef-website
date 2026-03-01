@@ -352,7 +352,7 @@
     "JoinUs": {
         "tag": "Faites partie de la solution",
         "title": "REJOIGNEZ LE MOUVEMENT",
-        "description": "Aidez-nous à construire notre réseau. Fournissez vos coordonnées pour rejoindre notre liste de diffusion.",
+        "description": "Soyez informé. Fournissez vos coordonnées pour rejoindre notre liste de diffusion.",
         "placeholderName": "NOM COMPLET",
         "placeholderFirstName": "PRÉNOM",
         "placeholderLastName": "NOM DE FAMILLE",
@@ -360,7 +360,7 @@
         "placeholderPhone": "NUMÉRO DE TÉLÉPHONE (OPTIONNEL)",
         "button": "REJOINDRE MAINTENANT",
         "buttonLoading": "INSCRIPTION...",
-        "privacy": "* Vos informations sont sécurisées. Nous les utilisons pour constituer notre liste de diffusion.",
+        "privacy": "* Vos informations sont sécurisées. <a>Voir notre politique de confidentialité.</a>",
         "successTitle": "BIENVENUE DANS L'ÉQUIPE",
         "successMessage": "Vous avez rejoint le mouvement avec succès. <br/>Surveillez votre boîte de réception pour des mises à jour exclusives.",
         "error": "Échec de la connexion. Veuillez réessayer.",

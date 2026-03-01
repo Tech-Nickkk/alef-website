@@ -6,6 +6,7 @@ import AnimatedTitle from "./AnimatedTitle";
 import { useTranslations } from 'next-intl';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
+import Link from 'next/link';
 
 export default function JoinUs() {
     const pathname = usePathname();
@@ -151,8 +152,14 @@ export default function JoinUs() {
                                     </div>
                                 )}
 
-                                <div className="text-left mt-4 text-[10px] text-white/30 font-oswald uppercase tracking-widest">
-                                    {t('privacy')}
+                                <div className="text-center mt-4 text-[10px] text-white/30 font-oswald uppercase tracking-widest">
+                                    {t.rich('privacy', {
+                                        a: (chunks) => (
+                                            <Link href="/footerDocuments/privacyPolicy.pdf" target="_blank" className="underline hover:text-white transition-colors">
+                                                {chunks}
+                                            </Link>
+                                        )
+                                    })}
                                 </div>
                             </form>
                         </>

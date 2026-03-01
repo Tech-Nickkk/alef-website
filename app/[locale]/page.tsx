@@ -3,6 +3,7 @@ import Hero from "@/app/components/HomeCom/Hero";
 export const revalidate = 60;
 import PresidentialLetter from "@/app/components/HomeCom/PresidentialLetter";
 import ChairmanMessage from "@/app/components/HomeCom/ChairmanMessage";
+import EventPromo from "@/app/components/HomeCom/EventPromo";
 import WhoWeAre from "@/app/components/HomeCom/WhoWeAre";
 import BlogsAndArticles from "@/app/components/HomeCom/BlogsAndArticles";
 import AlliedOrganizations from "@/app/components/HomeCom/AliiedOrganizations";
@@ -27,6 +28,7 @@ export default function Home() {
       <BlogsAndArticles />
       <CTASection type="join" />
       <AlliedOrganizations />
+      <EventPromo />
       <Media />
     </main>
   );

@@ -352,7 +352,7 @@
     "JoinUs": {
         "tag": "Be Part of the Solution",
         "title": "JOIN THE MOVEMENT",
-        "description": "Help us build our network. Provide your contact details to join our mailing list.",
+        "description": "Stay informed. Provide your contact details to join our mailing list.",
         "placeholderName": "FULL NAME",
         "placeholderFirstName": "FIRST NAME",
         "placeholderLastName": "LAST NAME",
@@ -360,7 +360,7 @@
         "placeholderPhone": "PHONE NUMBER (OPTIONAL)",
         "button": "JOIN NOW",
         "buttonLoading": "JOINING...",
-        "privacy": "* Your information is secure. We use this to build our mailing list.",
+        "privacy": "* Your information is secure. <a>See our privacy policy.</a>",
         "successTitle": "WELCOME TO THE TEAM",
         "successMessage": "You have successfully joined the movement. <br/>Keep an eye on your inbox for exclusive updates.",
         "error": "Failed to connect. Please try again.",

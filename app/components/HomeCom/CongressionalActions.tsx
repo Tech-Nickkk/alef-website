@@ -42,11 +42,11 @@ export default function CongressionalActions() {
                                     </span>
                                 </div>
 
-                                <h3 className="font-bebas text-2xl text-white mb-4 leading-snug transition-colors">
+                                <h3 className="font-bebas text-3xl text-white mb-4 leading-snug transition-colors">
                                     {t(`items.${key}.title`)}
                                 </h3>
 
-                                <p className="font-oswald text-white/70 text-base leading-relaxed mb-8">
+                                <p className="font-oswald text-white/70 text-lg leading-relaxed mb-8">
                                     {t(`items.${key}.desc`)}
                                 </p>
                             </div>

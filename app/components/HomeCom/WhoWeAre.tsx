@@ -65,7 +65,7 @@ export default function WhoWeAre() {
     ];
 
     return (
-        <section className="min-h-screen flex flex-col justify-center relative py-12">
+        <section className="min-h-screen flex flex-col justify-center relative py-12 md:py-24">
             {/* Header Section */}
             <div className="w-full px-6 md:px-12 lg:px-24 mb-12">
                 <div className="flex flex-col items-center justify-center gap-4 text-center">
@@ -81,32 +81,32 @@ export default function WhoWeAre() {
             </div>
 
             {/* Grid Container */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-12 lg:px-24 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 px-6 md:px-12 lg:px-24 w-full">
                 {sections.map((item, idx) => (
-                    <div key={idx} className="relative group w-full h-[400px] md:h-[500px]">
+                    <div key={idx} className="relative group w-full h-[300px] md:h-[380px]">
                         <Link href={item.href} className="block h-full">
-                            <div className="bg-blue transition-all duration-300 h-full rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden hover:bg-light-blue">
+                            <div className="bg-blue border border-white/10 transition-all duration-300 h-full rounded-2xl p-8 md:p-10 flex flex-col justify-between relative overflow-hidden hover:bg-light-blue hover:border-white/20">
 
-                                {/* Top Row */}
-                                <div className="flex justify-between items-start font-oswald text-xs tracking-widest text-white/60">
-                                    <span>{item.id}</span>
-                                    <span>{item.subtitle}</span>
+                                {/* Top: id/subtitle + Title */}
+                                <div className="text-center">
+                                    <div className="flex justify-between items-start font-oswald text-xs tracking-widest text-white/60 mb-4">
+                                        <span>{item.id}</span>
+                                        <span>{item.subtitle}</span>
+                                    </div>
+                                    <h3 className="text-3xl md:text-5xl font-bebas text-white uppercase leading-none">
+                                        {item.title}
+                                    </h3>
                                 </div>
 
-                                {/* Center Icon */}
-                                <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
+                                {/* Middle: Icon absolutely centered */}
+                                <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-all duration-500">
                                     {item.icon}
                                 </div>
 
-                                {/* Bottom Row */}
-                                <div className="relative z-10 flex flex-col justify-end h-full">
-                                    <h3 className="text-4xl md:text-7xl font-bebas text-white uppercase leading-none mb-4">
-                                        {item.title}
-                                    </h3>
-                                    <p className="font-oswald text-white/70 text-sm md:text-base leading-relaxed max-w-md">
-                                        {item.description}
-                                    </p>
-                                </div>
+                                {/* Bottom: Description */}
+                                <p className="font-oswald text-white/70 text-base md:text-lg leading-relaxed text-center relative z-10 pb-2 md:pb-4">
+                                    {item.description}
+                                </p>
 
                             </div>
                         </Link>

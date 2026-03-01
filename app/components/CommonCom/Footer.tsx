@@ -34,12 +34,12 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
 
                     <div className="space-y-6">
-                        <Link href="/" className="block relative w-40 h-15">
+                        <Link href="/" className="block relative w-50 h-18">
                             <SkeletonImage
-                                src="/home/footer-logo.png"
+                                src="/home/logo.png"
                                 alt="ALEF Logo"
                                 fill
-                                className="object-cover"
+                                className=" bg-white p-1"
                             />
                         </Link>
                         <p className="text-white/60 text-sm font-oswald leading-relaxed max-w-xs">
@@ -85,13 +85,13 @@ export default function Footer() {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-5 h-5 text-red shrink-0" />
-                                <a href="mailto:info@alef.org" dir="ltr" className="text-white/70 hover:text-white transition-colors font-oswald text-sm">
-                                    info@alef.org
+                                <a href="mailto:contact@usalef.org" dir="ltr" className="text-white/70 hover:text-white transition-colors font-oswald text-sm">
+                                    contact@usalef.org
                                 </a>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="w-5 h-5 text-red shrink-0" />
-                                <a href="tel:+12125551234" dir="ltr" className="text-white/70 hover:text-white transition-colors font-oswald text-sm">
+                                <a href="tel:+12129702533" dir="ltr" className="text-white/70 hover:text-white transition-colors font-oswald text-sm">
                                     +1 (212) 970-2533
                                 </a>
                             </li>

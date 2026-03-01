@@ -78,7 +78,7 @@ export default function CTASection({ type }: CTASectionProps) {
     };
 
     return (
-        <section ref={containerRef} className="py-12 md:py-16 px-6">
+        <section ref={containerRef} className="py-16 md:py-20 px-6">
             <div className={`max-w-5xl mx-auto rounded-xl border ${content.borderColor} bg-linear-to-b ${content.bgGradient} backdrop-blur-sm p-8 md:p-12 relative overflow-hidden group`}>
 
                 {/* Decorative background noise/texture */}
