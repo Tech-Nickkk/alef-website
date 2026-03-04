@@ -111,19 +111,19 @@ export default function EventNotificationBanner() {
                             {/* Countdown Timer */}
                             <div className="flex gap-2 mt-4 mb-1">
                                 <div className="flex flex-col items-center bg-white/5 px-2 py-1.5 rounded w-12 border border-white/5">
-                                    <span className="text-white font-bebas text-lg leading-none">{timeLeft.days}</span>
+                                    <span className="text-white font-bebas text-lg leading-none">{String(timeLeft.days).padStart(2, '0')}</span>
                                     <span className="text-white/40 text-[8px] uppercase font-oswald tracking-widest leading-none mt-1">Days</span>
                                 </div>
                                 <div className="flex flex-col items-center bg-white/5 px-2 py-1.5 rounded w-12 border border-white/5">
-                                    <span className="text-white font-bebas text-lg leading-none">{timeLeft.hours}</span>
+                                    <span className="text-white font-bebas text-lg leading-none">{String(timeLeft.hours).padStart(2, '0')}</span>
                                     <span className="text-white/40 text-[8px] uppercase font-oswald tracking-widest leading-none mt-1">Hrs</span>
                                 </div>
                                 <div className="flex flex-col items-center bg-white/5 px-2 py-1.5 rounded w-12 border border-white/5">
-                                    <span className="text-white font-bebas text-lg leading-none">{timeLeft.minutes}</span>
+                                    <span className="text-white font-bebas text-lg leading-none">{String(timeLeft.minutes).padStart(2, '0')}</span>
                                     <span className="text-white/40 text-[8px] uppercase font-oswald tracking-widest leading-none mt-1">Min</span>
                                 </div>
                                 <div className="flex flex-col items-center bg-white/5 px-2 py-1.5 rounded w-12 border border-white/5">
-                                    <span className="text-white font-bebas text-lg leading-none">{timeLeft.seconds}</span>
+                                    <span className="text-white font-bebas text-lg leading-none">{String(timeLeft.seconds).padStart(2, '0')}</span>
                                     <span className="text-white/40 text-[8px] uppercase font-oswald tracking-widest leading-none mt-1">Sec</span>
                                 </div>
                             </div>

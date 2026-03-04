@@ -178,7 +178,7 @@ export default function EventsPage() {
                             {/* CTA */}
                             <div className="pt-4 flex flex-wrap gap-4 justify-center md:justify-start">
                                 <Link
-                                    href="https://www.zeffy.com/en-US/ticketing/gathering-of-patriots"
+                                    href="https://www.zeffy.com/en-US/ticketing/gathering-for-a-new-lebanon"
                                     target="_blank"
                                     className="bg-red hover:bg-[#c4151c] text-white px-8 py-4 font-bebas text-lg tracking-widest uppercase transition-all shadow-lg hover:shadow-red/20 flex items-center gap-2"
                                 >
@@ -478,7 +478,7 @@ export default function EventsPage() {
                                 </div>
 
                                 <Link
-                                    href="https://www.zeffy.com/en-US/ticketing/gathering-of-patriots"
+                                    href="https://www.zeffy.com/en-US/ticketing/gathering-for-a-new-lebanon"
                                     target="_blank"
                                     className="w-full py-4 font-bebas text-xl tracking-widest uppercase text-center border transition-all duration-300 bg-transparent border-white/20 text-white hover:bg-white hover:text-blue relative overflow-hidden group/btn"
                                 >

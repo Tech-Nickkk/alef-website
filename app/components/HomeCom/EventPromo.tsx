@@ -54,7 +54,7 @@ export default function EventPromo() {
 
                             <div className="pt-8 flex flex-wrap gap-4">
                                 <Link
-                                    href="https://www.zeffy.com/en-US/ticketing/gathering-of-patriots"
+                                    href="https://www.zeffy.com/en-US/ticketing/gathering-for-a-new-lebanon"
                                     target="_blank"
                                     className="group inline-flex items-center gap-4 bg-red hover:bg-[#c4151c] text-white px-8 py-5 font-bebas text-xl tracking-widest uppercase transition-all shadow-xl hover:shadow-red/40"
                                 >
