@@ -2734,15 +2734,20 @@
                 "diamond": {
                     "name": "PATROCINADOR DIAMANTE",
                     "features": [
+                        "Una mesa para 10 personas",
                         "Los Patrocinadores Diamante son socios clave y líderes en el apoyo a la misión de ALEF.",
                         "Reciba acceso VIP exclusivo, asientos preferenciales y reconocimiento personalizado que destaque su apoyo a la Cena de Inauguración ALEF 2026.",
-                        "Su marca será celebrada como un contribuyente esencial para nuestro éxito continuo."
+                        "Su marca será celebrada como un contribuyente esencial para nuestro éxito continuo.",
+                        "Anuncio de página completa destacado en el folleto del programa",
+                        "Reconocimiento de nombre y logotipo en materiales de marketing del evento y comunicado de prensa",
+                        "Presencia en redes sociales antes y después del evento",
+                        "Ubicación privilegiada del nombre y logotipo como Patrocinador Diamante en el sitio web y redes sociales de ALEF"
                     ]
                 },
                 "platinum": {
                     "name": "PATROCINADOR PLATINO",
                     "features": [
-                        "Una mesa para 8 personas (ALEF sentará a 2 invitados adicionales)",
+                        "Una mesa para 10 personas",
                         "Asientos con los Homenajeados (según disponibilidad)",
                         "Anuncio de página completa destacado en el folleto del programa",
                         "Reconocimiento de nombre y logotipo en materiales de marketing del evento y comunicado de prensa",
@@ -2753,7 +2758,7 @@
                 "gold": {
                     "name": "PATROCINADOR ORO",
                     "features": [
-                        "Una mesa para 8 personas (ALEF sentará a 2 invitados adicionales)",
+                        "Una mesa para 10 personas",
                         "Anuncio de página completa en el programa",
                         "Reconocimiento de nombre y logotipo en materiales de marketing del evento y comunicado de prensa",
                         "Presencia en redes sociales antes y después del evento"
@@ -2762,7 +2767,7 @@
                 "sapphire": {
                     "name": "PATROCINADOR ZAFIRO",
                     "features": [
-                        "Una mesa para 8 personas (ALEF sentará a 2 invitados adicionales)",
+                        "Una mesa para 10 personas",
                         "Anuncio de página completa en el programa",
                         "Reconocimiento de nombre y logotipo en materiales de marketing del evento y comunicado de prensa"
                     ]
@@ -2770,15 +2775,21 @@
                 "silver": {
                     "name": "PATROCINADOR PLATA",
                     "features": [
-                        "Media mesa para 4 personas (ALEF sentará a 2 invitados adicionales)",
+                        "Media mesa para 5 personas",
                         "Anuncio de media página en el programa",
                         "Reconocimiento de nombre y logotipo como Patrocinador Plata"
                     ]
                 },
                 "individual": {
-                    "name": "BOLETO INDIVIDUAL",
+                    "name": "ADMISIÓN GENERAL",
+                    "fullTableName": "MESA COMPLETA",
                     "features": [
-                        "Paquete de 1 boleto"
+                        "Paquete de 1 boleto",
+                        "Disfrute del programa completo con acceso a todas las actividades principales."
+                    ],
+                    "fullTableFeatures": [
+                        "Una mesa para 10 personas",
+                        "Disfrute del programa completo con acceso a todas las actividades principales."
                     ]
                 }
             }

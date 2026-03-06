@@ -2750,15 +2750,20 @@
                 "diamond": {
                     "name": "DIAMOND SPONSOR",
                     "features": [
+                        "One table for 10 people",
                         "Diamond Sponsors are key partners and leaders in supporting ALEF’s mission.",
                         "Receive exclusive VIP access, prime seating, and custom recognition spotlighting your support for the 2026 ALEF Inauguration Dinner.",
-                        "Your brand will be celebrated as an essential contributor to our continued success."
+                        "Your brand will be celebrated as an essential contributor to our continued success.",
+                        "Featured full page ad in program booklet",
+                        "Name and logo recognition in event marketing materials and press release",
+                        "Social media pre-post event presence",
+                        "Prime placement of name and logo as Diamond Sponsor on ALEF website and social media."
                     ]
                 },
                 "platinum": {
                     "name": "PLATINUM SPONSOR",
                     "features": [
-                        "One table for 8 people (ALEF will seat 2 additional guests)",
+                        "One table for 10 people",
                         "Seating with Honorees (as available)",
                         "Featured full page ad in program booklet",
                         "Name and logo recognition in event marketing materials and press release",
@@ -2769,7 +2774,7 @@
                 "gold": {
                     "name": "GOLD SPONSOR",
                     "features": [
-                        "One table for 8 people (ALEF will seat 2 additional guests)",
+                        "One table for 10 people",
                         "Full-page ad in program",
                         "Name and logo recognition on event marketing materials and press release",
                         "Social media pre-post event presence"
@@ -2778,7 +2783,7 @@
                 "sapphire": {
                     "name": "SAPPHIRE SPONSOR",
                     "features": [
-                        "One table for 8 people (ALEF will seat 2 additional guests)",
+                        "One table for 10 people",
                         "Full page ad in program",
                         "Name and logo recognition in event marketing materials and press release"
                     ]
@@ -2786,15 +2791,21 @@
                 "silver": {
                     "name": "SILVER SPONSOR",
                     "features": [
-                        "Half table for 4 people (ALEF will seat 2 additional guests)",
+                        "Half table for 5 people",
                         "Half page ad in program",
                         "Name and logo recognition as Silver Sponsor"
                     ]
                 },
                 "individual": {
-                    "name": "INDIVIDUAL TICKET",
+                    "name": "GENERAL ADMISSION",
+                    "fullTableName": "FULL TABLE",
                     "features": [
-                        "1 ticket package"
+                        "1 ticket package",
+                        "Enjoy the full program with access to all main activities."
+                    ],
+                    "fullTableFeatures": [
+                        "One table for 10 people",
+                        "Enjoy the full program with access to all main activities."
                     ]
                 }
             }

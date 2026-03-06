@@ -2736,15 +2736,20 @@
                 "diamond": {
                     "name": "SPONSOR DIAMANT",
                     "features": [
+                        "Une table pour 10 personnes",
                         "Les sponsors Diamant sont des partenaires clés et des leaders dans le soutien de la mission d'ALEF.",
                         "Recevez un accès VIP exclusif, des sièges privilégiés et une reconnaissance personnalisée soulignant votre soutien pour le dîner d'inauguration ALEF 2026.",
-                        "Votre marque sera célébrée comme un contributeur essentiel à notre succès continu."
+                        "Votre marque sera célébrée comme un contributeur essentiel à notre succès continu.",
+                        "Annonce pleine page en vedette dans le livret du programme",
+                        "Reconnaissance du nom et du logo dans les supports marketing de l'événement et le communiqué de presse",
+                        "Présence sur les réseaux sociaux avant et après l'événement",
+                        "Placement privilégié du nom et du logo en tant que Sponsor Diamant sur le site web et les réseaux sociaux d'ALEF"
                     ]
                 },
                 "platinum": {
                     "name": "SPONSOR PLATINE",
                     "features": [
-                        "Une table pour 8 personnes (ALEF placera 2 invités supplémentaires)",
+                        "Une table pour 10 personnes",
                         "Sièges avec les honorés (selon disponibilité)",
                         "Annonce pleine page en vedette dans le livret du programme",
                         "Reconnaissance du nom et du logo dans les supports marketing de l'événement et le communiqué de presse",
@@ -2755,7 +2760,7 @@
                 "gold": {
                     "name": "SPONSOR OR",
                     "features": [
-                        "Une table pour 8 personnes (ALEF placera 2 invités supplémentaires)",
+                        "Une table pour 10 personnes",
                         "Annonce pleine page dans le programme",
                         "Reconnaissance du nom et du logo sur les supports marketing de l'événement et le communiqué de presse",
                         "Présence sur les réseaux sociaux avant et après l'événement"
@@ -2764,7 +2769,7 @@
                 "sapphire": {
                     "name": "SPONSOR SAPHIR",
                     "features": [
-                        "Une table pour 8 personnes (ALEF placera 2 invités supplémentaires)",
+                        "Une table pour 10 personnes",
                         "Annonce pleine page dans le programme",
                         "Reconnaissance du nom et du logo dans les supports marketing de l'événement et le communiqué de presse"
                     ]
@@ -2772,15 +2777,21 @@
                 "silver": {
                     "name": "SPONSOR ARGENT",
                     "features": [
-                        "Demi-table pour 4 personnes (ALEF placera 2 invités supplémentaires)",
+                        "Demi-table pour 5 personnes",
                         "Annonce demi-page dans le programme",
                         "Reconnaissance du nom et du logo en tant que Sponsor Argent"
                     ]
                 },
                 "individual": {
-                    "name": "BILLET INDIVIDUEL",
+                    "name": "ADMISSION GÉNÉRALE",
+                    "fullTableName": "TABLE COMPLÈTE",
                     "features": [
-                        "Forfait 1 billet"
+                        "Forfait 1 billet",
+                        "Profitez du programme complet avec accès à toutes les activités principales."
+                    ],
+                    "fullTableFeatures": [
+                        "Une table pour 10 personnes",
+                        "Profitez du programme complet avec accès à toutes les activités principales."
                     ]
                 }
             }

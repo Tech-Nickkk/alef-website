@@ -1,11 +1,15 @@
+"use client";
+
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import SkeletonImage from "@/app/components/CommonCom/SkeletonImage";
 import { Calendar, MapPin, Clock, Building2, User, Ticket, Mail, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 export default function EventsPage() {
     const t = useTranslations("EventsPage");
+    const [isFullTable, setIsFullTable] = useState(false);
 
     const sponsorshipTiers = [
         {
@@ -16,7 +20,12 @@ export default function EventsPage() {
             features: [
                 t("sponsors.levels.diamond.features.0"),
                 t("sponsors.levels.diamond.features.1"),
-                t("sponsors.levels.diamond.features.2")
+                t("sponsors.levels.diamond.features.2"),
+                t("sponsors.levels.diamond.features.3"),
+                t("sponsors.levels.diamond.features.4"),
+                t("sponsors.levels.diamond.features.5"),
+                t("sponsors.levels.diamond.features.6"),
+                t("sponsors.levels.diamond.features.7")
             ]
         },
         {
@@ -68,11 +77,18 @@ export default function EventsPage() {
             ]
         },
         {
-            level: t("sponsors.levels.individual.name"),
-            price: "$250",
-            color: "from-red to-red/80",
-            accent: "border-red",
-            features: [t("sponsors.levels.individual.features.0")]
+            level: isFullTable ? t("sponsors.levels.individual.fullTableName") : t("sponsors.levels.individual.name"),
+            price: isFullTable ? "$2,500" : "$250",
+            color: "from-emerald-500 to-emerald-700",
+            accent: "border-emerald-500",
+            features: isFullTable ? [
+                t("sponsors.levels.individual.fullTableFeatures.0"),
+                t("sponsors.levels.individual.fullTableFeatures.1")
+            ] : [
+                t("sponsors.levels.individual.features.0"),
+                t("sponsors.levels.individual.features.1")
+            ],
+            isToggleable: true
         },
     ];
 
@@ -460,6 +476,31 @@ export default function EventsPage() {
                                         </span>
                                     )}
                                 </div>
+
+                                {(tier as any).isToggleable && (
+                                    <div className="relative grid grid-cols-2 p-1 bg-white/10 rounded-lg w-full mb-6">
+                                        {/* Animated Pill Background */}
+                                        <div
+                                            className={`absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] bg-emerald-600 rounded-md transition-all duration-300 ease-in-out z-0 ${isFullTable ? 'translate-x-full' : 'translate-x-0'
+                                                }`}
+                                        ></div>
+
+                                        <button
+                                            onClick={() => setIsFullTable(false)}
+                                            className={`relative z-10 py-1 font-oswald text-xs md:text-sm font-bold rounded-md transition-colors text-center uppercase tracking-widest ${!isFullTable ? 'text-white' : 'text-white/70 hover:text-white hover:bg-white/5'
+                                                }`}
+                                        >
+                                            {t("sponsors.levels.individual.name")}
+                                        </button>
+                                        <button
+                                            onClick={() => setIsFullTable(true)}
+                                            className={`relative z-10 py-1 font-oswald text-xs md:text-sm font-bold rounded-md transition-colors text-center uppercase tracking-widest ${isFullTable ? 'text-white' : 'text-white/70 hover:text-white hover:bg-white/5'
+                                                }`}
+                                        >
+                                            {t("sponsors.levels.individual.fullTableName")}
+                                        </button>
+                                    </div>
+                                )}
 
                                 <div className="text-4xl md:text-5xl font-bebas text-white mb-2">{tier.price}</div>
 
