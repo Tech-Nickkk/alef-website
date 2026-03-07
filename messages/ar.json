@@ -411,6 +411,9 @@
     "ContactPage": {
         "title": "اتصل بنا",
         "subtitle": "تواصل معنا",
+        "scheduleConsultationTitle": "حدد موعدًا للاستشارة",
+        "scheduleConsultationSubtitle": "اختر الوقت الذي يناسبك",
+        "scheduleConsultationButton": "حجز اجتماع",
         "description": "هل لديك أسئلة أو تريد معرفة المزيد عن مهمتنا؟ تواصل معنا.",
         "form": {
             "title": "أرسل لنا رسالة",

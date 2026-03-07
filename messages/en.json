@@ -410,6 +410,9 @@
     "ContactPage": {
         "title": "CONTACT US",
         "subtitle": "GET IN TOUCH",
+        "scheduleConsultationTitle": "SCHEDULE A CONSULTATION",
+        "scheduleConsultationSubtitle": "CHOOSE A TIME THAT WORKS BEST FOR YOU",
+        "scheduleConsultationButton": "BOOK A MEETING",
         "description": "Have questions or want to learn more about our mission? Reach out to us.",
         "form": {
             "title": "SEND US A MESSAGE",

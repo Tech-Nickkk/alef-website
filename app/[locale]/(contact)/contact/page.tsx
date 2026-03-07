@@ -2,7 +2,7 @@
 
 import React, { useState, FormEvent } from 'react';
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
-import { Send } from 'lucide-react';
+import { Send, CalendarDays } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export default function ContactPage() {
@@ -79,7 +79,7 @@ export default function ContactPage() {
                     </div>
 
                     {/* Main Content Centered */}
-                    <div className="max-w-4xl mx-auto">
+                    <div className="max-w-4xl mx-auto space-y-16">
                         {/* Contact Form Container */}
                         <div className="bg-blue rounded-xl shadow-2xl overflow-hidden relative border border-white/5">
                             <div className="p-8 md:p-16 relative z-10">
@@ -237,6 +237,44 @@ export default function ContactPage() {
                                 </form>
                             </div>
                         </div>
+
+                        {/* -------------------- CALENDLY SEPARATOR -------------------- */}
+                        <div className="flex items-center justify-center gap-8 py-8 opacity-60">
+                            <span className="w-1/3 h-px bg-linear-to-r from-transparent via-white to-transparent"></span>
+                            <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center bg-white/5">
+                                <CalendarDays className="w-5 h-5 text-white/70" />
+                            </div>
+                            <span className="w-1/3 h-px bg-linear-to-r from-transparent via-white to-transparent"></span>
+                        </div>
+
+                        {/* -------------------- CALENDLY CTA -------------------- */}
+                        <div className="relative group perspective-1000 mb-24 px-4 sm:px-0">
+                            <div className="w-full relative z-10 bg-blue rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.3)] border border-white/10 overflow-hidden group-hover:shadow-[0_0_60px_rgba(227,27,35,0.1)] transition-all duration-500">
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-red/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                                <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+
+                                <div className="py-16 px-8 text-center relative z-10">
+                                    <h3 className="font-bebas text-4xl md:text-6xl text-white tracking-widest drop-shadow-md mb-4">
+                                        {t('scheduleConsultationTitle') || "Schedule a Consultation"}
+                                    </h3>
+                                    <p className="text-white/70 font-oswald text-lg md:text-xl tracking-wide max-w-2xl mx-auto mb-10">
+                                        {t('scheduleConsultationSubtitle') || "Choose a time that works best for you with ALEF"}
+                                    </p>
+
+                                    <a
+                                        href="https://calendly.com/new-lebanon-gathering/30min"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-3 bg-red hover:bg-[#b0151b] text-white px-10 py-5 text-lg font-bold tracking-[0.2em] uppercase font-oswald transition-all shadow-lg hover:shadow-[0_0_25px_rgba(227,27,35,0.4)] relative overflow-hidden group/btn"
+                                    >
+                                        <span className="relative z-10">{t('scheduleConsultationButton') || "BOOK A MEETING"}</span>
+                                        <CalendarDays className="w-5 h-5 relative z-10" />
+                                        <div className="absolute inset-0 bg-white/20 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </main>

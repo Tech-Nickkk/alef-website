@@ -410,6 +410,9 @@
     "ContactPage": {
         "title": "CONTACTEZ-NOUS",
         "subtitle": "PRENDRE CONTACT",
+        "scheduleConsultationTitle": "PLANIFIER UNE CONSULTATION",
+        "scheduleConsultationSubtitle": "CHOISISSEZ L'HEURE QUI VOUS CONVIENT LE MIEUX",
+        "scheduleConsultationButton": "RÉSERVER UNE RÉUNION",
         "description": "Vous avez des questions ou souhaitez en savoir plus sur notre mission ? Contactez-nous.",
         "form": {
             "title": "ENVOYEZ-NOUS UN MESSAGE",

@@ -411,6 +411,9 @@
     "ContactPage": {
         "title": "CONTÁCTENOS",
         "subtitle": "PONTE EN CONTACTO",
+        "scheduleConsultationTitle": "PROGRAMAR UNA CONSULTA",
+        "scheduleConsultationSubtitle": "ELIJAS LA HORA QUE MÁS LE CONVENGA",
+        "scheduleConsultationButton": "RESERVAR UNA REUNIÓN",
         "description": "¿Tiene preguntas o desea obtener más información sobre nuestra misión? Comuníquese con nosotros.",
         "form": {
             "title": "ENVÍENOS UN MENSAJE",
