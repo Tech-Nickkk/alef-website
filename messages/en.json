@@ -54,7 +54,7 @@
         "statement": "// STATEMENT",
         "author": "~ ZIAD K. ABDELNOUR",
         "welcome": "WELCOME TO THE AMERICAN LEBANON EDUCATION FOUNDATION.",
-        "p1": "The American Lebanon Education Foundation is a collective of Lebanese and American professionals, activists, and leaders united by a shared vision of a free, sovereign, and prosperous Lebanon. As an independent, non-partisan movement, we are committed to dismantling corruption, restoring governance, and advocating for Lebanon’s rightful place within the international community.",
+        "p1": "The American Lebanon Education Foundation is a global initiative of professionals, activists, and leaders united by a shared vision of a free, sovereign, and prosperous Lebanon. As an independent, non-partisan movement, we are committed to dismantling corruption, restoring governance, and advocating for Lebanon's rightful place within the international community.",
         "p2": "Our mission is to advocate for political, economic, and security reforms, engaging with international policymakers to support Lebanon’s sovereignty. We strive to combat corruption and militant influences undermining stability while promoting diaspora involvement in Lebanon’s reconstruction and economic growth.",
         "p3": "We believe in Sovereignty, upholding Lebanon’s independence from foreign domination. We stand for Transparency & Accountability, believing in ethical governance and responsible leadership. We fight for Economic Freedom, promoting investment, job creation, and financial stability.",
         "p4": "The Rule of Law is non-negotiable; we advocate for an independent judiciary and security forces. We are building a Lebanon based on Meritocracy & Performance, valuing skills and leadership excellence above sectarian allegiance.",
@@ -67,7 +67,7 @@
             "01": {
                 "subtitle": "IDENTITY",
                 "title": "ALEF Profile",
-                "description": "A collective of Lebanese and American professionals united by a shared vision of a free, sovereign, and prosperous Lebanon."
+                "description": "A global initiative united by a shared vision of a free, sovereign, and prosperous Lebanon."
             },
             "02": {
                 "subtitle": "PRINCIPLES",
@@ -455,7 +455,7 @@
             "foundation": {
                 "subtitle": "The Foundation",
                 "title": "ALEF",
-                "desc": "A global force of Lebanese and American professionals, activists, and policy experts committed to dismantling corruption, restoring governance, and advocating for Lebanon’s rightful place.",
+                "desc": "A global force of professionals, activists, and policy experts committed to dismantling corruption, restoring governance, and advocating for Lebanon's rightful place.",
                 "tag": "Open to citizens of any nationality"
             },
             "pac": {
@@ -528,11 +528,11 @@
         "header": {
             "subtitle": "Our Foundation",
             "title": "MISSION & CORE VALUES",
-            "tagline": "A collective of Lebanese and American professionals united by a shared vision of a free, sovereign, and prosperous Lebanon."
+            "tagline": "A global initiative united by a shared vision of a free, sovereign, and prosperous Lebanon."
         },
         "introduction": {
             "title": "Introduction",
-            "desc": "The American Lebanon Education Foundation is a collective of Lebanese and American professionals, activists, and leaders united by a shared vision of a free, sovereign, and prosperous Lebanon. As an independent, non-partisan movement, we are committed to dismantling corruption, restoring governance, and advocating for Lebanon’s rightful place within the international community."
+            "desc": "The American Lebanon Education Foundation is a global initiative of professionals, activists, and leaders united by a shared vision of a free, sovereign, and prosperous Lebanon. As an independent, non-partisan movement, we are committed to dismantling corruption, restoring governance, and advocating for Lebanon's rightful place within the international community."
         },
         "vision": {
             "title": "Vision",
@@ -3008,5 +3008,14 @@
             "description": "Your support can help make a difference. Join our community of supporters and help us achieve our mission.",
             "donateNow": "Donate Now"
         }
+    },
+    "AlefInTheNewsPage": {
+        "badge": "Coming Soon",
+        "titleInThe": "IN THE",
+        "titleNews": "NEWS",
+        "subtitle": "Press Coverage & Media",
+        "description": "Our press coverage, media features, and news mentions are being curated. Check back soon for comprehensive coverage of ALEF's advocacy and impact.",
+        "readArticles": "Read Our Articles",
+        "pressInquiries": "Press Inquiries"
     }
 }

@@ -24,7 +24,7 @@ const oswald = Oswald({
 
 export const metadata: Metadata = {
   title: "American Lebanon Education Foundation (ALEF)",
-  description: "ALEF is a non-partisan movement of Lebanese and American professionals advocating for a free, sovereign Lebanon — exposing corruption, combating Hezbollah, and driving policy reform.",
+  description: "ALEF is a global, non-partisan initiative advocating for a free, sovereign Lebanon — exposing corruption, combating Hezbollah, and driving policy reform. Anyone who supports the cause can donate and participate.",
   icons: {
     icon: "/home/profile-logo-2.png",
     shortcut: "/home/profile-logo-2.png",

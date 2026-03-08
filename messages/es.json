@@ -54,7 +54,7 @@
         "statement": "// DECLARACIÓN",
         "author": "~ ZIAD K. ABDELNOUR",
         "welcome": "BIENVENIDO A LA FUNDACIÓN AMERICANA PARA LA EDUCACIÓN EN EL LÍBANO.",
-        "p1": "La Fundación Americana para la Educación en el Líbano es un colectivo de profesionales, activistas y líderes libaneses y estadounidenses unidos por una visión compartida de un Líbano libre, soberano y próspero. Como movimiento independiente y no partidista, estamos comprometidos a desmantelar la corrupción, restaurar la gobernanza y abogar por el lugar legítimo del Líbano dentro de la comunidad internacional.",
+        "p1": "La Fundación Americana para la Educación en el Líbano es una iniciativa global de profesionales, activistas y líderes unidos por una visión compartida de un Líbano libre, soberano y próspero. Como movimiento independiente y no partidista, estamos comprometidos a desmantelar la corrupción, restaurar la gobernanza y abogar por el lugar legítimo del Líbano dentro de la comunidad internacional.",
         "p2": "Nuestra misión es abogar por reformas políticas, económicas y de seguridad, interactuando con responsables políticos internacionales para apoyar la soberanía del Líbano. Nos esforzamos por combatir la corrupción y las influencias militantes que socavan la estabilidad, al tiempo que promovemos la participación de la diáspora en la reconstrucción y el crecimiento económico del Líbano.",
         "p3": "Creemos en la Soberanía, defendiendo la independencia del Líbano de la dominación extranjera. Defendemos la Transparencia y la Responsabilidad, creyendo en una gobernanza ética y un liderazgo responsable. Luchamos por la Libertad Económica, promoviendo la inversión, la creación de empleo y la estabilidad financiera.",
         "p4": "El Estado de Derecho no es negociable; abogamos por un poder judicial y fuerzas de seguridad independientes. Estamos construyendo un Líbano basado en la Meritocracia y el Rendimiento, valorando las habilidades y la excelencia del liderazgo por encima de la lealtad sectaria.",
@@ -67,7 +67,7 @@
             "01": {
                 "subtitle": "IDENTIDAD",
                 "title": "Perfil ALEF",
-                "description": "Un colectivo de profesionales libaneses y estadounidenses unidos por una visión compartida de un Líbano libre, soberano y próspero."
+                "description": "Una iniciativa global unida por una visión compartida de un Líbano libre, soberano y próspero."
             },
             "02": {
                 "subtitle": "PRINCIPIOS",
@@ -456,7 +456,7 @@
             "foundation": {
                 "subtitle": "La Fundación",
                 "title": "ALEF",
-                "desc": "Una fuerza global de profesionales libaneses y estadounidenses comprometidos con desmantelar la corrupción.",
+                "desc": "Una fuerza global de profesionales y activistas comprometidos con desmantelar la corrupción, restaurar la gobernanza y defender el lugar legítimo del Líbano.",
                 "tag": "Abierto a ciudadanos de cualquier nacionalidad"
             },
             "pac": {
@@ -529,11 +529,11 @@
         "header": {
             "subtitle": "Nuestra Fundación",
             "title": "MISIÓN Y VALORES FUNDAMENTALES",
-            "tagline": "Un colectivo de profesionales libaneses y estadounidenses unidos por una visión compartida."
+            "tagline": "Una iniciativa global unida por una visión compartida de un Líbano libre, soberano y próspero."
         },
         "introduction": {
             "title": "Introducción",
-            "desc": "La Fundación Americana para la Educación en el Líbano es un colectivo de profesionales unidos por una visión compartida."
+            "desc": "La Fundación Americana para la Educación en el Líbano es una iniciativa global de profesionales, activistas y líderes unidos por una visión compartida de un Líbano libre, soberano y próspero. Como movimiento independiente y no partidista, estamos comprometidos a desmantelar la corrupción, restaurar la gobernanza y abogar por el lugar legítimo del Líbano."
         },
         "vision": {
             "title": "Visión",
@@ -2992,5 +2992,14 @@
             "description": "Su apoyo puede ayudar a marcar la diferencia. Únase a nuestra comunidad de partidarios y ayúdenos a lograr nuestra misión.",
             "donateNow": "Donar Ahora"
         }
+    },
+    "AlefInTheNewsPage": {
+        "badge": "Próximamente",
+        "titleInThe": "EN LAS",
+        "titleNews": "NOTICIAS",
+        "subtitle": "Cobertura de prensa y medios",
+        "description": "Nuestra cobertura de prensa, reportajes en medios y menciones en noticias están siendo compilados. Vuelva pronto para una cobertura completa de la defensa e impacto de ALEF.",
+        "readArticles": "Leer nuestros artículos",
+        "pressInquiries": "Consultas de prensa"
     }
 }

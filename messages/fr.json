@@ -54,7 +54,7 @@
         "statement": "// DÉCLARATION",
         "author": "~ ZIAD K. ABDELNOUR",
         "welcome": "BIENVENUE À LA FONDATION AMÉRICAINE POUR L'ÉDUCATION AU LIBAN.",
-        "p1": "La Fondation Américaine pour l'Éducation au Liban est un collectif de professionnels, militants et dirigeants libanais et américains unis par une vision commune d'un Liban libre, souverain et prospère. En tant que mouvement indépendant et non partisan, nous nous engageons à démanteler la corruption, à restaurer la gouvernance et à plaider pour la place légitime du Liban au sein de la communauté internationale.",
+        "p1": "La Fondation Américaine pour l'Éducation au Liban est une initiative mondiale de professionnels, militants et dirigeants unis par une vision commune d'un Liban libre, souverain et prospère. En tant que mouvement indépendant et non partisan, nous nous engageons à démanteler la corruption, à restaurer la gouvernance et à plaider pour la place légitime du Liban au sein de la communauté internationale.",
         "p2": "Notre mission est de plaider pour des réformes politiques, économiques et sécuritaires, en s'engageant auprès des décideurs internationaux pour soutenir la souveraineté du Liban. Nous nous efforçons de lutter contre la corruption et les influences militantes qui sapent la stabilité tout en favorisant l'implication de la diaspora dans la reconstruction et la croissance économique du Liban.",
         "p3": "Nous croyons en la Souveraineté, défendant l'indépendance du Liban face à la domination étrangère. Nous prônons la Transparence et la Responsabilité, croyant en une gouvernance éthique et un leadership responsable. Nous luttons pour la Liberté Économique, favorisant l'investissement, la création d'emplois et la stabilité financière.",
         "p4": "L'État de Droit est non négociable ; nous plaidons pour une justice et des forces de sécurité indépendantes. Nous bâtissons un Liban basé sur la Méritocratie et la Performance, valorisant les compétences et l'excellence du leadership au-dessus de l'allégeance sectaire.",
@@ -67,7 +67,7 @@
             "01": {
                 "subtitle": "IDENTITÉ",
                 "title": "Profil ALEF",
-                "description": "Un collectif de professionnels libanais et américains unis par une vision partagée d'un Liban libre, souverain et prospère."
+                "description": "Une initiative mondiale unie par une vision partagée d'un Liban libre, souverain et prospère."
             },
             "02": {
                 "subtitle": "PRINCIPES",
@@ -455,7 +455,7 @@
             "foundation": {
                 "subtitle": "La Fondation",
                 "title": "ALEF",
-                "desc": "Une force mondiale de professionnels libanais et américains engagés à démanteler la corruption.",
+                "desc": "Une force mondiale de professionnels et militants engagés à démanteler la corruption, restaurer la gouvernance et défendre la place légitime du Liban.",
                 "tag": "Ouvert aux citoyens de toute nationalité"
             },
             "pac": {
@@ -528,11 +528,11 @@
         "header": {
             "subtitle": "Notre Fondation",
             "title": "MISSION & VALEURS FONDAMENTALES",
-            "tagline": "Un collectif de professionnels libanais et américains unis par une vision partagée."
+            "tagline": "Une initiative mondiale unie par une vision partagée d'un Liban libre, souverain et prospère."
         },
         "introduction": {
             "title": "Introduction",
-            "desc": "La Fondation Américaine pour l'Éducation au Liban est un collectif de professionnels unis par une vision commune."
+            "desc": "La Fondation Américaine pour l'Éducation au Liban est une initiative mondiale de professionnels, militants et dirigeants unis par une vision commune d'un Liban libre, souverain et prospère. En tant que mouvement indépendant et non partisan, nous nous engageons à démanteler la corruption, à restaurer la gouvernance et à défendre la place légitime du Liban."
         },
         "vision": {
             "title": "Vision",
@@ -2994,5 +2994,14 @@
             "description": "Votre soutien peut aider à faire la différence. Rejoignez notre communauté de supporters et aidez-nous à réaliser notre mission.",
             "donateNow": "Faire un don"
         }
+    },
+    "AlefInTheNewsPage": {
+        "badge": "Bientôt disponible",
+        "titleInThe": "DANS LES",
+        "titleNews": "ACTUALITÉS",
+        "subtitle": "Couverture de presse et médias",
+        "description": "Notre couverture de presse, nos reportages et nos mentions dans les médias sont en cours de préparation. Revenez bientôt pour une couverture complète du plaidoyer et de l'impact d'ALEF.",
+        "readArticles": "Lire nos articles",
+        "pressInquiries": "Demandes de presse"
     }
 }

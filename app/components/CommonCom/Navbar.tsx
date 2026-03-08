@@ -104,13 +104,13 @@ export default function Navbar() {
             label: t('research'),
             href: "#",
             dropdown: [
-                { label: t('menu.inTheNews'), href: "/alef-in-the-news" },
                 { label: t('menu.blogsAndArticles'), href: "/blogs-and-articles" },
                 { label: t('menu.houseOfCorruption'), href: "/house-of-corruption" },
                 { label: t('menu.houseOfCards'), href: "/house-of-cards" },
                 { label: t('menu.archives'), href: "/archives" },
                 { label: t('menu.bookRecommendations'), href: "/book-recommendations" },
-                { label: t('menu.fallenAngels'), href: "/fallen-martyrs" }
+                { label: t('menu.fallenAngels'), href: "/fallen-martyrs" },
+                { label: t('menu.inTheNews'), href: "/alef-in-the-news" }
             ],
         },
         {
