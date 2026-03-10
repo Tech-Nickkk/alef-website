@@ -60,18 +60,17 @@ export default async function LocaleLayout({
           <Analytics />
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''} />
 
-          <Script id="brevo-conversations" strategy="afterInteractive">
+          <Script id="tawk-to" strategy="afterInteractive">
             {`
-              (function(d, w, c) {
-                  w.BrevoConversationsID = '6968edf2dc70a39db501446f';
-                  w[c] = w[c] || function() {
-                      (w[c].q = w[c].q || []).push(arguments);
-                  };
-                  var s = d.createElement('script');
-                  s.async = true;
-                  s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
-                  if (d.head) d.head.appendChild(s);
-              })(document, window, 'BrevoConversations');
+              var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+              (function(){
+                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                s1.async=true;
+                s1.src='https://embed.tawk.to/69ad85b77ac1721c399123ef/1jj6t4lhm';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                s0.parentNode.insertBefore(s1,s0);
+              })();
             `}
           </Script>
         </NextIntlClientProvider>
