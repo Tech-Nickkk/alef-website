@@ -3,7 +3,6 @@ import { Bebas_Neue, Oswald } from "next/font/google";
 import "../globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import LayoutWrapper from "../components/CommonCom/LayoutWrapper";
-import Script from "next/script";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -60,19 +59,7 @@ export default async function LocaleLayout({
           <Analytics />
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''} />
 
-          <Script id="tawk-to" strategy="afterInteractive">
-            {`
-              var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-              (function(){
-                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-                s1.async=true;
-                s1.src='https://embed.tawk.to/69ad85b77ac1721c399123ef/1jj6t4lhm';
-                s1.charset='UTF-8';
-                s1.setAttribute('crossorigin','*');
-                s0.parentNode.insertBefore(s1,s0);
-              })();
-            `}
-          </Script>
+
         </NextIntlClientProvider>
       </body>
     </html>
