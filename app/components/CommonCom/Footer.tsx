@@ -124,7 +124,7 @@ export default function Footer() {
                         </span>
                     </div>
 
-                    {/* Right: Privacy & Terms */}
+                    {/* Right: Privacy, Terms & Return Policy */}
                     <div className="flex flex-wrap justify-center lg:justify-end gap-x-6 gap-y-4">
                         <a
                             href="/footerDocuments/privacyPolicy.pdf"
@@ -141,6 +141,14 @@ export default function Footer() {
                             className="text-white/40 hover:text-white text-[10px] font-oswald uppercase tracking-wider transition-colors"
                         >
                             {t('terms')}
+                        </a>
+                        <a
+                            href="/footerDocuments/returnpolicy.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white/40 hover:text-white text-[10px] font-oswald uppercase tracking-wider transition-colors"
+                        >
+                            {t('returnPolicy')}
                         </a>
                     </div>
                 </div>
