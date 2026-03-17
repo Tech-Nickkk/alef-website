@@ -67,7 +67,7 @@ export default function EventNotificationBanner() {
 
     if (isMinimized) {
         return (
-            <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[100] animate-in zoom-in duration-300 cursor-pointer">
+            <div className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-[100] animate-in zoom-in duration-300 cursor-pointer">
                 <button
                     onClick={expandBanner}
                     className="w-14 h-14 rounded-full bg-red border-2 border-red shadow-[0_0_20px_rgba(196,21,28,0.4)] flex items-center justify-center text-white transition-colors duration-300 group cursor-pointer"
@@ -83,10 +83,10 @@ export default function EventNotificationBanner() {
     }
 
     return (
-        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[100] animate-in slide-in-from-bottom-5 duration-500 ease-out max-w-[340px] w-[calc(100%-2rem)]">
+        <div className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-[100] animate-in slide-in-from-bottom-5 duration-500 ease-out max-w-[340px] w-[calc(100%-2rem)]">
             <Link
                 href="/events"
-                className="block bg-blue/98 backdrop-blur-xl border-r-4 border-red shadow-2xl rounded-l-md group relative overflow-hidden transition-colors cursor-pointer"
+                className="block bg-blue/98 backdrop-blur-xl border-l-4 border-red shadow-2xl rounded-r-md group relative overflow-hidden transition-colors cursor-pointer"
             >
                 <div className="p-4 sm:p-5 pr-12">
                     <div className="flex items-start gap-4">

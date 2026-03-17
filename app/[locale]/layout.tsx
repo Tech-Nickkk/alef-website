@@ -8,6 +8,7 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script';
 
 const bebas = Bebas_Neue({
   subsets: ["latin"],
@@ -59,6 +60,13 @@ export default async function LocaleLayout({
           <Analytics />
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''} />
 
+          {/* GoHighLevel Chat Widget — site-wide */}
+          <Script
+            src="https://widgets.leadconnectorhq.com/loader.js"
+            data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+            data-widget-id="69b5448351635e260d0a4878"
+            strategy="lazyOnload"
+          />
 
         </NextIntlClientProvider>
       </body>

@@ -247,7 +247,7 @@ export default function ContactPage() {
                             <span className="w-1/3 h-px bg-linear-to-r from-transparent via-white to-transparent"></span>
                         </div>
 
-                        {/* -------------------- CALENDLY CTA -------------------- */}
+                        {/* -------------------- GHL SCHEDULE CTA -------------------- */}
                         <div className="relative group perspective-1000 mb-24 px-4 sm:px-0">
                             <div className="w-full relative z-10 bg-blue rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.3)] border border-white/10 overflow-hidden group-hover:shadow-[0_0_60px_rgba(227,27,35,0.1)] transition-all duration-500">
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-red/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
@@ -262,7 +262,7 @@ export default function ContactPage() {
                                     </p>
 
                                     <a
-                                        href="https://calendly.com/new-lebanon-gathering/30min"
+                                        href="https://api.leadconnectorhq.com/widget/booking/eDa7KmJCoCGqISPuONxY"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-3 bg-red hover:bg-[#b0151b] text-white px-10 py-5 text-lg font-bold tracking-[0.2em] uppercase font-oswald transition-all shadow-lg hover:shadow-[0_0_25px_rgba(227,27,35,0.4)] relative overflow-hidden group/btn"
