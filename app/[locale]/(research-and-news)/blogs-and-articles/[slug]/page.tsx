@@ -128,7 +128,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                             <p className="font-oswald text-foreground font-medium uppercase tracking-wider">
                                 {post.author?.discloseName === true ? (post.author?.name || t('alefAnalysts')) : '★★★★★★'}
                             </p>
-                            <p className="font-oswald text-foreground/40 text-xs uppercase tracking-widest">{post.author?.position || t('strategicPolicy')}</p>
+                            <p className="font-oswald text-foreground/40 text-xs uppercase tracking-widest">{post.author?.position || t('alefTeam')}</p>
                         </div>
                     </div>
 

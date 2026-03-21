@@ -20,7 +20,62 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: 'Email service not fully configured' }, { status: 500 });
         }
 
-        console.log('Attempting to send email with Resend...');
+        // --- 1. Add contact to GoHighLevel with "alef contact form" tag ---
+        const ghlApiKey = process.env.GHL_API_KEY;
+        const ghlLocationId = process.env.GHL_LOCATION_ID;
+
+        if (ghlApiKey && ghlLocationId) {
+            const nameParts = name ? name.split(' ') : [''];
+            const firstName = nameParts[0];
+            const lastName = nameParts.slice(1).join(' ');
+
+            const ghlBody: Record<string, any> = {
+                email,
+                firstName,
+                lastName,
+                tags: ['alef contact form'],
+                locationId: ghlLocationId,
+                customFields: [
+                    {
+                        key: "alef_website_message",
+                        field_value: message || "",
+                    },
+                    {
+                        key: "alef_website_subject",
+                        field_value: subject || "",
+                    },
+                    {
+                        key: "alef_website_organization",
+                        field_value: organization || "",
+                    }
+                ]
+            };
+
+            if (organization) {
+                ghlBody.companyName = organization;
+            }
+
+            try {
+                const ghlResponse = await fetch('https://services.leadconnectorhq.com/contacts/', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${ghlApiKey}`,
+                        'Version': '2021-07-28',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(ghlBody),
+                });
+
+                if (!ghlResponse.ok) {
+                    console.error('GHL API Error in Contact:', ghlResponse.status, await ghlResponse.text());
+                } else {
+                    console.log('Successfully added contact to GHL from contact page');
+                }
+            } catch (ghlErr) {
+                console.error('Error sending contact to GHL:', ghlErr);
+            }
+        }
+
 
         const emailHtml = await render(
             React.createElement(EmailTemplate, {
