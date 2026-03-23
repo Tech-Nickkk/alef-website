@@ -33,7 +33,6 @@ export async function POST(req: Request) {
                 email,
                 firstName,
                 lastName,
-                tags: ['alef contact form'],
                 locationId: ghlLocationId,
                 customFields: [
                     {
@@ -56,7 +55,7 @@ export async function POST(req: Request) {
             }
 
             try {
-                // Use /contacts/upsert to gracefully update existing users
+                // Use /contacts/upsert to gracefully update existing users without overwriting tags
                 const ghlResponse = await fetch('https://services.leadconnectorhq.com/contacts/upsert', {
                     method: 'POST',
                     headers: {
@@ -70,7 +69,28 @@ export async function POST(req: Request) {
                 if (!ghlResponse.ok) {
                     console.error('GHL API Error in Contact:', ghlResponse.status, await ghlResponse.text());
                 } else {
-                    console.log('Successfully added contact to GHL from contact page');
+                    const ghlData = await ghlResponse.json();
+                    const contactId = ghlData?.contact?.id;
+
+                    if (contactId) {
+                        try {
+                            await fetch(`https://services.leadconnectorhq.com/contacts/${contactId}/tags`, {
+                                method: 'POST',
+                                headers: {
+                                    'Authorization': `Bearer ${ghlApiKey}`,
+                                    'Version': '2021-07-28',
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    tags: ['alef contact form']
+                                }),
+                            });
+                            console.log('Successfully appended tag to GHL contact');
+                        } catch (tagErr) {
+                            console.error('Error adding tag to GHL contact:', tagErr);
+                        }
+                    }
+                    console.log('Successfully added/updated contact in GHL from contact page');
                 }
             } catch (ghlErr) {
                 console.error('Error sending contact to GHL:', ghlErr);

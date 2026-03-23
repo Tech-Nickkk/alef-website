@@ -19,12 +19,11 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Server misconfigured' }, { status: 500 });
     }
 
-    // 1. Add or update contact in GoHighLevel with " alef our subscriber" tag
+    // 1. Add or update contact in GoHighLevel without overwriting tags
     const ghlBody: Record<string, any> = {
       email,
       firstName,
       lastName: lastName || '',
-      tags: [' alef our subscriber'],
       locationId: ghlLocationId,
     };
 
@@ -32,7 +31,7 @@ export async function POST(req: Request) {
       ghlBody.phone = phone;
     }
 
-    // Use /contacts/upsert to update existing user without triggering the tag-added trigger again
+    // Use /contacts/upsert to update existing user
     const ghlResponse = await fetch('https://services.leadconnectorhq.com/contacts/upsert', {
       method: 'POST',
       headers: {
@@ -49,7 +48,30 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Failed to save contact. Please try again.' }, { status: 500 });
     }
 
-    console.log('Successfully added contact to GHL');
+    const ghlData = await ghlResponse.json();
+    const contactId = ghlData?.contact?.id;
+
+    if (contactId) {
+      // Append the tag without overwriting existing tags
+      try {
+        await fetch(`https://services.leadconnectorhq.com/contacts/${contactId}/tags`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${ghlApiKey}`,
+            'Version': '2021-07-28',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            tags: [' alef our subscriber']
+          }),
+        });
+        console.log('Successfully appended tag to contact in GHL');
+      } catch (tagErr) {
+        console.error('Error adding tag to GHL contact:', tagErr);
+      }
+    }
+
+    console.log('Successfully added/updated contact in GHL');
 
     // 2. Send admin notification email
     try {
