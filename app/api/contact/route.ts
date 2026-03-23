@@ -56,7 +56,8 @@ export async function POST(req: Request) {
             }
 
             try {
-                const ghlResponse = await fetch('https://services.leadconnectorhq.com/contacts/', {
+                // Use /contacts/upsert to gracefully update existing users
+                const ghlResponse = await fetch('https://services.leadconnectorhq.com/contacts/upsert', {
                     method: 'POST',
                     headers: {
                         'Authorization': `Bearer ${ghlApiKey}`,

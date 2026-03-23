@@ -19,12 +19,12 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Server misconfigured' }, { status: 500 });
     }
 
-    // 1. Add contact to GoHighLevel with "alef our subscribers" tag
+    // 1. Add or update contact in GoHighLevel with " alef our subscriber" tag
     const ghlBody: Record<string, any> = {
       email,
       firstName,
       lastName: lastName || '',
-      tags: ['alef our subscribers'],
+      tags: [' alef our subscriber'],
       locationId: ghlLocationId,
     };
 
@@ -32,7 +32,8 @@ export async function POST(req: Request) {
       ghlBody.phone = phone;
     }
 
-    const ghlResponse = await fetch('https://services.leadconnectorhq.com/contacts/', {
+    // Use /contacts/upsert to update existing user without triggering the tag-added trigger again
+    const ghlResponse = await fetch('https://services.leadconnectorhq.com/contacts/upsert', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${ghlApiKey}`,
