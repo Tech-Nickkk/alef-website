@@ -1,7 +1,4 @@
 import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
@@ -69,35 +66,6 @@ export async function POST(req: Request) {
       } catch (tagErr) {
         console.error('Error adding tag to GHL contact:', tagErr);
       }
-    }
-
-    console.log('Successfully added/updated contact in GHL');
-
-    // 2. Send admin notification email
-    try {
-      const clientEmail = process.env.CLIENT_EMAIL;
-      const fromEmail = process.env.RESEND_FROM_EMAIL;
-
-      if (process.env.RESEND_API_KEY && clientEmail && fromEmail) {
-        const recipients = clientEmail.split(',').map((e) => e.trim());
-
-        await resend.emails.send({
-          from: fromEmail,
-          to: recipients,
-          subject: `New Member Joined: ${firstName}`,
-          html: `
-            <h2>New Member Alert</h2>
-            <p>A new member has joined the community.</p>
-            <p><strong>Name:</strong> ${firstName} ${lastName || ''}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
-          `,
-        });
-      } else {
-        console.warn('RESEND_API_KEY, RESEND_FROM_EMAIL, or CLIENT_EMAIL not set — skipping notification email.');
-      }
-    } catch (emailError) {
-      console.error('Error sending notification email:', emailError);
     }
 
     return NextResponse.json({ success: true, message: 'Subscribed successfully' });

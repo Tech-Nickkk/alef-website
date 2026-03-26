@@ -39,13 +39,6 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
         }
 
-        const apiKey = process.env.BREVO_API_KEY;
-        const listId = Number(process.env.BREVO_LIST_ID);
-
-        if (!apiKey || isNaN(listId)) {
-            return NextResponse.json({ message: 'Server misconfigured' }, { status: 500 });
-        }
-
         const routeMap: { [key: string]: string } = {
             blog: 'blogs-and-articles',
             video: 'videos',
@@ -56,49 +49,82 @@ export async function POST(req: NextRequest) {
         const folder = routeMap[docType] || docType;
         const fullUrl = `https://usalef.org/en/${folder}/${slugString}`;
 
-        // Fetch contacts (consider pagination if list > 500 in future, but ok for now)
-        const contactsRes = await fetch(`https://api.brevo.com/v3/contacts/lists/${listId}/contacts?limit=500`, {
-            headers: { 'api-key': apiKey, 'Accept': 'application/json' },
-        });
+        // === 1. Fetch Contacts from GHL ===
+        const ghlApiKey = process.env.GHL_API_KEY;
+        const ghlLocationId = process.env.GHL_LOCATION_ID;
+        const ghlWorkflowId = process.env.GHL_NOTIFY_WORKFLOW_ID;
 
-        if (!contactsRes.ok) {
-            const err = await contactsRes.text();
-            return NextResponse.json({ message: 'Failed to fetch contacts' }, { status: 500 });
+        if (!ghlApiKey || !ghlLocationId || !ghlWorkflowId) {
+            console.error('GHL credentials or GHL_NOTIFY_WORKFLOW_ID missing');
+            return NextResponse.json({ message: 'Server misconfigured' }, { status: 500 });
         }
 
-        const data = await contactsRes.json();
-
-        if (!data.contacts || data.contacts.length === 0) {
-            return NextResponse.json({ message: 'No subscribers found' });
-        }
-
-        const sendRes = await fetch('https://api.brevo.com/v3/smtp/email', {
+        // We fetch contacts that have the tag. GHL lets us search.
+        const searchRes = await fetch('https://services.leadconnectorhq.com/contacts/search', {
             method: 'POST',
             headers: {
-                'api-key': apiKey,
+                'Authorization': `Bearer ${ghlApiKey}`,
+                'Version': '2021-07-28',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                templateId: 12,
-                messageVersions: data.contacts.map((c: any) => ({
-                    to: [{ email: c.email }],
-                    params: {
-                        FIRSTNAME: c.attributes?.FIRSTNAME || 'Friend',
-                        CONTENT_TITLE: titleString,
-                        CONTENT_TYPE: docType.toUpperCase(),
-                        CONTENT_URL: fullUrl
-                    }
-                }))
+                locationId: ghlLocationId,
+                query: "alef our subscriber",
+                limit: 100 // Paging may be needed for very large lists
             }),
         });
 
-        const result = await sendRes.json();
-
-        if (!sendRes.ok) {
-            return NextResponse.json({ message: 'Failed to send emails', details: result }, { status: 500 });
+        if (!searchRes.ok) {
+            return NextResponse.json({ message: 'Failed to fetch GHL contacts' }, { status: 500 });
         }
 
-        return NextResponse.json({ success: true, result });
+        const { contacts } = await searchRes.json();
+
+        if (!contacts || contacts.length === 0) {
+            return NextResponse.json({ message: 'No subscribers found in GHL' });
+        }
+
+        // === 2. Add Contacts to a GHL Workflow ===
+        // Note: You must create a workflow in GHL that handles the email sending.
+        let successCount = 0;
+
+        for (const contact of contacts) {
+            // First update custom fields for title, url, type so the workflow email can use them
+            await fetch(`https://services.leadconnectorhq.com/contacts/${contact.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `Bearer ${ghlApiKey}`,
+                    'Version': '2021-07-28',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    customFields: [
+                        { key: "latest_post_title", field_value: titleString },
+                        { key: "latest_post_url", field_value: fullUrl },
+                        { key: "latest_post_type", field_value: docType.toUpperCase() },
+                    ]
+                }),
+            });
+
+            // Then add to workflow
+            const wfRes = await fetch(`https://services.leadconnectorhq.com/contacts/${contact.id}/workflow/${ghlWorkflowId}`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${ghlApiKey}`,
+                    'Version': '2021-07-28',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    eventStartTime: new Date().toISOString()
+                })
+            });
+
+            if (wfRes.ok) {
+                successCount++;
+            }
+        }
+
+        return NextResponse.json({ success: true, message: `Successfully triggered workflow for ${successCount} contacts.` });
     } catch (error) {
         return NextResponse.json({ error: 'Internal Server Error', details: error instanceof Error ? error.message : String(error) }, { status: 500 });
     }
