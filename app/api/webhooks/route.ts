@@ -100,6 +100,13 @@ async function handleCheckoutSession(session: Stripe.Checkout.Session) {
       stripePaymentId: session.payment_intent || session.id
     }, { merge: true });
   }
+
+  // Sync donor with GHL
+  await syncGHLContact(
+    session.customer_details?.email,
+    session.customer_details?.name,
+    session.customer_details?.phone
+  );
 }
 
 async function handleInvoicePaid(invoice: Stripe.Invoice) {
@@ -119,6 +126,13 @@ async function handleInvoicePaid(invoice: Stripe.Invoice) {
     stripeInvoiceId: invoice.id,
     subscriptionId: (invoice as any).subscription as string,
   }, { merge: true });
+
+  // Sync donor with GHL
+  await syncGHLContact(
+    invoice.customer_email,
+    invoice.customer_name,
+    invoice.customer_phone
+  );
 }
 
 async function handleSubscriptionChange(subscription: Stripe.Subscription) {
@@ -137,5 +151,69 @@ async function handleSubscriptionChange(subscription: Stripe.Subscription) {
         canceledAt: admin.firestore.FieldValue.serverTimestamp()
       });
     }
+  }
+}
+
+async function syncGHLContact(email?: string | null, name?: string | null, phone?: string | null) {
+  if (!email) return;
+
+  const ghlApiKey = process.env.GHL_API_KEY;
+  const ghlLocationId = process.env.GHL_LOCATION_ID;
+
+  if (!ghlApiKey || !ghlLocationId) {
+    console.error('GHL credentials not found.');
+    return;
+  }
+
+  let firstName = '';
+  let lastName = '';
+  if (name) {
+    const parts = name.split(' ');
+    firstName = parts[0] || '';
+    lastName = parts.slice(1).join(' ') || '';
+  }
+
+  try {
+    const ghlBody: Record<string, any> = {
+      email,
+      locationId: ghlLocationId,
+    };
+    if (firstName) ghlBody.firstName = firstName;
+    if (lastName) ghlBody.lastName = lastName;
+    if (phone) ghlBody.phone = phone;
+
+    const ghlResponse = await fetch('https://services.leadconnectorhq.com/contacts/upsert', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${ghlApiKey}`,
+        'Version': '2021-07-28',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(ghlBody),
+    });
+
+    if (!ghlResponse.ok) {
+      console.error('GHL API Error:', ghlResponse.status, await ghlResponse.text());
+      return;
+    }
+
+    const ghlData = await ghlResponse.json();
+    const contactId = ghlData?.contact?.id;
+
+    if (contactId) {
+      await fetch(`https://services.leadconnectorhq.com/contacts/${contactId}/tags`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${ghlApiKey}`,
+          'Version': '2021-07-28',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          tags: ['alef donors']
+        }),
+      });
+    }
+  } catch (err) {
+    console.error('Error updating GHL contact:', err);
   }
 }

@@ -3001,6 +3001,13 @@
         "subtitle": "Cobertura de prensa y medios",
         "description": "Nuestra cobertura de prensa, reportajes en medios y menciones en noticias están siendo compilados. Vuelva pronto para una cobertura completa de la defensa e impacto de ALEF.",
         "readArticles": "Leer nuestros artículos",
-        "pressInquiries": "Consultas de prensa"
+        "pressInquiries": "Consultas de prensa",
+        "readFullNews": "Leer noticia completa",
+        "gatheringNews": {
+            "title": "ALEF ORGANIZA 'REUNIÓN PARA UN NUEVO LÍBANO' - LOS LÍDERES SE REÚNEN EN NYC PARA UNA VISIÓN DE UN FUTURO SOBERANO Y SIN CORRUPCIÓN",
+            "date": "26 de Marzo de 2026",
+            "source": "EIN Presswire",
+            "description": "ALEF en el 3 West Club sobre detener a Hezbolá, avanzar en las reformas y construir un Líbano soberano. Oradores: Bruce Blakeman, Ivonne Baki, Amir Fakhravar, Rima Freiji."
+        }
     }
 }

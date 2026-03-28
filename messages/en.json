@@ -3017,6 +3017,13 @@
         "subtitle": "Press Coverage & Media",
         "description": "Our press coverage, media features, and news mentions are being curated. Check back soon for comprehensive coverage of ALEF's advocacy and impact.",
         "readArticles": "Read Our Articles",
-        "pressInquiries": "Press Inquiries"
+        "pressInquiries": "Press Inquiries",
+        "readFullNews": "Read Full News",
+        "gatheringNews": {
+            "title": "ALEF HOSTS 'GATHERING FOR A NEW LEBANON' LEADERS CONVENE IN NYC FOR VISION OF A SOVEREIGN, CORRUPTION-FREE FUTURE",
+            "date": "March 26, 2026",
+            "source": "EIN Presswire",
+            "description": "ALEF at 3 West Club on stopping Hezbollah, advancing reforms & building a sovereign Lebanon. Speakers: Bruce Blakeman, Ivonne Baki, Amir Fakhravar, Rima Freiji."
+        }
     }
 }

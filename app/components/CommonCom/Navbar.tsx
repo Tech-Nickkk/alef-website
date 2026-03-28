@@ -155,15 +155,17 @@ export default function Navbar() {
                 </div>
 
                 {/* Center: Desktop Navigation */}
-                <div className="hidden xl:flex items-center gap-6 text-[14px] lg:text-[15px] tracking-wide text-foreground/90 font-oswald">
+                <div className="hidden xl:flex items-center gap-6 text-[14px] lg:text-[15px] tracking-wide text-foreground/90 font-oswald relative z-50">
                     {navLinks.map((link, index) => (
                         <React.Fragment key={link.label}>
                             {index > 0 && <span className="w-px h-4 bg-white/40"></span>}
 
                             {link.dropdown ? (
                                 <div className="group relative flex items-center gap-1 cursor-pointer hover:text-foreground transition-colors tracking-widest text-sm h-full py-8 uppercase">
-                                    <Link href={link.href}>{link.label}</Link>
-                                    <ChevronDown className="w-3 h-3 text-foreground/70 group-hover:text-white transition-transform group-hover:rotate-180" />
+                                    <div className="flex items-center gap-1" onClick={(e) => e.preventDefault()}>
+                                        <span className="cursor-pointer">{link.label}</span>
+                                        <ChevronDown className="w-3 h-3 text-foreground/70 group-hover:text-white transition-transform group-hover:rotate-180" />
+                                    </div>
 
                                     {/* Dropdown Menu */}
                                     <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-2">

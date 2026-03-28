@@ -3003,6 +3003,13 @@
         "subtitle": "Couverture de presse et médias",
         "description": "Notre couverture de presse, nos reportages et nos mentions dans les médias sont en cours de préparation. Revenez bientôt pour une couverture complète du plaidoyer et de l'impact d'ALEF.",
         "readArticles": "Lire nos articles",
-        "pressInquiries": "Demandes de presse"
+        "pressInquiries": "Demandes de presse",
+        "readFullNews": "Lire l'actualité complète",
+        "gatheringNews": {
+            "title": "ALEF ORGANISE 'RASSEMBLEMENT POUR UN NOUVEAU LIBAN' - LES DIRIGEANTS SE RÉUNISSENT À NYC POUR UNE VISION D'UN AVENIR SOUVERAIN ET SANS CORRUPTION",
+            "date": "26 Mars 2026",
+            "source": "EIN Presswire",
+            "description": "L'ALEF au 3 West Club pour arrêter le Hezbollah, faire avancer les réformes et construire un Liban souverain. Intervenants : Bruce Blakeman, Ivonne Baki, Amir Fakhravar, Rima Freiji."
+        }
     }
 }
