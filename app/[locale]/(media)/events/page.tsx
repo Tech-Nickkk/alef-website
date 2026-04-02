@@ -2,7 +2,7 @@
 
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import SkeletonImage from "@/app/components/CommonCom/SkeletonImage";
-import { Calendar, MapPin, Clock, Building2, User, Ticket, Mail, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, Clock, Building2, User, Ticket, Mail, ArrowRight, Mic } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -339,6 +339,72 @@ export default function EventsPage() {
                                 </p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* CONFIRMED SPEAKERS SECTION */}
+            <div className="w-full max-w-6xl mx-auto mb-24 reveal-anim">
+                <div className="text-center mb-12">
+                    <h3 className="font-bebas text-4xl lg:text-5xl text-foreground mb-4 uppercase">{t("speakers.title")}</h3>
+                    <div className="flex items-center justify-center gap-4 text-foreground/60 font-oswald text-sm uppercase tracking-widest">
+                        <span className="h-px w-12 bg-foreground/20"></span>
+                        <span>{t("speakers.subtitle")}</span>
+                        <span className="h-px w-12 bg-foreground/20"></span>
+                    </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                    {/* Speaker 1 */}
+                    <div className="bg-blue border border-white/10 p-8 rounded-sm shadow-xl relative flex flex-col items-center text-center">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-red to-transparent opacity-100"></div>
+                        <div className="w-16 h-16 bg-red rounded-full flex items-center justify-center text-white mb-6">
+                            <Mic className="w-8 h-8" />
+                        </div>
+                        <h4 className="font-bebas text-3xl text-white mb-2">{t("speakers.list.bruce.name")}</h4>
+                        <div className="text-red font-oswald uppercase tracking-widest text-sm mb-4">{t("speakers.list.bruce.title")}</div>
+                        <p className="font-oswald text-white/70 text-lg leading-relaxed flex-grow">
+                            {t("speakers.list.bruce.desc")}
+                        </p>
+                    </div>
+
+                    {/* Speaker 2 */}
+                    <div className="bg-blue border border-white/10 p-8 rounded-sm shadow-xl relative flex flex-col items-center text-center">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-red to-transparent opacity-100"></div>
+                        <div className="w-16 h-16 bg-red rounded-full flex items-center justify-center text-white mb-6">
+                            <Mic className="w-8 h-8" />
+                        </div>
+                        <h4 className="font-bebas text-3xl text-white mb-2">{t("speakers.list.ivonne.name")}</h4>
+                        <div className="text-red font-oswald uppercase tracking-widest text-sm mb-4">{t("speakers.list.ivonne.title")}</div>
+                        <p className="font-oswald text-white/70 text-lg leading-relaxed flex-grow">
+                            {t("speakers.list.ivonne.desc")}
+                        </p>
+                    </div>
+
+                    {/* Speaker 3 */}
+                    <div className="bg-blue border border-white/10 p-8 rounded-sm shadow-xl relative flex flex-col items-center text-center">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-red to-transparent opacity-100"></div>
+                        <div className="w-16 h-16 bg-red rounded-full flex items-center justify-center text-white mb-6">
+                            <Mic className="w-8 h-8" />
+                        </div>
+                        <h4 className="font-bebas text-3xl text-white mb-2">{t("speakers.list.amir.name")}</h4>
+                        <div className="text-red font-oswald uppercase tracking-widest text-sm mb-4">{t("speakers.list.amir.title")}</div>
+                        <p className="font-oswald text-white/70 text-lg leading-relaxed flex-grow">
+                            {t("speakers.list.amir.desc")}
+                        </p>
+                    </div>
+
+                    {/* Speaker 4 */}
+                    <div className="bg-blue border border-white/10 p-8 rounded-sm shadow-xl relative flex flex-col items-center text-center">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-red to-transparent opacity-100"></div>
+                        <div className="w-16 h-16 bg-red rounded-full flex items-center justify-center text-white mb-6">
+                            <Mic className="w-8 h-8" />
+                        </div>
+                        <h4 className="font-bebas text-3xl text-white mb-2">{t("speakers.list.rima.name")}</h4>
+                        <div className="text-red font-oswald uppercase tracking-widest text-sm mb-4">{t("speakers.list.rima.title")}</div>
+                        <p className="font-oswald text-white/70 text-lg leading-relaxed flex-grow">
+                            {t("speakers.list.rima.desc")}
+                        </p>
                     </div>
                 </div>
             </div>
