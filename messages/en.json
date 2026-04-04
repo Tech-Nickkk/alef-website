@@ -821,6 +821,20 @@
       "visionaries": {
         "title": "Global Visionaries",
         "description": "Leaders committed to a free and sovereign Lebanon."
+      },
+      "list": {
+        "blackhawk": {
+          "name": "Blackhawk Partners",
+          "description": "Blackhawk Partners is a private \"family office\" in the business of originating, structuring & acting as equity investor in strategic corporate investments. Blackhawk's investor base is a diverse tapestry, woven with a select group of innovative ultra-high net worth individuals and private family offices, offshore affiliates, private equity firms, premier hedge funds, endowments, and pension plans, along with a multitude of best-in-class operating partners."
+        },
+        "capitol": {
+          "name": "The Capitol Institute",
+          "description": "The Capitol Institute is a nonprofit organization that aims to facilitate dialogue and bridge understanding between the Middle East and the United States for a better world of peace."
+        },
+        "nic": {
+          "name": "National Iranian Congress",
+          "description": "National Iranian Congress is a U.S.-based political organization founded in 2013. as an offshoot of his Confederation of Iranian Students (CIS), it is a proponent of regime change in Iran and has drafted a constitution for the future regime."
+        }
       }
     },
     "cta": {

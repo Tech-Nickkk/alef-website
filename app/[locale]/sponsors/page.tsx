@@ -1,7 +1,22 @@
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
-import { ShieldCheck, Star, HeartHandshake } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+
+const sponsors = [
+    {
+        id: "blackhawk",
+        logo: "/ourSponsors/Blackhawk Partners.png"
+    },
+    {
+        id: "capitol",
+        logo: "/ourSponsors/The Capitol Institute.png"
+    },
+    {
+        id: "nic",
+        logo: "/ourSponsors/National Iranian Congress.png"
+    }
+];
 
 export default function SponsorsPage() {
     const t = useTranslations('SponsorsPage');
@@ -30,38 +45,34 @@ export default function SponsorsPage() {
                     </p>
                 </div>
 
-                {/* Static Placeholder Content */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                    <div className="bg-foreground/5 border border-foreground/10 p-8 rounded-2xl text-center space-y-4">
-                        <div className="w-12 h-12 bg-red/10 rounded-full flex items-center justify-center mx-auto text-red">
-                            <Star className="w-6 h-6" />
-                        </div>
-                        <h3 className="font-bebas text-2xl text-foreground">{t('partners.community.title')}</h3>
-                        <p className="font-oswald text-foreground/60 text-sm">
-                            {t('partners.community.description')}
-                        </p>
-                    </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                    {sponsors.map((sponsor) => (
+                        <div
+                            key={sponsor.id}
+                            className="bg-blue border border-white/10 rounded-2xl overflow-hidden flex flex-col transition-all duration-300 relative p-8 shadow-xl"
+                        >
+                            {/* Logo area */}
+                            <div className="bg-white rounded-xl flex items-center justify-center p-6 h-40 w-full relative overflow-hidden shadow-inner mb-6">
+                                <Image
+                                    src={sponsor.logo}
+                                    alt={`${t(`partners.list.${sponsor.id}.name`)} logo`}
+                                    fill
+                                    className="object-contain p-4 relative z-10"
+                                />
+                            </div>
 
-                    <div className="bg-foreground/5 border border-foreground/10 p-8 rounded-2xl text-center space-y-4 relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-16 h-16 bg-red/5 rounded-bl-full"></div>
-                        <div className="w-12 h-12 bg-red/10 rounded-full flex items-center justify-center mx-auto text-red">
-                            <ShieldCheck className="w-6 h-6" />
-                        </div>
-                        <h3 className="font-bebas text-2xl text-foreground">{t('partners.strategic.title')}</h3>
-                        <p className="font-oswald text-foreground/60 text-sm">
-                            {t('partners.strategic.description')}
-                        </p>
-                    </div>
+                            {/* Content */}
+                            <div className="flex flex-col gap-4 flex-1">
+                                <h3 className="font-bebas text-2xl md:text-3xl text-white tracking-wide">
+                                    {t(`partners.list.${sponsor.id}.name`)}
+                                </h3>
 
-                    <div className="bg-foreground/5 border border-foreground/10 p-8 rounded-2xl text-center space-y-4">
-                        <div className="w-12 h-12 bg-red/10 rounded-full flex items-center justify-center mx-auto text-red">
-                            <HeartHandshake className="w-6 h-6" />
+                                <p className="font-oswald text-white/60 text-base leading-relaxed flex-1 mt-2">
+                                    {t(`partners.list.${sponsor.id}.description`)}
+                                </p>
+                            </div>
                         </div>
-                        <h3 className="font-bebas text-2xl text-foreground">{t('partners.visionaries.title')}</h3>
-                        <p className="font-oswald text-foreground/60 text-sm">
-                            {t('partners.visionaries.description')}
-                        </p>
-                    </div>
+                    ))}
                 </div>
 
                 {/* Call to Action */}
