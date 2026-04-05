@@ -834,8 +834,20 @@
         "nic": {
           "name": "National Iranian Congress",
           "description": "National Iranian Congress est une organisation politique basée aux États-Unis, fondée en 2013. En tant que branche de sa Confédération des étudiants iraniens (CIS), il est partisan d'un changement de régime en Iran et a rédigé une constitution pour le futur régime."
+        },
+        "guardians": {
+          "name": "Gardiens du Cèdre (Guardians of the Cedars)",
+          "description": "Gardiens du Cèdre est une organisation nationale patriotique au service du Liban."
+        },
+        "lpsn": {
+          "name": "Réseau du Secteur Privé Libanais (Lebanese Private Sector Network)",
+          "description": "Le Réseau du Secteur Privé Libanais est un groupe de chefs d'entreprise et de praticiens de professions libérales travaillant collectivement pour répondre à l'effondrement économique du Liban, en atténuer l'impact et plaider pour une relance à long terme. Le but du Réseau est de protéger l'économie formelle et de promouvoir la croissance à travers des initiatives ciblées de plaidoyer et de création d'emplois."
         }
       }
+    },
+    "cta": {
+      "text": "Vous souhaitez devenir sponsor ?",
+      "button": "Soutenez Notre Mission"
     }
   },
   "DonatePage": {

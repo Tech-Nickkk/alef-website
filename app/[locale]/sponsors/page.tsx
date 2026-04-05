@@ -15,6 +15,14 @@ const sponsors = [
     {
         id: "nic",
         logo: "/ourSponsors/National Iranian Congress.png"
+    },
+    {
+        id: "guardians",
+        logo: "/ourSponsors/Flag_of_the_Guardians_of_the_Cedars.svg.png"
+    },
+    {
+        id: "lpsn",
+        logo: "/ourSponsors/LPSN.jpg"
     }
 ];
 

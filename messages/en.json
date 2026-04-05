@@ -834,6 +834,14 @@
         "nic": {
           "name": "National Iranian Congress",
           "description": "National Iranian Congress is a U.S.-based political organization founded in 2013. as an offshoot of his Confederation of Iranian Students (CIS), it is a proponent of regime change in Iran and has drafted a constitution for the future regime."
+        },
+        "guardians": {
+          "name": "Guardians of the Cedars",
+          "description": "Guardians of the Cedars is a patriotic national organization at the service of Lebanon"
+        },
+        "lpsn": {
+          "name": "Lebanese Private Sector Network",
+          "description": "Lebanese Private Sector Network is a group of business leaders and practitioners of liberal professions volunteering and working collectively to respond to Lebanon’s economic collapse, mitigate its impact, and lobby towards long-term revival. The purpose of The Network is to protect the formal economy and promote growth and sustainability through targeted advocacy and job creation initiatives."
         }
       }
     },
