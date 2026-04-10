@@ -14,7 +14,7 @@ export default function EventPromo() {
                     {/* Background Image with Overlay */}
                     <div className="absolute inset-0 z-0 bg-blue">
                         <img
-                            src="/events/event-img-1.jpg"
+                            src="/events/Event_Image.jpg"
                             alt="ALEF Event Promo"
                             className="w-full h-full object-cover object-right opacity-60 saturate-0 hover:saturate-100 transition-all duration-1000"
                         />
@@ -48,7 +48,7 @@ export default function EventPromo() {
                                 <div className="hidden sm:block text-red/50">•</div>
                                 <div className="flex items-center gap-3">
                                     <MapPin className="text-red w-6 h-6" />
-                                    <span>{t("hero.venueName")}</span>
+                                    <a href="https://yaranyc.com/" target="_blank" rel="noopener noreferrer" className="hover:text-red transition-colors duration-200">{t("hero.venueName")}</a>
                                 </div>
                             </div>
 

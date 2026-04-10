@@ -3,6 +3,7 @@
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import SkeletonImage from "@/app/components/CommonCom/SkeletonImage";
 import { Calendar, MapPin, Clock, Building2, User, Ticket, Mail, ArrowRight, Mic, X, Play } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -105,7 +106,7 @@ export default function EventsPage() {
     const accommodations = [
         {
             name: t("accommodations.items.hotel1.name"),
-            link: "https://yaranyc.com/",
+            link: "https://www.3westclub.com",
             address: t("accommodations.items.hotel1.address")
         },
         {
@@ -148,7 +149,7 @@ export default function EventsPage() {
                     <div className="relative w-full h-auto">
                         <div className="absolute inset-0 bg-blue/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
                         <SkeletonImage
-                            src="/events/event-img-1.jpg"
+                            src="/events/Event_Image.jpg"
                             alt="ALEF Event"
                             width={1200}
                             height={800}
@@ -370,9 +371,11 @@ export default function EventsPage() {
                         <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-red to-transparent opacity-100"></div>
                         {/* Photo */}
                         <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-red shadow-lg shadow-red/20 mb-6">
-                            <img
+                            <Image
                                 src="/events/Camille_Chamoun.jpeg"
                                 alt="Camille Chamoun"
+                                width={96}
+                                height={96}
                                 className="w-full h-full object-cover object-top"
                             />
                         </div>
