@@ -19,10 +19,6 @@ const sponsors = [
     {
         id: "guardians",
         logo: "/ourSponsors/Flag_of_the_Guardians_of_the_Cedars.svg.png"
-    },
-    {
-        id: "lpsn",
-        logo: "/ourSponsors/LPSN.jpg"
     }
 ];
 
@@ -53,7 +49,7 @@ export default function SponsorsPage() {
                     </p>
                 </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
                     {sponsors.map((sponsor) => (
                         <div
                             key={sponsor.id}

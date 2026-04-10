@@ -7,11 +7,20 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
+interface SponsorTier {
+    level: string;
+    price: string;
+    color: string;
+    accent?: string;
+    features: string[];
+    isToggleable?: boolean;
+}
+
 export default function EventsPage() {
     const t = useTranslations("EventsPage");
     const [isFullTable, setIsFullTable] = useState(false);
 
-    const sponsorshipTiers = [
+    const sponsorshipTiers: SponsorTier[] = [
         {
             level: t("sponsors.levels.diamond.name"),
             price: "$25,000",
@@ -95,7 +104,7 @@ export default function EventsPage() {
     const accommodations = [
         {
             name: t("accommodations.items.hotel1.name"),
-            link: "https://3westclub.com/about-us/",
+            link: "https://yaranyc.com/",
             address: t("accommodations.items.hotel1.address")
         },
         {
@@ -185,7 +194,7 @@ export default function EventsPage() {
                                         <div>
                                             <span className="block font-bebas text-xl text-white">{t("hero.venueName")}</span>
                                             <span className="block font-oswald text-sm text-white/70">{t("hero.venueAddress")}</span>
-                                            <a href="tel:2125825454" className="block font-oswald text-xs text-red hover:text-white mt-1 transition-colors">(212) 582-5454</a>
+                                            <a href="https://yaranyc.com/" target="_blank" className="block font-oswald text-xs text-red hover:text-white mt-1 transition-colors">yaranyc.com</a>
                                         </div>
                                     </div>
                                 </div>
@@ -381,8 +390,8 @@ export default function EventsPage() {
                         </p>
                     </div>
 
-                    {/* Speaker 3 */}
-                    <div className="bg-blue border border-white/10 p-8 rounded-sm shadow-xl relative flex flex-col items-center text-center">
+                    {/* Speaker 3 – Amir centered below */}
+                    <div className="md:col-span-2 md:w-1/2 md:mx-auto bg-blue border border-white/10 p-8 rounded-sm shadow-xl relative flex flex-col items-center text-center">
                         <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-red to-transparent opacity-100"></div>
                         <div className="w-16 h-16 bg-red rounded-full flex items-center justify-center text-white mb-6">
                             <Mic className="w-8 h-8" />
@@ -394,18 +403,6 @@ export default function EventsPage() {
                         </p>
                     </div>
 
-                    {/* Speaker 4 */}
-                    <div className="bg-blue border border-white/10 p-8 rounded-sm shadow-xl relative flex flex-col items-center text-center">
-                        <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-red to-transparent opacity-100"></div>
-                        <div className="w-16 h-16 bg-red rounded-full flex items-center justify-center text-white mb-6">
-                            <Mic className="w-8 h-8" />
-                        </div>
-                        <h4 className="font-bebas text-3xl text-white mb-2">{t("speakers.list.rima.name")}</h4>
-                        <div className="text-red font-oswald uppercase tracking-widest text-sm mb-4">{t("speakers.list.rima.title")}</div>
-                        <p className="font-oswald text-white/70 text-lg leading-relaxed flex-grow">
-                            {t("speakers.list.rima.desc")}
-                        </p>
-                    </div>
                 </div>
             </div>
 
@@ -523,7 +520,7 @@ export default function EventsPage() {
                             className={`group relative overflow-hidden rounded-xl border bg-blue transition-all duration-500 ease-out hover:scale-[1.01] hover:shadow-2xl hover:z-10 ${idx === 0
                                 ? 'md:col-span-2 lg:col-span-1 border-white/20 ring-1 ring-white/10'
                                 : 'border-white/10'
-                                } ${(tier as any).accent ? `hover:${(tier as any).accent}` : 'hover:border-red'}`}
+                                } ${tier.accent ? `hover:${tier.accent}` : 'hover:border-red'}`}
                         >
                             {/* Shine Effect */}
                             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/10 to-transparent z-0 pointer-events-none"></div>
@@ -543,7 +540,7 @@ export default function EventsPage() {
                                     )}
                                 </div>
 
-                                {(tier as any).isToggleable && (
+                                {tier.isToggleable && (
                                     <div className="relative grid grid-cols-2 p-1 bg-white/10 rounded-lg w-full mb-6">
                                         {/* Animated Pill Background */}
                                         <div

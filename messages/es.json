@@ -2705,8 +2705,8 @@
       "calendarNote": "Marque su calendario",
       "reception": "6:00 PM Recepción",
       "dinner": "8:00 PM Cena",
-      "venueName": "3 West Club",
-      "venueAddress": "3 West 51st Street, Nueva York, NY 10019",
+      "venueName": "Yara Restaurant",
+      "venueAddress": "319 East 53rd Street, Nueva York, NY 10022",
       "reserveTicket": "Reservar Boleto",
       "contactUs": "Contáctenos"
     },
@@ -2838,8 +2838,8 @@
       "viewProperty": "Ver Propiedad",
       "items": {
         "hotel1": {
-          "name": "3 West Club",
-          "address": "3 West 51st Street, NYC"
+          "name": "Yara Restaurant",
+          "address": "319 East 53rd Street, NYC"
         },
         "hotel2": {
           "name": "Warwick New York",
