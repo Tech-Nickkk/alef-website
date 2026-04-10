@@ -2854,7 +2854,13 @@
     "speakers": {
       "title": "Oradores Confirmados",
       "subtitle": "Voces del Evento",
+      "watchVideo": "Ver Video",
       "list": {
+        "camille": {
+          "name": "Camille Chamoun",
+          "title": "Miembro del Parlamento Libanés",
+          "desc": "Un destacado parlamentario libanés y patriota comprometido con la soberanía del Líbano, la reforma y la visión de un Líbano libre y unido."
+        },
         "bruce": {
           "name": "Bruce Blakeman",
           "title": "Ejecutivo del Condado de Nassau",

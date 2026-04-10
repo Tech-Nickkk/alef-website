@@ -2870,7 +2870,13 @@
     "speakers": {
       "title": "Confirmed Speakers",
       "subtitle": "Voices of the Event",
+      "watchVideo": "Watch Video",
       "list": {
+        "camille": {
+          "name": "Camille Chamoun",
+          "title": "Member of Lebanese Parliament",
+          "desc": "A prominent Lebanese parliamentarian and patriot committed to Lebanon's sovereignty, reform, and the vision of a free and united Lebanon."
+        },
         "bruce": {
           "name": "Bruce Blakeman",
           "title": "Nassau County Executive",

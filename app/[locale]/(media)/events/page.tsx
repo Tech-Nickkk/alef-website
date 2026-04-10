@@ -2,7 +2,7 @@
 
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import SkeletonImage from "@/app/components/CommonCom/SkeletonImage";
-import { Calendar, MapPin, Clock, Building2, User, Ticket, Mail, ArrowRight, Mic } from "lucide-react";
+import { Calendar, MapPin, Clock, Building2, User, Ticket, Mail, ArrowRight, Mic, X, Play } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -19,6 +19,7 @@ interface SponsorTier {
 export default function EventsPage() {
     const t = useTranslations("EventsPage");
     const [isFullTable, setIsFullTable] = useState(false);
+    const [videoOpen, setVideoOpen] = useState(false);
 
     const sponsorshipTiers: SponsorTier[] = [
         {
@@ -364,20 +365,33 @@ export default function EventsPage() {
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
-                    {/* Speaker 1 */}
+                    {/* Speaker Camille Chamoun – FIRST, top-left */}
                     <div className="bg-blue border border-white/10 p-8 rounded-sm shadow-xl relative flex flex-col items-center text-center">
                         <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-red to-transparent opacity-100"></div>
-                        <div className="w-16 h-16 bg-red rounded-full flex items-center justify-center text-white mb-6">
-                            <Mic className="w-8 h-8" />
+                        {/* Photo */}
+                        <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-red shadow-lg shadow-red/20 mb-6">
+                            <img
+                                src="/events/Camille_Chamoun.jpeg"
+                                alt="Camille Chamoun"
+                                className="w-full h-full object-cover object-top"
+                            />
                         </div>
-                        <h4 className="font-bebas text-3xl text-white mb-2">{t("speakers.list.bruce.name")}</h4>
-                        <div className="text-red font-oswald uppercase tracking-widest text-sm mb-4">{t("speakers.list.bruce.title")}</div>
+                        <h4 className="font-bebas text-3xl text-white mb-2">{t("speakers.list.camille.name")}</h4>
+                        <div className="text-red font-oswald uppercase tracking-widest text-sm mb-4">{t("speakers.list.camille.title")}</div>
                         <p className="font-oswald text-white/70 text-lg leading-relaxed flex-grow">
-                            {t("speakers.list.bruce.desc")}
+                            {t("speakers.list.camille.desc")}
                         </p>
+                        {/* Watch Video Button */}
+                        <button
+                            onClick={() => setVideoOpen(true)}
+                            className="mt-6 inline-flex items-center gap-2 bg-red hover:bg-[#c4151c] text-white px-5 py-2.5 font-bebas text-base tracking-widest uppercase transition-all shadow-lg hover:shadow-red/30 rounded-sm cursor-pointer"
+                        >
+                            <Play className="w-4 h-4 fill-white" />
+                            {t("speakers.watchVideo")}
+                        </button>
                     </div>
 
-                    {/* Speaker 2 */}
+                    {/* Speaker Ivonne – SECOND */}
                     <div className="bg-blue border border-white/10 p-8 rounded-sm shadow-xl relative flex flex-col items-center text-center">
                         <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-red to-transparent opacity-100"></div>
                         <div className="w-16 h-16 bg-red rounded-full flex items-center justify-center text-white mb-6">
@@ -390,8 +404,21 @@ export default function EventsPage() {
                         </p>
                     </div>
 
-                    {/* Speaker 3 – Amir centered below */}
-                    <div className="md:col-span-2 md:w-1/2 md:mx-auto bg-blue border border-white/10 p-8 rounded-sm shadow-xl relative flex flex-col items-center text-center">
+                    {/* Speaker Bruce – THIRD */}
+                    <div className="bg-blue border border-white/10 p-8 rounded-sm shadow-xl relative flex flex-col items-center text-center">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-red to-transparent opacity-100"></div>
+                        <div className="w-16 h-16 bg-red rounded-full flex items-center justify-center text-white mb-6">
+                            <Mic className="w-8 h-8" />
+                        </div>
+                        <h4 className="font-bebas text-3xl text-white mb-2">{t("speakers.list.bruce.name")}</h4>
+                        <div className="text-red font-oswald uppercase tracking-widest text-sm mb-4">{t("speakers.list.bruce.title")}</div>
+                        <p className="font-oswald text-white/70 text-lg leading-relaxed flex-grow">
+                            {t("speakers.list.bruce.desc")}
+                        </p>
+                    </div>
+
+                    {/* Speaker Amir */}
+                    <div className="bg-blue border border-white/10 p-8 rounded-sm shadow-xl relative flex flex-col items-center text-center">
                         <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-red to-transparent opacity-100"></div>
                         <div className="w-16 h-16 bg-red rounded-full flex items-center justify-center text-white mb-6">
                             <Mic className="w-8 h-8" />
@@ -405,6 +432,44 @@ export default function EventsPage() {
 
                 </div>
             </div>
+
+            {/* VIDEO MODAL */}
+            {videoOpen && (
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+                    onClick={() => setVideoOpen(false)}
+                >
+                    <div
+                        className="relative w-full max-w-4xl bg-black rounded-sm overflow-hidden shadow-2xl"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Close Button */}
+                        <button
+                            onClick={() => setVideoOpen(false)}
+                            className="absolute top-3 right-3 z-10 bg-red hover:bg-[#c4151c] text-white p-2 rounded-full transition-colors shadow-lg"
+                            aria-label="Close video"
+                        >
+                            <X className="w-5 h-5" />
+                        </button>
+                        {/* Red accent bar */}
+                        <div className="absolute top-0 left-0 w-full h-1 bg-red z-10"></div>
+                        {/* Speaker name banner */}
+                        <div className="bg-blue px-6 py-4 border-b border-white/10">
+                            <p className="font-bebas text-2xl text-white tracking-wide">{t("speakers.list.camille.name")}</p>
+                            <p className="font-oswald text-red text-xs uppercase tracking-widest">{t("speakers.list.camille.title")}</p>
+                        </div>
+                        {/* Video */}
+                        <video
+                            className="w-full aspect-video"
+                            controls
+                            autoPlay
+                            src="/events/Camille_Chamoun_Video.mp4"
+                        >
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            )}
 
             {/* INVITED OFFICIALS SECTION */}
             <div className="w-full max-w-6xl mx-auto mb-24 reveal-anim">

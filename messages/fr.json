@@ -2860,7 +2860,13 @@
     "speakers": {
       "title": "Intervenants Confirmés",
       "subtitle": "Voix de l'Événement",
+      "watchVideo": "Regarder la vidéo",
       "list": {
+        "camille": {
+          "name": "Camille Chamoun",
+          "title": "Membre du Parlement Libanais",
+          "desc": "Un éminent parlementaire libanais et patriote engagé pour la souveraineté du Liban, la réforme et la vision d'un Liban libre et uni."
+        },
         "bruce": {
           "name": "Bruce Blakeman",
           "title": "Exécutif du Comté de Nassau",
