@@ -6,7 +6,6 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import JoinUs from "./JoinUs";
 import { ThemeProvider } from "./ThemeProvider";
-import EventNotificationBanner from "./EventNotificationBanner";
 
 export default function LayoutWrapper({
     children,
@@ -33,7 +32,6 @@ export default function LayoutWrapper({
         <ThemeProvider>
             <SmoothScroll />
             <Navbar />
-            <EventNotificationBanner />
             {children}
             {!isProfilePage && <JoinUs />}
             {!isProfilePage && <Footer />}

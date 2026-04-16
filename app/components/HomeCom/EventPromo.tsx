@@ -54,15 +54,6 @@ export default function EventPromo() {
 
                             <div className="pt-8 flex flex-wrap gap-4">
                                 <Link
-                                    href="https://www.zeffy.com/en-US/ticketing/gathering-for-a-new-lebanon"
-                                    target="_blank"
-                                    className="group inline-flex items-center gap-4 bg-red hover:bg-[#c4151c] text-white px-8 py-5 font-bebas text-xl tracking-widest uppercase transition-all shadow-xl hover:shadow-red/40"
-                                >
-                                    <Ticket className="w-6 h-6" />
-                                    {t("hero.reserveTicket")}
-                                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-                                </Link>
-                                <Link
                                     href="/events"
                                     className="group relative bg-transparent border border-white/70 text-white px-8 py-5 text-xl font-bold tracking-[0.2em] font-bebas overflow-hidden transition-all hover:border-white/50 isolate cursor-pointer flex items-center gap-4 uppercase shadow-xl"
                                 >

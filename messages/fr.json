@@ -2714,7 +2714,8 @@
       "venueName": "Yara Restaurant",
       "venueAddress": "319 East 53rd Street, New York, NY 10022",
       "reserveTicket": "Réserver un billet",
-      "contactUs": "Contactez-nous"
+      "contactUs": "Contactez-nous",
+      "learnMore": "En savoir plus"
     },
     "officials": {
       "title": "Officiels Américains et Internationaux Invités",

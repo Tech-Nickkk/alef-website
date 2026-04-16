@@ -3,7 +3,13 @@ import SkeletonImage from "@/app/components/CommonCom/SkeletonImage";
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import { useTranslations } from "next-intl";
 
-const fallenAngelsItems = [
+interface FallenAngel {
+    id: string;
+    image: string;
+    hasRole?: boolean;
+}
+
+const fallenAngelsItems: FallenAngel[] = [
     {
         id: "kamalJoumblatt",
         image: "/fallenPatriots/Kamal_Joumblatt.jpg"
@@ -124,7 +130,7 @@ export default function FallenAngelsPage() {
                                         {/* Content */}
                                         <div className="flex-1 text-center md:text-left">
                                             <h3 className="font-bebas text-3xl md:text-4xl text-red mb-3 tracking-wide">
-                                                {(angel as any).hasRole ? `${t(roleKey)} ${t(nameKey)}` : t(nameKey)}
+                                                {angel.hasRole ? `${t(roleKey)} ${t(nameKey)}` : t(nameKey)}
                                             </h3>
                                             <p className="font-oswald text-foreground/80 text-base md:text-lg leading-relaxed group-hover:text-white transition-colors">
                                                 {t(descKey)}

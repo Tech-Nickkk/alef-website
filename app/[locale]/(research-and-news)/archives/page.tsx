@@ -3,7 +3,13 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-const archiveItems = [
+interface ArchiveItem {
+    id: string;
+    url: string;
+    highlight?: boolean;
+}
+
+const archiveItems: ArchiveItem[] = [
     {
         id: "hezbollahAccountability",
         url: "https://docs.google.com/document/d/e/2PACX-1vS5f00Bza5q1dniXTU6VsUr61FZ0oMGjcOnTUQoKGWZXEYrkLjKbnkJER0qleXYIA/pub",
@@ -81,7 +87,7 @@ export default function ArchivesPage() {
                                 href={item.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`group relative bg-blue border border-white/10 p-8 hover:bg-light-blue transition-all duration-300 overflow-hidden rounded-lg ${(item as any).highlight ? 'md:col-span-2' : ''}`}
+                                className={`group relative bg-blue border border-white/10 p-8 hover:bg-light-blue transition-all duration-300 overflow-hidden rounded-lg ${item.highlight ? 'md:col-span-2' : ''}`}
                             >
                                 <div className="absolute top-0 right-0 p-4 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
                                     <ArrowUpRight className="w-6 h-6 text-white" />
