@@ -74,31 +74,48 @@ export default function UploadFAB() {
                 })}
 
                 {/* ── Main FAB ── */}
-                <button
-                    onClick={() => setOpen(prev => !prev)}
-                    aria-label="Upload shortcuts"
-                    className={`
-                        w-14 h-14 rounded-full flex items-center justify-center
-                        shadow-xl cursor-pointer border border-white/20
-                        transition-all duration-300
-                        ${open
-                            ? 'bg-red scale-105 shadow-[0_0_20px_rgba(191,10,48,0.5)]'
-                            : 'bg-red hover:scale-110 hover:shadow-[0_0_16px_rgba(191,10,48,0.4)]'
-                        }
-                    `}
-                >
-                    <div
-                        style={{
-                            transition: 'transform 300ms ease',
-                            transform: open ? 'rotate(45deg)' : 'rotate(0deg)',
-                        }}
+                <div className="group relative">
+                    <button
+                        onClick={() => setOpen(prev => !prev)}
+                        aria-label="Upload shortcuts"
+                        className={`
+                            w-14 h-14 rounded-full flex items-center justify-center
+                            shadow-xl cursor-pointer border border-white/20
+                            transition-all duration-300
+                            ${open
+                                ? 'bg-red scale-105 shadow-[0_0_20px_rgba(191,10,48,0.5)]'
+                                : 'bg-red hover:scale-110 hover:shadow-[0_0_16px_rgba(191,10,48,0.4)]'
+                            }
+                        `}
                     >
-                        {open
-                            ? <X className="w-6 h-6 text-white" />
-                            : <Upload className="w-6 h-6 text-white" />
-                        }
-                    </div>
-                </button>
+                        <div
+                            style={{
+                                transition: 'transform 300ms ease',
+                                transform: open ? 'rotate(45deg)' : 'rotate(0deg)',
+                            }}
+                        >
+                            {open
+                                ? <X className="w-6 h-6 text-white" />
+                                : <Upload className="w-6 h-6 text-white" />
+                            }
+                        </div>
+                    </button>
+
+                    {/* Tooltip on main FAB — only when closed */}
+                    {!open && (
+                        <span className="
+                            absolute left-full ml-3 top-1/2 -translate-y-1/2
+                            bg-background/95 backdrop-blur-sm border border-foreground/10
+                            text-foreground text-[10px] font-oswald uppercase tracking-widest
+                            px-3 py-1.5 whitespace-nowrap shadow-lg
+                            opacity-0 group-hover:opacity-100
+                            -translate-x-1 group-hover:translate-x-0
+                            transition-all duration-200 pointer-events-none
+                        ">
+                            Get Involved
+                        </span>
+                    )}
+                </div>
 
             </div>
         </div>
