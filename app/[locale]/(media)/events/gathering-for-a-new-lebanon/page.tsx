@@ -13,14 +13,6 @@ export default function GatheringForNewLebanonPage() {
 
     return (
         <main className="min-h-screen bg-background pt-32 pb-24 px-6 md:px-12 lg:px-24 flex flex-col items-center">
-            
-            {/* Nav Back Button */}
-            <div className="w-full max-w-7xl mx-auto mb-12">
-                <Link href="/events" className="inline-flex items-center gap-2 text-foreground/70 hover:text-red transition-colors font-oswald uppercase tracking-widest text-sm">
-                    <ArrowLeft className="w-4 h-4" />
-                    Back to Events Archive
-                </Link>
-            </div>
 
             {/* EVENT HERO */}
             <div className="w-full max-w-7xl mx-auto mb-24">
@@ -88,6 +80,28 @@ export default function GatheringForNewLebanonPage() {
                 </div>
             </div>
 
+            {/* EVENT MESSAGE */}
+            <div className="w-full max-w-5xl mx-auto mb-24 px-4">
+                <div className="bg-blue border border-white/10 p-8 md:p-12 lg:p-16 rounded-sm shadow-2xl relative">
+                    <h3 className="font-bebas text-3xl md:text-5xl text-white mb-10 tracking-widest text-center leading-tight">
+                        American Lebanon Education Foundation <br />
+                        <span className="text-red">Inaugural Dinner April 14, 2026</span> <br />
+                        <span className="text-white/50 mr-2">~</span> <span className="text-white">Ziad Abdelnour</span>
+                    </h3>
+
+                    <div className="space-y-6 font-oswald text-white/70 text-lg md:text-xl leading-relaxed text-justify md:text-left">
+                        <p>The American Lebanon Education Foundation is a global initiative of professionals, activists, and leaders united by a shared vision of a free, sovereign, and prosperous Lebanon. As an independent, non-partisan movement, we are committed to dismantling corruption, restoring governance, and advocating for Lebanon&apos;s rightful place within the international community.</p>
+                        <p>Our mission is to advocate for political, economic, and security reforms, engaging with international policymakers to support Lebanon&apos;s sovereignty. We strive to combat corruption and militant influences undermining stability while promoting diaspora involvement in Lebanon&apos;s reconstruction and economic growth.</p>
+                        <p>We believe in Sovereignty, upholding Lebanon&apos;s independence from foreign domination. We stand for Transparency &amp; Accountability, believing in ethical governance and responsible leadership. We fight for Economic Freedom, promoting investment, job creation, and financial stability.</p>
+                        <p>The Rule of Law is non-negotiable; we advocate for an independent judiciary and security forces. We are building a Lebanon based on Meritocracy &amp; Performance, valuing skills and leadership excellence above sectarian allegiance.</p>
+
+                        <div className="border-l-4 border-red pl-5 py-3 mt-8 bg-red/5 rounded-r-sm">
+                            <p className="text-white tracking-wide text-xl font-medium">Join us in this critical fight for the soul of our nation. Together, we can drive policy solutions for a self-reliant and thriving Lebanon.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {/* FEATURED SPEAKERS SECTION */}
             <div className="w-full max-w-6xl mx-auto mb-24 reveal-anim">
                 <div className="text-center mb-12">
@@ -111,7 +125,7 @@ export default function GatheringForNewLebanonPage() {
                             <Play className="w-4 h-4 fill-white" /> {t("speakers.watchVideo")}
                         </button>
                     </div>
-                    
+
                     <div className="bg-blue border border-white/10 p-8 rounded-sm shadow-xl relative flex flex-col items-center text-center">
                         <div className="w-16 h-16 bg-red rounded-full flex items-center justify-center text-white mb-6">
                             <Mic className="w-8 h-8" />
@@ -119,7 +133,7 @@ export default function GatheringForNewLebanonPage() {
                         <h4 className="font-bebas text-3xl text-white mb-2">{t("speakers.list.bruce.name")}</h4>
                         <div className="text-red font-oswald uppercase tracking-widest text-sm mb-4">{t("speakers.list.bruce.title")}</div>
                         <p className="font-oswald text-white/70 text-lg leading-relaxed flex-grow">{t("speakers.list.bruce.desc")}</p>
-                     </div>
+                    </div>
 
                     <div className="bg-blue border border-white/10 p-8 rounded-sm shadow-xl relative flex flex-col items-center text-center">
                         <div className="w-16 h-16 bg-red rounded-full flex items-center justify-center text-white mb-6">
@@ -144,63 +158,66 @@ export default function GatheringForNewLebanonPage() {
                             <p className="font-bebas text-2xl text-white tracking-wide">{t("speakers.list.camille.name")}</p>
                             <p className="font-oswald text-red text-xs uppercase tracking-widest">{t("speakers.list.camille.title")}</p>
                         </div>
-                        <video className="w-full aspect-video" controls autoPlay src="/events/Camille_Chamoun_Video.mp4"></video>
+                        <video className="w-full aspect-video" controls autoPlay src="https://www.dropbox.com/scl/fi/wveuqjjib4wkeywopt9sk/ALEF-Inaugural-Dinner.mp4?rlkey=6sfjvhx3s58ht2hcv044emyrd&e=1&st=z028hcou&bmus=1&raw=1"></video>
                     </div>
                 </div>
             )}
 
-            {/* EVENT HIGHLIGHTS / "STORIES" SECTION */}
-            <div className="w-full max-w-7xl mx-auto mb-16 px-4" id="media">
-                <h4 className="font-bebas text-3xl md:text-4xl text-foreground mb-8 uppercase text-center md:text-left">Highlights</h4>
-                <div className="flex gap-4 md:gap-6 overflow-x-auto pb-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-                    {[...Array(8)].map((_, i) => (
-                        <div key={i} className="flex flex-col items-center gap-3 cursor-pointer group flex-shrink-0 snap-start">
-                            <div className="p-[3px] rounded-full bg-linear-to-tr from-red via-red/50 to-orange-500 group-hover:scale-105 transition-transform shadow-lg">
-                                <div className="w-20 h-20 md:w-24 md:h-24 bg-black rounded-full overflow-hidden border-[3px] border-background">
-                                    <SkeletonImage src="/events/Event_Image.jpg" alt="Highlight" width={96} height={96} className="w-full h-full object-cover" />
-                                </div>
-                            </div>
-                            <span className="font-oswald text-xs uppercase tracking-widest text-foreground/60 group-hover:text-foreground transition-colors">Key Moment {i + 1}</span>
-                        </div>
-                    ))}
+            {/* EVENT VIDEO */}
+            <div id="media" className="w-full max-w-5xl mx-auto mb-24 px-4 text-center">
+                <h4 className="font-bebas text-3xl md:text-4xl text-foreground mb-8 uppercase">Event Video</h4>
+                <div className="relative overflow-hidden border border-foreground/10 bg-black aspect-video flex-col justify-center text-center shadow-2xl">
+                    <video
+                        className="w-full h-full object-cover"
+                        controls
+                        preload="metadata"
+                        poster="/events/Event_Image.jpg"
+                        src="https://www.dropbox.com/scl/fi/wveuqjjib4wkeywopt9sk/ALEF-Inaugural-Dinner.mp4?rlkey=6sfjvhx3s58ht2hcv044emyrd&e=1&st=z028hcou&bmus=1&raw=1"
+                    >
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
 
             {/* PHOTOS GRID */}
-            <div className="w-full max-w-7xl mx-auto mb-16 px-4">
-                <h4 className="font-bebas text-3xl md:text-4xl text-foreground mb-8 uppercase text-center md:text-left">Photo Gallery</h4>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[150px] md:auto-rows-[200px]">
-                    <div className="col-span-2 row-span-2 relative rounded-xl overflow-hidden group bg-black shadow-xl">
-                        <SkeletonImage src="/events/Event_Image.jpg" alt="Photo" width={600} height={400} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                    </div>
-                    {[...Array(5)].map((_, i) => (
-                        <div key={i} className="relative rounded-xl overflow-hidden group bg-black shadow-lg">
-                            <SkeletonImage src="/events/event-img-1.jpg" alt="Photo" width={300} height={200} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                        </div>
-                    ))}
-                    <div className="col-span-2 row-span-1 relative rounded-xl overflow-hidden group bg-black shadow-lg">
-                        <SkeletonImage src="/events/Camille_Chamoun.jpeg" alt="Photo" width={600} height={200} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
-                    </div>
+            <div className="w-full max-w-7xl mx-auto mb-24 px-4">
+                <h4 className="font-bebas text-3xl md:text-4xl text-foreground mb-8 uppercase text-center">Photo Gallery</h4>
+                <div className="grid grid-cols-2 gap-4 auto-rows-[250px] md:auto-rows-[350px] grid-flow-dense">
+                    {[...Array(27)].map((_, i) => {
+                        let spanClasses = "col-span-1 row-span-1";
+                        // Creates repeating patterns:
+                        // 1. Right large, left stack
+                        // 2. Left large, right stack
+                        // 3. Normal 2x2
+                        if (i % 8 === 1) {
+                            spanClasses = "col-span-1 row-span-2";
+                        } else if (i % 8 === 3) {
+                            spanClasses = "col-span-1 row-span-2";
+                        }
+
+                        return (
+                            <div key={i} className={`relative overflow-hidden bg-black shadow-lg ${spanClasses}`}>
+                                <SkeletonImage
+                                    src={`/events/Event_1/Event_1_Img_${i + 1}.jpg`}
+                                    alt={`Event Photo ${i + 1}`}
+                                    width={800}
+                                    height={800}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
 
-            {/* VIDEOS SECTION */}
-            <div className="w-full max-w-7xl mx-auto mb-24 px-4">
-                <h4 className="font-bebas text-3xl md:text-4xl text-foreground mb-8 uppercase text-center md:text-left">Videos & Speeches</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {[...Array(3)].map((_, i) => (
-                         <div key={i} suppressHydrationWarning className="relative overflow-hidden rounded-xl border border-foreground/10 bg-black aspect-video flex-col justify-center text-center shadow-xl">
-                              <video
-                                 className="w-full h-full object-cover"
-                                 controls
-                                 poster="/events/Camille_Chamoun.jpeg"
-                                 src="/events/Camille_Chamoun_Video.mp4"
-                             >
-                                 Your browser does not support the video tag.
-                             </video>
-                         </div>
-                    ))}
-                </div>
+            {/* BACK TO EVENTS BUTTON */}
+            <div className="flex justify-center mt-12 relative z-10 w-full">
+                <Link href="/events">
+                    <button className="group relative bg-transparent border border-foreground/70 text-foreground px-12 py-4 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-foreground/50 isolate cursor-pointer">
+                        <span className="relative z-10 group-hover:text-background transition-colors duration-300">Back To Events Archive</span>
+                        <div className="absolute inset-0 bg-foreground transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10"></div>
+                    </button>
+                </Link>
             </div>
 
         </main>

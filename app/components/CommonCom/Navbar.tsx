@@ -94,12 +94,12 @@ export default function Navbar() {
                 { label: t('menu.ourProfile'), href: "/alef-profile" },
                 { label: t('menu.coreValues'), href: "/core-values" },
                 { label: t('menu.strategicPlan'), href: "/strategic-plan" },
+                { label: t('congressional'), href: "/congressional-advocacy" },
                 { label: t('menu.expertsCorner'), href: "/experts-corner" },
                 { label: t('menu.ourSponsors'), href: "/sponsors" },
                 { label: t('menu.testimonials'), href: "/testimonials" }
             ],
         },
-        { label: t('congressional'), href: "/congressional-advocacy" },
         {
             label: t('research'),
             href: "#",
@@ -129,7 +129,8 @@ export default function Navbar() {
             href: "#",
             dropdown: [
                 { label: t('menu.getInTouch'), href: "/contact" },
-                { label: "FAQ", href: "/faq" } // FAQ wasn't in my JSON, will leave it hardcoded or add. Let's leave hardcoded as 'FAQ' is usually universal or I missed it. Adding to JSON now would take more steps. 'FAQ' is acceptable.
+                { label: t('menu.getInvolved'), href: "/get-involved" },
+                { label: "FAQ", href: "/faq" } 
             ]
         }
     ];
@@ -155,7 +156,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Center: Desktop Navigation */}
-                <div className="hidden xl:flex items-center gap-6 text-[14px] lg:text-[15px] tracking-wide text-foreground/90 font-oswald relative z-50">
+                <div className="hidden xl:flex absolute left-[44%] -translate-x-1/2 items-center gap-6 text-[14px] lg:text-[15px] tracking-wide text-foreground/90 font-oswald z-50">
                     {navLinks.map((link, index) => (
                         <React.Fragment key={link.label}>
                             {index > 0 && <span className="w-px h-4 bg-white/40"></span>}
@@ -204,8 +205,8 @@ export default function Navbar() {
                         <ThemeToggle />
                     </div>
 
-                    {/* Language - Always Visible */}
-                    <div className="relative">
+                    {/* Language - Desktop Only */}
+                    <div className="hidden xl:block relative">
                         <button
                             className="text-foreground/90 hover:text-foreground transition-colors p-2 hover:bg-foreground/10 rounded-none cursor-pointer"
                             onClick={() => setIsLangOpen(!isLangOpen)}
@@ -233,11 +234,10 @@ export default function Navbar() {
                                 </ul>
                             </div>
                         </div>
-
                     </div>
 
-                    {/* Login / Profile Button - Always Visible */}
-                    <div>
+                    {/* Login / Profile Button - Desktop Only */}
+                    <div className="hidden xl:block">
                         {user ? (
                             <Link
                                 href="/profile"
@@ -263,6 +263,28 @@ export default function Navbar() {
                                 <UserIcon className="w-5 h-5" />
                             </Link>
                         )}
+                    </div>
+
+                    {/* Subscribe - Mobile (hidden on xl) */}
+                    <div className="xl:hidden relative group">
+                        <button
+                            onClick={() => { document.getElementById('join-us')?.scrollIntoView({ behavior: 'smooth' }); setIsMenuOpen(false); }}
+                            className="group relative bg-transparent border border-foreground/70 text-foreground px-4 py-2.5 text-xs font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-red isolate cursor-pointer"
+                        >
+                            <span className="relative z-10 group-hover:text-white transition-colors duration-300">{t('subscribe')}</span>
+                            <div className="absolute inset-0 bg-red transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10" />
+                        </button>
+                    </div>
+
+                    {/* Subscribe - Desktop Only */}
+                    <div className="hidden xl:block relative group">
+                        <button
+                            onClick={() => document.getElementById('join-us')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="group relative bg-transparent border border-foreground/70 text-foreground px-6 py-3.5 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-red isolate cursor-pointer"
+                        >
+                            <span className="relative z-10 group-hover:text-white transition-colors duration-300">{t('subscribe')}</span>
+                            <div className="absolute inset-0 bg-red transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10" />
+                        </button>
                     </div>
 
                     {/* Donate - Always Visible */}
@@ -367,11 +389,62 @@ export default function Navbar() {
 
                             </div>
 
-                            {/* Mobile Preferences (Theme) */}
-                            <div className="mt-8 pt-8 border-t border-foreground/10 flex flex-col gap-6">
+                            {/* Mobile Preferences (Theme, Language, Profile) */}
+                            <div className="mt-8 pt-8 border-t border-foreground/10 flex flex-col gap-5">
+                                {/* Theme */}
                                 <div className="flex items-center justify-between">
                                     <span className="text-foreground/70 font-oswald uppercase tracking-widest text-sm">Theme</span>
                                     <ThemeToggle />
+                                </div>
+
+                                {/* Language */}
+                                <div className="flex flex-col gap-2">
+                                    <span className="text-foreground/70 font-oswald uppercase tracking-widest text-sm">Language</span>
+                                    <div className="flex flex-wrap gap-2">
+                                        {languages.map((lang) => (
+                                            <button
+                                                key={lang.code}
+                                                onClick={() => { handleLanguageChange(lang.code); setIsMenuOpen(false); }}
+                                                className={`px-4 py-2 text-xs font-oswald tracking-wider uppercase transition-colors border ${
+                                                    locale === lang.code
+                                                        ? 'bg-red text-white border-red'
+                                                        : 'text-foreground/70 border-foreground/20 hover:text-foreground hover:border-foreground/50'
+                                                }`}
+                                            >
+                                                {t(`languages.${lang.code}`)}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Profile / Login */}
+                                <div className="flex items-center justify-between">
+                                    <span className="text-foreground/70 font-oswald uppercase tracking-widest text-sm">Account</span>
+                                    {user ? (
+                                        <Link
+                                            href="/profile"
+                                            onClick={() => setIsMenuOpen(false)}
+                                            className="flex items-center gap-2 text-foreground/80 hover:text-foreground transition-colors font-oswald uppercase text-sm tracking-wider"
+                                        >
+                                            {user.photoURL ? (
+                                                <img src={user.photoURL} alt="Profile" className="w-8 h-8 rounded-full object-cover border border-foreground/20" />
+                                            ) : (
+                                                <div className="w-8 h-8 rounded-full border border-foreground/20 bg-foreground/5 flex items-center justify-center">
+                                                    <span className="font-bebas text-sm">{user.displayName ? user.displayName.charAt(0).toUpperCase() : <UserIcon className="w-4 h-4" />}</span>
+                                                </div>
+                                            )}
+                                            My Profile
+                                        </Link>
+                                    ) : (
+                                        <Link
+                                            href="/login"
+                                            onClick={() => setIsMenuOpen(false)}
+                                            className="flex items-center gap-2 text-foreground/80 hover:text-foreground transition-colors font-oswald uppercase text-sm tracking-wider"
+                                        >
+                                            <UserIcon className="w-4 h-4" />
+                                            Login
+                                        </Link>
+                                    )}
                                 </div>
                             </div>
 

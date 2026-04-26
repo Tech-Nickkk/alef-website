@@ -7,6 +7,7 @@
     "media": "Médias",
     "contact": "Contact",
     "donate": "Faire un Don",
+    "subscribe": "S'abonner",
     "login": "Connexion",
     "profile": "Mon Profil",
     "languages": {
@@ -33,7 +34,8 @@
       "shorts": "Shorts",
       "podcasts": "Podcasts",
       "events": "Événements",
-      "getInTouch": "Contactez-nous"
+      "getInTouch": "Contactez-nous",
+      "getInvolved": "Get Involved"
     }
   },
   "Hero": {
@@ -128,7 +130,11 @@
     "tpusa": "Turning Point USA",
     "fpri": "Foreign policy Research Institute",
     "transparency": "Transparency News",
-    "winep": "Washington Institute for Near East Policy"
+    "winep": "Washington Institute for Near East Policy",
+    "blackhawk": "Blackhawk Partners",
+    "guardians": "Gardiens des Cèdres",
+    "capitol": "L'Institut du Capitole",
+    "nic": "Congrès National Iranien"
   },
   "HouseOfCorruptionPage": {
     "hero": {
@@ -2685,16 +2691,22 @@
   "VideosPage": {
     "subtitle": "ARCHIVES MÉDIAS",
     "title": "VIDÉOS",
-    "description": "Regardez nos dernières couvertures, interviews et analyses approfondies."
+    "description": "Regardez nos dernières couvertures, interviews et analyses approfondies.",
+    "submitTitle": "Submit Your Video",
+    "submitDesc": "Share your video content with our editorial board for review."
   },
   "ShortsPage": {
     "subtitle": "ARCHIVES MÉDIAS",
-    "title": "SHORTS"
+    "title": "SHORTS",
+    "submitTitle": "Submit Your Short",
+    "submitDesc": "Share your short content with our editorial board for review."
   },
   "PodcastsPage": {
     "subtitle": "ARCHIVES AUDIO",
     "title": "PODCAST",
-    "description": "Conversations critiques sur la géopolitique, l'économie et les forces invisibles qui façonnent notre monde."
+    "description": "Conversations critiques sur la géopolitique, l'économie et les forces invisibles qui façonnent notre monde.",
+    "submitTitle": "Submit Your Podcast",
+    "submitDesc": "Share your podcast with our editorial board for review."
   },
   "EventsPage": {
     "header": {
@@ -3065,6 +3077,216 @@
       "title": "Faites votre premier impact",
       "description": "Votre soutien peut aider à faire la différence. Rejoignez notre communauté de supporters et aidez-nous à réaliser notre mission.",
       "donateNow": "Faire un don"
+    }
+  },
+  "SubmitVideoPage": {
+    "title": "SUBMIT YOUR VIDEO",
+    "subtitle": "Partagez Vos Idées",
+    "description": "Submit your video for review by our editorial board. If approved, it will be published on our platform.",
+    "loginRequired": "Veuillez vous connecter pour soumettre un article",
+    "loginButton": "Se connecter pour continuer",
+    "backToArticles": "Back to Videos",
+    "form": {
+      "titleLabel": "Video Title",
+      "titlePlaceholder": "Enter a title for your video",
+      "excerptLabel": "Extrait",
+      "excerptPlaceholder": "Bref résumé de votre article (150-300 caractères)",
+      "contentLabel": "Video Description",
+      "contentPlaceholder": "Write your video description here...",
+      "imageLabel": "Video Thumbnail/Cover (Optional)",
+      "imageHelp": "Upload an image for your video (Max 5MB)",
+      "imageButton": "Choisir une image",
+      "imageSelected": "Image sélectionnée",
+      "changeImage": "Changer l'image",
+      "categoryLabel": "Catégorie",
+      "categoryPlaceholder": "Sélectionnez une catégorie",
+      "categories": {
+        "politics": "Politique et Gouvernance",
+        "economy": "Économie et Finance",
+        "security": "Sécurité et Défense",
+        "society": "Société et Culture",
+        "international": "Relations Internationales",
+        "analysis": "Analyse et Opinion"
+      },
+      "tagsLabel": "Tags (Optionnel)",
+      "tagsPlaceholder": "Ajouter des tags pertinents (séparés par des virgules)",
+      "showAuthorLabel": "Afficher mon nom en tant qu'auteur",
+      "showAuthorHelp": "Si coché, votre nom sera affiché avec l'article. Sinon, il sera publié sous le nom 'Anonyme'.",
+      "submitButton": "Soumettre pour Révision",
+      "submitting": "Soumission...",
+      "cancel": "Annuler",
+      "urlLabel": "Video URL",
+      "urlPlaceholder": "Enter the link to your video"
+    },
+    "validation": {
+      "titleRequired": "Title is required",
+      "titleTooShort": "Le titre doit comporter au moins 10 caractères",
+      "excerptRequired": "L'extrait est requis",
+      "excerptTooShort": "L'extrait doit comporter au moins 150 caractères",
+      "contentRequired": "Description is required",
+      "contentTooShort": "Le contenu doit comporter au moins 500 caractères",
+      "imageRequired": "L'image à la une est requise",
+      "categoryRequired": "Veuillez sélectionner une catégorie",
+      "urlRequired": "URL is required"
+    },
+    "success": {
+      "title": "Article Soumis !",
+      "message": "Thank you for your submission. Our editorial board will review your video and get back to you via email.",
+      "backButton": "Retour aux Articles"
+    },
+    "preview": {
+      "title": "Aperçu",
+      "toggle": "Basculer l'aperçu"
+    },
+    "guidelines": {
+      "title": "Directives de Soumission",
+      "items": [
+        "Les articles doivent être originaux et non publiés ailleurs",
+        "Minimum 500 mots, maximum 800 mots",
+        "Inclure des sources et des références crédibles",
+        "Utiliser un langage professionnel et respectueux",
+        "Image à la une de haute qualité requise"
+      ]
+    }
+  },
+  "SubmitShortPage": {
+    "title": "SUBMIT YOUR SHORT",
+    "subtitle": "Partagez Vos Idées",
+    "description": "Submit your short for review by our editorial board.",
+    "loginRequired": "Veuillez vous connecter pour soumettre un article",
+    "loginButton": "Se connecter pour continuer",
+    "backToArticles": "Back to Shorts",
+    "form": {
+      "titleLabel": "Short Title",
+      "titlePlaceholder": "Enter a title for your short",
+      "excerptLabel": "Extrait",
+      "excerptPlaceholder": "Bref résumé de votre article (150-300 caractères)",
+      "contentLabel": "Short Description",
+      "contentPlaceholder": "Write your short description here...",
+      "imageLabel": "Short Thumbnail/Cover (Optional)",
+      "imageHelp": "Upload an image for your short (Max 5MB)",
+      "imageButton": "Choisir une image",
+      "imageSelected": "Image sélectionnée",
+      "changeImage": "Changer l'image",
+      "categoryLabel": "Catégorie",
+      "categoryPlaceholder": "Sélectionnez une catégorie",
+      "categories": {
+        "politics": "Politique et Gouvernance",
+        "economy": "Économie et Finance",
+        "security": "Sécurité et Défense",
+        "society": "Société et Culture",
+        "international": "Relations Internationales",
+        "analysis": "Analyse et Opinion"
+      },
+      "tagsLabel": "Tags (Optionnel)",
+      "tagsPlaceholder": "Ajouter des tags pertinents (séparés par des virgules)",
+      "showAuthorLabel": "Afficher mon nom en tant qu'auteur",
+      "showAuthorHelp": "Si coché, votre nom sera affiché avec l'article. Sinon, il sera publié sous le nom 'Anonyme'.",
+      "submitButton": "Soumettre pour Révision",
+      "submitting": "Soumission...",
+      "cancel": "Annuler",
+      "urlLabel": "Short URL",
+      "urlPlaceholder": "Enter the link to your short"
+    },
+    "validation": {
+      "titleRequired": "Title is required",
+      "titleTooShort": "Le titre doit comporter au moins 10 caractères",
+      "excerptRequired": "L'extrait est requis",
+      "excerptTooShort": "L'extrait doit comporter au moins 150 caractères",
+      "contentRequired": "Description is required",
+      "contentTooShort": "Le contenu doit comporter au moins 500 caractères",
+      "imageRequired": "L'image à la une est requise",
+      "categoryRequired": "Veuillez sélectionner une catégorie",
+      "urlRequired": "URL is required"
+    },
+    "success": {
+      "title": "Article Soumis !",
+      "message": "Thank you for your submission. Our editorial board will review your video and get back to you via email.",
+      "backButton": "Retour aux Articles"
+    },
+    "preview": {
+      "title": "Aperçu",
+      "toggle": "Basculer l'aperçu"
+    },
+    "guidelines": {
+      "title": "Directives de Soumission",
+      "items": [
+        "Les articles doivent être originaux et non publiés ailleurs",
+        "Minimum 500 mots, maximum 800 mots",
+        "Inclure des sources et des références crédibles",
+        "Utiliser un langage professionnel et respectueux",
+        "Image à la une de haute qualité requise"
+      ]
+    }
+  },
+  "SubmitPodcastPage": {
+    "title": "SUBMIT YOUR PODCAST",
+    "subtitle": "Partagez Vos Idées",
+    "description": "Submit your podcast for review by our editorial board.",
+    "loginRequired": "Veuillez vous connecter pour soumettre un article",
+    "loginButton": "Se connecter pour continuer",
+    "backToArticles": "Back to Podcasts",
+    "form": {
+      "titleLabel": "Podcast Title",
+      "titlePlaceholder": "Enter a title for your podcast",
+      "excerptLabel": "Extrait",
+      "excerptPlaceholder": "Bref résumé de votre article (150-300 caractères)",
+      "contentLabel": "Podcast Description",
+      "contentPlaceholder": "Write your podcast description here...",
+      "imageLabel": "Podcast Thumbnail/Cover (Optional)",
+      "imageHelp": "Upload an image for your podcast (Max 5MB)",
+      "imageButton": "Choisir une image",
+      "imageSelected": "Image sélectionnée",
+      "changeImage": "Changer l'image",
+      "categoryLabel": "Catégorie",
+      "categoryPlaceholder": "Sélectionnez une catégorie",
+      "categories": {
+        "politics": "Politique et Gouvernance",
+        "economy": "Économie et Finance",
+        "security": "Sécurité et Défense",
+        "society": "Société et Culture",
+        "international": "Relations Internationales",
+        "analysis": "Analyse et Opinion"
+      },
+      "tagsLabel": "Tags (Optionnel)",
+      "tagsPlaceholder": "Ajouter des tags pertinents (séparés par des virgules)",
+      "showAuthorLabel": "Afficher mon nom en tant qu'auteur",
+      "showAuthorHelp": "Si coché, votre nom sera affiché avec l'article. Sinon, il sera publié sous le nom 'Anonyme'.",
+      "submitButton": "Soumettre pour Révision",
+      "submitting": "Soumission...",
+      "cancel": "Annuler",
+      "urlLabel": "Podcast URL",
+      "urlPlaceholder": "Enter the link to your podcast"
+    },
+    "validation": {
+      "titleRequired": "Title is required",
+      "titleTooShort": "Le titre doit comporter au moins 10 caractères",
+      "excerptRequired": "L'extrait est requis",
+      "excerptTooShort": "L'extrait doit comporter au moins 150 caractères",
+      "contentRequired": "Description is required",
+      "contentTooShort": "Le contenu doit comporter au moins 500 caractères",
+      "imageRequired": "L'image à la une est requise",
+      "categoryRequired": "Veuillez sélectionner une catégorie",
+      "urlRequired": "URL is required"
+    },
+    "success": {
+      "title": "Article Soumis !",
+      "message": "Thank you for your submission. Our editorial board will review your video and get back to you via email.",
+      "backButton": "Retour aux Articles"
+    },
+    "preview": {
+      "title": "Aperçu",
+      "toggle": "Basculer l'aperçu"
+    },
+    "guidelines": {
+      "title": "Directives de Soumission",
+      "items": [
+        "Les articles doivent être originaux et non publiés ailleurs",
+        "Minimum 500 mots, maximum 800 mots",
+        "Inclure des sources et des références crédibles",
+        "Utiliser un langage professionnel et respectueux",
+        "Image à la une de haute qualité requise"
+      ]
     }
   }
 }

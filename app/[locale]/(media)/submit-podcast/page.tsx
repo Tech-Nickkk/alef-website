@@ -18,8 +18,8 @@ import {
 } from "lucide-react";
 import { Link } from "@/i18n/routing";
 
-export default function SubmitArticlePage() {
-    const t = useTranslations('SubmitArticlePage');
+export default function SubmitPodcastPage() {
+    const t = useTranslations('SubmitPodcastPage');
     const [user, loading] = useAuthState(auth);
     const router = useRouter();
     const fileInputRef = useRef<HTMLInputElement>(null);
@@ -27,7 +27,7 @@ export default function SubmitArticlePage() {
     // Form state
     const [formData, setFormData] = useState({
         title: "",
-        excerpt: "",
+        url: "",
         content: "",
         showAuthorName: true
     });
@@ -71,24 +71,20 @@ export default function SubmitArticlePage() {
 
         if (!formData.title.trim()) {
             newErrors.title = t('validation.titleRequired');
-        } else if (formData.title.length < 10) {
+        } else if (formData.title.length < 5) {
             newErrors.title = t('validation.titleTooShort');
         }
 
-        if (!formData.excerpt.trim()) {
-            newErrors.excerpt = t('validation.excerptRequired');
-        } else if (formData.excerpt.length < 150) {
-            newErrors.excerpt = t('validation.excerptTooShort');
+        if (!formData.url.trim()) {
+            newErrors.url = t('validation.urlRequired');
+        } else if (!/^https?:\/\/.+/.test(formData.url)) {
+            newErrors.url = 'Please enter a valid URL';
         }
 
         if (!formData.content.trim()) {
             newErrors.content = t('validation.contentRequired');
-        } else if (formData.content.length < 500) {
+        } else if (formData.content.length < 20) {
             newErrors.content = t('validation.contentTooShort');
-        }
-
-        if (!selectedImage) {
-            newErrors.image = t('validation.imageRequired');
         }
 
         setErrors(newErrors);
@@ -109,8 +105,9 @@ export default function SubmitArticlePage() {
         try {
             const formDataToSend = new FormData();
             formDataToSend.append('title', formData.title);
-            formDataToSend.append('excerpt', formData.excerpt);
+            formDataToSend.append('url', formData.url);
             formDataToSend.append('content', formData.content);
+            formDataToSend.append('type', 'podcast');
             formDataToSend.append('showAuthorName', String(formData.showAuthorName));
             formDataToSend.append('name', user.displayName || 'Anonymous');
             formDataToSend.append('email', user.email || '');
@@ -118,7 +115,7 @@ export default function SubmitArticlePage() {
                 formDataToSend.append('image', selectedImage);
             }
 
-            const response = await fetch('/api/submit-article', {
+            const response = await fetch('/api/submit-media', {
                 method: 'POST',
                 body: formDataToSend,
             });
@@ -179,7 +176,7 @@ export default function SubmitArticlePage() {
                     <p className="font-oswald text-lg text-foreground/70 max-w-md mx-auto leading-relaxed">
                         {t('success.message')}
                     </p>
-                    <Link href="/blogs-and-articles">
+                    <Link href="/podcasts">
                         <button className="px-8 py-4 bg-blue hover:bg-blue/90 text-white font-oswald font-bold tracking-widest uppercase rounded-xl transition-all duration-300 shadow-lg shadow-blue/30">
                             {t('success.backButton')}
                         </button>
@@ -247,31 +244,25 @@ export default function SubmitArticlePage() {
                             )}
                         </div>
 
-                        {/* Excerpt */}
+                        {/* URL */}
                         <div className="bg-foreground/5 backdrop-blur-sm border border-foreground/10 rounded-2xl p-6 hover:border-blue/30 transition-colors">
                             <label className="block font-oswald text-sm text-foreground/80 uppercase tracking-wider mb-3">
-                                {t('form.excerptLabel')} <span className="text-red">*</span>
+                                {t('form.urlLabel')} <span className="text-red">*</span>
                             </label>
-                            <textarea
-                                name="excerpt"
-                                value={formData.excerpt}
+                            <input
+                                type="url"
+                                name="url"
+                                value={formData.url}
                                 onChange={handleChange}
-                                placeholder={t('form.excerptPlaceholder')}
-                                rows={3}
-                                className={`w-full bg-blue/10 border ${errors.excerpt ? 'border-red' : 'border-foreground/20'} rounded-xl px-4 py-3 font-oswald text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-blue transition-colors resize-none`}
+                                placeholder={t('form.urlPlaceholder')}
+                                className={`w-full bg-blue/10 border ${errors.url ? 'border-red' : 'border-foreground/20'} rounded-xl px-4 py-3 font-oswald text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-blue transition-colors`}
                             />
-                            <div className="flex items-center justify-between mt-2">
-                                {errors.excerpt ? (
-                                    <p className="text-sm text-red font-oswald flex items-center gap-2">
-                                        <AlertCircle className="w-4 h-4" />
-                                        {errors.excerpt}
-                                    </p>
-                                ) : (
-                                    <p className="text-xs text-foreground/40 font-oswald">
-                                        {formData.excerpt.length} / 300 characters
-                                    </p>
-                                )}
-                            </div>
+                            {errors.url && (
+                                <p className="mt-2 text-sm text-red font-oswald flex items-center gap-2">
+                                    <AlertCircle className="w-4 h-4" />
+                                    {errors.url}
+                                </p>
+                            )}
                         </div>
 
                         {/* Content */}
@@ -304,7 +295,7 @@ export default function SubmitArticlePage() {
                         {/* Image Upload */}
                         <div className="bg-foreground/5 backdrop-blur-sm border border-foreground/10 rounded-2xl p-6 hover:border-blue/30 transition-colors">
                             <label className="block font-oswald text-sm text-foreground/80 uppercase tracking-wider mb-3">
-                                {t('form.imageLabel')} <span className="text-red">*</span>
+                                {t('form.imageLabel')}
                             </label>
                             <input
                                 ref={fileInputRef}
@@ -385,7 +376,7 @@ export default function SubmitArticlePage() {
                                     </>
                                 )}
                             </button>
-                            <Link href="/blogs-and-articles" className="flex-1">
+                            <Link href="/podcasts" className="flex-1">
                                 <button
                                     type="button"
                                     className="w-full px-8 py-4 bg-foreground/5 hover:bg-foreground/10 text-foreground font-oswald font-bold tracking-widest uppercase rounded-xl transition-all duration-300 border border-foreground/20"
@@ -420,7 +411,7 @@ export default function SubmitArticlePage() {
 
                     {/* Back Button at Bottom */}
                     <div className="flex justify-center mt-12 relative z-10">
-                        <Link href="/blogs-and-articles">
+                        <Link href="/podcasts">
                             <button className="group relative bg-transparent border border-foreground/70 text-foreground px-12 py-4 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-foreground/50 isolate cursor-pointer">
                                 <span className="relative z-10 group-hover:text-background transition-colors duration-300">{t('backToArticles')}</span>
                                 <div className="absolute inset-0 bg-foreground transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10"></div>

@@ -7,6 +7,7 @@
     "media": "الإعلام",
     "contact": "اتصل بنا",
     "donate": "تبرع",
+    "subscribe": "يشترك",
     "login": "تسجيل الدخول",
     "profile": "ملفي الشخصي",
     "languages": {
@@ -33,7 +34,8 @@
       "shorts": "مقاطع قصيرة",
       "podcasts": "بودكاست",
       "events": "فعاليات",
-      "getInTouch": "تواصل معنا"
+      "getInTouch": "تواصل معنا",
+      "getInvolved": "Get Involved"
     }
   },
   "Hero": {
@@ -128,7 +130,11 @@
     "tpusa": "نقطة تحول الولايات المتحدة الأمريكية",
     "fpri": "معهد أبحاث السياسة الخارجية",
     "transparency": "أخبار الشفافية",
-    "winep": "معهد واشنطن لسياسة الشرق الأدنى"
+    "winep": "معهد واشنطن لسياسة الشرق الأدنى",
+    "blackhawk": "شركاء بلاكهوك",
+    "guardians": "حراس الأرز",
+    "capitol": "معهد الكابيتول",
+    "nic": "المؤتمر الوطني الإيراني"
   },
   "HouseOfCorruptionPage": {
     "hero": {
@@ -2716,16 +2722,22 @@
   "VideosPage": {
     "subtitle": "أرشيف الوسائط",
     "title": "فيديوهات",
-    "description": "شاهد أحدث تغطياتنا ومقابلاتنا وتحليلاتنا المتعمقة."
+    "description": "شاهد أحدث تغطياتنا ومقابلاتنا وتحليلاتنا المتعمقة.",
+    "submitTitle": "Submit Your Video",
+    "submitDesc": "Share your video content with our editorial board for review."
   },
   "ShortsPage": {
     "subtitle": "أرشيف الوسائط",
-    "title": "فيديوهات قصيرة"
+    "title": "فيديوهات قصيرة",
+    "submitTitle": "Submit Your Short",
+    "submitDesc": "Share your short content with our editorial board for review."
   },
   "PodcastsPage": {
     "subtitle": "أرشيف صوتي",
     "title": "بودكاست",
-    "description": "حوارات نقدية في الجيوسياسية والاقتصاد والقوى الخفية التي تشكل عالمنا."
+    "description": "حوارات نقدية في الجيوسياسية والاقتصاد والقوى الخفية التي تشكل عالمنا.",
+    "submitTitle": "Submit Your Podcast",
+    "submitDesc": "Share your podcast with our editorial board for review."
   },
   "EventsPage": {
     "header": {
@@ -3096,6 +3108,216 @@
       "title": "اصنع تأثيرك الأول",
       "description": "دعمك يمكن أن يساعد في إحداث فرق. انضم إلى مجتمع الداعمين لدينا وساعدنا في تحقيق مهمتنا.",
       "donateNow": "تبرع الآن"
+    }
+  },
+  "SubmitVideoPage": {
+    "title": "SUBMIT YOUR VIDEO",
+    "subtitle": "شارك رؤاك",
+    "description": "Submit your video for review by our editorial board. If approved, it will be published on our platform.",
+    "loginRequired": "يرجى تسجيل الدخول لإرسال مقال",
+    "loginButton": "تسجيل الدخول للمتابعة",
+    "backToArticles": "Back to Videos",
+    "form": {
+      "titleLabel": "Video Title",
+      "titlePlaceholder": "Enter a title for your video",
+      "excerptLabel": "المقتطف",
+      "excerptPlaceholder": "ملخص موجز لمقالك (150-300 حرف)",
+      "contentLabel": "Video Description",
+      "contentPlaceholder": "Write your video description here...",
+      "imageLabel": "Video Thumbnail/Cover (Optional)",
+      "imageHelp": "Upload an image for your video (Max 5MB)",
+      "imageButton": "اختر صورة",
+      "imageSelected": "تم اختيار الصورة",
+      "changeImage": "تغيير الصورة",
+      "categoryLabel": "الفئة",
+      "categoryPlaceholder": "اختر فئة",
+      "categories": {
+        "politics": "السياسة والحكم",
+        "economy": "الاقتصاد والمالية",
+        "security": "الأمن والدفاع",
+        "society": "المجتمع والثقافة",
+        "international": "العلاقات الدولية",
+        "analysis": "التحليل والرأي"
+      },
+      "tagsLabel": "الوسوم (اختياري)",
+      "tagsPlaceholder": "أضف وسوماً ذات صلة (مفصولة بفواصل)",
+      "showAuthorLabel": "إظهار اسمي كمؤلف",
+      "showAuthorHelp": "إذا تم تحديده، فسيتم عرض اسمك مع المقال. بخلاف ذلك، سيتم نشره باسم 'مجهول'.",
+      "submitButton": "إرسال للمراجعة",
+      "submitting": "جاري الإرسال...",
+      "cancel": "إلغاء",
+      "urlLabel": "Video URL",
+      "urlPlaceholder": "Enter the link to your video"
+    },
+    "validation": {
+      "titleRequired": "Title is required",
+      "titleTooShort": "يجب أن يكون العنوان 10 أحرف على الأقل",
+      "excerptRequired": "المقتطف مطلوب",
+      "excerptTooShort": "يجب أن يكون المقتطف 150 حرفاً على الأقل",
+      "contentRequired": "Description is required",
+      "contentTooShort": "يجب أن يكون المحتوى 500 حرف على الأقل",
+      "imageRequired": "الصورة المميزة مطلوبة",
+      "categoryRequired": "يرجى اختيار فئة",
+      "urlRequired": "URL is required"
+    },
+    "success": {
+      "title": "تم إرسال المقال!",
+      "message": "Thank you for your submission. Our editorial board will review your video and get back to you via email.",
+      "backButton": "العودة إلى المقالات"
+    },
+    "preview": {
+      "title": "معاينة",
+      "toggle": "تبديل المعاينة"
+    },
+    "guidelines": {
+      "title": "إرشادات الإرسال",
+      "items": [
+        "يجب أن تكون المقالات أصلية وغير منشورة في مكان آخر",
+        "الحد الأدنى 500 كلمة، الحد الأقصى 800 كلمة",
+        "قم بتضمين مصادر ومراجع موثوقة",
+        "استخدم لغة احترافية ومحترمة",
+        "صورة مميزة عالية الجودة مطلوبة"
+      ]
+    }
+  },
+  "SubmitShortPage": {
+    "title": "SUBMIT YOUR SHORT",
+    "subtitle": "شارك رؤاك",
+    "description": "Submit your short for review by our editorial board.",
+    "loginRequired": "يرجى تسجيل الدخول لإرسال مقال",
+    "loginButton": "تسجيل الدخول للمتابعة",
+    "backToArticles": "Back to Shorts",
+    "form": {
+      "titleLabel": "Short Title",
+      "titlePlaceholder": "Enter a title for your short",
+      "excerptLabel": "المقتطف",
+      "excerptPlaceholder": "ملخص موجز لمقالك (150-300 حرف)",
+      "contentLabel": "Short Description",
+      "contentPlaceholder": "Write your short description here...",
+      "imageLabel": "Short Thumbnail/Cover (Optional)",
+      "imageHelp": "Upload an image for your short (Max 5MB)",
+      "imageButton": "اختر صورة",
+      "imageSelected": "تم اختيار الصورة",
+      "changeImage": "تغيير الصورة",
+      "categoryLabel": "الفئة",
+      "categoryPlaceholder": "اختر فئة",
+      "categories": {
+        "politics": "السياسة والحكم",
+        "economy": "الاقتصاد والمالية",
+        "security": "الأمن والدفاع",
+        "society": "المجتمع والثقافة",
+        "international": "العلاقات الدولية",
+        "analysis": "التحليل والرأي"
+      },
+      "tagsLabel": "الوسوم (اختياري)",
+      "tagsPlaceholder": "أضف وسوماً ذات صلة (مفصولة بفواصل)",
+      "showAuthorLabel": "إظهار اسمي كمؤلف",
+      "showAuthorHelp": "إذا تم تحديده، فسيتم عرض اسمك مع المقال. بخلاف ذلك، سيتم نشره باسم 'مجهول'.",
+      "submitButton": "إرسال للمراجعة",
+      "submitting": "جاري الإرسال...",
+      "cancel": "إلغاء",
+      "urlLabel": "Short URL",
+      "urlPlaceholder": "Enter the link to your short"
+    },
+    "validation": {
+      "titleRequired": "Title is required",
+      "titleTooShort": "يجب أن يكون العنوان 10 أحرف على الأقل",
+      "excerptRequired": "المقتطف مطلوب",
+      "excerptTooShort": "يجب أن يكون المقتطف 150 حرفاً على الأقل",
+      "contentRequired": "Description is required",
+      "contentTooShort": "يجب أن يكون المحتوى 500 حرف على الأقل",
+      "imageRequired": "الصورة المميزة مطلوبة",
+      "categoryRequired": "يرجى اختيار فئة",
+      "urlRequired": "URL is required"
+    },
+    "success": {
+      "title": "تم إرسال المقال!",
+      "message": "Thank you for your submission. Our editorial board will review your video and get back to you via email.",
+      "backButton": "العودة إلى المقالات"
+    },
+    "preview": {
+      "title": "معاينة",
+      "toggle": "تبديل المعاينة"
+    },
+    "guidelines": {
+      "title": "إرشادات الإرسال",
+      "items": [
+        "يجب أن تكون المقالات أصلية وغير منشورة في مكان آخر",
+        "الحد الأدنى 500 كلمة، الحد الأقصى 800 كلمة",
+        "قم بتضمين مصادر ومراجع موثوقة",
+        "استخدم لغة احترافية ومحترمة",
+        "صورة مميزة عالية الجودة مطلوبة"
+      ]
+    }
+  },
+  "SubmitPodcastPage": {
+    "title": "SUBMIT YOUR PODCAST",
+    "subtitle": "شارك رؤاك",
+    "description": "Submit your podcast for review by our editorial board.",
+    "loginRequired": "يرجى تسجيل الدخول لإرسال مقال",
+    "loginButton": "تسجيل الدخول للمتابعة",
+    "backToArticles": "Back to Podcasts",
+    "form": {
+      "titleLabel": "Podcast Title",
+      "titlePlaceholder": "Enter a title for your podcast",
+      "excerptLabel": "المقتطف",
+      "excerptPlaceholder": "ملخص موجز لمقالك (150-300 حرف)",
+      "contentLabel": "Podcast Description",
+      "contentPlaceholder": "Write your podcast description here...",
+      "imageLabel": "Podcast Thumbnail/Cover (Optional)",
+      "imageHelp": "Upload an image for your podcast (Max 5MB)",
+      "imageButton": "اختر صورة",
+      "imageSelected": "تم اختيار الصورة",
+      "changeImage": "تغيير الصورة",
+      "categoryLabel": "الفئة",
+      "categoryPlaceholder": "اختر فئة",
+      "categories": {
+        "politics": "السياسة والحكم",
+        "economy": "الاقتصاد والمالية",
+        "security": "الأمن والدفاع",
+        "society": "المجتمع والثقافة",
+        "international": "العلاقات الدولية",
+        "analysis": "التحليل والرأي"
+      },
+      "tagsLabel": "الوسوم (اختياري)",
+      "tagsPlaceholder": "أضف وسوماً ذات صلة (مفصولة بفواصل)",
+      "showAuthorLabel": "إظهار اسمي كمؤلف",
+      "showAuthorHelp": "إذا تم تحديده، فسيتم عرض اسمك مع المقال. بخلاف ذلك، سيتم نشره باسم 'مجهول'.",
+      "submitButton": "إرسال للمراجعة",
+      "submitting": "جاري الإرسال...",
+      "cancel": "إلغاء",
+      "urlLabel": "Podcast URL",
+      "urlPlaceholder": "Enter the link to your podcast"
+    },
+    "validation": {
+      "titleRequired": "Title is required",
+      "titleTooShort": "يجب أن يكون العنوان 10 أحرف على الأقل",
+      "excerptRequired": "المقتطف مطلوب",
+      "excerptTooShort": "يجب أن يكون المقتطف 150 حرفاً على الأقل",
+      "contentRequired": "Description is required",
+      "contentTooShort": "يجب أن يكون المحتوى 500 حرف على الأقل",
+      "imageRequired": "الصورة المميزة مطلوبة",
+      "categoryRequired": "يرجى اختيار فئة",
+      "urlRequired": "URL is required"
+    },
+    "success": {
+      "title": "تم إرسال المقال!",
+      "message": "Thank you for your submission. Our editorial board will review your video and get back to you via email.",
+      "backButton": "العودة إلى المقالات"
+    },
+    "preview": {
+      "title": "معاينة",
+      "toggle": "تبديل المعاينة"
+    },
+    "guidelines": {
+      "title": "إرشادات الإرسال",
+      "items": [
+        "يجب أن تكون المقالات أصلية وغير منشورة في مكان آخر",
+        "الحد الأدنى 500 كلمة، الحد الأقصى 800 كلمة",
+        "قم بتضمين مصادر ومراجع موثوقة",
+        "استخدم لغة احترافية ومحترمة",
+        "صورة مميزة عالية الجودة مطلوبة"
+      ]
     }
   }
 }

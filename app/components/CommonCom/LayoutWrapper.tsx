@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import JoinUs from "./JoinUs";
 import { ThemeProvider } from "./ThemeProvider";
+import UploadFAB from "./UploadFAB";
 
 export default function LayoutWrapper({
     children,
@@ -32,6 +33,7 @@ export default function LayoutWrapper({
         <ThemeProvider>
             <SmoothScroll />
             <Navbar />
+            <UploadFAB />
             {children}
             {!isProfilePage && <JoinUs />}
             {!isProfilePage && <Footer />}

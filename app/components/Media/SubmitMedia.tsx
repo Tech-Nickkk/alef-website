@@ -1,12 +1,44 @@
 "use client";
 
-import { PenTool, ArrowRight } from "lucide-react";
+import { Video, Mic, Smartphone, ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import GlowingGrid from "@/app/components/CommonCom/GlowingGrid";
 
-export default function SubmitBlog() {
-    const t = useTranslations('BlogsPage');
+interface SubmitMediaProps {
+    type: "video" | "short" | "podcast";
+}
+
+export default function SubmitMedia({ type }: SubmitMediaProps) {
+    const tVideos = useTranslations('VideosPage');
+    const tShorts = useTranslations('ShortsPage');
+    const tPodcasts = useTranslations('PodcastsPage');
+
+    let title = "";
+    let desc = "";
+    let linkHref = "";
+    let Icon = Video;
+    
+    switch (type) {
+        case 'video':
+            title = tVideos('submitTitle');
+            desc = tVideos('submitDesc');
+            linkHref = "/submit-video";
+            Icon = Video;
+            break;
+        case 'short':
+            title = tShorts('submitTitle');
+            desc = tShorts('submitDesc');
+            linkHref = "/submit-short";
+            Icon = Smartphone;
+            break;
+        case 'podcast':
+            title = tPodcasts('submitTitle');
+            desc = tPodcasts('submitDesc');
+            linkHref = "/submit-podcast";
+            Icon = Mic;
+            break;
+    }
 
     return (
         <div className="relative z-20 mt-20 mb-12">
@@ -31,17 +63,17 @@ export default function SubmitBlog() {
 
                                 {/* Title */}
                                 <h3 className="text-4xl md:text-5xl lg:text-6xl font-bebas text-white tracking-wide leading-none">
-                                    {t('submitTitle')}
+                                    {title}
                                 </h3>
 
                                 {/* Description */}
                                 <p className="font-oswald text-lg md:text-xl text-white/60 leading-relaxed max-w-md">
-                                    {t('submitDesc')}
+                                    {desc}
                                 </p>
 
                                 {/* CTA Button */}
                                 <div className="pt-4">
-                                    <Link href="/submit-article" className="group">
+                                    <Link href={linkHref} className="group">
                                         <div className="inline-flex items-center gap-3 px-8 py-4 bg-red hover:bg-red/90 text-white font-oswald font-bold tracking-widest uppercase rounded-xl transition-all duration-300 shadow-lg shadow-red/30 cursor-pointer">
                                             <span>Get Involved</span>
                                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -66,7 +98,7 @@ export default function SubmitBlog() {
                             {/* Right side - Visual Element */}
                             <div className="relative hidden md:flex items-center justify-center">
                                 {/* Central icon */}
-                                <PenTool className="w-50 h-50 text-white/80" strokeWidth={1.5} />
+                                {Icon && <Icon className="w-50 h-50 text-white/80" strokeWidth={1.5} />}
                             </div>
                         </div>
                     </div>

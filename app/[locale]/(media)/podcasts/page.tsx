@@ -1,5 +1,6 @@
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import MediaFeed from "@/app/components/Media/MediaFeed";
+import SubmitMedia from "@/app/components/Media/SubmitMedia";
 import { client } from "@/sanity/lib/client";
 import { getTranslations, getLocale } from "next-intl/server";
 
@@ -45,6 +46,8 @@ export default async function PodcastsPage() {
 
                 {/* Content Feed */}
                 <MediaFeed items={podcasts || []} type="podcast" />
+
+                <SubmitMedia type="podcast" />
 
             </main>
         </div>

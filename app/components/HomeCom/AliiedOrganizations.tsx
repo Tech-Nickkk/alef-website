@@ -20,7 +20,11 @@ const ALLIES = [
     { key: "tpusa", url: "https://tpusa.com/" },
     { key: "fpri", url: "https://www.fpri.org/" },
     { key: "transparency", url: "https://transparency.news/" },
-    { key: "winep", url: "https://www.washingtoninstitute.org/" }
+    { key: "winep", url: "https://www.washingtoninstitute.org/" },
+    { key: "blackhawk", url: "https://www.blackhawkpartners.com/" },
+    { key: "guardians", url: "https://www.gotc.info/index.php/en/" },
+    { key: "capitol", url: "https://capitolinstitute.org/" },
+    { key: "nic", url: "https://iraniancongress.com/" }
 ];
 
 export default function AlliedOrganizations() {
