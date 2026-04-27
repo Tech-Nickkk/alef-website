@@ -30,6 +30,27 @@ export const metadata: Metadata = {
     shortcut: "/home/profile-logo-2.png",
     apple: "/home/profile-logo-2.png",
   },
+  openGraph: {
+    type: "website",
+    url: "https://www.usalef.org",
+    title: "American Lebanon Education Foundation (ALEF)",
+    description: "ALEF is a global, non-partisan initiative advocating for a free, sovereign Lebanon — exposing corruption, combating Hezbollah, and driving policy reform.",
+    siteName: "ALEF — American Lebanon Education Foundation",
+    images: [
+      {
+        url: "https://www.usalef.org/home/profile-logo-2.png",
+        width: 1200,
+        height: 630,
+        alt: "American Lebanon Education Foundation (ALEF) Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "American Lebanon Education Foundation (ALEF)",
+    description: "ALEF is a global, non-partisan initiative advocating for a free, sovereign Lebanon — exposing corruption, combating Hezbollah, and driving policy reform.",
+    images: ["https://www.usalef.org/home/profile-logo-2.png"],
+  },
 };
 
 export default async function LocaleLayout({
