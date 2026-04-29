@@ -10,6 +10,9 @@
     "subscribe": "Subscribe",
     "login": "Login",
     "profile": "My Profile",
+    "theme": "Theme",
+    "language": "Language",
+    "account": "Account",
     "languages": {
       "en": "English",
       "fr": "French",
@@ -35,7 +38,8 @@
       "podcasts": "Podcasts",
       "events": "Events",
       "getInTouch": "Get in Touch",
-      "getInvolved": "Get Involved"
+      "getInvolved": "Get Involved",
+      "faq": "FAQ"
     }
   },
   "Hero": {
@@ -2911,6 +2915,29 @@
           "desc": "President of the Beirut based Lebanese Private Sector Network."
         }
       }
+    },
+    "tabs": {
+      "upcoming": "Upcoming Events",
+      "past": "Past Events",
+      "noUpcoming": "Stay tuned for future events and mobilization campaigns.",
+      "eventsArchive": "Events Archive",
+      "eventArchiveTag": "Event Archive",
+      "learnMore": "Learn More"
+    },
+    "gathering": {
+      "orgName": "American Lebanon Education Foundation",
+      "dinnerTitle": "Inaugural Dinner April 14, 2026",
+      "speaker": "Ziad Abdelnour",
+      "p1": "The American Lebanon Education Foundation is a global initiative of professionals, activists, and leaders united by a shared vision of a free, sovereign, and prosperous Lebanon. As an independent, non-partisan movement, we are committed to dismantling corruption, restoring governance, and advocating for Lebanon's rightful place within the international community.",
+      "p2": "Our mission is to advocate for political, economic, and security reforms, engaging with international policymakers to support Lebanon's sovereignty. We strive to combat corruption and militant influences undermining stability while promoting diaspora involvement in Lebanon's reconstruction and economic growth.",
+      "p3": "We believe in Sovereignty, upholding Lebanon's independence from foreign domination. We stand for Transparency & Accountability, believing in ethical governance and responsible leadership. We fight for Economic Freedom, promoting investment, job creation, and financial stability.",
+      "p4": "The Rule of Law is non-negotiable; we advocate for an independent judiciary and security forces. We are building a Lebanon based on Meritocracy & Performance, valuing skills and leadership excellence above sectarian allegiance.",
+      "cta": "Join us in this critical fight for the soul of our nation. Together, we can drive policy solutions for a self-reliant and thriving Lebanon.",
+      "featuredSpeakers": "Featured Speakers",
+      "eventRoster": "Event Roster",
+      "eventVideo": "Event Video",
+      "photoGallery": "Photo Gallery",
+      "backToEvents": "Back To Events Archive"
     }
   },
   "MediaFeed": {

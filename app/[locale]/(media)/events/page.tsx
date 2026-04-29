@@ -19,13 +19,13 @@ export default function EventsPage() {
                     onClick={() => setActiveTab("upcoming")}
                     className={`w-1/2 pb-4 text-2xl md:text-3xl font-bebas uppercase tracking-wider transition-colors z-10 text-center cursor-pointer ${activeTab === 'upcoming' ? 'text-foreground' : 'text-foreground/40 hover:text-foreground/80'}`}
                 >
-                    Upcoming Events
+                    {t("tabs.upcoming")}
                 </button>
                 <button
                     onClick={() => setActiveTab("past")}
                     className={`w-1/2 pb-4 text-2xl md:text-3xl font-bebas uppercase tracking-wider transition-colors z-10 text-center cursor-pointer ${activeTab === 'past' ? 'text-foreground' : 'text-foreground/40 hover:text-foreground/80'}`}
                 >
-                    Past Events
+                    {t("tabs.past")}
                 </button>
 
                 {/* Animated Underline */}
@@ -40,7 +40,7 @@ export default function EventsPage() {
                 {activeTab === "upcoming" ? (
                     <div className="text-center py-24 bg-white/5 border border-foreground/10 rounded-xl">
                         <p className="font-oswald text-foreground/70 text-lg uppercase tracking-widest">
-                            Stay tuned for future events and mobilization campaigns.
+                            {t("tabs.noUpcoming")}
                         </p>
                     </div>
                 ) : (
@@ -48,7 +48,7 @@ export default function EventsPage() {
                         <div className="text-center mb-12">
                             <div className="flex items-center justify-center gap-4 text-foreground/60 font-oswald text-sm uppercase tracking-widest">
                                 <span className="h-px w-12 bg-foreground/20"></span>
-                                <span>Events Archive</span>
+                                <span>{t("tabs.eventsArchive")}</span>
                                 <span className="h-px w-12 bg-foreground/20"></span>
                             </div>
                         </div>
@@ -76,7 +76,7 @@ export default function EventsPage() {
                                         <div className="inline-flex items-center gap-3 bg-red/20 px-4 py-2 border border-red/30 shadow-[0_0_15px_rgba(196,21,28,0.3)] backdrop-blur-xs">
                                             <span className="w-2 h-2 bg-red rounded-full animate-none"></span>
                                             <span className="font-oswald text-red tracking-[0.3em] uppercase text-xs font-bold leading-none">
-                                                Event Archive
+                                                {t("tabs.eventArchiveTag")}
                                             </span>
                                         </div>
 
@@ -107,7 +107,7 @@ export default function EventsPage() {
                                                 className="group/link relative bg-transparent border border-white/70 text-white px-6 py-4 md:px-8 md:py-5 text-lg md:text-xl font-bold tracking-[0.2em] font-bebas overflow-hidden transition-all hover:border-white/50 isolate cursor-pointer flex items-center gap-4 uppercase shadow-xl w-fit"
                                             >
                                                 <span className="relative z-10 group-hover/link:text-blue transition-colors duration-300 flex items-center gap-4">
-                                                    Learn More
+                                                    {t("tabs.learnMore")}
                                                     <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover/link:translate-x-2 transition-transform" />
                                                 </span>
                                                 <div className="absolute inset-0 bg-white transform scale-y-0 origin-top group-hover/link:scale-y-100 group-hover/link:origin-bottom transition-transform duration-500 ease-out -z-10"></div>

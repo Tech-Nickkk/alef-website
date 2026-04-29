@@ -10,6 +10,9 @@
     "subscribe": "يشترك",
     "login": "تسجيل الدخول",
     "profile": "ملفي الشخصي",
+    "theme": "المظهر",
+    "language": "اللغة",
+    "account": "الحساب",
     "languages": {
       "en": "الإنجليزية",
       "fr": "الفرنسية",
@@ -35,7 +38,8 @@
       "podcasts": "بودكاست",
       "events": "فعاليات",
       "getInTouch": "تواصل معنا",
-      "getInvolved": "Get Involved"
+      "getInvolved": "شارك معنا",
+      "faq": "الأسئلة الشائعة"
     }
   },
   "Hero": {
@@ -2932,6 +2936,29 @@
           "desc": "رئيسة شبكة القطاع الخاص اللبناني ومقرها بيروت."
         }
       }
+    },
+    "tabs": {
+      "upcoming": "الأحداث القادمة",
+      "past": "الأحداث السابقة",
+      "noUpcoming": "ترقبوا الأحداث والحملات القادمة.",
+      "eventsArchive": "أرشيف الأحداث",
+      "eventArchiveTag": "أرشيف الحدث",
+      "learnMore": "اعرف المزيد"
+    },
+    "gathering": {
+      "orgName": "مؤسسة التعليم الأمريكية اللبنانية",
+      "dinnerTitle": "حفل العشاء الافتتاحي - 14 أبريل 2026",
+      "speaker": "زياد عبد النور",
+      "p1": "مؤسسة التعليم الأمريكية اللبنانية مبادرة عالمية تجمع المهنيين والناشطين والقادة تحت رؤية مشتركة للبنان حر وذي سيادة وازدهار. بوصفنا حركة مستقلة وغير حزبية، نلتزم بتفكيك الفساد واستعادة الحوكمة والدفاع عن مكانة لبنان الحقيقية في المجتمع الدولي.",
+      "p2": "تتمثل مهمتنا في الدفاع عن الإصلاحات السياسية والاقتصادية والأمنية، والتعامل مع صانعي السياسات الدوليين لدعم سيادة لبنان. نسعى إلى مكافحة الفساد والتأثيرات المتطرفة التي تقوّض الاستقرار، مع تعزيز مشاركة المغتربين في إعادة إعمار لبنان ونموه الاقتصادي.",
+      "p3": "نؤمن بالسيادة ودعم استقلالية لبنان من الهيمنة الأجنبية. ندافع عن الشفافية والمساءلة ونؤمن بالحوكمة الأخلاقية والقيادة المسؤولة. نكافح من أجل الحرية الاقتصادية وتعزيز الاستثمار وخلق فرص العمل والاستقرار المالي.",
+      "p4": "سيادة القانون أمر غير قابل للتفاوض؛ نؤيد القضاء المستقل وقوات الأمن. نحن نبني لبنان على أساس الكفاءة والأداء، ونُقدّم المهارات والتميز القيادي على الانتماء الطائفي.",
+      "cta": "انضم إلينا في هذا الكفاح الحاسم من أجل روح أمتنا. معاً، يمكننا صياغة حلول سياسية للبنان مكتفٍ بذاته ومزدهر.",
+      "featuredSpeakers": "المتحدثون البارزون",
+      "eventRoster": "قائمة المشاركين",
+      "eventVideo": "فيديو الحدث",
+      "photoGallery": "معرض الصور",
+      "backToEvents": "العودة إلى أرشيف الأحداث"
     }
   },
   "MediaFeed": {
@@ -3111,21 +3138,21 @@
     }
   },
   "SubmitVideoPage": {
-    "title": "SUBMIT YOUR VIDEO",
+    "title": "قدّم فيديوك",
     "subtitle": "شارك رؤاك",
-    "description": "Submit your video for review by our editorial board. If approved, it will be published on our platform.",
-    "loginRequired": "يرجى تسجيل الدخول لإرسال مقال",
+    "description": "أرسل الفيديو الخاص بك للمراجعة من قبل هيئتنا التحريرية. في حال الموافقة، سيتم نشره على منصتنا.",
+    "loginRequired": "يرجى تسجيل الدخول لإرسال فيديو",
     "loginButton": "تسجيل الدخول للمتابعة",
-    "backToArticles": "Back to Videos",
+    "backToArticles": "العودة إلى الفيديوهات",
     "form": {
-      "titleLabel": "Video Title",
-      "titlePlaceholder": "Enter a title for your video",
+      "titleLabel": "عنوان الفيديو",
+      "titlePlaceholder": "أدخل عنواناً لفيديوك",
       "excerptLabel": "المقتطف",
       "excerptPlaceholder": "ملخص موجز لمقالك (150-300 حرف)",
-      "contentLabel": "Video Description",
-      "contentPlaceholder": "Write your video description here...",
-      "imageLabel": "Video Thumbnail/Cover (Optional)",
-      "imageHelp": "Upload an image for your video (Max 5MB)",
+      "contentLabel": "وصف الفيديو",
+      "contentPlaceholder": "اكتب وصف الفيديو هنا...",
+      "imageLabel": "صورة مصغرة للفيديو (اختياري)",
+      "imageHelp": "ارفع صورة للفيديو (الحد الأقصى 5 ميغابايت)",
       "imageButton": "اختر صورة",
       "imageSelected": "تم اختيار الصورة",
       "changeImage": "تغيير الصورة",
@@ -3146,24 +3173,24 @@
       "submitButton": "إرسال للمراجعة",
       "submitting": "جاري الإرسال...",
       "cancel": "إلغاء",
-      "urlLabel": "Video URL",
-      "urlPlaceholder": "Enter the link to your video"
+      "urlLabel": "رابط الفيديو",
+      "urlPlaceholder": "أدخل رابط الفيديو"
     },
     "validation": {
-      "titleRequired": "Title is required",
+      "titleRequired": "العنوان مطلوب",
       "titleTooShort": "يجب أن يكون العنوان 10 أحرف على الأقل",
       "excerptRequired": "المقتطف مطلوب",
       "excerptTooShort": "يجب أن يكون المقتطف 150 حرفاً على الأقل",
-      "contentRequired": "Description is required",
+      "contentRequired": "الوصف مطلوب",
       "contentTooShort": "يجب أن يكون المحتوى 500 حرف على الأقل",
       "imageRequired": "الصورة المميزة مطلوبة",
       "categoryRequired": "يرجى اختيار فئة",
-      "urlRequired": "URL is required"
+      "urlRequired": "الرابط مطلوب"
     },
     "success": {
-      "title": "تم إرسال المقال!",
-      "message": "Thank you for your submission. Our editorial board will review your video and get back to you via email.",
-      "backButton": "العودة إلى المقالات"
+      "title": "تم إرسال الفيديو!",
+      "message": "شكراً على مساهمتك. ستقوم هيئتنا التحريرية بمراجعة الفيديو والتواصل معك عبر البريد الإلكتروني.",
+      "backButton": "العودة إلى الفيديوهات"
     },
     "preview": {
       "title": "معاينة",
@@ -3181,21 +3208,21 @@
     }
   },
   "SubmitShortPage": {
-    "title": "SUBMIT YOUR SHORT",
+    "title": "قدّم مقطعك القصير",
     "subtitle": "شارك رؤاك",
-    "description": "Submit your short for review by our editorial board.",
-    "loginRequired": "يرجى تسجيل الدخول لإرسال مقال",
+    "description": "أرسل المقطع القصير للمراجعة من قبل هيئتنا التحريرية. في حال الموافقة، سيتم نشره على منصتنا.",
+    "loginRequired": "يرجى تسجيل الدخول لإرسال مقطع قصير",
     "loginButton": "تسجيل الدخول للمتابعة",
-    "backToArticles": "Back to Shorts",
+    "backToArticles": "العودة إلى المقاطع القصيرة",
     "form": {
-      "titleLabel": "Short Title",
-      "titlePlaceholder": "Enter a title for your short",
+      "titleLabel": "عنوان المقطع القصير",
+      "titlePlaceholder": "أدخل عنواناً للمقطع القصير",
       "excerptLabel": "المقتطف",
       "excerptPlaceholder": "ملخص موجز لمقالك (150-300 حرف)",
-      "contentLabel": "Short Description",
-      "contentPlaceholder": "Write your short description here...",
-      "imageLabel": "Short Thumbnail/Cover (Optional)",
-      "imageHelp": "Upload an image for your short (Max 5MB)",
+      "contentLabel": "وصف المقطع القصير",
+      "contentPlaceholder": "اكتب وصف المقطع القصير هنا...",
+      "imageLabel": "صورة مصغرة للمقطع القصير (اختياري)",
+      "imageHelp": "ارفع صورة للمقطع القصير (الحد الأقصى 5 ميغابايت)",
       "imageButton": "اختر صورة",
       "imageSelected": "تم اختيار الصورة",
       "changeImage": "تغيير الصورة",
@@ -3216,24 +3243,24 @@
       "submitButton": "إرسال للمراجعة",
       "submitting": "جاري الإرسال...",
       "cancel": "إلغاء",
-      "urlLabel": "Short URL",
-      "urlPlaceholder": "Enter the link to your short"
+      "urlLabel": "رابط المقطع القصير",
+      "urlPlaceholder": "أدخل رابط المقطع القصير"
     },
     "validation": {
-      "titleRequired": "Title is required",
+      "titleRequired": "العنوان مطلوب",
       "titleTooShort": "يجب أن يكون العنوان 10 أحرف على الأقل",
       "excerptRequired": "المقتطف مطلوب",
       "excerptTooShort": "يجب أن يكون المقتطف 150 حرفاً على الأقل",
-      "contentRequired": "Description is required",
+      "contentRequired": "الوصف مطلوب",
       "contentTooShort": "يجب أن يكون المحتوى 500 حرف على الأقل",
       "imageRequired": "الصورة المميزة مطلوبة",
       "categoryRequired": "يرجى اختيار فئة",
-      "urlRequired": "URL is required"
+      "urlRequired": "الرابط مطلوب"
     },
     "success": {
-      "title": "تم إرسال المقال!",
-      "message": "Thank you for your submission. Our editorial board will review your video and get back to you via email.",
-      "backButton": "العودة إلى المقالات"
+      "title": "تم إرسال المقطع القصير!",
+      "message": "شكراً على مساهمتك. ستقوم هيئتنا التحريرية بمراجعة المقطع القصير والتواصل معك عبر البريد الإلكتروني.",
+      "backButton": "العودة إلى المقاطع القصيرة"
     },
     "preview": {
       "title": "معاينة",
@@ -3251,21 +3278,21 @@
     }
   },
   "SubmitPodcastPage": {
-    "title": "SUBMIT YOUR PODCAST",
+    "title": "قدّم بودكاستك",
     "subtitle": "شارك رؤاك",
-    "description": "Submit your podcast for review by our editorial board.",
-    "loginRequired": "يرجى تسجيل الدخول لإرسال مقال",
+    "description": "أرسل البودكاست الخاص بك للمراجعة من قبل هيئتنا التحريرية. في حال الموافقة، سيتم نشره على منصتنا.",
+    "loginRequired": "يرجى تسجيل الدخول لإرسال بودكاست",
     "loginButton": "تسجيل الدخول للمتابعة",
-    "backToArticles": "Back to Podcasts",
+    "backToArticles": "العودة إلى البودكاست",
     "form": {
-      "titleLabel": "Podcast Title",
-      "titlePlaceholder": "Enter a title for your podcast",
+      "titleLabel": "عنوان البودكاست",
+      "titlePlaceholder": "أدخل عنواناً للبودكاست",
       "excerptLabel": "المقتطف",
       "excerptPlaceholder": "ملخص موجز لمقالك (150-300 حرف)",
-      "contentLabel": "Podcast Description",
-      "contentPlaceholder": "Write your podcast description here...",
-      "imageLabel": "Podcast Thumbnail/Cover (Optional)",
-      "imageHelp": "Upload an image for your podcast (Max 5MB)",
+      "contentLabel": "وصف البودكاست",
+      "contentPlaceholder": "اكتب وصف البودكاست هنا...",
+      "imageLabel": "صورة مصغرة للبودكاست (اختياري)",
+      "imageHelp": "ارفع صورة للبودكاست (الحد الأقصى 5 ميغابايت)",
       "imageButton": "اختر صورة",
       "imageSelected": "تم اختيار الصورة",
       "changeImage": "تغيير الصورة",
@@ -3286,24 +3313,24 @@
       "submitButton": "إرسال للمراجعة",
       "submitting": "جاري الإرسال...",
       "cancel": "إلغاء",
-      "urlLabel": "Podcast URL",
-      "urlPlaceholder": "Enter the link to your podcast"
+      "urlLabel": "رابط البودكاست",
+      "urlPlaceholder": "أدخل رابط البودكاست"
     },
     "validation": {
-      "titleRequired": "Title is required",
+      "titleRequired": "العنوان مطلوب",
       "titleTooShort": "يجب أن يكون العنوان 10 أحرف على الأقل",
       "excerptRequired": "المقتطف مطلوب",
       "excerptTooShort": "يجب أن يكون المقتطف 150 حرفاً على الأقل",
-      "contentRequired": "Description is required",
+      "contentRequired": "الوصف مطلوب",
       "contentTooShort": "يجب أن يكون المحتوى 500 حرف على الأقل",
       "imageRequired": "الصورة المميزة مطلوبة",
       "categoryRequired": "يرجى اختيار فئة",
-      "urlRequired": "URL is required"
+      "urlRequired": "الرابط مطلوب"
     },
     "success": {
-      "title": "تم إرسال المقال!",
-      "message": "Thank you for your submission. Our editorial board will review your video and get back to you via email.",
-      "backButton": "العودة إلى المقالات"
+      "title": "تم إرسال البودكاست!",
+      "message": "شكراً على مساهمتك. ستقوم هيئتنا التحريرية بمراجعة البودكاست والتواصل معك عبر البريد الإلكتروني.",
+      "backButton": "العودة إلى البودكاست"
     },
     "preview": {
       "title": "معاينة",

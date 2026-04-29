@@ -1,5 +1,7 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
+
 import React, { useEffect, useRef, useState } from "react";
 import SkeletonImage from "./SkeletonImage";
 import gsap from "gsap";
@@ -19,7 +21,7 @@ export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isLangOpen, setIsLangOpen] = useState(false);
     const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
-    const [mounted, setMounted] = useState(false);
+    const mounted = useSyncExternalStore(() => () => {}, () => true, () => false);
     const [user] = useAuthState(auth);
 
     // i18n hooks
@@ -54,9 +56,6 @@ export default function Navbar() {
         });
     }, { scope: navRef });
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
 
     // Lock body scroll when mobile menu is open
     useEffect(() => {
@@ -130,7 +129,7 @@ export default function Navbar() {
             dropdown: [
                 { label: t('menu.getInTouch'), href: "/contact" },
                 { label: t('menu.getInvolved'), href: "/get-involved" },
-                { label: "FAQ", href: "/faq" } 
+                { label: t('menu.faq'), href: "/faq" } 
             ]
         }
     ];
@@ -393,13 +392,13 @@ export default function Navbar() {
                             <div className="mt-8 pt-8 border-t border-foreground/10 flex flex-col gap-5">
                                 {/* Theme */}
                                 <div className="flex items-center justify-between">
-                                    <span className="text-foreground/70 font-oswald uppercase tracking-widest text-sm">Theme</span>
+                                    <span className="text-foreground/70 font-oswald uppercase tracking-widest text-sm">{t('theme')}</span>
                                     <ThemeToggle />
                                 </div>
 
                                 {/* Language */}
                                 <div className="flex flex-col gap-2">
-                                    <span className="text-foreground/70 font-oswald uppercase tracking-widest text-sm">Language</span>
+                                    <span className="text-foreground/70 font-oswald uppercase tracking-widest text-sm">{t('language')}</span>
                                     <div className="flex flex-wrap gap-2">
                                         {languages.map((lang) => (
                                             <button
@@ -419,7 +418,7 @@ export default function Navbar() {
 
                                 {/* Profile / Login */}
                                 <div className="flex items-center justify-between">
-                                    <span className="text-foreground/70 font-oswald uppercase tracking-widest text-sm">Account</span>
+                                    <span className="text-foreground/70 font-oswald uppercase tracking-widest text-sm">{t('account')}</span>
                                     {user ? (
                                         <Link
                                             href="/profile"
@@ -433,7 +432,7 @@ export default function Navbar() {
                                                     <span className="font-bebas text-sm">{user.displayName ? user.displayName.charAt(0).toUpperCase() : <UserIcon className="w-4 h-4" />}</span>
                                                 </div>
                                             )}
-                                            My Profile
+                                            {t('profile')}
                                         </Link>
                                     ) : (
                                         <Link
@@ -442,7 +441,7 @@ export default function Navbar() {
                                             className="flex items-center gap-2 text-foreground/80 hover:text-foreground transition-colors font-oswald uppercase text-sm tracking-wider"
                                         >
                                             <UserIcon className="w-4 h-4" />
-                                            Login
+                                            {t('login')}
                                         </Link>
                                     )}
                                 </div>

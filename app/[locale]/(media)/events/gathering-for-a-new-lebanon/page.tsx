@@ -84,19 +84,19 @@ export default function GatheringForNewLebanonPage() {
             <div className="w-full max-w-5xl mx-auto mb-24 px-4">
                 <div className="bg-blue border border-white/10 p-8 md:p-12 lg:p-16 rounded-sm shadow-2xl relative">
                     <h3 className="font-bebas text-3xl md:text-5xl text-white mb-10 tracking-widest text-center leading-tight">
-                        American Lebanon Education Foundation <br />
-                        <span className="text-red">Inaugural Dinner April 14, 2026</span> <br />
-                        <span className="text-white/50 mr-2">~</span> <span className="text-white">Ziad Abdelnour</span>
+                        {t("gathering.orgName")} <br />
+                        <span className="text-red">{t("gathering.dinnerTitle")}</span> <br />
+                        <span className="text-white/50 mr-2">~</span> <span className="text-white">{t("gathering.speaker")}</span>
                     </h3>
 
                     <div className="space-y-6 font-oswald text-white/70 text-lg md:text-xl leading-relaxed text-justify md:text-left">
-                        <p>The American Lebanon Education Foundation is a global initiative of professionals, activists, and leaders united by a shared vision of a free, sovereign, and prosperous Lebanon. As an independent, non-partisan movement, we are committed to dismantling corruption, restoring governance, and advocating for Lebanon&apos;s rightful place within the international community.</p>
-                        <p>Our mission is to advocate for political, economic, and security reforms, engaging with international policymakers to support Lebanon&apos;s sovereignty. We strive to combat corruption and militant influences undermining stability while promoting diaspora involvement in Lebanon&apos;s reconstruction and economic growth.</p>
-                        <p>We believe in Sovereignty, upholding Lebanon&apos;s independence from foreign domination. We stand for Transparency &amp; Accountability, believing in ethical governance and responsible leadership. We fight for Economic Freedom, promoting investment, job creation, and financial stability.</p>
-                        <p>The Rule of Law is non-negotiable; we advocate for an independent judiciary and security forces. We are building a Lebanon based on Meritocracy &amp; Performance, valuing skills and leadership excellence above sectarian allegiance.</p>
+                        <p>{t("gathering.p1")}</p>
+                        <p>{t("gathering.p2")}</p>
+                        <p>{t("gathering.p3")}</p>
+                        <p>{t("gathering.p4")}</p>
 
                         <div className="border-l-4 border-red pl-5 py-3 mt-8 bg-red/5 rounded-r-sm">
-                            <p className="text-white tracking-wide text-xl font-medium">Join us in this critical fight for the soul of our nation. Together, we can drive policy solutions for a self-reliant and thriving Lebanon.</p>
+                            <p className="text-white tracking-wide text-xl font-medium">{t("gathering.cta")}</p>
                         </div>
                     </div>
                 </div>
@@ -105,10 +105,10 @@ export default function GatheringForNewLebanonPage() {
             {/* FEATURED SPEAKERS SECTION */}
             <div className="w-full max-w-6xl mx-auto mb-24 reveal-anim">
                 <div className="text-center mb-12">
-                    <h3 className="font-bebas text-4xl lg:text-5xl text-foreground mb-4 uppercase">Featured Speakers</h3>
+                    <h3 className="font-bebas text-4xl lg:text-5xl text-foreground mb-4 uppercase">{t("gathering.featuredSpeakers")}</h3>
                     <div className="flex items-center justify-center gap-4 text-foreground/60 font-oswald text-sm uppercase tracking-widest">
                         <span className="h-px w-12 bg-foreground/20"></span>
-                        <span>Event Roster</span>
+                        <span>{t("gathering.eventRoster")}</span>
                         <span className="h-px w-12 bg-foreground/20"></span>
                     </div>
                 </div>
@@ -165,7 +165,7 @@ export default function GatheringForNewLebanonPage() {
 
             {/* EVENT VIDEO */}
             <div id="media" className="w-full max-w-5xl mx-auto mb-24 px-4 text-center">
-                <h4 className="font-bebas text-3xl md:text-4xl text-foreground mb-8 uppercase">Event Video</h4>
+                <h4 className="font-bebas text-3xl md:text-4xl text-foreground mb-8 uppercase">{t("gathering.eventVideo")}</h4>
                 <div className="relative overflow-hidden border border-foreground/10 bg-black aspect-video flex-col justify-center text-center shadow-2xl">
                     <video
                         className="w-full h-full object-cover"
@@ -181,7 +181,7 @@ export default function GatheringForNewLebanonPage() {
 
             {/* PHOTOS GRID */}
             <div className="w-full max-w-7xl mx-auto mb-24 px-4">
-                <h4 className="font-bebas text-3xl md:text-4xl text-foreground mb-8 uppercase text-center">Photo Gallery</h4>
+                <h4 className="font-bebas text-3xl md:text-4xl text-foreground mb-8 uppercase text-center">{t("gathering.photoGallery")}</h4>
                 <div className="grid grid-cols-2 gap-4 auto-rows-[250px] md:auto-rows-[350px] grid-flow-dense">
                     {[...Array(27)].map((_, i) => {
                         let spanClasses = "col-span-1 row-span-1";
@@ -214,7 +214,7 @@ export default function GatheringForNewLebanonPage() {
             <div className="flex justify-center mt-12 relative z-10 w-full">
                 <Link href="/events">
                     <button className="group relative bg-transparent border border-foreground/70 text-foreground px-12 py-4 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-foreground/50 isolate cursor-pointer">
-                        <span className="relative z-10 group-hover:text-background transition-colors duration-300">Back To Events Archive</span>
+                        <span className="relative z-10 group-hover:text-background transition-colors duration-300">{t("gathering.backToEvents")}</span>
                         <div className="absolute inset-0 bg-foreground transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10"></div>
                     </button>
                 </Link>

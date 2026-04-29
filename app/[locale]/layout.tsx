@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "ALEF — American Lebanon Education Foundation",
     images: [
       {
-        url: "https://www.usalef.org/home/profile-logo-2.png",
+        url: "https://www.usalef.org/home/logo.png",
         width: 1200,
         height: 630,
         alt: "American Lebanon Education Foundation (ALEF) Logo",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "American Lebanon Education Foundation (ALEF)",
     description: "ALEF is a global, non-partisan initiative advocating for a free, sovereign Lebanon — exposing corruption, combating Hezbollah, and driving policy reform.",
-    images: ["https://www.usalef.org/home/profile-logo-2.png"],
+    images: ["https://www.usalef.org/home/logo.png"],
   },
 };
 

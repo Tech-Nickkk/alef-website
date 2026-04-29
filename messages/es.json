@@ -10,6 +10,9 @@
     "subscribe": "Suscribirse",
     "login": "Iniciar sesión",
     "profile": "Mi Perfil",
+    "theme": "Tema",
+    "language": "Idioma",
+    "account": "Cuenta",
     "languages": {
       "en": "Inglés",
       "fr": "Francés",
@@ -35,7 +38,8 @@
       "podcasts": "Podcasts",
       "events": "Eventos",
       "getInTouch": "Contáctenos",
-      "getInvolved": "Get Involved"
+      "getInvolved": "Partícipa",
+      "faq": "Preguntas Frecuentes"
     }
   },
   "Hero": {
@@ -2895,6 +2899,29 @@
           "desc": "Presidente de la Red del Sector Privado Libanés con sede en Beirut."
         }
       }
+    },
+    "tabs": {
+      "upcoming": "Próximos Eventos",
+      "past": "Eventos Pasados",
+      "noUpcoming": "Permanezca atento a futuros eventos y campañas de movilización.",
+      "eventsArchive": "Archivo de Eventos",
+      "eventArchiveTag": "Archivo del Evento",
+      "learnMore": "Saber Más"
+    },
+    "gathering": {
+      "orgName": "Fundación Americana de Educación para el Líbano",
+      "dinnerTitle": "Cena Inaugural del 14 de Abril de 2026",
+      "speaker": "Ziad Abdelnour",
+      "p1": "La Fundación Americana de Educación para el Líbano es una iniciativa global de profesionales, activistas y líderes unidos por una visión compartida de un Líbano libre, soberano y próspero. Como movimiento independiente y no partidista, estamos comprometidos con desmantelar la corrupción, restaurar la gobernanza y abogar por el lugar legítimo del Líbano dentro de la comunidad internacional.",
+      "p2": "Nuestra misión es abogar por reformas políticas, económicas y de seguridad, interactuando con los responsables políticos internacionales para apoyar la soberanía del Líbano. Nos esforzamos por combatir la corrupción y las influencias militantes que socavan la estabilidad, mientras promovemos la participación de la diáspora en la reconstrucción y el crecimiento económico del Líbano.",
+      "p3": "Creemos en la Soberanía, defendiendo la independencia del Líbano de la dominación extranjera. Defendemos la Transparencia y la Rendición de Cuentas, creyendo en la gobernanza ética y el liderazgo responsable. Luchamos por la Libertad Económica, promoviendo la inversión, la creación de empleo y la estabilidad financiera.",
+      "p4": "El Estado de Derecho es innegociable; abogamos por un poder judicial independiente y fuerzas de seguridad. Estamos construyendo un Líbano basado en la Meritocracia y el Desempeño, valorando las habilidades y la excelencia en el liderazgo por encima de la lealtad sectaria.",
+      "cta": "Únase a nosotros en esta lucha crucial por el alma de nuestra nación. Juntos, podemos impulsar soluciones políticas para un Líbano autosuficiente y próspero.",
+      "featuredSpeakers": "Oradores Destacados",
+      "eventRoster": "Programa del Evento",
+      "eventVideo": "Video del Evento",
+      "photoGallery": "Galería de Fotos",
+      "backToEvents": "Volver al Archivo de Eventos"
     }
   },
   "MediaFeed": {
@@ -3074,21 +3101,21 @@
     }
   },
   "SubmitVideoPage": {
-    "title": "SUBMIT YOUR VIDEO",
+    "title": "ENVIAR TU VIDEO",
     "subtitle": "Comparte tus Ideas",
-    "description": "Submit your video for review by our editorial board. If approved, it will be published on our platform.",
-    "loginRequired": "Por favor inicia sesión para enviar un artículo",
+    "description": "Envía tu video para su revisión por nuestro comité editorial. Si es aprobado, será publicado en nuestra plataforma.",
+    "loginRequired": "Por favor inicia sesión para enviar un video",
     "loginButton": "Iniciar sesión para continuar",
-    "backToArticles": "Back to Videos",
+    "backToArticles": "Volver a Videos",
     "form": {
-      "titleLabel": "Video Title",
-      "titlePlaceholder": "Enter a title for your video",
+      "titleLabel": "Título del video",
+      "titlePlaceholder": "Ingresa un título para tu video",
       "excerptLabel": "Extracto",
       "excerptPlaceholder": "Breve resumen de tu artículo (150-300 caracteres)",
-      "contentLabel": "Video Description",
-      "contentPlaceholder": "Write your video description here...",
-      "imageLabel": "Video Thumbnail/Cover (Optional)",
-      "imageHelp": "Upload an image for your video (Max 5MB)",
+      "contentLabel": "Descripción del video",
+      "contentPlaceholder": "Escribe la descripción de tu video aquí...",
+      "imageLabel": "Miniatura del video (opcional)",
+      "imageHelp": "Sube una imagen para tu video (máx. 5 MB)",
       "imageButton": "Elegir Imagen",
       "imageSelected": "Imagen Seleccionada",
       "changeImage": "Cambiar Imagen",
@@ -3109,24 +3136,24 @@
       "submitButton": "Enviar para Revisión",
       "submitting": "Enviando...",
       "cancel": "Cancelar",
-      "urlLabel": "Video URL",
-      "urlPlaceholder": "Enter the link to your video"
+      "urlLabel": "Enlace del video",
+      "urlPlaceholder": "Ingresa el enlace de tu video"
     },
     "validation": {
-      "titleRequired": "Title is required",
+      "titleRequired": "El título es obligatorio",
       "titleTooShort": "El título debe tener al menos 10 caracteres",
       "excerptRequired": "El extracto es obligatorio",
       "excerptTooShort": "El extracto debe tener al menos 150 caracteres",
-      "contentRequired": "Description is required",
+      "contentRequired": "La descripción es obligatoria",
       "contentTooShort": "El contenido debe tener al menos 500 caracteres",
       "imageRequired": "La imagen destacada es obligatoria",
       "categoryRequired": "Por favor selecciona una categoría",
-      "urlRequired": "URL is required"
+      "urlRequired": "El enlace es obligatorio"
     },
     "success": {
-      "title": "¡Artículo Enviado!",
-      "message": "Thank you for your submission. Our editorial board will review your video and get back to you via email.",
-      "backButton": "Volver a Artículos"
+      "title": "¡Video enviado!",
+      "message": "Gracias por tu envío. Nuestro comité editorial revisará tu video y se pondrá en contacto contigo por correo electrónico.",
+      "backButton": "Volver a Videos"
     },
     "preview": {
       "title": "Vista Previa",
@@ -3144,21 +3171,21 @@
     }
   },
   "SubmitShortPage": {
-    "title": "SUBMIT YOUR SHORT",
+    "title": "ENVIAR TU SHORT",
     "subtitle": "Comparte tus Ideas",
-    "description": "Submit your short for review by our editorial board.",
-    "loginRequired": "Por favor inicia sesión para enviar un artículo",
+    "description": "Envía tu corto para su revisión por nuestro comité editorial. Si es aprobado, será publicado en nuestra plataforma.",
+    "loginRequired": "Por favor inicia sesión para enviar un corto",
     "loginButton": "Iniciar sesión para continuar",
-    "backToArticles": "Back to Shorts",
+    "backToArticles": "Volver a Shorts",
     "form": {
-      "titleLabel": "Short Title",
-      "titlePlaceholder": "Enter a title for your short",
+      "titleLabel": "Título del short",
+      "titlePlaceholder": "Ingresa un título para tu short",
       "excerptLabel": "Extracto",
       "excerptPlaceholder": "Breve resumen de tu artículo (150-300 caracteres)",
-      "contentLabel": "Short Description",
-      "contentPlaceholder": "Write your short description here...",
-      "imageLabel": "Short Thumbnail/Cover (Optional)",
-      "imageHelp": "Upload an image for your short (Max 5MB)",
+      "contentLabel": "Descripción del short",
+      "contentPlaceholder": "Escribe la descripción de tu short aquí...",
+      "imageLabel": "Miniatura del short (opcional)",
+      "imageHelp": "Sube una imagen para tu short (máx. 5 MB)",
       "imageButton": "Elegir Imagen",
       "imageSelected": "Imagen Seleccionada",
       "changeImage": "Cambiar Imagen",
@@ -3179,24 +3206,24 @@
       "submitButton": "Enviar para Revisión",
       "submitting": "Enviando...",
       "cancel": "Cancelar",
-      "urlLabel": "Short URL",
-      "urlPlaceholder": "Enter the link to your short"
+      "urlLabel": "Enlace del short",
+      "urlPlaceholder": "Ingresa el enlace de tu short"
     },
     "validation": {
-      "titleRequired": "Title is required",
+      "titleRequired": "El título es obligatorio",
       "titleTooShort": "El título debe tener al menos 10 caracteres",
       "excerptRequired": "El extracto es obligatorio",
       "excerptTooShort": "El extracto debe tener al menos 150 caracteres",
-      "contentRequired": "Description is required",
+      "contentRequired": "La descripción es obligatoria",
       "contentTooShort": "El contenido debe tener al menos 500 caracteres",
       "imageRequired": "La imagen destacada es obligatoria",
       "categoryRequired": "Por favor selecciona una categoría",
-      "urlRequired": "URL is required"
+      "urlRequired": "El enlace es obligatorio"
     },
     "success": {
-      "title": "¡Artículo Enviado!",
-      "message": "Thank you for your submission. Our editorial board will review your video and get back to you via email.",
-      "backButton": "Volver a Artículos"
+      "title": "¡Short enviado!",
+      "message": "Gracias por tu envío. Nuestro comité editorial revisará tu short y se pondrá en contacto contigo por correo electrónico.",
+      "backButton": "Volver a Shorts"
     },
     "preview": {
       "title": "Vista Previa",
@@ -3214,21 +3241,21 @@
     }
   },
   "SubmitPodcastPage": {
-    "title": "SUBMIT YOUR PODCAST",
+    "title": "ENVIAR TU PODCAST",
     "subtitle": "Comparte tus Ideas",
-    "description": "Submit your podcast for review by our editorial board.",
-    "loginRequired": "Por favor inicia sesión para enviar un artículo",
+    "description": "Envía tu podcast para su revisión por nuestro comité editorial. Si es aprobado, será publicado en nuestra plataforma.",
+    "loginRequired": "Por favor inicia sesión para enviar un podcast",
     "loginButton": "Iniciar sesión para continuar",
-    "backToArticles": "Back to Podcasts",
+    "backToArticles": "Volver a Podcasts",
     "form": {
-      "titleLabel": "Podcast Title",
-      "titlePlaceholder": "Enter a title for your podcast",
+      "titleLabel": "Título del podcast",
+      "titlePlaceholder": "Ingresa un título para tu podcast",
       "excerptLabel": "Extracto",
       "excerptPlaceholder": "Breve resumen de tu artículo (150-300 caracteres)",
-      "contentLabel": "Podcast Description",
-      "contentPlaceholder": "Write your podcast description here...",
-      "imageLabel": "Podcast Thumbnail/Cover (Optional)",
-      "imageHelp": "Upload an image for your podcast (Max 5MB)",
+      "contentLabel": "Descripción del podcast",
+      "contentPlaceholder": "Escribe la descripción de tu podcast aquí...",
+      "imageLabel": "Miniatura del podcast (opcional)",
+      "imageHelp": "Sube una imagen para tu podcast (máx. 5 MB)",
       "imageButton": "Elegir Imagen",
       "imageSelected": "Imagen Seleccionada",
       "changeImage": "Cambiar Imagen",
@@ -3249,24 +3276,24 @@
       "submitButton": "Enviar para Revisión",
       "submitting": "Enviando...",
       "cancel": "Cancelar",
-      "urlLabel": "Podcast URL",
-      "urlPlaceholder": "Enter the link to your podcast"
+      "urlLabel": "Enlace del podcast",
+      "urlPlaceholder": "Ingresa el enlace de tu podcast"
     },
     "validation": {
-      "titleRequired": "Title is required",
+      "titleRequired": "El título es obligatorio",
       "titleTooShort": "El título debe tener al menos 10 caracteres",
       "excerptRequired": "El extracto es obligatorio",
       "excerptTooShort": "El extracto debe tener al menos 150 caracteres",
-      "contentRequired": "Description is required",
+      "contentRequired": "La descripción es obligatoria",
       "contentTooShort": "El contenido debe tener al menos 500 caracteres",
       "imageRequired": "La imagen destacada es obligatoria",
       "categoryRequired": "Por favor selecciona una categoría",
-      "urlRequired": "URL is required"
+      "urlRequired": "El enlace es obligatorio"
     },
     "success": {
-      "title": "¡Artículo Enviado!",
-      "message": "Thank you for your submission. Our editorial board will review your video and get back to you via email.",
-      "backButton": "Volver a Artículos"
+      "title": "¡Podcast enviado!",
+      "message": "Gracias por tu envío. Nuestro comité editorial revisará tu podcast y se pondrá en contacto contigo por correo electrónico.",
+      "backButton": "Volver a Podcasts"
     },
     "preview": {
       "title": "Vista Previa",
