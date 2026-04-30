@@ -9,6 +9,14 @@ export default function AlefInTheNewsPage() {
     const newsArticles = [
         {
             id: 1,
+            title: t("peaceCallNews.title"),
+            date: t("peaceCallNews.date"),
+            source: t("peaceCallNews.source"),
+            description: t("peaceCallNews.description"),
+            url: "https://www.einpresswire.com/article/908472264/alef-s-inaugural-gathering-for-a-new-lebanon-concludes-with-bold-call-for-peace-with-israel-major-reform-investment"
+        },
+        {
+            id: 2,
             title: t("gatheringNews.title"),
             date: t("gatheringNews.date"),
             source: t("gatheringNews.source"),
@@ -51,23 +59,15 @@ export default function AlefInTheNewsPage() {
                         {t("description")}
                     </p>
                 </div>
-
-                {/* CTA Buttons */}
-                <div className="relative z-10 flex flex-wrap gap-4 justify-center mt-8">
-                    <Link href="/contact" className="group relative bg-transparent border border-foreground/70 text-foreground px-12 py-4 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-foreground/50 isolate cursor-pointer">
-                        <span className="relative z-10 group-hover:text-background transition-colors duration-300 flex items-center gap-2">
-                            {t("pressInquiries")}
-                            <span className="text-red group-hover:text-background transition-colors duration-300">→</span>
-                        </span>
-                        <div className="absolute inset-0 bg-foreground transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10"></div>
-                    </Link>
-                </div>
-
             </section>
 
             {/* ─── NEWS LATEST SECTION ─── */}
             <section className="relative z-10 max-w-7xl mx-auto px-6 pb-24">
-                <div className={`grid grid-cols-1 gap-8 ${newsArticles.length === 1 ? 'max-w-4xl mx-auto' : 'md:grid-cols-2 lg:grid-cols-3'}`}>
+                <div className={`grid grid-cols-1 gap-8 ${
+                    newsArticles.length === 1 ? 'max-w-4xl mx-auto' : 
+                    newsArticles.length === 2 ? 'max-w-6xl mx-auto md:grid-cols-2' : 
+                    'md:grid-cols-2 lg:grid-cols-3'
+                }`}>
                     {newsArticles.map((article) => (
                         <div key={article.id} className="group bg-blue border border-white/10 p-8 md:p-10 rounded-xl flex flex-col justify-start relative overflow-hidden">
                             
@@ -104,6 +104,17 @@ export default function AlefInTheNewsPage() {
                             </div>
                         </div>
                     ))}
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="relative z-10 flex flex-wrap gap-4 justify-center mt-16">
+                    <Link href="/contact" className="group relative bg-transparent border border-foreground/70 text-foreground px-12 py-4 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-foreground/50 isolate cursor-pointer">
+                        <span className="relative z-10 group-hover:text-background transition-colors duration-300 flex items-center gap-2">
+                            {t("pressInquiries")}
+                            <span className="text-red group-hover:text-background transition-colors duration-300">→</span>
+                        </span>
+                        <div className="absolute inset-0 bg-foreground transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10"></div>
+                    </Link>
                 </div>
             </section>
         </main>
