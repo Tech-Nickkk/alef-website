@@ -9,6 +9,11 @@ export async function POST(req: Request) {
   try {
     const { amount, donationType, userId, userEmail } = await req.json();
 
+    // Server-side minimum amount guard
+    if (!amount || amount < 1) {
+      return NextResponse.json({ error: 'Minimum donation amount is $1.' }, { status: 400 });
+    }
+
     const isSubscription = donationType === 'monthly';
 
     // Only fetch user data if logged in

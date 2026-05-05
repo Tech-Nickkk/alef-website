@@ -79,7 +79,7 @@ export default function DonatePage() {
             }
 
             // Basic Validation
-            if (!amount || amount <= 0) {
+            if (!amount || amount < 1) {
                 alert(t('alerts.validAmount'));
                 return;
             }
@@ -298,6 +298,8 @@ export default function DonatePage() {
                                 <span className="absolute left-4 top-1/2 -translate-y-1/2 font-oswald text-foreground/40">$</span>
                                 <input
                                     type="number"
+                                    min="1"
+                                    step="0.01"
                                     value={customAmount}
                                     onChange={(e) => {
                                         setCustomAmount(e.target.value);

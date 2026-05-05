@@ -199,7 +199,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Right: Actions (Desktop) & Hamburger (Mobile) */}
-                <div className="flex items-center gap-3 md:gap-6 relative z-50">
+                <div className="flex items-center gap-1.5 sm:gap-3 md:gap-6 relative z-50">
                     {/* Theme Toggle - Hidden on Mobile/Tablet */}
                     <div className="hidden xl:block">
                         <ThemeToggle />
@@ -273,7 +273,7 @@ export default function Navbar() {
                                 setIsMenuOpen(false); 
                                 sendGAEvent('event', 'subscribe_click', { value: 'mobile_nav' });
                             }}
-                            className="group relative bg-transparent border border-foreground/70 text-foreground px-4 py-2.5 text-xs font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-red isolate cursor-pointer"
+                            className="group relative bg-transparent border border-foreground/70 text-foreground px-3.5 py-2.5 sm:px-4 sm:py-2.5 text-xs font-bold tracking-[0.15em] uppercase font-oswald overflow-hidden transition-all hover:border-red isolate cursor-pointer"
                         >
                             <span className="relative z-10 group-hover:text-white transition-colors duration-300">{t('subscribe')}</span>
                             <div className="absolute inset-0 bg-red transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10" />
@@ -299,7 +299,7 @@ export default function Navbar() {
                         <Link href="/donate">
                             <button 
                                 onClick={() => sendGAEvent('event', 'donate_click', { value: 'navbar' })}
-                                className="relative overflow-hidden bg-red hover:bg-[#c4151c] text-white px-6 py-3 md:px-8 md:py-3.5 text-xs md:text-sm uppercase font-semibold transition-all shadow-lg shadow-red-900/20 tracking-wider rounded-none font-oswald cursor-pointer isolate animate-heartbeat"
+                                className="relative overflow-hidden bg-red hover:bg-[#c4151c] text-white px-4.5 py-2.5 sm:px-6 sm:py-2.5 md:px-8 md:py-3.5 text-xs md:text-sm uppercase font-semibold transition-all shadow-lg shadow-red-900/20 tracking-wider rounded-none font-oswald cursor-pointer isolate animate-heartbeat"
                             >
                                 <span className="relative z-10 tracking-wider">{t('donate')}</span>
                                 <div className="absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/40 to-transparent skew-x-[-20deg] group-hover:left-[150%] transition-all duration-700 ease-in-out z-0" />
@@ -342,7 +342,7 @@ export default function Navbar() {
                     {/* Scrollable Content Container */}
                     <div className={`flex-1 flex flex-col h-full overflow-y-auto transition-opacity duration-500 ease-in-out ${isMenuOpen ? 'opacity-100 delay-300' : 'opacity-0 delay-0'}`}>
                         {/* Mobile Links */}
-                        <div className="flex-1 px-6 py-8">
+                        <div className="flex-1 px-6 py-8 pb-24">
                             <div className="flex flex-col gap-6">
                                 {navLinks.map((link) => (
                                     <div key={link.label} className="border-b border-foreground/5 pb-4 last:border-0">
@@ -410,18 +410,19 @@ export default function Navbar() {
                                 {/* Language */}
                                 <div className="flex flex-col gap-2">
                                     <span className="text-foreground/70 font-oswald uppercase tracking-widest text-sm">{t('language')}</span>
-                                    <div className="flex flex-wrap gap-2">
+                                    <div className="flex flex-nowrap gap-1.5">
                                         {languages.map((lang) => (
                                             <button
                                                 key={lang.code}
                                                 onClick={() => { handleLanguageChange(lang.code); setIsMenuOpen(false); }}
-                                                className={`px-4 py-2 text-xs font-oswald tracking-wider uppercase transition-colors border ${
+                                                className={`flex-1 px-2 py-2 text-xs font-oswald tracking-wider uppercase transition-colors border ${
                                                     locale === lang.code
                                                         ? 'bg-red text-white border-red'
                                                         : 'text-foreground/70 border-foreground/20 hover:text-foreground hover:border-foreground/50'
                                                 }`}
                                             >
-                                                {t(`languages.${lang.code}`)}
+                                                <span className="hidden sm:inline">{t(`languages.${lang.code}`)}</span>
+                                                <span className="sm:hidden">{lang.code.toUpperCase()}</span>
                                             </button>
                                         ))}
                                     </div>
