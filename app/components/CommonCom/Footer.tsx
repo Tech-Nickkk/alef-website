@@ -4,6 +4,7 @@ import { Link } from "@/i18n/routing";
 import SkeletonImage from "./SkeletonImage";
 import { Mail, Phone, MapPin, Facebook, Linkedin } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { sendGAEvent } from '@next/third-parties/google';
 
 export default function Footer() {
     const t = useTranslations('Footer');
@@ -166,10 +167,12 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
 }
 
 function SocialButton({ icon, href }: { icon: React.ReactNode, href: string }) {
+    const platform = href.includes('facebook') ? 'facebook' : href.includes('linkedin') ? 'linkedin' : 'other';
     return (
         <a
             href={href}
             target="_blank"
+            onClick={() => sendGAEvent('event', 'social_click', { platform, url: href })}
             className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center text-white/60 hover:bg-red hover:border-red hover:text-white transition-all duration-300"
         >
             {icon}

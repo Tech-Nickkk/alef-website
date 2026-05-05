@@ -4,6 +4,7 @@ import React, { useState, FormEvent } from 'react';
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import { Send, CalendarDays } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { sendGAEvent } from '@next/third-parties/google';
 
 export default function ContactPage() {
     const t = useTranslations('ContactPage');
@@ -47,6 +48,10 @@ export default function ContactPage() {
             // Success!
             setIsSubmitting(false);
             setIsSubmitted(true);
+            sendGAEvent('event', 'contact_form_submission', {
+                event_category: 'engagement',
+                subject: formData.subject
+            });
             setFormData({ name: '', email: '', organization: '', subject: '', message: '' });
             setTimeout(() => setIsSubmitted(false), 3000);
 
@@ -265,6 +270,7 @@ export default function ContactPage() {
                                         href="https://api.leadconnectorhq.com/widget/booking/eDa7KmJCoCGqISPuONxY"
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        onClick={() => sendGAEvent('event', 'book_meeting_click', { source: 'contact_page' })}
                                         className="inline-flex items-center gap-3 bg-red hover:bg-[#b0151b] text-white px-10 py-5 text-lg font-bold tracking-[0.2em] uppercase font-oswald transition-all shadow-lg hover:shadow-[0_0_25px_rgba(227,27,35,0.4)] relative overflow-hidden group/btn"
                                     >
                                         <span className="relative z-10">{t('scheduleConsultationButton') || "BOOK A MEETING"}</span>

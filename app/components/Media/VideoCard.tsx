@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { Play, Instagram, Facebook, Video } from "lucide-react";
 import { urlFor } from "@/sanity/lib/image";
+import { sendGAEvent } from '@next/third-parties/google';
 
 const getAspectRatio = (type: "video" | "short" | "podcast") => {
     return type === "short" ? "aspect-[9/16]" : "aspect-video";
@@ -78,7 +79,14 @@ export default function VideoCard({ title, videoUrl, thumbnail, publishedAt, pla
             <div className={`relative w-full ${getAspectRatio(type)} overflow-hidden`}>
                 {!isPlaying ? (
                     <button
-                        onClick={() => setIsPlaying(true)}
+                        onClick={() => {
+                            setIsPlaying(true);
+                            sendGAEvent('event', 'video_play', {
+                                video_title: typeof title === 'string' ? title : 'Untitled',
+                                video_type: type,
+                                video_platform: platform || 'direct'
+                            });
+                        }}
                         className="absolute inset-0 w-full h-full group/play cursor-pointer z-10 flex flex-col items-center justify-center"
                         aria-label="Play Video"
                     >

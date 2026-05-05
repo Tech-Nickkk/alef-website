@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { useRef } from "react";
 import { useTranslations } from "next-intl";
+import { sendGAEvent } from '@next/third-parties/google';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,7 +20,7 @@ export default function CTASection({ type }: CTASectionProps) {
     const content = {
         donate: {
             title: t('donate.title'),
-            subtitle: t('donate.subtitle'),
+            subtitle: t('donate.subtitle'),       
             buttonText: t('donate.button'),
             link: "/donate",
             bgGradient: "from-blue/10 to-transparent",
@@ -75,6 +76,7 @@ export default function CTASection({ type }: CTASectionProps) {
         if (joinSection) {
             joinSection.scrollIntoView({ behavior: 'smooth' });
         }
+        sendGAEvent('event', `${type}_click`, { value: 'cta_section' });
     };
 
     return (
@@ -108,7 +110,10 @@ export default function CTASection({ type }: CTASectionProps) {
 
                     {type === 'donate' ? (
                         <Link href={content.link}>
-                            <button className="group/btn relative overflow-hidden bg-red text-white px-8 py-4 font-oswald font-bold tracking-[0.15em] uppercase text-sm transition-all hover:bg-[#c4151c] hover:text-white shrink-0 min-w-[200px] cursor-pointer">
+                            <button 
+                                onClick={() => sendGAEvent('event', 'donate_click', { value: 'cta_section' })}
+                                className="group/btn relative overflow-hidden bg-red text-white px-8 py-4 font-oswald font-bold tracking-[0.15em] uppercase text-sm transition-all hover:bg-[#c4151c] hover:text-white shrink-0 min-w-[200px] cursor-pointer"
+                            >
                                 <span className="relative z-10">{content.buttonText}</span>
                             </button>
                         </Link>

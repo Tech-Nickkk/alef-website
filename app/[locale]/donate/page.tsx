@@ -6,6 +6,7 @@ import { auth } from "@/lib/firebase";
 import { useRouter } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { CreditCard, Loader2, Mail, ChevronRight, ShieldCheck, ArrowLeft, Heart, SearchX } from "lucide-react";
+import { sendGAEvent } from '@next/third-parties/google';
 
 export default function DonatePage() {
     const t = useTranslations('DonatePage');
@@ -25,8 +26,18 @@ export default function DonatePage() {
     const [codeSent, setCodeSent] = useState(false);
 
     const processPayment = async (amount: number) => {
-
         setIsLoading(true);
+
+        sendGAEvent('event', 'begin_checkout', {
+            value: amount,
+            currency: 'USD',
+            items: [{
+                item_id: `donation_${donationType}`,
+                item_name: `Donation - ${donationType}`,
+                price: amount,
+                quantity: 1
+            }]
+        });
 
         try {
             const response = await fetch('/api/checkout', {
@@ -141,9 +152,11 @@ export default function DonatePage() {
             if (data.verified) {
                 // Code verified — now open the portal
                 setPortalStep('verified');
+                sendGAEvent('event', 'portal_verification_success');
                 await handleOpenPortal();
             } else {
                 setPortalError(data.error || t('portal.invalidCode'));
+                sendGAEvent('event', 'portal_verification_failure', { error: data.error });
             }
         } catch (error) {
             console.error(error);
@@ -239,9 +252,9 @@ export default function DonatePage() {
                                 'translate-x-0'
                             }`}></div>
 
-                        <button onClick={() => setDonationType('one-time')} className={`relative z-10 flex-1 py-3 text-center font-oswald text-xs md:text-sm tracking-widest uppercase transition-colors duration-300 ${donationType === 'one-time' ? 'text-white' : 'text-foreground/60 hover:text-foreground'}`}>{t('toggles.oneTime')}</button>
-                        <button onClick={() => setDonationType('monthly')} className={`relative z-10 flex-1 py-3 text-center font-oswald text-xs md:text-sm tracking-widest uppercase transition-colors duration-300 ${donationType === 'monthly' ? 'text-white' : 'text-foreground/60 hover:text-foreground'}`}>{t('toggles.monthly')}</button>
-                        <button onClick={() => setDonationType('sponsor')} className={`relative z-10 flex-1 py-3 text-center font-oswald text-xs md:text-sm tracking-widest uppercase transition-colors duration-300 ${donationType === 'sponsor' ? 'text-white' : 'text-foreground/60 hover:text-foreground'}`}>{t('toggles.sponsor')}</button>
+                        <button onClick={() => { setDonationType('one-time'); sendGAEvent('event', 'select_donation_type', { type: 'one-time' }); }} className={`relative z-10 flex-1 py-3 text-center font-oswald text-xs md:text-sm tracking-widest uppercase transition-colors duration-300 ${donationType === 'one-time' ? 'text-white' : 'text-foreground/60 hover:text-foreground'}`}>{t('toggles.oneTime')}</button>
+                        <button onClick={() => { setDonationType('monthly'); sendGAEvent('event', 'select_donation_type', { type: 'monthly' }); }} className={`relative z-10 flex-1 py-3 text-center font-oswald text-xs md:text-sm tracking-widest uppercase transition-colors duration-300 ${donationType === 'monthly' ? 'text-white' : 'text-foreground/60 hover:text-foreground'}`}>{t('toggles.monthly')}</button>
+                        <button onClick={() => { setDonationType('sponsor'); sendGAEvent('event', 'select_donation_type', { type: 'sponsor' }); }} className={`relative z-10 flex-1 py-3 text-center font-oswald text-xs md:text-sm tracking-widest uppercase transition-colors duration-300 ${donationType === 'sponsor' ? 'text-white' : 'text-foreground/60 hover:text-foreground'}`}>{t('toggles.sponsor')}</button>
                     </div>
                 </div>
 

@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import Link from 'next/link';
+import { sendGAEvent } from '@next/third-parties/google';
 
 export default function JoinUs() {
     const pathname = usePathname();
@@ -32,6 +33,10 @@ export default function JoinUs() {
             if (res.ok) {
                 setStatus('success');
                 setMessage(t('successMessage'));
+                sendGAEvent('event', 'generate_lead', {
+                    event_category: 'engagement',
+                    event_label: 'join_us_form',
+                });
                 setFormData({ firstName: '', lastName: '', email: '', phone: '' });
             } else {
                 setStatus('error');

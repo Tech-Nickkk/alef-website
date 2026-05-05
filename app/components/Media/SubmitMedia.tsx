@@ -4,6 +4,7 @@ import { Video, Mic, Smartphone, ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import GlowingGrid from "@/app/components/CommonCom/GlowingGrid";
+import { sendGAEvent } from '@next/third-parties/google';
 
 interface SubmitMediaProps {
     type: "video" | "short" | "podcast";
@@ -74,7 +75,10 @@ export default function SubmitMedia({ type }: SubmitMediaProps) {
                                 {/* CTA Button */}
                                 <div className="pt-4">
                                     <Link href={linkHref} className="group">
-                                        <div className="inline-flex items-center gap-3 px-8 py-4 bg-red hover:bg-red/90 text-white font-oswald font-bold tracking-widest uppercase rounded-xl transition-all duration-300 shadow-lg shadow-red/30 cursor-pointer">
+                                        <div 
+                                            onClick={() => sendGAEvent('event', 'submit_media_cta_click', { media_type: type })}
+                                            className="inline-flex items-center gap-3 px-8 py-4 bg-red hover:bg-red/90 text-white font-oswald font-bold tracking-widest uppercase rounded-xl transition-all duration-300 shadow-lg shadow-red/30 cursor-pointer"
+                                        >
                                             <span>Get Involved</span>
                                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                         </div>

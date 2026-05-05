@@ -13,6 +13,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase";
 import { usePathname, useRouter, Link } from "@/i18n/routing";
 import { useTranslations, useLocale } from "next-intl";
+import { sendGAEvent } from '@next/third-parties/google';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -267,7 +268,11 @@ export default function Navbar() {
                     {/* Subscribe - Mobile (hidden on xl) */}
                     <div className="xl:hidden relative group">
                         <button
-                            onClick={() => { document.getElementById('join-us')?.scrollIntoView({ behavior: 'smooth' }); setIsMenuOpen(false); }}
+                            onClick={() => { 
+                                document.getElementById('join-us')?.scrollIntoView({ behavior: 'smooth' }); 
+                                setIsMenuOpen(false); 
+                                sendGAEvent('event', 'subscribe_click', { value: 'mobile_nav' });
+                            }}
                             className="group relative bg-transparent border border-foreground/70 text-foreground px-4 py-2.5 text-xs font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-red isolate cursor-pointer"
                         >
                             <span className="relative z-10 group-hover:text-white transition-colors duration-300">{t('subscribe')}</span>
@@ -278,7 +283,10 @@ export default function Navbar() {
                     {/* Subscribe - Desktop Only */}
                     <div className="hidden xl:block relative group">
                         <button
-                            onClick={() => document.getElementById('join-us')?.scrollIntoView({ behavior: 'smooth' })}
+                            onClick={() => {
+                                document.getElementById('join-us')?.scrollIntoView({ behavior: 'smooth' });
+                                sendGAEvent('event', 'subscribe_click', { value: 'desktop_nav' });
+                            }}
                             className="group relative bg-transparent border border-foreground/70 text-foreground px-6 py-3.5 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-red isolate cursor-pointer"
                         >
                             <span className="relative z-10 group-hover:text-white transition-colors duration-300">{t('subscribe')}</span>
@@ -289,7 +297,10 @@ export default function Navbar() {
                     {/* Donate - Always Visible */}
                     <div className="relative group">
                         <Link href="/donate">
-                            <button className="relative overflow-hidden bg-red hover:bg-[#c4151c] text-white px-6 py-3 md:px-8 md:py-3.5 text-xs md:text-sm uppercase font-semibold transition-all shadow-lg shadow-red-900/20 tracking-wider rounded-none font-oswald cursor-pointer isolate animate-heartbeat">
+                            <button 
+                                onClick={() => sendGAEvent('event', 'donate_click', { value: 'navbar' })}
+                                className="relative overflow-hidden bg-red hover:bg-[#c4151c] text-white px-6 py-3 md:px-8 md:py-3.5 text-xs md:text-sm uppercase font-semibold transition-all shadow-lg shadow-red-900/20 tracking-wider rounded-none font-oswald cursor-pointer isolate animate-heartbeat"
+                            >
                                 <span className="relative z-10 tracking-wider">{t('donate')}</span>
                                 <div className="absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/40 to-transparent skew-x-[-20deg] group-hover:left-[150%] transition-all duration-700 ease-in-out z-0" />
                             </button>
