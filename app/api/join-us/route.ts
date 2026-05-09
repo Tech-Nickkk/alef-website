@@ -59,7 +59,7 @@ export async function POST(req: Request) {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            tags: [' alef our subscriber']
+            tags: [' alef our subscribers']
           }),
         });
         console.log('Successfully appended tag to contact in GHL');
