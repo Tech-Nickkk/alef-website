@@ -374,7 +374,41 @@
     "successTitle": "WELCOME TO THE TEAM",
     "successMessage": "You have successfully joined the movement. <br/>Keep an eye on your inbox for exclusive updates.",
     "error": "Failed to connect. Please try again.",
-    "defaultError": "Something went wrong."
+    "defaultError": "Something went wrong.",
+    "whyJoinUs": "Why Join Us?"
+  },
+  "WhyJoinUs": {
+    "title": "WHY JOIN US?",
+    "subtitle": "OUR VALUE PROPOSITION",
+    "intro": "Join a global network of leaders, professionals, and activists dedicated to rebuilding Lebanon’s sovereignty and prosperity.",
+    "items": {
+      "0": {
+        "title": "Strategic Analysis & Insight",
+        "desc": "ALEF focuses on advocacy, aimed at finding solutions to complex Middle Eastern issues starting with Lebanon and spanning the Middle East."
+      },
+      "1": {
+        "title": "Exclusive Networking & Briefings",
+        "desc": "The Foundation offers opportunities to participate in conference calls, webinars, and briefings with experts, former government officials, and influencers."
+      },
+      "2": {
+        "title": "Action-Oriented Advocacy",
+        "desc": "The organization engages in public advocacy to influence policymaking."
+      },
+      "3": {
+        "title": "Support for Experts",
+        "desc": "The organization supports researchers, writers, and activists working on issues related to Lebanon and the Middle East at large."
+      },
+      "4": {
+        "title": "Expert Insights & Events",
+        "desc": "The platform allows users to connect with our experts directly and attend exclusive in-person and online events."
+      },
+      "5": {
+        "title": "A Platform for Change",
+        "desc": "For professionals, academics, or engaged citizens, joining provides a platform to stay informed on unconventional viewpoints and participate in shaping U.S. policy toward the Middle East."
+      }
+    },
+    "cta": "READY TO MAKE AN IMPACT?",
+    "button": "JOIN THE MOVEMENT NOW"
   },
   "Footer": {
     "description": "Educating communities and combating terrorism through research, awareness, and policy advocacy.",
@@ -3126,14 +3160,14 @@
     "title": "SUBMIT YOUR VIDEO",
     "subtitle": "Share Your Insights",
     "description": "Submit your video for review by our editorial board. If approved, it will be published on our platform.",
-    "loginRequired": "Please log in to submit an article",
+    "loginRequired": "Please log in to submit a video",
     "loginButton": "Login to Continue",
     "backToArticles": "Back to Videos",
     "form": {
       "titleLabel": "Video Title",
       "titlePlaceholder": "Enter a title for your video",
       "excerptLabel": "Excerpt",
-      "excerptPlaceholder": "Brief summary of your article (150-300 characters)",
+      "excerptPlaceholder": "Brief summary of your video (150-300 characters)",
       "contentLabel": "Video Description",
       "contentPlaceholder": "Write your video description here...",
       "imageLabel": "Video Thumbnail/Cover (Optional)",
@@ -3154,7 +3188,7 @@
       "tagsLabel": "Tags (Optional)",
       "tagsPlaceholder": "Add relevant tags (comma separated)",
       "showAuthorLabel": "Show my name as the author",
-      "showAuthorHelp": "If checked, your name will be displayed with the article. Otherwise, it will be published as 'Anonymous'.",
+      "showAuthorHelp": "If checked, your name will be displayed with the video. Otherwise, it will be published as 'Anonymous'.",
       "submitButton": "Submit for Review",
       "submitting": "Submitting...",
       "cancel": "Cancel",
@@ -3173,9 +3207,9 @@
       "urlRequired": "URL is required"
     },
     "success": {
-      "title": "Article Submitted!",
+      "title": "Video Submitted!",
       "message": "Thank you for your submission. Our editorial board will review your video and get back to you via email.",
-      "backButton": "Back to Articles"
+      "backButton": "Back to Videos"
     },
     "preview": {
       "title": "Preview",
@@ -3196,14 +3230,14 @@
     "title": "SUBMIT YOUR SHORT",
     "subtitle": "Share Your Insights",
     "description": "Submit your short for review by our editorial board.",
-    "loginRequired": "Please log in to submit an article",
+    "loginRequired": "Please log in to submit a short",
     "loginButton": "Login to Continue",
     "backToArticles": "Back to Shorts",
     "form": {
       "titleLabel": "Short Title",
       "titlePlaceholder": "Enter a title for your short",
       "excerptLabel": "Excerpt",
-      "excerptPlaceholder": "Brief summary of your article (150-300 characters)",
+      "excerptPlaceholder": "Brief summary of your short (150-300 characters)",
       "contentLabel": "Short Description",
       "contentPlaceholder": "Write your short description here...",
       "imageLabel": "Short Thumbnail/Cover (Optional)",
@@ -3224,7 +3258,7 @@
       "tagsLabel": "Tags (Optional)",
       "tagsPlaceholder": "Add relevant tags (comma separated)",
       "showAuthorLabel": "Show my name as the author",
-      "showAuthorHelp": "If checked, your name will be displayed with the article. Otherwise, it will be published as 'Anonymous'.",
+      "showAuthorHelp": "If checked, your name will be displayed with the short. Otherwise, it will be published as 'Anonymous'.",
       "submitButton": "Submit for Review",
       "submitting": "Submitting...",
       "cancel": "Cancel",
@@ -3243,9 +3277,9 @@
       "urlRequired": "URL is required"
     },
     "success": {
-      "title": "Article Submitted!",
-      "message": "Thank you for your submission. Our editorial board will review your video and get back to you via email.",
-      "backButton": "Back to Articles"
+      "title": "Short Submitted!",
+      "message": "Thank you for your submission. Our editorial board will review your short and get back to you via email.",
+      "backButton": "Back to Shorts"
     },
     "preview": {
       "title": "Preview",
@@ -3266,14 +3300,14 @@
     "title": "SUBMIT YOUR PODCAST",
     "subtitle": "Share Your Insights",
     "description": "Submit your podcast for review by our editorial board.",
-    "loginRequired": "Please log in to submit an article",
+    "loginRequired": "Please log in to submit a podcast",
     "loginButton": "Login to Continue",
     "backToArticles": "Back to Podcasts",
     "form": {
       "titleLabel": "Podcast Title",
       "titlePlaceholder": "Enter a title for your podcast",
       "excerptLabel": "Excerpt",
-      "excerptPlaceholder": "Brief summary of your article (150-300 characters)",
+      "excerptPlaceholder": "Brief summary of your podcast (150-300 characters)",
       "contentLabel": "Podcast Description",
       "contentPlaceholder": "Write your podcast description here...",
       "imageLabel": "Podcast Thumbnail/Cover (Optional)",
@@ -3294,7 +3328,7 @@
       "tagsLabel": "Tags (Optional)",
       "tagsPlaceholder": "Add relevant tags (comma separated)",
       "showAuthorLabel": "Show my name as the author",
-      "showAuthorHelp": "If checked, your name will be displayed with the article. Otherwise, it will be published as 'Anonymous'.",
+      "showAuthorHelp": "If checked, your name will be displayed with the podcast. Otherwise, it will be published as 'Anonymous'.",
       "submitButton": "Submit for Review",
       "submitting": "Submitting...",
       "cancel": "Cancel",
@@ -3313,9 +3347,9 @@
       "urlRequired": "URL is required"
     },
     "success": {
-      "title": "Article Submitted!",
-      "message": "Thank you for your submission. Our editorial board will review your video and get back to you via email.",
-      "backButton": "Back to Articles"
+      "title": "Podcast Submitted!",
+      "message": "Thank you for your submission. Our editorial board will review your podcast and get back to you via email.",
+      "backButton": "Back to Podcasts"
     },
     "preview": {
       "title": "Preview",

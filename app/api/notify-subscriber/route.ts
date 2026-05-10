@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
             title?: string | { [key: string]: string };
             slug?: { current: string } | string;
             type?: string;
-            [key: string]: any;
+            [key: string]: unknown;
         }
 
         const { title, type, _type, slug } = body as unknown as WebhookBody;
@@ -36,6 +36,7 @@ export async function POST(req: NextRequest) {
         const docType = type || _type;
 
         if (!titleString || !docType || !slugString) {
+            console.error('Missing required fields:', { titleString, docType, slugString });
             return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
         }
 
@@ -48,6 +49,8 @@ export async function POST(req: NextRequest) {
 
         const folder = routeMap[docType] || docType;
         const fullUrl = `https://usalef.org/en/${folder}/${slugString}`;
+
+        console.log('Sanity Webhook received:', { titleString, docType, slugString, fullUrl });
 
         // === 1. Fetch Contacts from GHL ===
         const ghlApiKey = process.env.GHL_API_KEY;
@@ -69,7 +72,7 @@ export async function POST(req: NextRequest) {
             },
             body: JSON.stringify({
                 locationId: ghlLocationId,
-                query: "alef our subscriber",
+                query: "alef our subscribers",
                 limit: 100 // Paging may be needed for very large lists
             }),
         });
@@ -78,7 +81,12 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ message: 'Failed to fetch GHL contacts' }, { status: 500 });
         }
 
-        const { contacts } = await searchRes.json();
+        interface GHLContact {
+            id: string;
+            email: string;
+        }
+
+        const { contacts } = (await searchRes.json()) as { contacts: GHLContact[] };
 
         if (!contacts || contacts.length === 0) {
             return NextResponse.json({ message: 'No subscribers found in GHL' });
@@ -90,7 +98,7 @@ export async function POST(req: NextRequest) {
 
         for (const contact of contacts) {
             // First update custom fields for title, url, type so the workflow email can use them
-            await fetch(`https://services.leadconnectorhq.com/contacts/${contact.id}`, {
+            const updateRes = await fetch(`https://services.leadconnectorhq.com/contacts/${contact.id}`, {
                 method: 'PUT',
                 headers: {
                     'Authorization': `Bearer ${ghlApiKey}`,
@@ -99,12 +107,18 @@ export async function POST(req: NextRequest) {
                 },
                 body: JSON.stringify({
                     customFields: [
-                        { key: "latest_post_title", field_value: titleString },
-                        { key: "latest_post_url", field_value: fullUrl },
-                        { key: "latest_post_type", field_value: docType.toUpperCase() },
+                        { key: "latest_post_title", value: titleString },
+                        { key: "latest_post_url", value: fullUrl },
+                        { key: "latest_post_type", value: docType.toUpperCase() },
                     ]
                 }),
             });
+
+            if (!updateRes.ok) {
+                console.error(`Failed to update custom fields for contact ${contact.id}:`, await updateRes.text());
+            } else {
+                console.log(`Successfully updated custom fields for contact ${contact.id}`);
+            }
 
             // Then add to workflow
             const wfRes = await fetch(`https://services.leadconnectorhq.com/contacts/${contact.id}/workflow/${ghlWorkflowId}`, {

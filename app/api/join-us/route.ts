@@ -17,7 +17,15 @@ export async function POST(req: Request) {
     }
 
     // 1. Add or update contact in GoHighLevel without overwriting tags
-    const ghlBody: Record<string, any> = {
+    interface GHLContactBody {
+      email: string;
+      firstName: string;
+      lastName: string;
+      locationId: string;
+      phone?: string;
+    }
+
+    const ghlBody: GHLContactBody = {
       email,
       firstName,
       lastName: lastName || '',
@@ -45,7 +53,13 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Failed to save contact. Please try again.' }, { status: 500 });
     }
 
-    const ghlData = await ghlResponse.json();
+    interface GHLUpsertResponse {
+      contact?: {
+        id: string;
+      };
+    }
+
+    const ghlData = (await ghlResponse.json()) as GHLUpsertResponse;
     const contactId = ghlData?.contact?.id;
 
     if (contactId) {
@@ -59,7 +73,7 @@ export async function POST(req: Request) {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            tags: [' alef our subscribers']
+            tags: ['alef our subscribers']
           }),
         });
         console.log('Successfully appended tag to contact in GHL');

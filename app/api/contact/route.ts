@@ -22,15 +22,15 @@ export async function POST(req: Request) {
                 customFields: [
                     {
                         key: "alef_website_message",
-                        field_value: message || "",
+                        value: message || "",
                     },
                     {
                         key: "alef_website_subject",
-                        field_value: subject || "",
+                        value: subject || "",
                     },
                     {
                         key: "alef_website_organization",
-                        field_value: organization || "",
+                        value: organization || "",
                     }
                 ]
             };

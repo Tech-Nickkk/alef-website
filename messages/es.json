@@ -375,7 +375,41 @@
     "successTitle": "BIENVENIDO AL EQUIPO",
     "successMessage": "Te has unido al movimiento con éxito. <br/>Mantente atento a tu bandeja de entrada para actualizaciones exclusivas.",
     "error": "Error al conectar. Por favor intenta de nuevo.",
-    "defaultError": "Algo salió mal."
+    "defaultError": "Algo salió mal.",
+    "whyJoinUs": "¿Por qué unirse a nosotros?"
+  },
+  "WhyJoinUs": {
+    "title": "¿POR QUÉ UNIRSE A NOSOTROS?",
+    "subtitle": "NUESTRA PROPUESTA DE VALOR",
+    "intro": "Únase a una red global de líderes, profesionales y activistas dedicados a reconstruir la soberanía y la prosperidad del Líbano.",
+    "items": {
+      "0": {
+        "title": "Análisis y perspectiva estratégica",
+        "desc": "ALEF se centra en la incidencia, con el objetivo de encontrar soluciones a problemas complejos de Oriente Medio, empezando por el Líbano y extendiéndose a todo Oriente Medio."
+      },
+      "1": {
+        "title": "Networking y sesiones informativas exclusivas",
+        "desc": "La Fundación ofrece oportunidades para participar en conferencias telefónicas, seminarios web y sesiones informativas con expertos, ex funcionarios gubernamentales e influencers."
+      },
+      "2": {
+        "title": "Incidencia orientada a la acción",
+        "desc": "La organización se dedica a la incidencia pública para influir en la formulación de políticas."
+      },
+      "3": {
+        "title": "Apoyo a expertos",
+        "desc": "La organización apoya a investigadores, escritores y activistas que trabajan en temas relacionados con el Líbano y Oriente Medio en general."
+      },
+      "4": {
+        "title": "Perspectivas y eventos de expertos",
+        "desc": "La plataforma permite a los usuarios conectar directamente con nuestros expertos y asistir a eventos exclusivos presenciales y en línea."
+      },
+      "5": {
+        "title": "Una plataforma para el cambio",
+        "desc": "Para profesionales, académicos o ciudadanos comprometidos, unirse proporciona una plataforma para mantenerse informado sobre puntos de vista no convencionales y participar en la configuración de la política estadounidense hacia Oriente Medio."
+      }
+    },
+    "cta": "¿LISTO PARA HACER UN IMPACTO?",
+    "button": "ÚNETE AL MOVIMIENTO AHORA"
   },
   "Footer": {
     "description": "Educando comunidades y combatiendo el terrorismo a través de la investigación, la concientización y la defensa de políticas.",
@@ -3187,7 +3221,7 @@
       "titleLabel": "Título del short",
       "titlePlaceholder": "Ingresa un título para tu short",
       "excerptLabel": "Extracto",
-      "excerptPlaceholder": "Breve resumen de tu artículo (150-300 caracteres)",
+      "excerptPlaceholder": "Breve resumen de tu short (150-300 caracteres)",
       "contentLabel": "Descripción del short",
       "contentPlaceholder": "Escribe la descripción de tu short aquí...",
       "imageLabel": "Miniatura del short (opcional)",
@@ -3208,7 +3242,7 @@
       "tagsLabel": "Etiquetas (Opcional)",
       "tagsPlaceholder": "Añadir etiquetas pertinentes (separadas por comas)",
       "showAuthorLabel": "Mostrar mi nombre como autor",
-      "showAuthorHelp": "Si está marcado, tu nombre se mostrará con el artículo. De lo contrario, se publicará como 'Anónimo'.",
+      "showAuthorHelp": "Si está marcado, tu nombre se mostrará con el short. De lo contrario, se publicará como 'Anónimo'.",
       "submitButton": "Enviar para Revisión",
       "submitting": "Enviando...",
       "cancel": "Cancelar",
@@ -3257,7 +3291,7 @@
       "titleLabel": "Título del podcast",
       "titlePlaceholder": "Ingresa un título para tu podcast",
       "excerptLabel": "Extracto",
-      "excerptPlaceholder": "Breve resumen de tu artículo (150-300 caracteres)",
+      "excerptPlaceholder": "Breve resumen de tu podcast (150-300 caracteres)",
       "contentLabel": "Descripción del podcast",
       "contentPlaceholder": "Escribe la descripción de tu podcast aquí...",
       "imageLabel": "Miniatura del podcast (opcional)",
@@ -3278,7 +3312,7 @@
       "tagsLabel": "Etiquetas (Opcional)",
       "tagsPlaceholder": "Añadir etiquetas pertinentes (separadas por comas)",
       "showAuthorLabel": "Mostrar mi nombre como autor",
-      "showAuthorHelp": "Si está marcado, tu nombre se mostrará con el artículo. De lo contrario, se publicará como 'Anónimo'.",
+      "showAuthorHelp": "Si está marcado, tu nombre se mostrará con el podcast. De lo contrario, se publicará como 'Anónimo'.",
       "submitButton": "Enviar para Revisión",
       "submitting": "Enviando...",
       "cancel": "Cancelar",

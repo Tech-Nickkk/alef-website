@@ -6,7 +6,7 @@ import AnimatedTitle from "./AnimatedTitle";
 import { useTranslations } from 'next-intl';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { sendGAEvent } from '@next/third-parties/google';
 
 export default function JoinUs() {
@@ -150,6 +150,8 @@ export default function JoinUs() {
                                     {status === 'loading' ? t('buttonLoading') : t('button')}
                                 </button>
 
+
+
                                 {/* Error Message Only (Success is handled by the big view above) */}
                                 {status === 'error' && (
                                     <div className="text-center mt-4 text-sm font-oswald uppercase tracking-widest text-red-500">
@@ -165,6 +167,15 @@ export default function JoinUs() {
                                             </Link>
                                         )
                                     })}
+                                </div>
+
+                                <div className="flex justify-center mt-8">
+                                    <Link href="/why-join-us">
+                                        <button className="group relative bg-transparent border border-white/30 text-white/70 px-8 py-3 text-xs md:text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-red isolate cursor-pointer">
+                                            <span className="relative z-10 group-hover:text-white transition-colors duration-300">{t('whyJoinUs')}</span>
+                                            <div className="absolute inset-0 bg-red transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10" />
+                                        </button>
+                                    </Link>
                                 </div>
                             </form>
                         </>

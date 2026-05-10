@@ -374,7 +374,41 @@
     "successTitle": "BIENVENUE DANS L'ÉQUIPE",
     "successMessage": "Vous avez rejoint le mouvement avec succès. <br/>Surveillez votre boîte de réception pour des mises à jour exclusives.",
     "error": "Échec de la connexion. Veuillez réessayer.",
-    "defaultError": "Quelque chose a mal tourné."
+    "defaultError": "Quelque chose a mal tourné.",
+    "whyJoinUs": "Pourquoi nous rejoindre ?"
+  },
+  "WhyJoinUs": {
+    "title": "POURQUOI NOUS REJOINDRE ?",
+    "subtitle": "NOTRE PROPOSITION DE VALEUR",
+    "intro": "Rejoignez un réseau mondial de leaders, de professionnels et d'activistes dédiés à la reconstruction de la souveraineté et de la prospérité du Liban.",
+    "items": {
+      "0": {
+        "title": "Analyse et perspective stratégiques",
+        "desc": "ALEF se concentre sur le plaidoyer, visant à trouver des solutions aux problèmes complexes du Moyen-Orient, en commençant par le Liban et en s'étendant à l'ensemble du Moyen-Orient."
+      },
+      "1": {
+        "title": "Réseautage et briefings exclusifs",
+        "desc": "La Fondation offre des opportunités de participer à des conférences téléphoniques, des webinaires et des briefings avec des experts, d'anciens représentants gouvernementaux et des influenceurs."
+      },
+      "2": {
+        "title": "Plaidoyer orienté vers l'action",
+        "desc": "L'organisation s'engage dans le plaidoyer public pour influencer l'élaboration des politiques."
+      },
+      "3": {
+        "title": "Soutien aux experts",
+        "desc": "L'organisation soutient les chercheurs, écrivains et activistes travaillant sur des questions liées au Liban et au Moyen-Orient en général."
+      },
+      "4": {
+        "title": "Perspectives et événements d'experts",
+        "desc": "La plateforme permet aux utilisateurs de se connecter directement avec nos experts et de participer à des événements exclusifs, en personne et en ligne."
+      },
+      "5": {
+        "title": "Une plateforme pour le changement",
+        "desc": "Pour les professionnels, les universitaires ou les citoyens engagés, nous rejoindre offre une plateforme pour rester informé sur des points de vue non conventionnels et participer à l'élaboration de la politique américaine envers le Moyen-Orient."
+      }
+    },
+    "cta": "PRÊT À FAIRE UN IMPACT ?",
+    "button": "REJOINDRE LE MOUVEMENT MAINTENANT"
   },
   "Footer": {
     "description": "Éduquer les communautés et combattre le terrorisme par la recherche, la sensibilisation et le plaidoyer politique.",
@@ -3193,7 +3227,7 @@
       "titleLabel": "Titre du short",
       "titlePlaceholder": "Entrez un titre pour votre short",
       "excerptLabel": "Extrait",
-      "excerptPlaceholder": "Bref résumé de votre article (150-300 caractères)",
+      "excerptPlaceholder": "Bref résumé de votre short (150-300 caractères)",
       "contentLabel": "Description du short",
       "contentPlaceholder": "Rédigez la description de votre short ici...",
       "imageLabel": "Vignette du short (optionnel)",
@@ -3214,7 +3248,7 @@
       "tagsLabel": "Tags (Optionnel)",
       "tagsPlaceholder": "Ajouter des tags pertinents (séparés par des virgules)",
       "showAuthorLabel": "Afficher mon nom en tant qu'auteur",
-      "showAuthorHelp": "Si coché, votre nom sera affiché avec l'article. Sinon, il sera publié sous le nom 'Anonyme'.",
+      "showAuthorHelp": "Si coché, votre nom sera affiché avec le short. Sinon, il sera publié sous le nom 'Anonyme'.",
       "submitButton": "Soumettre pour Révision",
       "submitting": "Soumission...",
       "cancel": "Annuler",
@@ -3263,7 +3297,7 @@
       "titleLabel": "Titre du podcast",
       "titlePlaceholder": "Entrez un titre pour votre podcast",
       "excerptLabel": "Extrait",
-      "excerptPlaceholder": "Bref résumé de votre article (150-300 caractères)",
+      "excerptPlaceholder": "Bref résumé de votre podcast (150-300 caractères)",
       "contentLabel": "Description du podcast",
       "contentPlaceholder": "Rédigez la description de votre podcast ici...",
       "imageLabel": "Vignette du podcast (optionnel)",
@@ -3284,7 +3318,7 @@
       "tagsLabel": "Tags (Optionnel)",
       "tagsPlaceholder": "Ajouter des tags pertinents (séparés par des virgules)",
       "showAuthorLabel": "Afficher mon nom en tant qu'auteur",
-      "showAuthorHelp": "Si coché, votre nom sera affiché avec l'article. Sinon, il sera publié sous le nom 'Anonyme'.",
+      "showAuthorHelp": "Si coché, votre nom sera affiché avec le podcast. Sinon, il sera publié sous le nom 'Anonyme'.",
       "submitButton": "Soumettre pour Révision",
       "submitting": "Soumission...",
       "cancel": "Annuler",
