@@ -389,23 +389,46 @@ export default function SubmitShortPage() {
 
                     {/* Guidelines - At Bottom */}
                     <div className="mt-16 max-w-3xl mx-auto">
-                        <div className="bg-foreground/5 backdrop-blur-sm border border-foreground/10 rounded-2xl p-8">
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="w-12 h-12 rounded-xl bg-blue/20 flex items-center justify-center border border-blue/30">
-                                    <BookOpen className="w-6 h-6 text-blue" />
+                        <div className="bg-foreground/5 backdrop-blur-sm border border-foreground/10 rounded-2xl p-8 space-y-8">
+                            {/* Pitch Section */}
+                            {t.raw('guidelines.pitch') && Array.isArray(t.raw('guidelines.pitch')) && (
+                                <div className="space-y-4">
+                                    {(t.raw('guidelines.pitch') as string[]).map((paragraph, index) => (
+                                        <p key={index} className="font-oswald text-base text-foreground/70 leading-relaxed">
+                                            {paragraph}
+                                        </p>
+                                    ))}
                                 </div>
-                                <h3 className="font-bebas text-3xl text-foreground">{t('guidelines.title')}</h3>
+                            )}
+
+                            <div className="pt-4 border-t border-foreground/10">
+                                <div className="flex items-center gap-3 mb-6">
+                                    <div className="w-12 h-12 rounded-xl bg-blue/20 flex items-center justify-center border border-blue/30">
+                                        <BookOpen className="w-6 h-6 text-blue" />
+                                    </div>
+                                    <h3 className="font-bebas text-3xl text-foreground">{t('guidelines.title')}</h3>
+                                </div>
+                                
+                                {t.raw('guidelines.rulesHeader') && (
+                                    <p className="font-oswald text-lg text-foreground/80 mb-6">
+                                        {t('guidelines.rulesHeader')}
+                                    </p>
+                                )}
+
+                                <ul className="space-y-6">
+                                    {(t.raw('guidelines.items') as string[]).map((item, index) => (
+                                        <li key={index} className="flex items-start gap-3">
+                                            <div className="mt-1 bg-emerald-500/20 rounded-full p-1">
+                                                <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0" />
+                                            </div>
+                                            <span 
+                                                className="font-oswald text-sm text-foreground/70 leading-relaxed"
+                                                dangerouslySetInnerHTML={{ __html: item }}
+                                            />
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
-                            <ul className="space-y-4">
-                                {(t.raw('guidelines.items') as string[]).map((item, index) => (
-                                    <li key={index} className="flex items-start gap-3">
-                                        <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
-                                        <span className="font-oswald text-sm text-foreground/70 leading-relaxed">
-                                            {item}
-                                        </span>
-                                    </li>
-                                ))}
-                            </ul>
                         </div>
                     </div>
 

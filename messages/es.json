@@ -1381,12 +1381,21 @@
     },
     "guidelines": {
       "title": "Pautas de Envío",
+      "pitch": [
+        "Antes de enviar un artículo, por favor envíe una propuesta para su historia.",
+        "Sea específico y presente la historia, no el tema. Su propuesta debe hacer referencia a fuentes primarias y análisis. Las fuentes primarias consisten en documentos originales como registros oficiales, entrevistas y discursos. Proporcione siempre enlaces a esas fuentes cuando sea posible.",
+        "No debe basarse en fuentes secundarias o en lo que ya está en las noticias, a falta de una fuente original o un ángulo nuevo.",
+        "Si se acepta su propuesta, su artículo será exclusivo de ALEF, lo que significa que no podrá publicarse íntegramente en ningún otro lugar. Lea nuestras pautas de envío a continuación para obtener más información sobre lo que debe incluir su artículo."
+      ],
+      "rulesHeader": "Para mejorar las posibilidades de que su artículo sea publicado, siga estas reglas de envío:",
       "items": [
-        "Los artículos deben ser originales y no estar publicados en otro lugar",
-        "Mínimo 500 palabras, máximo 800 palabras",
-        "Incluir fuentes y referencias creíbles",
-        "Usar un lenguaje profesional y respetuoso",
-        "Se requiere imagen destacada de alta calidad"
+        "<strong>De interés periodístico:</strong> Debe haber un gancho de noticias en su artículo, y una razón claramente establecida de por qué es probable que su tema atraiga a lectores de una audiencia informada que sigue la región.",
+        "<strong>Obra original:</strong> El artículo debe ser una obra original y exclusiva de ALEF, y no puede derivarse de artículos anteriores o fuentes de noticias secundarias. Exclusivo de ALEF significa que su pieza no puede publicarse en ningún otro sitio web, incluidos los blogs personales.",
+        "<strong>Extensión:</strong> Su artículo no debe tener más de 1.200 palabras ni menos de 600 palabras.",
+        "<strong>Contexto local:</strong> Busque perspectivas y fuentes locales que no estén bien representadas en los medios. Sin embargo, su historia no debe ser simplemente una colección de citas; debe incluir su propia contextualización y análisis.",
+        "<strong>Fuentes y hechos:</strong> Los análisis e informes deben basarse en hechos y citas de fuentes, y toda la información referenciada debe citarse y vincularse. Incluso las piezas analíticas o de opinión deben basarse en hechos. Cada cita o hecho debe atribuirse a la fuente original primaria.",
+        "<strong>Autoedición:</strong> Revise minuciosamente su trabajo antes de enviarlo, eliminando errores gramaticales y tipográficos, y comprobando los hechos. No se tendrán en cuenta los envíos no editados.",
+        "<strong>Lenguaje apropiado:</strong> Los envíos a ALEF deben usar un lenguaje apropiado y no pueden incluir insultos, ataques ad hominem o acusaciones o rumores no fundamentados."
       ]
     }
   },
@@ -3201,12 +3210,21 @@
     },
     "guidelines": {
       "title": "Pautas de Envío",
+      "pitch": [
+        "Antes de enviar un video, envíe una propuesta para su historia.",
+        "Sea específico y presente la historia, no el tema. Su propuesta debe hacer referencia a fuentes primarias y análisis. Las fuentes primarias consisten en documentos originales como registros oficiales, entrevistas y discursos. Proporcione siempre enlaces a esas fuentes cuando sea posible.",
+        "No debe basarse en fuentes secundarias o en lo que ya está en las noticias, a falta de una fuente original o un ángulo nuevo.",
+        "Si se acepta su propuesta, su video será exclusivo de ALEF, lo que significa que no podrá publicarse íntegramente en ningún otro lugar. Lea nuestras pautas de envío a continuación para obtener más información sobre lo que debe incluir su video."
+      ],
+      "rulesHeader": "Para mejorar las posibilidades de que su video sea publicado, siga estas reglas de envío:",
       "items": [
-        "Los artículos deben ser originales y no estar publicados en otro lugar",
-        "Mínimo 500 palabras, máximo 800 palabras",
-        "Incluir fuentes y referencias creíbles",
-        "Usar un lenguaje profesional y respetuoso",
-        "Se requiere imagen destacada de alta calidad"
+        "<strong>De interés periodístico:</strong> Debe haber un gancho de noticias en su video, y una razón claramente establecida de por qué es probable que su tema atraiga a los espectadores de una audiencia informada que sigue la región.",
+        "<strong>Obra original:</strong> El video debe ser una obra original y exclusiva de ALEF, y no puede derivarse de contenido anterior o fuentes de noticias secundarias. Exclusivo de ALEF significa que su pieza no puede publicarse en ninguna otra plataforma, incluidos los canales personales.",
+        "<strong>Extensión:</strong> Su video no debe tener más de 30 minutos ni menos de 5 minutos.",
+        "<strong>Contexto local:</strong> Busque perspectivas y fuentes locales que no estén bien representadas en los medios. Sin embargo, su historia no debe ser simplemente una colección de clips; debe incluir su propia contextualización y análisis.",
+        "<strong>Fuentes y hechos:</strong> Los análisis e informes deben basarse en hechos y citas de fuentes, y toda la información referenciada debe citarse. Cada cita o hecho debe atribuirse a la fuente original primaria.",
+        "<strong>Calidad de producción:</strong> Asegure un audio claro y un video estable y de alta calidad. No se tendrán en cuenta las grabaciones de baja calidad.",
+        "<strong>Lenguaje apropiado:</strong> Los envíos a ALEF deben usar un lenguaje apropiado y no pueden incluir insultos, ataques ad hominem o acusaciones o rumores no fundamentados."
       ]
     }
   },
@@ -3271,12 +3289,21 @@
     },
     "guidelines": {
       "title": "Pautas de Envío",
+      "pitch": [
+        "Antes de enviar un corto, envíe una propuesta para su historia.",
+        "Sea específico y presente la historia, no el tema. Su propuesta debe hacer referencia a fuentes primarias y análisis. Las fuentes primarias consisten en documentos originales como registros oficiales, entrevistas y discursos. Proporcione siempre enlaces a esas fuentes cuando sea posible.",
+        "No debe basarse en fuentes secundarias o en lo que ya está en las noticias, a falta de una fuente original o un ángulo nuevo.",
+        "Si se acepta su propuesta, su corto será exclusivo de ALEF, lo que significa que no podrá publicarse íntegramente en ningún otro lugar. Lea nuestras pautas de envío a continuación para obtener más información sobre lo que debe incluir su corto."
+      ],
+      "rulesHeader": "Para mejorar las posibilidades de que su corto sea publicado, siga estas reglas de envío:",
       "items": [
-        "Los artículos deben ser originales y no estar publicados en otro lugar",
-        "Mínimo 500 palabras, máximo 800 palabras",
-        "Incluir fuentes y referencias creíbles",
-        "Usar un lenguaje profesional y respetuoso",
-        "Se requiere imagen destacada de alta calidad"
+        "<strong>De interés periodístico:</strong> Debe haber un gancho de noticias en su corto, y una razón claramente establecida de por qué es probable que su tema atraiga a los espectadores.",
+        "<strong>Obra original:</strong> El corto debe ser una obra original y exclusiva de ALEF. Exclusivo de ALEF significa que su pieza no puede publicarse en ninguna otra plataforma, incluidas las cuentas personales de redes sociales.",
+        "<strong>Extensión:</strong> Su corto no debe tener más de 90 segundos ni menos de 30 segundos.",
+        "<strong>Contexto local:</strong> Busque perspectivas y fuentes locales que no estén bien representadas en los medios.",
+        "<strong>Fuentes y hechos:</strong> Toda la información referenciada debe citarse. Cada cita o hecho debe atribuirse a la fuente original primaria.",
+        "<strong>Calidad de producción:</strong> Asegure un audio claro y un video vertical (9:16) de alta calidad. No se tendrán en cuenta los cortos no editados o de mala calidad.",
+        "<strong>Lenguaje apropiado:</strong> Los envíos a ALEF deben usar un lenguaje apropiado y no pueden incluir insultos o acusaciones no fundamentadas."
       ]
     }
   },

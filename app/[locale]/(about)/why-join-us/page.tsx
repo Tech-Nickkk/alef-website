@@ -91,24 +91,7 @@ export default function WhyJoinUsPage() {
                     ))}
                 </div>
 
-                {/* --- FINAL CTA --- */}
-                <div className="relative bg-blue border border-white/10 p-10 md:p-20 rounded-3xl md:rounded-[4rem] overflow-hidden text-center">
-                    <div className="absolute inset-0 bg-linear-to-b from-white/5 to-transparent pointer-events-none"></div>
-                    <div className="relative z-10 space-y-8 md:space-y-12">
-                        <h2 className="font-bebas text-4xl md:text-6xl text-white uppercase">{t('cta')}</h2>
-                        
-                        <Link href="/#join-us">
-                            <button className="group relative bg-red text-white px-10 md:px-16 py-4 md:py-6 text-sm md:text-lg font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:bg-[#b0151b] isolate cursor-pointer shadow-[0_10px_30px_rgba(227,27,35,0.3)]">
-                                <span className="relative z-10">{t('button')}</span>
-                                <div className="absolute inset-0 bg-white/10 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 skew-x-12"></div>
-                            </button>
-                        </Link>
-                    </div>
 
-                    {/* Decorative Elements */}
-                    <div className="absolute top-0 left-0 w-32 h-32 md:w-64 md:h-64 bg-red/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
-                    <div className="absolute bottom-0 right-0 w-32 h-32 md:w-64 md:h-64 bg-red/10 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
-                </div>
 
             </div>
         </main>

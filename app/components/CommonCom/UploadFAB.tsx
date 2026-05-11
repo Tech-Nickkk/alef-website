@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { Upload, Video, Scissors, Mic, FileText, X } from 'lucide-react';
 
 const items = [
-    { href: '/submit-video',   icon: Video,     label: 'Submit Video',   angleDeg: 90  },
-    { href: '/submit-short',   icon: Scissors,  label: 'Submit Short',   angleDeg: 60  },
-    { href: '/submit-podcast', icon: Mic,        label: 'Submit Podcast', angleDeg: 30  },
-    { href: '/submit-article', icon: FileText,   label: 'Submit Article', angleDeg: 0   },
+    { href: '/submit-article', icon: FileText,   label: 'Submit Article', angleDeg: 90  },
+    { href: '/submit-video',   icon: Video,      label: 'Submit Video',   angleDeg: 60  },
+    { href: '/submit-short',   icon: Scissors,   label: 'Submit Short',   angleDeg: 30  },
+    { href: '/submit-podcast', icon: Mic,         label: 'Submit Podcast', angleDeg: 0   },
 ];
 
 const RADIUS = 115; // px — distance from center of main button

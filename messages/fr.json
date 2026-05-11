@@ -1387,12 +1387,21 @@
     },
     "guidelines": {
       "title": "Directives de Soumission",
+      "pitch": [
+        "Avant de soumettre un article, veuillez envoyer une proposition pour votre histoire.",
+        "Soyez spécifique et présentez l'histoire, pas le sujet. Votre proposition doit faire référence à des sources primaires et à des analyses. Les sources primaires consistent en des documents originaux tels que des dossiers officiels, des entretiens et des discours. Fournissez toujours des liens vers ces sources lorsque cela est possible.",
+        "Elle ne doit pas être basée sur des sources secondaires ou sur ce qui est déjà dans l'actualité, en l'absence d'une source ou d'un angle original.",
+        "Si votre proposition est acceptée, votre article sera exclusif à ALEF, ce qui signifie qu'il ne pourra pas être publié intégralement ailleurs. Veuillez lire nos directives de soumission ci-dessous pour plus d'informations sur ce qui devrait figurer dans votre article."
+      ],
+      "rulesHeader": "Pour améliorer les chances de publication de votre article, suivez ces règles de soumission :",
       "items": [
-        "Les articles doivent être originaux et non publiés ailleurs",
-        "Minimum 500 mots, maximum 800 mots",
-        "Inclure des sources et des références crédibles",
-        "Utiliser un langage professionnel et respectueux",
-        "Image à la une de haute qualité requise"
+        "<strong>Digne d'intérêt :</strong> Il doit y avoir un accroche d'actualité dans votre article, et une raison clairement énoncée pour laquelle votre sujet est susceptible d'attirer les lecteurs d'un public averti qui suit la région.",
+        "<strong>Travail original :</strong> L'article doit être un travail original et exclusif à ALEF, et ne peut pas être dérivé d'articles précédents ou de sources d'information secondaires. Exclusif à ALEF signifie que votre article ne peut être publié sur aucun autre site web, y compris les blogs personnels.",
+        "<strong>Longueur :</strong> Votre article ne doit pas dépasser 1 200 mots et ne doit pas faire moins de 600 mots.",
+        "<strong>Contexte local :</strong> Recherchez des perspectives et des sources locales mal représentées dans les médias. Cependant, votre histoire ne doit pas être simplement une collection de citations ; elle doit inclure votre propre contextualisation et analyse.",
+        "<strong>Sources et faits :</strong> Les analyses et les rapports doivent être basés sur des faits et des citations provenant de sources, et toutes les informations référencées doivent être citées et liées. Même les articles d'analyse ou d'opinion doivent être basés sur les faits. Chaque citation ou fait doit être attribué à la source primaire d'origine.",
+        "<strong>Auto-révision :</strong> Relisez attentivement votre travail avant de le soumettre, en éliminant les fautes de grammaire et les coquilles, et en vérifiant les faits. Les soumissions non révisées ne seront pas prises en compte.",
+        "<strong>Langage approprié :</strong> Les soumissions à ALEF doivent utiliser un langage approprié et ne peuvent pas inclure d'insultes, d'attaques ad hominem ou d'allégations ou rumeurs non fondées."
       ]
     }
   },
@@ -3207,12 +3216,21 @@
     },
     "guidelines": {
       "title": "Directives de Soumission",
+      "pitch": [
+        "Avant de soumettre une vidéo, veuillez envoyer une proposition pour votre histoire.",
+        "Soyez spécifique et présentez l'histoire, pas le sujet. Votre proposition doit faire référence à des sources primaires et à des analyses. Les sources primaires consistent en des documents originaux tels que des dossiers officiels, des entretiens et des discours. Fournissez toujours des liens vers ces sources lorsque cela est possible.",
+        "Elle ne doit pas être basée sur des sources secondaires ou sur ce qui est déjà dans l'actualité, en l'absence d'une source ou d'un angle original.",
+        "Si votre proposition est acceptée, votre vidéo sera exclusive à ALEF, ce qui signifie qu'elle ne pourra pas être publiée intégralement ailleurs. Veuillez lire nos directives de soumission ci-dessous pour plus d'informations sur ce qui devrait figurer dans votre vidéo."
+      ],
+      "rulesHeader": "Pour améliorer les chances de publication de votre vidéo, suivez ces règles de soumission :",
       "items": [
-        "Les articles doivent être originaux et non publiés ailleurs",
-        "Minimum 500 mots, maximum 800 mots",
-        "Inclure des sources et des références crédibles",
-        "Utiliser un langage professionnel et respectueux",
-        "Image à la une de haute qualité requise"
+        "<strong>Digne d'intérêt :</strong> Il doit y avoir un accroche d'actualité dans votre vidéo, et une raison clairement énoncée pour laquelle votre sujet est susceptible d'attirer les spectateurs d'un public averti qui suit la région.",
+        "<strong>Travail original :</strong> La vidéo doit être un travail original et exclusif à ALEF, et ne peut pas être dérivée d'un contenu antérieur ou de sources d'information secondaires. Exclusif à ALEF signifie que votre article ne peut être publié sur aucune autre plateforme, y compris les chaînes personnelles.",
+        "<strong>Longueur :</strong> Votre vidéo ne doit pas dépasser 30 minutes et ne doit pas faire moins de 5 minutes.",
+        "<strong>Contexte local :</strong> Recherchez des perspectives et des sources locales mal représentées dans les médias. Cependant, votre histoire ne doit pas être simplement une collection de clips ; elle doit inclure votre propre contextualisation et analyse.",
+        "<strong>Sources et faits :</strong> Les analyses et les rapports doivent être basés sur des faits et des citations provenant de sources, et toutes les informations référencées doivent être citées. Chaque citation ou fait doit être attribué à la source primaire d'origine.",
+        "<strong>Qualité de production :</strong> Assurez un audio clair et une vidéo stable et de haute qualité. Les enregistrements de mauvaise qualité ne seront pas pris en compte.",
+        "<strong>Langage approprié :</strong> Les soumissions à ALEF doivent utiliser un langage approprié et ne peuvent pas inclure d'insultes, d'attaques ad hominem ou d'allégations ou rumeurs non fondées."
       ]
     }
   },
@@ -3277,12 +3295,21 @@
     },
     "guidelines": {
       "title": "Directives de Soumission",
+      "pitch": [
+        "Avant de soumettre un short, veuillez envoyer une proposition pour votre histoire.",
+        "Soyez spécifique et présentez l'histoire, pas le sujet. Votre proposition doit faire référence à des sources primaires et à des analyses. Les sources primaires consistent en des documents originaux tels que des dossiers officiels, des entretiens et des discours. Fournissez toujours des liens vers ces sources lorsque cela est possible.",
+        "Elle ne doit pas être basée sur des sources secondaires ou sur ce qui est déjà dans l'actualité, en l'absence d'une source ou d'un angle original.",
+        "Si votre proposition est acceptée, votre short sera exclusif à ALEF, ce qui signifie qu'il ne pourra pas être publié intégralement ailleurs. Veuillez lire nos directives de soumission ci-dessous pour plus d'informations sur ce qui devrait figurer dans votre short."
+      ],
+      "rulesHeader": "Pour améliorer les chances de publication de votre short, suivez ces règles de soumission :",
       "items": [
-        "Les articles doivent être originaux et non publiés ailleurs",
-        "Minimum 500 mots, maximum 800 mots",
-        "Inclure des sources et des références crédibles",
-        "Utiliser un langage professionnel et respectueux",
-        "Image à la une de haute qualité requise"
+        "<strong>Digne d'intérêt :</strong> Il doit y avoir un accroche d'actualité dans votre short, et une raison clairement énoncée pour laquelle votre sujet est susceptible d'attirer les spectateurs.",
+        "<strong>Travail original :</strong> Le short doit être un travail original et exclusif à ALEF. Exclusif à ALEF signifie que votre article ne peut être publié sur aucune autre plateforme, y compris les comptes de réseaux sociaux personnels.",
+        "<strong>Longueur :</strong> Votre short ne doit pas dépasser 90 secondes et ne doit pas faire moins de 30 secondes.",
+        "<strong>Contexte local :</strong> Recherchez des perspectives et des sources locales mal représentées dans les médias.",
+        "<strong>Sources et faits :</strong> Toutes les informations référencées doivent être citées. Chaque citation ou fait doit être attribué à la source primaire d'origine.",
+        "<strong>Qualité de production :</strong> Assurez un audio clair et une vidéo verticale (9:16) de haute qualité. Les shorts non édités ou de mauvaise qualité ne seront pas pris en compte.",
+        "<strong>Langage approprié :</strong> Les soumissions à ALEF doivent utiliser un langage approprié et ne peuvent pas inclure d'insultes ou d'allégations non fondées."
       ]
     }
   },
@@ -3347,12 +3374,21 @@
     },
     "guidelines": {
       "title": "Directives de Soumission",
+      "pitch": [
+        "Avant de soumettre un podcast, veuillez envoyer une proposition pour votre histoire.",
+        "Soyez spécifique et présentez l'histoire, pas le sujet. Votre proposition doit faire référence à des sources primaires et à des analyses. Les sources primaires consistent en des documents originaux tels que des dossiers officiels, des entretiens et des discours. Fournissez toujours des liens vers ces sources lorsque cela est possible.",
+        "Elle ne doit pas être basée sur des sources secondaires ou sur ce qui est déjà dans l'actualité, en l'absence d'une source ou d'un angle original.",
+        "Si votre proposition est acceptée, votre podcast sera exclusif à ALEF, ce qui signifie qu'il ne pourra pas être publié intégralement ailleurs. Veuillez lire nos directives de soumission ci-dessous pour plus d'informations sur ce qui devrait figurer dans votre podcast."
+      ],
+      "rulesHeader": "Pour améliorer les chances de publication de votre podcast, suivez ces règles de soumission :",
       "items": [
-        "Les articles doivent être originaux et non publiés ailleurs",
-        "Minimum 500 mots, maximum 800 mots",
-        "Inclure des sources et des références crédibles",
-        "Utiliser un langage professionnel et respectueux",
-        "Image à la une de haute qualité requise"
+        "<strong>Digne d'intérêt :</strong> Il doit y avoir un accroche d'actualité dans votre podcast, et une raison clairement énoncée pour laquelle votre sujet est susceptible d'attirer les auditeurs.",
+        "<strong>Travail original :</strong> Le podcast doit être un travail original et exclusif à ALEF, et ne peut pas être dérivé d'un contenu antérieur. Exclusif à ALEF signifie que votre article ne peut être publié sur aucune autre plateforme.",
+        "<strong>Longueur :</strong> Votre podcast ne doit pas dépasser 60 minutes et ne doit pas faire moins de 15 minutes.",
+        "<strong>Contexte local :</strong> Recherchez des perspectives et des sources locales mal représentées dans les médias. Votre histoire doit inclure votre propre contextualisation et analyse.",
+        "<strong>Sources et faits :</strong> Les analyses et les rapports doivent être basés sur des faits et des citations provenant de sources, et toutes les informations référencées doivent être citées. Chaque citation ou fait doit être attribué à la source primaire d'origine.",
+        "<strong>Qualité audio :</strong> Assurez un audio clair et des normes de production professionnelles. L'audio de mauvaise qualité ne sera pas pris en compte.",
+        "<strong>Langage approprié :</strong> Les soumissions à ALEF doivent utiliser un langage approprié et ne peuvent pas inclure d'insultes, d'attaques ad hominem ou d'allégations ou rumeurs non fondées."
       ]
     }
   }
