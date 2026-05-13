@@ -3,7 +3,6 @@
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase";
 import { useState, useRef } from "react";
-import { useRouter } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import {
@@ -12,7 +11,6 @@ import {
     Image as ImageIcon,
     CheckCircle,
     Loader2,
-    ArrowLeft,
     AlertCircle,
     BookOpen
 } from "lucide-react";
@@ -21,7 +19,6 @@ import { Link } from "@/i18n/routing";
 export default function SubmitShortPage() {
     const t = useTranslations('SubmitShortPage');
     const [user, loading] = useAuthState(auth);
-    const router = useRouter();
     const fileInputRef = useRef<HTMLInputElement>(null);
 
     // Form state
@@ -36,6 +33,12 @@ export default function SubmitShortPage() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [errors, setErrors] = useState<Record<string, string>>({});
+    
+    // Guest submission state
+    const [showContactModal, setShowContactModal] = useState(false);
+    const [guestName, setGuestName] = useState("");
+    const [guestEmail, setGuestEmail] = useState("");
+    const [guestError, setGuestError] = useState("");
 
     // Handle input changes
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -95,10 +98,32 @@ export default function SubmitShortPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        if (!validateForm() || !user) {
+        if (!validateForm()) {
             return;
         }
 
+        if (!user) {
+            setShowContactModal(true);
+        } else {
+            executeSubmit(user.displayName || 'Anonymous', user.email || '');
+        }
+    };
+
+    const handleGuestSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!guestName.trim() || !guestEmail.trim()) {
+            setGuestError('Name and email are required');
+            return;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(guestEmail)) {
+            setGuestError('Please enter a valid email address');
+            return;
+        }
+        setShowContactModal(false);
+        executeSubmit(guestName, guestEmail);
+    };
+
+    const executeSubmit = async (submitterName: string, submitterEmail: string) => {
         setIsSubmitting(true);
         setErrors({});
 
@@ -109,8 +134,8 @@ export default function SubmitShortPage() {
             formDataToSend.append('content', formData.content);
             formDataToSend.append('type', 'short');
             formDataToSend.append('showAuthorName', String(formData.showAuthorName));
-            formDataToSend.append('name', user.displayName || 'Anonymous');
-            formDataToSend.append('email', user.email || '');
+            formDataToSend.append('name', submitterName);
+            formDataToSend.append('email', submitterEmail);
             if (selectedImage) {
                 formDataToSend.append('image', selectedImage);
             }
@@ -144,25 +169,7 @@ export default function SubmitShortPage() {
         );
     }
 
-    // Not logged in
-    if (!user) {
-        return (
-            <div className="min-h-screen bg-background flex items-center justify-center px-4">
-                <div className="max-w-md w-full text-center space-y-6">
-                    <div className="w-20 h-20 rounded-2xl bg-red/20 flex items-center justify-center mx-auto border border-red/30">
-                        <AlertCircle className="w-10 h-10 text-red" />
-                    </div>
-                    <h2 className="font-bebas text-4xl text-foreground">{t('loginRequired')}</h2>
-                    <p className="font-oswald text-foreground/60">{t('description')}</p>
-                    <Link href="/login">
-                        <button className="px-8 py-4 bg-red hover:bg-red/90 text-white font-oswald font-bold tracking-widest uppercase rounded-xl transition-all duration-300 shadow-lg shadow-red/30">
-                            {t('loginButton')}
-                        </button>
-                    </Link>
-                </div>
-            </div>
-        );
-    }
+    // Removed login requirement block
 
     // Success state
     if (isSubmitted) {
@@ -443,6 +450,75 @@ export default function SubmitShortPage() {
                     </div>
                 </div>
             </main>
+
+            {/* Guest Contact Modal */}
+            {showContactModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-background/80 backdrop-blur-sm">
+                    <div className="bg-blue/10 border border-blue/30 rounded-3xl p-8 max-w-md w-full shadow-2xl relative">
+                        <h3 className="text-3xl font-bebas text-foreground mb-2">Submit as Guest</h3>
+                        <p className="font-oswald text-foreground/60 mb-6">
+                            Please provide your name and email so we can contact you regarding your submission.
+                        </p>
+                        
+                        <form onSubmit={handleGuestSubmit} className="space-y-4">
+                            {guestError && (
+                                <div className="p-3 bg-red/10 border border-red/30 rounded-xl text-red text-sm font-oswald flex items-center gap-2">
+                                    <AlertCircle className="w-4 h-4 shrink-0" />
+                                    {guestError}
+                                </div>
+                            )}
+                            
+                            <div>
+                                <label className="block font-oswald text-sm text-foreground/80 uppercase tracking-wider mb-2">
+                                    Name <span className="text-red">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    value={guestName}
+                                    onChange={(e) => {
+                                        setGuestName(e.target.value);
+                                        setGuestError("");
+                                    }}
+                                    className="w-full bg-background border border-foreground/20 rounded-xl px-4 py-3 font-oswald text-foreground focus:outline-none focus:border-blue transition-colors"
+                                    placeholder="John Doe"
+                                />
+                            </div>
+                            
+                            <div>
+                                <label className="block font-oswald text-sm text-foreground/80 uppercase tracking-wider mb-2">
+                                    Email <span className="text-red">*</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    value={guestEmail}
+                                    onChange={(e) => {
+                                        setGuestEmail(e.target.value);
+                                        setGuestError("");
+                                    }}
+                                    className="w-full bg-background border border-foreground/20 rounded-xl px-4 py-3 font-oswald text-foreground focus:outline-none focus:border-blue transition-colors"
+                                    placeholder="john@example.com"
+                                />
+                            </div>
+                            
+                            <div className="flex gap-4 pt-4">
+                                <button
+                                    type="button"
+                                    onClick={() => setShowContactModal(false)}
+                                    className="flex-1 px-4 py-3 bg-foreground/5 hover:bg-foreground/10 text-foreground font-oswald font-bold uppercase rounded-xl transition-all"
+                                >
+                                    Cancel
+                                </button>
+                                <button
+                                    type="submit"
+                                    className="flex-1 px-4 py-3 bg-red hover:bg-red/90 text-white font-oswald font-bold uppercase rounded-xl transition-all shadow-lg shadow-red/30"
+                                >
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
