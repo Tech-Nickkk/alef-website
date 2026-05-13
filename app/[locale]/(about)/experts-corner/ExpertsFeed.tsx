@@ -132,7 +132,7 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
                                     )}
                                 </h3>
                                 {officer.position && (
-                                    <p className="font-oswald text-red text-sm tracking-wide uppercase">
+                                    <p className="font-oswald text-white/70 text-sm tracking-wide uppercase">
                                         {highlightText(getString(officer.position), searchQuery)}
                                     </p>
                                 )}
