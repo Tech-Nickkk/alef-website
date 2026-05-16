@@ -39,7 +39,8 @@
       "events": "Événements",
       "getInTouch": "Contactez-nous",
       "getInvolved": "S'Impliquer",
-      "faq": "FAQ"
+      "faq": "FAQ",
+      "webinars": "Webinaires"
     }
   },
   "Hero": {
@@ -3388,6 +3389,92 @@
         "<strong>Contexte local :</strong> Recherchez des perspectives et des sources locales mal représentées dans les médias. Votre histoire doit inclure votre propre contextualisation et analyse.",
         "<strong>Sources et faits :</strong> Les analyses et les rapports doivent être basés sur des faits et des citations provenant de sources, et toutes les informations référencées doivent être citées. Chaque citation ou fait doit être attribué à la source primaire d'origine.",
         "<strong>Qualité audio :</strong> Assurez un audio clair et des normes de production professionnelles. L'audio de mauvaise qualité ne sera pas pris en compte.",
+        "<strong>Langage approprié :</strong> Les soumissions à ALEF doivent utiliser un langage approprié et ne peuvent pas inclure d'insultes, d'attaques ad hominem ou d'allégations ou rumeurs non fondées."
+      ]
+    }
+  },
+  "WebinarsPage": {
+    "subtitle": "ARCHIVE MÉDIA",
+    "title": "WEBINAIRES",
+    "description": "Regardez nos derniers webinaires et notre couverture.",
+    "submitTitle": "Soumettre votre webinaire",
+    "submitDesc": "Partagez votre webinaire avec notre comité de rédaction pour examen."
+  },
+  "SubmitWebinarPage": {
+    "title": "SOUMETTRE VOTRE WEBINAIRE",
+    "subtitle": "Partagez Vos Idées",
+    "description": "Soumettez votre webinaire pour examen par notre comité de rédaction. Si approuvée, elle sera publiée sur notre plateforme.",
+    "loginRequired": "Veuillez vous connecter pour soumettre une webinaire",
+    "loginButton": "Se connecter pour continuer",
+    "backToArticles": "Retour aux webinaires",
+    "form": {
+      "titleLabel": "Titre du webinaire",
+      "titlePlaceholder": "Entrez un titre pour votre webinaire",
+      "excerptLabel": "Extrait",
+      "excerptPlaceholder": "Bref résumé de votre article (150-300 caractères)",
+      "contentLabel": "Description du webinaire",
+      "contentPlaceholder": "Rédigez la description de votre webinaire ici...",
+      "imageLabel": "Miniature/Couverture du webinaire (Optionnel)",
+      "imageHelp": "Téléchargez une image pour votre webinaire (max 5 Mo)",
+      "imageButton": "Choisir une image",
+      "imageSelected": "Image sélectionnée",
+      "changeImage": "Changer l'image",
+      "categoryLabel": "Catégorie",
+      "categoryPlaceholder": "Sélectionnez une catégorie",
+      "categories": {
+        "politics": "Politique et Gouvernance",
+        "economy": "Économie et Finance",
+        "security": "Sécurité et Défense",
+        "society": "Société et Culture",
+        "international": "Relations Internationales",
+        "analysis": "Analyse et Opinion"
+      },
+      "tagsLabel": "Tags (Optionnel)",
+      "tagsPlaceholder": "Ajouter des tags pertinents (séparés par des virgules)",
+      "showAuthorLabel": "Afficher mon nom en tant qu'auteur",
+      "showAuthorHelp": "Si coché, votre nom sera affiché avec l'article. Sinon, il sera publié sous le nom 'Anonyme'.",
+      "submitButton": "Soumettre pour Révision",
+      "submitting": "Soumission...",
+      "cancel": "Annuler",
+      "urlLabel": "URL du webinaire",
+      "urlPlaceholder": "Entrez le lien vers votre webinaire"
+    },
+    "validation": {
+      "titleRequired": "Le titre est obligatoire",
+      "titleTooShort": "Le titre doit comporter au moins 10 caractères",
+      "excerptRequired": "L'extrait est requis",
+      "excerptTooShort": "L'extrait doit comporter au moins 150 caractères",
+      "contentRequired": "La description est obligatoire",
+      "contentTooShort": "Le contenu doit comporter au moins 500 caractères",
+      "imageRequired": "L'image à la une est requise",
+      "categoryRequired": "Veuillez sélectionner une catégorie",
+      "urlRequired": "Le lien est obligatoire"
+    },
+    "success": {
+      "title": "Vidéo soumise !",
+      "message": "Merci pour votre soumission. Notre comité de rédaction examinera votre webinaire et vous contactera par e-mail.",
+      "backButton": "Retour aux Vidéos"
+    },
+    "preview": {
+      "title": "Aperçu",
+      "toggle": "Basculer l'aperçu"
+    },
+    "guidelines": {
+      "title": "Directives de Soumission",
+      "pitch": [
+        "Avant de soumettre une webinaire, veuillez envoyer une proposition pour votre histoire.",
+        "Soyez spécifique et présentez l'histoire, pas le sujet. Votre proposition doit faire référence à des sources primaires et à des analyses. Les sources primaires consistent en des documents originaux tels que des dossiers officiels, des entretiens et des discours. Fournissez toujours des liens vers ces sources lorsque cela est possible.",
+        "Elle ne doit pas être basée sur des sources secondaires ou sur ce qui est déjà dans l'actualité, en l'absence d'une source ou d'un angle original.",
+        "Si votre proposition est acceptée, votre webinaire sera exclusive à ALEF, ce qui signifie qu'elle ne pourra pas être publiée intégralement ailleurs. Veuillez lire nos directives de soumission ci-dessous pour plus d'informations sur ce qui devrait figurer dans votre webinaire."
+      ],
+      "rulesHeader": "Pour améliorer les chances de publication de votre webinaire, suivez ces règles de soumission :",
+      "items": [
+        "<strong>Digne d'intérêt :</strong> Il doit y avoir un accroche d'actualité dans votre webinaire, et une raison clairement énoncée pour laquelle votre sujet est susceptible d'attirer les spectateurs d'un public averti qui suit la région.",
+        "<strong>Travail original :</strong> La webinaire doit être un travail original et exclusif à ALEF, et ne peut pas être dérivée d'un contenu antérieur ou de sources d'information secondaires. Exclusif à ALEF signifie que votre article ne peut être publié sur aucune autre plateforme, y compris les chaînes personnelles.",
+        "<strong>Longueur :</strong> Votre webinaire ne doit pas dépasser 30 minutes et ne doit pas faire moins de 5 minutes.",
+        "<strong>Contexte local :</strong> Recherchez des perspectives et des sources locales mal représentées dans les médias. Cependant, votre histoire ne doit pas être simplement une collection de clips ; elle doit inclure votre propre contextualisation et analyse.",
+        "<strong>Sources et faits :</strong> Les analyses et les rapports doivent être basés sur des faits et des citations provenant de sources, et toutes les informations référencées doivent être citées. Chaque citation ou fait doit être attribué à la source primaire d'origine.",
+        "<strong>Qualité de production :</strong> Assurez un audio clair et une webinaire stable et de haute qualité. Les enregistrements de mauvaise qualité ne seront pas pris en compte.",
         "<strong>Langage approprié :</strong> Les soumissions à ALEF doivent utiliser un langage approprié et ne peuvent pas inclure d'insultes, d'attaques ad hominem ou d'allégations ou rumeurs non fondées."
       ]
     }

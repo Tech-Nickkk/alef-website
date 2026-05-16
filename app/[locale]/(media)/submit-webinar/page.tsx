@@ -16,8 +16,8 @@ import {
 } from "lucide-react";
 import { Link } from "@/i18n/routing";
 
-export default function SubmitPodcastPage() {
-    const t = useTranslations('SubmitPodcastPage');
+export default function SubmitWebinarPage() {
+    const t = useTranslations('SubmitWebinarPage');
     const [user, loading] = useAuthState(auth);
     const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -132,7 +132,7 @@ export default function SubmitPodcastPage() {
             formDataToSend.append('title', formData.title);
             formDataToSend.append('url', formData.url);
             formDataToSend.append('content', formData.content);
-            formDataToSend.append('type', 'podcast');
+            formDataToSend.append('type', 'webinar');
             formDataToSend.append('showAuthorName', String(formData.showAuthorName));
             formDataToSend.append('name', submitterName);
             formDataToSend.append('email', submitterEmail);
@@ -183,7 +183,7 @@ export default function SubmitPodcastPage() {
                     <p className="font-oswald text-lg text-foreground/70 max-w-md mx-auto leading-relaxed">
                         {t('success.message')}
                     </p>
-                    <Link href="/podcasts">
+                    <Link href="/webinars">
                         <button className="px-8 py-4 bg-blue hover:bg-blue/90 text-white font-oswald font-bold tracking-widest uppercase rounded-xl transition-all duration-300 shadow-lg shadow-blue/30">
                             {t('success.backButton')}
                         </button>
@@ -317,7 +317,6 @@ export default function SubmitPodcastPage() {
                             >
                                 {imagePreview ? (
                                     <div className="space-y-4">
-                                        {/* eslint-disable-next-line @next/next/no-img-element */}
                                         <img
                                             src={imagePreview}
                                             alt="Preview"
@@ -384,7 +383,7 @@ export default function SubmitPodcastPage() {
                                     </>
                                 )}
                             </button>
-                            <Link href="/podcasts" className="flex-1">
+                            <Link href="/webinars" className="flex-1">
                                 <button
                                     type="button"
                                     className="w-full px-8 py-4 bg-foreground/5 hover:bg-foreground/10 text-foreground font-oswald font-bold tracking-widest uppercase rounded-xl transition-all duration-300 border border-foreground/20"
@@ -442,7 +441,7 @@ export default function SubmitPodcastPage() {
 
                     {/* Back Button at Bottom */}
                     <div className="flex justify-center mt-12 relative z-10">
-                        <Link href="/podcasts">
+                        <Link href="/webinars">
                             <button className="group relative bg-transparent border border-foreground/70 text-foreground px-12 py-4 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-foreground/50 isolate cursor-pointer">
                                 <span className="relative z-10 group-hover:text-background transition-colors duration-300">{t('backToArticles')}</span>
                                 <div className="absolute inset-0 bg-foreground transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10"></div>

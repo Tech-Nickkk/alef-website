@@ -2,7 +2,21 @@
 
 import { Link } from "@/i18n/routing";
 import SkeletonImage from "./SkeletonImage";
-import { Mail, Phone, MapPin, Facebook, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Linkedin, Instagram } from "lucide-react";
+
+const TikTokIcon = ({ className }: { className?: string }) => (
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+    </svg>
+);
+
+const ThreadsIcon = ({ className }: { className?: string }) => (
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14.155 17c1.472 0 2.548-.828 2.548-2.31V9.923h-2.1v.794c-.655-.783-1.638-1.2-2.73-1.2-2.073 0-3.805 1.637-3.805 3.967 0 2.33 1.732 3.967 3.805 3.967 1.092 0 2.075-.417 2.73-1.2v.228c0 .324-.263.633-.674.633-.424 0-.67-.282-.693-.655H11.08c.038 1.411 1.258 2.546 3.076 2.546Z"/>
+        <path d="M11.96 15.603c-1.077 0-1.928-.888-1.928-2.12 0-1.231.85-2.12 1.927-2.12 1.077 0 1.928.889 1.928 2.12 0 1.232-.851 2.12-1.928 2.12Z"/>
+        <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10Zm-2-2.302A8.006 8.006 0 0 0 12 20a8 8 0 1 0-8-8c0 .878.14 1.723.4 2.515"/>
+    </svg>
+);
 import { useTranslations } from "next-intl";
 import { sendGAEvent } from '@next/third-parties/google';
 
@@ -46,9 +60,12 @@ export default function Footer() {
                         <p className="text-white/60 text-sm font-oswald leading-relaxed max-w-xs">
                             {t('description')}
                         </p>
-                        <div className="flex gap-3 pt-2">
+                        <div className="flex flex-wrap gap-3 pt-2">
                             <SocialButton icon={<Facebook className="w-4 h-4" />} href="https://www.facebook.com/share/g/1CAf9Dn4A3/" />
                             <SocialButton icon={<Linkedin className="w-4 h-4" />} href="https://www.linkedin.com/groups/16682004/" />
+                            <SocialButton icon={<Instagram className="w-4 h-4" />} href="https://www.instagram.com/alef_foundation/" />
+                            <SocialButton icon={<ThreadsIcon className="w-4 h-4" />} href="https://www.threads.com/@alef_foundation" />
+                            <SocialButton icon={<TikTokIcon className="w-4 h-4" />} href="https://www.tiktok.com/in/about" />
                         </div>
                     </div>
 
@@ -166,16 +183,23 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
     );
 }
 
-function SocialButton({ icon, href }: { icon: React.ReactNode, href: string }) {
-    const platform = href.includes('facebook') ? 'facebook' : href.includes('linkedin') ? 'linkedin' : 'other';
+function SocialButton({ icon, href, label }: { icon: React.ReactNode, href: string, label?: string }) {
+    const platform = href.includes('facebook') ? 'facebook' : href.includes('linkedin') ? 'linkedin' : href.includes('instagram') ? 'instagram' : href.includes('threads') ? 'threads' : href.includes('tiktok') ? 'tiktok' : 'other';
+    const displayLabel = label || platform;
+    
     return (
         <a
             href={href}
             target="_blank"
             onClick={() => sendGAEvent('event', 'social_click', { platform, url: href })}
-            className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center text-white/60 hover:bg-red hover:border-red hover:text-white transition-all duration-300"
+            className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center text-white/60 hover:bg-red hover:border-red hover:text-white transition-all duration-300 relative group"
+            aria-label={displayLabel}
         >
             {icon}
+            {/* Tooltip */}
+            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-red text-white text-[10px] font-oswald uppercase tracking-wider px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap shadow-xl shadow-red/20 translate-y-1 group-hover:-translate-y-1">
+                {displayLabel}
+            </span>
         </a>
     );
 }

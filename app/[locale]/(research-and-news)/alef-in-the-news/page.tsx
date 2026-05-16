@@ -51,9 +51,9 @@ export default function AlefInTheNewsPage() {
                         {t("titleNews")}
                     </h1>
                     <div className="flex items-center justify-center gap-6 mt-4 mb-8">
-                        <div className="h-px flex-1 bg-gradient-to-r from-transparent to-red/40" />
+                        <div className="h-px flex-1 bg-linear-to-r from-transparent to-red/40" />
                         <span className="font-oswald text-foreground/40 text-xs uppercase tracking-[0.4em]">{t("subtitle")}</span>
-                        <div className="h-px flex-1 bg-gradient-to-l from-transparent to-red/40" />
+                        <div className="h-px flex-1 bg-linear-to-l from-transparent to-red/40" />
                     </div>
                     <p className="font-oswald text-foreground/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed tracking-wide">
                         {t("description")}
@@ -85,7 +85,7 @@ export default function AlefInTheNewsPage() {
                                 {article.title}
                             </h3>
                             
-                            <p className="text-white/70 text-sm md:text-base line-clamp-4 flex-grow mb-8">
+                            <p className="text-white/70 text-sm md:text-base line-clamp-4 grow mb-8">
                                 {article.description}
                             </p>
                             

@@ -39,7 +39,8 @@
       "events": "Events",
       "getInTouch": "Get in Touch",
       "getInvolved": "Get Involved",
-      "faq": "FAQ"
+      "faq": "FAQ",
+      "webinars": "Webinars"
     }
   },
   "Hero": {
@@ -3398,6 +3399,92 @@
         "<strong>Local context:</strong> Seek out local perspectives and sources not well represented in the media. Your story must include your own contextualization and analysis.",
         "<strong>Sources and facts:</strong> Analyses and reports must be based on facts and quotes from sources, and all referenced information must be cited. Every quote or fact should be attributed to the original, primary source.",
         "<strong>Audio Quality:</strong> Ensure clear audio and professional production standards. Low-quality audio will not be considered.",
+        "<strong>Appropriate language:</strong> Submissions to ALEF must use appropriate language and cannot include name-calling, ad hominem attacks, or unsubstantiated allegations or rumors."
+      ]
+    }
+  },
+  "WebinarsPage": {
+    "subtitle": "MEDIA ARCHIVE",
+    "title": "WEBINARS",
+    "description": "Watch our latest webinars, interviews, and deep dives.",
+    "submitTitle": "Submit Your Webinar",
+    "submitDesc": "Share your webinar content with our editorial board for review."
+  },
+  "SubmitWebinarPage": {
+    "title": "SUBMIT YOUR WEBINAR",
+    "subtitle": "Share Your Insights",
+    "description": "Submit your webinar for review by our editorial board. If approved, it will be published on our platform.",
+    "loginRequired": "Please log in to submit a webinar",
+    "loginButton": "Login to Continue",
+    "backToArticles": "Back to Webinars",
+    "form": {
+      "titleLabel": "Webinar Title",
+      "titlePlaceholder": "Enter a title for your webinar",
+      "excerptLabel": "Excerpt",
+      "excerptPlaceholder": "Brief summary of your webinar (150-300 characters)",
+      "contentLabel": "Webinar Description",
+      "contentPlaceholder": "Write your webinar description here...",
+      "imageLabel": "Webinar Thumbnail/Cover (Optional)",
+      "imageHelp": "Upload an image for your webinar (Max 5MB)",
+      "imageButton": "Choose Image",
+      "imageSelected": "Image Selected",
+      "changeImage": "Change Image",
+      "categoryLabel": "Category",
+      "categoryPlaceholder": "Select a category",
+      "categories": {
+        "politics": "Politics & Governance",
+        "economy": "Economy & Finance",
+        "security": "Security & Defense",
+        "society": "Society & Culture",
+        "international": "International Relations",
+        "analysis": "Analysis & Opinion"
+      },
+      "tagsLabel": "Tags (Optional)",
+      "tagsPlaceholder": "Add relevant tags (comma separated)",
+      "showAuthorLabel": "Show my name as the author",
+      "showAuthorHelp": "If checked, your name will be displayed with the webinar. Otherwise, it will be published as 'Anonymous'.",
+      "submitButton": "Submit for Review",
+      "submitting": "Submitting...",
+      "cancel": "Cancel",
+      "urlLabel": "Webinar URL",
+      "urlPlaceholder": "Enter the link to your webinar"
+    },
+    "validation": {
+      "titleRequired": "Title is required",
+      "titleTooShort": "Title must be at least 10 characters",
+      "excerptRequired": "Excerpt is required",
+      "excerptTooShort": "Excerpt must be at least 150 characters",
+      "contentRequired": "Description is required",
+      "contentTooShort": "Content must be at least 500 characters",
+      "imageRequired": "Featured image is required",
+      "categoryRequired": "Please select a category",
+      "urlRequired": "URL is required"
+    },
+    "success": {
+      "title": "Webinar Submitted!",
+      "message": "Thank you for your submission. Our editorial board will review your webinar and get back to you via email.",
+      "backButton": "Back to Webinars"
+    },
+    "preview": {
+      "title": "Preview",
+      "toggle": "Toggle Preview"
+    },
+    "guidelines": {
+      "title": "Submission Guidelines",
+      "pitch": [
+        "Before submitting a webinar, please send a pitch for your story.",
+        "Be specific and pitch the story, not the topic. Your pitch should reference primary sources and analysis. Primary sources consist of original documents such as official records, interviews and speeches. Always provide links to those sources when possible.",
+        "It should not be based on secondary sources or what is already in the news, absent an original source or angle.",
+        "If your pitch is accepted, your webinar will be exclusive to ALEF meaning it cannot be published in full elsewhere. Please read our submission guidelines below for more information on what should be in your webinar."
+      ],
+      "rulesHeader": "To improve your webinar's chances of being published, follow these submission rules:",
+      "items": [
+        "<strong>Newsworthy:</strong> There must be a news hook to your webinar, and a clearly stated reason that your topic is likely to attract viewers by an informed audience that follows the region.",
+        "<strong>Original work:</strong> The webinar must be original work and exclusive to ALEF, and cannot be derived from previous content or secondary news sources. Exclusive to ALEF means your piece cannot be published on any other platform, including personal channels.",
+        "<strong>Length:</strong> Your webinar should be no more than 30 minutes and no less than 5 minutes.",
+        "<strong>Local context:</strong> Seek out local perspectives and sources not well represented in the media. However, your story must not be simply a collection of clips; it must include your own contextualization and analysis.",
+        "<strong>Sources and facts:</strong> Analyses and reports must be based on facts and quotes from sources, and all referenced information must be cited. Every quote or fact should be attributed to the original, primary source.",
+        "<strong>Production Quality:</strong> Ensure clear audio and stable, high-quality webinar. Low-quality recordings will not be considered.",
         "<strong>Appropriate language:</strong> Submissions to ALEF must use appropriate language and cannot include name-calling, ad hominem attacks, or unsubstantiated allegations or rumors."
       ]
     }

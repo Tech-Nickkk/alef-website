@@ -6,7 +6,7 @@ import { Play, Instagram, Facebook, Video } from "lucide-react";
 import { urlFor } from "@/sanity/lib/image";
 import { sendGAEvent } from '@next/third-parties/google';
 
-const getAspectRatio = (type: "video" | "short" | "podcast") => {
+const getAspectRatio = (type: "video" | "short" | "podcast" | "webinar") => {
     return type === "short" ? "aspect-[9/16]" : "aspect-video";
 };
 
@@ -43,7 +43,7 @@ interface VideoCardProps {
     thumbnail?: any;
     publishedAt: string;
     platform?: string;
-    type: "video" | "short" | "podcast";
+    type: "video" | "short" | "podcast" | "webinar";
 }
 
 export default function VideoCard({ title, videoUrl, thumbnail, publishedAt, platform, type }: VideoCardProps) {

@@ -39,7 +39,8 @@
       "events": "Eventos",
       "getInTouch": "Contáctenos",
       "getInvolved": "Partícipa",
-      "faq": "Preguntas Frecuentes"
+      "faq": "Preguntas Frecuentes",
+      "webinars": "Seminarios web"
     }
   },
   "Hero": {
@@ -3374,6 +3375,92 @@
         "Incluir fuentes y referencias creíbles",
         "Usar un lenguaje profesional y respetuoso",
         "Se requiere imagen destacada de alta calidad"
+      ]
+    }
+  },
+  "WebinarsPage": {
+    "subtitle": "ARCHIVO DE MEDIOS",
+    "title": "SEMINARIOS WEB",
+    "description": "Mire nuestros últimos seminarios web y cobertura.",
+    "submitTitle": "Envía tu seminario web",
+    "submitDesc": "Comparte tu seminario web con nuestro consejo editorial para su revisión."
+  },
+  "SubmitWebinarPage": {
+    "title": "ENVÍA TU SEMINARIO WEB",
+    "subtitle": "Comparte tus Ideas",
+    "description": "Envía tu webinar para su revisión por nuestro comité editorial. Si es aprobado, será publicado en nuestra plataforma.",
+    "loginRequired": "Por favor inicia sesión para enviar un webinar",
+    "loginButton": "Iniciar sesión para continuar",
+    "backToArticles": "Volver a seminarios web",
+    "form": {
+      "titleLabel": "Título del seminario web",
+      "titlePlaceholder": "Ingresa un título para tu seminario web",
+      "excerptLabel": "Extracto",
+      "excerptPlaceholder": "Breve resumen de tu artículo (150-300 caracteres)",
+      "contentLabel": "Descripción del seminario web",
+      "contentPlaceholder": "Escribe la descripción de tu webinar aquí...",
+      "imageLabel": "Miniatura/Portada del seminario web (Opcional)",
+      "imageHelp": "Sube una imagen para tu webinar (máx. 5 MB)",
+      "imageButton": "Elegir Imagen",
+      "imageSelected": "Imagen Seleccionada",
+      "changeImage": "Cambiar Imagen",
+      "categoryLabel": "Categoría",
+      "categoryPlaceholder": "Selecciona una categoría",
+      "categories": {
+        "politics": "Política y Gobernanza",
+        "economy": "Economía y Finanzas",
+        "security": "Seguridad y Defensa",
+        "society": "Sociedad y Cultura",
+        "international": "Relaciones Internacionales",
+        "analysis": "Análisis y Opinión"
+      },
+      "tagsLabel": "Etiquetas (Opcional)",
+      "tagsPlaceholder": "Añadir etiquetas pertinentes (separadas por comas)",
+      "showAuthorLabel": "Mostrar mi nombre como autor",
+      "showAuthorHelp": "Si está marcado, tu nombre se mostrará con el artículo. De lo contrario, se publicará como 'Anónimo'.",
+      "submitButton": "Enviar para Revisión",
+      "submitting": "Enviando...",
+      "cancel": "Cancelar",
+      "urlLabel": "URL del seminario web",
+      "urlPlaceholder": "Ingresa el enlace a tu seminario web"
+    },
+    "validation": {
+      "titleRequired": "El título es obligatorio",
+      "titleTooShort": "El título debe tener al menos 10 caracteres",
+      "excerptRequired": "El extracto es obligatorio",
+      "excerptTooShort": "El extracto debe tener al menos 150 caracteres",
+      "contentRequired": "La descripción es obligatoria",
+      "contentTooShort": "El contenido debe tener al menos 500 caracteres",
+      "imageRequired": "La imagen destacada es obligatoria",
+      "categoryRequired": "Por favor selecciona una categoría",
+      "urlRequired": "El enlace es obligatorio"
+    },
+    "success": {
+      "title": "¡Webinar enviado!",
+      "message": "Gracias por tu envío. Nuestro comité editorial revisará tu webinar y se pondrá en contacto contigo por correo electrónico.",
+      "backButton": "Volver a Webinars"
+    },
+    "preview": {
+      "title": "Vista Previa",
+      "toggle": "Cambiar Vista Previa"
+    },
+    "guidelines": {
+      "title": "Pautas de Envío",
+      "pitch": [
+        "Antes de enviar un webinar, envíe una propuesta para su historia.",
+        "Sea específico y presente la historia, no el tema. Su propuesta debe hacer referencia a fuentes primarias y análisis. Las fuentes primarias consisten en documentos originales como registros oficiales, entrevistas y discursos. Proporcione siempre enlaces a esas fuentes cuando sea posible.",
+        "No debe basarse en fuentes secundarias o en lo que ya está en las noticias, a falta de una fuente original o un ángulo nuevo.",
+        "Si se acepta su propuesta, su webinar será exclusivo de ALEF, lo que significa que no podrá publicarse íntegramente en ningún otro lugar. Lea nuestras pautas de envío a continuación para obtener más información sobre lo que debe incluir su webinar."
+      ],
+      "rulesHeader": "Para mejorar las posibilidades de que su webinar sea publicado, siga estas reglas de envío:",
+      "items": [
+        "<strong>De interés periodístico:</strong> Debe haber un gancho de noticias en su webinar, y una razón claramente establecida de por qué es probable que su tema atraiga a los espectadores de una audiencia informada que sigue la región.",
+        "<strong>Obra original:</strong> El webinar debe ser una obra original y exclusiva de ALEF, y no puede derivarse de contenido anterior o fuentes de noticias secundarias. Exclusivo de ALEF significa que su pieza no puede publicarse en ninguna otra plataforma, incluidos los canales personales.",
+        "<strong>Extensión:</strong> Su webinar no debe tener más de 30 minutos ni menos de 5 minutos.",
+        "<strong>Contexto local:</strong> Busque perspectivas y fuentes locales que no estén bien representadas en los medios. Sin embargo, su historia no debe ser simplemente una colección de clips; debe incluir su propia contextualización y análisis.",
+        "<strong>Fuentes y hechos:</strong> Los análisis e informes deben basarse en hechos y citas de fuentes, y toda la información referenciada debe citarse. Cada cita o hecho debe atribuirse a la fuente original primaria.",
+        "<strong>Calidad de producción:</strong> Asegure un audio claro y un webinar estable y de alta calidad. No se tendrán en cuenta las grabaciones de baja calidad.",
+        "<strong>Lenguaje apropiado:</strong> Los envíos a ALEF deben usar un lenguaje apropiado y no pueden incluir insultos, ataques ad hominem o acusaciones o rumores no fundamentados."
       ]
     }
   }

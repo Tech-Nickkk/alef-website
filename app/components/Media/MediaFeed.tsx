@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 
 interface MediaFeedProps {
     items: any[];
-    type: "video" | "short" | "podcast";
+    type: "video" | "short" | "podcast" | "webinar";
 }
 
 export default function MediaFeed({ items, type }: MediaFeedProps) {

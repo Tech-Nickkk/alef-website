@@ -120,6 +120,7 @@ export default function Navbar() {
                 { label: t('menu.videos'), href: "/videos" },
                 { label: t('menu.shorts'), href: "/shorts" },
                 { label: t('menu.podcasts'), href: "/podcasts" },
+                { label: t('menu.webinars'), href: "/webinars" },
                 { label: t('menu.events'), href: "/events" }
             ],
         },
