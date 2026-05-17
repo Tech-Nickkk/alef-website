@@ -5,11 +5,39 @@ import { Calendar, MapPin, Clock, ArrowLeft, Mic, X, Play } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { client } from "@/sanity/lib/client";
+import { useRouter } from "next/navigation";
 
 export default function GatheringForNewLebanonPage() {
     const t = useTranslations("EventsPage");
-    const [videoOpen, setVideoOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const router = useRouter();
+
+    useEffect(() => {
+        const checkEvent = async () => {
+            try {
+                const event = await client.fetch(`*[_type == "event" && slug.current == "gathering-for-a-new-lebanon" && isArchived != true][0]`);
+                if (!event) {
+                    router.push("/events");
+                } else {
+                    setIsLoading(false);
+                }
+            } catch (error) {
+                router.push("/events");
+            }
+        };
+        checkEvent();
+    }, [router]);
+
+    if (isLoading) {
+        return (
+            <div className="min-h-screen bg-background flex justify-center items-center">
+                <div className="w-12 h-12 border-4 border-red border-t-transparent rounded-full animate-spin"></div>
+            </div>
+        );
+    }
 
     return (
         <main className="min-h-screen bg-background pt-32 pb-24 px-6 md:px-12 lg:px-24 flex flex-col items-center">
@@ -121,9 +149,6 @@ export default function GatheringForNewLebanonPage() {
                         <h4 className="font-bebas text-3xl text-white mb-2">{t("speakers.list.camille.name")}</h4>
                         <div className="text-red font-oswald uppercase tracking-widest text-sm mb-4">{t("speakers.list.camille.title")}</div>
                         <p className="font-oswald text-white/70 text-lg leading-relaxed flex-grow">{t("speakers.list.camille.desc")}</p>
-                        <button onClick={() => setVideoOpen(true)} className="mt-6 inline-flex items-center gap-2 bg-red hover:bg-[#c4151c] text-white px-5 py-2.5 font-bebas text-base tracking-widest uppercase transition-all shadow-lg hover:shadow-red/30 rounded-sm cursor-pointer">
-                            <Play className="w-4 h-4 fill-white" /> {t("speakers.watchVideo")}
-                        </button>
                     </div>
 
                     <div className="bg-blue border border-white/10 p-8 rounded-sm shadow-xl relative flex flex-col items-center text-center">
@@ -146,22 +171,6 @@ export default function GatheringForNewLebanonPage() {
                 </div>
             </div>
 
-            {/* VIDEO MODAL */}
-            {videoOpen && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4" onClick={() => setVideoOpen(false)}>
-                    <div className="relative w-full max-w-4xl bg-black rounded-sm overflow-hidden shadow-2xl" onClick={(e) => e.stopPropagation()}>
-                        <button onClick={() => setVideoOpen(false)} className="absolute top-3 right-3 z-10 bg-red hover:bg-[#c4151c] text-white p-2 rounded-full transition-colors shadow-lg">
-                            <X className="w-5 h-5" />
-                        </button>
-                        <div className="absolute top-0 left-0 w-full h-1 bg-red z-10"></div>
-                        <div className="bg-blue px-6 py-4 border-b border-white/10">
-                            <p className="font-bebas text-2xl text-white tracking-wide">{t("speakers.list.camille.name")}</p>
-                            <p className="font-oswald text-red text-xs uppercase tracking-widest">{t("speakers.list.camille.title")}</p>
-                        </div>
-                        <video className="w-full aspect-video" controls autoPlay src="https://www.dropbox.com/scl/fi/wveuqjjib4wkeywopt9sk/ALEF-Inaugural-Dinner.mp4?rlkey=6sfjvhx3s58ht2hcv044emyrd&e=1&st=z028hcou&bmus=1&raw=1"></video>
-                    </div>
-                </div>
-            )}
 
             {/* EVENT VIDEO */}
             <div id="media" className="w-full max-w-5xl mx-auto mb-24 px-4 text-center">
@@ -195,14 +204,20 @@ export default function GatheringForNewLebanonPage() {
                             spanClasses = "col-span-1 row-span-2";
                         }
 
+                        const imgSrc = `/events/Event_1/Event_1_Img_${i + 1}.jpg`;
                         return (
-                            <div key={i} className={`relative overflow-hidden bg-black shadow-lg ${spanClasses}`}>
+                            <div 
+                                key={i} 
+                                className={`relative overflow-hidden bg-black shadow-lg cursor-pointer group ${spanClasses}`}
+                                onClick={() => setSelectedImage(imgSrc)}
+                            >
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors z-10 duration-300 pointer-events-none"></div>
                                 <SkeletonImage
-                                    src={`/events/Event_1/Event_1_Img_${i + 1}.jpg`}
+                                    src={imgSrc}
                                     alt={`Event Photo ${i + 1}`}
                                     width={800}
                                     height={800}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                             </div>
                         );
@@ -219,6 +234,46 @@ export default function GatheringForNewLebanonPage() {
                     </button>
                 </Link>
             </div>
+
+            {/* FULL SCREEN IMAGE MODAL */}
+            {selectedImage && (
+                <div 
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm p-4 md:p-12 cursor-pointer" 
+                    onClick={() => setSelectedImage(null)}
+                    style={{ animation: 'modalFadeIn 0.3s ease-out forwards' }}
+                >
+                    <style>{`
+                        @keyframes modalFadeIn {
+                            from { opacity: 0; }
+                            to { opacity: 1; }
+                        }
+                        @keyframes modalImageZoom {
+                            from { opacity: 0; transform: scale(0.9); }
+                            to { opacity: 1; transform: scale(1); }
+                        }
+                    `}</style>
+                    <button 
+                        onClick={(e) => { e.stopPropagation(); setSelectedImage(null); }} 
+                        className="absolute top-4 right-4 md:top-8 md:right-8 z-10 bg-red hover:bg-[#c4151c] text-white p-3 rounded-full transition-colors shadow-2xl"
+                    >
+                        <X className="w-6 h-6" />
+                    </button>
+                    <div 
+                        className="relative w-full max-w-7xl h-full flex items-center justify-center" 
+                        onClick={(e) => e.stopPropagation()}
+                        style={{ animation: 'modalImageZoom 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards' }}
+                    >
+                        <Image
+                            src={selectedImage}
+                            alt="Full screen event photo"
+                            fill
+                            className="object-contain"
+                            sizes="100vw"
+                            priority
+                        />
+                    </div>
+                </div>
+            )}
 
         </main>
     );

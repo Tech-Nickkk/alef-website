@@ -10,7 +10,8 @@ import { localizedString } from './localizedString'
 import { localizedText } from './localizedText'
 import { localizedBlockContent } from './localizedBlockContent'
 import { webinarType } from './webinarType'
+import { eventType } from './eventType'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [blockContentType, blogType, authorType, videoType, shortType, podcastType, localizedString, localizedText, localizedBlockContent, webinarType],
+  types: [blockContentType, blogType, authorType, videoType, shortType, podcastType, localizedString, localizedText, localizedBlockContent, webinarType, eventType],
 }
