@@ -3463,5 +3463,103 @@
         "<strong>Lenguaje apropiado:</strong> Los envíos a ALEF deben usar un lenguaje apropiado y no pueden incluir insultos, ataques ad hominem o acusaciones o rumores no fundamentados."
       ]
     }
+  },
+  "Metadata": {
+    "defaultTitle": "American Lebanon Education Foundation (ALEF)",
+    "defaultDescription": "ALEF es una iniciativa global y no partidista que aboga por un Líbano libre y soberano, exponiendo la corrupción y combatiendo a Hezbollah.",
+    "pages": {
+      "home": {
+        "title": "American Lebanon Education Foundation (ALEF) — Inicio",
+        "description": "ALEF es una iniciativa global y no partidista que aboga por un Líbano libre y soberano, exponiendo la corrupción, combatiendo a Hezbollah y impulsando reformas. Cualquiera que apoye la causa puede donar y participar."
+      },
+      "alef-profile": {
+        "title": "Perfil de ALEF — Acerca de la Fundación",
+        "description": "Una fuerza global de profesionales y expertos comprometidos con desmantelar la corrupción, restaurar la gobernanza y defender el Líbano soberano."
+      },
+      "core-values": {
+        "title": "Valores fundamentales y Misión — ALEF",
+        "description": "Soberanía, Transparencia, Libertad Económica, Estado de Derecho y Meritocracia. Conozca nuestros principios básicos."
+      },
+      "strategic-plan": {
+        "title": "Plan Estratégico — Reconstruyendo el Líbano",
+        "description": "Nuestra hoja de ruta para la recuperación: restaurar la confianza del inversor, garantías de seguridad, lucha contra la corrupción y participación de la diáspora."
+      },
+      "experts-corner": {
+        "title": "Rincón de Expertos — Liderazgo de ALEF",
+        "description": "Conozca a los oficiales y asesores que impulsan nuestra misión, liderados por Ziad K. Abdelnour."
+      },
+      "sponsors": {
+        "title": "Nuestros Patrocinadores y Socios — ALEF",
+        "description": "Contamos con el apoyo de organizaciones aliadas que trabajan por un Líbano libre y soberano."
+      },
+      "testimonials": {
+        "title": "Testimonios y Voces — ALEF",
+        "description": "Vea lo que los líderes comunitarios, activistas y ciudadanos dicen de la American Lebanon Education Foundation."
+      },
+      "congressional-advocacy": {
+        "title": "Incidencia en el Congreso — Actualizaciones Legislativas",
+        "description": "Siga las últimas actualizaciones legislativas contra Hezbollah y las políticas de apoyo al Líbano soberano en el Congreso de los Estados Unidos."
+      },
+      "blogs-and-articles": {
+        "title": "Blogs y Artículos — Últimos Análisis",
+        "description": "Lea nuestros informes forenses y análisis estratégicos sobre la reforma política y económica en el Líbano."
+      },
+      "house-of-corruption": {
+        "title": "Casa de la Corrupción — El atraco de $1 billón",
+        "description": "Exponiendo el robo sistemático de fondos públicos, el lavado de dinero offshore y el costo humano del colapso del Líbano."
+      },
+      "house-of-cards": {
+        "title": "Mapeo de la Corrupción — Perfiles de Influencia",
+        "description": "Archivo de perfiles que rastrean a los actores clave, facilitadores y representantes detrás de la captura institucional del Líbano."
+      },
+      "archives": {
+        "title": "Archivos Históricos — ALEF",
+        "description": "Revise documentos oficiales y registros de campañas de nuestra historia de incidencia."
+      },
+      "book-recommendations": {
+        "title": "Lecturas Recomendadas — ALEF",
+        "description": "Colección curada de libros sobre el Líbano, geopolítica y lucha contra la corrupción."
+      },
+      "fallen-martyrs": {
+        "title": "Mártires Caídos — En Honor a los Valientes",
+        "description": "Recordando y honrando a quienes sacrificaron sus vidas luchando por un Líbano libre, soberano e independiente."
+      },
+      "videos": {
+        "title": "Videos y Documentales — Medios ALEF",
+        "description": "Vea nuestros últimos documentales, entrevistas de alto perfil e investigaciones visuales sobre la soberanía del Líbano."
+      },
+      "shorts": {
+        "title": "Shorts e Información Rápida — Medios ALEF",
+        "description": "Breves perspectivas explicadas en menos de 60 segundos. La verdad explicada rápidamente."
+      },
+      "podcasts": {
+        "title": "Podcasts y Sesiones Informativas — Medios ALEF",
+        "description": "Escuche debates profundos con expertos en políticas, analistas de inteligencia y reformadores."
+      },
+      "webinars": {
+        "title": "Seminarios Web y Eventos Digitales — ALEF",
+        "description": "Participe en nuestras mesas redondas virtuales y conferencias en vivo con expertos globales."
+      },
+      "events": {
+        "title": "Eventos y Campañas — Medios ALEF",
+        "description": "Documentación fotográfica y reportes de nuestros eventos de incidencia global y campañas locales."
+      },
+      "contact": {
+        "title": "Contáctenos — Póngase en Contacto",
+        "description": "Póngase en contacto con la fundación ALEF. Envíe un mensaje seguro o programe una consulta."
+      },
+      "donate": {
+        "title": "Apoye la Lucha por la Libertad — Donar a ALEF",
+        "description": "Su contribución apoya directamente nuestra incidencia por un Líbano soberano, campañas contra la corrupción y reformas políticas."
+      },
+      "login": {
+        "title": "Iniciar Sesión / Registro — Portal ALEF",
+        "description": "Inicie sesión o cree una cuenta segura para administrar su perfil y apoyar nuestra misión."
+      },
+      "profile": {
+        "title": "Mi Perfil — Panel de Miembro",
+        "description": "Administre su membresía, vea su historial de donaciones y realice un seguimiento de su insignia de soporte."
+      }
+    }
   }
 }

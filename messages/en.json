@@ -3488,5 +3488,103 @@
         "<strong>Appropriate language:</strong> Submissions to ALEF must use appropriate language and cannot include name-calling, ad hominem attacks, or unsubstantiated allegations or rumors."
       ]
     }
+  },
+  "Metadata": {
+    "defaultTitle": "American Lebanon Education Foundation (ALEF)",
+    "defaultDescription": "ALEF is a global, non-partisan initiative advocating for a free, sovereign Lebanon — exposing corruption, combating Hezbollah, and driving policy reform.",
+    "pages": {
+      "home": {
+        "title": "American Lebanon Education Foundation (ALEF) — Home",
+        "description": "ALEF is a global, non-partisan initiative advocating for a free, sovereign Lebanon — exposing corruption, combating Hezbollah, and driving policy reform. Anyone who supports the cause can donate and participate."
+      },
+      "alef-profile": {
+        "title": "ALEF Profile — About The Foundation",
+        "description": "A global force of professionals, activists, and policy experts committed to dismantling corruption, restoring governance, and advocating for Lebanon's rightful place."
+      },
+      "core-values": {
+        "title": "Core Values & Mission — ALEF",
+        "description": "Sovereignty, Transparency, Economic Freedom, Rule of Law, and Meritocracy. Learn about our core principles."
+      },
+      "strategic-plan": {
+        "title": "Strategic Plan — Rebuilding Lebanon",
+        "description": "Our roadmap to recovery: rebuilding investor confidence in Lebanon, security guarantees, anti-corruption, and diaspora involvement."
+      },
+      "experts-corner": {
+        "title": "Experts Corner — ALEF Leadership",
+        "description": "Meet the dedicated officers, directors, and advisors driving our mission forward, led by Ziad K. Abdelnour."
+      },
+      "sponsors": {
+        "title": "Our Sponsors & Partners — ALEF",
+        "description": "We are supported by allied organizations and key stakeholders working towards a free and sovereign Lebanon."
+      },
+      "testimonials": {
+        "title": "Testimonials & Voices — ALEF",
+        "description": "See what community leaders, activists, and citizens say about the American Lebanon Education Foundation."
+      },
+      "congressional-advocacy": {
+        "title": "Congressional Advocacy — Legislative Updates",
+        "description": "Track latest legislative updates against Hezbollah and policies supporting a sovereign Lebanon in the US Congress."
+      },
+      "blogs-and-articles": {
+        "title": "Blogs & Articles — Latest Analyses",
+        "description": "Read our latest briefings, forensic reports, and strategic intelligence regarding political and economic reform in Lebanon."
+      },
+      "house-of-corruption": {
+        "title": "House of Corruption — The $1 Trillion Heist",
+        "description": "Exposing the systematic transfer of wealth, embezzlement, offshore money laundering, and the human cost of Lebanon's economic collapse."
+      },
+      "house-of-cards": {
+        "title": "House of Cards — Profiles of Influence",
+        "description": "Archive of profiles tracing the key actors, enablers, and proxies behind the institutional capture of Lebanon."
+      },
+      "archives": {
+        "title": "Historical Archives — ALEF",
+        "description": "Review official documents, policy papers, and campaign records from our history of advocacy."
+      },
+      "book-recommendations": {
+        "title": "Recommended Readings — ALEF",
+        "description": "A curated collection of books and studies concerning Lebanon, geopolitics, and fighting corruption."
+      },
+      "fallen-martyrs": {
+        "title": "Fallen Martyrs — In Honor of the Brave",
+        "description": "Remembering and honoring those who sacrificed their lives fighting for a free, sovereign, and independent Lebanon."
+      },
+      "videos": {
+        "title": "Videos & Documentaries — ALEF Media",
+        "description": "Watch our latest documentaries, high-profile interviews, and visual investigations on Lebanon's sovereignty."
+      },
+      "shorts": {
+        "title": "Shorts & Quick Intel — ALEF Media",
+        "description": "Rapid-fire insights and updates. The truth explained in under 60 seconds."
+      },
+      "podcasts": {
+        "title": "Podcasts & Briefings — ALEF Media",
+        "description": "Listen to deep-dive audio discussions and briefings with policy experts, intelligence analysts, and reformers."
+      },
+      "webinars": {
+        "title": "Webinars & Digital Events — ALEF",
+        "description": "Join our virtual panel discussions, interactive briefings, and live events with global experts."
+      },
+      "events": {
+        "title": "Events & Campaigns — ALEF Media",
+        "description": "Photo documentation and field reports from our global advocacy events and grassroots campaigns."
+      },
+      "contact": {
+        "title": "Contact Us — Get in Touch",
+        "description": "Reach out to the American Lebanon Education Foundation. Send us a secure message or schedule a consultation."
+      },
+      "donate": {
+        "title": "Fuel the Fight for Freedom — Donate to ALEF",
+        "description": "Your contribution directly supports our advocacy for a sovereign Lebanon, anti-corruption campaigns, and policy reform."
+      },
+      "login": {
+        "title": "Login / Register — ALEF Portal",
+        "description": "Sign in or create a secure account to manage your profile, track impact, and support our mission."
+      },
+      "profile": {
+        "title": "My Profile — Member Dashboard",
+        "description": "Manage your membership, view donation history, track your tier badge, and engage with our advocacy network."
+      }
+    }
   }
 }

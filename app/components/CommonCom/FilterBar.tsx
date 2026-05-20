@@ -28,7 +28,7 @@ export default function FilterBar({
                     <button
                         key={tab}
                         onClick={() => onTabChange(tab)}
-                        className={`font-oswald text-sm uppercase tracking-widest transition-all relative shrink-0 ${activeTab === tab ? "text-red" : "text-foreground/70 hover:text-foreground"
+                        className={`font-oswald text-sm uppercase tracking-widest transition-all relative shrink-0 cursor-pointer ${activeTab === tab ? "text-red" : "text-foreground/70 hover:text-foreground"
                             }`}
                     >
                         {tab}

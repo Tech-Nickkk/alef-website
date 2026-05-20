@@ -223,7 +223,7 @@ export default function Navbar() {
                                         <li key={lang.code}>
                                             <button
                                                 onClick={() => handleLanguageChange(lang.code)}
-                                                className={`w-full text-left px-4 py-2 text-sm font-oswald tracking-wider uppercase transition-colors ${locale === lang.code
+                                                className={`w-full text-left px-4 py-2 text-sm font-oswald tracking-wider uppercase transition-colors cursor-pointer ${locale === lang.code
                                                     ? 'bg-red text-white'
                                                     : 'text-foreground/80 hover:text-theme-accent hover:bg-foreground/5'
                                                     }`}
@@ -242,7 +242,7 @@ export default function Navbar() {
                         {user ? (
                             <Link
                                 href="/profile"
-                                className="relative flex items-center justify-center w-10 h-10 rounded-full overflow-hidden border border-foreground/20 hover:border-red transition-all duration-300 group"
+                                className="relative flex items-center justify-center w-10 h-10 rounded-full overflow-hidden border border-foreground/20 hover:border-red transition-all duration-300 group cursor-pointer"
                                 aria-label="My Profile"
                             >
                                 {user.photoURL ? (
@@ -260,7 +260,7 @@ export default function Navbar() {
                                 )}
                             </Link>
                         ) : (
-                            <Link href="/login" className="text-foreground/90 hover:text-foreground transition-colors p-2 hover:bg-foreground/10 rounded-none flex items-center justify-center" aria-label="Login">
+                            <Link href="/login" className="text-foreground/90 hover:text-foreground transition-colors p-2 hover:bg-foreground/10 rounded-none flex items-center justify-center cursor-pointer" aria-label="Login">
                                 <UserIcon className="w-5 h-5" />
                             </Link>
                         )}
@@ -310,7 +310,7 @@ export default function Navbar() {
 
                     {/* Mobile Menu Button - Visible < XL */}
                     <button
-                        className="xl:hidden p-2 text-foreground hover:bg-foreground/10 transition-colors"
+                        className="xl:hidden p-2 text-foreground hover:bg-foreground/10 transition-colors cursor-pointer"
                         onClick={() => setIsMenuOpen(true)}
                     >
                         <MenuIcon className="w-8 h-8" />
@@ -334,7 +334,7 @@ export default function Navbar() {
                         </div>
                         <button
                             onClick={() => setIsMenuOpen(false)}
-                            className="p-2 text-foreground hover:bg-foreground/10 transition-colors"
+                            className="p-2 text-foreground hover:bg-foreground/10 transition-colors cursor-pointer"
                         >
                             <XIcon className="w-8 h-8" />
                         </button>
@@ -362,7 +362,7 @@ export default function Navbar() {
                                                 onClick={(e) => {
                                                     if (link.dropdown) e.preventDefault();
                                                 }}
-                                                className="text-3xl font-bebas text-foreground tracking-wide group-hover:text-theme-accent transition-colors block w-full"
+                                                className="text-3xl font-bebas text-foreground tracking-wide group-hover:text-theme-accent transition-colors block w-full cursor-pointer"
                                             >
                                                 {link.label}
                                             </Link>
@@ -383,7 +383,7 @@ export default function Navbar() {
                                                             <li key={subItem.label}>
                                                                 <Link
                                                                     href={subItem.href}
-                                                                    className="text-sm font-oswald text-foreground/70 uppercase tracking-widest hover:text-theme-accent transition-colors block py-1"
+                                                                    className="text-sm font-oswald text-foreground/70 uppercase tracking-widest hover:text-theme-accent transition-colors block py-1 cursor-pointer"
                                                                     onClick={() => setIsMenuOpen(false)}
                                                                 >
                                                                     {subItem.label}
@@ -416,7 +416,7 @@ export default function Navbar() {
                                             <button
                                                 key={lang.code}
                                                 onClick={() => { handleLanguageChange(lang.code); setIsMenuOpen(false); }}
-                                                className={`flex-1 px-2 py-2 text-xs font-oswald tracking-wider uppercase transition-colors border ${
+                                                className={`flex-1 px-2 py-2 text-xs font-oswald tracking-wider uppercase transition-colors border cursor-pointer ${
                                                     locale === lang.code
                                                         ? 'bg-red text-white border-red'
                                                         : 'text-foreground/70 border-foreground/20 hover:text-foreground hover:border-foreground/50'

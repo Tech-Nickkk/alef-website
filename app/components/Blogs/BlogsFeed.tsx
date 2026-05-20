@@ -195,7 +195,7 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
                                     setFilter("All");
                                     setSearchQuery("");
                                 }}
-                                className="text-red font-oswald text-sm underline underline-offset-4 hover:text-white transition-colors"
+                                className="text-red font-oswald text-sm underline underline-offset-4 hover:text-white transition-colors cursor-pointer"
                             >
                                 {t('clearFilters')}
                             </button>
@@ -213,7 +213,7 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                         }}
                         disabled={currentPage === 1}
-                        className="group flex items-center gap-2 px-4 py-2 border border-foreground/30 rounded-full hover:bg-red hover:border-red hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:border-foreground/30 disabled:hover:text-foreground transition-all duration-300"
+                        className="group flex items-center gap-2 px-4 py-2 border border-foreground/30 rounded-full hover:bg-red hover:border-red hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:border-foreground/30 disabled:hover:text-foreground transition-all duration-300 cursor-pointer"
                     >
                         <ChevronLeft className="w-4 h-4" />
                         <span className="font-bebas text-lg tracking-wider hidden sm:inline">{t('previous')}</span>
@@ -227,7 +227,7 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
                                     setCurrentPage(page);
                                     window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }}
-                                className={`w-10 h-10 rounded-full font-bebas text-lg flex items-center justify-center transition-all duration-300 ${currentPage === page
+                                className={`w-10 h-10 rounded-full font-bebas text-lg flex items-center justify-center transition-all duration-300 cursor-pointer ${currentPage === page
                                     ? "bg-red text-white scale-110 shadow-lg"
                                     : "bg-foreground/5 hover:bg-foreground/10 text-foreground/70"
                                     }`}
@@ -243,7 +243,7 @@ export default function BlogsFeed({ initialBlogs }: BlogsFeedProps) {
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                         }}
                         disabled={currentPage === totalPages}
-                        className="group flex items-center gap-2 px-4 py-2 border border-foreground/30 rounded-full hover:bg-red hover:border-red hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:border-foreground/30 disabled:hover:text-foreground transition-all duration-300"
+                        className="group flex items-center gap-2 px-4 py-2 border border-foreground/30 rounded-full hover:bg-red hover:border-red hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:border-foreground/30 disabled:hover:text-foreground transition-all duration-300 cursor-pointer"
                     >
                         <span className="font-bebas text-lg tracking-wider hidden sm:inline">{t('next')}</span>
                         <ChevronRight className="w-4 h-4" />

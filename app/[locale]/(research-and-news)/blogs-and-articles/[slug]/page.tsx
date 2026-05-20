@@ -7,8 +7,47 @@ import { notFound } from 'next/navigation';
 import { PortableText } from '@portabletext/react';
 import ArticleProgressClient from './ArticleProgressClient';
 import { getTranslations } from 'next-intl/server';
+import { Metadata } from 'next';
 
 export const revalidate = 60;
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }): Promise<Metadata> {
+    const { slug, locale } = await params;
+
+    const query = `
+    *[_type == "blog" && slug.current == $slug][0] {
+      "title": coalesce(title[$locale], title.en, title),
+      "excerpt": coalesce(excerpt[$locale], excerpt.en, excerpt),
+      mainImage
+    }
+  `;
+    const post = await client.fetch(query, { slug, locale });
+
+    if (!post) {
+        return {};
+    }
+
+    const title = `${post.title} — ALEF`;
+    const description = post.excerpt || `Read the latest analysis from American Lebanon Education Foundation regarding: ${post.title}`;
+    const imageUrl = post.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : undefined;
+
+    return {
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            type: 'article',
+            images: imageUrl ? [{ url: imageUrl, width: 1200, height: 630, alt: post.title }] : undefined,
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title,
+            description,
+            images: imageUrl ? [imageUrl] : undefined,
+        }
+    };
+}
 
 const portableTextComponents = {
     types: {

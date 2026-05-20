@@ -99,7 +99,7 @@ export default function MediaFeed({ items, type }: MediaFeedProps) {
                             </p>
                             <button
                                 onClick={() => { setFilter("All"); setSearchQuery(""); }}
-                                className="text-red font-oswald text-sm underline underline-offset-4 hover:text-white transition-colors"
+                                className="text-red font-oswald text-sm underline underline-offset-4 hover:text-white transition-colors cursor-pointer"
                             >
                                 {t("clearFilters")}
                             </button>
