@@ -302,10 +302,10 @@
     "subtitle": "ARCHIVO // MEDIOS",
     "button": "EXPLORAR",
     "items": {
-      "events": {
-        "label": "EN EL TERRENO",
-        "title": "EVENTOS",
-        "desc": "Documentación fotográfica e informes de nuestros eventos de defensa global."
+      "webinars": {
+        "label": "SESIONES VIRTUALES",
+        "title": "SEMINARIOS WEB",
+        "desc": "Mire nuestros últimos seminarios web, paneles de discusión interactivos y sesiones informativas."
       },
       "podcasts": {
         "label": "REGISTROS DE AUDIO",

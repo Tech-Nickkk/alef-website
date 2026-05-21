@@ -302,10 +302,10 @@
     "subtitle": "ARCHIVE // MÉDIAS",
     "button": "EXPLORER",
     "items": {
-      "events": {
-        "label": "SUR LE TERRAIN",
-        "title": "ÉVÉNEMENTS",
-        "desc": "Documentation photo et rapports de nos événements de plaidoyer mondiaux."
+      "webinars": {
+        "label": "SESSIONS VIRTUELLES",
+        "title": "WEBINAIRES",
+        "desc": "Regardez nos derniers webinaires, des panels de discussion interactifs et des séances d'information d'experts."
       },
       "podcasts": {
         "label": "JOURNAUX AUDIO",

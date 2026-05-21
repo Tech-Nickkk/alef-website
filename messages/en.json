@@ -302,10 +302,10 @@
     "subtitle": "ARCHIVE // MEDIA",
     "button": "EXPLORE",
     "items": {
-      "events": {
-        "label": "ON_THE_GROUND",
-        "title": "EVENTS",
-        "desc": "Photo documentation and reports from our global advocacy events."
+      "webinars": {
+        "label": "VIRTUAL_BRIEFINGS",
+        "title": "WEBINARS",
+        "desc": "Watch our latest webinars, interactive panel discussions, and expert briefings."
       },
       "podcasts": {
         "label": "AUDIO_LOGS",

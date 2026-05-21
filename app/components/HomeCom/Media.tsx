@@ -1,7 +1,7 @@
 import Link from "next/link";
 import AnimatedTitle from "../CommonCom/AnimatedTitle";
 import GlowingGrid from "../CommonCom/GlowingGrid";
-import { Video, Smartphone, Mic, ArrowRight, Images } from "lucide-react";
+import { Video, Smartphone, Mic, ArrowRight, Presentation } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export default function Media() {
@@ -9,12 +9,12 @@ export default function Media() {
 
     const mediaItems = [
         {
-            id: "events",
-            label: t('items.events.label'),
-            title: t('items.events.title'),
-            desc: t('items.events.desc'),
-            link: "/events",
-            icon: <Images className="w-10 h-10 text-white group-hover:text-red transition-all duration-300" />
+            id: "webinars",
+            label: t('items.webinars.label'),
+            title: t('items.webinars.title'),
+            desc: t('items.webinars.desc'),
+            link: "/webinars",
+            icon: <Presentation className="w-10 h-10 text-white group-hover:text-red transition-all duration-300" />
         },
         {
             id: "podcasts",
