@@ -37,6 +37,12 @@ export const webinarType = defineType({
             initialValue: () => new Date().toISOString(),
             validation: (rule) => rule.required(),
         }),
+        defineField({
+            name: 'transcriptUrl',
+            title: 'Transcript File URL',
+            type: 'url',
+            description: 'Optional URL to a transcript file (e.g., a PDF or DOCX stored in public folder or external)',
+        }),
     ],
     preview: {
         select: {

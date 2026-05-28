@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Play, Instagram, Facebook, Video } from "lucide-react";
 import { urlFor } from "@/sanity/lib/image";
 import { sendGAEvent } from '@next/third-parties/google';
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 const getAspectRatio = (type: "video" | "short" | "podcast" | "webinar") => {
     return type === "short" ? "aspect-[9/16]" : "aspect-video";
@@ -40,13 +41,14 @@ const getEmbedUrl = (url: string, platform?: string) => {
 interface VideoCardProps {
     title: string | React.ReactNode;
     videoUrl: string;
-    thumbnail?: any;
+    thumbnail?: SanityImageSource;
     publishedAt: string;
     platform?: string;
     type: "video" | "short" | "podcast" | "webinar";
+    transcriptUrl?: string;
 }
 
-export default function VideoCard({ title, videoUrl, thumbnail, publishedAt, platform, type }: VideoCardProps) {
+export default function VideoCard({ title, videoUrl, thumbnail, publishedAt, platform, type, transcriptUrl }: VideoCardProps) {
     const [isPlaying, setIsPlaying] = useState(false);
     const [isIframeLoading, setIsIframeLoading] = useState(true);
 
@@ -146,6 +148,22 @@ export default function VideoCard({ title, videoUrl, thumbnail, publishedAt, pla
                 <h3 className="text-xl font-bebas text-white leading-tight transition-colors line-clamp-3">
                     {title}
                 </h3>
+                {transcriptUrl && (
+                    <a 
+                        href={transcriptUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="mt-6 w-full relative z-20"
+                    >
+                        <button className="w-full group relative bg-transparent border border-white/70 text-white py-3 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-red isolate cursor-pointer">
+                            <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+                                READ TRANSCRIPT
+                            </span>
+                            <div className="absolute inset-0 bg-red transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10"></div>
+                        </button>
+                    </a>
+                )}
             </div>
         </div>
     );

@@ -5,8 +5,21 @@ import FilterBar from "../CommonCom/FilterBar";
 import VideoCard from "./VideoCard";
 import { useTranslations } from "next-intl";
 
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
+
+export interface MediaItem {
+    _id: string;
+    title: string;
+    videoUrl: string;
+    publishedAt: string;
+    thumbnail?: SanityImageSource;
+    mainImage?: SanityImageSource;
+    platform?: string;
+    transcriptUrl?: string;
+}
+
 interface MediaFeedProps {
-    items: any[];
+    items: MediaItem[];
     type: "video" | "short" | "podcast" | "webinar";
 }
 
@@ -87,6 +100,7 @@ export default function MediaFeed({ items, type }: MediaFeedProps) {
                                 publishedAt={item.publishedAt}
                                 platform={item.platform}
                                 type={type}
+                                transcriptUrl={item.transcriptUrl || (item.title?.toLowerCase().includes("matt zweig") ? "/webinar/Matt%20Zweig%20Quotes.pdf" : undefined)}
                             />
                         </div>
                     ))

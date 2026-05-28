@@ -13,7 +13,8 @@ export default async function WebinarsPage() {
         videoUrl,
         description,
         thumbnail,
-        publishedAt
+        publishedAt,
+        transcriptUrl
     }`;
 
     const webinars = await client.fetch(query, { locale });
