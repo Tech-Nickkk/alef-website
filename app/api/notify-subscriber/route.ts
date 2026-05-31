@@ -72,7 +72,13 @@ export async function POST(req: NextRequest) {
             },
             body: JSON.stringify({
                 locationId: ghlLocationId,
-                query: "alef our subscribers",
+                filters: [
+                    {
+                        field: "tags",
+                        operator: "eq",
+                        value: "alef our subscribers"
+                    }
+                ],
                 limit: 100 // Paging may be needed for very large lists
             }),
         });
@@ -107,9 +113,9 @@ export async function POST(req: NextRequest) {
                 },
                 body: JSON.stringify({
                     customFields: [
-                        { key: "latest_post_title", value: titleString },
-                        { key: "latest_post_url", value: fullUrl },
-                        { key: "latest_post_type", value: docType.toUpperCase() },
+                        { key: "contact.latest_post_title", value: titleString },
+                        { key: "contact.latest_post_url", value: fullUrl },
+                        { key: "contact.latest_post_type", value: docType.toUpperCase() },
                     ]
                 }),
             });
