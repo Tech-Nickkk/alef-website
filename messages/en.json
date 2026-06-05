@@ -1010,12 +1010,24 @@
       "republicans": "Republicans",
       "democrats": "Democrats"
     },
-    "latestItem": {
-      "tag": "LATEST HEARING",
-      "title": "U.S. Policy Toward Lebanon: Obstacles to Dismantling Hezbollah’s Grip on Power",
-      "committee": "House Foreign Affairs Committee",
-      "access": "Full Hearing Access"
-    },
+    "latestItems": [
+      {
+        "tag": "JOINT STATEMENT",
+        "title": "Joint Statement of the United States of America, Republic of Lebanon, and State of Israel on the Latest High-Level Trilateral Meeting",
+        "committee": "United States Department of State",
+        "access": "Read Full Statement",
+        "date": "June 4, 2026",
+        "link": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/joint-statement-of-the-united-states-of-america-republic-of-lebanon-and-state-of-israel-on-the-latest-high-level-trilateral-meeting/"
+      },
+      {
+        "tag": "LATEST HEARING",
+        "title": "U.S. Policy Toward Lebanon: Obstacles to Dismantling Hezbollah’s Grip on Power",
+        "committee": "House Foreign Affairs Committee",
+        "access": "Full Hearing Access",
+        "date": "February 3, 2026",
+        "link": "https://foreignaffairs.house.gov/committee-activity/hearings/us-policy-toward-lebanon-obstacles-to-dismantling-hezbollah-s-grip-on-power"
+      }
+    ],
     "members": {
       "senate_republicans": [
         {

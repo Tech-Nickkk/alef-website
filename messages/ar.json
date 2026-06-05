@@ -1011,12 +1011,24 @@
       "republicans": "الجمهوريون",
       "democrats": "الديمقراطيون"
     },
-    "latestItem": {
-      "tag": "آخر جلسات الاستماع",
-      "title": "السياسة الأمريكية تجاه لبنان: عقبات أمام تفكيك قبضة حزب الله على السلطة",
-      "committee": "لجنة الشؤون الخارجية في مجلس النواب",
-      "access": "الوصول الكامل للجلسة"
-    },
+    "latestItems": [
+      {
+        "tag": "بيان مشترك",
+        "title": "بيان مشترك للولايات المتحدة الأمريكية والجمهورية اللبنانية ودولة إسرائيل بشأن الاجتماع الثلاثي الأخير رفيع المستوى",
+        "committee": "وزارة الخارجية الأمريكية",
+        "access": "اقرأ البيان كاملا",
+        "date": "4 يونيو 2026",
+        "link": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/joint-statement-of-the-united-states-of-america-republic-of-lebanon-and-state-of-israel-on-the-latest-high-level-trilateral-meeting/"
+      },
+      {
+        "tag": "آخر جلسات الاستماع",
+        "title": "السياسة الأمريكية تجاه لبنان: عقبات أمام تفكيك قبضة حزب الله على السلطة",
+        "committee": "لجنة الشؤون الخارجية في مجلس النواب",
+        "access": "الوصول الكامل للجلسة",
+        "date": "3 فبراير 2026",
+        "link": "https://foreignaffairs.house.gov/committee-activity/hearings/us-policy-toward-lebanon-obstacles-to-dismantling-hezbollah-s-grip-on-power"
+      }
+    ],
     "members": {
       "senate_republicans": [
         {

@@ -1004,12 +1004,24 @@
       "republicans": "Republicanos",
       "democrats": "Demócratas"
     },
-    "latestItem": {
-      "tag": "ÚLTIMA AUDIENCIA",
-      "title": "Política de EE. UU. hacia el Líbano: Obstáculos para desmantelar el control de Hezbolá sobre el poder",
-      "committee": "Comité de Asuntos Exteriores de la Cámara",
-      "access": "Acceso completo a la audiencia"
-    },
+    "latestItems": [
+      {
+        "tag": "DECLARACIÓN CONJUNTA",
+        "title": "Declaración conjunta de los Estados Unidos de América, la República del Líbano y el Estado de Israel sobre la última reunión trilateral de alto nivel",
+        "committee": "Departamento de Estado de los Estados Unidos",
+        "access": "Leer la declaración completa",
+        "date": "4 de Junio de 2026",
+        "link": "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/joint-statement-of-the-united-states-of-america-republic-of-lebanon-and-state-of-israel-on-the-latest-high-level-trilateral-meeting/"
+      },
+      {
+        "tag": "ÚLTIMA AUDIENCIA",
+        "title": "Política de EE. UU. hacia el Líbano: Obstáculos para desmantelar el control de Hezbolá sobre el poder",
+        "committee": "Comité de Asuntos Exteriores de la Cámara",
+        "access": "Acceso completo a la audiencia",
+        "date": "3 de Febrero de 2026",
+        "link": "https://foreignaffairs.house.gov/committee-activity/hearings/us-policy-toward-lebanon-obstacles-to-dismantling-hezbollah-s-grip-on-power"
+      }
+    ],
     "members": {
       "senate_republicans": [
         {
