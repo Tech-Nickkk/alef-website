@@ -100,7 +100,7 @@ export default function MediaFeed({ items, type }: MediaFeedProps) {
                                 publishedAt={item.publishedAt}
                                 platform={item.platform}
                                 type={type}
-                                transcriptUrl={item.transcriptUrl || (item.title?.toLowerCase().includes("matt zweig") ? "/webinar/Matt%20Zweig%20Quotes.pdf" : undefined)}
+                                transcriptUrl={item.transcriptUrl}
                             />
                         </div>
                     ))

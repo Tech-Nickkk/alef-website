@@ -72,7 +72,7 @@ export default function BookRecommendationsPage() {
                                 className="group bg-blue border border-white/10 p-8 rounded-xl transition-all duration-300 hover:bg-light-blue hover:shadow-lg hover:shadow-blue/10 flex flex-col justify-start"
                             >
                                 <div className="mb-4">
-                                    <span className="inline-block px-3 py-1 bg-red/10 text-red text-xs font-oswald tracking-widest uppercase rounded-sm">
+                                    <span className="inline-block px-3 py-1 bg-red text-white text-xs font-oswald tracking-widest uppercase rounded-sm font-bold">
                                         Recommendation #{index + 1}
                                     </span>
                                 </div>

@@ -37,7 +37,7 @@ export async function generateMetadata({
   const alternateLocales = ['fr', 'ar', 'es'];
   const segments = rawPathname.split('/').filter(Boolean);
 
-  let currentLocale = locale;
+  const currentLocale = locale;
   let basePathSegments = [...segments];
 
   if (segments.length > 0 && alternateLocales.includes(segments[0])) {

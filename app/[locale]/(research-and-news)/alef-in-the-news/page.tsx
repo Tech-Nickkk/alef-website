@@ -75,7 +75,7 @@ export default function AlefInTheNewsPage() {
                             <div className="absolute top-0 right-0 w-32 h-32 bg-red opacity-0 group-hover:opacity-10 blur-[80px] transition-opacity duration-500 rounded-full" />
                             
                             <div className="flex justify-between items-center mb-6">
-                                <span className="inline-block px-3 py-1 bg-red/10 text-red text-xs font-oswald uppercase tracking-widest rounded-sm">
+                                <span className="inline-block px-3 py-1 bg-red text-white text-xs font-oswald uppercase tracking-widest rounded-sm font-bold">
                                     {article.source}
                                 </span>
                                 <span className="text-white/50 text-xs font-oswald tracking-widest">{article.date}</span>

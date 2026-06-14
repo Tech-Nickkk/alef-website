@@ -74,7 +74,7 @@ export default function VideoCard({ title, videoUrl, thumbnail, publishedAt, pla
         return <Video className="w-12 h-12 text-white/20" />;
     }
 
-    const containerClasses = `bg-blue border border-white/10 rounded-lg overflow-hidden group hover:border-red/30 transition-all duration-300 flex flex-col h-full ${type === 'short' ? 'max-w-[320px] mx-auto w-full' : ''}`;
+    const containerClasses = `bg-blue border border-white/10 rounded-lg overflow-hidden hover:border-red/30 transition-all duration-300 flex flex-col h-full ${type === 'short' ? 'max-w-[320px] mx-auto w-full' : ''}`;
 
     return (
         <div className={containerClasses}>
@@ -137,7 +137,7 @@ export default function VideoCard({ title, videoUrl, thumbnail, publishedAt, pla
                             {platform}
                         </span>
                     ) : (
-                        <span className="text-[10px] text-red font-oswald tracking-widest uppercase">
+                        <span className="px-2 py-1 bg-red rounded text-[10px] text-white font-oswald tracking-widest uppercase font-bold">
                             {type}
                         </span>
                     )}
@@ -156,11 +156,11 @@ export default function VideoCard({ title, videoUrl, thumbnail, publishedAt, pla
                         onClick={(e) => e.stopPropagation()}
                         className="mt-6 w-full relative z-20"
                     >
-                        <button className="w-full group relative bg-transparent border border-white/70 text-white py-3 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-red isolate cursor-pointer">
-                            <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+                        <button className="w-full group relative bg-transparent border border-white/70 text-white py-3 text-sm font-bold tracking-[0.2em] uppercase font-oswald overflow-hidden transition-all hover:border-white isolate cursor-pointer">
+                            <span className="relative z-10 group-hover:text-black transition-colors duration-300">
                                 READ TRANSCRIPT
                             </span>
-                            <div className="absolute inset-0 bg-red transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10"></div>
+                            <div className="absolute inset-0 bg-white transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:origin-bottom transition-transform duration-500 ease-out -z-10"></div>
                         </button>
                     </a>
                 )}
