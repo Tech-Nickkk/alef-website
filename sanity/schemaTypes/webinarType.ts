@@ -38,10 +38,13 @@ export const webinarType = defineType({
             validation: (rule) => rule.required(),
         }),
         defineField({
-            name: 'transcriptUrl',
-            title: 'Transcript File URL',
-            type: 'url',
-            description: 'Optional URL to a transcript file (e.g., a PDF or DOCX stored in public folder or external)',
+            name: 'transcriptFile',
+            title: 'Transcript File',
+            type: 'file',
+            description: 'Upload a transcript file. Use PDF format so it opens directly in the browser (like other documents on the site). DOCX files will be downloaded instead.',
+            options: {
+                accept: '.pdf,.doc,.docx,.txt',
+            },
         }),
     ],
     preview: {

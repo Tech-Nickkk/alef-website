@@ -14,10 +14,15 @@ export default async function WebinarsPage() {
         description,
         thumbnail,
         publishedAt,
-        transcriptUrl
+        "slug": slug.current,
+        "hasTranscript": defined(transcriptFile.asset)
     }`;
 
-    const webinars = await client.fetch(query, { locale });
+    const webinarsRaw = await client.fetch(query, { locale });
+    const webinars = webinarsRaw.map((w: { slug?: string; hasTranscript?: boolean;[key: string]: unknown }) => ({
+        ...w,
+        transcriptUrl: w.hasTranscript && w.slug ? `/api/transcript/${w.slug}` : undefined,
+    }));
     const t = await getTranslations("WebinarsPage");
 
     return (
