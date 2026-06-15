@@ -8,16 +8,9 @@ export default function robots(): MetadataRoute.Robots {
       disallow: [
         '/api/',
         '/studio/',
-        '/login',
-        '/profile',
-        '/donate/success',
-        '/submit-article',
-        '/submit-podcast',
-        '/submit-webinar',
-        '/submit-video',
-        '/submit-short',
       ],
     },
     sitemap: 'https://www.usalef.org/sitemap.xml',
   };
 }
+
