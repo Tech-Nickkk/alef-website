@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState, useMemo } from "react";
+import { useRef, useState, useMemo } from "react";
 import Link from "next/link";
 import SkeletonImage from "@/app/components/CommonCom/SkeletonImage";
 import gsap from "gsap";
@@ -20,7 +20,7 @@ export default function HouseOfCardsPage() {
     const t = useTranslations("HouseOfCardsPage");
     const containerRef = useRef<HTMLDivElement>(null);
     const gridRef = useRef<HTMLDivElement>(null);
-    const [filter, setFilter] = useState("All");
+    const [filter, setFilter] = useState(() => t("filters.all"));
     const [searchQuery, setSearchQuery] = useState("");
     const [visibleCount, setVisibleCount] = useState(10);
     const CARDS_PER_PAGE = 10;
@@ -50,16 +50,7 @@ export default function HouseOfCardsPage() {
         });
     }, [t]);
 
-    const filterOptions = useMemo(() => [
-        { label: t("filters.all"), value: "All" },
-        // Since the suit in FULL_DECK is translated, the filter value must match it.
-        // However, 'All' is special. 
-        // Logic: c.suit === filter.
-        // So filter values should be the translated suit names.
-        // Let's make "All" also the translated "All".
-        // And initial state should be t("filters.all")? 
-        // Or better, just use the translated strings directly as values.
-    ], [t]);
+
 
     const activeFilterTabs = useMemo(() => [
         t("filters.all"),
@@ -69,15 +60,6 @@ export default function HouseOfCardsPage() {
         t("filters.clubs")
     ], [t]);
 
-    // Handle initial filter state being "All" (English) vs Translated
-    // Since we start with "All" string in state, but activeFilterTabs[0] might be "Tous" (French).
-    // We should sync state on mount or just set initial state carefully?
-    // Actually, simple solution: Use the translated strings as the source of truth for logic too.
-    useEffect(() => {
-        if (filter === "All" && t("filters.all") !== "All") {
-            setFilter(t("filters.all"));
-        }
-    }, [t, filter]);
 
     const filteredCards = useMemo(() => {
         return FULL_DECK.filter(c => {
@@ -102,9 +84,15 @@ export default function HouseOfCardsPage() {
         }
     };
 
-    useEffect(() => {
+    const handleFilterChange = (newFilter: string) => {
+        setFilter(newFilter);
         setVisibleCount(CARDS_PER_PAGE);
-    }, [filter, searchQuery]);
+    };
+
+    const handleSearchChange = (newQuery: string) => {
+        setSearchQuery(newQuery);
+        setVisibleCount(CARDS_PER_PAGE);
+    };
 
     useGSAP(() => {
         if (!gridRef.current) return;
@@ -145,8 +133,8 @@ export default function HouseOfCardsPage() {
                 });
             };
 
-            container.addEventListener("mouseenter", onMouseEnter as any);
-            container.addEventListener("mouseleave", onMouseLeave as any);
+            container.addEventListener("mouseenter", onMouseEnter);
+            container.addEventListener("mouseleave", onMouseLeave);
         });
 
     }, { scope: containerRef, dependencies: [visibleCards] });
@@ -180,10 +168,10 @@ export default function HouseOfCardsPage() {
                 {/* Filters Row */}
                 <FilterBar
                     tabs={activeFilterTabs}
-                    activeTab={filter === "All" ? t("filters.all") : filter} // Handle initial "All" state
-                    onTabChange={setFilter}
+                    activeTab={filter}
+                    onTabChange={handleFilterChange}
                     searchQuery={searchQuery}
-                    onSearchChange={setSearchQuery}
+                    onSearchChange={handleSearchChange}
                     searchPlaceholder={t("filters.searchPlaceholder")}
                 />
 
@@ -264,6 +252,15 @@ export default function HouseOfCardsPage() {
                         </p>
                     </div>
                 )}
+
+                {/* Hidden links for crawlers and extractors to find all dynamic cards */}
+                <div className="hidden pointer-events-none opacity-0 h-0 overflow-hidden" aria-hidden="true">
+                    {(CARD_DATA || []).map((card) => (
+                        <Link key={card.id} href={`/house-of-cards/${card.id}`}>
+                            {card.name} — {card.role}
+                        </Link>
+                    ))}
+                </div>
             </main>
         </div>
     );
