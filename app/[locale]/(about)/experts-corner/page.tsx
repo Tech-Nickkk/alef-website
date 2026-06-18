@@ -7,7 +7,7 @@ import ExpertsFeed from "./ExpertsFeed";
 
 export default async function ExpertsCornerPage() {
   const t = await getTranslations('ExpertsCornerPage'); // Async translation fetching
-  const query = `*[_type == "author" && category in ["officer", "director", "advisor"]] | order(order asc, _createdAt asc) {
+  const query = `*[_type == "author" && category in ["officer", "director", "advisor", "developmentDirector"]] | order(order asc, _createdAt asc) {
                 _id,
                 name,
                 discloseName,

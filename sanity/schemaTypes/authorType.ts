@@ -34,6 +34,7 @@ export const authorType = defineType({
           { title: 'Officer', value: 'officer' },
           { title: 'Director', value: 'director' },
           { title: 'Advisor', value: 'advisor' },
+          { title: 'Development Director', value: 'developmentDirector' },
           { title: 'Blog Author', value: 'blogAuthor' },
         ],
         layout: 'radio'

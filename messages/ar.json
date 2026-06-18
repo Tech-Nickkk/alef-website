@@ -839,6 +839,7 @@
       "officers": "المسؤولون",
       "directors": "المدراء",
       "advisors": "المستشارون الخبراء",
+      "developmentDirectors": "مدراء التطوير",
       "searchPlaceholder": "البحث في الفريق...",
       "noResults": "لم يتم العثور على أعضاء مطابقين لـ",
       "clear": "مسح المرشحات"
@@ -846,7 +847,8 @@
     "sections": {
       "officers": "مسؤولو ALEF",
       "directors": "مدراء ALEF",
-      "advisors": "مستشارو ALEF الخبراء"
+      "advisors": "مستشارو ALEF الخبراء",
+      "developmentDirectors": "مدراء تطوير ALEF"
     }
   },
   "SponsorsPage": {

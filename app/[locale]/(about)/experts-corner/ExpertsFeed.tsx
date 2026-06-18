@@ -1,20 +1,21 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import SkeletonImage from "@/app/components/CommonCom/SkeletonImage";
 import { Star } from 'lucide-react';
 import FilterBar from "@/app/components/CommonCom/FilterBar";
 import { urlFor } from '@/sanity/lib/image';
 import { useTranslations, useLocale } from "next-intl";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 interface Author {
     _id: string;
     name?: string;
     discloseName?: boolean;
-    category?: 'officer' | 'director' | 'advisor' | 'blogAuthor';
+    category?: 'officer' | 'director' | 'advisor' | 'developmentDirector' | 'blogAuthor';
     position?: string;
     description?: string;
-    image?: any;
+    image?: SanityImageSource;
 }
 
 interface ExpertsFeedProps {
@@ -25,21 +26,22 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
     const t = useTranslations('ExpertsCornerPage');
     const locale = useLocale();
     const [searchQuery, setSearchQuery] = useState("");
-    const [categoryFilter, setCategoryFilter] = useState<"All" | "Officers" | "Directors" | "Expert Advisors">("All");
+    const [categoryFilter, setCategoryFilter] = useState<"All" | "Officers" | "Directors" | "Expert Advisors" | "Development Directors">("All");
 
     const categoryLabels: Record<string, string> = {
         "All": t('filters.all'),
         "Officers": t('filters.officers'),
         "Directors": t('filters.directors'),
-        "Expert Advisors": t('filters.advisors')
+        "Expert Advisors": t('filters.advisors'),
+        "Development Directors": t('filters.developmentDirectors')
     };
 
-    const getString = (val: any) => {
+    const getString = useCallback((val: string | Record<string, string> | null | undefined) => {
         if (!val) return "";
         if (typeof val === 'string') return val;
         // Prioritize current locale, then fallback to English or others
         return val[locale] || val.en || val.ar || val.fr || val.es || "";
-    };
+    }, [locale]);
 
     const filteredActivists = useMemo(() => {
         return initialActivists.filter(a => {
@@ -52,15 +54,17 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
                 description.toLowerCase().includes(searchQuery.toLowerCase());
             return matchesSearch;
         });
-    }, [initialActivists, searchQuery]);
+    }, [initialActivists, searchQuery, getString]);
 
     const officers = filteredActivists.filter(a => a.category === 'officer');
     const directors = filteredActivists.filter(a => a.category === 'director');
     const advisors = filteredActivists.filter(a => a.category === 'advisor');
+    const developmentDirectors = filteredActivists.filter(a => a.category === 'developmentDirector');
 
     const showOfficers = (categoryFilter === "All" || categoryFilter === "Officers") && officers.length > 0;
     const showDirectors = (categoryFilter === "All" || categoryFilter === "Directors") && directors.length > 0;
     const showAdvisors = (categoryFilter === "All" || categoryFilter === "Expert Advisors") && advisors.length > 0;
+    const showDevelopmentDirectors = (categoryFilter === "All" || categoryFilter === "Development Directors") && developmentDirectors.length > 0;
 
     const highlightText = (text: string, query: string) => {
         if (!query || !text) return text;
@@ -79,7 +83,7 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
 
     const handleTabChange = (label: string) => {
         const key = Object.keys(categoryLabels).find(k => categoryLabels[k] === label);
-        if (key) setCategoryFilter(key as any);
+        if (key) setCategoryFilter(key as "All" | "Officers" | "Directors" | "Expert Advisors" | "Development Directors");
     };
 
     return (
@@ -98,7 +102,7 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
             {showOfficers && (
                 <section className="mb-24">
                     <div className="flex items-center gap-4 mb-10">
-                        <span className="h-px bg-red w-12"></span>
+                        <span className="h-px bg-foreground/30 w-12"></span>
                         <h2 className="text-3xl font-bebas text-foreground tracking-wide">{t('sections.officers')}</h2>
                         <span className="h-px bg-foreground/30 grow"></span>
                     </div>
@@ -146,7 +150,7 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
             {showDirectors && (
                 <section className="mb-24">
                     <div className="flex items-center gap-4 mb-10">
-                        <span className="h-px bg-red w-12"></span>
+                        <span className="h-px bg-foreground/30 w-12"></span>
                         <h2 className="text-3xl font-bebas text-foreground tracking-wide">{t('sections.directors')}</h2>
                         <span className="h-px bg-foreground/30 grow"></span>
                     </div>
@@ -192,7 +196,7 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
             {showAdvisors && (
                 <section className="mb-24">
                     <div className="flex items-center gap-4 mb-10">
-                        <span className="h-px bg-red w-12"></span>
+                        <span className="h-px bg-foreground/30 w-12"></span>
                         <h2 className="text-3xl font-bebas text-foreground tracking-wide">{t('sections.advisors')}</h2>
                         <span className="h-px bg-foreground/30 grow"></span>
                     </div>
@@ -234,12 +238,58 @@ export default function ExpertsFeed({ initialActivists }: ExpertsFeedProps) {
                 </section>
             )}
 
+            {/* Section 4: ALEF Development Directors */}
+            {showDevelopmentDirectors && (
+                <section className="mb-24">
+                    <div className="flex items-center gap-4 mb-10">
+                        <span className="h-px bg-foreground/30 w-12"></span>
+                        <h2 className="text-3xl font-bebas text-foreground tracking-wide">{t('sections.developmentDirectors')}</h2>
+                        <span className="h-px bg-foreground/30 grow"></span>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {developmentDirectors.map((devDirector: Author) => (
+                            <div key={devDirector._id} className="bg-blue border border-light-blue p-6 rounded-sm transition-colors duration-300 flex flex-col items-center text-center h-full">
+                                <div className="w-full aspect-4/5 bg-black/30 mb-6 rounded-sm relative overflow-hidden flex items-center justify-center bg-linear-to-b from-white/5 to-transparent shrink-0">
+                                    {devDirector.image ? (
+                                        <SkeletonImage
+                                            src={urlFor(devDirector.image).width(400).height(500).url()}
+                                            alt={devDirector.discloseName === true ? (devDirector.name || 'Development Director') : 'Development Director'}
+                                            fill
+                                            className="object-cover"
+                                            unoptimized
+                                        />
+                                    ) : (
+                                        <SkeletonImage
+                                            src="/home/default-avatar.svg"
+                                            alt="Default Avatar"
+                                            fill
+                                            className="object-contain p-12 opacity-20"
+                                        />
+                                    )}
+                                </div>
+                                <h3 className="text-lg font-bebas text-white mb-3 tracking-wide">
+                                    {devDirector.discloseName === true ? (
+                                        highlightText(getString(devDirector.name) || "", searchQuery)
+                                    ) : (
+                                        <Star className="w-6 h-6 fill-white inline-block" />
+                                    )}
+                                </h3>
+                                <p className="font-oswald text-white/70 text-sm leading-relaxed">
+                                    {highlightText(getString(devDirector.description) || getString(devDirector.position) || "", searchQuery)}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            )}
+
             {/* No Results Message */}
             {filteredActivists.length === 0 && (
                 <div className="col-span-full text-center py-20 bg-blue/50 rounded-lg border border-white/5">
                     <div className="flex flex-col items-center gap-4">
                         <p className="text-foreground/60 text-xl font-oswald tracking-widest uppercase">
-                            {t('filters.noResults')} "{searchQuery}"
+                            {t('filters.noResults')} &quot;{searchQuery}&quot;
                         </p>
                         <button
                             onClick={() => {

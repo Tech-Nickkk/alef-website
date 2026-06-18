@@ -832,6 +832,7 @@
       "officers": "Oficiales",
       "directors": "Directores",
       "advisors": "Asesores Expertos",
+      "developmentDirectors": "Directores de Desarrollo",
       "searchPlaceholder": "BUSCAR EQUIPO...",
       "noResults": "No se encontraron miembros que coincidan con",
       "clear": "BORRAR FILTROS"
@@ -839,7 +840,8 @@
     "sections": {
       "officers": "Oficiales de ALEF",
       "directors": "Directores de ALEF",
-      "advisors": "Asesores Expertos de ALEF"
+      "advisors": "Asesores Expertos de ALEF",
+      "developmentDirectors": "Directores de Desarrollo de ALEF"
     }
   },
   "SponsorsPage": {

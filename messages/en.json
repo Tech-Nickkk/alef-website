@@ -838,6 +838,7 @@
       "officers": "Officers",
       "directors": "Directors",
       "advisors": "Expert Advisors",
+      "developmentDirectors": "Development Directors",
       "searchPlaceholder": "SEARCH TEAM...",
       "noResults": "No team members found matching",
       "clear": "CLEAR FILTERS"
@@ -845,7 +846,8 @@
     "sections": {
       "officers": "ALEF Officers",
       "directors": "ALEF Directors",
-      "advisors": "ALEF Expert Advisors"
+      "advisors": "ALEF Expert Advisors",
+      "developmentDirectors": "ALEF Development Directors"
     }
   },
   "SponsorsPage": {

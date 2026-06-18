@@ -317,6 +317,7 @@ export default function SubmitWebinarPage() {
                             >
                                 {imagePreview ? (
                                     <div className="space-y-4">
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
                                         <img
                                             src={imagePreview}
                                             alt="Preview"
