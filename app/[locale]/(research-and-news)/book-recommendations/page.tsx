@@ -1,6 +1,5 @@
 "use client";
 
-import AnimatedTitle from "@/app/components/CommonCom/AnimatedTitle";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
@@ -19,7 +18,6 @@ export default function BookRecommendationsPage() {
 
             <main className="grow pt-32 px-4 md:px-8 lg:px-12 max-w-[1400px] mx-auto w-full z-10 relative">
                 <div className="mb-20 text-center max-w-5xl mx-auto">
-
 
                     {/* Header Image */}
                     {/* Note: Ensure 'BookRecommendations.png' is placed in 'public/research/' folder */}

@@ -1,7 +1,6 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-
 import React, { useEffect, useRef, useState } from "react";
 import SkeletonImage from "./SkeletonImage";
 import gsap from "gsap";
@@ -14,6 +13,7 @@ import { auth } from "@/lib/firebase";
 import { usePathname, useRouter, Link } from "@/i18n/routing";
 import { useTranslations, useLocale } from "next-intl";
 import { sendGAEvent } from '@next/third-parties/google';
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -95,6 +95,7 @@ export default function Navbar() {
                 { label: t('menu.coreValues'), href: "/core-values" },
                 { label: t('menu.strategicPlan'), href: "/strategic-plan" },
                 { label: t('congressional'), href: "/congressional-advocacy" },
+                { label: t('menu.hezbollahAccountabilityAct'), href: "/hezbollah-accountability-act" },
                 { label: t('menu.expertsCorner'), href: "/experts-corner" },
                 { label: t('menu.ourSponsors'), href: "/sponsors" },
                 { label: t('menu.testimonials'), href: "/testimonials" }
@@ -246,10 +247,13 @@ export default function Navbar() {
                                 aria-label="My Profile"
                             >
                                 {user.photoURL ? (
-                                    <img
+                                    <Image
                                         src={user.photoURL}
                                         alt={user.displayName || "User Profile"}
                                         className="w-full h-full object-cover"
+                                        width={40}
+                                        height={40}
+                                        unoptimized
                                     />
                                 ) : (
                                     <div className="w-full h-full bg-foreground/5 flex items-center justify-center group-hover:bg-foreground/10 transition-colors">
@@ -439,7 +443,14 @@ export default function Navbar() {
                                             className="flex items-center gap-2 text-foreground/80 hover:text-foreground transition-colors font-oswald uppercase text-sm tracking-wider"
                                         >
                                             {user.photoURL ? (
-                                                <img src={user.photoURL} alt="Profile" className="w-8 h-8 rounded-full object-cover border border-foreground/20" />
+                                                <Image
+                                                    src={user.photoURL}
+                                                    alt="Profile"
+                                                    className="w-8 h-8 rounded-full object-cover border border-foreground/20"
+                                                    width={32}
+                                                    height={32}
+                                                    unoptimized
+                                                />
                                             ) : (
                                                 <div className="w-8 h-8 rounded-full border border-foreground/20 bg-foreground/5 flex items-center justify-center">
                                                     <span className="font-bebas text-sm">{user.displayName ? user.displayName.charAt(0).toUpperCase() : <UserIcon className="w-4 h-4" />}</span>

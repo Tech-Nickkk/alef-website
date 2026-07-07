@@ -40,7 +40,8 @@
       "getInTouch": "Contáctenos",
       "getInvolved": "Partícipa",
       "faq": "Preguntas Frecuentes",
-      "webinars": "Seminarios web"
+      "webinars": "Seminarios web",
+      "hezbollahAccountabilityAct": "Ley de Responsabilidad de Hezbollah"
     }
   },
   "Hero": {
@@ -3581,7 +3582,250 @@
       "profile": {
         "title": "Mi Perfil — Panel de Miembro",
         "description": "Administre su membresía, vea su historial de donaciones y realice un seguimiento de su insignia de soporte."
+      },
+      "hezbollah-accountability-act": {
+        "title": "Ley de Responsabilidad de Hezbollah — Campana y Grupo de Trabajo",
+        "description": "Avanzar en la Ley de Responsabilidad de Hezbollah para exigir cuentas a Hezbollah y restaurar la soberania del Libano."
       }
     }
+  },
+  "HaaCampaignPage": {
+    "billStamp": "Legislacion Propuesta · 119º Congreso",
+    "heroTitle": "Exigir Cuentas a Hezbollah.<br /><em>Restaurar la Soberania</em><br />del Libano.",
+    "heroTitle1": "Exigir Cuentas a Hezbollah.",
+    "heroTitle2": "Restaurar la Soberania del Libano.",
+    "heroSub": "Un grupo de trabajo de expertos de primer nivel y una campana nacional de incidencia para avanzar en la Ley de Responsabilidad de Hezbollah, desde la investigacion hasta las salas del Congreso.",
+    "ctaFund": "Financiar la Campana",
+    "ctaPetition": "Firmar la Peticion",
+    "stats": {
+      "congressMembers": "Miembros del Congreso<br />Objetivo de Apoyo",
+      "briefingsPlanned": "Sesiones Informativas<br />Previstas",
+      "taskForce": "Miembros del Grupo<br />de Trabajo de Expertos",
+      "campaignGoal": "Meta de la<br />Campana"
+    },
+    "challenge": {
+      "tag": "El Desafio",
+      "title": "El control de Hezbollah sobre el Libano exige accion legislativa.",
+      "lead": "Decadas de influencia descontrolada (financiera, politica y militar) han vaciado las instituciones del Libano y desplazado a millones de personas. Esta campana ofrece la estructura legal para cambiar eso.",
+      "pillars": {
+        "financial": {
+          "title": "Rendicion de Cuentas Financiera",
+          "desc": "Apuntar a las redes de financiamiento ilicito y los mecanismos de evasion de sanciones que sostienen las operaciones de Hezbollah dentro de las instituciones libanesas."
+        },
+        "sovereign": {
+          "title": "Restauracion de la Soberania",
+          "desc": "Redactar y avanzar en legislacion que reafirme la autoridad del Estado libanes sobre todas las facciones armadas que operan dentro de sus fronteras."
+        },
+        "congressional": {
+          "title": "Compromiso del Congreso",
+          "desc": "Educar y movilizar a los legisladores estadounidenses a traves de sesiones informativas basadas en evidencia, libros blancos e incidencia directa de la diaspora."
+        },
+        "diaspora": {
+          "title": "Movilizacion de la Diaspora",
+          "desc": "Activar a mas de 15 000 firmantes de peticiones y mas de 1 000 nuevos suscriptores organizacionales para senalar un amplio apoyo politico."
+        }
+      }
+    },
+    "taskForce": {
+      "tag": "Grupo de Trabajo de Expertos",
+      "title": "De seis a doce especialistas. Un mandato legislativo.",
+      "lead": "Estamos reuniendo un grupo de trabajo a puerta cerrada de profesionales calificados para investigar, redactar y defender la ley HAA, otorgando a la legislacion la profundidad y legitimidad que requiere.",
+      "roles": {
+        "legal": {
+          "role": "Experto Legal",
+          "title": "Derecho Internacional y Arquitectura de Sanciones"
+        },
+        "financial": {
+          "role": "Investigador Financiero",
+          "title": "Finanzas Ilicitas y Redes de Financiamiento del Terrorismo"
+        },
+        "intelligence": {
+          "role": "Analista de Inteligencia",
+          "title": "Seguridad Regional y Evaluacion de Amenazas"
+        },
+        "policy": {
+          "role": "Especialista en Politicas",
+          "title": "Estrategia del Congreso y Redaccion Legislativa"
+        },
+        "diaspora": {
+          "role": "Enlace de la Diaspora",
+          "title": "Movilizacion Comunitaria e Incidencia de los Constituyentes"
+        },
+        "communications": {
+          "role": "Director de Comunicaciones",
+          "title": "Estrategia de Medios y Asuntos Publicos"
+        }
+      }
+    },
+    "activities": {
+      "tag": "Actividades Clave",
+      "title": "Investigar. Informar. Movilizar. Legislar.",
+      "lead": "Cada dolar financia una accion especifica y secuenciada: desde la investigacion de expertos hasta la peticion nacional y el apoyo en el Congreso.",
+      "list": {
+        "01": {
+          "title": "Formacion del Grupo de Trabajo",
+          "desc": "Reclutar e incorporar de 6 a 8 asesores expertos pagados con credenciales verificadas en derecho, finanzas, inteligencia y politicas."
+        },
+        "02": {
+          "title": "Investigacion y Redaccion de la Ley",
+          "desc": "Encargar investigaciones profundas y producir un borrador completo de la Ley de Responsabilidad de Hezbollah."
+        },
+        "03": {
+          "title": "Sesiones Informativas del Congreso",
+          "desc": "Organizar de 8 a 12 sesiones informativas presenciales en Washington y sesiones virtuales dirigidas a oficinas clave del Congreso."
+        },
+        "04": {
+          "title": "Libros Blancos y Hojas de Datos",
+          "desc": "Producir un libro blanco revisado por pares y resumenes de politicas breves para su distribucion en el Congreso y medios de comunicacion."
+        },
+        "05": {
+          "title": "Peticion Nacional y Anuncios",
+          "desc": "Lanzar una peticion dirigida a mas de 15 000 firmas con campanas de anuncios digitales especificos para llegar a la diaspora."
+        },
+        "06": {
+          "title": "Seminarios Web y Ruedas de Prensa",
+          "desc": "Organizar seminarios web estrategicos para las partes interesadas y ruedas de prensa coordinadas para generar mas de 20 inserciones en medios."
+        }
+      }
+    },
+    "outcomes": {
+      "tag": "Resultados en 12 Meses",
+      "title": "Compromisos especificos. Resultados medibles.",
+      "lead": "Esta no es una campana de concientizacion. Estos son objetivos sobre los que informaremos publicamente cada trimestre.",
+      "numbers": [
+        "5+",
+        "15k+",
+        "20+",
+        "8k+",
+        "1k+",
+        "12"
+      ],
+      "list": [
+        "Miembros del Congreso que presentan o apoyan formalmente el proyecto de ley HAA",
+        "Firmas de la peticion de la diaspora y comunidades aliadas en los Estados Unidos",
+        "Mas de 20 inserciones ganadas en medios de comunicacion centrados en politicas, incluyendo The Hill y Foreign Affairs",
+        "Mas de 8 000 descargas del libro blanco dentro de los primeros seis meses de su lanzamiento publico",
+        "Mas de 1 000 nuevos suscriptores organizacionales agregados a nuestra red de incidencia",
+        "12 sesiones informativas del Congreso completadas (presenciales y virtuales) con compromisos de seguimiento documentados"
+      ]
+    },
+    "budget": {
+      "tag": "Presupuesto de Muestra",
+      "title": "A donde van sus dolares.",
+      "lead": "Una asignacion eficiente y de alto impacto: la mayoria de cada dolar financia el talento de expertos y el compromiso legislativo directo.",
+      "headers": {
+        "item": "Linea de Presupuesto",
+        "range": "Rango"
+      },
+      "items": {
+        "research": "Honorarios de expertos e investigacion",
+        "briefings": "Sesiones informativas y viajes del Congreso",
+        "ads": "Anuncios digitales y plataforma de peticion",
+        "content": "Produccion de contenido y traducciones",
+        "admin": "Plataforma, administracion y contingencias"
+      },
+      "total": "Meta Total de la Campana"
+    },
+    "donate": {
+      "tag": "Niveles de Donacion",
+      "title": "Elija su nivel de impacto.",
+      "lead": "Cada contribucion se rastrea, se reconoce y se despliega para una actividad especifica en nuestra hoja de ruta.",
+      "tiers": {
+        "startingAt": "A partir de",
+        "advocateTier": "Nivel Defensor",
+        "flagshipTier": "Nivel Guardian",
+        "contribute": "Contribuir {amount}",
+        "becomeGuardian": "Conviertase en un Guardian HAA",
+        "supporter": {
+          "name": "Partidario",
+          "benefits": [
+            "Libro blanco digital tras su lanzamiento",
+            "Actualizaciones mensuales del progreso de la campana",
+            "Nombre incluido en los partidarios de la peticion"
+          ]
+        },
+        "advocate": {
+          "name": "Defensor",
+          "benefits": [
+            "Todos los beneficios de Partidario",
+            "Acceso exclusivo a sesiones informativas virtuales",
+            "Nombre destacado en la pagina de la peticion",
+            "Acceso anticipado a hojas de datos y resumenes"
+          ]
+        },
+        "guardian": {
+          "name": "Guardian HAA",
+          "benefits": [
+            "Todos los beneficios de Defensor",
+            "Reconocimiento publico como \"Guardian HAA\"",
+            "Llamada de estrategia privada con el lider del grupo de trabajo",
+            "Invitacion a eventos exclusivos de estrategia",
+            "Informe de impacto trimestrial con atribucion"
+          ]
+        }
+      }
+    },
+    "petition": {
+      "title": "Firmar la Peticion de la Ley de Responsabilidad de Hezbollah",
+      "description": "Senale su apoyo a los legisladores estadounidenses. Necesitamos 15 000 firmas para demostrar una amplia demanda electoral.",
+      "btnSign": "Firmar Peticion",
+      "btnSigning": "Enviando...",
+      "successTitle": "Gracias",
+      "successMsg": "Su firma ha sido registrada. Juntos, podemos hacer que sea imposible para los legisladores ignorar la soberania del Libano.",
+      "fields": {
+        "firstName": "Nombre",
+        "lastName": "Apellido",
+        "email": "Correo Electronico",
+        "phone": "Numero de Telefono"
+      },
+      "sticky": {
+        "brand": "HAA · Grupo de Trabajo 2025",
+        "label": "Firmas de Peticion",
+        "goal": "/ 15,000",
+        "cta": "Donar Ahora"
+      }
+    },
+    "awareness": {
+      "tag": "Estrategia de Concientizacion",
+      "title": "Como llegamos a los legisladores y la diaspora.",
+      "lead": "Una estrategia multicanal coordinada que mantiene visible, creible e imposible de ignorar la HAA en el Capitolio.",
+      "items": {
+        "visibility": {
+          "title": "Visibilidad de la Peticion",
+          "desc": "Peticion integrada de manera destacada en todas las paginas de la campana y correos con actualizaciones de hitos de firmas."
+        },
+        "thought": {
+          "title": "Liderazgo de Opinion",
+          "desc": "Miembros del grupo de trabajo publican articulos de opinion y contenido en LinkedIn para generar credibilidad ante el Congreso."
+        },
+        "pitches": {
+          "title": "Relacion con Medios",
+          "desc": "Propuestas proactivas a Foreign Affairs, The Hill, Lawfare y POLITICO utilizando datos del libro blanco."
+        },
+        "infographics": {
+          "title": "Infografias para Compartir",
+          "desc": "Contenido visual listo para la diaspora extraido de los datos de la Casa de la Corrupcion, optimizado para Instagram y X."
+        },
+        "updates": {
+          "title": "Actualizaciones Semanales",
+          "desc": "Informes de campana transparentes enviados a los suscriptores: firmas, reuniones aseguradas, cobertura de prensa."
+        },
+        "webinars": {
+          "title": "Seminarios Web",
+          "desc": "Seminarios mensuales de estrategia para la diaspora con preguntas y respuestas con miembros de la comision de expertos."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Vale la pena luchar por la soberania del Libano.",
+      "text": "Unase a miles de defensores de la diaspora, expertos legales y ciudadanos preocupados en la promocion de la Ley de Responsabilidad de Hezbollah. Firme la peticion. Financie la campana."
+    }
+  },
+  "HaaCampaignModal": {
+    "badge": "NUEVA CAMPAÑA",
+    "title": "Ley de Responsabilidad de Hezbollah",
+    "description": "Hemos lanzado una campaña de defensa nacional y un grupo de trabajo de expertos para desmantelar las redes que mantienen al Líbano como rehén y restaurar su soberanía.",
+    "ctaAction": "Ver campaña",
+    "ctaDismiss": "Quizás más tarde"
   }
 }

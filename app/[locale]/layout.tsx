@@ -94,7 +94,7 @@ export async function generateMetadata({
       title = t('defaultTitle');
       description = t('defaultDescription');
     }
-  } catch (e) {
+  } catch {
     // Fail-safe default fallback
   }
 
