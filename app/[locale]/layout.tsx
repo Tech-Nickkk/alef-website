@@ -85,7 +85,7 @@ export async function generateMetadata({
 
   try {
     const t = await getTranslations({ locale: currentLocale, namespace: 'Metadata' });
-    const pageKey = basePathSegments.length > 0 ? basePathSegments[0] : 'home';
+    const pageKey = basePathSegments.length > 0 ? basePathSegments.join('-') : 'home';
 
     if (t.has(`pages.${pageKey}.title`)) {
       title = t(`pages.${pageKey}.title`);

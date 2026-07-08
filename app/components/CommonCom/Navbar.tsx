@@ -95,7 +95,6 @@ export default function Navbar() {
                 { label: t('menu.coreValues'), href: "/core-values" },
                 { label: t('menu.strategicPlan'), href: "/strategic-plan" },
                 { label: t('congressional'), href: "/congressional-advocacy" },
-                { label: t('menu.hezbollahAccountabilityAct'), href: "/hezbollah-accountability-act" },
                 { label: t('menu.expertsCorner'), href: "/experts-corner" },
                 { label: t('menu.ourSponsors'), href: "/sponsors" },
                 { label: t('menu.testimonials'), href: "/testimonials" }
@@ -106,6 +105,7 @@ export default function Navbar() {
             href: "#",
             dropdown: [
                 { label: t('menu.blogsAndArticles'), href: "/blogs-and-articles" },
+                { label: t('menu.hezbollahAccountabilityAct'), href: "/hezbollah-accountability-act" },
                 { label: t('menu.houseOfCorruption'), href: "/house-of-corruption" },
                 { label: t('menu.houseOfCards'), href: "/house-of-cards" },
                 { label: t('menu.archives'), href: "/archives" },

@@ -52,7 +52,7 @@ export default function HaaCampaignModal({ isFirstLoad }: { isFirstLoad: boolean
 
       {/* Card Wrapper with 1px padding for the border and overflow-hidden to clip the spinning gradient */}
       <div
-        className={`relative max-w-md w-full bg-neutral-950 p-[1px] rounded-2xl shadow-2xl overflow-hidden transition-all duration-500 ${
+        className={`relative max-w-md w-full bg-neutral-950 p-px rounded-2xl shadow-2xl overflow-hidden transition-all duration-500 ${
           isOpen ? "scale-100 translate-y-0 opacity-100" : "scale-95 translate-y-8 opacity-0"
         }`}
         onClick={(e) => e.stopPropagation()}
@@ -61,9 +61,9 @@ export default function HaaCampaignModal({ isFirstLoad }: { isFirstLoad: boolean
         <div className="absolute top-1/2 left-1/2 w-[180%] h-[180%] bg-[conic-gradient(#BF0A30_0deg,transparent_90deg,#3b82f6_180deg,transparent_270deg,#BF0A30_360deg)] animate-spin-border pointer-events-none z-0" />
 
         {/* Core Card Container (Solid Dark Background overlaying the spinning gradient) */}
-        <div className="relative w-full bg-gradient-to-b from-[#141415]/98 to-[#0d0d0e]/99 rounded-[15px] p-6 sm:p-8 text-center overflow-hidden z-10">
+        <div className="relative w-full bg-linear-to-b from-[#141415]/98 to-[#0d0d0e]/99 rounded-[15px] p-6 sm:p-8 text-center overflow-hidden z-10">
           {/* Subtle diagonal sheen reflex overlay */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-tr from-transparent via-white/2 to-transparent pointer-events-none" />
 
           {/* Close Button */}
           <button
@@ -100,7 +100,7 @@ export default function HaaCampaignModal({ isFirstLoad }: { isFirstLoad: boolean
           </h3>
 
           {/* Gradient Divider */}
-          <div className="w-20 h-px bg-gradient-to-r from-transparent via-red/40 to-transparent mx-auto my-4 z-10 relative" />
+          <div className="w-20 h-px bg-linear-to-r from-transparent via-red/40 to-transparent mx-auto my-4 z-10 relative" />
 
           {/* Campaign Description */}
           <p className="text-sm sm:text-base text-neutral-300 leading-relaxed max-w-sm mx-auto font-light z-10 relative">

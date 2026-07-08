@@ -41,7 +41,7 @@
       "getInvolved": "S'Impliquer",
       "faq": "FAQ",
       "webinars": "Webinaires",
-      "hezbollahAccountabilityAct": "Loi sur la responsabilité du Hezbollah"
+      "hezbollahAccountabilityAct": "Initiative de Responsabilité du Hezbollah"
     }
   },
   "Hero": {
@@ -506,32 +506,32 @@
         "tag": "Ouvert aux citoyens de toute nationalité"
       },
       "pac": {
-        "subtitle": "Le Bras Politique",
-        "title": "ALPAC",
-        "desc": "Le SEUL Comité d'Action Politique Américano-Libanais de ce type, dédié au lobbying politique direct.",
-        "tag": "Ouvert uniquement aux citoyens américains"
+        "subtitle": "Le Bras Consultatif",
+        "title": "Conseil Consultatif (ALAC)",
+        "desc": "Le Conseil consultatif américano-libanais, dédié à la fourniture de recherches, de séances d'information stratégiques et d'options de politiques éducatives aux décideurs.",
+        "tag": "Ouvert aux professionnels et aux experts en politiques"
       }
     },
     "baa": {
       "tag": "Campagne Urgente",
-      "title": "La Loi sur la Responsabilité du Hezbollah (HAA)",
-      "desc": "Nous lançons le HAA pour démanteler les réseaux qui tiennent le Liban en otage.",
+      "title": "Initiative de Responsabilité du Hezbollah",
+      "desc": "Nous lançons cette initiative pour étudier et contrer les réseaux qui compromettent la souveraineté du Liban. Il s'agit d'un effort de recherche et d'éducation mené par des experts pour élaborer des options politiques à tous les niveaux.",
       "points": {
         "0": {
-          "title": "Perturber le Financement",
-          "desc": "Perturber le financement mondial et les réseaux d'influence."
+          "title": "Analyser le Financement",
+          "desc": "Analyser et exposer le financement mondial et les réseaux d'influence."
         },
         "1": {
-          "title": "Pression sur le Congrès",
-          "desc": "Faire pression sur le Congrès américain pour des sanctions plus strictes."
+          "title": "Informer le Congrès",
+          "desc": "Fournir des séances d'information sur les cadres de sanctions aux décideurs américains."
         },
         "2": {
-          "title": "Mobiliser la Diaspora",
-          "desc": "Mobiliser la diaspora pour influencer la politique."
+          "title": "Impliquer la Diaspora",
+          "desc": "Impliquer la diaspora pour soutenir la sensibilisation éducative et les solutions fondées sur la recherche."
         },
         "3": {
-          "title": "Cibler les Acteurs Clés",
-          "desc": "Cibler les principaux acteurs du secteur financier."
+          "title": "Enquêter sur les Acteurs",
+          "desc": "Enquêter sur les acteurs clés du secteur financier facilitant les activités illicites."
         }
       }
     },
@@ -647,7 +647,7 @@
       "items": {
         "0": {
           "t": "Loi sur la Responsabilité du Hezbollah",
-          "d": "Lobbying pour la responsabilité légale."
+          "d": "Plaidoyer pour la responsabilité légale et financière du Hezbollah par la recherche et l'éducation."
         },
         "1": {
           "t": "Protection des Investissements",
@@ -935,7 +935,7 @@
         },
         "champion": {
           "label": "CHAMPION",
-          "desc": "Propulsez notre lobbying international et nos événements."
+          "desc": "Soutenez notre sensibilisation éducative internationale et nos événements."
         }
       }
     },
@@ -3599,29 +3599,41 @@
         "description": "Gerez votre adhesion, suivez votre historique de dons et votre badge de niveau de soutien."
       },
       "hezbollah-accountability-act": {
-        "title": "Loi sur la responsabilite du Hezbollah — Campagne et groupe de travail",
-        "description": "Faire progresser la loi sur la responsabilite du Hezbollah pour tenir le Hezbollah responsable et restaurer la souverainete du Liban."
+        "title": "Initiative de Responsabilité du Hezbollah — Recherche & Options Politiques",
+        "description": "Initiative de recherche et d'éducation sur les politiques examinant les options pour contrer l'influence du Hezbollah, soutenir la souveraineté libanaise et éclairer le public sur les mesures de responsabilité."
+      },
+      "why-join-us": {
+        "title": "Pourquoi nous rejoindre — Soutenez la cause | ALEF",
+        "description": "Découvrez pourquoi les leaders mondiaux, activistes et experts politiques rejoignent ALEF pour démanteler la corruption, lutter contre le terrorisme et reconstruire le Liban."
+      },
+      "alef-in-the-news": {
+        "title": "ALEF dans les médias — Couverture de presse et rapports",
+        "description": "Lisez nos derniers communiqués de presse, couvertures médiatiques et annonces publiques sur les campagnes d'ALEF et son influence politique internationale."
+      },
+      "events-gathering-for-a-new-lebanon": {
+        "title": "Rassemblement pour un nouveau Liban — Événement inaugural | ALEF",
+        "description": "Explorez les rapports, médias et résumés du rassemblement historique d'ALEF pour un nouveau Liban à New York."
       }
     }
   },
   "HaaCampaignPage": {
-    "billStamp": "Legislation Proposee · 119eme Congres",
+    "billStamp": "Initiative de Recherche et d'Éducation sur les Politiques",
     "heroTitle": "Tenir le Hezbollah<br /><em>Responsable.</em><br />Restaurer la Souverainete<br />du Liban.",
     "heroTitle1": "Tenir le Hezbollah Responsable.",
     "heroTitle2": "Restaurer la Souverainete du Liban.",
-    "heroSub": "Un groupe de travail d'experts de premier plan et une campagne de plaidoyer nationale pour faire progresser la loi sur la responsabilite du Hezbollah — de la recherche aux couloirs du Congres.",
-    "ctaFund": "Financer la Campagne",
+    "heroSub": "Une initiative de recherche et d'éducation menée par des experts pour examiner les options politiques visant à contrer l'influence du Hezbollah, à soutenir la souveraineté libanaise et à éclairer le public sur les mesures de responsabilité.",
+    "ctaFund": "Soutenir l'Initiative",
     "ctaPetition": "Signer la Petition",
     "stats": {
-      "congressMembers": "Membres du Congres<br />Cibles pour Soutien",
-      "briefingsPlanned": "Briefings du Congres<br />Prevus",
+      "congressMembers": "Bureaux du Congrès<br />Cibles pour Briefings",
+      "briefingsPlanned": "Briefings Éducatifs<br />Prévus",
       "taskForce": "Membres du Groupe<br />de Travail d'Experts",
-      "campaignGoal": "Objectif de<br />la Campagne"
+      "campaignGoal": "Budget du<br />Programme"
     },
     "challenge": {
       "tag": "Le Defi",
-      "title": "L'emprise du Hezbollah sur le Liban exige une action legislative.",
-      "lead": "Des decennies d'influence incontolee — financiere, politique et militaire — ont vide les institutions du Liban et deplace des millions de personnes. Cette campagne fournit l'architecture juridique pour changer cela.",
+      "title": "L'emprise du Hezbollah sur le Liban exige des solutions politiques.",
+      "lead": "Des decennies d'influence incontolee — financiere, politique et militaire — ont vide les institutions du Liban et deplace des millions de personnes. Cette initiative élabore des cadres politiques fondés sur la recherche pour relever ces défis.",
       "pillars": {
         "financial": {
           "title": "Responsabilite Financiere",
@@ -3629,22 +3641,22 @@
         },
         "sovereign": {
           "title": "Restauration Souveraine",
-          "desc": "Rediger et faire progresser une legislation qui reaffirme l'autorite de l'Etat libanais sur toutes les factions armees operant a l'interieur de ses frontieres."
+          "desc": "Analyser et élaborer des options politiques et législatives modèles susceptibles d'aider à réaffirmer l'autorité de l'État libanais sur toutes les factions armées opérant à l'intérieur de ses frontières."
         },
         "congressional": {
           "title": "Engagement du Congres",
-          "desc": "Eduquer et mobiliser les legislateurs americains par des briefings fondes sur des preuves, des livres blancs et le plaidoyer direct de la diaspora."
+          "desc": "Fournir des séances d'information de recherche et des livres blancs fondés sur des preuves aux décideurs politiques et impliquer la diaspora par des activités d'éducation."
         },
         "diaspora": {
           "title": "Mobilisation de la Diaspora",
-          "desc": "Activer plus de 15 000 signataires de petitions et plus de 1 000 nouveaux abonnes organisationnels pour signaler un large soutien politique."
+          "desc": "Sensibiliser le public grâce à une pétition éducative et des campagnes d'information, avec un objectif de 15 000 participants et 1 000 nouveaux abonnés à notre réseau de recherche."
         }
       }
     },
     "taskForce": {
       "tag": "Groupe de Travail d'Experts",
-      "title": "Six a huit specialistes. Un mandat legislatif.",
-      "lead": "Nous assemblons un groupe de travail a huis clos de professionnels qualifies pour rechercher, rediger et defendre la loi HAA — donnant a la legislation la profondeur et la legitimite requises.",
+      "title": "Six a huit specialistes. Recherche indépendante et développement de politiques.",
+      "lead": "Nous assemblons un groupe de travail d'experts composé de professionnels qualifiés pour mener des recherches indépendantes et élaborer des cadres politiques modèles et des options législatives concernant la responsabilité du Hezbollah et la souveraineté libanaise.",
       "roles": {
         "legal": {
           "role": "Expert Juridique",
@@ -3674,28 +3686,28 @@
     },
     "activities": {
       "tag": "Activites Cles",
-      "title": "Rechercher. Informer. Mobiliser. Legiferer.",
-      "lead": "Chaque dollar finance une action specifique et sequencee — de la recherche d'experts a la petition nationale en passant par le soutien au Congres.",
+      "title": "Rechercher. Analyser. Éduquer. Informer.",
+      "lead": "Les ressources soutiennent la recherche d'experts, l'éducation publique, l'analyse des politiques et l'engagement informatif avec les décideurs politiques.",
       "list": {
         "01": {
           "title": "Formation du Groupe de Travail",
-          "desc": "Recruter et integrer 6 a 8 conseillers experts remuneres avec des qualifications eprouvees en droit, finance, renseignement et politique."
+          "desc": "Recruter et intégrer 6 à 8 conseillers experts pour mener des recherches et formuler des recommandations politiques sur les mesures de responsabilité du Hezbollah."
         },
         "02": {
-          "title": "Recherche & Redaction de la Legislation",
-          "desc": "Commander des recherches approfondies et produire un projet complet de la loi sur la responsabilite du Hezbollah."
+          "title": "Recherche & Cadres Politiques",
+          "desc": "Commander des recherches approfondies et élaborer des cadres politiques modèles et des options législatives."
         },
         "03": {
-          "title": "Briefings au Congres",
-          "desc": "Organiser 8 a 12 briefings en personne a Washington et des sessions virtuelles ciblant les principaux bureaux du Congres."
+          "title": "Briefings Éducatifs",
+          "desc": "Organiser 8 à 12 briefings éducatifs à Washington (en personne et virtuels) pour le personnel du Congrès et les parties prenantes."
         },
         "04": {
           "title": "Livre Blanc & Fiches de Synthese",
           "desc": "Produire un livre blanc evalue par des pairs et des notes de synthese politique pour distribution au Congres et aux medias."
         },
         "05": {
-          "title": "Petition Nationale & Publicites",
-          "desc": "Lancer une petition visant plus de 15 000 signatures avec des campagnes publicitaires numeriques ciblees vers la diaspora."
+          "title": "Petition Nationale & Sensibilisation",
+          "desc": "Lancer une pétition d'éducation publique et une campagne de sensibilisation avec diffusion numérique auprès de la diaspora et des parties prenantes."
         },
         "06": {
           "title": "Webinaires & Conferences de Presse",
@@ -3705,10 +3717,10 @@
     },
     "outcomes": {
       "tag": "Resultats sur 12 Mois",
-      "title": "Engagements specifiques. Resultats mesurables.",
-      "lead": "Il ne s'agit pas d'une campagne de sensibilisation. Ce sont des objectifs sur lesquels nous ferons rapport publiquement chaque trimestre.",
+      "title": "Objectifs de Recherche et d'Éducation.",
+      "lead": "Les progrès réalisés concernant les livrables de recherche, les briefings et les indicateurs d'éducation publique feront l'objet de rapports trimestriels.",
       "numbers": [
-        "5+",
+        "8-12",
         "15k+",
         "20+",
         "8k+",
@@ -3716,18 +3728,18 @@
         "12"
       ],
       "list": [
-        "Membres du Congres presentant ou soutenant officiellement le projet de loi HAA",
-        "Signatures de la petition par la diaspora et les communautes alliees aux Etats-Unis",
+        "Bureaux du Congrès engagés par des séances d'information sur la recherche",
+        "Participants engagés dans notre pétition de sensibilisation du public et notre campagne d'information",
         "Plus de 20 placements medias obtenus dans des publications politiques dont The Hill et Foreign Affairs",
         "Plus de 8 000 telechargements du livre blanc dans les six premiers mois suivant sa publication",
-        "Plus de 1 000 nouveaux abonnes organisationnels ajoutes a notre reseau de plaidoyer",
-        "12 briefings au Congres completes — en personne a DC et en virtuel — avec engagements de suivi"
+        "Nouveaux abonnés ajoutés à notre réseau de recherche",
+        "Briefings au Congres completes — en personne a DC et en virtuel — avec engagements de suivi"
       ]
     },
     "budget": {
       "tag": "Exemple de Budget",
       "title": "Ou vont vos dollars.",
-      "lead": "Une allocation optimisee et a fort impact — la majorite de chaque dollar finance l'expertise et l'engagement direct apres du Congres.",
+      "lead": "Une allocation optimisee et a fort impact — la majorite de chaque dollar finance l'expertise et l'engagement direct de recherche et d'éducation.",
       "headers": {
         "item": "Ligne budgetaire",
         "range": "Fourchette"
@@ -3735,14 +3747,14 @@
       "items": {
         "research": "Honoraires d'experts & recherche",
         "briefings": "Briefings au Congres & deplacements",
-        "ads": "Publicites numeriques & plateforme de petition",
+        "ads": "Sensibilisation numérique & plateforme de petition",
         "content": "Production de contenu & traductions",
         "admin": "Plateforme, administration & imprevus"
       },
-      "total": "Objectif de Campagne Total"
+      "total": "Budget Total de l'Initiative"
     },
     "donate": {
-      "tag": "Niveaux de Dons",
+      "tag": "Niveaux de Soutien",
       "title": "Choisissez votre niveau d'impact.",
       "lead": "Chaque contribution est suivie, enregistree et deployee pour une activite specifique de notre feuille de route.",
       "tiers": {
@@ -3750,12 +3762,12 @@
         "advocateTier": "Niveau Defenseur",
         "flagshipTier": "Niveau Gardien",
         "contribute": "Contribuer {amount}",
-        "becomeGuardian": "Devenir un Gardien de l'HAA",
+        "becomeGuardian": "Devenir un Gardien de l'Initiative",
         "supporter": {
           "name": "Partisan",
           "benefits": [
             "Livre blanc numerique des sa publication",
-            "Mises a jour mensuelles sur la campagne",
+            "Mises a jour mensuelles sur l'initiative",
             "Nom repertorie parmi les signataires"
           ]
         },
@@ -3769,11 +3781,11 @@
           ]
         },
         "guardian": {
-          "name": "Gardien de l'HAA",
+          "name": "Gardien de l'Initiative",
           "benefits": [
             "Tous les avantages Defenseur",
-            "Reconnaissance publique comme Gardien de l'HAA",
-            "Appel strategique prive avec le responsable du groupe de travail",
+            "Reconnaissance publique comme Gardien de l'Initiative",
+            "Appel d'information avec les chercheurs du groupe de travail",
             "Invitation a des evenements strategiques exclusifs",
             "Rapport d'impact trimestriel avec attribution"
           ]
@@ -3781,12 +3793,12 @@
       }
     },
     "petition": {
-      "title": "Signer la petition pour la loi sur la responsabilite du Hezbollah",
-      "description": "Signalez votre soutien aux legislateurs americains. Nous avons besoin de 15 000 signatures pour demontrer une forte demande des electeurs.",
+      "title": "Signer la petition pour la responsabilite du Hezbollah",
+      "description": "Signez la pétition pour soutenir la sensibilisation du public et l'éducation sur les mesures de responsabilité concernant l'influence du Hezbollah au Liban.",
       "btnSign": "Signer la Petition",
       "btnSigning": "Soumission...",
       "successTitle": "Merci",
-      "successMsg": "Votre signature a ete enregistree. Ensemble, nous pouvons rendre impossible pour les decideurs politiques d'ignorer la souverainete du Liban.",
+      "successMsg": "Votre signature a ete enregistree. Ensemble, nous pouvons sensibiliser le public et soutenir la souverainete du Liban.",
       "fields": {
         "firstName": "Prenom",
         "lastName": "Nom",
@@ -3794,16 +3806,16 @@
         "phone": "Numero de Telephone"
       },
       "sticky": {
-        "brand": "HAA · Groupe de Travail 2025",
-        "label": "Signatures de Petition",
-        "goal": "/ 15 000",
-        "cta": "Faire un don"
+        "brand": "Initiative de Responsabilité du Hezbollah",
+        "label": "Participants à la Pétition",
+        "goal": "/ 15 000 Participants",
+        "cta": "Soutenez-nous"
       }
     },
     "awareness": {
       "tag": "Strategie de Sensibilisation",
       "title": "Comment nous atteignons les decideurs et la diaspora.",
-      "lead": "Une strategie multicanal coordonnee qui maintient la loi HAA visible, credible et incontournable au Capitole.",
+      "lead": "Une stratégie multicanal coordonnée qui maintient nos conclusions visibles, crédibles et informatives pour les décideurs et le public.",
       "items": {
         "visibility": {
           "title": "Visibilite de la Petition",
@@ -3811,36 +3823,36 @@
         },
         "thought": {
           "title": "Leadership d'Opinion",
-          "desc": "Les membres du groupe de travail publient des tribunes et du contenu LinkedIn pour etablir leur credibilite aupres des decideurs du Congres."
+          "desc": "Les membres du groupe de travail publient des tribunes et du contenu pour etablir leur credibilite aupres des experts politiques et du personnel."
         },
         "pitches": {
           "title": "Relations Medias",
           "desc": "Plaidoyer proactif aupres de Foreign Affairs, The Hill, Lawfare et POLITICO en s'appuyant sur les donnees du livre blanc."
         },
-        "infographics": {
+        "infographies": {
           "title": "Infographies Partageables",
           "desc": "Contenu visuel adapte a la diaspora issu des donnees de la Maison de la Corruption, optimise pour le partage sur Instagram et X."
         },
         "updates": {
           "title": "Suivi Hebdomadaire",
-          "desc": "Rapports de campagne transparents envoyes aux abonnes : nombre de signatures, reunions du Congres obtenues, couverture mediatique."
+          "desc": "Rapports transparents envoyés aux abonnés : nombre de participants, briefings éducatifs obtenus, couverture médiatique."
         },
         "webinars": {
-          "title": "Webinaires Communautaires",
-          "desc": "Sessions strategiques mensuelles pour la diaspora avec Q&R en direct avec les membres du groupe de travail."
+          "title": "Webinaires Éducatifs",
+          "desc": "Webinaires éducatifs mensuels pour la diaspora avec Q&R en direct avec les membres du groupe d'experts."
         }
       }
     },
     "finalCta": {
-      "title": "La souverainete du Liban merite qu'on se batte pour elle.",
-      "text": "Rejoignez des milliers de defenseurs de la diaspora, d'experts juridiques et de citoyens concernes pour faire progresser la loi HAA. Signez la petition. Financez la campagne."
+      "title": "La souveraineté et la sécurité du Liban sont importantes.",
+      "text": "Rejoignez nos efforts de recherche et d'éducation pour mieux comprendre et traiter l'influence du Hezbollah. Signez la pétition pour soutenir la sensibilisation du public."
     }
   },
   "HaaCampaignModal": {
     "badge": "NOUVELLE CAMPAGNE",
-    "title": "Loi sur la responsabilité du Hezbollah",
-    "description": "Nous avons lancé une campagne de plaidoyer nationale et un groupe de travail d'experts pour démanteler les réseaux qui retiennent le Liban en otage et restaurer sa souveraineté.",
-    "ctaAction": "Voir la campagne",
+    "title": "Initiative de Responsabilité du Hezbollah",
+    "description": "Nous avons lancé une initiative de recherche et d'éducation menée par des experts pour examiner les options politiques visant à contrer l'influence du Hezbollah et soutenir la souveraineté libanaise.",
+    "ctaAction": "Voir l'initiative",
     "ctaDismiss": "Plus tard"
   }
 }

@@ -41,7 +41,7 @@
       "getInvolved": "Get Involved",
       "faq": "FAQ",
       "webinars": "Webinars",
-      "hezbollahAccountabilityAct": "Hezbollah Accountability Act"
+      "hezbollahAccountabilityAct": "Hezbollah Accountability Initiative"
     }
   },
   "Hero": {
@@ -506,32 +506,32 @@
         "tag": "Open to citizens of any nationality"
       },
       "pac": {
-        "subtitle": "The Political Arm",
-        "title": "ALPAC",
-        "desc": "The ONLY American Lebanon Political Action Committee of its kind, dedicated to direct political lobbying and legislative influence in the United States.",
-        "tag": "Open only to US citizens"
+        "subtitle": "The Advisory Arm",
+        "title": "ALAC",
+        "desc": "The American Lebanon Advisory Council, dedicated to providing research, strategic briefings, and educational policy options to decision-makers.",
+        "tag": "Open to professionals and policy experts"
       }
     },
     "baa": {
       "tag": "Urgent Campaign",
-      "title": "The Hezbollah Accountability Act (HAA)",
-      "desc": "We are launching the HAA to dismantle the networks that hold Lebanon hostage. This is not a think tank; this is a political action committee building pressure at every level.",
+      "title": "Hezbollah Accountability Initiative",
+      "desc": "We are launching this initiative to study and counter the networks that compromise Lebanon's sovereignty. This is an expert research and educational effort to develop policy options at every level.",
       "points": {
         "0": {
-          "title": "Disrupt Financing",
-          "desc": "Disrupt global financing and influence networks."
+          "title": "Analyze Financing",
+          "desc": "Analyze and expose global financing and influence networks."
         },
         "1": {
-          "title": "Pressure Congress",
-          "desc": "Pressure U.S. Congress & White House for stricter sanctions."
+          "title": "Brief Congress",
+          "desc": "Provide research briefings to U.S. policymakers on sanctions frameworks."
         },
         "2": {
-          "title": "Mobilize Diaspora",
-          "desc": "Mobilize diaspora to influence policy & reshape narratives."
+          "title": "Engage Diaspora",
+          "desc": "Engage the diaspora to support educational outreach and research-based solutions."
         },
         "3": {
-          "title": "Target Key Actors",
-          "desc": "Target financial sector main actors (bankers, ministers)."
+          "title": "Investigate Actors",
+          "desc": "Investigate key actors in the financial sector facilitating illicit activity."
         }
       }
     },
@@ -647,7 +647,7 @@
       "items": {
         "0": {
           "t": "Hezbollah Accountability Act (HAA)",
-          "d": "Lobbying for legal and financial accountability of Hezbollah."
+          "d": "Advocating for legal and financial accountability of Hezbollah through research and education."
         },
         "1": {
           "t": "Investment Protection & Economic Recovery",
@@ -935,7 +935,7 @@
         },
         "champion": {
           "label": "CHAMPION",
-          "desc": "Power our international lobbying and events."
+          "desc": "Power our international educational outreach and events."
         }
       }
     },
@@ -3609,29 +3609,41 @@
         "description": "Manage your membership, view donation history, track your tier badge, and engage with our advocacy network."
       },
       "hezbollah-accountability-act": {
-        "title": "Hezbollah Accountability Act — Campaign & Task Force",
-        "description": "Advancing the Hezbollah Accountability Act to hold Hezbollah accountable and restore Lebanon's sovereignty."
+        "title": "Hezbollah Accountability Initiative — Research & Policy Options",
+        "description": "Policy Research & Education Initiative examining options to counter Hezbollah's influence, support Lebanese sovereignty, and inform public understanding of accountability measures."
+      },
+      "why-join-us": {
+        "title": "Why Join Us — Support the Cause | ALEF",
+        "description": "Discover why global leaders, activists, and policy experts join ALEF to dismantle corruption, fight terrorism, and rebuild Lebanon."
+      },
+      "alef-in-the-news": {
+        "title": "ALEF in the News — Press Coverage & Reports",
+        "description": "Read the latest press releases, media coverage, and public announcements about ALEF's campaigns and international policy influence."
+      },
+      "events-gathering-for-a-new-lebanon": {
+        "title": "Gathering for a New Lebanon — Inaugural Event | ALEF",
+        "description": "Explore reports, media, and summaries from ALEF's historic Gathering for a New Lebanon event in New York City."
       }
     }
   },
   "HaaCampaignPage": {
-    "billStamp": "Proposed Legislation · 119th Congress",
+    "billStamp": "Policy Research & Education Initiative",
     "heroTitle": "Hold Hezbollah<br /><em>Accountable.</em><br />Restore Lebanon's<br />Sovereignty.",
     "heroTitle1": "Hold Hezbollah Accountable.",
     "heroTitle2": "Restore Lebanon's Sovereignty.",
-    "heroSub": "A flagship expert task force and national advocacy campaign to advance the Hezbollah Accountability Act — from research to the halls of Congress.",
-    "ctaFund": "Fund the Campaign",
+    "heroSub": "An expert research and education initiative examining policy options to counter Hezbollah influence, support Lebanese sovereignty, and inform public understanding of accountability measures.",
+    "ctaFund": "Support the Initiative",
     "ctaPetition": "Sign the Petition",
     "stats": {
-      "congressMembers": "Members of Congress<br />Targeted for Support",
-      "briefingsPlanned": "Congressional<br />Briefings Planned",
+      "congressMembers": "Congressional Offices<br />Targeted for Briefings",
+      "briefingsPlanned": "Educational<br />Briefings Planned",
       "taskForce": "Expert Task Force<br />Members",
-      "campaignGoal": "Campaign<br />Goal"
+      "campaignGoal": "Program<br />Budget"
     },
     "challenge": {
       "tag": "The Challenge",
-      "title": "Hezbollah's grip on Lebanon demands legislative action.",
-      "lead": "Decades of unchecked influence — financial, political, and military — have hollowed out Lebanon's institutions and displaced millions. This campaign delivers the legal architecture to change that.",
+      "title": "Hezbollah's grip on Lebanon demands policy solutions.",
+      "lead": "Decades of unchecked influence — financial, political, and military — have hollowed out Lebanon's institutions and displaced millions. This initiative develops research-based policy frameworks to address these challenges.",
       "pillars": {
         "financial": {
           "title": "Financial Accountability",
@@ -3639,22 +3651,22 @@
         },
         "sovereign": {
           "title": "Sovereign Restoration",
-          "desc": "Draft and advance legislation that reasserts Lebanese state authority over all armed factions operating within its borders."
+          "desc": "Analyze and develop model legislative and policy options that could help reassert Lebanese state authority over all armed factions operating within its borders."
         },
         "congressional": {
           "title": "Congressional Engagement",
-          "desc": "Educate and mobilize U.S. lawmakers through evidence-based briefings, white papers, and direct diaspora constituent advocacy."
+          "desc": "Provide evidence-based research briefings and white papers to policymakers and engage diaspora communities through educational outreach."
         },
         "diaspora": {
           "title": "Diaspora Mobilization",
-          "desc": "Activate 15,000+ petition signers and 1,000+ new organizational subscribers to signal broad political support."
+          "desc": "Build public awareness through educational petition and outreach, aiming for 15,000+ participants and 1,000+ new subscribers to our research network."
         }
       }
     },
     "taskForce": {
       "tag": "Expert Task Force",
-      "title": "Six to eight specialists. One legislative mandate.",
-      "lead": "We are assembling a closed-door task force of credentialed professionals to research, draft, and advocate for the HAA — giving the legislation the depth and legitimacy it requires.",
+      "title": "Six to eight specialists. Independent research & policy development.",
+      "lead": "We are assembling an expert task force of credentialed professionals to conduct independent research and develop model policy frameworks and legislative options regarding Hezbollah accountability and Lebanese sovereignty.",
       "roles": {
         "legal": {
           "role": "Legal Expert",
@@ -3684,28 +3696,28 @@
     },
     "activities": {
       "tag": "Key Activities",
-      "title": "Research. Brief. Mobilize. Legislate.",
-      "lead": "Every dollar funds a specific, sequenced action — from expert research through national petition to congressional floor support.",
+      "title": "Research. Analyze. Educate. Inform.",
+      "lead": "Resources support expert research, public education, policy analysis, and informational engagement with policymakers.",
       "list": {
         "01": {
           "title": "Task Force Formation",
-          "desc": "Recruit and onboard 6–8 paid expert advisors with vetted credentials in law, finance, intelligence, and policy."
+          "desc": "Recruit and onboard 6–8 expert advisors with vetted credentials to conduct research and develop policy recommendations on Hezbollah accountability measures."
         },
         "02": {
-          "title": "Research & Legislation Drafting",
-          "desc": "Commission in-depth investigative research and produce a comprehensive draft of the Hezbollah Accountability Act."
+          "title": "Research & Policy Frameworks",
+          "desc": "Commission in-depth investigative research and develop model policy frameworks and legislative options."
         },
         "03": {
-          "title": "Congressional Briefings",
-          "desc": "Organize 8–12 in-person DC briefings and virtual sessions targeting key congressional offices and committee staffers."
+          "title": "Educational Briefings",
+          "desc": "Organize 8–12 educational briefings in DC (in-person and virtual) for congressional staff and policy stakeholders."
         },
         "04": {
           "title": "White Paper & One-Pagers",
           "desc": "Produce a peer-reviewed white paper and concise policy briefs for distribution to Congress and media outlets."
         },
         "05": {
-          "title": "National Petition & Digital Ads",
-          "desc": "Launch a petition targeting 15,000+ signatures with targeted digital ad campaigns reaching diaspora and policymakers."
+          "title": "National Petition & Awareness",
+          "desc": "Launch a public education petition and awareness campaign with digital outreach to diaspora communities and interested stakeholders."
         },
         "06": {
           "title": "Webinars & Press Events",
@@ -3715,10 +3727,10 @@
     },
     "outcomes": {
       "tag": "12-Month Outcomes",
-      "title": "Specific commitments. Measurable results.",
-      "lead": "This is not an awareness campaign. These are targets we will report on publicly every quarter.",
+      "title": "Research & Educational Targets.",
+      "lead": "Progress on research deliverables, briefings, and public education metrics will be reported quarterly.",
       "numbers": [
-        "5+",
+        "8-12",
         "15k+",
         "20+",
         "8k+",
@@ -3726,18 +3738,18 @@
         "12"
       ],
       "list": [
-        "Members of Congress introducing or formally supporting the HAA draft legislation",
-        "Petition signatures from diaspora and allied communities across the United States",
+        "Congressional offices engaged through research briefings",
+        "Participants engaged in our public awareness petition and outreach campaign",
         "Earned media placements in policy-focused outlets including The Hill and Foreign Affairs",
         "White paper downloads within the first six months of public release",
-        "New organizational subscribers added to our advocacy network and donor pipeline",
+        "New subscribers added to our research network",
         "Congressional briefings completed — DC in-person and virtual — with documented follow-up commitments"
       ]
     },
     "budget": {
       "tag": "Sample Budget",
       "title": "Where your dollars go.",
-      "lead": "A lean, high-impact allocation — the majority of every dollar funds expert talent and direct legislative engagement, not overhead.",
+      "lead": "A lean, high-impact allocation — the majority of every dollar funds expert talent and direct research/educational engagement, not overhead.",
       "headers": {
         "item": "Line Item",
         "range": "Range"
@@ -3745,14 +3757,14 @@
       "items": {
         "research": "Expert stipends & research",
         "briefings": "Congressional briefings & travel",
-        "ads": "Digital ads & petition platform",
+        "ads": "Digital outreach & petition platform",
         "content": "Content production & translations",
         "admin": "Platform, admin & contingency"
       },
-      "total": "Total Campaign Goal"
+      "total": "Total Initiative Budget"
     },
     "donate": {
-      "tag": "Donor Tiers",
+      "tag": "Support Levels",
       "title": "Choose your level of impact.",
       "lead": "Every contribution is tracked, acknowledged, and deployed against a specific activity in our 12-month roadmap.",
       "tiers": {
@@ -3760,12 +3772,12 @@
         "advocateTier": "Advocate tier",
         "flagshipTier": "Flagship tier",
         "contribute": "Contribute {amount}",
-        "becomeGuardian": "Become an HAA Guardian",
+        "becomeGuardian": "Become an Initiative Guardian",
         "supporter": {
           "name": "Supporter",
           "benefits": [
             "Digital white paper upon release",
-            "Monthly campaign progress updates",
+            "Monthly progress updates",
             "Name listed in petition supporters"
           ]
         },
@@ -3779,11 +3791,11 @@
           ]
         },
         "guardian": {
-          "name": "HAA Guardian",
+          "name": "Initiative Guardian",
           "benefits": [
             "All Advocate benefits",
-            "\"HAA Guardian\" public recognition",
-            "Private strategy call with task force lead",
+            "\"Initiative Guardian\" public recognition",
+            "Briefing call with task force researchers",
             "Invitation to exclusive strategy events",
             "Quarterly impact report with attribution"
           ]
@@ -3791,12 +3803,12 @@
       }
     },
     "petition": {
-      "title": "Sign the Hezbollah Accountability Act Petition",
-      "description": "Signal your support to U.S. lawmakers. We need 15,000 signatures to demonstrate broad constituent demand.",
+      "title": "Sign the Hezbollah Accountability Petition",
+      "description": "Sign the petition to support public awareness and education on accountability measures for Hezbollah's influence in Lebanon.",
       "btnSign": "Sign Petition",
       "btnSigning": "Submitting...",
       "successTitle": "Thank You",
-      "successMsg": "Your signature has been registered. Together, we can make it impossible for policymakers to ignore Lebanon's sovereignty.",
+      "successMsg": "Your signature has been registered. Together, we can build public awareness and support Lebanon's sovereignty.",
       "fields": {
         "firstName": "First Name",
         "lastName": "Last Name",
@@ -3804,16 +3816,16 @@
         "phone": "Phone Number"
       },
       "sticky": {
-        "brand": "HAA · Task Force 2025",
-        "label": "Petition Signatures",
-        "goal": "/ 15,000",
-        "cta": "Donate Now"
+        "brand": "Hezbollah Accountability Initiative",
+        "label": "Petition Participants",
+        "goal": "/ 15,000 Participants",
+        "cta": "Support Us"
       }
     },
     "awareness": {
       "tag": "Awareness Strategy",
       "title": "How we reach policymakers and the diaspora.",
-      "lead": "A coordinated multi-channel strategy that keeps the HAA visible, credible, and impossible to ignore on Capitol Hill.",
+      "lead": "A coordinated multi-channel strategy that keeps our findings visible, credible, and informative for policymakers and the public.",
       "items": {
         "visibility": {
           "title": "Petition Visibility",
@@ -3821,7 +3833,7 @@
         },
         "thought": {
           "title": "Expert Thought Leadership",
-          "desc": "Task force members publish op-eds and LinkedIn content establishing credibility with policymakers and Hill staffers."
+          "desc": "Task force members publish op-eds and content establishing credibility with policy experts and staffers."
         },
         "pitches": {
           "title": "Policy Media Pitches",
@@ -3833,23 +3845,23 @@
         },
         "updates": {
           "title": "Weekly Progress Updates",
-          "desc": "Transparent campaign reporting sent to all subscribers — signature counts, congressional meetings secured, media coverage."
+          "desc": "Transparent reporting sent to all subscribers — signature counts, educational briefings secured, media coverage."
         },
         "webinars": {
           "title": "Community Webinars",
-          "desc": "Monthly strategy sessions for diaspora stakeholders with live Q&A from task force members and congressional liaisons."
+          "desc": "Monthly educational webinars for diaspora stakeholders with live Q&A from task force members."
         }
       }
     },
     "finalCta": {
-      "title": "Lebanon's sovereignty is worth fighting for.",
-      "text": "Join thousands of diaspora advocates, legal experts, and concerned Americans in advancing the Hezbollah Accountability Act. Sign the petition. Fund the campaign. Make it impossible to ignore."
+      "title": "Lebanon's sovereignty and security matter.",
+      "text": "Join our research and education efforts to better understand and address Hezbollah's influence. Sign the petition to support public awareness."
     }
   },
   "HaaCampaignModal": {
     "badge": "NEW CAMPAIGN",
-    "title": "Hezbollah Accountability Act",
-    "description": "We've launched a national advocacy campaign & expert task force to dismantle the networks holding Lebanon hostage and restore its sovereignty.",
+    "title": "Hezbollah Accountability Initiative",
+    "description": "We've launched an expert research and education initiative to examine policy options to counter Hezbollah's influence and support Lebanese sovereignty.",
     "ctaAction": "View Campaign",
     "ctaDismiss": "Maybe Later"
   }

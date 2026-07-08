@@ -922,7 +922,7 @@ export default function HaaCampaignPage() {
               onClick={(e) => handleScrollTo(e, "petition")}
               className="w-full md:w-auto block text-center bg-red hover:bg-[#b0151b] text-white px-6 py-2.5 font-bold tracking-wider font-oswald uppercase text-xs cursor-pointer"
             >
-              {t("petition.sticky.brand").includes("HAA") ? t("ctaPetition") : "Sign Petition"}
+              {t("petition.btnSign")}
             </a>
           )}
         </div>

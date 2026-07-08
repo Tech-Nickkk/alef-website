@@ -52,6 +52,7 @@ const staticRoutes = [
   { path: '/contact', priority: 0.7 },
   { path: '/faq', priority: 0.7 },
   { path: '/donate', priority: 0.8 },
+  { path: '/hezbollah-accountability-act', priority: 0.8 },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
