@@ -20,6 +20,7 @@ export default function AlefProfilePage() {
                         </div>
 
                         <AnimatedTitle
+                            as="h1"
                             text={t('header.title')}
                             className="text-4xl md:text-7xl lg:text-8xl font-bold font-bebas text-foreground uppercase leading-none"
                         />
@@ -113,6 +114,7 @@ export default function AlefProfilePage() {
                                     </span>
                                 </div>
                                 <AnimatedTitle
+                                    as="h2"
                                     text={t('baa.title')}
                                     className="text-3xl md:text-6xl font-bold font-bebas text-white/95 uppercase leading-none tracking-wide"
                                 />
@@ -147,6 +149,7 @@ export default function AlefProfilePage() {
                 <div className="space-y-8 md:space-y-12">
                     <div className="text-center max-w-3xl mx-auto">
                         <AnimatedTitle
+                            as="h2"
                             text={t('support.title')}
                             className="text-4xl md:text-6xl font-bold font-bebas text-foreground uppercase leading-none"
                         />
@@ -181,6 +184,7 @@ export default function AlefProfilePage() {
                     <div className="max-w-6xl mx-auto space-y-12 md:space-y-16">
                         <div className="text-center">
                             <AnimatedTitle
+                                as="h2"
                                 text={t('whyNow.title')}
                                 className="text-4xl md:text-6xl font-bold font-bebas text-foreground uppercase leading-none"
                             />

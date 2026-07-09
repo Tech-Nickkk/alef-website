@@ -12,12 +12,17 @@ const getAlternateUrls = (route: string) => {
   };
 };
 
-const makeSitemapItem = (route: string, priority: number = 0.8, lastMod?: string | Date) => {
+const makeSitemapItem = (
+  route: string, 
+  priority: number = 0.8, 
+  changeFreq: 'daily' | 'weekly' | 'monthly' = 'weekly',
+  lastMod?: string | Date
+) => {
   const cleanRoute = route === '/' ? '' : route;
   return {
     url: `https://www.usalef.org${cleanRoute}`,
     lastModified: lastMod ? new Date(lastMod) : new Date(),
-    changeFrequency: 'daily' as const,
+    changeFrequency: changeFreq,
     priority,
     alternates: {
       languages: getAlternateUrls(route),
@@ -58,7 +63,7 @@ const staticRoutes = [
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 1. Map static routes
   const staticItems = staticRoutes.map(route =>
-    makeSitemapItem(route.path, route.priority)
+    makeSitemapItem(route.path, route.priority, route.path === '/' ? 'daily' : 'weekly')
   );
 
   // 2. Query Sanity for all blog posts
@@ -67,7 +72,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const blogsQuery = `*[_type == "blog"] { "slug": slug.current, _updatedAt }`;
     const blogs = await client.fetch<{ slug: string; _updatedAt: string }[]>(blogsQuery);
     blogItems = (blogs || []).map(blog => 
-      makeSitemapItem(`/blogs-and-articles/${blog.slug}`, 0.6, blog._updatedAt)
+      makeSitemapItem(`/blogs-and-articles/${blog.slug}`, 0.6, 'weekly', blog._updatedAt)
     );
   } catch (error) {
     console.error("Sitemap generation error fetching blogs:", error);
@@ -75,7 +80,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // 3. Map House of Cards static data
   const cardItems = (CARD_DATA || []).map(card => 
-    makeSitemapItem(`/house-of-cards/${card.id}`, 0.6)
+    makeSitemapItem(`/house-of-cards/${card.id}`, 0.6, 'monthly')
   );
 
   return [

@@ -7,12 +7,14 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
+
 interface AnimatedTitleProps {
     text: string;
     className?: string;
+    as?: "div" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 }
 
-export default function AnimatedTitle({ text, className = "" }: AnimatedTitleProps) {
+export default function AnimatedTitle({ text, className = "", as = "div" }: AnimatedTitleProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const isArabic = /[\u0600-\u06FF]/.test(text);
 
@@ -63,8 +65,10 @@ export default function AnimatedTitle({ text, className = "" }: AnimatedTitlePro
             .replace(/\buppercase\b/g, '');
     }
 
+    const Component = as;
+
     return (
-        <div ref={containerRef} className={finalClassName} aria-label={text} dir={isArabic ? "rtl" : undefined}>
+        <Component ref={containerRef} className={finalClassName} aria-label={text} dir={isArabic ? "rtl" : undefined}>
             {words.map((word, wIdx) => (
                 <span key={wIdx} className="inline-block whitespace-nowrap">
                     {isArabic ? (
@@ -84,6 +88,6 @@ export default function AnimatedTitle({ text, className = "" }: AnimatedTitlePro
                     {wIdx < words.length - 1 && <span>&nbsp;</span>}
                 </span>
             ))}
-        </div>
+        </Component>
     );
-}
+}

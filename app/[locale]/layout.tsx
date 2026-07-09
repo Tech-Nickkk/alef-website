@@ -130,9 +130,7 @@ export async function generateMetadata({
       images: ["https://www.usalef.org/home/logo.png"],
     },
   };
-}
-
-export default async function LocaleLayout({
+}export default async function LocaleLayout({
   children,
   params
 }: {
@@ -148,8 +146,88 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
 
+  // Build dynamic breadcrumbs
+  const headerList = await headers();
+  const rawPathname = headerList.get("x-pathname") || "/";
+  const alternateLocales = ['fr', 'ar', 'es'];
+  const segments = rawPathname.split('/').filter(Boolean);
+  let basePathSegments = [...segments];
+
+  if (segments.length > 0 && alternateLocales.includes(segments[0])) {
+    basePathSegments = segments.slice(1);
+  }
+
+  const breadcrumbList = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": `https://www.usalef.org/${locale === 'en' ? '' : locale}`
+      },
+      ...basePathSegments.map((segment, index) => {
+        const subPath = '/' + basePathSegments.slice(0, index + 1).join('/');
+        const url = locale === 'en' ? `https://www.usalef.org${subPath}` : `https://www.usalef.org/${locale}${subPath}`;
+        const name = segment
+          .split('-')
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ');
+
+        return {
+          "@type": "ListItem",
+          "position": index + 2,
+          "name": name,
+          "item": url
+        };
+      })
+    ]
+  };
+
   return (
     <html lang={locale} dir={dir}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "NonprofitOrganization",
+              "name": "American Lebanon Education Foundation (ALEF)",
+              "url": "https://www.usalef.org",
+              "logo": "https://www.usalef.org/home/logo.png",
+              "sameAs": [
+                "https://twitter.com/usalef",
+                "https://www.facebook.com/usalef",
+                "https://www.linkedin.com/company/usalef"
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "contact@usalef.org",
+                "contactType": "general inquiries"
+              }
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "American Lebanon Education Foundation (ALEF)",
+              "url": "https://www.usalef.org"
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbList)
+          }}
+        />
+      </head>
       <body
         className={`${oswald.variable} ${bebas.variable} antialiased`}
       >

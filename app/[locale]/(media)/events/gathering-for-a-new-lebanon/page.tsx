@@ -1,7 +1,7 @@
 "use client";
 
 import SkeletonImage from "@/app/components/CommonCom/SkeletonImage";
-import { Calendar, MapPin, Clock, ArrowLeft, Mic, X, Play } from "lucide-react";
+import { Calendar, MapPin, Clock, Mic, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -24,7 +24,7 @@ export default function GatheringForNewLebanonPage() {
                 } else {
                     setIsLoading(false);
                 }
-            } catch (error) {
+            } catch {
                 router.push("/events");
             }
         };
@@ -39,9 +39,43 @@ export default function GatheringForNewLebanonPage() {
         );
     }
 
+    const eventSchema = {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": t("hero.titlePart1") + " " + t("hero.titlePart2"),
+        "startDate": "2026-04-14T18:00:00-04:00",
+        "endDate": "2026-04-14T22:00:00-04:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+            "@type": "Place",
+            "name": t("hero.venueName") || "Yara Restaurant",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "319 East 53rd Street",
+                "addressLocality": "New York",
+                "addressRegion": "NY",
+                "postalCode": "10022",
+                "addressCountry": "US"
+            }
+        },
+        "image": [
+            "https://www.usalef.org/events/Event_Image.jpg"
+        ],
+        "description": t("hero.descriptionPart1") + " " + t("hero.descriptionPart2"),
+        "organizer": {
+            "@type": "Organization",
+            "name": "American Lebanon Education Foundation (ALEF)",
+            "url": "https://www.usalef.org"
+        }
+    };
+
     return (
         <main className="min-h-screen bg-background pt-32 pb-24 px-6 md:px-12 lg:px-24 flex flex-col items-center">
-
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+            />
             {/* EVENT HERO */}
             <div className="w-full max-w-7xl mx-auto mb-24">
                 <div className="group relative bg-blue border border-white/10 rounded-sm overflow-hidden shadow-2xl flex flex-col">
@@ -148,7 +182,7 @@ export default function GatheringForNewLebanonPage() {
                         </div>
                         <h4 className="font-bebas text-3xl text-white mb-2">{t("speakers.list.camille.name")}</h4>
                         <div className="text-red font-oswald uppercase tracking-widest text-sm mb-4">{t("speakers.list.camille.title")}</div>
-                        <p className="font-oswald text-white/70 text-lg leading-relaxed flex-grow">{t("speakers.list.camille.desc")}</p>
+                        <p className="font-oswald text-white/70 text-lg leading-relaxed grow">{t("speakers.list.camille.desc")}</p>
                     </div>
 
                     <div className="bg-blue border border-white/10 p-8 rounded-sm shadow-xl relative flex flex-col items-center text-center">
@@ -157,7 +191,7 @@ export default function GatheringForNewLebanonPage() {
                         </div>
                         <h4 className="font-bebas text-3xl text-white mb-2">{t("speakers.list.bruce.name")}</h4>
                         <div className="text-red font-oswald uppercase tracking-widest text-sm mb-4">{t("speakers.list.bruce.title")}</div>
-                        <p className="font-oswald text-white/70 text-lg leading-relaxed flex-grow">{t("speakers.list.bruce.desc")}</p>
+                        <p className="font-oswald text-white/70 text-lg leading-relaxed grow">{t("speakers.list.bruce.desc")}</p>
                     </div>
 
                     <div className="bg-blue border border-white/10 p-8 rounded-sm shadow-xl relative flex flex-col items-center text-center">
@@ -166,7 +200,7 @@ export default function GatheringForNewLebanonPage() {
                         </div>
                         <h4 className="font-bebas text-3xl text-white mb-2">{t("speakers.list.amir.name")}</h4>
                         <div className="text-red font-oswald uppercase tracking-widest text-sm mb-4">{t("speakers.list.amir.title")}</div>
-                        <p className="font-oswald text-white/70 text-lg leading-relaxed flex-grow">{t("speakers.list.amir.desc")}</p>
+                        <p className="font-oswald text-white/70 text-lg leading-relaxed grow">{t("speakers.list.amir.desc")}</p>
                     </div>
                 </div>
             </div>

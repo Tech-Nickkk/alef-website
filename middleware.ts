@@ -9,8 +9,6 @@ export default function middleware(request: NextRequest) {
   request.headers.set('x-url', request.nextUrl.href);
   
   return intlMiddleware(request);
-}
-
-export const config = {
+}export const config = {
   matcher: ['/((?!api|studio|_next|_vercel|.*\\..*).*)']
 };

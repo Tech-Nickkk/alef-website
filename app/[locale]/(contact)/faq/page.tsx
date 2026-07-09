@@ -13,13 +13,28 @@ export default function FAQPage() {
     const toggleFAQ = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
     };
-
     // Get FAQ questions from translations
     const faqKeys = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7'];
 
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqKeys.map((key) => ({
+            "@type": "Question",
+            "name": t(`questions.${key}.question`),
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": t(`questions.${key}.answer`)
+            }
+        }))
+    };
+
     return (
         <div className="bg-background min-h-screen flex flex-col relative overflow-hidden">
-
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
             <main className="grow pt-32 px-4 md:px-8 lg:px-12 max-w-[1400px] mx-auto w-full z-10 relative">
 
                 {/* Header Section */}

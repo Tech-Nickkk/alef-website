@@ -268,6 +268,7 @@ export default function HaaCampaignPage() {
             
             <div className="space-y-2">
               <AnimatedTitle
+                as="h1"
                 text={t("heroTitle1") || "Hold Hezbollah Accountable."}
                 className="text-4xl md:text-7xl lg:text-8xl font-bold font-bebas text-foreground uppercase leading-none"
               />
@@ -346,6 +347,7 @@ export default function HaaCampaignPage() {
               {t("challenge.tag")}
             </span>
             <AnimatedTitle 
+              as="h2"
               text={t("challenge.title")}
               className="text-3xl md:text-5xl lg:text-6xl font-bold font-bebas text-foreground uppercase leading-tight"
             />
@@ -383,6 +385,7 @@ export default function HaaCampaignPage() {
               {t("taskForce.tag")}
             </span>
             <AnimatedTitle 
+              as="h2"
               text={t("taskForce.title")}
               className="text-3xl md:text-5xl lg:text-6xl font-bold font-bebas text-foreground uppercase leading-tight"
             />
@@ -425,6 +428,7 @@ export default function HaaCampaignPage() {
               {t("activities.tag")}
             </span>
             <AnimatedTitle 
+              as="h2"
               text={t("activities.title")}
               className="text-3xl md:text-5xl lg:text-6xl font-bold font-bebas text-foreground uppercase leading-tight"
             />
@@ -462,6 +466,7 @@ export default function HaaCampaignPage() {
               {t("outcomes.tag")}
             </span>
             <AnimatedTitle 
+              as="h2"
               text={t("outcomes.title")}
               className="text-3xl md:text-5xl lg:text-6xl font-bold font-bebas text-foreground uppercase leading-tight"
             />
@@ -496,6 +501,7 @@ export default function HaaCampaignPage() {
               {t("budget.tag")}
             </span>
             <AnimatedTitle 
+              as="h2"
               text={t("budget.title")}
               className="text-3xl md:text-5xl lg:text-6xl font-bold font-bebas text-foreground uppercase leading-tight"
             />
@@ -560,6 +566,7 @@ export default function HaaCampaignPage() {
                 </div>
 
                 <AnimatedTitle 
+                  as="h2"
                   text={t("petition.successTitle") || "Thank You"}
                   className="text-4xl md:text-6xl font-bebas text-white uppercase leading-none"
                 />
@@ -575,6 +582,7 @@ export default function HaaCampaignPage() {
                     {t("petition.sticky.label")}
                   </span>
                   <AnimatedTitle 
+                    as="h2"
                     text={t("petition.title")}
                     className="text-3xl md:text-5xl lg:text-6xl font-bold font-bebas text-white uppercase leading-none"
                   />
@@ -687,6 +695,7 @@ export default function HaaCampaignPage() {
               {t("donate.tag")}
             </span>
             <AnimatedTitle 
+              as="h2"
               text={t("donate.title")}
               className="text-3xl md:text-5xl lg:text-6xl font-bold font-bebas text-foreground uppercase leading-tight"
             />
@@ -806,6 +815,7 @@ export default function HaaCampaignPage() {
               {t("awareness.tag")}
             </span>
             <AnimatedTitle 
+              as="h2"
               text={t("awareness.title")}
               className="text-3xl md:text-5xl lg:text-6xl font-bold font-bebas text-foreground uppercase leading-tight"
             />
@@ -842,6 +852,7 @@ export default function HaaCampaignPage() {
           
           <div className="max-w-2xl mx-auto space-y-4">
             <AnimatedTitle 
+              as="h2"
               text={t("finalCta.title")}
               className="text-3xl md:text-5xl lg:text-6xl font-bold font-bebas text-white uppercase leading-none"
             />
