@@ -67,6 +67,32 @@ export default function GatheringForNewLebanonPage() {
             "@type": "Organization",
             "name": "American Lebanon Education Foundation (ALEF)",
             "url": "https://www.usalef.org"
+        },
+        "performer": [
+            {
+                "@type": "Person",
+                "name": t("gathering.speaker")
+            },
+            {
+                "@type": "Person",
+                "name": t("speakers.list.camille.name")
+            },
+            {
+                "@type": "Person",
+                "name": t("speakers.list.bruce.name")
+            },
+            {
+                "@type": "Person",
+                "name": t("speakers.list.amir.name")
+            }
+        ],
+        "isAccessibleForFree": false,
+        "offers": {
+            "@type": "Offer",
+            "url": "https://www.usalef.org/events/gathering-for-a-new-lebanon",
+            "price": "150",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/SoldOut"
         }
     };
 
