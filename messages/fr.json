@@ -1015,6 +1015,14 @@
     },
     "latestItems": [
       {
+        "tag": "COMMUNIQUÉ DE PRESSE",
+        "title": "La membre éminente Shaheen et le sénateur Lankford présentent une législation pour soutenir la souveraineté du Liban et contrer le Hezbollah",
+        "committee": "Commission des affaires étrangères du Sénat",
+        "access": "Lire le communiqué de presse",
+        "date": "7 Août 2026",
+        "link": "https://www.foreign.senate.gov/press/dem/release/ranking-member-shaheen-senator-lankford-introduce-legislation-to-support-lebanons-sovereignty-and-counter-hezbollah"
+      },
+      {
         "tag": "DÉCLARATION DE PRESSE",
         "title": "Les États-Unis imposent des sanctions à des responsables et partenaires commerciaux alignés sur le Hezbollah",
         "committee": "Département d'État des États-Unis",
@@ -2769,21 +2777,21 @@
     "subtitle": "ARCHIVES MÉDIAS",
     "title": "VIDÉOS",
     "description": "Regardez nos dernières couvertures, interviews et analyses approfondies.",
-    "submitTitle": "Submit Your Video",
-    "submitDesc": "Share your video content with our editorial board for review."
+    "submitTitle": "Soumettre votre vidéo",
+    "submitDesc": "Partagez votre contenu vidéo avec notre comité de rédaction pour examen."
   },
   "ShortsPage": {
     "subtitle": "ARCHIVES MÉDIAS",
     "title": "SHORTS",
-    "submitTitle": "Submit Your Short",
-    "submitDesc": "Share your short content with our editorial board for review."
+    "submitTitle": "Soumettre votre vidéo courte",
+    "submitDesc": "Partagez votre contenu vidéo court avec notre comité de rédaction pour examen."
   },
   "PodcastsPage": {
     "subtitle": "ARCHIVES AUDIO",
     "title": "PODCAST",
     "description": "Conversations critiques sur la géopolitique, l'économie et les forces invisibles qui façonnent notre monde.",
-    "submitTitle": "Submit Your Podcast",
-    "submitDesc": "Share your podcast with our editorial board for review."
+    "submitTitle": "Soumettre votre podcast",
+    "submitDesc": "Partagez votre podcast avec notre comité de rédaction pour examen."
   },
   "EventsPage": {
     "header": {
@@ -3854,5 +3862,25 @@
     "description": "Nous avons lancé une initiative de recherche et d'éducation menée par des experts pour examiner les options politiques visant à contrer l'influence du Hezbollah et soutenir la souveraineté libanaise.",
     "ctaAction": "Voir l'initiative",
     "ctaDismiss": "Plus tard"
+  },
+  "SubmitBanner": {
+    "contribute": "Contribution",
+    "getInvolved": "S'impliquer",
+    "fastReview": "Examen rapide",
+    "within48Hours": "Sous 48 heures",
+    "wideReach": "Grande portée",
+    "globalAudience": "Audience mondiale"
+  },
+  "GetInvolvedPage": {
+    "joinOurMission": "Rejoignez Notre Mission",
+    "chooseHow": "Choisissez comment vous souhaitez contribuer à notre plateforme. Que vous soyez rédacteur, créateur ou orateur, votre voix compte ici.",
+    "submitArticle": "Soumettre un article",
+    "submitArticleDesc": "Partagez vos articles, essais et tribunes bien documentés avec notre audience mondiale.",
+    "submitVideo": "Soumettre une vidéo",
+    "submitVideoDesc": "Contribuez avec des vidéos de haute qualité, des analyses ou des documentaires à diffuser sur notre plateforme.",
+    "submitShort": "Soumettre un short",
+    "submitShortDesc": "Partagez des contenus courts et engageants au format vertical conçus pour un impact maximal.",
+    "submitPodcast": "Soumettre un podcast",
+    "submitPodcastDesc": "Soumettez vos épisodes de podcast ou vos discussions audio pour examen par notre comité de rédaction."
   }
 }

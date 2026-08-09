@@ -1017,6 +1017,14 @@
     "latestItems": [
       {
         "tag": "بيان صحفي",
+        "title": "العضو البارز شاهين والسيناتور لأنكفورد يقدمان تشريعاً لدعم سيادة لبنان ومواجهة حزب الله",
+        "committee": "لجنة العلاقات الخارجية بمجلس الشيوخ",
+        "access": "اقرأ البيان الصحفي",
+        "date": "7 أغسطس 2026",
+        "link": "https://www.foreign.senate.gov/press/dem/release/ranking-member-shaheen-senator-lankford-introduce-legislation-to-support-lebanons-sovereignty-and-counter-hezbollah"
+      },
+      {
+        "tag": "بيان صحفي",
         "title": "الولايات المتحدة تفرض عقوبات على مسؤولين وشركاء تجاريين متحالفين مع حزب الله",
         "committee": "وزارة الخارجية الأمريكية",
         "access": "اقرأ البيان الصحفي",
@@ -2800,21 +2808,21 @@
     "subtitle": "أرشيف الوسائط",
     "title": "فيديوهات",
     "description": "شاهد أحدث تغطياتنا ومقابلاتنا وتحليلاتنا المتعمقة.",
-    "submitTitle": "Submit Your Video",
-    "submitDesc": "Share your video content with our editorial board for review."
+    "submitTitle": "أرسل الفيديو الخاص بك",
+    "submitDesc": "شارك محتوى الفيديو الخاص بك مع هيئة التحرير لدينا للمراجعة."
   },
   "ShortsPage": {
     "subtitle": "أرشيف الوسائط",
     "title": "فيديوهات قصيرة",
-    "submitTitle": "Submit Your Short",
-    "submitDesc": "Share your short content with our editorial board for review."
+    "submitTitle": "أرسل الفيديو القصير الخاص بك",
+    "submitDesc": "شارك محتوى الفيديو القصير الخاص بك مع هيئة التحرير لدينا للمراجعة."
   },
   "PodcastsPage": {
     "subtitle": "أرشيف صوتي",
     "title": "بودكاست",
     "description": "حوارات نقدية في الجيوسياسية والاقتصاد والقوى الخفية التي تشكل عالمنا.",
-    "submitTitle": "Submit Your Podcast",
-    "submitDesc": "Share your podcast with our editorial board for review."
+    "submitTitle": "أرسل البودكاست الخاص بك",
+    "submitDesc": "شارك البودكاست الخاص بك مع هيئة التحرير لدينا للمراجعة."
   },
   "EventsPage": {
     "header": {
@@ -3873,5 +3881,25 @@
     "description": "لقد أطلقنا مبادرة بحثية وتعليمية من الخبراء لدراسة خيارات السياسات الرامية لمواجهة نفوذ حزب الله ودعم السيادة اللبنانية.",
     "ctaAction": "عرض المبادرة",
     "ctaDismiss": "ربما لاحقاً"
+  },
+  "SubmitBanner": {
+    "contribute": "مساهمة",
+    "getInvolved": "شارك معنا",
+    "fastReview": "مراجعة سريعة",
+    "within48Hours": "خلال 48 ساعة",
+    "wideReach": "انتشار واسع",
+    "globalAudience": "جمهور عالمي"
+  },
+  "GetInvolvedPage": {
+    "joinOurMission": "انضم إلى مهمتنا",
+    "chooseHow": "اختر كيف تريد المساهمة في منصتنا. سواء كنت كاتباً، صانع محتوى، أو متحدثاً، فإن صوتك يهمنا هنا.",
+    "submitArticle": "أرسل مقالك",
+    "submitArticleDesc": "شارك مقالاتك وأبحاثك وآرائك المدروسة جيداً مع جمهورنا العالمي.",
+    "submitVideo": "أرسل الفيديو الخاص بك",
+    "submitVideoDesc": "ساهم بفيديوهات عالية الجودة، تحليلات، أو وثائقيات لعرضها على منصتنا.",
+    "submitShort": "أرسل الفيديو القصير الخاص بك",
+    "submitShortDesc": "شارك محتوى عمودي قصير وجذاب مصمم لتحقيق أقصى تأثير.",
+    "submitPodcast": "أرسل البودكاست الخاص بك",
+    "submitPodcastDesc": "أرسل حلقات البودكاست أو النقاشات الصوتية الخاصة بك للمراجعة من قبل هيئة التحرير لدينا."
   }
 }

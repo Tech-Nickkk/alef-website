@@ -1015,6 +1015,14 @@
     },
     "latestItems": [
       {
+        "tag": "PRESS RELEASE",
+        "title": "Ranking Member Shaheen, Senator Lankford Introduce Legislation to Support Lebanon’s Sovereignty and Counter Hezbollah",
+        "committee": "Senate Foreign Relations Committee",
+        "access": "Read Press Release",
+        "date": "August 7, 2026",
+        "link": "https://www.foreign.senate.gov/press/dem/release/ranking-member-shaheen-senator-lankford-introduce-legislation-to-support-lebanons-sovereignty-and-counter-hezbollah"
+      },
+      {
         "tag": "PRESS STATEMENT",
         "title": "U.S. Imposes Sanctions on Hizballah-Aligned Officials and Business Associates",
         "committee": "United States Department of State",
@@ -3864,5 +3872,25 @@
     "description": "We've launched an expert research and education initiative to examine policy options to counter Hezbollah's influence and support Lebanese sovereignty.",
     "ctaAction": "View Campaign",
     "ctaDismiss": "Maybe Later"
+  },
+  "SubmitBanner": {
+    "contribute": "Contribute",
+    "getInvolved": "Get Involved",
+    "fastReview": "Fast Review",
+    "within48Hours": "Within 48 Hours",
+    "wideReach": "Wide Reach",
+    "globalAudience": "Global Audience"
+  },
+  "GetInvolvedPage": {
+    "joinOurMission": "Join Our Mission",
+    "chooseHow": "Choose how you want to contribute to our platform. Whether you are a writer, creator, or speaker, your voice matters here.",
+    "submitArticle": "Submit Article",
+    "submitArticleDesc": "Share your well-researched articles, essays, and opinion pieces with our global audience.",
+    "submitVideo": "Submit Video",
+    "submitVideoDesc": "Contribute high-quality videos, analysis, or documentaries to feature on our platform.",
+    "submitShort": "Submit Short",
+    "submitShortDesc": "Share quick, engaging vertical short-form content designed for maximum impact.",
+    "submitPodcast": "Submit Podcast",
+    "submitPodcastDesc": "Submit your podcast episodes or audio discussions for our editorial review."
   }
 }

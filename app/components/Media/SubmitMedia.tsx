@@ -14,6 +14,7 @@ export default function SubmitMedia({ type }: SubmitMediaProps) {
     const tVideos = useTranslations('VideosPage');
     const tShorts = useTranslations('ShortsPage');
     const tPodcasts = useTranslations('PodcastsPage');
+    const tBanner = useTranslations('SubmitBanner');
 
     let title = "";
     let desc = "";
@@ -58,7 +59,7 @@ export default function SubmitMedia({ type }: SubmitMediaProps) {
                                 {/* Badge */}
                                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red/20 border border-red/30 backdrop-blur-sm">
                                     <span className="font-oswald text-xs text-red uppercase tracking-widest font-semibold">
-                                        Contribute
+                                        {tBanner('contribute')}
                                     </span>
                                 </div>
 
@@ -79,7 +80,7 @@ export default function SubmitMedia({ type }: SubmitMediaProps) {
                                             onClick={() => sendGAEvent('event', 'submit_media_cta_click', { media_type: type })}
                                             className="inline-flex items-center gap-3 px-8 py-4 bg-red hover:bg-red/90 text-white font-oswald font-bold tracking-widest uppercase rounded-xl transition-all duration-300 shadow-lg shadow-red/30 cursor-pointer"
                                         >
-                                            <span>Get Involved</span>
+                                            <span>{tBanner('getInvolved')}</span>
                                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                         </div>
                                     </Link>
@@ -88,13 +89,13 @@ export default function SubmitMedia({ type }: SubmitMediaProps) {
                                 {/* Stats */}
                                 <div className="flex items-center gap-8 pt-4">
                                     <div>
-                                        <div className="text-2xl font-bebas text-white">Fast Review</div>
-                                        <div className="text-xs font-oswald text-white/50 uppercase tracking-wider">Within 48 Hours</div>
+                                        <div className="text-2xl font-bebas text-white">{tBanner('fastReview')}</div>
+                                        <div className="text-xs font-oswald text-white/50 uppercase tracking-wider">{tBanner('within48Hours')}</div>
                                     </div>
                                     <div className="w-px h-12 bg-white/10" />
                                     <div>
-                                        <div className="text-2xl font-bebas text-white">Wide Reach</div>
-                                        <div className="text-xs font-oswald text-white/50 uppercase tracking-wider">Global Audience</div>
+                                        <div className="text-2xl font-bebas text-white">{tBanner('wideReach')}</div>
+                                        <div className="text-xs font-oswald text-white/50 uppercase tracking-wider">{tBanner('globalAudience')}</div>
                                     </div>
                                 </div>
                             </div>

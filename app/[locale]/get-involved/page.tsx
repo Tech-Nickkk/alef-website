@@ -8,33 +8,35 @@ import GlowingGrid from "@/app/components/CommonCom/GlowingGrid";
 
 export default function GetInvolvedPage() {
     const tNavbar = useTranslations('Navbar.menu');
+    const tGetInvolved = useTranslations('GetInvolvedPage');
+    const tBanner = useTranslations('SubmitBanner');
 
     const involvementOptions = [
         {
             id: "article",
-            title: "Submit Article",
-            desc: "Share your well-researched articles, essays, and opinion pieces with our global audience.",
+            title: tGetInvolved("submitArticle"),
+            desc: tGetInvolved("submitArticleDesc"),
             href: "/submit-article",
             icon: PenTool
         },
         {
             id: "video",
-            title: "Submit Video",
-            desc: "Contribute high-quality videos, analysis, or documentaries to feature on our platform.",
+            title: tGetInvolved("submitVideo"),
+            desc: tGetInvolved("submitVideoDesc"),
             href: "/submit-video",
             icon: Video
         },
         {
             id: "short",
-            title: "Submit Short",
-            desc: "Share quick, engaging vertical short-form content designed for maximum impact.",
+            title: tGetInvolved("submitShort"),
+            desc: tGetInvolved("submitShortDesc"),
             href: "/submit-short",
             icon: Smartphone
         },
         {
             id: "podcast",
-            title: "Submit Podcast",
-            desc: "Submit your podcast episodes or audio discussions for our editorial review.",
+            title: tGetInvolved("submitPodcast"),
+            desc: tGetInvolved("submitPodcastDesc"),
             href: "/submit-podcast",
             icon: Mic
         }
@@ -53,7 +55,7 @@ export default function GetInvolvedPage() {
                     <div className="inline-flex items-center gap-2 bg-foreground/5 border border-foreground/10 px-4 py-2 rounded-full mb-2">
                         <span className="w-2 h-2 bg-red rounded-full animate-pulse" />
                         <span className="font-oswald text-xs text-foreground/60 uppercase tracking-widest">
-                            Join Our Mission
+                            {tGetInvolved('joinOurMission')}
                         </span>
                     </div>
                     <AnimatedTitle
@@ -61,7 +63,7 @@ export default function GetInvolvedPage() {
                         className="text-5xl md:text-7xl lg:text-8xl font-bebas text-foreground leading-none tracking-wide"
                     />
                     <p className="font-oswald text-lg md:text-xl text-foreground/60 max-w-2xl mx-auto leading-relaxed">
-                        Choose how you want to contribute to our platform. Whether you are a writer, creator, or speaker, your voice matters here.
+                        {tGetInvolved('chooseHow')}
                     </p>
                 </div>
 
@@ -80,7 +82,7 @@ export default function GetInvolvedPage() {
                                     {/* Badge */}
                                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red/20 border border-red/30 backdrop-blur-sm pointer-events-none">
                                         <span className="font-oswald text-xs text-red uppercase tracking-widest font-semibold">
-                                            Contribute
+                                            {tBanner('contribute')}
                                         </span>
                                     </div>
                                     {/* Icon */}
@@ -99,7 +101,7 @@ export default function GetInvolvedPage() {
                             <div className="relative z-30 pt-4 mt-auto">
                                 <Link href={option.href} className="group">
                                     <div className="inline-flex items-center gap-3 px-8 py-4 bg-red hover:bg-red/90 text-white font-oswald font-bold tracking-widest uppercase rounded-xl transition-all duration-300 shadow-lg shadow-red/30 cursor-pointer">
-                                        <span>Get Involved</span>
+                                        <span>{tBanner('getInvolved')}</span>
                                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                     </div>
                                 </Link>
