@@ -1,17 +1,38 @@
 "use client";
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { useRouter, Link } from '@/i18n/routing';
 
 export default function SuccessPage() {
     const searchParams = useSearchParams();
     const sessionId = searchParams.get('session_id');
+    const router = useRouter();
     const [showConfetti, setShowConfetti] = useState(false);
+    const [particles, setParticles] = useState<Array<{ top: string; left: string; animationDelay: string; transform: string }>>([]);
 
     useEffect(() => {
-        // Trigger animation on mount
-        setShowConfetti(true);
-    }, []);
+        if (!sessionId) {
+            router.replace('/donate');
+            return;
+        }
+        
+        const handle = requestAnimationFrame(() => {
+            const items = Array.from({ length: 20 }, () => ({
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 2}s`,
+                transform: `scale(${Math.random() * 2})`,
+            }));
+            setParticles(items);
+            setShowConfetti(true);
+        });
+
+        return () => cancelAnimationFrame(handle);
+    }, [sessionId, router]);
+
+    if (!sessionId) {
+        return null;
+    }
 
     return (
         <main className="min-h-screen bg-background flex items-center justify-center px-6 relative overflow-hidden">
@@ -46,7 +67,7 @@ export default function SuccessPage() {
                     <div className="bg-background/50 rounded-xl p-6 border border-foreground/5 text-sm font-oswald text-foreground/50 uppercase tracking-widest">
                         <p>Transaction ID</p>
                         <p className="text-foreground mt-1 font-sans normal-case opacity-80 break-all">
-                            {sessionId || "Processing..."}
+                            {sessionId}
                         </p>
                     </div>
 
@@ -68,16 +89,11 @@ export default function SuccessPage() {
             {/* Simple CSS Confetti Dots (Optional visual flair) */}
             {showConfetti && (
                 <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                    {[...Array(20)].map((_, i) => (
+                    {particles.map((style, i) => (
                         <div 
                             key={i}
                             className="absolute w-2 h-2 bg-red/40 rounded-full animate-pulse"
-                            style={{
-                                top: `${Math.random() * 100}%`,
-                                left: `${Math.random() * 100}%`,
-                                animationDelay: `${Math.random() * 2}s`,
-                                transform: `scale(${Math.random() * 2})`
-                            }}
+                            style={style}
                         />
                     ))}
                 </div>
