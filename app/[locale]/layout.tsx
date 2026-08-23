@@ -7,7 +7,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import Script from 'next/script';
 
 const bebas = Bebas_Neue({
@@ -237,6 +237,9 @@ export async function generateMetadata({
           </LayoutWrapper>
           <Analytics />
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''} />
+          {process.env.NEXT_PUBLIC_GTM_ID && (
+            <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+          )}
 
           {/* GoHighLevel Chat Widget — site-wide */}
           <Script
