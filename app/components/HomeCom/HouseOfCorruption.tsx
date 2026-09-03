@@ -64,9 +64,9 @@ export default function HouseOfCorruption() {
                         <div className="relative w-full h-full rounded-xl overflow-hidden">
                             <SkeletonImage
                                 src={
-                                    locale === 'ar' ? '/houseOfCorruption/house-of-corruption-img-7-arabic.png' :
-                                        locale === 'fr' ? '/houseOfCorruption/house-of-corruption-img-7-french.png' :
-                                            locale === 'es' ? '/houseOfCorruption/house-of-corruption-img-7-spanish.png' :
+                                    locale === 'ar' ? '/houseOfCorruption/house-of-corruption-img-7-arabic.webp' :
+                                        locale === 'fr' ? '/houseOfCorruption/house-of-corruption-img-7-french.webp' :
+                                            locale === 'es' ? '/houseOfCorruption/house-of-corruption-img-7-spanish.webp' :
                                                 '/houseOfCorruption/house-of-corruption-img-7.jpg'
                                 }
                                 alt="$1 Trillion Robbery"

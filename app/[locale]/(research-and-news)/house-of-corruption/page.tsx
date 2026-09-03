@@ -75,23 +75,10 @@ export default function HouseOfCorruptionPage() {
         else if (locale === 'fr') suffix = "-french";
         else if (locale === 'es') suffix = "-spanish";
 
-        // Handle specific extensions based on the file list
         let ext = defaultExt;
         if (suffix !== "") {
-            // based on file list, all localized files are .png except none? all seem to be .png in list
-            // "house-of-corruption-img-1-arabic.png", "house-of-corruption-img-1.jpg"
-            // So for localized, it is .png. For default, it is mixed (.jpg or .png)
-            ext = ".png";
+            ext = ".webp";
         }
-
-        // Wait, looking at the file list:
-        // img-1: default jpg, localized png
-        // img-2: default jpg, localized png
-        // img-3: default jpg, localized png
-        // img-4: default jpg, localized png
-        // img-5: default jpg, localized png
-        // img-6: default png, localized png
-        // img-7: default jpg, localized png
 
         return `/houseOfCorruption/house-of-corruption-${id.replace('img', 'img-')}${suffix}${ext}`;
     };
@@ -105,7 +92,7 @@ export default function HouseOfCorruptionPage() {
         // Right Lane: 4, 5, 6
         { id: "img4", src: getLocalizedImage("img4", ".jpg"), side: "right" },
         { id: "img5", src: getLocalizedImage("img5", ".jpg"), side: "right" },
-        { id: "img6", src: getLocalizedImage("img6", ".png"), side: "right" }, // img6 default is png
+        { id: "img6", src: getLocalizedImage("img6", ".webp"), side: "right" },
     ];
 
     const indirectStats = [

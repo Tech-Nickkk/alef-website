@@ -108,26 +108,26 @@ export default function HouseOfCards() {
         {
             slug: "michel-aoun",
             key: "michel",
-            front: "/houseOfCards/aceOfClubs.png",
-            back: "/home/card-back.png"
+            front: "/houseOfCards/aceOfClubs.webp",
+            back: "/home/card-back.webp"
         },
         {
             slug: "naim-qassem",
             key: "naim",
-            front: "/houseOfCards/aceOfDiamonds.png",
-            back: "/home/card-back.png"
+            front: "/houseOfCards/aceOfDiamonds.webp",
+            back: "/home/card-back.webp"
         },
         {
             slug: "riad-salameh",
             key: "riad",
-            front: "/houseOfCards/kingOfDiamonds.png",
-            back: "/home/card-back.png"
+            front: "/houseOfCards/kingOfDiamonds.webp",
+            back: "/home/card-back.webp"
         },
         {
             slug: "walid-jumblatt",
             key: "walid",
-            front: "/houseOfCards/kingOfSpades.png",
-            back: "/home/card-back.png"
+            front: "/houseOfCards/kingOfSpades.webp",
+            back: "/home/card-back.webp"
         }
     ];
 

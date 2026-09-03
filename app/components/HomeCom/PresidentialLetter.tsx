@@ -27,10 +27,10 @@ export default function PresidentialLetter() {
                     <div className="absolute inset-0 z-10 pointer-events-none"></div>
                     <SkeletonImage
                         src={
-                            locale === 'ar' ? '/home/presidentialLetterArabic.png' :
-                                locale === 'fr' ? '/home/presidentialLetterFrench.png' :
-                                    locale === 'es' ? '/home/presidentialLetterSpanish.png' :
-                                        '/home/presidentialLetter.png'
+                            locale === 'ar' ? '/home/presidentialLetterArabic.webp' :
+                                locale === 'fr' ? '/home/presidentialLetterFrench.webp' :
+                                    locale === 'es' ? '/home/presidentialLetterSpanish.webp' :
+                                        '/home/presidentialLetter.webp'
                         }
                         alt={t('alt')}
                         width={1000}

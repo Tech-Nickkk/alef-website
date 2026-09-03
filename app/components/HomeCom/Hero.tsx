@@ -14,16 +14,11 @@ export default function Hero() {
     const t = useTranslations('Hero');
     const heroRef = useRef<HTMLElement>(null);
     const videoRef = useRef<HTMLDivElement>(null);
-    const [isMounted, setIsMounted] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
     const [isModalVideoLoaded, setIsModalVideoLoaded] = useState(false);
 
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
-
     useGSAP(() => {
+        if (typeof window !== 'undefined' && window.innerWidth < 768) return;
         if (videoRef.current) {
             gsap.to(videoRef.current, {
                 yPercent: 20,
@@ -36,7 +31,7 @@ export default function Hero() {
                 },
             });
         }
-    }, { scope: heroRef, dependencies: [isMounted] });
+    }, { scope: heroRef });
 
     const scrollToJoin = (e: React.MouseEvent) => {
         e.preventDefault();
@@ -59,28 +54,21 @@ export default function Hero() {
         };
     }, [isModalOpen]);
 
-    if (!isMounted) {
-        return (
-            <section ref={heroRef} className="relative min-h-screen flex flex-col overflow-hidden bg-black">
-                <Skeleton className="absolute inset-0 w-full h-full" />
-            </section>
-        );
-    }
-
     return (
-        <section ref={heroRef} className="relative min-h-screen flex flex-col overflow-hidden">
+        <section ref={heroRef} className="relative min-h-screen flex flex-col overflow-hidden bg-black">
             {/* Background Video */}
             <div ref={videoRef} className="absolute inset-0 z-0 hero-video pointer-events-none">
-                {!isVideoLoaded && <Skeleton className="absolute inset-0 w-full h-full z-10" />}
                 <video
-                    className={`absolute top-1/2 left-1/2 w-full h-full min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover transition-opacity duration-700 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
+                    className="absolute top-1/2 left-1/2 w-full h-full min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover"
                     autoPlay
                     muted
                     loop
                     playsInline
-                    onLoadedData={() => setIsVideoLoaded(true)}
+                    preload="auto"
+                    poster="/home/hero-poster.webp"
                 >
-                    <source src="/home/hero-intro-video.mp4" type="video/mp4" />
+                    <source src="/home/Hero_Intro_Video_mobile.mp4" media="(max-width: 768px)" type="video/mp4" />
+                    <source src="/home/Hero_Intro_Video.mp4" type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 bg-linear-to-r from-black/60 via-black/30 to-transparent" />
                 <div className="absolute inset-0 bg-black/20" />
@@ -139,6 +127,7 @@ export default function Hero() {
                             controls
                             autoPlay
                             playsInline
+                            poster="/home/hero-detailed-poster.webp"
                             onLoadedData={() => setIsModalVideoLoaded(true)}
                         >
                             <source src="/home/hero-detailed-video.mp4" type="video/mp4" />

@@ -13,18 +13,27 @@ export default function HaaCampaignModal({ isFirstLoad }: { isFirstLoad: boolean
 
   useEffect(() => {
     if (!isFirstLoad) return;
-    // Delay opening slightly for an elegant, premium intro feel
-    const timer = setTimeout(() => {
-      setIsRendered(true);
-      // Small delay to allow the opacity transition to trigger smoothly
-      setTimeout(() => setIsOpen(true), 50);
-    }, 1000);
-    return () => clearTimeout(timer);
+    if (typeof window !== "undefined" && sessionStorage.getItem("haa_modal_dismissed")) {
+      return;
+    }
+
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setIsRendered(true);
+        setTimeout(() => setIsOpen(true), 50);
+        window.removeEventListener("scroll", handleScroll);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isFirstLoad]);
 
   const handleClose = () => {
     setIsOpen(false);
-    // Wait for the transition to finish before unmounting
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("haa_modal_dismissed", "true");
+    }
     setTimeout(() => {
       setIsRendered(false);
     }, 300);

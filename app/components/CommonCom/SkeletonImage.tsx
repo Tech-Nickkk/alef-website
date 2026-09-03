@@ -17,16 +17,16 @@ export function Skeleton({ className = "" }: SkeletonProps) {
     );
 }
 
-export default function SkeletonImage({ className = "", onLoad, ...props }: ImageProps) {
+export default function SkeletonImage({ className = "", onLoad, alt = "", ...props }: ImageProps) {
     const [isLoading, setIsLoading] = useState(true);
 
     return (
         <>
             {isLoading && <Skeleton className={`absolute inset-0 z-10 ${className}`} />}
             <Image
+                alt={alt}
                 {...props}
-                className={`${className} transition-opacity duration-500 ${isLoading ? "opacity-0" : "opacity-100"
-                    }`}
+                className={`${className} transition-opacity duration-500 ${isLoading ? "opacity-0" : "opacity-100"}`}
                 onLoad={(e) => {
                     setIsLoading(false);
                     if (onLoad) onLoad(e);

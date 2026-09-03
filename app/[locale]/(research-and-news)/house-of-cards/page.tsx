@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 import { CARD_DATA } from "./card-data";
 
-const BACK_IMAGE = "/home/card-back.png";
+const BACK_IMAGE = "/home/card-back.webp";
 
 export default function HouseOfCardsPage() {
     const t = useTranslations("HouseOfCardsPage");

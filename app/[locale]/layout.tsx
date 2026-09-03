@@ -14,12 +14,14 @@ const bebas = Bebas_Neue({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-bebas",
+  display: "swap",
 });
 
 const oswald = Oswald({
   subsets: ["latin"],
   variable: "--font-oswald",
   weight: ["200", "300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 import { headers } from "next/headers";
@@ -188,6 +190,7 @@ export async function generateMetadata({
   return (
     <html lang={locale} dir={dir}>
       <head>
+        <link rel="preload" as="image" href="/home/hero-poster.webp" type="image/webp" fetchPriority="high" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -28,10 +28,10 @@ export default function BookRecommendationsPage() {
                         {/* Uncomment locally once file is moved: */}
                         <Image
                             src={
-                                locale === 'ar' ? '/research/BookrecommendationsArabic.png' :
-                                    locale === 'fr' ? '/research/BookrecommendationsFrench.png' :
-                                        locale === 'es' ? '/research/BookrecommendationsSpanish.png' :
-                                            '/research/Bookrecommendations.png'
+                                locale === 'ar' ? '/research/BookrecommendationsArabic.webp' :
+                                    locale === 'fr' ? '/research/BookrecommendationsFrench.webp' :
+                                        locale === 'es' ? '/research/BookrecommendationsSpanish.webp' :
+                                            '/research/Bookrecommendations.webp'
                             }
                             alt="Book Recommendations"
                             fill

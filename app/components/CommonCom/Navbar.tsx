@@ -152,7 +152,7 @@ export default function Navbar() {
                 <div className="shrink-0 cursor-pointer relative z-50">
                     <Link href="/" onClick={() => setIsMenuOpen(false)}>
                         <div className="relative">
-                            <SkeletonImage src="/home/logo.png" alt="ALEF Logo" width={90} height={90} className="object-contain w-[80px] md:w-[110px]" />
+                            <Image src="/home/logo.png" alt="ALEF Logo" width={90} height={90} priority className="object-contain w-[80px] md:w-[110px]" />
                         </div>
                     </Link>
                 </div>
@@ -332,7 +332,7 @@ export default function Navbar() {
                         <div className="shrink-0 cursor-pointer">
                             <Link href="/" onClick={() => setIsMenuOpen(false)}>
                                 <div className="relative">
-                                    <SkeletonImage src="/home/logo.png" alt="ALEF Logo" width={90} height={90} className="object-contain w-[80px] md:w-[110px]" />
+                                    <Image src="/home/logo.png" alt="ALEF Logo" width={90} height={90} className="object-contain w-[80px] md:w-[110px]" />
                                 </div>
                             </Link>
                         </div>

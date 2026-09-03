@@ -19,39 +19,42 @@ export default function AnimatedTitle({ text, className = "", as = "div" }: Anim
     const isArabic = /[\u0600-\u06FF]/.test(text);
 
     useGSAP(() => {
-        const targets = containerRef.current?.querySelectorAll(".animated-char, .animated-word");
-        if (!targets || targets.length === 0) return;
+        const mm = gsap.matchMedia();
 
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: containerRef.current,
-                start: "top 85%",
-                toggleActions: "play none none none",
-            }
+        mm.add("(min-width: 768px)", () => {
+            const targets = containerRef.current?.querySelectorAll(".animated-char, .animated-word");
+            if (!targets || targets.length === 0) return;
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 85%",
+                    toggleActions: "play none none none",
+                }
+            });
+
+            tl.fromTo(targets,
+                { opacity: 0 },
+                {
+                    opacity: 1,
+                    stagger: isArabic ? 0.1 : 0.02,
+                    duration: 1.5,
+                    ease: "power2.out"
+                }
+            );
+
+            tl.to(targets, {
+                opacity: 0.2,
+                duration: 0.03,
+                stagger: {
+                    amount: 0.2,
+                    from: "random",
+                    repeat: 3,
+                    yoyo: true
+                },
+                ease: "power3.inOut"
+            }, "-=1.2");
         });
-
-        tl.fromTo(targets,
-            { opacity: 0 },
-            {
-                opacity: 1,
-                stagger: isArabic ? 0.1 : 0.02,
-                duration: 1.5,
-                ease: "power2.out"
-            }
-        );
-
-        tl.to(targets, {
-            opacity: 0.2,
-            duration: 0.03,
-            stagger: {
-                amount: 0.2,
-                from: "random",
-                repeat: 3,
-                yoyo: true
-            },
-            ease: "power3.inOut"
-        }, "-=1.2");
-
     }, { scope: containerRef, dependencies: [text] });
 
     const words = text.split(" ");
