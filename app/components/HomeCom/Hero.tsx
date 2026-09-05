@@ -41,15 +41,15 @@ export default function Hero() {
         }
     };
 
-    // Lock body scroll when modal is open
+    // Lock body scroll when modal is open — use class toggle to avoid forced reflow
     useEffect(() => {
         if (isModalOpen) {
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('overflow-hidden');
         } else {
-            document.body.style.overflow = 'unset';
+            document.body.classList.remove('overflow-hidden');
         }
         return () => {
-            document.body.style.overflow = 'unset';
+            document.body.classList.remove('overflow-hidden');
             setIsModalVideoLoaded(false); // Reset modal video loading state on close
         };
     }, [isModalOpen]);
@@ -64,7 +64,7 @@ export default function Hero() {
                     muted
                     loop
                     playsInline
-                    preload="auto"
+                    preload="none"
                     poster="/home/hero-poster.webp"
                 >
                     <source src="/home/Hero_Intro_Video_mobile.mp4" media="(max-width: 768px)" type="video/mp4" />

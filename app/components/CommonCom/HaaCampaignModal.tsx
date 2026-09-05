@@ -86,7 +86,7 @@ export default function HaaCampaignModal({ isFirstLoad }: { isFirstLoad: boolean
           {/* ALEF Premium Logo Container (Solid White Background) */}
           <div className="relative mx-auto w-20 h-20 mb-4 flex items-center justify-center bg-white rounded-full p-2.5 shadow-md border border-white/10 z-10">
             <Image
-              src="/home/logo.png"
+              src="/home/logo.webp"
               alt="ALEF Logo"
               width={60}
               height={60}

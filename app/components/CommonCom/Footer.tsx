@@ -51,7 +51,7 @@ export default function Footer() {
                     <div className="space-y-6">
                         <Link href="/" className="block relative w-50 h-18">
                             <SkeletonImage
-                                src="/home/logo.png"
+                                src="/home/logo.webp"
                                 alt="ALEF Logo"
                                 fill
                                 className=" bg-white p-1"

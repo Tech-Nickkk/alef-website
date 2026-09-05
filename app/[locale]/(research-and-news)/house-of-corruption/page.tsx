@@ -133,15 +133,15 @@ export default function HouseOfCorruptionPage() {
         }
     ];
 
-    // Lock body scroll when modal is open
+    // Lock body scroll when modal is open — use class toggle to avoid forced reflow
     useEffect(() => {
         if (selectedImage) {
-            document.body.style.overflow = "hidden";
+            document.body.classList.add('overflow-hidden');
         } else {
-            document.body.style.overflow = "unset";
+            document.body.classList.remove('overflow-hidden');
         }
         return () => {
-            document.body.style.overflow = "unset";
+            document.body.classList.remove('overflow-hidden');
         };
     }, [selectedImage]);
 

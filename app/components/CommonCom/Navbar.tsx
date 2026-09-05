@@ -37,34 +37,44 @@ export default function Navbar() {
     };
 
     useGSAP(() => {
-        const showAnim = gsap.from(navRef.current, {
-            yPercent: -100,
-            paused: true,
-            duration: 0.5,
-            ease: "power2.out"
-        }).progress(1);
+        // Defer GSAP ScrollTrigger setup until after first paint to reduce TBT
+        const setup = () => {
+            const showAnim = gsap.from(navRef.current, {
+                yPercent: -100,
+                paused: true,
+                duration: 0.5,
+                ease: "power2.out"
+            }).progress(1);
 
-        ScrollTrigger.create({
-            start: "top top",
-            end: 99999,
-            onUpdate: (self) => {
-                if (self.direction === -1) {
-                    showAnim.play();
-                } else {
-                    showAnim.reverse();
+            ScrollTrigger.create({
+                start: "top top",
+                end: 99999,
+                onUpdate: (self) => {
+                    if (self.direction === -1) {
+                        showAnim.play();
+                    } else {
+                        showAnim.reverse();
+                    }
                 }
-            }
-        });
+            });
+        };
+
+        if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+            (window as Window & typeof globalThis & { requestIdleCallback: (cb: () => void) => void }).requestIdleCallback(setup);
+        } else {
+            setTimeout(setup, 100);
+        }
     }, { scope: navRef });
 
 
-    // Lock body scroll when mobile menu is open
+    // Lock body scroll when mobile menu is open — use class toggle to avoid forced reflow
     useEffect(() => {
         if (isMenuOpen) {
-            document.body.style.overflow = "hidden";
+            document.body.classList.add('overflow-hidden');
         } else {
-            document.body.style.overflow = "unset";
+            document.body.classList.remove('overflow-hidden');
         }
+        return () => { document.body.classList.remove('overflow-hidden'); };
     }, [isMenuOpen]);
 
     // Close menu on resize if screen becomes large
@@ -152,7 +162,7 @@ export default function Navbar() {
                 <div className="shrink-0 cursor-pointer relative z-50">
                     <Link href="/" onClick={() => setIsMenuOpen(false)}>
                         <div className="relative">
-                            <Image src="/home/logo.png" alt="ALEF Logo" width={90} height={90} priority className="object-contain w-[80px] md:w-[110px]" />
+                            <Image src="/home/logo.webp" alt="ALEF Logo" width={90} height={90} priority className="object-contain w-[80px] md:w-[110px]" />
                         </div>
                     </Link>
                 </div>
@@ -332,7 +342,7 @@ export default function Navbar() {
                         <div className="shrink-0 cursor-pointer">
                             <Link href="/" onClick={() => setIsMenuOpen(false)}>
                                 <div className="relative">
-                                    <Image src="/home/logo.png" alt="ALEF Logo" width={90} height={90} className="object-contain w-[80px] md:w-[110px]" />
+                                    <Image src="/home/logo.webp" alt="ALEF Logo" width={90} height={90} className="object-contain w-[80px] md:w-[110px]" />
                                 </div>
                             </Link>
                         </div>

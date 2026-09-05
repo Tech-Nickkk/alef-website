@@ -4,10 +4,14 @@ import { useState } from 'react';
 import { usePathname } from "next/navigation";
 import AnimatedTitle from "./AnimatedTitle";
 import { useTranslations } from 'next-intl';
-import PhoneInput from 'react-phone-number-input';
-import 'react-phone-number-input/style.css';
+import dynamic from 'next/dynamic';
 import { Link } from '@/i18n/routing';
 import { sendGAEvent } from '@next/third-parties/google';
+
+const PhoneInput = dynamic(() => import('react-phone-number-input'), {
+    ssr: false,
+    loading: () => <input type="tel" placeholder="Phone (optional)" className="w-full bg-background text-foreground px-4 py-3 md:px-6 md:py-4 outline-none font-oswald text-base md:text-lg uppercase placeholder:text-gray-400 rounded-sm border border-transparent" />
+});
 
 export default function JoinUs() {
     const pathname = usePathname();
